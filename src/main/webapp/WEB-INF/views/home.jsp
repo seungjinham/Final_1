@@ -9,11 +9,6 @@
 
 <a href="member/login">Login</a>
 <a href="member/join">Join</a>
-<<<<<<< HEAD
-<a href="./faq/faqList">FAQ</a>
 
-=======
-<h1>HD</h1>
->>>>>>> jh_Member
 </body>
 </html>
