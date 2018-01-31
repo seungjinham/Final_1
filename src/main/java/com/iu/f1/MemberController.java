@@ -20,6 +20,8 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
+	
+	
 	@RequestMapping(value="join")
 	public void join(){}
 	
