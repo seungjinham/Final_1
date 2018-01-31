@@ -23,4 +23,8 @@ hs_err_pid*
 target/m2e-wtp/web-resources/META-INF/maven/com.iu/f1/pom.properties
 target/m2e-wtp/web-resources/META-INF/maven/com.iu/f1/pom.properties
 target/m2e-wtp/web-resources/META-INF/maven/com.iu/f1/pom.properties
+<<<<<<< HEAD
 *.MF
+=======
+target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+>>>>>>> 92b667938ecc1241fcea81f89a8a6a2b0b680480
