@@ -9,5 +9,10 @@
 <a href="member/join">Join</a>
 
 <h1>INDEXaaa</h1>
+<P>  The time on the server is ${serverTime}. </P>
+
+<a href="./faq/faqList">FAQ</a>
+
+<h1>INDEX</h1>
 </body>
 </html>
