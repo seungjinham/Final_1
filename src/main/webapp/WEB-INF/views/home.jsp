@@ -5,8 +5,8 @@
 <title>Home</title>
 </head>
 <body>
-<a>Login</a>
-<a href="join.jsp">Join</a>
+<a href="member/login">Login</a>
+<a href="member/join">Join</a>
 
 <h1>INDEX</h1>
 </body>
