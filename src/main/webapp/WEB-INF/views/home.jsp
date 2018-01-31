@@ -11,7 +11,7 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
-
+<a href="./faq/faqList">FAQ</a>
 
 <h1>INDEX</h1>
 </body>
