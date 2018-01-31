@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login Select Page</title>
+<title>Company Login</title>
 </head>
 <body>
-	<a href="../person/personLogin">member</a>
-	<a href="../company/companyLogin">company</a>
+	<h1>Company Login</h1>
 </body>
 </html>

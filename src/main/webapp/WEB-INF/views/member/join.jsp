@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Join Select Page</title>
 </head>
 <body>
-	<a href="member/m_Join">member</a>
-	<a href="member/c_join">company</a>
+	<a href="../person/personJoin">member</a>
+	<a href="../company/companyJoin">company</a>
 </body>
 </html>

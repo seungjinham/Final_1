@@ -1,4 +1,4 @@
-package com.iu.company;
+package com.iu.person;
 
 import javax.inject.Inject;
 
@@ -8,10 +8,10 @@ import com.iu.member.MemberDTO;
 import com.iu.member.MemberService;
 
 @Service
-public class CompanyService implements MemberService {
+public class PersonService implements MemberService {
 	
 	@Inject
-	private CompanyDAO companyDAO;
+	private PersonDAO personDAO;
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {

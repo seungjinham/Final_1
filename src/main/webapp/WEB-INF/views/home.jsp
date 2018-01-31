@@ -2,12 +2,12 @@
 <%@ page session="true" %>
 <html>
 <head>
-<title>Home</title>
+<title>Pick Me</title>
 </head>
 <body>
+<h1>PICK ME</h1>
+
 <a href="member/login">Login</a>
 <a href="member/join">Join</a>
-
-<h1>INDEXaaa</h1>
 </body>
 </html>

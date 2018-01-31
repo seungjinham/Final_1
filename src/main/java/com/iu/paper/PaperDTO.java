@@ -1,5 +1,8 @@
 package com.iu.paper;
 
-public class PaperDTO {
+import com.iu.person.PersonDTO;
+
+public class PaperDTO extends PersonDTO{
+	
 
 }

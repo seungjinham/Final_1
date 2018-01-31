@@ -2,20 +2,18 @@ package com.iu.member;
 
 public class MemberDTO {
 	
-	private String m_id;
+	private String id;
 	private String pw;
 	private String name;
-	private String birth;
 	private String phone;
 	private String email;
 	private String addr;
-	private String gender;
 	
-	public String getM_id() {
-		return m_id;
+	public String getId() {
+		return id;
 	}
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getPw() {
 		return pw;
@@ -28,12 +26,6 @@ public class MemberDTO {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getBirth() {
-		return birth;
-	}
-	public void setBirth(String birth) {
-		this.birth = birth;
 	}
 	public String getPhone() {
 		return phone;
@@ -52,12 +44,6 @@ public class MemberDTO {
 	}
 	public void setAddr(String addr) {
 		this.addr = addr;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
 	}
 	
 }

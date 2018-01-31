@@ -1,35 +1,20 @@
 package com.iu.member;
 
-import javax.inject.Inject;
-
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public class MemberDAO {
+public interface MemberDAO {
 	
-	@Inject
-	private SqlSession sqlSession;
-	private final String NAMESPACE = "MemberMapper.";
+	//회원가입
+	public int join(MemberDTO memberDTO) throws Exception;
 	
-	public int delete(MemberDTO memberDTO) throws Exception{
-		return sqlSession.delete(NAMESPACE+"delete", memberDTO);
-	}
+	//회원탈퇴
+	public int delete(String id) throws Exception;
 	
-	public int update(MemberDTO memberDTO) throws Exception{
-		return sqlSession.update(NAMESPACE+"update", memberDTO);
-	}
+	//회원수정
+	public int update(MemberDTO memberDTO) throws Exception;
 	
-	public MemberDTO login(MemberDTO memberDTO) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"login", memberDTO);
-	}
+	//로그인
+	public MemberDTO login(MemberDTO memberDTO) throws Exception;
 	
-	public MemberDTO idCheck(String id) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"idCheck", id);
-	}
-	public int Join(MemberDTO memberDTO) throws Exception{
-		return sqlSession.insert(NAMESPACE+"join", memberDTO);
-	}
+	//중복된 ID Check
+	public MemberDTO idCheck(String id) throws Exception;
 	
-
 }
