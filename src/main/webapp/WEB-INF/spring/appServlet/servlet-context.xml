@@ -23,6 +23,8 @@
 	
 	<context:component-scan base-package="com.iu.f1" />
 	<context:component-scan base-package="com.iu.member" />
+	<context:component-scan base-package="com.iu.person" />
+	<context:component-scan base-package="com.iu.company" />
 	
 	<context:component-scan base-package="com.iu.faq" />
 	
