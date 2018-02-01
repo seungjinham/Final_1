@@ -10,5 +10,13 @@
 
 <h1>Person MyPage</h1>
 
+	<p>ID : ${member.id}</p>
+	<p>NAME : ${member.name}</p>
+	<p>PHONE : ${member.phone}</p>
+	<p>EMAIL : ${member.email}</p>
+	<p>ADDR : ${member.addr}</p>
+	<p>BIRTH : ${member.birth}</p>
+	<p>GENDER : ${member.gender}</p>
+
 </body>
 </html>

@@ -15,68 +15,71 @@ import com.iu.member.MemberDTO;
 @Controller
 @RequestMapping(value="/company/**")
 public class CompanyController {
-	
+
 	@Inject
 	private CompanyService companyService;
-	
-	@RequestMapping(value="companyMyPage")
-	public ModelAndView companyMypage(HttpSession session) throws Exception {
-		ModelAndView mv = new ModelAndView();
-		String id=session.getId();
-		CompanyDTO companyDTO = companyService.MyPage(id);
-		mv.addObject("companyDTO", companyDTO);
-		mv.setViewName("company/companyMyPage");
-		return mv;
-	}
-	
+
+
 	//회원가입
 	@RequestMapping(value="companyJoin", method=RequestMethod.GET)
 	public void companyJoin(){}
-	
+
 	@RequestMapping(value="companyJoin", method=RequestMethod.POST)
 	public ModelAndView companyJoin(CompanyDTO companyDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = 0;
 		result = companyService.join(companyDTO);
-		if(result>0) {
-			mv.addObject("message", "JoinSuccess");
-			mv.addObject("path", "../");
-		} else {
-			mv.addObject("message", "JoinFail");
-			mv.addObject("path", "../");
+
+		String message = "Join Fail";
+		String path = "./companyLogin";
+
+		if(result > 0){
+			message = "Join Success";
+			path = "../";
 		}
+		mv.addObject("message", message);
+		mv.addObject("path", path);
 		mv.setViewName("common/result");
 		return mv;
 	}
-	
-	
+
+
 	//회원수정
 	@RequestMapping(value="companyUpdate", method=RequestMethod.GET)
 	public void companyUpdate(){}
-	
+
 	//회원탈퇴
 	@RequestMapping(value="companyDelete")
 	public void companyDelete(){}
 
+	
 	//로그인
 	@RequestMapping(value="companyLogin", method=RequestMethod.GET)
 	public void companyLogin(){}
-	
+
 	@RequestMapping(value="companyLogin", method=RequestMethod.POST)
-	public ModelAndView companyLogin(MemberDTO memberDTO, HttpSession session)throws Exception{
+	public ModelAndView companyLogin(CompanyDTO companyDTO, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		memberDTO = companyService.login(memberDTO);
+		MemberDTO memberDTO = companyService.login(companyDTO);
+		
+		String message = "Login Fail";
+		String path = "./companyLogin";
+
 		if(memberDTO != null){
 			session.setAttribute("member", memberDTO);
-			mv.addObject("message", "Login Success");
-		}else{
-			mv.addObject("message", "Login Fail");
+			message = "Login Success";
+			path = "../";
 		}
-		mv.addObject("path", "../");
+		mv.addObject("message", message);
+		mv.addObject("path", path);
 		mv.setViewName("common/result");
 		return mv;
-		}
-	//로그아웃
 	}
 	
+
+	//MyPage
+	@RequestMapping(value="companyMyPage")
+	public void companyMypage(HttpSession session) throws Exception {}
+}
+
 

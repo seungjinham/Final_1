@@ -12,9 +12,11 @@
 	</insert>
 
 	<!-- Login -->
-	<select id="personLogin" parameterType="MemberDTO" resultType="MemberDTO">
-		select * from member where id=#{id} and pw=#{pw}
+	<select id="personLogin" parameterType="MemberDTO" resultType="PersonDTO">
+		select m.*,p.* from member m, person p where m.id=#{id} and m.pw=#{pw} and m.id=p.id(+)
 	</select>
+	
+	
 
 </mapper>
   
