@@ -58,8 +58,8 @@ public class PersonDAO implements MemberDAO {
 		return sqlSession.update(NAMESPACE+"personUpdate", memberDTO);
 	}
 	
-	public int sellerDelete(MemberDTO memberDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"personDelete", memberDTO);
+	public int sellerDelete(String id) throws Exception {
+		return sqlSession.delete(id);
 	}
 
 

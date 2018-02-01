@@ -76,18 +76,22 @@ public class PersonController {
 	//=======================   Seller (판매자)  ========================
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.GET)
-	public void sellerWrite(HttpSession session) throws Exception{
+	public void sellerWrite1() throws Exception{
+		
+	}
+	
+	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
+	public void sellerWrite() throws Exception{
 		
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
-	public void sellerUpdate(HttpSession session) throws Exception{
+	public void sellerUpdate() throws Exception{
 		
 	}
 	
 	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
-	public String sellerDelete(HttpSession session) throws Exception{
-
+	public String sellerDelete() throws Exception{
 		return "redirect:./personMyPage";
 	}
 
