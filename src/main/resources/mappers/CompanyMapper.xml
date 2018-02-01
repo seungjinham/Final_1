@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="CompanyMapper">
-
+	<insert id="memberInsert" parameterType="MemberDTO">
+		insert into member values (#{id},#{pw},#{name},#{phone},#{email},#{addr})
+	</insert>
+	<insert id="companyInsert" parameterType="MemberDTO">
+		insert into company values (#{id},#{c_name},#{c_num})
+	</insert>
 </mapper>
   
