@@ -2,7 +2,7 @@ package com.iu.company;
 
 import com.iu.member.MemberDTO;
 
-public class CompanyDTO extends MemberDTO{
+public class CompanyDTO2 extends MemberDTO{
 	
 	private String c_name;
 	private String c_num;
