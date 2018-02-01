@@ -20,9 +20,9 @@ public class CompanyController {
 	private CompanyService companyService;
 	
 	@RequestMapping(value="companyMyPage")
-	public ModelAndView companyMypage() throws Exception {
+	public ModelAndView companyMypage(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		String id="truly412";
+		String id=session.getId();
 		CompanyDTO companyDTO = companyService.MyPage(id);
 		mv.addObject("companyDTO", companyDTO);
 		mv.setViewName("company/companyMyPage");
