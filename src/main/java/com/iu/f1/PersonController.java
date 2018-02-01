@@ -1,6 +1,7 @@
 package com.iu.f1;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,5 +51,22 @@ public class PersonController {
 	@RequestMapping(value="personLogin", method=RequestMethod.GET)
 	public void personLogin(){}
 	
+	@RequestMapping(value="personLogin", method=RequestMethod.POST)
+	public ModelAndView personLogin(MemberDTO memberDTO, HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		memberDTO = personService.login(memberDTO);
+		if(memberDTO != null){
+			session.setAttribute("member", memberDTO);
+			mv.addObject("message", "Login Success");
+		}else{
+			mv.addObject("message", "Login Fail");
+		}
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
+		return mv;
+		}
+	
+	}
+	
 	//로그아웃
-}
+

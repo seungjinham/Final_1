@@ -10,5 +10,11 @@
 
 <h1>Person Login</h1>
 
+	<form action="personLogin" method="post">
+	<p>ID : <input type="text" name="id"></p>
+	<p>PW : <input type="password" name="pw"></p>
+	<p><button>LOGIN</button></p>
+	</form>
+
 </body>
 </html>

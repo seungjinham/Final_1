@@ -51,6 +51,10 @@ public class CompanyController {
 	//로그인
 	@RequestMapping(value="companyLogin", method=RequestMethod.GET)
 	public void companyLogin(){}
+	@RequestMapping(value="companyLogin", method=RequestMethod.POST)
+	public void companyLogin(MemberDTO memberDTO){
+		
+	}
 	
 	//로그아웃
 }
