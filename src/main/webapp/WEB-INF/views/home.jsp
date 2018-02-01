@@ -9,7 +9,7 @@
 
 <a href="member/login">Login</a>
 <a href="member/join">join</a>
-<h1>HD</h1>
+<h1>HD1</h1>
 
 </body>
 </html>
