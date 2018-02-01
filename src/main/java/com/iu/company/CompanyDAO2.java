@@ -2,16 +2,18 @@ package com.iu.company;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
+import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
-import com.iu.member.MemberService;
 
-@Service
-public class CompanyService implements MemberService {
+@Repository
+public class CompanyDAO2 implements MemberDAO {
 	
 	@Inject
-	private CompanyDAO2 companyDAO;
+	private SqlSession sqlSession;
+	private final String NAMESPACE="CompanyMapper.";
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
