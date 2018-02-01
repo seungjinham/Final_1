@@ -15,15 +15,16 @@ import com.iu.person.PersonService;
 @Controller
 @RequestMapping(value="/person/**")
 public class PersonController {
-	
+
 	@Inject
 	private PersonService personService;
-	
-	
+
+	//=======================   Person (개인회원)  =======================
+
 	//회원가입
 	@RequestMapping(value="personJoin", method=RequestMethod.GET)
 	public void personJoin(){}
-	
+
 	@RequestMapping(value="personJoin", method=RequestMethod.POST)
 	public ModelAndView personJoin(PersonDTO personDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -37,12 +38,12 @@ public class PersonController {
 		mv.setViewName("common/result");
 		return mv;
 	}
-	
-	
+
+
 	//회원수정
 	@RequestMapping(value="personUpdate", method=RequestMethod.GET)
 	public void personUpdate(){}
-	
+
 	//회원탈퇴
 	@RequestMapping(value="personDelete")
 	public void personDelete(){}
@@ -50,7 +51,7 @@ public class PersonController {
 	//로그인
 	@RequestMapping(value="personLogin", method=RequestMethod.GET)
 	public void personLogin(){}
-	
+
 	@RequestMapping(value="personLogin", method=RequestMethod.POST)
 	public ModelAndView personLogin(MemberDTO memberDTO, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -64,12 +65,32 @@ public class PersonController {
 		mv.addObject("path", "../");
 		mv.setViewName("common/result");
 		return mv;
-		}
-	
+	}
+
 	//MyPage
 	@RequestMapping(value="personMyPage")
 	public void personMyPage(HttpSession session) throws Exception{}
+
 	
+	
+	//=======================   Seller (판매자)  ========================
+	
+	@RequestMapping(value="sellerWrite", method=RequestMethod.GET)
+	public void sellerWrite(HttpSession session) throws Exception{
+		
 	}
+	
+	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
+	public void sellerUpdate(HttpSession session) throws Exception{
+		
+	}
+	
+	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
+	public String sellerDelete(HttpSession session) throws Exception{
+
+		return "redirect:./personMyPage";
+	}
+
+}
 	
 
