@@ -8,7 +8,7 @@
 <h1>PICK ME</h1>
 
 <a href="member/login">Login</a>
-<a href="member/join">Join</a>
+<a href="member/join">join</a>
 <h1>HD</h1>
 </body>
 </html>
