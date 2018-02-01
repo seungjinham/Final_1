@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.member.MemberDTO;
+import com.iu.person.PersonDTO;
 import com.iu.person.PersonService;
 
 @Controller
@@ -23,10 +24,9 @@ public class PersonController {
 	public void personJoin(){}
 	
 	@RequestMapping(value="personJoin", method=RequestMethod.POST)
-	public ModelAndView personJoin(MemberDTO memberDTO)throws Exception{
+	public ModelAndView personJoin(PersonDTO personDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = personService.memberJoin(memberDTO);
-		result = personService.join(memberDTO);
+		int result = personService.join(personDTO);
 		if(result>0){
 			mv.addObject("message", "Join Success");
 		}else{

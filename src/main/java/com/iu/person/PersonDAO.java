@@ -17,10 +17,8 @@ public class PersonDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
+		sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
 		return sqlSession.insert(NAMESPACE+"personJoin", memberDTO);
-	}
-	public int memberJoin(MemberDTO memberDTO) throws Exception{
-		return sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
 	}
 
 	@Override

@@ -8,9 +8,9 @@
 		insert into member (id,pw,name,phone,email,addr)
 		values(#{id},#{pw},#{name},#{phone},#{email},#{addr})
 	</insert>
-	<insert id="personJoin" parameterType="PersonDTO">
-		insert into person (birth,gender)
-		values(#{birth},#{gender})
+	<insert id="personJoin" parameterType="MemberDTO">
+		insert into person (id,birth,gender)
+		values(#{id},#{birth},#{gender})
 	</insert>
 
 </mapper>
