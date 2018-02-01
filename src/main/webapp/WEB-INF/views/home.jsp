@@ -23,6 +23,9 @@
 	</c:if>
 
 	<a href="faq/faqList">FAQ</a>
+	
+	
+	<a href="company/companyRecruit">Recruit</a>
 
 </body>
 </html>
