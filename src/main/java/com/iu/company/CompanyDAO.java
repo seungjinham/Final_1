@@ -9,7 +9,7 @@ import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
 
 @Repository
-public class CompanyDAO2 implements MemberDAO {
+public class CompanyDAO implements MemberDAO {
 	
 	@Inject
 	private SqlSession sqlSession;

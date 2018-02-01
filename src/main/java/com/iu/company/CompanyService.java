@@ -11,7 +11,7 @@ import com.iu.member.MemberService;
 public class CompanyService implements MemberService {
 	
 	@Inject
-	private CompanyDAO2 companyDAO;
+	private CompanyDAO companyDAO;
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
