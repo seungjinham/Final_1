@@ -18,7 +18,6 @@ public class FaqDAO {
 	
 	
 	public int insert(FaqDTO faqDTO) throws Exception{
-
 		return sqlSession.insert(NAMESPACE+"insert", faqDTO);
 	}
 	
@@ -26,6 +25,17 @@ public class FaqDAO {
 		return sqlSession.selectList(NAMESPACE+"selectList", listData);
 	}
 	
+	public int delete(int num) throws Exception{
+		return sqlSession.delete(NAMESPACE+"delete", num);
+	}
+	
+	public int update(FaqDTO faqDTO) throws Exception{
+		return sqlSession.update(NAMESPACE+"update", faqDTO);
+	}
+	
+	public FaqDTO selectOne(int num)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
+	}
 	
 	
 	
