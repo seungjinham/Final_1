@@ -13,7 +13,12 @@
 	</c:if>
 
 	<c:if test="${not empty member}">
-		<a href="./member/memberMyPage?id=${member.id}&job=${member.job}">MyPage</a>
+	<c:if test="${member.job eq 'P'}">
+		<a href="./person/personMyPage">MyPage</a>
+	</c:if>
+	<c:if test="${member.job eq 'C'}">
+		<a href="./company/companyMyPage">MyPage</a>
+	</c:if>
 		<a href="./member/memberLogOut">LogOut</a>
 	</c:if>
 
