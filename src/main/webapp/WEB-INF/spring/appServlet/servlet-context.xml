@@ -26,6 +26,7 @@
 	<context:component-scan base-package="com.iu.person" />
 	<context:component-scan base-package="com.iu.company" />
 	<context:component-scan base-package="com.iu.faq" />
+	<context:component-scan base-package="com.iu.recruit" />
 	
 	
 </beans:beans>

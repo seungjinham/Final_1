@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="RecruitMapper">
+<update id="RecruitUpdate" parameterType="RecruitDTO">
+update recruit set
+title=#{title}, deadline=#{deadline}, people=#{people}, 
+gender=#{gender}, age=#{age}, school=#{school}, special=#{special}, 
+salary=#{salary}, w_date=#{w_date}, w_day=#{w_day}, w_time=#{w_time}, 
+job=#{job}, work=#{work}, benefit=#{benefit}, contents=#{contents}, 
+fname=#{fname}, oname=#{oname} where num=#{num} 
+</update>
+
+</mapper>
