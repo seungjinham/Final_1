@@ -6,8 +6,7 @@
   <configuration>
   	<typeAliases>
   		<typeAlias type="com.iu.faq.FaqDTO" alias="FaqDTO"/>
-  		<typeAlias type="com.iu.util.ListData" alias="ListData"/>
-  	
+  		<typeAlias type="com.iu.member.MemberDTO" alias="MemberDTO"/>
   	</typeAliases>
   
   </configuration>

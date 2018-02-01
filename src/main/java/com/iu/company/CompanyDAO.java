@@ -17,13 +17,12 @@ public class CompanyDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		sqlSession.insert(NAMESPACE+"memberInsert", memberDTO);
+		return sqlSession.insert(NAMESPACE+"companyInsert", memberDTO);
 	}
 
 	@Override
 	public int delete(String id) throws Exception {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

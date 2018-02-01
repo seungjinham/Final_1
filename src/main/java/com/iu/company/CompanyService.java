@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
 import com.iu.member.MemberService;
 
@@ -15,8 +16,7 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return companyDAO.join(memberDTO);
 	}
 
 	@Override

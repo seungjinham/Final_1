@@ -5,8 +5,11 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
+import com.iu.member.MemberDTO;
 
 @Controller
 @RequestMapping(value="/company/**")
@@ -19,6 +22,22 @@ public class CompanyController {
 	//회원가입
 	@RequestMapping(value="companyJoin", method=RequestMethod.GET)
 	public void companyJoin(){}
+	
+	@RequestMapping(value="companyJoin", method=RequestMethod.POST)
+	public ModelAndView companyJoin(CompanyDTO companyDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = 0;
+		result = companyService.join(companyDTO);
+		if(result>0) {
+			mv.addObject("message", "JoinSuccess");
+			mv.addObject("path", "../");
+		} else {
+			mv.addObject("message", "JoinFail");
+			mv.addObject("path", "../");
+		}
+		mv.setViewName("common/result");
+		return mv;
+	}
 	
 	
 	//회원수정
