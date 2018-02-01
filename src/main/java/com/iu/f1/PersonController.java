@@ -66,7 +66,10 @@ public class PersonController {
 		return mv;
 		}
 	
+	//MyPage
+	@RequestMapping(value="personMyPage")
+	public void personMyPage(HttpSession session) throws Exception{}
+	
 	}
 	
-	//로그아웃
 
