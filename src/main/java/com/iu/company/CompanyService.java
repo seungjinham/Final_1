@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
 import com.iu.member.MemberService;
 
@@ -40,8 +39,8 @@ public class CompanyService implements MemberService {
 	}
 	
 	@Override
-	public MemberDTO MyPage(String id) throws Exception {
-		return null;
+	public CompanyDTO MyPage(String id) throws Exception {
+		return companyDAO.MyPage(id);
 	}
 
 }

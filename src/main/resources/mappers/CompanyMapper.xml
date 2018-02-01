@@ -3,7 +3,7 @@
 
 <mapper namespace="CompanyMapper">
 	<insert id="memberInsert" parameterType="MemberDTO">
-		insert into member values (#{id},#{pw},#{name},#{phone},#{email},#{addr})
+		insert into member values (#{id},#{pw},#{name},#{phone},#{email},#{addr},#{job})
 	</insert>
 	<insert id="companyInsert" parameterType="MemberDTO">
 		insert into company values (#{id},#{c_name},#{c_num})
@@ -12,6 +12,23 @@
 	<!-- Login -->
 	<select id="memberLogin" parameterType="MemberDTO" resultType="MemberDTO">
 		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="myPage" parameterType="String" resultType="CompanyDTO">
+		select m.*,c.* from member m, company c
+		where m.id=#{id} and m.id=c.id(+)
 	</select>
 </mapper>
   

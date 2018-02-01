@@ -22,6 +22,9 @@ public class CompanyController {
 	public ModelAndView companyMypage() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		String id="truly412";
+		CompanyDTO companyDTO = companyService.MyPage(id);
+		mv.addObject("companyDTO", companyDTO);
+		mv.setViewName("company/companyMyPage");
 		return mv;
 	}
 	
