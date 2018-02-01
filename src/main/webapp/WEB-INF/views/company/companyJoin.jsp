@@ -17,6 +17,7 @@
 		<p>addr<input type="text" name="addr"></p>
 		<p>c_name<input type="text" name="c_name"></p>
 		<p>c_num<input type="text" name="c_num"></p>
+		<p><input type="hidden" name="job" value="C"></p>
 		<button>Join</button>
 	</form>
 </body>

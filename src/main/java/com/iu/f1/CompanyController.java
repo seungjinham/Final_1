@@ -1,6 +1,7 @@
 package com.iu.f1;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,10 +58,22 @@ public class CompanyController {
 	//로그인
 	@RequestMapping(value="companyLogin", method=RequestMethod.GET)
 	public void companyLogin(){}
+	
 	@RequestMapping(value="companyLogin", method=RequestMethod.POST)
-	public void companyLogin(MemberDTO memberDTO){
-		
+	public ModelAndView companyLogin(MemberDTO memberDTO, HttpSession session)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		memberDTO = companyService.login(memberDTO);
+		if(memberDTO != null){
+			session.setAttribute("member", memberDTO);
+			mv.addObject("message", "Login Success");
+		}else{
+			mv.addObject("message", "Login Fail");
+		}
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
+		return mv;
+		}
+	//로그아웃
 	}
 	
-	//로그아웃
-}
+

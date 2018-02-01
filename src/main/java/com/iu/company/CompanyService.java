@@ -31,7 +31,7 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
-		return null;
+		return companyDAO.login(memberDTO);
 	}
 
 	@Override

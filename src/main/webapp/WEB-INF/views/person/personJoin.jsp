@@ -21,6 +21,7 @@
 	<p>BIRTH : <input type="text" name="birth"></p>
 	<p>GENDER : M<input type="radio" value="M" name="gender">
 			    W<input type="radio" value="W" name="gender"> </p>
+	<p><input type="hidden" name="job" value="P"></p>
 	<p><button>JOIN</button></p>
 	</form>
 	

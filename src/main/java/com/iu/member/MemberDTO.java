@@ -8,6 +8,7 @@ public class MemberDTO {
 	private String phone;
 	private String email;
 	private String addr;
+	private String job;
 	
 	public String getId() {
 		return id;
@@ -44,6 +45,12 @@ public class MemberDTO {
 	}
 	public void setAddr(String addr) {
 		this.addr = addr;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
 	}
 	
 }
