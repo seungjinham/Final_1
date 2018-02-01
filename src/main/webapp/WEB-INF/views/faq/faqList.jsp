@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../resources/css/faq/faq.css">
 </head>
 <body>
 	<h1>FAQ</h1>
