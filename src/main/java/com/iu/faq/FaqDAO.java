@@ -18,11 +18,15 @@ public class FaqDAO {
 	
 	
 	public int insert(FaqDTO faqDTO) throws Exception{
+<<<<<<< HEAD
 		return sqlSession.insert(NAMESPACE+"insert", faqDTO);
 	}
 	
 	public List<FaqDTO> selectList(ListData listData) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList", listData);
+=======
+		return 0;
+>>>>>>> jjh
 	}
 	
 	

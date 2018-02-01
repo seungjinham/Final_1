@@ -17,32 +17,33 @@ public class PersonDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
+		return sqlSession.insert(NAMESPACE+"personJoin", memberDTO);
 	}
 
 	@Override
-	public int delete(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(MemberDTO memberDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"personDelete", memberDTO);
 	}
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(NAMESPACE+"personUpdate", memberDTO);
 	}
 
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"personLogin", memberDTO);
 	}
 
 	@Override
 	public MemberDTO idCheck(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"personIdCheck", id);
+	}
+	
+	@Override
+	public MemberDTO MyPage(String id) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"personMyPage", id);
 	}
 
 }

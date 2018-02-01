@@ -15,32 +15,32 @@ public class PersonService implements MemberService {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return personDAO.join(memberDTO);
 	}
-
+	
 	@Override
-	public int delete(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(MemberDTO memberDTO) throws Exception {
+		return personDAO.delete(memberDTO);
 	}
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return personDAO.update(memberDTO);
 	}
 
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return personDAO.login(memberDTO);
 	}
 
 	@Override
 	public MemberDTO idCheck(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return personDAO.idCheck(id);
+	}
+	
+	@Override
+	public MemberDTO MyPage(String id) throws Exception {
+		return personDAO.MyPage(id);
 	}
 
 }

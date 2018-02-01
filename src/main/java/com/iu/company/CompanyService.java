@@ -16,30 +16,35 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
+<<<<<<< HEAD
 		return companyDAO.join(memberDTO);
+=======
+		return 0;
+>>>>>>> jjh
 	}
 
 	@Override
-	public int delete(String id) throws Exception {
-		// TODO Auto-generated method stub
+	public int delete(MemberDTO memberDTO) throws Exception {
 		return 0;
 	}
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public MemberDTO idCheck(String id) throws Exception {
-		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public MemberDTO MyPage(String id) throws Exception {
 		return null;
 	}
 
