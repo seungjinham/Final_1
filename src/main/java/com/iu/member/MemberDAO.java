@@ -6,7 +6,7 @@ public interface MemberDAO {
 	public int join(MemberDTO memberDTO) throws Exception;
 	
 	//회원탈퇴
-	public int delete(String id) throws Exception;
+	public int delete(MemberDTO memberDTO) throws Exception;
 	
 	//회원수정
 	public int update(MemberDTO memberDTO) throws Exception;
@@ -16,5 +16,8 @@ public interface MemberDAO {
 	
 	//중복된 ID Check
 	public MemberDTO idCheck(String id) throws Exception;
+	
+	//MyPage
+	public MemberDTO MyPage(String id) throws Exception;
 	
 }

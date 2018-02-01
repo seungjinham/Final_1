@@ -3,5 +3,15 @@
 
 <mapper namespace="PersonMapper">
 
+	<!-- Join -->
+	<insert id="memberJoin" parameterType="MemberDTO">
+		insert into member (id,pw,name,phone,email,addr)
+		values(#{id},#{pw},#{name},#{phone},#{email},#{addr})
+	</insert>
+	<insert id="personJoin" parameterType="MemberDTO">
+		insert into person (birth,gender)
+		values(#{birth},#{gender})
+	</insert>
+
 </mapper>
   

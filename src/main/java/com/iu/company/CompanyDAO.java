@@ -17,32 +17,32 @@ public class CompanyDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int delete(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(MemberDTO memberDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"companyDelete", memberDTO);
 	}
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(NAMESPACE+"companyUpdate", memberDTO);
 	}
 
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"companyLogin", memberDTO);
 	}
 
 	@Override
 	public MemberDTO idCheck(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
+	}
+	
+	@Override
+	public MemberDTO MyPage(String id) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"companyMyPage", id);
 	}
 
 }

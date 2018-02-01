@@ -14,6 +14,7 @@ public class FaqDAO {
 	
 	
 	public int insert(FaqDTO faqDTO) throws Exception{
+		return 0;
 	}
 	
 	
