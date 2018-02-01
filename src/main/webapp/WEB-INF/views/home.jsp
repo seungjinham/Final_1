@@ -12,5 +12,17 @@
 <a href="faq/faqList">FAQ</a>
 <h1>HD</h1>
 
+
+
+
+
+
+
+
+
+
+
+<a href="company/companyMyPage">companyMyPage</a>
+
 </body>
 </html>
