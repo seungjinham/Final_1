@@ -20,6 +20,9 @@ public class PersonController {
 	private PersonService personService;
 
 
+	//=======================   Person (개인회원)  =======================
+
+
 	//회원가입
 	@RequestMapping(value="personJoin", method=RequestMethod.GET)
 	public void personJoin(){}
@@ -74,12 +77,35 @@ public class PersonController {
 		mv.setViewName("common/result");
 		return mv;
 	}
-	
+
 	
 	//MyPage
 	@RequestMapping(value="personMyPage")
 	public void personMyPage(HttpSession session) throws Exception{}
 
+	
+	
+	//=======================   Seller (판매자)  ========================
+	
+	@RequestMapping(value="sellerWrite", method=RequestMethod.GET)
+	public void sellerWrite1() throws Exception{
+		
+	}
+	
+	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
+	public void sellerWrite() throws Exception{
+		
+	}
+	
+	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
+	public void sellerUpdate() throws Exception{
+		
+	}
+	
+	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
+	public String sellerDelete() throws Exception{
+		return "redirect:./personMyPage";
+	}
 }
 
 

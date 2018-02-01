@@ -22,7 +22,17 @@ public class FaqService {
 		return faqDAO.selectList(listData);
 	}
 	
+	public int delete(int num) throws Exception{
+		return faqDAO.delete(num);
+	}
 	
+	public int update(FaqDTO faqDTO) throws Exception{
+		return faqDAO.update(faqDTO);
+	}
+	
+	public FaqDTO selectOne(int num) throws Exception{
+		return faqDAO.selectOne(num);
+	}
 	
 	
 }

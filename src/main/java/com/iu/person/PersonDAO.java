@@ -15,6 +15,8 @@ public class PersonDAO implements MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="PersonMapper.";
 
+	//=======================   Person (개인회원)  =======================
+	
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
 		sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
@@ -45,5 +47,20 @@ public class PersonDAO implements MemberDAO {
 	public MemberDTO MyPage(String id) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"personMyPage", id);
 	}
+
+	//=======================   Seller (판매자)  ========================
+	
+	public int sellerWrite(MemberDTO memberDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"personDelete", memberDTO);
+	}
+	
+	public int sellerUpdate(MemberDTO memberDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"personUpdate", memberDTO);
+	}
+	
+	public int sellerDelete(String id) throws Exception {
+		return sqlSession.delete(id);
+	}
+
 
 }
