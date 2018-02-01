@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>comMyPage</h1>
+	<p>${companyDTO.id }</p>
+	<p>${companyDTO.c_name }</p>
+	<p>${companyDTO.c_num }</p>
+	<p>${companyDTO.pw }</p>
+	<p>${companyDTO.name }</p>
+	<p>${companyDTO.phone }</p>
+	<p>${companyDTO.email }</p>
+	<p>${companyDTO.addr }</p>
+	<p>${companyDTO.job }</p>
 
 </body>
 </html>
