@@ -18,6 +18,12 @@ public class CompanyController {
 	@Inject
 	private CompanyService companyService;
 	
+	@RequestMapping(value="companyMyPage")
+	public ModelAndView companyMypage() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String id="truly412";
+		return mv;
+	}
 	
 	//회원가입
 	@RequestMapping(value="companyJoin", method=RequestMethod.GET)
