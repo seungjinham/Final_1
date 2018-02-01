@@ -16,11 +16,7 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-<<<<<<< HEAD
 		return companyDAO.join(memberDTO);
-=======
-		return 0;
->>>>>>> jjh
 	}
 
 	@Override

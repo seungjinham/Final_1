@@ -17,22 +17,13 @@ public class CompanyDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-<<<<<<< HEAD
 		sqlSession.insert(NAMESPACE+"memberInsert", memberDTO);
 		return sqlSession.insert(NAMESPACE+"companyInsert", memberDTO);
 	}
 
 	@Override
-	public int delete(String id) throws Exception {
-		return 0;
-=======
-		return 0;
-	}
-
-	@Override
 	public int delete(MemberDTO memberDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"companyDelete", memberDTO);
->>>>>>> jjh
 	}
 
 	@Override
