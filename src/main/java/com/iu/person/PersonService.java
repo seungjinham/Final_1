@@ -17,10 +17,7 @@ public class PersonService implements MemberService {
 	public int join(MemberDTO memberDTO) throws Exception {
 		return personDAO.join(memberDTO);
 	}
-	public int memberJoin(MemberDTO memberDTO) throws Exception{
-		return personDAO.memberJoin(memberDTO);
-	}
-
+	
 	@Override
 	public int delete(MemberDTO memberDTO) throws Exception {
 		return personDAO.delete(memberDTO);
