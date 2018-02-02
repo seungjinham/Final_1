@@ -18,6 +18,10 @@
 	<p>BIRTH : ${member.birth}</p>
 	<p>GENDER : ${member.gender}</p>
 
-	<a href="sellWrite">판매자 등록하기</a>
+	<hr>
+	<h3>판매자</h3>
+	<p><a href="./sellerWrite">판매자 등록하기</a></p>
+	<p><a href="./sellerView">판매자 정보보기</a></p>
+	<p><a href="./seller">거래내역</a></p>
 </body>
 </html>

@@ -12,9 +12,6 @@ public class PersonService implements MemberService {
 	
 	@Inject
 	private PersonDAO personDAO;
-
-
-	//=======================   Person (개인회원)  =======================
 	
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
@@ -44,25 +41,6 @@ public class PersonService implements MemberService {
 	@Override
 	public MemberDTO MyPage(String id) throws Exception {
 		return personDAO.MyPage(id);
-	}
-
-	//=======================   Seller (판매자)  ========================
-	
-	public int sellerWrite(MemberDTO memberDTO) throws Exception {
-		return personDAO.sellerWrite(memberDTO);
-	}
-	
-	public int sellerUpdate(MemberDTO memberDTO) throws Exception {
-		return personDAO.sellerUpdate(memberDTO);
-	}
-	
-	public int sellerDelete(String id) throws Exception {
-		return personDAO.sellerDelete(id);
-	}
-	
-	
-	public MemberDTO sellerOne(String id) throws Exception{
-		return personDAO.sellerOne(id);
 	}
 
 }

@@ -14,6 +14,7 @@ import com.iu.member.MemberDTO;
 import com.iu.person.PersonDTO;
 import com.iu.person.PersonService;
 import com.iu.seller.SellerDTO;
+import com.iu.seller.SellerService;
 
 @Controller
 @RequestMapping(value="/person/**")
@@ -21,10 +22,10 @@ public class PersonController {
 
 	@Inject
 	private PersonService personService;
-
+	@Inject
+	private SellerService sellerService;
 
 	//=======================   Person (개인회원)  =======================
-
 
 	//회원가입
 	@RequestMapping(value="personJoin", method=RequestMethod.GET)
@@ -102,7 +103,7 @@ public class PersonController {
 	public ModelAndView sellerWrite(SellerDTO sellerDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		int result = personService.sellerWrite(sellerDTO);
+		int result = sellerService.sellerWrite(sellerDTO);
 		
 		String message = "판매자가 등록에 실패하였습니다";
 		String path = "./personMypage";
@@ -121,20 +122,20 @@ public class PersonController {
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
 	public Model sellerUpdate(HttpSession session, Model model) throws Exception{
 		String id = ((MemberDTO) session.getAttribute("member")).getId();
-		SellerDTO sellerDTO = (SellerDTO) personService.sellerOne(id);		
+		SellerDTO sellerDTO = (SellerDTO) sellerService.sellerOne(id);		
 		model.addAttribute("seller", sellerDTO);
 		return model;
 	}
 	
-	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
+	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
 	public void sellerUpdate(SellerDTO sellerDTO) throws Exception{
-		personService.sellerUpdate(sellerDTO);
+		sellerService.sellerUpdate(sellerDTO);
 	}
 	
 	//판매자 정보 삭제
 	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
 	public String sellerDelete(String id, RedirectAttributes rd) throws Exception{
-		int result = personService.sellerDelete(id);
+		int result = sellerService.sellerDelete(id);
 		String message="삭제에 실패하였습니다";
 		
 		if(result>0){
