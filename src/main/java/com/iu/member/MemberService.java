@@ -16,8 +16,5 @@ public interface MemberService {
 	
 	//중복된 ID Check
 	public MemberDTO idCheck(String id) throws Exception;
-	
-	//MyPage
-	public MemberDTO MyPage(String id) throws Exception;
 
 }

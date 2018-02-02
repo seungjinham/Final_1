@@ -40,11 +40,7 @@ public class PersonService implements MemberService {
 	public MemberDTO idCheck(String id) throws Exception {
 		return personDAO.idCheck(id);
 	}
-	
-	@Override
-	public MemberDTO MyPage(String id) throws Exception {
-		return personDAO.MyPage(id);
-	}
+
 
 	//=======================   Seller (판매자)  ========================
 	

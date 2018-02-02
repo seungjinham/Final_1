@@ -44,11 +44,20 @@ public class PersonController {
 		mv.setViewName("common/result");
 		return mv;
 	}
-
-
-	//회원수정
-	@RequestMapping(value="personUpdate", method=RequestMethod.GET)
-	public void personUpdate(){}
+	
+	//회원가입 시 IDCheck
+	@RequestMapping(value="personIdCheck", method=RequestMethod.GET)
+	public ModelAndView personIdCheck(String id) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = personService.idCheck(id);
+		if(memberDTO == null){
+			mv.addObject("result", "사용 가능한 ID 입니다.");
+		}else{
+			mv.addObject("result", "중복된 ID 입니다.");
+		}
+		mv.setViewName("common/joinResult");
+		return mv;
+	}
 
 	//회원탈퇴
 	@RequestMapping(value="personDelete")
@@ -80,8 +89,30 @@ public class PersonController {
 
 	
 	//MyPage
-	@RequestMapping(value="personMyPage")
+	@RequestMapping(value="personMyPage", method=RequestMethod.GET)
 	public void personMyPage(HttpSession session) throws Exception{}
+	
+	//회원수정
+	@RequestMapping(value="pseronMyPage", method=RequestMethod.POST)
+	public ModelAndView personUpdate(PersonDTO personDTO, HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = personService.update(personDTO);
+		
+		String message = "Update Fail";
+		String path = "./personMyPage";
+
+		if(result>0){
+			session.setAttribute("member", personDTO);
+			message = "Updae Success";
+			path = "./personMyPage";
+		}
+		mv.addObject("message", message);
+		mv.addObject("path", path);
+		mv.setViewName("common/result");
+		return mv;
+	}
+
+	
 
 	
 	
