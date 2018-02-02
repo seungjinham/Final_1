@@ -7,7 +7,7 @@ import com.iu.company.CompanyDTO;
 public class RecruitDTO extends CompanyDTO{
 	private int num;
 	private String id;
-	private String	title;
+	private String title;
 	private String deadline;
 	private String people;
 	private String gender;
