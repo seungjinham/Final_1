@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>판매자 등록</h1>
 	<form id="frm" name="frm" action="sellerWrite" method="post" enctype="multipart/form-data">
 		<p id="photo">프로필 사진 : <span id="del" title="photo">삭제</span></p>
 		<input type="hidden" name="id" value="${member.id}">

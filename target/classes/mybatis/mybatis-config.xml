@@ -13,6 +13,7 @@
   		<typeAlias type="com.iu.recruit.RecruitDTO" alias="RecruitDTO"/>
   		<typeAlias type="com.iu.recruit.RecruitSearchDTO" alias="RecruitSearchDTO"/>
   		<typeAlias type="com.iu.scrap_apply.Scrap_ApplyDTO" alias="Scrap_ApplyDTO"/>
+  		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
   	</typeAliases>
   
   </configuration>
