@@ -11,6 +11,7 @@
   		<typeAlias type="com.iu.faq.FaqDTO" alias="FaqDTO"/>
   		<typeAlias type="com.iu.util.ListData" alias="ListData"/>
   		<typeAlias type="com.iu.recruit.RecruitDTO" alias="RecruitDTO"/>
+  		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
   	</typeAliases>
   
   </configuration>
