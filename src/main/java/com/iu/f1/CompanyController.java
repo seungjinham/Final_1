@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
+import com.iu.recruit.RecruitService;
 
 @Controller
 @RequestMapping(value="/company/**")

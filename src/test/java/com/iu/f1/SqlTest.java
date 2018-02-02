@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitService;
+import com.iu.scrap_apply.Scrap_ApplyDTO;
+import com.iu.scrap_apply.Scrap_ApplyService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/*-context.xml"})
 public class SqlTest {
@@ -17,30 +18,36 @@ public class SqlTest {
 	private SqlSession sqlSession;
 	@Inject
 	private RecruitService recruitService;
+	@Inject
+	private Scrap_ApplyService scrap_applyService;
 	
 	@Test
 	public void test() {
 		System.out.println(sqlSession);
-		RecruitDTO recruitDTO = new RecruitDTO();
-		recruitDTO.setTitle("testÇÕ´Ï´Ù");
-		recruitDTO.setId("tool");
-		recruitDTO.setPeople("1");
-		recruitDTO.setGender("¿©ÀÚ");
-		recruitDTO.setAge("20~25");
-		recruitDTO.setSchool("¼®»ç¼ÒÁöÀÚ");
-		recruitDTO.setSpecial("Á¤º¸º¸¾È±â»ç");
-		recruitDTO.setSalary("300");
-		recruitDTO.setW_date("Null");
-		recruitDTO.setW_day("Null");
-		recruitDTO.setW_time("Null");
-		recruitDTO.setJob("°ü¸®ÀÚ");
-		recruitDTO.setWork("°üÁ¦");
-		recruitDTO.setBenefit("Null");
-		recruitDTO.setContents("°³¹ß");
-		recruitDTO.setFname("Null");
-		recruitDTO.setOname("Null");
-		recruitDTO.setDeadline("2018-06-06");
-		recruitService.update(recruitDTO);
+//		RecruitDTO recruitDTO = recruitService.selectOne(1);
+//		System.out.println(recruitDTO.getId());
+//		System.out.println(recruitDTO.getFname());
+//		System.out.println(recruitDTO.getOname());
+		
+//		String[] arr = {"ê°•ë‚¨êµ¬", "ì„œì´ˆêµ¬", "ë™ì‘êµ¬"};
+//		RecruitSearchDTO rs = new RecruitSearchDTO();
+//		rs.setAddr(arr);
+//		rs.setGender("male");
+//		List<RecruitDTO> ar = recruitService.selectList(rs);
+//		for(int i=0; i<ar.size(); i++) {
+//			System.out.println(ar.get(i).getId());
+//			System.out.println(ar.get(i).getFname());
+//			System.out.println(ar.get(i).getOname());
+//		}
+		
+		Scrap_ApplyDTO sa = new Scrap_ApplyDTO();
+		sa.setNum(1);
+		sa.setM_id("messi");
+		sa.setC_id("CJ");
+		sa.setTitle("ì •ê·œì§ ì‹ ì…ì‚¬ì› ê³µì±„ëª¨ì§‘");
+		
+		int result = scrap_applyService.applyInsert(sa);
+		if(result>0) System.out.println("ì…ë ¥ì„±ê³µ");
 	}
 
 }
