@@ -18,5 +18,6 @@
 	<p>BIRTH : ${member.birth}</p>
 	<p>GENDER : ${member.gender}</p>
 
+	<a href="sellWrite">판매자 등록하기</a>
 </body>
 </html>

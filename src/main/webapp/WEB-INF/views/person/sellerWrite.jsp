@@ -8,13 +8,28 @@
 </head>
 <body>
 	<form id="frm" name="frm" action="sellerWrite" method="post" enctype="multipart/form-data">
+		<p id="photo">프로필 사진 : <span id="del" title="photo">삭제</span></p>
 		<input type="hidden" name="id" value="${member.id}">
-		<p>NAME : <input type="text" name="name" value="${member.name}"></p>
-		<p>EMAIL : <input type="email" name="email" value="${member.email}"></p>
-		<p>PHONE : <input type="text" name="phone" value="${member.phone}"></p>
-		<p>AGE : <input type="text" name="age" value="${member.age}"></p>
-		<p id="photo">Photo : <span id="del" title="photo">${member.oname} X</span></p>
-		<input type="button" value="Update" id="btn">
+		<p>이름 : <input type="text" name="name" value="${member.name}"></p>
+		<p>이메일 : <input type="email" name="email" value="${member.email}"></p>
+		<p>전화번호 : <input type="text" name="phone" value="${member.phone}"></p>
+		
+		<p>
+			카테고리<input type="text" name="category">
+			<select>
+				<option>디자인</option>
+				<option>IT·개발</option>
+				<option></option>
+			</select>
+		</p>
+		<p>제목 : <input type="text" name="phone"></p>
+		<p>제목 : <input type="text" name="phone"></p>
+		<p>제목 : <input type="text" name="phone"></p>		
+		
+		<p>제목 : <input type="text" name="phone"></p>
+		<p>내용 : <input type="text" name="phone"></p>
+
+		<input type="button" value="Write" id="btn">
 	</form>
 </body>
 </html>

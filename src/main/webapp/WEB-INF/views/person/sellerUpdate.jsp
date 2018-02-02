@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+		<p id="photo">프로필 사진 : <span id="del" title="photo">${seller.oname} 삭제</span></p>
+		<input type="hidden" name="id" value="${member.id}">
+		<p>이름 : <input type="text" name="name" value="${member.name}"></p>
+		<p>이메일 : <input type="email" name="email" value="${member.email}"></p>
+		<p>대표 전화번호 : <input type="text" name="phone" value="${member.phone}"></p>
+		
+		<p>제목 : <input type="text" name="phone" value="${seller.title}"></p>
+		<p>내용 : <input type="text" name="phone" value="${member.phone}"></p>
+		<p>제목 : <input type="text" name="phone" value="${member.phone}"></p>
+		<p>제목 : <input type="text" name="phone" value="${member.phone}"></p>
+		<p>제목 : <input type="text" name="phone" value="${member.phone}"></p>
+		<p>제목 : <input type="text" name="phone" value="${member.phone}"></p>
 </body>
 </html>
