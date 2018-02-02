@@ -59,5 +59,10 @@ public class PersonService implements MemberService {
 	public int sellerDelete(String id) throws Exception {
 		return personDAO.sellerDelete(id);
 	}
+	
+	
+	public MemberDTO sellerOne(String id) throws Exception{
+		return personDAO.sellerOne(id);
+	}
 
 }

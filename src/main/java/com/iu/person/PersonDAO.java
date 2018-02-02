@@ -51,15 +51,19 @@ public class PersonDAO implements MemberDAO {
 	//=======================   Seller (판매자)  ========================
 	
 	public int sellerWrite(MemberDTO memberDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"personDelete", memberDTO);
+		return sqlSession.delete(NAMESPACE+"sellerWrite", memberDTO);
 	}
 	
 	public int sellerUpdate(MemberDTO memberDTO) throws Exception {
-		return sqlSession.update(NAMESPACE+"personUpdate", memberDTO);
+		return sqlSession.update(NAMESPACE+"sellerUpdate", memberDTO);
 	}
 	
 	public int sellerDelete(String id) throws Exception {
-		return sqlSession.delete(id);
+		return sqlSession.delete(NAMESPACE+"sellerDelete",id);
+	}
+	
+	public MemberDTO sellerOne(String id) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"sellerOne", id);
 	}
 
 
