@@ -4,7 +4,94 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>Person Join</title>
+<script type="text/javascript">
+	$(function() {
+		
+		//ID 중복 확인
+		$("#id").keyup(function() {
+			var id = $(this).val();
+			
+			//id 생성 조건
+			var patt1 = /[a-z]/g; //영어
+			var lower = patt1.test(id);
+			var patt2 = /[0-9]/g; //숫자
+			var number = patt2.test(id);
+			
+			if(lower==true && number==true && id.length>=6 && id.length<=16){
+			$.ajax({
+				url : "./personIdCheck",
+				type : "GET",
+				data : {
+					id : id
+				},
+				success : function(data) {
+					if($.trim(data)  ==  "사용 가능한 ID 입니다."){
+						$("#idCheck").css('color', 'blue');
+						$("#idCheck").css('font-size', '12px');
+					}else{
+						$("#idCheck").css('color', 'red');
+						$("#idCheck").css('font-size', '12px');
+					}
+					$("#idCheck").html(data);
+				}
+			});
+			}else{
+				$("#idCheck").html("ID는 6~16자의 영문, 숫자만 사용 가능합니다.");
+				$("#idCheck").css('color', 'red');
+				$("#idCheck").css('font-size', '12px');
+			}
+		});
+		
+		//비밀번호 설정
+		$("#pw").blur(function() {
+			var pw = $(this).val();
+			
+			//PW 생성 조건
+			var patt1 = /[A-Z]/g; //대문자
+			var upper = patt1.test(pw);
+			var patt2 = /[a-z]/g; //소문자
+			var lower = patt2.test(pw);
+			var patt3 = /[0-9]/g; //숫자
+			var number = patt3.test(pw);
+			var patt4 = /[~!@#$%^&*=+-_,.`]/g; //특수문자
+			var special = patt4.test(pw);
+			
+			if(upper==true && lower==true && number==true && special==true && pw.length>=6 && pw.length<=16){
+				$("#pwCheck").html("사용 가능한 비밀번호 입니다.");
+				$("#pwCheck").css('color', 'blue');
+				$("#pwCheck").css('font-size', '12px');
+				
+			}else{
+				$("#pwCheck").html("비밀번호는 6~16자의 대/소문자, 숫자, 특수문자만 사용 가능합니다.");
+				$("#pwCheck").css('color', 'red');
+				$("#pwCheck").css('font-size', '12px');
+			}
+		});
+		
+		//비밀번호 확인
+		$("#pw2").blur(function() {
+			var pw1 = $("#pw").val(); 
+			var pw2 = $(this).val();
+			if(pw1 == pw2){
+				$("#pwCheck2").html("비밀번호가 일치합니다.");
+				$("#pwCheck2").css('color', 'blue');
+				$("#pwCheck2").css('font-size', '12px');
+			}else{
+				$("#pwCheck2").html("비밀번호가 일치하지 않습니다.");
+				$("#pwCheck2").css('color', 'red');
+				$("#pwCheck2").css('font-size', '12px');
+			}
+		});
+		
+	});
+</script>
+<style type="text/css">
+#pw{
+	font-size: 
+}
+</style>
 </head>
 <body>
 
@@ -12,8 +99,11 @@
 
 	<form action="./personJoin" method="post">
 	<p>ID : <input type="text" name="id" id="id"></p>
-	<div id="result"></div>
-	<p>PW : <input type="password" name="pw"></p>
+	<div id="idCheck"></div>
+	<p>PW : <input type="password" name="pw" id="pw"></p>
+	<span id="pwCheck"></span>
+	<p>PW : <input type="password" name="pw2"></p>
+	<span id="pwCheck2"></span>
 	<p>NAME : <input type="text" name="name"></p>
 	<p>PHONE : <input type="text" name="phone"></p>
 	<p>EMAIL : <input type="text" name="email"></p>

@@ -3,7 +3,7 @@
 
 <mapper namespace="PersonMapper">
 
-	<!-- Join -->
+	<!-- 회원가입 -->
 	<insert id="memberJoin" parameterType="MemberDTO">
 		insert into member values(#{id},#{pw},#{name},#{phone},#{email},#{addr},#{job})
 	</insert>
@@ -11,11 +11,38 @@
 		insert into person values(#{id},#{birth},#{gender})
 	</insert>
 
-	<!-- Login -->
+	<!-- ID Check -->
+	<select id="personIdCheck" parameterType="String" resultType="MemberDTO">
+		select id from member where id=#{id}
+	</select>
+	
+	<!-- 로그인 -->
 	<select id="personLogin" parameterType="MemberDTO" resultType="PersonDTO">
 		select m.*,p.* from member m, person p where m.id=#{id} and m.pw=#{pw} and m.id=p.id(+)
 	</select>
 	
+	<!-- 회원수정 -->
+	<update id="memberUpdate" parameterType="MemberDTO">
+		update member
+		<set>
+		pw=#{pw},
+		name=#{name},
+		phone=#{phone},
+		email=#{email},
+		addr=#{addr}
+		</set>
+		where id=#{id}
+	</update>
+	<update id="personUpdate" parameterType="MemberDTO">
+		update person
+		<set>
+		birth=#{birth},
+		gender=#{gender}
+		</set>
+		where id=#{id}
+	</update>
+	
+	<!-- 회원탈퇴 -->
 	
 
 </mapper>

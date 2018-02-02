@@ -30,6 +30,7 @@ public class PersonDAO implements MemberDAO {
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
+		sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);
 		return sqlSession.update(NAMESPACE+"personUpdate", memberDTO);
 	}
 
@@ -42,10 +43,6 @@ public class PersonDAO implements MemberDAO {
 	public MemberDTO idCheck(String id) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"personIdCheck", id);
 	}
-	
-	@Override
-	public MemberDTO MyPage(String id) throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"personMyPage", id);
-	}
+
 
 }

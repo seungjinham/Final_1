@@ -37,10 +37,5 @@ public class CompanyService implements MemberService {
 	public MemberDTO idCheck(String id) throws Exception {
 		return null;
 	}
-	
-	@Override
-	public CompanyDTO MyPage(String id) throws Exception {
-		return companyDAO.MyPage(id);
-	}
 
 }

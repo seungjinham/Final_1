@@ -41,9 +41,4 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
 	
-	@Override
-	public CompanyDTO MyPage(String id) throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"myPage", id);
-	}
-
 }
