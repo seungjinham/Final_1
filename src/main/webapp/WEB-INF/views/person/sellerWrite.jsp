@@ -19,8 +19,8 @@
 			카테고리<input type="text" name="category">
 			<select>
 				<option>디자인</option>
-				<option>IT·개발</option>
-				<option></option>
+				<option>IT & 프로그래밍</option>
+				<option>번역 & 통역</option>
 			</select>
 		</p>
 		<p>제목 : <input type="text" name="phone"></p>
