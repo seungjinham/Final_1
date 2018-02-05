@@ -29,8 +29,7 @@
 	
 	<a href="recruit/recruitList">RecruitList</a>
 	
-	<a href="recruit/recruitView?num=8">RecruitView</a>
-	
+
 
 </body>
 </html>

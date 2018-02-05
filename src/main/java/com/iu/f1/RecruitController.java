@@ -26,7 +26,7 @@ public class RecruitController {
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
 	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
 		List<RecruitDTO> result_ar = recruitService.selectList(recruitSearchDTO);
-		
+		model.addAttribute("list", result_ar);
 		return "recruit/recruitList";
 	}
 	
@@ -36,6 +36,6 @@ public class RecruitController {
 		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
 		model.addAttribute("recruit", recruitDTO);
 		model.addAttribute("company", companyDTO);
-		return "recruit/recruitDetailView";
+		return "recruit/recruitView";
 	}
 }

@@ -12,7 +12,7 @@ import com.iu.apply.ApplyService;
 import com.iu.supporter.SupporterService;
 
 @Controller
-@RequestMapping(value="apply/**", method=RequestMethod.GET)
+@RequestMapping(value="apply/**")
 public class ApplyController {
 	@Inject
 	private ApplyService applyService;

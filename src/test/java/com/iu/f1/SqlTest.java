@@ -1,5 +1,7 @@
 package com.iu.f1;
 
+import static org.junit.Assert.assertNotNull;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -21,7 +23,7 @@ public class SqlTest {
 	
 	@Test
 	public void test() {
-		System.out.println(sqlSession);
+		System.out.println("sqlSession");
 //		RecruitDTO recruitDTO = recruitService.selectOne(1);
 //		System.out.println(recruitDTO.getId());
 //		System.out.println(recruitDTO.getFname());
@@ -38,7 +40,7 @@ public class SqlTest {
 //			System.out.println(ar.get(i).getOname());
 //		}
 		
-		
+		assertNotNull(sqlSession);
 
 	}
 
