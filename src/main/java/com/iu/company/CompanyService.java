@@ -37,5 +37,9 @@ public class CompanyService implements MemberService {
 	public MemberDTO idCheck(String id) throws Exception {
 		return null;
 	}
-
+	
+	public CompanyDTO selectOne(String id) {
+		CompanyDTO companyDTO = companyDAO.selectOne(id);
+		return companyDTO;
+	}
 }

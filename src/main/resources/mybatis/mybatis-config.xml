@@ -12,8 +12,10 @@
   		<typeAlias type="com.iu.util.ListData" alias="ListData"/>
   		<typeAlias type="com.iu.recruit.RecruitDTO" alias="RecruitDTO"/>
   		<typeAlias type="com.iu.recruit.RecruitSearchDTO" alias="RecruitSearchDTO"/>
-  		<typeAlias type="com.iu.scrap_apply.Scrap_ApplyDTO" alias="Scrap_ApplyDTO"/>
+  		<typeAlias type="com.iu.scrap.ScrapDTO" alias="ScrapDTO"/>
+  		<typeAlias type="com.iu.apply.ApplyDTO" alias="ApplyDTO"/>
   		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
+  		<typeAlias type="com.iu.util.ListData" alias="listData"/>
   	</typeAliases>
   
   </configuration>

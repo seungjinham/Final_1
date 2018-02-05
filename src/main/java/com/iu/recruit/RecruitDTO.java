@@ -1,7 +1,5 @@
 package com.iu.recruit;
 
-import java.sql.Date;
-
 import com.iu.company.CompanyDTO;
 
 public class RecruitDTO extends CompanyDTO{
@@ -24,6 +22,7 @@ public class RecruitDTO extends CompanyDTO{
 	private String contents;
 	private String fname;
 	private String oname;
+	private String addr;
 	
 	public int getNum() {
 		return num;
@@ -175,5 +174,16 @@ public class RecruitDTO extends CompanyDTO{
 
 	public void setOname(String oname) {
 		this.oname = oname;
+	}
+
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		if(addr==null) {
+			this.addr = "null";
+		}
+		this.addr = addr;
 	}
 }
