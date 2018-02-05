@@ -11,6 +11,7 @@
 <a href="../scrap/scrapInsert">Scrap</a>
 <a href="../scrap/scrapDelete">ScrapDelete</a>
 
+<h1> 공고 List</h1>
 <table border="1">
 <tr><th>지역</th><th>모집제목</th><th>급여</th><th>근무시간</th><th>마감기한</th></tr>
 
