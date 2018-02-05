@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -148,58 +149,23 @@
 <h1>Person Join</h1>
 
 	<form action="./personJoin" method="post">
-		<p>
-			ID : <input type="text" name="id" id="id" placeholder="6~16자 영문,숫자">
-		</p>
-		<div id="idCheck"></div>
-		<p>
-			PW : <input type="password" name="pw" id="pw"
-				placeholder="6~16자 대/소문자,숫자,특수문자">
-		</p>
-		<span id="pwCheck"></span>
-		<p>
-			PW : <input type="password" readonly="readonly" name="pw2" id="pw2">
-		</p>
-		<span id="pwCheck2"></span>
-		<p>
-			NAME : <input type="text" name="name" id="name">
-		</p>
-		<span id="nameCheck"></span>
-		<p>
-			PHONE : <select>
-				<option value="010">010</option>
-				<option value="011">011</option>
-				<option value="016">016</option>
-				<option value="017">017</option>
-				<option value="018">018</option>
-				<option value="019">019</option>
-			</select> <input type="text" name="phone" id="phone"> - <input
-				type="text" name="phone" id="phone">
-		</p>
-		<p>
-			EMAIL : <input type="text" name="email" id="email">
-		</p>
-		<p>
-			ADDR 
-			<input type="text" id="sample6_postcode" placeholder="우편번호" name="addr">
-			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br> 
-			<input type="text" id="sample6_address" placeholder="주소" name="addr"> 
-			<input type="text" id="sample6_address2" placeholder="상세주소" name="addr">
-		</p>
-		<p>
-			BIRTH : <input type="date" name="birth">
-		</p>
-		<p>
-			GENDER : M<input type="radio" value="M" name="gender"> W<input
-				type="radio" value="W" name="gender">
-		</p>
-		<p>
-			<input type="hidden" name="job" value="P">
-		</p>
-		<p>
-			<button>JOIN</button>
-		</p>
+	<p>ID : <input type="text" name="id" id="id"></p>
+	<div id="idCheck"></div>
+	<p>PW : <input type="password" name="pw" id="pw"></p>
+	<span id="pwCheck"></span>
+	<p>PW : <input type="password" readonly="readonly" name="pw2" id="pw2"></p>
+	<span id="pwCheck2"></span>
+	<p>NAME : <input type="text" name="name" id="name"></p>
+	<span id="nameCheck"></span>
+	<p>PHONE : <input type="text" name="phone" id="phone"></p>
+	<p>EMAIL : <input type="text" name="email" id="email"></p>
+	<p>ADDR : <input type="text" name="addr"></p>
+	<p>BIRTH : <input type="text" name="birth"></p>
+	<p>GENDER : M<input type="radio" value="M" name="gender">
+			    W<input type="radio" value="W" name="gender"> </p>
+	<p><input type="hidden" name="job" value="P"></p>
+	<p><button>JOIN</button></p>
 	</form>
-
+	
 </body>
 </html>
