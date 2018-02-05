@@ -26,8 +26,8 @@ public class RecruitService {
 	}
 	
 	public List<RecruitDTO> selectList(RecruitSearchDTO recruitSearchDTO) {
-		List<String> checkVar = new ArrayList<>();
-		List<String[]> checkArray = new ArrayList<>();
+		List<String> checkVar = new ArrayList<String>();
+		List<String[]> checkArray = new ArrayList<String[]>();
 		List<RecruitDTO> selectList_result;
 		
 		boolean check_var=false;
