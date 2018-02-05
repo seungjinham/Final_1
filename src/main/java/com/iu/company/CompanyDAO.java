@@ -1,5 +1,7 @@
 package com.iu.company;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -7,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
+import com.iu.recruit.RecruitDTO;
+import com.iu.scrap.ScrapDTO;
 
 @Repository
 public class CompanyDAO implements MemberDAO {
@@ -41,4 +45,11 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
 	
+	public CompanyDTO selectOne(String id) {
+		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
+	}
+	
+	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
+		return sqlSession.selectList(NAMESPACE+"selectList", recruit_ar);
+	}
 }
