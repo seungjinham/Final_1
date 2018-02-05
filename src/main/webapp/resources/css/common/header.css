@@ -1,0 +1,258 @@
+@CHARSET "UTF-8";
+
+#header *, #footer *, .sidebar * {
+	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim
+}
+
+#wrap {
+	height: 100%
+}
+
+#container {
+	min-height: 100%;
+	margin: -80px 0 -250px
+}
+
+/* Header */
+#header {
+	*z-index: 1001;
+	position: relative;
+	height: 80px
+}
+
+.hgroup {
+	position: relative;
+	*display: inline-block;
+	*zoom: 1;
+	z-index: 7000
+}
+
+.hgroup .inbox {
+	position: relative;
+	width: 1080px;
+	height: 80px;
+	margin: 0 auto;
+	z-index: 555
+}
+
+/* navigation */
+.hgroup .logo {
+	position: absolute;
+	top: 0;
+	left: 10px
+}
+
+.hgroup .logo a {
+	display: block;
+	width: 156px;
+	height: 68px;
+	padding-top: 12px
+}
+
+.hgroup .logo a span {
+	display: block;
+	padding-top: 48px;
+	background-image: url('../images/common/logo.jpg');
+	font: 0/0 dotum;
+	color: transparent
+}
+
+.nvalinks {
+	position: absolute;
+	top: 19px;
+	right: 10px
+}
+
+.nvalinks a:first-child {
+	padding-left: 0;
+	background: none
+}
+
+.nvalinks a:hover {
+	text-decoration: underline
+}
+
+a.nvalinks-rev {
+	margin-left: 18px;
+	padding: 0 18px;
+	background: none;
+	border: 1px solid #fff;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 16px;
+	letter-spacing: -0.03em;
+	line-height: 38px;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s
+}
+
+a.nvalinks-rev:hover {
+	background: #00b956;
+	border: 1px solid #00b956;
+	text-decoration: none
+}
+
+.navigation {
+	overflow: hidden;
+	height: 80px;
+	padding-left: 197px
+}
+
+.navigation li {
+	float: left;
+	text-align: center
+}
+
+.navigation li a {
+	display: block;
+	margin: 0 27px;
+	height: 80px;
+	line-height: 78px;
+	font-size: 18px;
+	letter-spacing: -0.03em;
+	color: #000
+}
+
+.navi-sublist {
+	display: none;
+	z-index: 9000;
+	position: absolute;
+	padding-top: 19px
+}
+
+.navi-sublist.on {
+	display: block
+}
+
+.navi-sublist li {
+	float: none;
+	text-align: left
+}
+
+.navi-sublist li a {
+	display: block;
+	width: auto;
+	height: auto;
+	line-height: 34px;
+	font-size: 16px;
+	color: #3c3c3c;
+	letter-spacing: -0.03em
+}
+
+.navi-sublist li a:hover {
+	color: #00b956
+}
+
+#header.on .hgroup {
+	height: 79px;
+	border-bottom: 1px solid #eee
+}
+
+#header.on .hgroup .logo a span {
+	background-position: 0 -58px
+}
+
+
+
+#header.on .nvalinks a:first-child {
+	padding-left: 0;
+	background: none
+}
+
+#header.on .nvalinks a:hover {
+	color: #171717
+}
+
+#header.on a.nvalinks-rev {
+	background: none;
+	border: 1px solid #00b956;
+	color: #00b956
+}
+
+#header.on a.nvalinks-rev:hover {
+	background: #00b956;
+	color: #fff
+}
+
+#header.on .navigation>li>a {
+	color: #171717
+}
+
+#header.on .navigation>li>a.on {
+	height: 78px;
+	border-bottom: 2px solid #00b956;
+	color: #00b956
+}
+
+#header.on .navi-sublist {
+	display: block
+}
+
+#header.sub .hgroup {
+	background: #fff;
+	border-bottom: 1px solid #eee
+}
+
+#header.sub .hgroup .inbox {
+	height: 79px
+}
+
+#header.sub .hgroup .logo a span {
+	background-position: 0 -58px
+}
+
+#header.sub .nvalinks a {
+	background: url('../images/main/bg_dot02.png') no-repeat 6px center;
+	color: #636363
+}
+
+#header.sub .nvalinks a:first-child {
+	padding-left: 0;
+	background: none
+}
+
+#header.sub .nvalinks a:hover {
+	color: #171717
+}
+
+#header.sub a.nvalinks-rev {
+	background: none;
+	border: 1px solid #00b956;
+	color: #00b956
+}
+
+#header.sub a.nvalinks-rev:hover {
+	background: #00b956;
+	color: #fff
+}
+
+#header.sub .navigation li a {
+	color: #171717
+}
+
+#header.sub .navi-sublist li a:hover {
+	color: #00b956
+}
+
+.nav-sub-wrap {
+	overflow: hidden;
+	height: 0;
+	z-index: 5555;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 80px;
+	border-bottom: 1px solid #e2e2e2;
+	-webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	-moz-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	-o-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1)
+}
+
+.nav-sub-wrap.on {
+	height: 222px;
+	background: #fff;
+	border-bottom: 1px solid #e2e2e2
+}

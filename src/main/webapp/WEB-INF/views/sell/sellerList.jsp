@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>SellerList</h1>
 	<h3>catagory : ${category}</h3>
 </body>

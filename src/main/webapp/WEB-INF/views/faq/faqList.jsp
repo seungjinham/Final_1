@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../resources/css/faq/faq.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>
 	<h1>FAQ</h1>
 	
 	<table>
