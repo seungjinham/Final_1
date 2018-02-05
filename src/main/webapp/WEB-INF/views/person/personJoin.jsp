@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,8 +22,7 @@
 					var patt2 = /[0-9]/g; //숫자
 					var number = patt2.test(id);
 
-					if (lower == true && number == true && id.length >= 6
-							&& id.length <= 16) {
+					if (lower == true && number == true && id.length >= 6 && id.length <= 16) {
 						$.ajax({
 							url : "./personIdCheck",
 							type : "GET",
@@ -48,6 +47,15 @@
 					}
 				});
 
+		$("#id").blur(function() {
+			var id = $(this).val();
+			if (id == '') {
+				$("#idCheck").html("ID를 입력해주세요.");
+				$("#idCheck").css('color', 'red');
+				$("#idCheck").css('font-size', '12px');
+			}
+		});
+
 		//비밀번호 설정
 		$("#pw").blur(
 				function() {
@@ -63,17 +71,26 @@
 					var patt4 = /[~!@#$%^&*=+-_,.`]/g; //특수문자
 					var special = patt4.test(pw);
 
-					if (upper == true && lower == true && number == true && special == true && pw.length >= 6 && pw.length <= 16) {
+					if (upper == true && lower == true && number == true
+							&& special == true && pw.length >= 6
+							&& pw.length <= 16) {
 						$("#pwCheck").html("사용 가능한 비밀번호 입니다.");
 						$("#pwCheck").css('color', 'blue');
 						$("#pwCheck").css('font-size', '12px');
 						$("#pw2").attr('readonly', false);
 					} else {
-						$("#pwCheck").html(
-								"비밀번호는 6~16자의 대/소문자, 숫자, 특수문자만 사용 가능합니다.");
-						$("#pwCheck").css('color', 'red');
-						$("#pwCheck").css('font-size', '12px');
-						$("#pw2").attr('readonly', false);
+						if (pw == '') {
+							$("#pwCheck").html("비밀번호를 입력해주세요.");
+							$("#pwCheck").css('color', 'red');
+							$("#pwCheck").css('font-size', '12px');
+							$("#pw2").attr('readonly', true);
+						} else {
+							$("#pwCheck").html(
+									"비밀번호는 6~16자의 대/소문자, 숫자, 특수문자만 사용 가능합니다.");
+							$("#pwCheck").css('color', 'red');
+							$("#pwCheck").css('font-size', '12px');
+							$("#pw2").attr('readonly', false);
+						}
 					}
 				});
 
@@ -86,11 +103,16 @@
 				$("#pwCheck2").css('color', 'blue');
 				$("#pwCheck2").css('font-size', '12px');
 			} else {
-				$("#pwCheck2").html("비밀번호가 일치하지 않습니다.");
-				$("#pwCheck2").css('color', 'red');
-				$("#pwCheck2").css('font-size', '12px');
+				if (pw2 == '') {
+					$("#pwCheck2").html("비밀번호 확인을 입력해주세요.");
+					$("#pwCheck2").css('color', 'red');
+					$("#pwCheck2").css('font-size', '12px');
+				} else {
+					$("#pwCheck2").html("비밀번호가 일치하지 않습니다.");
+					$("#pwCheck2").css('color', 'red');
+					$("#pwCheck2").css('font-size', '12px');
+				}
 			}
-
 		});
 
 		//이름
@@ -104,11 +126,16 @@
 				$("#nameCheck").css('color', 'blue');
 				$("#nameCheck").css('font-size', '12px');
 			} else {
-				$("#nameCheck").html("잘못된 형식의 이름입니다.");
-				$("#nameCheck").css('color', 'red');
-				$("#nameCheck").css('font-size', '12px');
+				if (name == '') {
+					$("#nameCheck").html("이름을 입력해주세요.");
+					$("#nameCheck").css('color', 'red');
+					$("#nameCheck").css('font-size', '12px');
+				} else {
+					$("#nameCheck").html("잘못된 형식의 이름입니다.");
+					$("#nameCheck").css('color', 'red');
+					$("#nameCheck").css('font-size', '12px');
+				}
 			}
-
 		});
 
 	});
@@ -158,6 +185,7 @@
 					}
 				}).open();
 	};
+	
 </script>
 <style type="text/css">
 #pw {
@@ -171,20 +199,20 @@
 
 	<form action="./personJoin" method="post">
 		<p>
-			ID : <input type="text" name="id" id="id" placeholder="ID를 입력하세요.">
+			ID : <input type="text" name="id" id="id" placeholder="6~16자 영문,숫자">
 		</p>
 		<div id="idCheck"></div>
 		<p>
 			PW : <input type="password" name="pw" id="pw"
-				placeholder="비밀번호를 입력하세요.">
+				placeholder="6~16자 대/소문자,숫자,특수문자">
 		</p>
 		<span id="pwCheck"></span>
 		<p>
-			PW : <input type="password" name="pw2" readonly="readonly">
+			PW : <input type="password" readonly="readonly" name="pw2" id="pw2">
 		</p>
 		<span id="pwCheck2"></span>
 		<p>
-			NAME : <input type="text" name="name" placeholder="이름을 입력하세요.">
+			NAME : <input type="text" name="name" id="name">
 		</p>
 		<span id="nameCheck"></span>
 		<p>
@@ -192,20 +220,21 @@
 				<option value="010">010</option>
 				<option value="011">011</option>
 				<option value="016">016</option>
+				<option value="017">017</option>
 				<option value="018">018</option>
 				<option value="019">019</option>
-			</select> <input type="text" name="phone"> - <input type="text"
-				name="phone">
+			</select> <input type="text" name="phone" id="phone"> - <input
+				type="text" name="phone" id="phone">
 		</p>
 		<p>
-			EMAIL : <input type="text" name="email">
+			EMAIL : <input type="text" name="email" id="email">
 		</p>
 		<p>
-			ADDR <input type="text" id="sample6_postcode" placeholder="우편번호">
-			<input type="button" onclick="sample6_execDaumPostcode()"
-				value="우편번호 찾기"><br> <input type="text"
-				id="sample6_address" placeholder="주소"> <input type="text"
-				id="sample6_address2" placeholder="상세주소">
+			ADDR 
+			<input type="text" id="sample6_postcode" placeholder="우편번호" name="addr">
+			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br> 
+			<input type="text" id="sample6_address" placeholder="주소" name="addr"> 
+			<input type="text" id="sample6_address2" placeholder="상세주소" name="addr">
 		</p>
 		<p>
 			BIRTH : <input type="date" name="birth">
