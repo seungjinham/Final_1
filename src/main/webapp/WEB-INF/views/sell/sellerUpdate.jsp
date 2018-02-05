@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form id="frm" name="frm" action="sellerWrite" method="post" enctype="multipart/form-data">
+<form id="frm" name="frm" action="sellerUpdate" method="post" enctype="multipart/form-data">
 		<p id="photo">프로필 사진 : <span id="del" title="photo">삭제</span></p>
 		<input type="hidden" name="id" value="${member.id}">
 		<p>이름 : <input type="text" name="name" value="${member.name}"></p>
@@ -15,11 +15,11 @@
 		<p>전화번호 : <input type="text" name="phone" value="${member.phone}"></p>
 		
 		<p>
-			카테고리<input type="text" name="category">
+			카테고리 : 
 			<select>
-				<option>디자인</option>
-				<option>IT·개발</option>
-				<option></option>
+				<option class="category">디자인</option>
+				<option class="category">IT & 프로그래밍</option>
+				<option class="category">번역 & 통역</option>
 			</select>
 		</p>
 

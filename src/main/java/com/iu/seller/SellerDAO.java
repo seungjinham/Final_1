@@ -11,22 +11,26 @@ public class SellerDAO {
 	
 	@Inject
 	private SqlSession sqlSession;
-	private final String NAMESPACE="PersonMapper.";
+	private final String NAMESPACE="SellMapper.";
 	
 	public int sellerWrite(MemberDTO memberDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"sellerWrite", memberDTO);
+		return sqlSession.delete(NAMESPACE+"write", memberDTO);
 	}
 	
 	public int sellerUpdate(MemberDTO memberDTO) throws Exception {
-		return sqlSession.update(NAMESPACE+"sellerUpdate", memberDTO);
+		return sqlSession.update(NAMESPACE+"update", memberDTO);
 	}
 	
 	public int sellerDelete(String id) throws Exception {
-		return sqlSession.delete(NAMESPACE+"sellerDelete",id);
+		return sqlSession.delete(NAMESPACE+"delete",id);
 	}
 	
 	public MemberDTO sellerOne(String id) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"sellerOne", id);
+		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
+	}
+	
+	public MemberDTO sellerList(String category) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"selectList", category);
 	}
 
 }

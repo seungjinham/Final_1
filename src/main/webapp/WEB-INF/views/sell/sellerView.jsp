@@ -8,5 +8,9 @@
 </head>
 <body>
 	<h1>판매자 정보</h1>
+	<h3>이름 : ${member.id}</h3>
+	<input type="hidden" value="${member.id}">
+	<a href="./sellerUpdate">수정하기</a>
+	<a href="./sellerDelete">삭제하기</a>
 </body>
 </html>

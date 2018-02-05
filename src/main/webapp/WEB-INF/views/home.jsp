@@ -22,12 +22,18 @@
 		<a href="./member/memberLogOut">LogOut</a>
 	</c:if>
 
-	<a href="faq/faqList">FAQ</a>
-	
-	
+	<hr>
 	<a href="company/companyRecruit">Recruit</a>
-	
-	<a href="recruit/recruitList">RecruitList</a>
+	<hr>
+	<a href="recruit/recruitList">공고 검색</a>
+	<hr>
+	<h3>재능검색</h3>
+	<a href="sell/sellerList?category=design">디자인</a>
+	<a href="sell/sellerList?category=it">IT & 프로그래밍</a>
+	<a href="sell/sellerList?category=translate">번역 & 통역</a>
+
+	<hr>
+	<a href="faq/faqList">FAQ</a>
 	
 
 
