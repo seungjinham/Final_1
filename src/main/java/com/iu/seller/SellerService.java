@@ -24,7 +24,6 @@ public class SellerService {
 		return sellerDAO.sellerDelete(id);
 	}
 	
-	
 	public MemberDTO sellerOne(String id) throws Exception{
 		return sellerDAO.sellerOne(id);
 	}

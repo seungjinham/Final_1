@@ -39,6 +39,6 @@
 	<h3>판매자</h3>
 	<p><a href="./sellerWrite">판매자 등록하기</a></p>
 	<p><a href="./sellerView">판매자 정보보기</a></p>
-	<p><a href="./seller">거래내역</a></p>
+	<p><a href="./PersonUse">거래내역</a></p>
 </body>
 </html>

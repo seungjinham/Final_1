@@ -22,11 +22,17 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.iu.f1" />
-	<context:component-scan base-package="com.iu.member" />
-	<context:component-scan base-package="com.iu.person" />
 	<context:component-scan base-package="com.iu.company" />
 	<context:component-scan base-package="com.iu.faq" />
+	<context:component-scan base-package="com.iu.member" />
+	<context:component-scan base-package="com.iu.paper" />
+	<context:component-scan base-package="com.iu.person" />
+	<context:component-scan base-package="com.iu.personUse" />
 	<context:component-scan base-package="com.iu.recruit" />
 	<context:component-scan base-package="com.iu.seller" />
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 34af6d53f7ddb7a1844d9727f4eacee807bd152e
 	
 </beans:beans>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>판매자 정보</h1>
 </body>
 </html>
