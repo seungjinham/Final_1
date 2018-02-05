@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>공고 List</h1>
+
 
 </body>
 </html>
