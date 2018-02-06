@@ -38,7 +38,7 @@
 	});
 </script>
 </head>
-<link href="resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <body>
 <header>
 	<div id="header" class="">
