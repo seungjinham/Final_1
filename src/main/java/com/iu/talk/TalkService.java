@@ -10,7 +10,7 @@ public class TalkService {
 	@Inject
 	private TalkDAO talkDAO;
 	
-	private int insert(TalkDTO talkDTO) throws Exception{
+	public int insert(TalkDTO talkDTO) throws Exception{
 		return talkDAO.insert(talkDTO);
 	}
 	
