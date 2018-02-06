@@ -2,24 +2,50 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="RecruitMapper">
-<update id="RecruitUpdate" parameterType="RecruitDTO">
-update recruit set
-title=#{title}, deadline=#{deadline}, people=#{people}, 
-gender=#{gender}, age=#{age}, school=#{school}, special=#{special}, 
-salary=#{salary}, w_date=#{w_date}, w_day=#{w_day}, w_time=#{w_time}, 
-job=#{job}, work=#{work}, benefit=#{benefit}, contents=#{contents}, 
-fname=#{fname}, oname=#{oname} where num=#{num} 
-</update>
-
-<select id="selectOne" parameterType="int" resultType="RecruitDTO">
-select * from recruit where num=#{num}
-</select>
-
-<select id="selectList" resultType="RecruitDTO">
-select * from recruit
-</select>
-
-<select id="searchList" parameterType="RecruitSearchDTO" resultType="RecruitDTO">
-
-</select>
+	<update id="RecruitUpdate" parameterType="RecruitDTO">
+	update recruit set
+	title=#{title}, deadline=#{deadline}, people=#{people}, 
+	gender=#{gender}, age=#{age}, school=#{school}, special=#{special}, 
+	salary=#{salary}, w_date=#{w_date}, w_day=#{w_day}, w_time=#{w_time}, 
+	job=#{job}, work=#{work}, benefit=#{benefit}, contents=#{contents}, 
+	fname=#{fname}, oname=#{oname} where num=#{num} 
+	</update>
+	
+	<select id="selectOne" parameterType="int" resultType="RecruitDTO">
+	select * from recruit where num=#{num}
+	</select>
+	
+	<select id="selectList" resultType="RecruitDTO">
+	select * from recruit
+	</select>
+	
+	<select id="searchList" parameterType="RecruitSearchDTO" resultType="RecruitDTO">
+	
+	</select>
+	<insert id="companyRecruit" parameterType="RecruitDTO">
+		insert into recruit values (
+		apply_seq.nextval,
+		#{id},
+		#{title},
+		#{deadline},
+		#{people},
+		#{gender},
+		#{age},
+		#{school},
+		#{special},
+		#{salary},
+		#{w_date},
+		#{w_day},
+		#{w_time},
+		#{job},
+		#{work},
+		#{benefit},
+		#{contents},
+		#{fname},
+		#{oname}
+		)
+	</insert>
+	<select id="companyRecruitList" resultType="RecruitDTO">
+		select * from recruit
+	</select>
 </mapper>

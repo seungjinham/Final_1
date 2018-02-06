@@ -1,12 +1,13 @@
 package com.iu.company;
 
 import java.io.File;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.core.annotation.SynthesizedAnnotation;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.iu.member.MemberDTO;
@@ -56,6 +57,7 @@ public class CompanyService implements MemberService {
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
 		String filepath = session.getServletContext().getRealPath("resouces/upload");
 		System.out.println(filepath);
+		System.out.println(recruitDTO.getDeadline());
 		File f = new File(filepath);
 		if(!f.exists()) {
 			f.mkdirs();
@@ -64,6 +66,12 @@ public class CompanyService implements MemberService {
 		String name = fs.saver(file, filepath);
 		recruitDTO.setOname(file.getOriginalFilename());
 		recruitDTO.setFname(name);
-		return recruitDAO.companyRecruit(recruitDTO);
+		System.out.println(recruitDAO.companyRecruit(recruitDTO)); 
+		
+		return 0;
+	}
+
+	public List<RecruitDTO> companyRecruitList() {
+		return companyDAO.companyRecruitList();
 	}
 }
