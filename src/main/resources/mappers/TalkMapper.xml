@@ -6,7 +6,23 @@
 		insert into talk values(#{id}, #{type}, #{contents}, #{email}, #{fname}, #{oname})
 	</insert>
 
+	<select id="selectList" parameterType="ListData" resultType="TalkDTO">
+			select * from
+  			(select rownum R, F.* from
+  			(select * from talk
+  			<if test="kind == 'title'">
+				where title LIKE '%'|| #{search}||'%'
+			</if>
+			<if test="kind == 'contents'">
+				where contents LIKE '%'|| #{search}||'%'
+			</if>			
+  			order by num desc) F)
+  			where R between #{startRow} and #{lastRow}
+	</select>
 
+	<select id="selectOne" parameterType="int" resultType="TalkDTO">
+		select * from talk where num=#{num}
+	</select>
 
 </mapper>
 

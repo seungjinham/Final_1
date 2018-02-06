@@ -52,4 +52,8 @@ public class CompanyDAO implements MemberDAO {
 	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
 		return sqlSession.selectList(NAMESPACE+"selectList", recruit_ar);
 	}
+
+	public List<RecruitDTO> companyRecruitList() {
+		return sqlSession.selectList(NAMESPACE+"companyRecruitList");
+	}
 }

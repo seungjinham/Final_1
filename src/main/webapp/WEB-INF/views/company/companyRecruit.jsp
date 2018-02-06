@@ -11,7 +11,7 @@
 	<form action="companyRecruit" method="post" enctype="multipart/form-data">
 		<p>id<input type="text" name="id"></p>
 		<p>title<input type="text" name="title"></p>
-		<p>deadLine<input type="text" name="deadLine"></p>
+		<p>deadLine<input type="date" name="deadline"></p>
 		<p>people<input type="text" name="people"></p>
 		<p>gender<input type="text" name="gender"></p>
 		<p>age<input type="text" name="age"></p>

@@ -43,9 +43,10 @@ public class RecruitDAO {
 	public RecruitDTO selectOne(int num) {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
 	}
-
+	
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO) {
+		System.out.println(recruitDTO.getId());
 		return sqlSession.insert(NAMESPACE+"companyRecruit", recruitDTO);
 	}
 }

@@ -14,31 +14,10 @@
 		select m.*,c.* from member m, company c where m.id=#{id} and m.pw=#{pw} and m.id=c.id(+)
 	</select>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<select id="myPage" parameterType="String" resultType="CompanyDTO">
 		select m.*,c.* from member m, company c
 		where m.id=#{id} and m.id=c.id(+)
 	</select>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	<select id="selectOne" parameterType="String" resultType="CompanyDTO">
 		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
@@ -47,5 +26,9 @@
 <!-- 	<select id="selectList" parameterType="java.util.List.List<>" resultType="">
 		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
 	</select> -->
+	
+	<select id="companyRecruitList" resultType="RecruitDTO">
+		select * from recruit
+	</select>
 </mapper>
   
