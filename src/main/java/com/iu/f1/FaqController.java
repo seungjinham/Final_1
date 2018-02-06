@@ -59,17 +59,26 @@ public class FaqController {
 	}
 	
 	@RequestMapping(value="faqUpdate", method=RequestMethod.GET)
-	public void update()throws Exception{
-		
+	public void update(int num, Model model)throws Exception{
+		FaqDTO faqDTO= faqService.selectOne(num);
+		model.addAttribute("view", faqDTO);
 	}
 	
 	@RequestMapping(value="faqUpdate", method=RequestMethod.POST)
-	public ModelAndView update(int num) throws Exception{
-		FaqDTO faqDTO= faqService.selectOne(num);
-		
+	public ModelAndView update(FaqDTO faqDTO) throws Exception{
+		System.out.println(faqDTO.getNum());
+		System.out.println(faqDTO.getTitle());
+		System.out.println(faqDTO.getContents());
+		int result=faqService.update(faqDTO);
+		String message="업데이트 실패";
+		if(result>0){
+			message="업데이트 성공";
+		}
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("view", faqDTO);
-		faqService.update(faqDTO);
+		mv.addObject("message", message);
+		mv.addObject("path", "../faq/faqList");
+		mv.setViewName("common/result");
+
 		return mv;
 	}
 	
