@@ -16,7 +16,7 @@ select * from recruit where num=#{num}
 </select>
 
 <select id="selectList" resultType="RecruitDTO">
-select * from recruit
+select * from (select * from recruit order by id) R
 </select>
 
 <select id="searchList" parameterType="RecruitSearchDTO" resultType="RecruitDTO">

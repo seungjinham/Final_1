@@ -44,8 +44,8 @@
 		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
 	</select>
 	
-<!-- 	<select id="selectList" parameterType="java.util.List.List<>" resultType="">
-		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
-	</select> -->
+	<select id="companyList" parameterType="String" resultType="CompanyDTO">
+		select m.Id, m.Addr, c.C_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
+	</select>
 </mapper>
   

@@ -25,8 +25,23 @@ public class RecruitController {
 	
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
 	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
-		List<RecruitDTO> result_ar = recruitService.selectList(recruitSearchDTO);
-		model.addAttribute("list", result_ar);
+		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
+		List<CompanyDTO> company_ar = companyService.selectList(recruit_ar);
+		
+		for(int i=0; i<company_ar.size(); i++) {
+			String temp_str = company_ar.get(i).getAddr();
+			String[] temp_ar = temp_str.split(",");
+			String[] result_ar = temp_ar[1].split(" ");
+			temp_str = result_ar[0]+" "+result_ar[1];
+			String c_name = company_ar.get(i).getC_name();
+			for(int j=0; j<recruit_ar.size(); j++) {
+				if(recruit_ar.get(i).getId().equals(c_name)) {
+					recruit_ar.get(i).setAddr(temp_str);
+					recruit_ar.get(i).setC_name(c_name);
+				}
+			}
+		}
+		model.addAttribute("list", recruit_ar);
 		return "recruit/recruitList";
 	}
 	

@@ -23,6 +23,7 @@ public class RecruitDTO extends CompanyDTO{
 	private String fname;
 	private String oname;
 	private String addr;
+	private String c_name;
 	
 	public int getNum() {
 		return num;
@@ -186,4 +187,16 @@ public class RecruitDTO extends CompanyDTO{
 		}
 		this.addr = addr;
 	}
+
+	public String getC_name() {
+		return c_name;
+	}
+
+	public void setC_name(String c_name) {
+		if(c_name==null) {
+			this.c_name = "null";
+		}
+		this.c_name = c_name;
+	}
+	
 }

@@ -8,6 +8,7 @@
 </head>
 <body>
 <a href="apply/apply">Apply</a>
+<a href="../scrap/scrapInsert">Scrap</a>
 <h1>${company.addr}</h1>
 <h1>${recruit.id}</h1>
 <h1>${recruit.title}</h1>

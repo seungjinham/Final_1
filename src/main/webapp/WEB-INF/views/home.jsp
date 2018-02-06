@@ -18,12 +18,14 @@
 	</c:if>
 	<c:if test="${member.job eq 'C'}">
 		<a href="./company/companyMyPage">MyPage</a>
+		<a href="./recruit/recruitList">RecruitList</a>
 	</c:if>
 		<a href="./member/memberLogOut">LogOut</a>
 	</c:if>
 
 	<a href="faq/faqList">FAQ</a>
 	<a href="company/companyRecruit">등록</a>
+	
 
 </body>
 </html>
