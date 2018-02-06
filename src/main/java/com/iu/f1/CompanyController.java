@@ -1,5 +1,7 @@
 package com.iu.f1;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
-import com.iu.recruit.RecruitService;
 import com.iu.recruit.RecruitDTO;
 
 @Controller
@@ -80,7 +81,6 @@ public class CompanyController {
 		}
 	
 	//reqruit
-	//to do
 	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
 	public void companyRecruit() {}
 	
@@ -93,7 +93,7 @@ public class CompanyController {
 			mv.addObject("path", "../");
 		} else {
 			mv.addObject("message", "success");
-			mv.addObject("path", "../");
+			mv.addObject("path", "./companyMyPage");
 		}
 		mv.setViewName("./common/result");
 		
@@ -103,4 +103,15 @@ public class CompanyController {
 	//MyPage
 	@RequestMapping(value="companyMyPage")
 	public void companyMypage(HttpSession session) throws Exception {}
+	
+	//게재 리스트
+	@RequestMapping(value="companyRecruitList", method=RequestMethod.GET)
+	public ModelAndView companyRecruitList() throws Exception {
+		System.out.println("companyRecruitList in");
+		List<RecruitDTO> ar = companyService.companyRecruitList();
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("list", ar);
+		mv.setViewName("./company/companyRecruitList");
+		return mv;
+	}
 }

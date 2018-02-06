@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,16 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>company MyPage</h1>
+	<table class="t">
+		<tr>
+			<td>NUM</td>
+		</tr>
+		<c:forEach items="${list}" var="list">
+			<tr>
+				<td>${list.num}</td>
+			</tr>
+		</c:forEach>
+	</table>
 	
-	<p>ID : ${member.id}</p>
-	<p>NAME : ${member.name}</p>
-	<p>PHONE : ${member.phone}</p>
-	<p>EMAIL : ${member.email}</p>
-	<p>ADDR : ${member.addr}</p>
-	<p>C_NAME : ${member.c_name}</p>
-	<p>C_NUM : ${member.c_num}</p>
-	<P>내가 등록한 공고<p>
 
 </body>
 </html>

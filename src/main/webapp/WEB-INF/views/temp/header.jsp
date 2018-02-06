@@ -53,7 +53,7 @@
 						
 					<li><a href="javascript:void(0);" class="">기업서비스</a>
 						<ul class="navi-sublist subnav03">
-							<li><a href="">게재중인 공고</a></li>
+							<li><a href="company/companyRecruitList">게재중인 공고</a></li>
 							<li><a href="">지원자 관리</a></li>
 							<li><a href="company/companyRecruit">공고 등록하기</a></li>
 							<li><a href="">파워링크 구매</a></li>
