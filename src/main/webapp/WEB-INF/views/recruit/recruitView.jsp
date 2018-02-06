@@ -8,7 +8,9 @@
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
+	
 	<a href="apply/apply">Apply</a>
+	<a href="../scrap/scrapInsert">Scrap</a>
 	<h1>${company.addr}</h1>
 	<h1>${recruit.id}</h1>
 	<h1>${recruit.title}</h1>

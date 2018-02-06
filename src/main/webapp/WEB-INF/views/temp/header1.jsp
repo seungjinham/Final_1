@@ -71,7 +71,8 @@
 				<ul class="navigation">
 					<li><a href="javascript:void(0);" class="">채용정보</a>
 						<ul class="navi-sublist subnav01">
-							<li><a href="recruit/recruitList">공고 검색</a></li>
+							<li><a href="recruit/recruitList">채용 공고</a></li>
+							<li><a href="recruit/recruitList">상세 검색</a></li>
 						</ul>
 					</li>
 						

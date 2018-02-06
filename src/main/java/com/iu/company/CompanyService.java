@@ -1,12 +1,12 @@
 package com.iu.company;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.core.annotation.SynthesizedAnnotation;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -52,6 +52,19 @@ public class CompanyService implements MemberService {
 	public CompanyDTO selectOne(String id) {
 		CompanyDTO companyDTO = companyDAO.selectOne(id);
 		return companyDTO;
+	}
+	
+	
+	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
+		List<CompanyDTO> company_ar = new ArrayList<>();
+		for(int i=0; i<recruit_ar.size(); i++) {
+			String id = recruit_ar.get(i).getId();
+			CompanyDTO companyDTO = companyDAO.selectList(id);
+			if(companyDTO!=null) {
+				company_ar.add(companyDTO);
+			}
+		}
+		return company_ar;
 	}
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
