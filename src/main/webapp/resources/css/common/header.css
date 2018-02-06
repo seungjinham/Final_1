@@ -40,7 +40,7 @@
 .hgroup .logo {
 	position: absolute;
 	top: 0;
-	left: 10px
+	left: 10px;
 }
 
 .hgroup .logo a {
@@ -55,7 +55,7 @@
 	padding-top: 48px;
 	background-image: url('../images/common/logo.jpg');
 	font: 0/0 dotum;
-	color: transparent
+	color: transparent;
 }
 
 .nvalinks {
