@@ -6,12 +6,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
 import com.iu.recruit.RecruitService;
+import com.iu.recruit.RecruitDTO;
 
 @Controller
 @RequestMapping(value="/company/**")
@@ -75,12 +77,30 @@ public class CompanyController {
 		mv.addObject("path", path);
 		mv.setViewName("common/result");
 		return mv;
-	}
+		}
 	
+	//reqruit
+	//to do
+	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
+	public void companyRecruit() {}
+	
+	@RequestMapping(value="companyRecruit", method=RequestMethod.POST)
+	public ModelAndView companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int num = companyService.companyRecruit(recruitDTO, file, session);
+		if(recruitDTO.equals("null")) {
+			mv.addObject("message", "fail");
+			mv.addObject("path", "../");
+		} else {
+			mv.addObject("message", "success");
+			mv.addObject("path", "../");
+		}
+		mv.setViewName("./common/result");
+		
+		return mv;
+	}
 
 	//MyPage
 	@RequestMapping(value="companyMyPage")
 	public void companyMypage(HttpSession session) throws Exception {}
 }
-
-
