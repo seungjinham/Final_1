@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%@ include file="../temp/header1.jsp" %>
 
 <h1> 공고 List</h1>
 <table border="1">
@@ -17,8 +17,8 @@
 	<tr>
 		<td>${item.addr}</td>
 		<td>
-		<p><a href="recruit/recruitView?num=${item.num}">${item.c_name}</a></p>
-		<p><a href="recruit/recruitView?num=${item.num}">${item.title}</a></p>
+		<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
+		<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
 		</td>
 		<td>${item.salary}</td>
 		<td>${item.w_time}</td>
