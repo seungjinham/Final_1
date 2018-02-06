@@ -52,9 +52,8 @@ img {
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 	<%@ include file="../temp/header1.jsp" %>	
-=======
+
 	<div class="h">
 		<h1>Header</h1>
 	</div>
@@ -63,7 +62,7 @@ img {
 		<article class="join_border_2">
 			<div class="p_border">
 				<div class="poto_b">
-					<img src="../resources/image/member/p_join.PNG">
+					<img src="../resources/images/member/p_join.PNG">
 				</div>
 			</div>
 
@@ -71,7 +70,6 @@ img {
 
 	</section>
 
->>>>>>> ced1b9d3138968b4e87758b4cf967520593c378b
 	<a href="../person/personJoin">member</a>
 	<a href="../company/companyJoin">company</a>
 </body>

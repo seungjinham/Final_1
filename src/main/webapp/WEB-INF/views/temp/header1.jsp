@@ -39,12 +39,17 @@
 </script>
 </head>
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <body>
 <header>
 	<div id="header" class="">
 		<div class="hgroup">
 			<div class="inbox">
-				<h1 class="logo"><a href="../"><span>PICK ME</span></a></h1>
+				<h1 class="logo">
+					<a href="<%=request.getContextPath()%>">
+						<img src="/f1/resources/images/common/logo.jpg" width="150px" height="80px">
+					</a>
+				</h1>
 				<div class="nvalinks">
 
 					<c:if test="${empty member}">
@@ -84,7 +89,7 @@
 							<li><a href="">지원현황</a></li>
 							<li><a href="">스크랩 공고정보</a></li>
 							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
-							<li><a href="">판매자 등록</a></li>
+							<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
 							<li><a href="">판매자 즐겨찾기</a></li>
 							<li><a href="">거래 내역 관리</a></li>
 						</ul>
@@ -105,7 +110,7 @@
 					<li><a href="javascript:void(0);" class="">고객센터</a>
 						<ul class="navi-sublist subnav04">
 							<li><a href="<%=request.getContextPath()%>/faq/faqList">FAQ</a></li>
-							<li><a href="">문의하기</a></li>
+							<li><a href="<%=request.getContextPath()%>/talk/talkForm">문의하기</a></li>
 						</ul>
 					</li>
 				</ul>

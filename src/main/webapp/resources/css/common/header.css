@@ -25,7 +25,8 @@
 	position: relative;
 	*display: inline-block;
 	*zoom: 1;
-	z-index: 7000
+	z-index: 7000;
+	border-bottom: 1px solid #eee
 }
 
 .hgroup .inbox {
@@ -47,15 +48,6 @@
 	display: block;
 	width: 156px;
 	height: 68px;
-	padding-top: 12px
-}
-
-.hgroup .logo a span {
-	display: block;
-	padding-top: 48px;
-	background-image: url('../images/common/logo.jpg');
-	font: 0/0 dotum;
-	color: transparent;
 }
 
 .nvalinks {
@@ -88,8 +80,8 @@ a.nvalinks-rev {
 }
 
 a.nvalinks-rev:hover {
-	background: #00b956;
-	border: 1px solid #00b956;
+	background: #eee;
+	border: 1px solid #eee;
 	text-decoration: none
 }
 
@@ -141,7 +133,7 @@ a.nvalinks-rev:hover {
 }
 
 .navi-sublist li a:hover {
-	color: #00b956
+	color: #23A41A
 }
 
 #header.on .hgroup {
@@ -166,12 +158,12 @@ a.nvalinks-rev:hover {
 
 #header.on a.nvalinks-rev {
 	background: none;
-	border: 1px solid #00b956;
-	color: #00b956
+	border: 1px solid #23A41A;
+	color: #23A41A
 }
 
 #header.on a.nvalinks-rev:hover {
-	background: #00b956;
+	background: #23A41A;
 	color: #fff
 }
 
@@ -181,8 +173,8 @@ a.nvalinks-rev:hover {
 
 #header.on .navigation>li>a.on {
 	height: 78px;
-	border-bottom: 2px solid #00b956;
-	color: #00b956
+	border-bottom: 2px solid #23A41A;
+	color: #23A41A
 }
 
 #header.on .navi-sublist {
@@ -218,12 +210,12 @@ a.nvalinks-rev:hover {
 
 #header.sub a.nvalinks-rev {
 	background: none;
-	border: 1px solid #00b956;
-	color: #00b956
+	border: 1px solid #E2E2E2;
+	color: #23A41A
 }
 
 #header.sub a.nvalinks-rev:hover {
-	background: #00b956;
+	background: #23A41A;
 	color: #fff
 }
 
@@ -232,7 +224,7 @@ a.nvalinks-rev:hover {
 }
 
 #header.sub .navi-sublist li a:hover {
-	color: #00b956
+	color: #23A41A
 }
 
 .nav-sub-wrap {
