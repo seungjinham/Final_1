@@ -15,6 +15,8 @@
 		<c:forEach items="${list}" var="list">
 			<tr>
 				<td>${list.num}</td>
+				<td>update</td>
+				<td>delete</td>
 			</tr>
 		</c:forEach>
 	</table>
