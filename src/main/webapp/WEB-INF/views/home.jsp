@@ -7,6 +7,23 @@
 <body>
 	<%@ include file="./temp/header1.jsp" %>	
 
+	<c:if test="${empty member}">
+		<a href="member/login">Login</a>
+		<a href="member/join">join</a>
+	</c:if>
+
+	<c:if test="${not empty member}">
+	<c:if test="${member.job eq 'P'}">
+		<a href="./person/personMyPage">MyPage</a>
+	</c:if>
+	<c:if test="${member.job eq 'C'}">
+		<a href="./company/companyMyPage">MyPage</a>
+	</c:if>
+		<a href="./member/memberLogOut">LogOut</a>
+	</c:if>
+
+	<a href="faq/faqList">FAQ</a>
+	<a href="company/companyRecruit">등록</a>
 
 </body>
 </html>

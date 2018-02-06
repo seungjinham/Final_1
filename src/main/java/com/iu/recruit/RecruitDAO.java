@@ -15,10 +15,6 @@ public class RecruitDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "RecruitMapper.";
 	
-	public int insert(RecruitDTO recruitDTO) {
-		return 0;
-	}
-	
 	public int update(RecruitDTO recruitDTO) {
 		return sqlSession.update(NAMESPACE+"RecruitUpdate", recruitDTO);
 	}
@@ -46,5 +42,10 @@ public class RecruitDAO {
 	
 	public RecruitDTO selectOne(int num) {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
+	}
+
+	//공고등록
+	public int companyRecruit(RecruitDTO recruitDTO) {
+		return sqlSession.insert(NAMESPACE+"companyRecruit", recruitDTO);
 	}
 }
