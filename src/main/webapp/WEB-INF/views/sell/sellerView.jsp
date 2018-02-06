@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>판매자 정보</h1>
 	<h3>이름 : ${member.id}</h3>
 	<input type="hidden" value="${member.id}">

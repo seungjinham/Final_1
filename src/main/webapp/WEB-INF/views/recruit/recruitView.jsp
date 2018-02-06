@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="apply/apply">Apply</a>
-<h1>${company.addr}</h1>
-<h1>${recruit.id}</h1>
-<h1>${recruit.title}</h1>
-<h1>${recruit.people}</h1>
-<h1>${recruit.school}</h1>
-<h1>${recruit.special}</h1>
-<h1>${recruit.salary}</h1>
+	<%@ include file="../temp/header1.jsp"%>
+	<a href="apply/apply">Apply</a>
+	<h1>${company.addr}</h1>
+	<h1>${recruit.id}</h1>
+	<h1>${recruit.title}</h1>
+	<h1>${recruit.people}</h1>
+	<h1>${recruit.school}</h1>
+	<h1>${recruit.special}</h1>
+	<h1>${recruit.salary}</h1>
 </body>
 </html>

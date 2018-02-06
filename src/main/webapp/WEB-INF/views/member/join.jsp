@@ -7,6 +7,7 @@
 <title>Join Select Page</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<a href="../person/personJoin">member</a>
 	<a href="../company/companyJoin">company</a>
 </body>

@@ -15,8 +15,8 @@
 </script>
 </head>
 <body>
-<%@ include file="../temp/header1.jsp" %>	
-<h1>FAQ WRITE</h1>
+	<%@ include file="../temp/header1.jsp" %>	
+	<h1>FAQ WRITE</h1>
 
 	<form id="frm" action="./faqWrite" method="post">
 	<p>Title: <input type="text" name="title" placeholder="타이틀을 입력해 주세요!"></p>

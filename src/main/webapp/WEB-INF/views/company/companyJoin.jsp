@@ -7,6 +7,7 @@
 <title>Company Join</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>Company Join</h1>
 	<form action="./companyJoin" method="post">
 		<p>id<input type="text" name="id"></p>

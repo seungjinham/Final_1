@@ -9,13 +9,13 @@
 				<div class="nvalinks">
 
 					<c:if test="${empty member}">
-						<a href="member/login">로그인</a>
-						<a href="member/join">회원가입</a>
+						<a href="<%=request.getContextPath()%>/member/login">로그인</a>
+						<a href="<%=request.getContextPath()%>/member/join">회원가입</a>
 					</c:if>
 
 					<c:if test="${not empty member}">
 						<c:if test="${member.job eq 'P'}">
-							<a href="./person/personMyPage">마이페이지</a>
+							<a href="<%=request.getContextPath()%>/person/personMyPage">마이페이지</a>
 						</c:if>
 						<c:if test="${member.job eq 'C'}">
 							<a href="./company/companyMyPage">마이페이지</a>
@@ -33,9 +33,9 @@
 						
 					<li><a href="javascript:void(0);" class="">재능마켓</a>
 						<ul class="navi-sublist subnav02">
-							<li><a href="sell/sellerList?category=design">디자인</a></li>
-							<li><a href="sell/sellerList?category=it">IT & 프로그래밍</a></li>
-							<li><a href="sell/sellerList?category=translate">번역 & 통역</a></li>
+							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=design">디자인</a></li>
+							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=it">IT & 프로그래밍</a></li>
+							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=translate">번역 & 통역</a></li>
 						</ul>
 					</li>
 						
@@ -44,7 +44,7 @@
 							<li><a href="">이력서 관리</a></li>
 							<li><a href="">지원현황</a></li>
 							<li><a href="">스크랩 공고정보</a></li>
-							<li><a href="./person/personMyPage">회원정보 수정</a></li>
+							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
 							<li><a href="">판매자 등록</a></li>
 							<li><a href="">판매자 즐겨찾기</a></li>
 							<li><a href="">거래 내역 관리</a></li>

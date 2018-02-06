@@ -7,8 +7,8 @@
 <title>Person Update</title>
 </head>
 <body>
-
-<h1>Person Update</h1>
+	<%@ include file="../temp/header1.jsp" %>	
+	<h1>Person Update</h1>
 
 </body>
 </html>

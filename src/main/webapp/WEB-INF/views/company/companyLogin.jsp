@@ -7,6 +7,7 @@
 <title>Company Login</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>Company Login</h1>
 	
 	<form action="companyLogin" method="post">

@@ -194,7 +194,7 @@
 </style>
 </head>
 <body>
-
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>Person Join</h1>
 
 	<form action="./personJoin" method="post">

@@ -7,8 +7,8 @@
 <title>Person Login</title>
 </head>
 <body>
-
-<h1>Person Login</h1>
+	<%@ include file="../temp/header1.jsp" %>	
+	<h1>Person Login</h1>
 
 	<form action="personLogin" method="post">
 	<p>ID : <input type="text" name="id"></p>

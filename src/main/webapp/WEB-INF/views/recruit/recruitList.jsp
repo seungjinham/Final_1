@@ -8,23 +8,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<a href="../scrap/scrapInsert">Scrap</a>
-<a href="../scrap/scrapDelete">ScrapDelete</a>
->>>>>>> lsh_temp_20180204
-
-<h1> 공고 List</h1>
-<table border="1">
-<tr><th>지역</th><th>모집제목</th><th>급여</th><th>근무시간</th><th>마감기한</th></tr>
-<c:forEach var="item" items="${list}">
-	<tr>
-		<td>${item.addr}</td>
-		<td><a href="recruit/recruitView?num=${item.num}">${item.title}</a></td>
-		<td>${item.salary}</td>
-		<td>${item.w_time}</td>
-		<td>${item.deadline}</td>
-	</tr>
-</c:forEach>
-</table>
+	<%@ include file="../temp/header1.jsp"%>
+	<h1>공고 List</h1>
+	<table border="1">
+		<tr>
+			<th>지역</th>
+			<th>모집제목</th>
+			<th>급여</th>
+			<th>근무시간</th>
+			<th>마감기한</th>
+		</tr>
+		<c:forEach var="item" items="${list}">
+			<tr>
+				<td>${item.addr}</td>
+				<td><a href="recruit/recruitView?num=${item.num}">${item.title}</a></td>
+				<td>${item.salary}</td>
+				<td>${item.w_time}</td>
+				<td>${item.deadline}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

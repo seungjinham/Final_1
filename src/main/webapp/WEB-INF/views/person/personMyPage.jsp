@@ -11,8 +11,8 @@
 </script>
 </head>
 <body>
-
-<h1>Person MyPage</h1>
+	<%@ include file="../temp/header1.jsp" %>	
+	<h1>Person MyPage</h1>
 
 	<form action="pseronMyPage" method="post">
 	<p>ID : <input type="text" name="id" value="${member.id}" readonly="readonly"></p>

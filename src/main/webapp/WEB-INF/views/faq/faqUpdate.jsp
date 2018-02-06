@@ -11,7 +11,7 @@
 </script>
 </head>
 <body>
-
+	<%@ include file="../temp/header1.jsp" %>	
 	<h1>FAQ UPDATE</h1>
 	
 	<form action="faqUpdate" method="post">

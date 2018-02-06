@@ -57,9 +57,9 @@
 							<a href="<%=request.getContextPath()%>/person/personMyPage">마이페이지</a>
 						</c:if>
 						<c:if test="${member.job eq 'C'}">
-							<a href="./company/companyMyPage">마이페이지</a>
+							<a href="<%=request.getContextPath()%>/company/companyMyPage">마이페이지</a>
 						</c:if>
-						<a href="./member/memberLogOut">로그아웃</a>
+						<a href="<%=request.getContextPath()%>/member/memberLogOut">로그아웃</a>
 					</c:if>
 				</div>
 
@@ -83,7 +83,7 @@
 							<li><a href="">이력서 관리</a></li>
 							<li><a href="">지원현황</a></li>
 							<li><a href="">스크랩 공고정보</a></li>
-							<li><a href="./person/personMyPage">회원정보 수정</a></li>
+							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
 							<li><a href="">판매자 등록</a></li>
 							<li><a href="">판매자 즐겨찾기</a></li>
 							<li><a href="">거래 내역 관리</a></li>
@@ -94,10 +94,10 @@
 						<ul class="navi-sublist subnav03">
 							<li><a href="">게재중인 공고</a></li>
 							<li><a href="">지원자 관리</a></li>
-							<li><a href="company/companyRecruit">공고 등록하기</a></li>
+							<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
 							<li><a href="">파워링크 구매</a></li>
 							<li><a href="">구매내역 관리</a></li>
-							<li><a href="./company/companyMyPage">회원정보 수정</a></li>
+							<li><a href="<%=request.getContextPath()%>/company/companyMyPage">회원정보 수정</a></li>
 						</ul>
 					</li>
 						

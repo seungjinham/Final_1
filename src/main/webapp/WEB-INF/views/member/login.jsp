@@ -7,6 +7,7 @@
 <title>Login Select Page</title>
 </head>
 <body>
+	<%@ include file="../temp/header1.jsp" %>	
 	<a href="../person/personLogin">member</a>
 	<a href="../company/companyLogin">company</a>
 </body>
