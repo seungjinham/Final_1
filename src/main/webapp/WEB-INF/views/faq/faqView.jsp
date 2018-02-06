@@ -7,15 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="../temp/header1.jsp" %>	
-	<h1>FAQ VIEW</h1>
+	<%@ include file="../temp/header1.jsp" %>
+	<section id="main">
+		<h1>FAQ VIEW</h1>
 
-	<h1>Title : ${view.title}</h1>
-	<h1>Contents : ${view.contents}</h1>
-	
-	
-	<a href="faqUpdate?num=${view.num}">Update</a>
-	<a href="faqDelete?num=${view.num}">Delete</a>
+		<h1>Title : ${view.title}</h1>
+		<h1>Contents : ${view.contents}</h1>
+
+
+		<a href="faqUpdate?num=${view.num}">Update</a>
+		<a href="faqDelete?num=${view.num}">Delete</a>
+	</section>
 
 
 

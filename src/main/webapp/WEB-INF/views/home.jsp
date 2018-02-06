@@ -6,5 +6,10 @@
 </head>
 <body>
 	<%@ include file="./temp/header1.jsp" %>	
+	<section id="main">
+	
+	
+	
+	</section>
 </body>
 </html>

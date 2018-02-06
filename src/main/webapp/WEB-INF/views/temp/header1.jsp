@@ -40,6 +40,8 @@
 </head>
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link rel="icon" href="<%=request.getContextPath()%>/resources/images/common/like.jsp" type="image/x-icon">
+<link rel="shortcut icon" href="<%=request.getContextPath()%>/" type="image/x-icon">
 <body>
 <header>
 	<div id="header" class="">
@@ -71,7 +73,7 @@
 				<ul class="navigation">
 					<li><a href="javascript:void(0);" class="">채용정보</a>
 						<ul class="navi-sublist subnav01">
-							<li><a href="recruit/recruitList">공고 검색</a></li>
+							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li>
 						</ul>
 					</li>
 						

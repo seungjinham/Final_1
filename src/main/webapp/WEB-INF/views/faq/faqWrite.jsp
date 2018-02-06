@@ -16,14 +16,16 @@
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp" %>	
-	<h1>FAQ WRITE</h1>
+	<section id="main">
+		<h1>FAQ WRITE</h1>
 
-	<form id="frm" action="./faqWrite" method="post">
-	<p>Title: <input type="text" name="title" placeholder="타이틀을 입력해 주세요!"></p>
-	<p>Contents: <textarea name="contents" placeholder="글을 등록해주세요!"></textarea></p>
+		<form id="frm" action="./faqWrite" method="post">
+		<p>Title: <input type="text" name="title" placeholder="타이틀을 입력해 주세요!"></p>
+		<p>Contents: <textarea name="contents" placeholder="글을 등록해주세요!"></textarea></p>
 	
-	<input type="button" value="등록" id="save">
-	</form>
+		<input type="button" value="등록" id="save">
+		</form>
+	</section>
 
 </body>
 </html>

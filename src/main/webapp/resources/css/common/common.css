@@ -63,9 +63,12 @@ img {
 	font-size: 0;
 }
 
-form, fieldset {
+#main {
+	width:800px;
 	display: block;
+	background-color: white;
 	border: 0;
+	margin: auto;
 }
 
 ul, ol, li {
