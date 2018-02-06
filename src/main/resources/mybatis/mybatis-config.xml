@@ -15,6 +15,7 @@
   		<typeAlias type="com.iu.scrap.ScrapDTO" alias="ScrapDTO"/>
   		<typeAlias type="com.iu.apply.ApplyDTO" alias="ApplyDTO"/>
   		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
+  		<typeAlias type="com.iu.talk.TalkDTO" alias="TalkDTO"/>
   	</typeAliases>
   
   </configuration>
