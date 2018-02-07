@@ -93,7 +93,7 @@
 					<li><a href="javascript:void(0);" class="">개인서비스</a>
 						<ul class="navi-sublist subnav03">
 							<li><a href="">이력서 관리</a></li>
-							<li><a href="">지원현황</a></li>
+							<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">지원현황</a></li>
 							<li><a href="">스크랩 공고정보</a></li>
 							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
 							<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>

@@ -51,7 +51,6 @@ public class CompanyDAO implements MemberDAO {
 	}
 	
 	public CompanyDTO selectList(String id) {
-		CompanyDTO companyDTO = new CompanyDTO();
 		return sqlSession.selectOne(NAMESPACE+"companyList", id);
 	}
 
