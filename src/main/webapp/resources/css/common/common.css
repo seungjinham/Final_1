@@ -127,7 +127,7 @@ sup {
 input, select {
 	vertical-align: middle;
 	/* font-size: 1em; */
-	color: #767676;
+	color: #000;
 	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
@@ -167,17 +167,17 @@ iframe {
 
 /* 기본 링크 스타일 */
 a:link {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 
