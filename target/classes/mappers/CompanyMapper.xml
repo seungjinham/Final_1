@@ -29,5 +29,8 @@
 	<select id="companyList" parameterType="String" resultType="CompanyDTO">
 		select m.Id, m.Addr, c.C_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
 	</select>
+	<delete id="companyRecruitDelete" parameterType="int">
+		delete recruit where num=#{num}
+	</delete>
 </mapper>
   

@@ -58,4 +58,8 @@ public class CompanyDAO implements MemberDAO {
 	public List<RecruitDTO> companyRecruitList() {
 		return sqlSession.selectList(NAMESPACE+"companyRecruitList");
 	}
+
+	public int companyRecruitDelete(int num) {
+		return sqlSession.delete(NAMESPACE+"companyRecruitDelete", num);
+	}
 }

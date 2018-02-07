@@ -87,4 +87,20 @@ public class CompanyService implements MemberService {
 	public List<RecruitDTO> companyRecruitList() {
 		return companyDAO.companyRecruitList();
 	}
+	//공고삭제
+	public int companyRecruitDelete(int num,String fname, HttpSession session) {
+		String filePath = session.getServletContext().getRealPath("resources/images/company");
+		int result = companyDAO.companyRecruitDelete(num);
+		System.out.println("db거친후: "+result);
+		if (result > 0) {
+			try {
+				File file=new File(filePath, fname);
+				file.delete();
+			} catch (Exception e) {
+				e.printStackTrace();
+				result=0;
+			}
+		}
+		return result;
+	}
 }
