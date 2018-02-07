@@ -9,14 +9,7 @@
 * {
 	margin: 0;
 	padding: 0;
-}
-
-.h {
-	width: 100%;
-	height: 100px;
-	border-bottom: 4px solid green;
-	text-align: center;
-}
+	}
 
 .join_border_1 {
 	width: 100%;
@@ -54,11 +47,7 @@ img {
 <body>
 	<%@ include file="../temp/header1.jsp" %>	
 
-	<div class="h">
-		<h1>Header</h1>
-	</div>
-
-	<section class="join_border_1">
+		<section class="join_border_1">
 		<article class="join_border_2">
 			<div class="p_border">
 				<div class="poto_b">
