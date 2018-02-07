@@ -8,7 +8,7 @@
 	<%@ include file="./temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-		
+			
 		</div>
 	</section>
 	<%@ include file="./temp/footer.jsp" %>	

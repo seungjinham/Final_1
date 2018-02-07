@@ -3,7 +3,8 @@
 #footer {
 	position: relative;
 	padding: 40px 0 70px 0;
-	background: #fff
+	background: #fff;
+	border: 1px solid #eee;
 }
 
 #footer .footer_box {
