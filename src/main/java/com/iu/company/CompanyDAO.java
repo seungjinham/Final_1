@@ -1,6 +1,7 @@
 package com.iu.company;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -49,8 +50,9 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
 	}
 	
-	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
-		return sqlSession.selectList(NAMESPACE+"selectList", recruit_ar);
+	public CompanyDTO selectList(String id) {
+		CompanyDTO companyDTO = new CompanyDTO();
+		return sqlSession.selectOne(NAMESPACE+"companyList", id);
 	}
 
 	public List<RecruitDTO> companyRecruitList() {

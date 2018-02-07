@@ -2,6 +2,8 @@ package com.iu.f1;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +12,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.iu.company.CompanyService;
+import com.iu.recruit.RecruitDTO;
+import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
 import com.iu.scrap.ScrapDTO;
 import com.iu.scrap.ScrapService;
@@ -20,6 +25,8 @@ public class SqlTest {
 	private SqlSession sqlSession;
 	@Inject
 	private RecruitService recruitService;
+	@Inject
+	private CompanyService companyService;
 	
 	@Test
 	public void test() {
@@ -41,6 +48,9 @@ public class SqlTest {
 //		}
 		
 		assertNotNull(sqlSession);
+		RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
+		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
+		companyService.selectList(recruit_ar);
 
 	}
 

@@ -14,6 +14,7 @@ import com.iu.company.CompanyService;
 import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
+import com.iu.util.ListSort;
 
 @Controller
 @RequestMapping(value="recruit/**")
@@ -25,8 +26,11 @@ public class RecruitController {
 	
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
 	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
-		List<RecruitDTO> result_ar = recruitService.selectList(recruitSearchDTO);
-		model.addAttribute("list", result_ar);
+		ListSort listSort = new ListSort();
+		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
+		List<CompanyDTO> company_ar = companyService.selectList(recruit_ar);
+		recruit_ar = listSort.listSort(recruit_ar, company_ar);
+		model.addAttribute("list", recruit_ar);
 		return "recruit/recruitList";
 	}
 	

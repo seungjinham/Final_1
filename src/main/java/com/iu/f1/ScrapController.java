@@ -13,8 +13,10 @@ import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitService;
+import com.iu.recruit.RecruitSearchDTO;
 import com.iu.scrap.ScrapDTO;
 import com.iu.scrap.ScrapService;
+import com.iu.util.ListSort;
 
 @Controller
 @RequestMapping(value="scrap/**")
@@ -28,8 +30,19 @@ public class ScrapController {
 	
 	@RequestMapping(value="scrapInsert", method=RequestMethod.GET)
 	public String Insert(ScrapDTO scrapDTO, Model model) {
-		Integer integer = scrapService.Insert(scrapDTO);
+		RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
+		String message = "로그인이 필요합니다.";
+		Integer integer = null;
+		if(scrapDTO.getId()!=null) {
+			integer = scrapService.Insert(scrapDTO);
+		}
+		ListSort listSort = new ListSort();
+		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
+		List<CompanyDTO> company_ar = companyService.selectList(recruit_ar);
+		recruit_ar = listSort.listSort(recruit_ar, company_ar);
 		model.addAttribute("result", integer);
+		model.addAttribute("message", message);
+		model.addAttribute("list", recruit_ar);
 		return "recruit/recruitList";
 	}
 	

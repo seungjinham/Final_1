@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="../scrap/scrapDelete">ScrapDelete</a>
 <table border="1">
 <tr><th>지역</th><th>채용공고제목</th><th>급여</th><th>마감기한</th></tr>
 <%-- <c:forEach var="result" items="${scrap_result}" begin="0" step="1">
