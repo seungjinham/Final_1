@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.title_border {
+	width: 800px;
+	height: 230px;
+	padding-top: 100px;
+}
+
+.title_border2 {
+	width: 300px;
+	height: 70px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 35px;
+	font-family: sans-serif;
+	padding-top: 15px;
+	border-bottom: 3px solid gray;
+}
+
+.join_border {
+	width: 800px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+.p_border {
+	width: 399px;
+	height: 600px;
+	text-align: center;
+	font-family: sans-serif;
+	float: left;
+}
+
+#p_border2 {
+	border-right: 1px dotted gray;
+}
+
+.photo {
+	width: 200px;
+	height: 200px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.poto_b {
+	width: 300px;
+	height: 350px;
+	margin: 0 auto;
+}
+
+.j_write {
+	width: 300px;
+	height: 40px;
+	font-size: 20px;
+	padding-top: 50px;
+}
+
+.j_write2 {
+	width: 300px;
+	height: 30px;
+	font-size: 13px;
+}
+
+.btn {
+	display: block;
+	font-size: 25px;
+	font-family: sans-serif;
+	width: 300px;
+	height: 60px;
+	margin: 0 auto;
+	padding-top: 15px;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+#p_btn {
+	background-color: #23A41A;
+	color: white;
+}
+
+#p_btn:hover {
+	color: #23A41A;
+	background-color: white;
+	border: 2px solid #23A41A;
+}
+
+#c_btn {
+	background-color: #33adff;
+	color: white;
+}
+
+#c_btn:hover {
+	color: #33adff;
+	background-color: white;
+	border: 2px solid #33adff;
+}
+
+.j_write3 {
+	width: 300px;
+	height: 50px;
+	font-size: 12px;
+	margin: 0 auto;
+	padding-top: 20px; text-align : center;
+	text-align: center;
+}
+
+.kakao {
+	width: 240px;
+	height: 60px;
+	font-size: 12px;
+	margin: 0 auto;
+	background-color: lime;
+}
+#kakao_p{
+	display: block;
+	width: 240px;
+	height: 60px;
+	
+}
