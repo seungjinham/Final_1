@@ -3,6 +3,6 @@
 
 <mapper namespace="ApplyMapper">
 <insert id="insert" parameterType="ApplyDTO">
-	insert into values (apply_seq.nextval, id=#{id}, recruit_num=#{recruit_num})
+	insert into apply values (apply_seq.nextval, #{id}, #{recruit_num})
 </insert>
 </mapper>

@@ -9,8 +9,8 @@
 <body>
 	<%@ include file="../temp/header1.jsp"%>
 	
-	<a href="apply/apply">Apply</a>
-	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=<%=request.getSession().getId()%>">Scrap</a>
+	<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}">Apply</a>
+	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=${member.id}">Scrap</a>
 	<h1>${company.addr}</h1>
 	<h1>${recruit.id}</h1>
 	<h1>${recruit.title}</h1>

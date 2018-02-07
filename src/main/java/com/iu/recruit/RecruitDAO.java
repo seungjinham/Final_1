@@ -35,11 +35,6 @@ public class RecruitDAO {
 		return selectList_result;
 	}
 	
-	public List<RecruitDTO> selectList(List<ScrapDTO> scrap_ar) {
-		List<RecruitDTO> selectList_result = sqlSession.selectList(NAMESPACE+"selectList", scrap_ar);
-		return selectList_result;
-	}
-	
 	public RecruitDTO selectOne(int num) {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
 	}
