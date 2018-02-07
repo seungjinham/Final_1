@@ -1,20 +1,72 @@
 @CHARSET "UTF-8";
 
-* {
-	margin: 0;
-	padding: 0;
-
+#footer {
+	position: relative;
+	padding: 40px 0 70px 0;
+	background: #fff
 }
 
-#logo{
-	background-image: ('/Final_1/resources/images/common/logo.jpg') no-repeat 0 0;
-	margin-top: 100px;
-	width: 100px;
-	height: 100px;
+#footer .footer_box {
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 1100px
 }
 
-
-a {
-	color: red;
+#footer .footer_box p {
+	line-height: 22px;
+	font-size: 12px;
+	color: #666
 }
 
+#footer .logo {
+	position: absolute;
+	left: 40px;
+	top: 40px
+}
+
+#footer .logo a, #footer .logo .icon {
+	display: block
+}
+
+#footer .footer_menu {
+	height: 34px
+}
+
+#footer .footer_menu li {
+	float: left;
+	padding: 0 5px;
+	background:
+		url("https://smcdn.smtown.com/image/pc/common/icon_ft_line.png")
+		no-repeat left center
+}
+
+#footer .footer_menu li:first-child {
+	margin-left: -15px;
+	background: none
+}
+
+#footer .footer_menu .btn_link {
+	display: block;
+	padding: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #000;
+	font-weight: 500
+}
+
+#footer .sns_menu {
+	position: absolute;
+	right: 20px;
+	top: 40px
+}
+
+#footer .sns_menu .btn_sns {
+	display: block;
+	float: left;
+	margin-left: 12px
+}
+
+#footer .sns_menu .btn_sns .icon {
+	display: block
+}

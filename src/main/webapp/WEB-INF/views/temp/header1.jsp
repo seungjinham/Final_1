@@ -40,10 +40,9 @@
 </head>
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
-<link rel="icon" href="<%=request.getContextPath()%>/resources/images/common/like.jsp" type="image/x-icon">
-<link rel="shortcut icon" href="<%=request.getContextPath()%>/" type="image/x-icon">
 <body>
 <header>
+	<!--  header 시작 -->
 	<div id="header" class="">
 		<div class="hgroup">
 			<div class="inbox">
@@ -76,7 +75,7 @@
 
 							<%-- <li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li> --%>
 
-							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고</a></li>
+							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고 검색</a></li>
 							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">상세 검색</a></li>
 
 						</ul>
@@ -92,13 +91,13 @@
 						
 					<li><a href="javascript:void(0);" class="">개인서비스</a>
 						<ul class="navi-sublist subnav03">
-							<li><a href="">이력서 관리</a></li>
-							<li><a href="">지원현황</a></li>
-							<li><a href="">스크랩 공고정보</a></li>
+							<li><a href="#">이력서 관리</a></li>
+							<li><a href="#">지원현황</a></li>
+							<li><a href="#">스크랩 공고정보</a></li>
 							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
 							<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
-							<li><a href="">판매자 즐겨찾기</a></li>
-							<li><a href="">거래 내역 관리</a></li>
+							<li><a href="#">판매자 즐겨찾기</a></li>
+							<li><a href="#">거래 내역 관리</a></li>
 						</ul>
 					</li>
 						
@@ -107,8 +106,8 @@
 							<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인 공고</a></li>
 							<li><a href="">지원자 관리</a></li>
 							<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
-							<li><a href="">파워링크 구매</a></li>
-							<li><a href="">구매내역 관리</a></li>
+							<li><a href="#">파워링크 구매</a></li>
+							<li><a href="#">구매내역 관리</a></li>
 							<li><a href="<%=request.getContextPath()%>/company/companyMyPage">회원정보 수정</a></li>
 						</ul>
 					</li>
@@ -125,7 +124,7 @@
 		</div>
 		<div class="nav-sub-wrap"></div>
 	</div>
-
+	
 </header>
 </body>
 </html>
