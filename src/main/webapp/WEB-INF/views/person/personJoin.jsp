@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,6 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <title>Person Join</title>
 <script type="text/javascript">
 	$(function() {
@@ -33,10 +33,10 @@
 							success : function(data) {
 								if ($.trim(data) == "사용 가능한 ID 입니다.") {
 									$("#idCheck").css('color', 'blue');
-									$("#idCheck").css('font-size', '12px');
+									$("#idCheck").css('font-size', '15px');
 								} else {
 									$("#idCheck").css('color', 'red');
-									$("#idCheck").css('font-size', '12px');
+									$("#idCheck").css('font-size', '15px');
 								}
 								$("#idCheck").html(data);
 							}
@@ -44,7 +44,7 @@
 					} else {
 						$("#idCheck").html("ID는 6~16자의 영문, 숫자만 사용 가능합니다.");
 						$("#idCheck").css('color', 'red');
-						$("#idCheck").css('font-size', '12px');
+						$("#idCheck").css('font-size', '15px');
 					}
 				});
 
@@ -53,7 +53,7 @@
 			if (id == '') {
 				$("#idCheck").html("ID를 입력해주세요.");
 				$("#idCheck").css('color', 'red');
-				$("#idCheck").css('font-size', '12px');
+				$("#idCheck").css('font-size', '15px');
 			}
 		});
 
@@ -77,19 +77,19 @@
 							&& pw.length <= 16) {
 						$("#pwCheck").html("사용 가능한 비밀번호 입니다.");
 						$("#pwCheck").css('color', 'blue');
-						$("#pwCheck").css('font-size', '12px');
+						$("#pwCheck").css('font-size', '15px');
 						$("#pw2").attr('readonly', false);
 					} else {
 						if (pw == '') {
 							$("#pwCheck").html("비밀번호를 입력해주세요.");
 							$("#pwCheck").css('color', 'red');
-							$("#pwCheck").css('font-size', '12px');
+							$("#pwCheck").css('font-size', '15px');
 							$("#pw2").attr('readonly', true);
 						} else {
 							$("#pwCheck").html(
 									"비밀번호는 6~16자의 대/소문자, 숫자, 특수문자만 사용 가능합니다.");
 							$("#pwCheck").css('color', 'red');
-							$("#pwCheck").css('font-size', '12px');
+							$("#pwCheck").css('font-size', '15px');
 							$("#pw2").attr('readonly', false);
 						}
 					}
@@ -102,16 +102,16 @@
 			if (pw1 == pw2 && pw2 != '') {
 				$("#pwCheck2").html("비밀번호가 일치합니다.");
 				$("#pwCheck2").css('color', 'blue');
-				$("#pwCheck2").css('font-size', '12px');
+				$("#pwCheck2").css('font-size', '15px');
 			} else {
 				if (pw2 == '') {
 					$("#pwCheck2").html("비밀번호를 입력해주세요.");
 					$("#pwCheck2").css('color', 'red');
-					$("#pwCheck2").css('font-size', '12px');
+					$("#pwCheck2").css('font-size', '15px');
 				} else {
 					$("#pwCheck2").html("비밀번호가 일치하지 않습니다.");
 					$("#pwCheck2").css('color', 'red');
-					$("#pwCheck2").css('font-size', '12px');
+					$("#pwCheck2").css('font-size', '15px');
 				}
 			}
 		});
@@ -125,16 +125,16 @@
 			if (korean == true) {
 				$("#nameCheck").html("사용 가능합니다.");
 				$("#nameCheck").css('color', 'blue');
-				$("#nameCheck").css('font-size', '12px');
+				$("#nameCheck").css('font-size', '15px');
 			} else {
 				if (name == '') {
 					$("#nameCheck").html("이름을 입력해주세요.");
 					$("#nameCheck").css('color', 'red');
-					$("#nameCheck").css('font-size', '12px');
+					$("#nameCheck").css('font-size', '15px');
 				} else {
 					$("#nameCheck").html("잘못된 형식의 이름입니다.");
 					$("#nameCheck").css('color', 'red');
-					$("#nameCheck").css('font-size', '12px');
+					$("#nameCheck").css('font-size', '15px');
 				}
 			}
 		});
@@ -188,73 +188,279 @@
 	};
 </script>
 <style type="text/css">
-#pw {
-	font-size:
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.title_border {
+	width: 800px;
+	height: 150px;
+	padding-top: 70px;
+}
+
+.title_border2 {
+	width: 300px;
+	height: 70px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 35px;
+	font-family: sans-serif;
+	padding-top: 15px;
+	border-bottom: 3px solid gray;
+}
+
+#table_border {
+	width: 600px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+table {
+	width: 650px;
+	height: 700px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+}
+
+th {
+	width: 70px;
+	text-align: left;
+}
+
+.font {
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+td {
+	width: 280px;
+}
+
+.tline {
+	width: 650px;
+	height: 5px;
+	border-top: 1px dotted #23A41A;
+}
+
+.in {
+	width: 300px;
+	height: 30px;
+}
+
+#p_select {
+	width: 80px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.phone {
+	width: 80px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.birth {
+	width: 80px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.addr {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#addr_btn {
+	width: 120px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	margin-bottom: 5px;
+	background-color: white;
+}
+
+#addr_btn:hover {
+	font-weight: bold;
+	font-size: 15px;
+	color: #23A41A;
+	border: 2px solid #23A41A;
+}
+
+.addr2 {
+	width: 200px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.email {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#e_select {
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#in_btn {
+	width: 130px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+#in_btn:hover {
+	font-weight: bold;
+	font-size: 15px;
+	color: #23A41A;
+	border: 2px solid #23A41A;
+}
+
+.j_btn_b {
+	width: 600px;
+	height: 100px;
+	padding-top: 50px;
+}
+
+#j_btn {
+	display: block;
+	width: 300px;
+	height: 75px;
+	cursor: pointer;
+	margin: 0 auto;
+	border-radius: 15px;
+	font-size: 25px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	color: white;
+	background-color: #23A41A;
+}
+
+#j_btn:hover {
+	font-weight: bold; color : #23A41A;
+	background-color: white;
+	border: 2px solid #23A41A;
+	background-color: white;
+	color: #23A41A;
 }
 </style>
 </head>
 <body>
-	<%@ include file="../temp/header1.jsp" %>	
-	<h1>Person Join</h1>
+	<%@ include file="../temp/header1.jsp"%>
+	<section id="main">
+		<article class="title_border">
+			<div class="title_border2">
+				<b>개인 회원가입</b>
+			</div>
+		</article>
 
-	<form action="./personJoin" method="post">
-		<p>
-			ID : <input type="text" name="id" id="id" placeholder="6~16자 영문,숫자">
-		</p>
-		<div id="idCheck"></div>
-		<p>
-			PW : <input type="password" name="pw" id="pw"
-				placeholder="6~16자 대/소문자,숫자,특수문자">
-		</p>
-		<span id="pwCheck"></span>
-		<p>
-			PW : <input type="password" readonly="readonly" name="pw2" id="pw2">
-		</p>
-		<span id="pwCheck2"></span>
-		<p>
-			NAME : <input type="text" name="name" id="name">
-		</p>
-		<span id="nameCheck"></span>
-		<p>
-			PHONE : <select name="phone">
-				<option value="010">010</option>
-				<option value="011">011</option>
-				<option value="016">016</option>
-				<option value="017">017</option>
-				<option value="018">018</option>
-				<option value="019">019</option>
-			</select> 
-			<input type="text" name="phone" class="phone"> - 
-			<input type="text" name="phone" class="phone">
-		
-		</p>
-		<p>
-			EMAIL : <input type="text" name="email" id="email">
-		</p>
-		<p>
-			ADDR 
-			<input type="text" id="sample6_postcode" placeholder="우편번호" name="addr"> 
-			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-			<input type="text" id="sample6_address" placeholder="주소" name="addr">
-			<input type="text" id="sample6_address2" placeholder="상세주소" name="addr">
-		</p>
-		<p>
-			BIRTH
-				<input type="text" class="birth" name="birth">년
-				<input type="text" class="birth" name="birth">월 
-				<input type="text" class="birth" name="birth">일
-		</p>
-		<p>
-			GENDER : M<input type="radio" value="M" name="gender"> W<input
-				type="radio" value="W" name="gender">
-		</p>
-		<p>
-			<input type="hidden" name="job" value="P">
-		</p>
-		<p>
-			<button>JOIN</button>
-		</p>
-	</form>
+		<input type="hidden" name="job" value="P">
+
+		<div id="table_border">
+			<form action="./personJoin" method="post">
+				<table>
+					<tr>
+						<th class="font">아이디</th>
+						<td class="font"><input type="text" name="id" id="id"
+							placeholder="6~16자 영문,숫자" class="in"><br> <span
+							id="idCheck"></span></td>
+					</tr>
+					<tr>
+						<th class="font">비밀번호</th>
+						<td class="font"><input type="password" name="pw" id="pw"
+							placeholder="6~16자 대/소문자,숫자,특수문자" class="in"><br> <span
+							id="pwCheck"></span></td>
+					</tr>
+					<tr>
+						<th class="font">비밀번호 확인</th>
+						<td class="font"><input type="password" readonly="readonly"
+							name="pw2" id="pw2" class="in"><br> <span
+							id="pwCheck2"></span></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="tline"><div></div></td>
+					</tr>
+					<tr>
+						<th class="font">이름</th>
+						<td class="font"><input type="text" name="name" id="name"
+							class="in"><br> <span id="nameCheck"></span></td>
+					</tr>
+					<tr>
+						<th class="font">휴대폰</th>
+						<td class="font"><select name="phone" id="p_select">
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+						</select> ─ <input type="text" name="phone" class="phone"> ─ <input
+							type="text" name="phone" class="phone"></td>
+					</tr>
+					<tr>
+						<th class="font">주소</th>
+						<td class="font"><input type="text" id="sample6_postcode"
+							placeholder="우편번호" name="addr" class="addr"> <input
+							type="button" onclick="sample6_execDaumPostcode()"
+							value="우편번호 찾기" id="addr_btn"><br> <input
+							type="text" id="sample6_address" placeholder="주소" name="addr"
+							class="addr2"> <input type="text" id="sample6_address2"
+							placeholder="상세주소" name="addr" class="addr2"></td>
+					</tr>
+					<tr>
+						<th class="font">생년월일</th>
+						<td class="font"><input type="text" class="birth"
+							name="birth">년 <input type="text" class="birth"
+							name="birth">월 <input type="text" class="birth"
+							name="birth">일</td>
+					</tr>
+					<tr>
+						<th class="font">성별</th>
+						<td class="font">남자 <input type="radio" value="M"
+							name="gender"> 여자 <input type="radio" value="W"
+							name="gender">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="tline"><div></div></td>
+					</tr>
+					<tr>
+						<th class="font">이메일</th>
+						<td class="font"><input type="text" name="email"
+							class="email"> @ <input type="text" name="email"
+							class="email"> <select id="e_select">
+								<option>직접입력</option>
+								<option value="naver.com">naver.com</option>
+								<option value="hanmail.com">hanmail.com</option>
+								<option value="gmail.com">gmail.com</option>
+								<option value="zum.com">zum.com</option>
+								<option value="yahoo.com">yahoo.com</option>
+						</select><br>
+							<button id="in_btn">인증번호 받기</button></td>
+					</tr>
+				</table>
+				<div class="j_btn_b">
+					<button id="j_btn">가입하기</button>
+				</div>
+			</form>
+		</div>
+	</section>
 
 </body>
 </html>
