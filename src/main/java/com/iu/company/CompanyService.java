@@ -55,7 +55,7 @@ public class CompanyService implements MemberService {
 	}
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
-		String filepath = session.getServletContext().getRealPath("resouces/upload");
+		String filepath = session.getServletContext().getRealPath("resources/images/company");
 		System.out.println(filepath);
 		System.out.println(recruitDTO.getDeadline());
 		File f = new File(filepath);

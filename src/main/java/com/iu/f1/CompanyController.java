@@ -114,4 +114,11 @@ public class CompanyController {
 		mv.setViewName("./company/companyRecruitList");
 		return mv;
 	}
+	
+	//등록취소
+	@RequestMapping(value="companyRecruitDelete")
+	public void companyRecruitDelete() throws Exception {
+		
+		
+	}
 }
