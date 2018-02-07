@@ -9,33 +9,34 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#del").click(function() {
-			var del =$(this);
+		$(".del").click(function() {
 			var num = $(this).val();
+			var fname = $(this).attr("title");
 			var check=confirm(num+" 정말 삭제 하시겠습니까?");
 			if(check) {
 				$.ajax({
-					url:"./companyRecruitDelete",
+					url:"../company/companyRecruitDelete",
 					type:"GET",
 					data:{
-						num:num
+						num:num,
+						fname:fname
 					},
 					success:function(data){
 						if(data.trim()==1){
-							$(del).prev().remove();
-							$(del).remove();
-							i--;
+							alert('data삭제');
+						} else {
+							alert('data 안삭제');
 						}
 					}
-				})
+				});
 			}
-		})
-	})
+		});
+	});
 
 </script>
 </head>
 <body>
-	<table class="t">
+	<table>
 		<tr>
 			<td>NUM</td>
 		</tr>
@@ -61,7 +62,7 @@
 				<td><img src="<%=request.getContextPath()%>/resources/images/company/${list2.fname}"></td>
 				<td>${list2.oname}</td>
 				<td>${list2.addr}</td>
-				<td><button id="del" value="${list2.num}">delete</button></td>
+				<td><button class="del" value="${list2.num}" title="${list2.fname}">delete</button></td>
 			</tr>
 		</c:forEach>
 	</table>
