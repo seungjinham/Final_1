@@ -48,7 +48,7 @@
 			<div class="inbox">
 				<h1 class="logo">
 					<a href="<%=request.getContextPath()%>">
-						<img src="/f1/resources/images/common/logo.jpg" width="150px" height="80px">
+						<img src="/f1/resources/images/common/footer_logo.png" width="50px" height="50px">
 					</a>
 				</h1>
 				<div class="nvalinks">
@@ -104,7 +104,7 @@
 					<li><a href="javascript:void(0);" class="">기업서비스</a>
 						<ul class="navi-sublist subnav03">
 							<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인 공고</a></li>
-							<li><a href="">지원자 관리</a></li>
+							<li><a href="#">지원자 관리</a></li>
 							<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
 							<li><a href="#">파워링크 구매</a></li>
 							<li><a href="#">구매내역 관리</a></li>

@@ -9,9 +9,9 @@
 	height: 100%
 }
 
-#container {
-	min-height: 100%;
-	margin: -80px 0 -250px
+
+.container {
+	height: 680px;
 }
 
 /* Header */
@@ -40,7 +40,7 @@
 /* navigation */
 .hgroup .logo {
 	position: absolute;
-	top: 0;
+	top: 15px;
 	left: 10px;
 }
 
