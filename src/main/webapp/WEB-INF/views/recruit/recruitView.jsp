@@ -10,7 +10,7 @@
 	<%@ include file="../temp/header1.jsp"%>
 	
 	<a href="apply/apply">Apply</a>
-	<a href="../scrap/scrapInsert">Scrap</a>
+	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=<%=request.getSession().getId()%>">Scrap</a>
 	<h1>${company.addr}</h1>
 	<h1>${recruit.id}</h1>
 	<h1>${recruit.title}</h1>

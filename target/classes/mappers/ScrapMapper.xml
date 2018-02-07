@@ -3,7 +3,7 @@
 
 <mapper namespace="ScrapMapper">
 <insert id="insert" parameterType="ScrapDTO">
-	insert into values (scrap_seq.nextval, recruit_num=#{recruit_num}, id=#{id})
+	insert into scrap values (scrap_seq.nextval, #{recruit_num}, #{id})
 </insert>
 
 <delete id="delete" parameterType="ScrapDTO">
