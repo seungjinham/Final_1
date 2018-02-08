@@ -17,6 +17,7 @@
 <body>
 	<%@ include file="../temp/header1.jsp"%>
 	<section id="main">
+		<div class="container">
 		<h1>FAQ</h1>
 		<table>
 			<tr>
@@ -34,6 +35,7 @@
 		</table>
 
 		<a href="./faqWrite">WRITE</a>
+		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>
 
