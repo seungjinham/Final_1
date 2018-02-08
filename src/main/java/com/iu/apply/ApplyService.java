@@ -40,13 +40,13 @@ public class ApplyService {
 			if(i==0) {
 				company_ar.add(companyDTO);
 			} else {
-				rotate:
-				for(int j=0; j<company_ar.size(); j++) {
+				//rotate:
+				for(int j=0; j<recruit_ar.size(); j++) {
 					if(companyDTO.getId().equals(company_ar.get(j).getId())) {
 						company_ar.add(companyDTO);
 					} else {
 						company_ar.add(companyDTO);
-						break rotate;
+						//break rotate;
 					}//else end
 				}//for end
 			}//else end
