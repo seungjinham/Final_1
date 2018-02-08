@@ -54,7 +54,7 @@ body {
 	font-size: 75%;
 	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
-	color: #767676;
+	color: #000;
 }
 
 img {
@@ -64,7 +64,7 @@ img {
 }
 
 #main {
-	width:800px;
+	width:1000px;
 	display: block;
 	background-color: white;
 	border: 0;
@@ -104,7 +104,7 @@ p, acronym, address, big, small, cite, code, dfn, em, kbd, pre, samp,
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-size: 1em;
+	/* font-size: 1em; */
 	letter-spacing: -1px;
 	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
@@ -126,8 +126,8 @@ sup {
 
 input, select {
 	vertical-align: middle;
-	font-size: 1em;
-	color: #767676;
+	/* font-size: 1em; */
+	color: #000;
 	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
@@ -167,17 +167,17 @@ iframe {
 
 /* 기본 링크 스타일 */
 a:link {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #767676;
+	color: #000;
 	text-decoration: none;
 }
 

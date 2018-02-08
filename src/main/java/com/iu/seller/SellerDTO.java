@@ -3,12 +3,12 @@ package com.iu.seller;
 import com.iu.person.PersonDTO;
 
 public class SellerDTO extends PersonDTO{
-	private String title;
-	private String category;
-	private String type;
-	private int price;
-	private String work_date;
-	private String contents;
+	private String title; //제목
+	private String category; //카테고리
+	private String type; //
+	private int price; //가격 정보
+	private String work_date; //작업 기간
+	private String contents; //판매 내용, 서비스 설명
 	private String fname;
 	private String oname;
 	

@@ -35,6 +35,7 @@
 
 		<a href="./faqWrite">WRITE</a>
 	</section>
+	<%@ include file="../temp/footer.jsp" %>
 
 </body>
 </html>

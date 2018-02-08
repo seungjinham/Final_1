@@ -8,15 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="../scrap/scrapDelete">ScrapDelete</a>
 <table border="1">
-<tr><th>지역</th><th>채용공고제목</th><th>급여</th><th>마감기한</th></tr>
-<%-- <c:forEach var="result" items="${scrap_result}" begin="0" step="1">
-<tr><td>${result.addr}</td>
+<tr><th>선택</th><th>지역</th><th>채용공고</th><th>급여</th><th>마감기한</th></tr>
+<c:forEach var="result" items="${scrap_result}" begin="0" step="1">
+<tr>
+<td><input type="checkbox"></td>
 <td>${result.addr}</td>
-<td>${result.addr}</td>
-<td>${result.addr}</td>
+<td>${result.c_name} / ${result.title}</td>
+<td>${result.salary}</td>
+<td>${result.deadline}</td>
 </tr>
-</c:forEach> --%>
+</c:forEach>
 </table>
 </body>
 </html>

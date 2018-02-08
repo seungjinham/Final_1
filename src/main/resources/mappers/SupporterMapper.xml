@@ -3,6 +3,6 @@
 
 <mapper namespace="SupporterMapper">
 <insert id="insert" parameterType="ApplyDTO">
-	insert into values (id=#{id})
+	insert into suppoter values (#{id})
 </insert>
 </mapper>

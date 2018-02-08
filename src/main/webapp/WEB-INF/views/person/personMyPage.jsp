@@ -42,7 +42,7 @@
 	<p><a href="./PersonUse">거래내역</a></p>
 	
 	<hr>
-	<p><a href="../scrap/scrapSelectList">스크랩보기</a>
+	<p><a href="../scrap/scrapSelectList?id=${member.id}">스크랩보기</a>
 	
 </body>
 </html>

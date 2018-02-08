@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.core.annotation.SynthesizedAnnotation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -112,6 +113,18 @@ public class CompanyController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
 		mv.setViewName("./company/companyRecruitList");
+		return mv;
+	}
+	
+	//등록취소
+	@RequestMapping(value="companyRecruitDelete", method=RequestMethod.GET)
+	public ModelAndView companyRecruitDelete(int num, String fname, HttpSession session) throws Exception {
+		System.out.println(num);
+		System.out.println(fname);
+		int result = companyService.companyRecruitDelete(num, fname, session);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("result", result);
+		mv.setViewName("company/companyDelete");
 		return mv;
 	}
 }

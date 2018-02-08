@@ -9,9 +9,9 @@
 	height: 100%
 }
 
-#container {
-	min-height: 100%;
-	margin: -80px 0 -250px
+
+.container {
+	height: 680px;
 }
 
 /* Header */
@@ -40,7 +40,7 @@
 /* navigation */
 .hgroup .logo {
 	position: absolute;
-	top: 0;
+	top: 15px;
 	left: 10px;
 }
 
@@ -52,12 +52,20 @@
 
 .nvalinks {
 	position: absolute;
-	top: 19px;
+	top: 30px;
 	right: 10px
 }
 
+.navlinks a {
+	float: left;
+	padding: 0 5px;
+	background: 
+		url("https://smcdn.smtown.com/image/pc/common/icon_ft_line.png")
+		no-repeat left center	
+}
+
 .nvalinks a:first-child {
-	padding-left: 0;
+	margin-left: -15px;
 	background: none
 }
 
@@ -244,7 +252,7 @@ a.nvalinks-rev:hover {
 }
 
 .nav-sub-wrap.on {
-	height: 222px;
+	height: 280px;
 	background: #fff;
 	border-bottom: 1px solid #e2e2e2
 }

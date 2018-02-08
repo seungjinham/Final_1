@@ -13,6 +13,7 @@ import com.iu.company.CompanyDAO;
 import com.iu.company.CompanyDTO;
 import com.iu.recruit.RecruitDAO;
 import com.iu.recruit.RecruitDTO;
+import com.iu.util.ListSort;
 
 @Service
 public class ScrapService {
@@ -32,24 +33,20 @@ public class ScrapService {
 	}
 	
 	public List<RecruitDTO> SelectList(ScrapDTO scrapDTO) {
-		System.out.println("scrapservicetest");
 		List<ScrapDTO> scrap_ar = scrapDAO.SelectList(scrapDTO);
-		System.out.println(scrap_ar);
-		System.out.println(scrap_ar.get(0).getId());
-		List<RecruitDTO> recruit_ar = recruitDAO.selectList(scrap_ar);//scrap - recruit_num 검색
-		System.out.println(recruit_ar);
-		System.out.println(recruit_ar.get(0).getTitle());
-		List<CompanyDTO> company_ar = companyDAO.selectList(recruit_ar);//recruit - id로 검색
-		System.out.println(company_ar);
-		System.out.println(company_ar.get(0).getAddr());
-		
-//		for(int i=0; i<company_ar.size(); i++) {
-//			String temp_str = company_ar.get(i).getAddr();
-//			String[] temp_ar = temp_str.split(" ");
-//			temp_str = temp_ar[0]+" "+temp_ar[1];
-//			recruit_ar.get(i).setAddr(temp_str);
-//		}
-		return null;//recruit_ar;
+		List<RecruitDTO> recruit_ar = new ArrayList<>();
+		List<CompanyDTO> company_ar = new ArrayList<>();
+		for(int i=0; i<scrap_ar.size(); i++) {
+			RecruitDTO recruitDTO = recruitDAO.selectOne(scrap_ar.get(i).getRecruit_num());
+			recruit_ar.add(recruitDTO);
+		}
+		for(int i=0; i<recruit_ar.size(); i++) {
+			CompanyDTO companyDTO = companyDAO.selectList(recruit_ar.get(i).getId());
+			company_ar.add(companyDTO);
+		}
+		ListSort listSort = new ListSort();
+		recruit_ar = listSort.listSort(recruit_ar, company_ar);
+		return recruit_ar;
 	}
 	
 //	public RecruitDTO SelectOne(int num) {
