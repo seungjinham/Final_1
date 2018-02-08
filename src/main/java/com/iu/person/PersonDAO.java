@@ -43,6 +43,6 @@ public class PersonDAO implements MemberDAO {
 	public MemberDTO idCheck(String id) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"personIdCheck", id);
 	}
-
+	
 
 }

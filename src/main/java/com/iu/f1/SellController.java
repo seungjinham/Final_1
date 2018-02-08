@@ -33,11 +33,11 @@ public class SellController {
 		int result = sellerService.sellerWrite(sellerDTO);
 		
 		String message = "판매자가 등록에 실패하였습니다";
-		String path = "./personMypage";
+		String path = "../person/personMypage";
 		
 		if(result>0){
 			message="판매자 등록에 성공하였습니다";
-			path="./sellerMypage";
+			path="../person/personMyPage";
 		}
 		mv.addObject("message", message);
 		mv.addObject("path", path);
@@ -55,8 +55,21 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
-	public void sellerUpdate(SellerDTO sellerDTO) throws Exception{
-		sellerService.sellerUpdate(sellerDTO);
+	public ModelAndView sellerUpdate(SellerDTO sellerDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result=sellerService.sellerUpdate(sellerDTO);
+		
+		String message = "정보 수정에 실패하였습니다";
+		String path = "../person/personMyPage";
+		
+		if(result>0){
+			message="정보가 수정되었습니다.";
+			path="../person/personMyPage";
+		}
+		mv.addObject("message", message);
+		mv.addObject("path", path);
+		mv.setViewName("common/result");
+		return mv;
 	}
 	
 	//판매자 정보 삭제
@@ -76,8 +89,11 @@ public class SellController {
 	//판매자 정보 보기
 	//========== View ==========
 	@RequestMapping(value="sellerView")
-	public void view() throws Exception{
+	public String view(String id, Model model) throws Exception{
+		SellerDTO sellerDTO = (SellerDTO) sellerService.sellerOne(id);
+		model.addAttribute("seller", sellerDTO);
 		
+		return "../person/personMyPage";
 	}
 	
 	//판매자 목록 보기

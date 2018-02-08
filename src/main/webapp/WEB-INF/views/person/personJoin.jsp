@@ -10,6 +10,51 @@
 <title>Person Join</title>
 <script type="text/javascript">
 	$(function() {
+		
+		//약관 동의
+		$("#all_check").click(function() {
+			if ($(this).prop("checked")) {
+				$(".box").prop("checked", true);
+			} else {
+				$(".box").prop("checked", false);
+			}
+		});
+		$(".box").click(
+				function() {
+					if ($("#c1").prop("checked") && $("#c2").prop("checked")
+							&& $("#c3").prop("checked")) {
+						$("#all_check").prop("checked", true);
+					} else {
+						$("#all_check").prop("checked", false);
+					}
+
+				});
+
+		var check = true;
+		$("#ser_1").click(function() {
+			if (check) {
+				$("#ser_1").text("닫기▲");
+				$(".see1").css("margin", "10px");
+				check = false;
+			} else {
+				$("#ser_1").text("보기▼");
+				check = true;
+			}
+			$(".see1").slideToggle("slow");
+		});
+
+		var check2 = true;
+		$("#ser_2").click(function() {
+			if (check2) {
+				$("#ser_2").text("닫기▲");
+				$(".see2").css("margin", "10px");
+				check2 = false;
+			} else {
+				$("#ser_2").text("보기▼");
+				check2 = true;
+			}
+			$(".see2").slideToggle("slow");
+		});
 
 		//ID 중복 확인
 		$("#id").keyup(
@@ -138,6 +183,11 @@
 				}
 			}
 		});
+		
+		//이메일
+		$("#e_select").change(function() {
+			$("#domain").val($(this).val());
+		});
 
 	});
 
@@ -188,197 +238,91 @@
 	};
 </script>
 <style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-}
-
-#main {
-	height: 1400px;
-}
-
-.title_border {
-	width: 800px;
-	height: 100px;
-	background-color: gray;
-}
-
-.title_border2 {
-	width: 350px;
-	height: 60px;
-	margin: 0 auto;
-	text-align: center;
+#solo{
+	color: #23A41A;
 	font-size: 35px;
-	font-family: sans-serif;
-	padding-top: 15px;
 }
-
 .terms_border {
 	width: 800px;
-	height: 400px;
-	background-color: lime;
 }
 
 .terms_border2 {
-	width : 600px;
-	height: 400px;
 	width: 600px;
 	margin: 0 auto;
-	border-top : 2px solid #23A41A;
-	background-color: yellow;
-}
-
-#table_border {
-	width: 600px;
-	height: 800px;
-	margin: 0 auto;
-}
-
-table {
-	width: 650px;
-	height: 700px;
 	border-top: 2px solid #23A41A;
-	border-bottom: 2px solid #23A41A;
-}
-
-th {
-	width: 70px;
-	text-align: left;
-}
-
-.font {
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-td {
-	width: 280px;
-}
-
-.tline {
-	width: 650px;
-	height: 5px;
-	border-top: 1px dotted #23A41A;
-}
-
-.inupt_f {
-	width: 300px;
-	height: 30px;
-}
-
-#p_select {
-	width: 80px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.phone {
-	width: 80px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.birth {
-	width: 80px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.addr {
-	width: 150px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#addr_btn {
-	width: 120px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	margin-top: 10px;
-	border-radius: 5px;
-	border: 1px solid gray;
-	margin-bottom: 5px;
-	background-color: white;
-}
-
-#addr_btn:hover {
 	font-weight: bold;
 	font-size: 15px;
-	color: #23A41A;
-	border: 2px solid #23A41A;
-}
-
-.addr2 {
-	width: 200px;
-	height: 25px;
-	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
-.email {
-	width: 150px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#e_select {
-	width: 100px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#code_btn {
-	width: 130px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	margin-top: 10px;
-	border-radius: 5px;
-	border: 1px solid gray;
-}
-
-#in_btn:hover {
-	font-weight: bold;
-	font-size: 15px;
-	color: #23A41A;
-	border: 2px solid #23A41A;
-}
-
-.j_btn_b {
+.all {
 	width: 600px;
-	height: 100px;
-	padding-top: 50px;
-}
-
-#j_btn {
-	display: block;
-	width: 300px;
-	height: 75px;
-	cursor: pointer;
-	margin: 0 auto;
-	border-radius: 15px;
-	font-size: 25px;
+	font-size: 17px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	color: white;
-	background-color: #23A41A;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-#j_btn:hover {
-	font-weight: bold;
+.agree {
+	width: 600px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.point {
+	color: red;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.see {
+	font-weight: normal;
+	font-size: 12px;
+	float: right;
 	color: #23A41A;
-	background-color: white;
-	border: 2px solid #23A41A;
-	background-color: white;
-	color: #23A41A;
+	cursor: pointer;
+}
+
+#choice {
+	color: gray;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#sub {
+	padding-left: 70px;
+	color: gray;
+	font-weight: normal;
+	font-size: 12px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	font-weight: normal;
+}
+
+.see1 {
+	width: 590px;
+	height: 200px;
+	font-size: 13px;
+	font-weight: normal;
+	overflow: scroll;
+	border: 1px solid #23A41A;
+	display: none;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.see2 {
+	width: 590px;
+	height: 200px;
+	font-size: 14px;
+	font-weight: normal;
+	overflow: scroll;
+	border: 1px solid #23A41A;
+	display: none;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 </style>
+<link
+	href="<%=request.getContextPath()%>/resources/css/person/personJoin.css"
+	rel="stylesheet">
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -387,18 +331,42 @@ td {
 	<section id="main">
 		<article class="title_border">
 			<div class="title_border2">
-				<b>개인 회원가입</b>
+				<b><span id="solo">개인</span> 회원가입</b>
 			</div>
 		</article>
 
 		<div class="terms_border">
-			<div class="terms_border2"></div>
+			<div class="terms_border2">
+				<div class="all">
+					<input type="checkbox" id="all_check"> 가입 전체약관 및 수신에 동의합니다.
+				</div>
+				<div class="tline"></div>
+				<div class="agree">
+					<input type="checkbox" class="box" id="c1">
+					<span class="point">[필수]</span> 서비스 이용약관 동의
+					<button class="see" id="ser_1">보기▼</button>
+					<div class="see1"><%@ include file="./service_1.jsp"%>
+					</div>
+				</div>
+				<div class="agree">
+					<input type="checkbox" class="box" id="c2">
+					<span class="point">[필수]</span> 개인정보 수집 및 이용 동의
+						<button class="see" id="ser_2">보기▼</button>
+					<div class="see2"><%@ include file="./service_2.jsp"%>
+					</div>
+				</div>
+				<div class="agree">
+					<input type="checkbox" class="box" id="c3"><span
+						id="choice">[선택]</span> 개인정보 수집 및 이용 동의<br> <span id="sub">(공고
+						소식 및 광고메일, 휴대폰 알림)</span>
+				</div>
+			</div>
 		</div>
 
-		<input type="hidden" name="job" value="P">
 
 		<div id="table_border">
-			<form action="./personJoin" method="post">
+			<form action="./personJoin" method="post" id="frm">
+				<input type="hidden" name="job" value="P">
 				<table>
 					<tr>
 						<th class="font">아이디</th>
@@ -469,8 +437,8 @@ td {
 						<th class="font">이메일</th>
 						<td class="font"><input type="text" name="email"
 							class="email"> @ <input type="text" name="email"
-							class="email"> <select id="e_select">
-								<option>직접입력</option>
+							class="email" id="domain"> <select id="e_select">
+								<option value="">직접입력</option>
 								<option value="naver.com">naver.com</option>
 								<option value="hanmail.com">hanmail.com</option>
 								<option value="gmail.com">gmail.com</option>
@@ -486,6 +454,7 @@ td {
 			</form>
 		</div>
 	</section>
+	
 	<!-- main 끝 -->
 
 	<%@ include file="../temp/footer.jsp"%>

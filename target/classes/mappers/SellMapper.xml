@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SellerMapper">
 	<insert id="write" parameterType="SellerDTO"  >
-	
+		insert into seller values(#{id},#{title},#{category},#{add_option},#{price},#{work_date},#{contents},#{fname},#{oname},#{refund})
 	</insert>
 	
 	<update id="update" parameterType="SellerDTO">
-		
+		update seller set id=#{id},title=#{title},category=#{category},add_option=#{add_option},price=#{price},work_date=#{work_date},contents=#{contents},fname=#{fname},oname=#{oname},refund=#{refund})
 	</update>
 	
-	<delete id="delete">
-	
+	<delete id="delete" parameterType="String">
+		delete seller where id=#{id}
 	</delete>
 	
 	<select id="selectList" parameterType="ListData" resultType="ListData">
