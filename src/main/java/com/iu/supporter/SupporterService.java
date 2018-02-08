@@ -12,6 +12,7 @@ public class SupporterService {
 	private SupporterDAO supporterDAO;
 	
 	public int insert(ApplyDTO applyDTO) {
+		applyDTO.setMemo("지원");
 		return supporterDAO.insert(applyDTO);
 	}
 }

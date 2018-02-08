@@ -3,7 +3,9 @@ package com.iu.apply;
 public class ApplyDTO {
 	private int 	num;
 	private int 	recruit_num;
-	private String 	id;
+	private String 	id; //개인회원
+	private String  cid; //기업회원
+	private String  memo;
 	
 	public int getNum() {
 		return num;
@@ -22,5 +24,17 @@ public class ApplyDTO {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getCid() {
+		return cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
 }

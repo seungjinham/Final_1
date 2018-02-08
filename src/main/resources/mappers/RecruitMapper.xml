@@ -29,7 +29,7 @@
 	<select id="companyRecruitList" resultType="RecruitDTO">
 		select * from recruit
 	</select>
-	<update id="RecruitUpdate" parameterType="RecruitDTO">
+	<update id="Update" parameterType="RecruitDTO">
 		update recruit set
 		title=#{title}, deadline=#{deadline}, people=#{people},
 		gender=#{gender}, age=#{age}, school=#{school}, special=#{special},
@@ -38,15 +38,15 @@
 		fname=#{fname}, oname=#{oname} where num=#{num}
 	</update>
 
-	<select id="selectOne" parameterType="int" resultType="RecruitDTO">
-		select * from recruit where num=#{num}
+	<select id="userRecruitselectOne" parameterType="int" resultType="RecruitDTO">
+		select * from (select * from recruit order by id) where num=#{num}
 	</select>
 
-	<select id="selectList" resultType="RecruitDTO">
+	<select id="userRecruitselectList" resultType="RecruitDTO">
 		select * from (select * from recruit order by id) R
 	</select>
 
-	<select id="searchList" parameterType="RecruitSearchDTO"
+	<select id="userRecruitsearchList" parameterType="RecruitSearchDTO"
 		resultType="RecruitDTO">
 	</select>
 </mapper>

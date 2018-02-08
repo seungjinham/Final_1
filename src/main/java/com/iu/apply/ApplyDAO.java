@@ -6,9 +6,6 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-
-import com.iu.recruit.RecruitDTO;
 
 @Repository
 public class ApplyDAO {
@@ -20,5 +17,8 @@ public class ApplyDAO {
 		return sqlSession.insert(NAMESPACE+"insert", applyDTO);
 	}
 
+	public List<ApplyDTO> selectList(ApplyDTO applyDTO) {
+		return sqlSession.selectList(NAMESPACE+"selectList", applyDTO);
+	}
 
 }

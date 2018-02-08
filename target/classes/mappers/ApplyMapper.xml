@@ -5,4 +5,8 @@
 <insert id="insert" parameterType="ApplyDTO">
 	insert into apply values (apply_seq.nextval, #{id}, #{recruit_num})
 </insert>
+
+<select id="selectList" parameterType="applyDTO" resultType="applyDTO">
+	select * from apply where id=#{id}
+</select>
 </mapper>

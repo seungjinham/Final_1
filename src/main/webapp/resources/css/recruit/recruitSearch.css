@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+* {
+	margin:0;
+	padding:0;
+}
+
+#wrap {
+	width:100%;
+	height:2538px;
+	border:1px solid black;
+}
+
+#header {
+	width:100%;
+	height:168px;
+	margin-bottom:13px;
+	background-color:red;
+}
+
+#container {
+	width:70%;
+	height:1943px;
+	margin:0 auto;
+	border:1px solid green;
+}
+
+#footer {
+	width:70%;
+	height:364px;
+	padding-top:30px;
+	margin:0 auto;
+	background-color:blue;
+}
+
+
+/* container 내부*/
+#top {
+	width:100%;
+	height:110px;
+	padding-bottom:13px;
+	border:1px solid red;
+	margin-bottom:10px;
+}
+
+#contentsbg {
+	width:100%;
+	height:1809px;
+	margin-top:20px;
+	border:1px solid lime;
+}
+
+
+/*top내부*/
+.ad {
+	width:18%;
+	height:100px;
+	margin-top:10px;
+	border:1px solid violet;
+	display:inline-block;
+	margin-left:17px;
+}
+
+
+/*contentsbg내부*/
+#leftbox {
+	width:15%;
+	height:1453px;
+	border:1px solid green;
+	display:inline-block;
+	float:left;
+}
+
+#leftbox > h2 {
+	width:100%;
+	height:40px;
+	margin-bottom:5px;
+	background-color:orange;
+	color:white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#leftbox > #leftmenu {
+	width:100%;
+	height:1326px;
+	border:1px solid black;
+	margin-bottom:10px;
+}
+
+#leftbox > #leftad {
+	width:100%;
+	height:70px;
+	background-color:lightgray;
+}
+
+#contentsbox {
+	width:80%;
+	height:1809px;
+	border:1px solid aqua;
+	display:inline-block;
+	float:right;
+}
+
+/*contentsbox*/
+#pagetop {
+	width:100%;
+	height:33px;
+	padding-top:12px;
+}
+
+#form {
+	width:100%;
+	height:1644px;
+	border:1px solid violet;
+}
+
+#form > #searchbox {
+	width:100%;
+	height:850px;
+	border:1px solid black;
+}
+
+#form #searchbox .common {
+	width:100%;
+	height:26px;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+#form #searchbox #school {
+	width:100%;
+	height:40px;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+#form #searchbox .common h3{
+	display:inline-block;
+	margin-right:30px;
+	margin-left:10px;
+}
+
+#form #searchbox .common #special {
+	display:inline-block;
+	border:1px solid red;
+}
+
+#form #searchbox .common #jobwork {
+	display:inline-block;
+	border:1px solid red;
+}
+
+#form #searchbox .common #area {
+	display:inline-block;
+	border:1px solid red;
+	margin-left:46px;
+}
+
+#form #searchbox #searchbtn {
+	width:100%;
+	height:26px;
+	padding-top:8px;
+	padding-bottom:8px;
+
+}
+
+#form #searchbox #searchbtn #btngroup {
+	width:15%;
+	height:30px;
+	margin:0 auto;
+}
+
+#leftwing {
+	width:150px;
+	height:100px;
+	border:1px solid violet;
+	position:absolute;
+	margin-left:90px;
+	margin-top:12px;
+}
+
+#rightwing {
+	width:200px;
+	height:150px;
+	border:1px solid black;
+	float:right;
+	margin-right:100px;
+	position: fixed;
+	left:1650px;
+}
+
+#rightwing ul li {
+	list-style: none;
+	padding-left:10px;
+}
+
+#rightwing p {
+	width:50%;
+	margin-left:10px;
+}
+
+#rightwing a {
+	text-decoration: none;
+	color:black;
+}
