@@ -50,23 +50,38 @@
 	height: 68px;
 }
 
+
 .nvalinks {
 	position: absolute;
 	top: 30px;
 	right: 10px
 }
 
-.navlinks a {
-	float: left;
-	padding: 0 5px;
-	background: 
-		url("https://smcdn.smtown.com/image/pc/common/icon_ft_line.png")
-		no-repeat left center	
+.member_menu {
+	height: 34px
 }
 
-.nvalinks a:first-child {
+.member_menu li {
+	float: left;
+	padding: 0 5px;
+	background:
+		url("https://smcdn.smtown.com/image/pc/common/icon_ft_line.png")
+		no-repeat left center
+}
+
+.member_menu li:first-child {
 	margin-left: -15px;
 	background: none
+}
+
+.member_menu .btn_link {
+	display: block;
+	padding: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #000;
+	font-weight: 500
 }
 
 .nvalinks a:hover {

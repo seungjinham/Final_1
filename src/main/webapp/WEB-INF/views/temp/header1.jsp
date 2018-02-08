@@ -45,84 +45,99 @@
 	<!--  header 시작 -->
 	<div id="header" class="">
 		<div class="hgroup">
-			<div class="inbox">
-				<h1 class="logo">
-					<a href="<%=request.getContextPath()%>">
-						<img src="/f1/resources/images/common/footer_logo.png" width="50px" height="50px">
-					</a>
-				</h1>
-				<div class="nvalinks">
+				<div class="inbox">
+					<h1 class="logo">
+						<a href="<%=request.getContextPath()%>"> <img src="/f1/resources/images/common/footer_logo.png" width="50px" height="50px"></a>
+					</h1>
+					<div class="nvalinks">
+						<ul class="member_menu">
+							<c:if test="${empty member}">
+								<li><a href="<%=request.getContextPath()%>/member/login" target="_self" class="btn_link">로그인</a></li>
+								<li><a href="<%=request.getContextPath()%>/member/join" target="_self" class="btn_link">회원가입</a></li>
+							</c:if>
 
-					<c:if test="${empty member}">
-						<a href="<%=request.getContextPath()%>/member/login">로그인</a>
-						<a href="<%=request.getContextPath()%>/member/join">회원가입</a>
-					</c:if>
+							<c:if test="${not empty member}">
+								<li>
+									<c:if test="${member.job eq 'P'}">
+										<a href="<%=request.getContextPath()%>/person/personMyPage" target="_self" class="btn_link">마이페이지</a>
+									</c:if> <c:if test="${member.job eq 'C'}">
+										<a href="<%=request.getContextPath()%>/company/companyMyPage" target="_self" class="btn_link">마이페이지</a>
+									</c:if>
+								</li>
+								<li><a href="<%=request.getContextPath()%>/member/memberLogOut" target="_self" class="btn_link">로그아웃</a><li>
+							</c:if>
+						</ul>
+					</div>
 
-					<c:if test="${not empty member}">
-						<c:if test="${member.job eq 'P'}">
-							<a href="<%=request.getContextPath()%>/person/personMyPage">마이페이지</a>
-						</c:if>
-						<c:if test="${member.job eq 'C'}">
-							<a href="<%=request.getContextPath()%>/company/companyMyPage">마이페이지</a>
-						</c:if>
-						<a href="<%=request.getContextPath()%>/member/memberLogOut">로그아웃</a>
-					</c:if>
+					<ul class="navigation">
+						<li><a href="javascript:void(0);" class="">채용정보</a>
+							<ul class="navi-sublist subnav01">
+
+								<%-- <li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li> --%>
+
+								<li><a
+									href="<%=request.getContextPath()%>/recruit/recruitList">채용
+										공고 검색</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/recruit/recruitList">상세
+										검색</a></li>
+
+							</ul></li>
+
+						<li><a href="javascript:void(0);" class="">재능마켓</a>
+							<ul class="navi-sublist subnav02">
+								<li><a
+									href="<%=request.getContextPath()%>/sell/sellerList?category=design">디자인</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/sell/sellerList?category=it">IT
+										& 프로그래밍</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/sell/sellerList?category=translate">번역
+										& 통역</a></li>
+							</ul></li>
+
+						<li><a href="javascript:void(0);" class="">개인서비스</a>
+							<ul class="navi-sublist subnav03">
+								<li><a href="">이력서 관리</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">지원현황</a></li>
+								<li><a href="">스크랩 공고정보</a></li>
+
+								<li><a
+									href="<%=request.getContextPath()%>/person/personMyPage">회원정보
+										수정</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/sell/sellerWrite">판매자
+										등록</a></li>
+								<li><a href="#">판매자 즐겨찾기</a></li>
+								<li><a href="#">거래 내역 관리</a></li>
+							</ul></li>
+
+						<li><a href="javascript:void(0);" class="">기업서비스</a>
+							<ul class="navi-sublist subnav03">
+								<li><a
+									href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인
+										공고</a></li>
+								<li><a href="#">지원자 관리</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/company/companyRecruit">공고
+										등록하기</a></li>
+								<li><a href="#">파워링크 구매</a></li>
+								<li><a href="#">구매내역 관리</a></li>
+								<li><a
+									href="<%=request.getContextPath()%>/company/companyMyPage">회원정보
+										수정</a></li>
+							</ul></li>
+
+
+						<li><a href="javascript:void(0);" class="">고객센터</a>
+							<ul class="navi-sublist subnav04">
+								<li><a href="<%=request.getContextPath()%>/faq/faqList">FAQ</a></li>
+								<li><a href="<%=request.getContextPath()%>/talk/talkForm">문의하기</a></li>
+							</ul></li>
+					</ul>
 				</div>
-
-				<ul class="navigation">
-					<li><a href="javascript:void(0);" class="">채용정보</a>
-						<ul class="navi-sublist subnav01">
-
-							<%-- <li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li> --%>
-
-							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고 검색</a></li>
-							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">상세 검색</a></li>
-
-						</ul>
-					</li>
-						
-					<li><a href="javascript:void(0);" class="">재능마켓</a>
-						<ul class="navi-sublist subnav02">
-							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=design">디자인</a></li>
-							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=it">IT & 프로그래밍</a></li>
-							<li><a href="<%=request.getContextPath()%>/sell/sellerList?category=translate">번역 & 통역</a></li>
-						</ul>
-					</li>
-						
-					<li><a href="javascript:void(0);" class="">개인서비스</a>
-						<ul class="navi-sublist subnav03">
-							<li><a href="">이력서 관리</a></li>
-							<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">지원현황</a></li>
-							<li><a href="">스크랩 공고정보</a></li>
-
-							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
-							<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
-							<li><a href="#">판매자 즐겨찾기</a></li>
-							<li><a href="#">거래 내역 관리</a></li>
-						</ul>
-					</li>
-						
-					<li><a href="javascript:void(0);" class="">기업서비스</a>
-						<ul class="navi-sublist subnav03">
-							<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인 공고</a></li>
-							<li><a href="#">지원자 관리</a></li>
-							<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
-							<li><a href="#">파워링크 구매</a></li>
-							<li><a href="#">구매내역 관리</a></li>
-							<li><a href="<%=request.getContextPath()%>/company/companyMyPage">회원정보 수정</a></li>
-						</ul>
-					</li>
-						
-						
-					<li><a href="javascript:void(0);" class="">고객센터</a>
-						<ul class="navi-sublist subnav04">
-							<li><a href="<%=request.getContextPath()%>/faq/faqList">FAQ</a></li>
-							<li><a href="<%=request.getContextPath()%>/talk/talkForm">문의하기</a></li>
-						</ul>
-					</li>
-				</ul>
 			</div>
-		</div>
 		<div class="nav-sub-wrap"></div>
 	</div>
 	
