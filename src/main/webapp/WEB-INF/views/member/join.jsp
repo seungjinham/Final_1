@@ -5,15 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Join Select Page</title>
-<style type="text/css">
-footer {
-	width: 100%;
-	height: 150px;
-	margin-top: 50px;
-	background-color: green;
-}
-</style>
-<link href="<%=request.getContextPath()%>/resources/css/member/join.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/join.css"
+	rel="stylesheet">
 </head>
 <body>
 	<!-- Header 시작 -->
@@ -24,7 +17,7 @@ footer {
 	<section id="main">
 		<article class="title_border">
 			<div class="title_border2">
-				<b>PICK ME JOIN</b>
+				<img src="../resources/images/common/footer_logo.png" width="55px" height="50px"> <b>회원가입</b>
 			</div>
 		</article>
 
@@ -40,7 +33,11 @@ footer {
 				</div>
 				<a href="../person/personJoin" class="btn" id="p_btn">개인 회원가입</a>
 				<div class="j_write3">SNS계정으로 쉽고 빠르게 회원가입</div>
-				<div class="kakao"><button><img src="../resources/images/member/kaka.PNG" id="kakao_p"> </button> </div>
+				<div class="kakao">
+					<button>
+						<img src="../resources/images/member/kaka.PNG" id="kakao_p">
+					</button>
+				</div>
 			</div>
 
 			<div class="line"></div>
@@ -63,9 +60,8 @@ footer {
 	</section>
 	<!-- main 끝 -->
 
-	<footer>
-		<h1>footer</h1>
-	</footer>
+	<!-- footer-->
+	<%@ include file="../temp/footer.jsp"%>
 
 </body>
 </html>

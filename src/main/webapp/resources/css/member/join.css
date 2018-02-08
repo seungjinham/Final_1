@@ -6,24 +6,22 @@
 
 .title_border {
 	width: 800px;
-	height: 230px;
-	padding-top: 100px;
+	height: 100px;
 }
 
 .title_border2 {
-	width: 300px;
-	height: 70px;
+	width: 250px;
+	height: 60px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 35px;
 	font-family: sans-serif;
 	padding-top: 15px;
-	border-bottom: 3px solid gray;
 }
 
 .join_border {
 	width: 800px;
-	height: 700px;
+	height: 650px;
 	margin: 0 auto;
 }
 
