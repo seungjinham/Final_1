@@ -27,16 +27,16 @@ public class RecruitDAO {
 		List<RecruitDTO> selectList_result=null;
 		if(recruitSearchDTO==null) {
 			//전체리스트 - 파워링크 가져오기 작성해야함
-			selectList_result = sqlSession.selectList(NAMESPACE+"selectList");
+			selectList_result = sqlSession.selectList(NAMESPACE+"userRecruitselectList");
 		} else {
 			//검색조건 리스트 - DB접근까지만 완성 -> 조건을 이용한 쿼리문 작업해야함+파워링크 가져오기 작성해야함
-			selectList_result = sqlSession.selectList(NAMESPACE+"searchList", recruitSearchDTO);
+			selectList_result = sqlSession.selectList(NAMESPACE+"userRecruitsearchList", recruitSearchDTO);
 		}
 		return selectList_result;
 	}
 	
 	public RecruitDTO selectOne(int num) {
-		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
+		return sqlSession.selectOne(NAMESPACE+"userRecruitselectOne", num);
 	}
 	
 	//공고등록

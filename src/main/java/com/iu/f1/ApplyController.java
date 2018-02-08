@@ -1,5 +1,7 @@
 package com.iu.f1;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -40,5 +42,20 @@ public class ApplyController {
 		model.addAttribute("recruit", recruitDTO);
 		model.addAttribute("company", companyDTO);
 		return "recruit/recruitView";
+	}
+	
+	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
+	public String selectList(ApplyDTO applyDTO, Model model) {
+		List<RecruitDTO> recruit_ar = null;
+		String message = "로그인이 필요한 서비스입니다.";
+		String path = "redirect:../";
+		if(applyDTO.getId() != "") {
+			recruit_ar = applyService.selectList(applyDTO);
+			model.addAttribute("applylist", recruit_ar);
+			path = "apply/applyList";
+		} else {
+			model.addAttribute("applymessage", message);
+		}
+		return path;
 	}
 }

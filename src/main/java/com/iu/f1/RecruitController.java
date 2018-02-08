@@ -42,4 +42,9 @@ public class RecruitController {
 		model.addAttribute("company", companyDTO);
 		return "recruit/recruitView";
 	}
+	
+	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
+	public String recruitSearch() {
+		return "recruit/recruitSearch";
+	}
 }

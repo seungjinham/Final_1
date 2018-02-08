@@ -76,7 +76,7 @@
 							<%-- <li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li> --%>
 
 							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고 검색</a></li>
-							<li><a href="<%=request.getContextPath()%>/recruit/recruitList">상세 검색</a></li>
+							<li><a href="<%=request.getContextPath()%>/recruit/recruitSearch">상세 검색</a></li>
 
 						</ul>
 					</li>
@@ -92,9 +92,8 @@
 					<li><a href="javascript:void(0);" class="">개인서비스</a>
 						<ul class="navi-sublist subnav03">
 							<li><a href="">이력서 관리</a></li>
-							<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">지원현황</a></li>
-							<li><a href="">스크랩 공고정보</a></li>
-
+							<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">지원현황</a></li>
+							<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">스크랩 공고정보</a></li>
 							<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보 수정</a></li>
 							<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
 							<li><a href="#">판매자 즐겨찾기</a></li>
