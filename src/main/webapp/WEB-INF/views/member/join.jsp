@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Join Select Page</title>
-<link href="<%=request.getContextPath()%>/resources/css/member/join.css"
-	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/join.css" rel="stylesheet">
 </head>
 <body>
 	<!-- Header 시작 -->
