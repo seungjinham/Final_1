@@ -63,9 +63,7 @@ public class PersonController {
 
 	//회원탈퇴
 	@RequestMapping(value="personDelete")
-	public void personDelete(){
-		
-	}
+	public void personDelete(){}
 
 	
 	//로그인

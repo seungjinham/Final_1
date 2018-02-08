@@ -1,0 +1,180 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#main {
+	width: 100%;
+}
+
+.title_border {
+	width: 800px;
+	height: 100px;
+}
+
+.title_border2 {
+	width: 350px;
+	height: 60px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30px;
+	font-family: sans-serif;
+	padding-top: 15px;
+}
+
+
+
+#table_border {
+	width: 600px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+table {
+	width: 650px;
+	height: 700px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+}
+
+th {
+	width: 70px;
+	text-align: left;
+}
+
+.font {
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+td {
+	width: 280px;
+}
+
+.tline {
+	width: 600px;
+	height: 5px;
+	border-top: 1px dotted #23A41A;
+}
+
+.inupt_f {
+	width: 300px;
+	height: 30px;
+}
+
+#p_select {
+	width: 80px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.phone {
+	width: 80px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.birth {
+	width: 80px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.addr {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#addr_btn {
+	width: 120px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	margin-bottom: 5px;
+	cursor: pointer;
+	background-color: white;
+}
+
+#addr_btn:hover {
+	font-weight: bold;
+	font-size: 15px;
+	color: #23A41A;
+	border: 2px solid #23A41A;
+}
+
+.addr2 {
+	width: 200px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.email {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#e_select {
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#code_btn {
+	width: 130px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+#code_btn:hover {
+	font-weight: bold;
+	font-size: 15px;
+	color: #23A41A;
+	border: 2px solid #23A41A;
+}
+
+.j_btn_b {
+	width: 600px;
+	height: 100px;
+	padding-top: 30px;
+	margin-bottom: 100px;
+}
+
+#j_btn {
+	display: block;
+	width: 300px;
+	height: 75px;
+	cursor: pointer;
+	margin: 0 auto;
+	border-radius: 15px;
+	font-size: 25px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	color: white;
+	background-color: #23A41A;
+}
+
+#j_btn:hover {
+	font-weight: bold;
+	color: #23A41A;
+	background-color: white;
+	border: 2px solid #23A41A;
+	background-color: white;
+	color: #23A41A;
+}

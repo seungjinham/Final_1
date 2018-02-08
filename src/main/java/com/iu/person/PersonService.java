@@ -38,5 +38,4 @@ public class PersonService implements MemberService {
 		return personDAO.idCheck(id);
 	}
 
-
 }
