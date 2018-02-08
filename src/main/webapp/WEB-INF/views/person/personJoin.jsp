@@ -193,21 +193,39 @@
 	padding: 0;
 }
 
+#main {
+	height: 1400px;
+}
+
 .title_border {
 	width: 800px;
-	height: 150px;
-	padding-top: 70px;
+	height: 100px;
+	background-color: gray;
 }
 
 .title_border2 {
-	width: 300px;
-	height: 70px;
+	width: 350px;
+	height: 60px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 35px;
 	font-family: sans-serif;
 	padding-top: 15px;
-	border-bottom: 3px solid gray;
+}
+
+.terms_border {
+	width: 800px;
+	height: 400px;
+	background-color: lime;
+}
+
+.terms_border2 {
+	width : 600px;
+	height: 400px;
+	width: 600px;
+	margin: 0 auto;
+	border-top : 2px solid #23A41A;
+	background-color: yellow;
 }
 
 #table_border {
@@ -243,7 +261,7 @@ td {
 	border-top: 1px dotted #23A41A;
 }
 
-.in {
+.inupt_f {
 	width: 300px;
 	height: 30px;
 }
@@ -316,7 +334,7 @@ td {
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
-#in_btn {
+#code_btn {
 	width: 130px;
 	height: 30px;
 	font-size: 15px;
@@ -353,7 +371,8 @@ td {
 }
 
 #j_btn:hover {
-	font-weight: bold; color : #23A41A;
+	font-weight: bold;
+	color: #23A41A;
 	background-color: white;
 	border: 2px solid #23A41A;
 	background-color: white;
@@ -363,12 +382,18 @@ td {
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
+
+	<!-- main 시작 -->
 	<section id="main">
 		<article class="title_border">
 			<div class="title_border2">
 				<b>개인 회원가입</b>
 			</div>
 		</article>
+
+		<div class="terms_border">
+			<div class="terms_border2"></div>
+		</div>
 
 		<input type="hidden" name="job" value="P">
 
@@ -378,19 +403,19 @@ td {
 					<tr>
 						<th class="font">아이디</th>
 						<td class="font"><input type="text" name="id" id="id"
-							placeholder="6~16자 영문,숫자" class="in"><br> <span
+							placeholder="6~16자 영문,숫자" class="inupt_f"><br> <span
 							id="idCheck"></span></td>
 					</tr>
 					<tr>
 						<th class="font">비밀번호</th>
 						<td class="font"><input type="password" name="pw" id="pw"
-							placeholder="6~16자 대/소문자,숫자,특수문자" class="in"><br> <span
-							id="pwCheck"></span></td>
+							placeholder="6~16자 대/소문자,숫자,특수문자" class="inupt_f"><br>
+							<span id="pwCheck"></span></td>
 					</tr>
 					<tr>
 						<th class="font">비밀번호 확인</th>
 						<td class="font"><input type="password" readonly="readonly"
-							name="pw2" id="pw2" class="in"><br> <span
+							name="pw2" id="pw2" class="inupt_f"><br> <span
 							id="pwCheck2"></span></td>
 					</tr>
 					<tr>
@@ -399,7 +424,7 @@ td {
 					<tr>
 						<th class="font">이름</th>
 						<td class="font"><input type="text" name="name" id="name"
-							class="in"><br> <span id="nameCheck"></span></td>
+							class="inupt_f"><br> <span id="nameCheck"></span></td>
 					</tr>
 					<tr>
 						<th class="font">휴대폰</th>
@@ -452,7 +477,7 @@ td {
 								<option value="zum.com">zum.com</option>
 								<option value="yahoo.com">yahoo.com</option>
 						</select><br>
-							<button id="in_btn">인증번호 받기</button></td>
+							<button id="code_btn">인증번호 받기</button></td>
 					</tr>
 				</table>
 				<div class="j_btn_b">
@@ -461,6 +486,9 @@ td {
 			</form>
 		</div>
 	</section>
+	<!-- main 끝 -->
+
+	<%@ include file="../temp/footer.jsp"%>
 
 </body>
 </html>
