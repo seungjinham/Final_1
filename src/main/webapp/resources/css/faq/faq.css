@@ -1,5 +1,22 @@
 @CHARSET "UTF-8";
 
+*{
+}
+
 h1 {
-	color:red;
+color: #23A41A;
+font-size: 37px; 
+font-weight: bolder;
+}
+
+td{
+	border-bottom: 1px solid lightGray;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.toggle_contents{
+	background-color: whiteSmoke;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
