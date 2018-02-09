@@ -11,6 +11,13 @@
 <script type="text/javascript">
 	$(function() {
 		
+		$(".faqTitle").each(function(){
+			var num=$(this).attr("title");
+			$("#title"+num).click(function(){
+				$("#contents_view"+num).slideToggle("slow");
+			});
+		});
+		
 	});
 </script>
 </head>
@@ -25,10 +32,26 @@
 				<th>TITLE</th>
 				<th>CONTENTS</th>
 			</tr>
-			<c:forEach items="${list}" var="i">
+			<c:forEach items="${list}" var="i" varStatus="j">
 				<tr>
 					<td>${i.num}</td>
-					<td class="title"><a href="faqView?num=${i.num}">${i.title}</a></td>
+					<td id="title${j.index}" class="faqTitle" title="${j.index}">
+					<c:catch>
+					<c:forEach begin="1" end="${i.depth}">--</c:forEach>
+					</c:catch>
+					<a href="faqView?num=${i.num}">${i.title}</a>
+					<div id="contents_view${j.index}" class="div_view">
+								<p class="toggle_contents">${i.contents}
+								<div class="div_deletebutton">
+								<c:if test="${member.id eq 'admin'}">
+									<a href="faqDelete?num=${i.num}">DELETE</a>
+									<a href="faqUpdate?num=${i.num}">UPDATE</a>
+								</c:if>
+								</div>
+								</p>
+							</div>
+					</td>
+
 					<td>${i.contents}</td>
 				</tr>
 			</c:forEach>
