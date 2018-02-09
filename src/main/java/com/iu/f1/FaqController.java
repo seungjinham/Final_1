@@ -81,15 +81,6 @@ public class FaqController {
 		return mv;
 	}
 	
-	@RequestMapping(value="faqView", method=RequestMethod.GET)
-	public ModelAndView selectOne(int num)throws Exception{
-		FaqDTO faqDTO = faqService.selectOne(num);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("view", faqDTO);
-		mv.setViewName("faq/faqView");
-		return mv;
-	}
-	
 	
 	
 	

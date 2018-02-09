@@ -25,41 +25,36 @@
 	<%@ include file="../temp/header1.jsp"%>
 	<section id="main">
 		<div class="container">
-		<h1>FAQ</h1>
+		<h1 id="faqH1">FAQ</h1>
 		
 		
-		
-		<table>
-		
-			<tr>
-				<th>NUM</th>
-				<th>TITLE</th>
-			</tr>
+		<table class="faqTable">
 			<c:forEach items="${list}" var="i" varStatus="j">
 				<tr>
-					<td>${i.num}</td>
 					<td id="title${j.index}" class="faqTitle" title="${j.index}">
 					<c:catch>
 					<c:forEach begin="1" end="${i.depth}">--</c:forEach>
 					</c:catch>
-					<a href="faqView?num=${i.num}">${i.title}</a>
+					<div class="tableTitle">${i.title}</div>
 					<div id="contents_view${j.index}" class="div_view">
-								<p class="toggle_contents">${i.contents}
+								<div class="toggle_contents">${i.contents}
 								<div class="div_deletebutton">
 								<c:if test="${member.id eq 'admin'}">
-									<a href="faqDelete?num=${i.num}">DELETE</a>
-									<a href="faqUpdate?num=${i.num}">UPDATE</a>
+									<a class="toggleBtn" href="faqDelete?num=${i.num}">DELETE</a>
+									<a class="toggleBtn" href="faqUpdate?num=${i.num}">UPDATE</a>
 								</c:if>
 								</div>
-								</p>
+								</div>
 							</div>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
-
-		<c:if test="${member.id eq 'admin'}"></c:if>
-		<a href="./faqWrite">WRITE</a>
+		
+		<c:if test="${member.id eq 'admin'}">
+		<a href="./faqWrite" id="btnWrite">WRITE</a>
+		</c:if>
+		
 		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>
