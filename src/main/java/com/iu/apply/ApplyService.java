@@ -40,15 +40,16 @@ public class ApplyService {
 			if(i==0) {
 				company_ar.add(companyDTO);
 			} else {
-				//rotate:
-				for(int j=0; j<recruit_ar.size(); j++) {
-					if(companyDTO.getId().equals(company_ar.get(j).getId())) {
-						company_ar.add(companyDTO);
-					} else {
-						company_ar.add(companyDTO);
-						//break rotate;
-					}//else end
-				}//for end
+				company_ar.add(companyDTO);
+//				//rotate:
+//				for(int j=0; j<recruit_ar.size(); j++) {
+//					if(companyDTO.getId().equals(company_ar.get(j).getId())) {
+//						company_ar.add(companyDTO);
+//					} else {
+//						company_ar.add(companyDTO);
+//						//break rotate;
+//					}//else end
+//				}//for end
 			}//else end
 		}//for end
 		ListSort listSort = new ListSort();
