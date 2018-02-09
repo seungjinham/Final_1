@@ -36,7 +36,7 @@ public class CompanyController {
 		result = companyService.join(companyDTO);
 
 		String message = "Join Fail";
-		String path = "./companyLogin";
+		String path = "./companyJoin";
 
 		if(result > 0){
 			message = "Join Success";
@@ -45,6 +45,20 @@ public class CompanyController {
 		mv.addObject("message", message);
 		mv.addObject("path", path);
 		mv.setViewName("common/result");
+		return mv;
+	}
+	
+	//회원가입 시 IDCheck
+	@RequestMapping(value="companyIdCheck", method=RequestMethod.GET)
+	public ModelAndView personIdCheck(String id) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = companyService.idCheck(id);
+		if(memberDTO == null){
+			mv.addObject("result", "사용 가능한 ID 입니다.");
+		}else{
+			mv.addObject("result", "중복된 ID 입니다.");
+		}
+		mv.setViewName("common/joinResult");
 		return mv;
 	}
 
@@ -68,7 +82,7 @@ public class CompanyController {
 		MemberDTO memberDTO = companyService.login(companyDTO);
 		
 		String message = "Login Fail";
-		String path = "./companyLogin";
+		String path = "../member/login";
 
 		if(memberDTO != null){
 			session.setAttribute("member", memberDTO);

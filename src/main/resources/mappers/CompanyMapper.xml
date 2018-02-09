@@ -2,12 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="CompanyMapper">
-	<insert id="memberInsert" parameterType="MemberDTO">
-		insert into member values (#{id},#{pw},#{name},#{phone},#{email},#{addr},#{job})
+	<!-- 회원가입 -->
+	<insert id="memberJoin" parameterType="MemberDTO">
+		insert into member values(#{id},#{pw},#{name},#{phone},#{email},#{addr},#{job})
 	</insert>
-	<insert id="companyInsert" parameterType="MemberDTO">
-		insert into company values (#{id},#{c_name},#{c_num})
+	<insert id="personJoin" parameterType="MemberDTO">
+		insert into company values(#{id},#{c_name},#{c_num})
 	</insert>
+
+	<!-- ID Check -->
+	<select id="companyIdCheck" parameterType="String" resultType="MemberDTO">
+		select id from member where id=#{id}
+	</select>
+	
+	<!-- 회원수정 -->
+	<update id="memberUpdate" parameterType="MemberDTO">
+		update member
+		<set>
+		pw=#{pw},
+		name=#{name},
+		phone=#{phone},
+		email=#{email},
+		addr=#{addr}
+		</set>
+		where id=#{id}
+	</update>
+	<update id="companyUpdate" parameterType="MemberDTO">
+		update company
+		<set>
+		c_name=#{c_name},
+		c_num=#{c_num}
+		</set>
+		where id=#{id}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	
 
 	<!-- Login -->
 	<select id="companyLogin" parameterType="MemberDTO" resultType="CompanyDTO">

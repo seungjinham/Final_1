@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -13,7 +14,7 @@ public class MemberContorller {
 	@RequestMapping(value="join")
 	public void join(){}
 	
-	@RequestMapping(value="login")
+	@RequestMapping(value="login", method=RequestMethod.GET)
 	public void login(){}
 	
 	//LogOut
