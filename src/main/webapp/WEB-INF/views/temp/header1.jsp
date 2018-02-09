@@ -35,6 +35,11 @@
 			$("#header").addClass('on');
 			$(".nav-sub-wrap, .navi-sublist").addClass('on');
 		});
+		
+
+		$("#login").click(function() {
+				window.open("<%=request.getContextPath()%>/member/login", "", "top=250,left=750,width=350,height=450");
+		});
 	});
 </script>
 </head>
@@ -52,7 +57,7 @@
 					<div class="nvalinks">
 						<ul class="member_menu">
 							<c:if test="${empty member}">
-								<li><a href="<%=request.getContextPath()%>/member/login" target="_self" class="btn_link">로그인</a></li>
+								<li><a href="#" target="_self" class="btn_link" id="login">로그인</a></li>
 								<li><a href="<%=request.getContextPath()%>/member/join" target="_self" class="btn_link">회원가입</a></li>
 							</c:if>
 
