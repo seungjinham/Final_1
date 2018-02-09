@@ -16,8 +16,8 @@
 
 <div id="rightwing">
 <ul>
-<li><a href="#">스크랩 보기</a></li>
-<li><a href="#">지원한 이력서 보기</a></li>
+<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">스크랩 보기</a></li>
+<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">지원한 이력서 보기</a></li>
 </ul>
 
 <ul>

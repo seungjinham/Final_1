@@ -5,7 +5,7 @@
 	<insert id="companyRecruit" parameterType="RecruitDTO">
 		insert into recruit
 		values (
-		apply_seq.nextval,
+		recruit_seq.nextval,
 		#{id},
 		#{title},
 		#{deadline},
