@@ -26,11 +26,14 @@
 	<section id="main">
 		<div class="container">
 		<h1>FAQ</h1>
+		
+		
+		
 		<table>
+		
 			<tr>
 				<th>NUM</th>
 				<th>TITLE</th>
-				<th>CONTENTS</th>
 			</tr>
 			<c:forEach items="${list}" var="i" varStatus="j">
 				<tr>
@@ -51,12 +54,11 @@
 								</p>
 							</div>
 					</td>
-
-					<td>${i.contents}</td>
 				</tr>
 			</c:forEach>
 		</table>
 
+		<c:if test="${member.id eq 'admin'}"></c:if>
 		<a href="./faqWrite">WRITE</a>
 		</div>
 	</section>
