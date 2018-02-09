@@ -31,12 +31,12 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public int delete(MemberDTO memberDTO) throws Exception {
-		return 0;
+		return companyDAO.delete(memberDTO);
 	}
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
-		return 0;
+		return companyDAO.update(memberDTO);
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class CompanyService implements MemberService {
 
 	@Override
 	public MemberDTO idCheck(String id) throws Exception {
-		return null;
+		return companyDAO.idCheck(id);
 	}
 	
 	public CompanyDTO selectOne(String id) {

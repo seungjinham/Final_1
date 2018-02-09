@@ -1,0 +1,163 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.title_border {
+	width: 100%;
+	height: 80px;
+	padding-top: 5px;
+}
+
+#title_border_2 {
+	width: 235px;
+	height: 60px;
+	margin: 0 auto;
+	margin-top: 10px;
+	border-bottom: 2px solid #23A41A;
+}
+
+.logo_border {
+	width: 45px;
+	height: 50px;
+	float: left;
+	padding-top: 10px;
+}
+
+.logo {
+	width: 45px;
+	height: 40px;
+}
+
+#title {
+	display: block;
+	width: 135px;
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+	float: left;
+}
+
+#logo_border2 {
+	width: 40px;
+	height: 50px;
+	float: left;
+	padding-top: 10px;
+}
+
+.s_border {
+	width: 100%;
+	height: 60px;
+}
+
+.s_border_2 {
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.s_text {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 13px;
+	font-weight: bold;
+	font-family: "굴림", dotum, sans-serif;
+}
+
+.check {
+	width: 15px;
+	height: 15px;
+	vertical-align: -4px;
+}
+
+.l_border {
+	width: 100%;
+	height: 205px;
+}
+
+.l_border_2 {
+	width: 240px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+.in {
+	width: 240px;
+	height: 43px;
+	border: 2px solid #23A41A;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#login_btn {
+	width: 240px;
+	height: 45px;
+	background-color: #23A41A;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+	font-size: 17px;
+	font-family: "맑은 고딕", dotum, sans-serif;
+}
+
+#login_btn:hover {
+	border: 2px solid #23A41A;
+	background-color: white;
+	color: #23A41A;
+	font-size: 19px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.find_border {
+	width: 155px;
+	height: 25px;
+	font-size: 12px;
+	margin-left: 87px;
+	font-family: "굴림", dotum, sans-serif;
+}
+
+.find_border a {
+	color: gray;
+	text-decoration: none;
+}
+
+.find_border a:hover {
+	text-decoration: underline;
+}
+
+.j_border {
+	width: 100%;
+	height: 40px;
+	padding-top: 20px;
+}
+
+.j_border_2 {
+	width: 180px;
+	height: 20px;
+	margin: 0 auto;
+	font-size: 13px;
+	font-family: "굴림", dotum, sans-serif;
+}
+
+.j_border_2 a {
+	color: #23A41A;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.j_border_2 a:hover {
+	color: #23A41A;
+	font-size: 14px;
+	text-decoration: underline;
+}

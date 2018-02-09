@@ -238,91 +238,8 @@
 	};
 </script>
 <style type="text/css">
-#solo{
-	color: #23A41A;
-	font-size: 35px;
-}
-.terms_border {
-	width: 800px;
-}
-
-.terms_border2 {
-	width: 600px;
-	margin: 0 auto;
-	border-top: 2px solid #23A41A;
-	font-weight: bold;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.all {
-	width: 600px;
-	font-size: 17px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.agree {
-	width: 600px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.point {
-	color: red;
-	padding-left: 7px;
-	padding-right: 7px;
-}
-
-.see {
-	font-weight: normal;
-	font-size: 12px;
-	float: right;
-	color: #23A41A;
-	cursor: pointer;
-}
-
-#choice {
-	color: gray;
-	padding-left: 7px;
-	padding-right: 7px;
-}
-
-#sub {
-	padding-left: 70px;
-	color: gray;
-	font-weight: normal;
-	font-size: 12px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	font-weight: normal;
-}
-
-.see1 {
-	width: 590px;
-	height: 200px;
-	font-size: 13px;
-	font-weight: normal;
-	overflow: scroll;
-	border: 1px solid #23A41A;
-	display: none;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.see2 {
-	width: 590px;
-	height: 200px;
-	font-size: 14px;
-	font-weight: normal;
-	overflow: scroll;
-	border: 1px solid #23A41A;
-	display: none;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
 </style>
-<link
-	href="<%=request.getContextPath()%>/resources/css/person/personJoin.css"
-	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/person/personJoin.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -345,19 +262,22 @@
 					<input type="checkbox" class="box" id="c1">
 					<span class="point">[필수]</span> 서비스 이용약관 동의
 					<button class="see" id="ser_1">보기▼</button>
-					<div class="see1"><%@ include file="./service_1.jsp"%>
+					<div class="see1">
+					<%@include file="./service_1.jsp" %>
 					</div>
 				</div>
 				<div class="agree">
 					<input type="checkbox" class="box" id="c2">
 					<span class="point">[필수]</span> 개인정보 수집 및 이용 동의
 						<button class="see" id="ser_2">보기▼</button>
-					<div class="see2"><%@ include file="./service_2.jsp"%>
+					<div class="see2">
+					<%@include file="./service_2.jsp" %>
 					</div>
 				</div>
 				<div class="agree">
-					<input type="checkbox" class="box" id="c3"><span
-						id="choice">[선택]</span> 개인정보 수집 및 이용 동의<br> <span id="sub">(공고
+					<input type="checkbox" class="box" id="c3">
+					<span id="choice">[선택]</span> 개인정보 수집 및 이용 동의
+						<br> <span id="sub">(공고
 						소식 및 광고메일, 휴대폰 알림)</span>
 				</div>
 			</div>

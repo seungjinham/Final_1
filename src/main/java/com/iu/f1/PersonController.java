@@ -4,17 +4,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.member.MemberDTO;
 import com.iu.person.PersonDTO;
 import com.iu.person.PersonService;
-import com.iu.seller.SellerDTO;
-import com.iu.seller.SellerService;
 
 @Controller
 @RequestMapping(value="/person/**")
@@ -76,7 +72,7 @@ public class PersonController {
 		MemberDTO memberDTO = personService.login(personDTO);
 		
 		String message = "Login Fail";
-		String path = "./personLogin";
+		String path = "../member/login";
 
 		if(memberDTO != null){
 			session.setAttribute("member", memberDTO);
