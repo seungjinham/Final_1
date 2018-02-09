@@ -53,7 +53,7 @@
 
 	<div class="s_border">
 		<div class="s_border_2">
-			<span class="s_text">개인회원</span> <input type="radio"
+			<span class="s_text">개인회원s</span> <input type="radio"
 				checked="checked" class="check" name="member" id="person" value="p"> <span class="s_text">기업회원</span>
 			<input type="radio" class="check" name="member" id="company" value="c">
 		</div>
