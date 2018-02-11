@@ -16,6 +16,7 @@
   		<typeAlias type="com.iu.apply.ApplyDTO" alias="ApplyDTO"/>
   		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
   		<typeAlias type="com.iu.talk.TalkDTO" alias="TalkDTO"/>
+  		<typeAlias type="com.iu.supporter.SupporterDTO" alias="SupporterDTO"/>
   	</typeAliases>
   
   </configuration>

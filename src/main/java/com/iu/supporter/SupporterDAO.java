@@ -13,7 +13,15 @@ public class SupporterDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "SupporterMapper.";
 	
-	public int insert(ApplyDTO applyDTO) {
-		return sqlSession.insert(NAMESPACE+"insert", applyDTO);
+	public int insert(SupporterDTO supporterDTO) {
+		return sqlSession.insert(NAMESPACE+"insert", supporterDTO);
+	}
+	
+	public int update(SupporterDTO supporterDTO) {
+		return sqlSession.update(NAMESPACE+"update", supporterDTO);
+	}
+	
+	public int applyCount(SupporterDTO supporterDTO) {
+		return sqlSession.selectOne(NAMESPACE+"applyCount", supporterDTO);
 	}
 }

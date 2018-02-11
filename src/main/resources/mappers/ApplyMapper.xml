@@ -9,4 +9,8 @@
 <select id="selectList" parameterType="applyDTO" resultType="applyDTO">
 	select * from apply where id=#{id}
 </select>
+
+<delete id="delete" parameterType="applyDTO">
+    delete apply where id=#{id} and recruit_num=#{recruit_num}
+</delete>
 </mapper>

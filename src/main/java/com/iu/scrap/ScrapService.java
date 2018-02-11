@@ -41,7 +41,7 @@ public class ScrapService {
 			recruit_ar.add(recruitDTO);
 		}
 		for(int i=0; i<recruit_ar.size(); i++) {
-			CompanyDTO companyDTO = companyDAO.selectList(recruit_ar.get(i).getId());
+			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
 			company_ar.add(companyDTO);
 		}
 		ListSort listSort = new ListSort();

@@ -47,10 +47,6 @@ public class SqlTest {
 //			System.out.println(ar.get(i).getOname());
 //		}
 		
-		assertNotNull(sqlSession);
-		RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
-		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
-		companyService.selectList(recruit_ar);
 
 	}
 

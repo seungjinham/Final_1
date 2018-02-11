@@ -25,6 +25,29 @@ public class RecruitController {
 	private CompanyService companyService;
 	
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
+	public String recruitList(Model model) {
+		List<RecruitDTO> recruit_ar = recruitService.selectList();
+		model.addAttribute("totallist", recruit_ar);
+		return "recruit/recruitList";
+	}
+	
+	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
+	public String recruitList(RecruitSearchDTO recruitSearchDTO) {
+		
+		String path = "recruit/recruitSearch";
+		return path;
+	}
+	
+	@RequestMapping(value="recruitView", method=RequestMethod.GET)
+	public String recruitView(int num, Model model) {
+		RecruitDTO recruitDTO = recruitService.selectOne(num);
+		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
+		model.addAttribute("recruit", recruitDTO);
+		model.addAttribute("company", companyDTO);
+		return "recruit/recruitView";
+	}
+	
+/*	@RequestMapping(value="recruitList", method=RequestMethod.GET)
 	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
 		ListSort listSort = new ListSort();
 		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
@@ -46,5 +69,5 @@ public class RecruitController {
 	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
 	public String recruitSearch() {
 		return "recruit/recruitSearch";
-	}
+	}*/
 }

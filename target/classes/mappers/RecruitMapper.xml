@@ -38,15 +38,43 @@
 		fname=#{fname}, oname=#{oname} where num=#{num}
 	</update>
 
-	<select id="userRecruitselectOne" parameterType="int" resultType="RecruitDTO">
-		select * from (select * from recruit order by id) where num=#{num}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<select id="User_Recruit_Total_List" resultType="RecruitDTO">
+		select * from (select * from recruit order by id) R
 	</select>
 
+ 	<select id="user_Recruit_select_One" parameterType="int" resultType="RecruitDTO">
+		select * from (select * from recruit order by id) where num=#{num}
+	</select>
+<!--
 	<select id="userRecruitselectList" resultType="RecruitDTO">
 		select * from (select * from recruit order by id) R
 	</select>
 
 	<select id="userRecruitsearchList" parameterType="RecruitSearchDTO"
 		resultType="RecruitDTO">
-	</select>
+	</select> -->
 </mapper>

@@ -33,6 +33,61 @@ public class ScrapController {
 	private PersonService personService;
 	
 	@RequestMapping(value="scrapInsert", method=RequestMethod.GET)
+	public String Insert(ScrapDTO scrapDTO, String page, Model model) throws Exception{
+		//RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
+		String message = "로그인이 필요합니다.";
+		Integer integer = 0;
+		String path = "../";
+		List<RecruitDTO> recruit_ar = null;
+		List<CompanyDTO> company_ar = null;
+		RecruitDTO recruitDTO = null;
+		CompanyDTO companyDTO = null;
+		
+		if(page.equals("view")) {
+			if(scrapDTO.getId() != "") {
+				integer = scrapService.Insert(scrapDTO);
+				if(integer>0) {
+					message = "스크랩 성공";
+				} else {
+					message = "스크랩 실패 ";
+				}
+			}
+			recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
+			companyDTO = companyService.selectOne(recruitDTO.getId());
+			model.addAttribute("recruit", recruitDTO);
+			model.addAttribute("company", companyDTO);
+			path = "recruit/recruitView";
+		} else if(page.equals("list")) {
+			if(scrapDTO.getId() != "") {
+				integer = scrapService.Insert(scrapDTO);
+				if(integer>0) {
+					message = "스크랩 성공";
+				} else {
+					message = "스크랩 실패 ";
+				}
+			}
+			ListSort listSort = new ListSort();
+			recruit_ar = recruitService.selectList();
+			company_ar = companyService.selectList();
+			recruit_ar = listSort.listSort(recruit_ar, company_ar);
+			model.addAttribute("list", recruit_ar);
+			path="recruit/recruitList";
+		} else {
+			if(scrapDTO.getId() != "") {
+				integer = scrapService.Insert(scrapDTO);
+				if(integer>0) {
+					message = "스크랩 성공";
+				} else {
+					message = "스크랩 실패 ";
+				}
+			}
+			path="recruit/recruitList";
+		}
+		model.addAttribute("message", message);
+		return path;
+	}
+	
+/*	@RequestMapping(value="scrapInsert", method=RequestMethod.GET)
 	public String Insert(ScrapDTO scrapDTO, Model model) throws Exception{
 		RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
 		String message = "로그인이 필요합니다.";
@@ -49,7 +104,7 @@ public class ScrapController {
 		model.addAttribute("message", message);
 		model.addAttribute("list", recruit_ar);
 		return "recruit/recruitList";
-	}
+	}*/
 	
 	@RequestMapping(value="scrapDelete", method=RequestMethod.GET)
 	public String Delete(ScrapDTO scrapDTO, Model model) {
@@ -60,7 +115,13 @@ public class ScrapController {
 	
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)
 	public String SelectList(ScrapDTO scrapDTO, Model model) {
-		List<RecruitDTO> result_ar = scrapService.SelectList(scrapDTO);
+		List<RecruitDTO> result_ar = null;
+		String message = "로그인이 필요한 서비스 입니다.";
+		
+		if(scrapDTO.getId()!="") {
+			result_ar = scrapService.SelectList(scrapDTO);
+		}
+		
 		model.addAttribute("scrap_result", result_ar);
 		return "scrap/scrapList";
 	}

@@ -45,14 +45,6 @@ public class CompanyDAO implements MemberDAO {
 	public MemberDTO idCheck(String id) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
-	
-	public CompanyDTO selectOne(String id) {
-		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
-	}
-	
-	public CompanyDTO selectList(String id) {
-		return sqlSession.selectOne(NAMESPACE+"companyList", id);
-	}
 
 	public List<RecruitDTO> companyRecruitList() {
 		return sqlSession.selectList(NAMESPACE+"companyRecruitList");
@@ -61,4 +53,24 @@ public class CompanyDAO implements MemberDAO {
 	public int companyRecruitDelete(int num) {
 		return sqlSession.delete(NAMESPACE+"companyRecruitDelete", num);
 	}
+	
+	
+	
+	
+	
+	//////////////////////////////////////////////////////
+	public CompanyDTO selectOne(String id) {
+		return sqlSession.selectOne(NAMESPACE+"companySelectOne", id);
+	}
+	
+	public List<CompanyDTO> selectList() {
+		return sqlSession.selectList(NAMESPACE+"companySelectList");
+	}
+/*	public CompanyDTO selectOne(String id) {
+		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
+	}
+	
+	public CompanyDTO selectList(String id) {
+		return sqlSession.selectOne(NAMESPACE+"companyList", id);
+	}*/
 }
