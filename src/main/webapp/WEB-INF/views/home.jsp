@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="true"%>
 <html>
 <head>
 <title>Pick Me</title>
@@ -8,8 +7,6 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 	<script type="text/javascript">
-		$(function(){
-		});
 	</script>
 	<style type="text/css">
 	.top {

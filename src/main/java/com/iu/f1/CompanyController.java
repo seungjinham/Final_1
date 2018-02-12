@@ -91,7 +91,7 @@ public class CompanyController {
 		}
 		mv.addObject("message", message);
 		mv.addObject("path", path);
-		mv.setViewName("common/result");
+		mv.setViewName("common/loginResult");
 		return mv;
 		}
 	

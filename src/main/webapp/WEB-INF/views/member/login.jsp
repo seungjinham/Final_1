@@ -18,7 +18,7 @@
 			$(".in").css("border", "2px solid #33adff");
 		});
 		$("#person").click(function() {
-			$("#frm").attr("action", "../company/companyLogin");
+			$("#frm").attr("action", "../person/personLogin");
 			$(".logo").attr("src", "../resources/images/common/footer_logo.png");
 			$("#login_btn").css("background-color", "#23A41A");
 			$("#j_btn").css("color", "#23A41A");
@@ -26,6 +26,9 @@
 			$(".in").css("border", "2px solid #23A41A");
 		});
 			
+		$("#login_btn").click(function() {
+			$("#frm").submit();
+		});
 		
 		$("#j_btn").click(function() {
 			window.opener.top.location.href="<%=request.getContextPath()%>/member/join";
@@ -64,7 +67,7 @@
 			<form action="../person/personLogin" method="post" id="frm">
 				<p><input type="text" name="id" placeholder=" ID 입력" id="id" class="in"></p>
 				<p><input type="password" name="pw" placeholder=" 비밀번호 입력" id="pw" class="in"></p>
-				<p><button id="login_btn">LOGIN</button></p>
+				<p><input type="button" value="LOGIN" id="login_btn"></p>
 			</form>
 			<article class="find_border">
 				<div class="find_border_2">
