@@ -6,6 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Review Page</title>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Review Page</h1>
