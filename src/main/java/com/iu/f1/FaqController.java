@@ -65,9 +65,6 @@ public class FaqController {
 	
 	@RequestMapping(value="faqUpdate", method=RequestMethod.POST)
 	public ModelAndView update(FaqDTO faqDTO) throws Exception{
-		System.out.println(faqDTO.getNum());
-		System.out.println(faqDTO.getTitle());
-		System.out.println(faqDTO.getContents());
 		int result=faqService.update(faqDTO);
 		String message="업데이트 실패";
 		if(result>0){
