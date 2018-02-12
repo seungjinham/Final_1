@@ -18,12 +18,6 @@
 				<p>서울특별시 강남구 테헤란로14길 6 남도빌딩 4F 대표전화 1544 9970</p>
 				<p>대표 : 드림캐쳐</p>
 				<p>Copyrightⓒ2017 PICK ME All rights reserved.</p>
-
-				<div class="top">
-					<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
-						<img class="width-10px position-relative" style="top: -1px" src="/f1/resources/images/common/top.png" width="15px" height="15px;">
-					</a>
-				</div>
 			</div>
 		</div>
 	</footer>

@@ -11,9 +11,11 @@
 
 /* Header */
 #header {
-	*z-index: 1001;
-	position: relative;
-	height: 80px
+	*z-index: 7000;
+	position: fixed;
+	height: 80px;
+	top: 0;
+	background-color: #fff;
 }
 
 .hgroup {

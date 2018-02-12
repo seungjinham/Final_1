@@ -11,12 +11,54 @@
 		$(function(){
 		});
 	</script>
+	<style type="text/css">
+	.top {
+	position: absolute;
+	right: 20px;
+	top: 400px;
+}
+	</style>
 </head>
 <body>
 	<%@ include file="./temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			<p>aa</p>
+			
 		</div>
+		<div class="top">
+				<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
+					<img class="width-10px position-relative" style="top: -1px"
+					src="/f1/resources/images/common/top.png" width="15px"
+					height="15px;">
+				</a>
+			</div>
 	</section>
 	<%@ include file="./temp/footer.jsp" %>	
 </body>
