@@ -37,7 +37,7 @@ public class ScrapController {
 		//RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
 		String message = "로그인이 필요합니다.";
 		Integer integer = 0;
-		String path = "../";
+		String path = "redirect:../";
 		List<RecruitDTO> recruit_ar = null;
 		List<CompanyDTO> company_ar = null;
 		RecruitDTO recruitDTO = null;
@@ -48,40 +48,52 @@ public class ScrapController {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
+					path = "recruit/recruitView";
+					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
+					companyDTO = companyService.selectOne(recruitDTO.getId());
+					model.addAttribute("recruit", recruitDTO);
+					model.addAttribute("company", companyDTO);
 				} else {
 					message = "스크랩 실패 ";
+					path = "recruit/recruitView";
+					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
+					companyDTO = companyService.selectOne(recruitDTO.getId());
+					model.addAttribute("recruit", recruitDTO);
+					model.addAttribute("company", companyDTO);
 				}
 			}
-			recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
-			companyDTO = companyService.selectOne(recruitDTO.getId());
-			model.addAttribute("recruit", recruitDTO);
-			model.addAttribute("company", companyDTO);
-			path = "recruit/recruitView";
 		} else if(page.equals("list")) {
 			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
+					ListSort listSort = new ListSort();
+					recruit_ar = recruitService.selectList();
+					company_ar = companyService.selectList();
+					recruit_ar = listSort.listSort(recruit_ar, company_ar);
+					model.addAttribute("list", recruit_ar);
+					path="recruit/recruitList";
 				} else {
 					message = "스크랩 실패 ";
+					ListSort listSort = new ListSort();
+					recruit_ar = recruitService.selectList();
+					company_ar = companyService.selectList();
+					recruit_ar = listSort.listSort(recruit_ar, company_ar);
+					model.addAttribute("list", recruit_ar);
+					path="recruit/recruitList";
 				}
 			}
-			ListSort listSort = new ListSort();
-			recruit_ar = recruitService.selectList();
-			company_ar = companyService.selectList();
-			recruit_ar = listSort.listSort(recruit_ar, company_ar);
-			model.addAttribute("list", recruit_ar);
-			path="recruit/recruitList";
 		} else {
 			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
+					path="recruit/recruitList";
 				} else {
 					message = "스크랩 실패 ";
+					path="recruit/recruitList";
 				}
 			}
-			path="recruit/recruitList";
 		}
 		model.addAttribute("message", message);
 		return path;
@@ -117,13 +129,16 @@ public class ScrapController {
 	public String SelectList(ScrapDTO scrapDTO, Model model) {
 		List<RecruitDTO> result_ar = null;
 		String message = "로그인이 필요한 서비스 입니다.";
+		String path = "redirect:../";
 		
 		if(scrapDTO.getId()!="") {
 			result_ar = scrapService.SelectList(scrapDTO);
+			path="scrap/scrapList";
 		}
 		
 		model.addAttribute("scrap_result", result_ar);
-		return "scrap/scrapList";
+		model.addAttribute("message", message);
+		return path;
 	}
 	
 //	@RequestMapping(value="scrapSelectOne", method=RequestMethod.GET)

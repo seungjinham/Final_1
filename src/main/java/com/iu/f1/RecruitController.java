@@ -70,4 +70,9 @@ public class RecruitController {
 	public String recruitSearch() {
 		return "recruit/recruitSearch";
 	}*/
+	
+	@RequestMapping(value="Search", method=RequestMethod.GET)
+	public String Search() {
+		return "recruit/Search";
+	}
 }
