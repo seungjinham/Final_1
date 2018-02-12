@@ -297,9 +297,7 @@
 				}).open();
 	};
 </script>
-<link
-	href="<%=request.getContextPath()%>/resources/css/company/companyJoin.css"
-	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/company/companyJoin.css" rel="stylesheet">
 <style type="text/css">
 </style>
 </head>
