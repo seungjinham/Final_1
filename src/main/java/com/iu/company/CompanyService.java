@@ -49,23 +49,6 @@ public class CompanyService implements MemberService {
 		return companyDAO.idCheck(id);
 	}
 	
-	public CompanyDTO selectOne(String id) {
-		CompanyDTO companyDTO = companyDAO.selectOne(id);
-		return companyDTO;
-	}
-	
-	
-	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
-		List<CompanyDTO> company_ar = new ArrayList<>();
-		for(int i=0; i<recruit_ar.size(); i++) {
-			String id = recruit_ar.get(i).getId();
-			CompanyDTO companyDTO = companyDAO.selectList(id);
-			if(companyDTO!=null) {
-				company_ar.add(companyDTO);
-			}
-		}
-		return company_ar;
-	}
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
 		String filepath = session.getServletContext().getRealPath("resources/images/company");
@@ -102,6 +85,32 @@ public class CompanyService implements MemberService {
 			}
 		}
 		return result;
+	}
+	
+	
+	
+	
+	
+	////////////////////////////////////////////////////////////////////////////
+	/*	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
+	List<CompanyDTO> company_ar = new ArrayList<>();
+	for(int i=0; i<recruit_ar.size(); i++) {
+		String id = recruit_ar.get(i).getId();
+		CompanyDTO companyDTO = companyDAO.selectList(id);
+		if(companyDTO!=null) {
+			company_ar.add(companyDTO);
+		}
+	}
+	return company_ar;
+}*/
+	
+	public CompanyDTO selectOne(String id) {
+		CompanyDTO companyDTO = companyDAO.selectOne(id);
+		return companyDTO;
+	}
+	
+	public List<CompanyDTO> selectList() {
+		return companyDAO.selectList();
 	}
 
 }

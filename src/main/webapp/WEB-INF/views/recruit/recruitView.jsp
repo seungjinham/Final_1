@@ -10,7 +10,11 @@
 	<%@ include file="../temp/header1.jsp"%>
 	
 	<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}&cid=${recruit.id}">Apply</a>
-	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=${member.id}">Scrap</a>
+	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=${member.id}&page=view">Scrap</a>
+	<h1>${company.id}</h1>
+	<h1>${company.name}</h1>
+	<h1>${company.phone}</h1>
+	<h1>${company.email}</h1>
 	<h1>${company.addr}</h1>
 	<h1>${company.c_name}</h1>
 	<h1>${recruit.title}</h1>

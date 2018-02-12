@@ -7,10 +7,16 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.iu.company.CompanyDAO;
+import com.iu.company.CompanyDTO;
+import com.iu.util.ListSort;
+
 @Service
 public class RecruitService {
 	@Inject
 	private RecruitDAO recruitDAO;
+	@Inject
+	private CompanyDAO companyDAO;
 	
 	public int insert(RecruitDTO recruitDTO) {
 		return 0;
@@ -25,7 +31,19 @@ public class RecruitService {
 		return 0;
 	}
 	
-	public List<RecruitDTO> selectList(RecruitSearchDTO recruitSearchDTO) {
+	public List<RecruitDTO> selectList() {
+		List<RecruitDTO> recruit_ar = recruitDAO.selectList();
+		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
+		for(int i=0; i<recruit_ar.size(); i++) {
+			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
+			company_ar.add(companyDTO);
+		}
+		ListSort listSort = new ListSort();
+		recruit_ar = listSort.listSort(recruit_ar, company_ar);
+		return recruit_ar;
+	}
+	
+/*	public List<RecruitDTO> selectList(RecruitSearchDTO recruitSearchDTO) {
 		List<String> checkVar = new ArrayList<String>();
 		List<String[]> checkArray = new ArrayList<String[]>();
 		List<RecruitDTO> selectList_result;
@@ -75,7 +93,7 @@ public class RecruitService {
 		}
 
 		return selectList_result;
-	}
+	}*/
 	
 	public RecruitDTO selectOne(int num) {
 		return recruitDAO.selectOne(num);

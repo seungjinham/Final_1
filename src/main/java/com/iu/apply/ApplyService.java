@@ -27,6 +27,10 @@ public class ApplyService {
 		return applyDAO.insert(applyDTO);
 	}
 	
+	public int delete(ApplyDTO applyDTO) {
+		return applyDAO.delete(applyDTO);
+	}
+	
 	public List<RecruitDTO> selectList(ApplyDTO applyDTO) {
 		List<ApplyDTO> apply_ar = applyDAO.selectList(applyDTO);
 		List<RecruitDTO> recruit_ar = new ArrayList<RecruitDTO>();
@@ -36,11 +40,12 @@ public class ApplyService {
 		}
 		List<CompanyDTO> company_ar = new ArrayList<>();
 		for(int i=0; i<recruit_ar.size(); i++) {
-			CompanyDTO companyDTO = companyDAO.selectList(recruit_ar.get(i).getId());
-			if(i==0) {
-				company_ar.add(companyDTO);
-			} else {
-				company_ar.add(companyDTO);
+			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
+			company_ar.add(companyDTO);
+//			if(i==0) {
+//				company_ar.add(companyDTO);
+//			} else {
+//				company_ar.add(companyDTO);
 //				//rotate:
 //				for(int j=0; j<recruit_ar.size(); j++) {
 //					if(companyDTO.getId().equals(company_ar.get(j).getId())) {
@@ -50,7 +55,7 @@ public class ApplyService {
 //						//break rotate;
 //					}//else end
 //				}//for end
-			}//else end
+//			}//else end
 		}//for end
 		ListSort listSort = new ListSort();
 		recruit_ar = listSort.listSort(recruit_ar, company_ar);

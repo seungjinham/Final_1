@@ -49,18 +49,48 @@
 		where m.id=#{id} and m.id=c.id(+)
 	</select>
 	
-	<select id="selectOne" parameterType="String" resultType="CompanyDTO">
-		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
-	</select>
+
 	
 	<select id="companyRecruitList" resultType="RecruitDTO">
 		select * from recruit
 	</select>
-	<select id="companyList" parameterType="String" resultType="CompanyDTO">
-		select m.Id, m.Addr, c.C_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
-	</select>
+
 	<delete id="companyRecruitDelete" parameterType="int">
 		delete recruit where num=#{num}
 	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="companySelectOne" parameterType="String" resultType="CompanyDTO">
+		select m.id, m.addr, m.name, m.phone, m.email, c.c_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
+	</select>
+	
+	<select id="companySelectList" resultType="CompanyDTO">
+		select m.id, m.addr, c.c_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
+	</select>
+<!-- 	<select id="selectOne" parameterType="String" resultType="CompanyDTO">
+		select m.*, c.* from member m, company c where m.id=#{id} and m.id=c.id(+)
+	</select>
+	
+	<select id="companyList" parameterType="String" resultType="CompanyDTO">
+		select m.Id, m.Addr, c.C_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}
+	</select> -->
 </mapper>
   
