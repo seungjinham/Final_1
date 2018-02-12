@@ -1,13 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="true"%>
 <html>
 <head>
 <title>Pick Me</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$(function(){
-		});
 	</script>
 </head>
 <body>
