@@ -40,16 +40,21 @@
 /* navigation */
 .hgroup .logo {
 	position: absolute;
-	top: 15px;
-	left: 10px;
+	top:15px;
+	left: -10px;
 }
 
 .hgroup .logo a {
 	display: block;
-	width: 156px;
-	height: 68px;
+	width: 180px;
+	height: 50px;
 }
 
+.hgroup .logo #logo_letter {
+	position: absolute;
+	font-size: 30px;
+	right: 20px;	
+}
 
 .nvalinks {
 	position: absolute;

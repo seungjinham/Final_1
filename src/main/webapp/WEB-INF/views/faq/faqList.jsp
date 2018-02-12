@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../resources/css/faq/faq.css">
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -25,8 +28,7 @@
 	<%@ include file="../temp/header1.jsp"%>
 	<section id="main">
 		<div class="container">
-		<h1 id="faqH1">FAQ</h1>
-		
+		<h1 class="h1">FAQ</h1>
 		
 		<table class="faqTable">
 			<c:forEach items="${list}" var="i" varStatus="j">

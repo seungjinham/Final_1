@@ -1,12 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".navigation a").hover(
@@ -42,17 +35,16 @@
 		});
 	});
 </script>
-</head>
-<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
-<body>
 <header>
 	<!--  header 시작 -->
 	<div id="header" class="">
 		<div class="hgroup">
 				<div class="inbox">
 					<h1 class="logo">
-						<a href="<%=request.getContextPath()%>"> <img src="/f1/resources/images/common/footer_logo.png" width="50px" height="50px"></a>
+						<a href="<%=request.getContextPath()%>">
+							<img src="/f1/resources/images/common/footer_logo.png" width="40px" height="40px">
+							<span id="logo_letter">P!CK ME</span>
+						</a>
 					</h1>
 					<div class="nvalinks">
 						<ul class="member_menu">
@@ -128,5 +120,3 @@
 	</div>
 	
 </header>
-</body>
-</html>

@@ -21,8 +21,8 @@
 }
 
 #footer .logo {
-	position: absolute;
-	left: 40px;
+ 	position: absolute;
+	left:40px;
 	top: 40px
 }
 
@@ -37,7 +37,7 @@
 #footer .footer_menu li {
 	float: left;
 	padding: 0 5px;
-	background:
+	background: 
 		url("https://smcdn.smtown.com/image/pc/common/icon_ft_line.png")
 		no-repeat left center
 }
