@@ -19,6 +19,7 @@ td{
 	padding: 10px 5px;
 }
 
+
 .faqTitle{
 	cursor: pointer;
 }
@@ -35,6 +36,10 @@ td{
 
 .faqTable{
 	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	font-size: 1em;
 }
 
 .tableTitle{
