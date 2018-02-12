@@ -5,9 +5,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="<%=request.getContextPath()%>/resources/css/recruit/recruitView.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
+	<section id="main">
+	<div id="recruit_info">
+	<div id="registration_info">
+	<div id="reg_num"><span><h4>${recruit.num}</h4></span></div><div id="func_btn"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png"><input type="button" value="스크랩" id="scrap_btn"></div>
+	</div>
+	</div>
+	
+	<div id="company_info">
+	<div id="recruit_info">
+	<div id="company">
+	<span><h3>${company.c_name}</h3></span>
+	<h1>${recruit.title}</h1>
+	</div>
+	<div id="thumnail">
+	<div id="workview_info">
+	<div class="thumitem"></div>
+	<div class="thumitem"></div>
+	<div class="thumitem"></div>
+	<div class="thumitem"></div>
+	<div class="thumitem"></div>
+	
+	</div>
+	</div>
+	</div>
+	</div>
 	
 	<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}&cid=${recruit.id}">Apply</a>
 	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=${member.id}&page=view">Scrap</a>
@@ -22,5 +48,7 @@
 	<h1>${recruit.school}</h1>
 	<h1>${recruit.special}</h1>
 	<h1>${recruit.salary}</h1>
+	</section>
+	<%@ include file="../temp/footer.jsp"%>
 </body>
 </html>
