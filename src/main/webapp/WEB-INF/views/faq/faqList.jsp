@@ -21,6 +21,8 @@
 			});
 		});
 		
+		
+		
 	});
 </script>
 </head>
@@ -53,9 +55,51 @@
 			</c:forEach>
 		</table>
 		
+		
+		
+		
+		
+		
+	<%-- 	<c:if test="${not empty page}">
+				<input type="button" class="list_button" title="${page.startNum}"
+					value="<<">
+			</c:if>
+
+			<c:if test="${not empty page}">
+				<c:choose>
+					<c:when test="${page.curBlock gt 1}">
+						<input type="button" class="list_button"
+							title="${page.curBlock-1}" value="<">
+					</c:when>
+					<c:otherwise>
+						<input type="button" class="list_button" title="${page.curBlock}"
+							value="<">
+					</c:otherwise>
+				</c:choose>
+			</c:if>
+
+
+			<c:forEach begin="${page.startNum}" end="${page.lastNum}" var="i">
+				<input type="button" class="list_button button_now" title="${i}"
+					value="${i}">
+			</c:forEach>
+
+
+			<c:if test="${not empty page}">
+				<input type="button" class="list_button" title="${page.curBlock+1}"
+					value=">">
+			</c:if>
+
+			<c:if test="${not empty page}">
+				<input type="button" class="list_button" title="${page.lastNum}"
+					value=">>">
+			</c:if>
+		
 		<c:if test="${member.id eq 'admin'}">
 		<a href="./faqWrite" id="btnWrite">WRITE</a>
-		</c:if>
+		</c:if> --%>
+		
+		
 		
 		</div>
 	</section>

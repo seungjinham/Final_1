@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ReviewMapper">
+	
+	<insert id="insert" parameterType="ReviewDTO">
+		insert into review values(#{num}, #{id}, #{seller}, #{point}, #{contents}, #{up})	
+	</insert>
+
+	<update id="update" parameterType="ReviewDTO">
+		update review set point=#{point}, contents=#{contents} where num=#{num}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete review where num=#{num}
+	</delete>
+
+	<select id="selectList" parameterType="ListData" resultType="ReviewDTO">
+		select * from
+  			(select rownum R, V.* from
+  			(select * from review
+  			<if test="kind == 'title'">
+				where title LIKE '%'|| #{search}||'%'
+			</if>
+			<if test="kind == 'contents'">
+				where contents LIKE '%'|| #{search}||'%'
+			</if>			
+  			order by num desc) V)
+  			where R between #{startRow} and #{lastRow}
+	</select>
+
+	<select id="selectOne" parameterType="int" resultType="ReviewDTO" >
+		select * from review where num=#{num}
+	</select>
+
+
+</mapper>
+
+
+
+
+
+

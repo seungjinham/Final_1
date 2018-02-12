@@ -41,6 +41,11 @@ td{
 	font-weight: bold;
 }
 
+.tableTitle:hover{
+	font-weight:bold;
+	color: #23A41A;
+}
+
 #btnWrite{
 	border: 1px solid lightGray;
 	padding: 10px 20px;
