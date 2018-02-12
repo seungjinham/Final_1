@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+#recruit_info {
+	width:100%;
+}
+
+#recruit_info #registration_info {
+	width:100%;
+}
+
+#recruit_info #registration_info #reg_num {
+	width:50%;
+	display: inline-block;
+}
+
+#recruit_info #registration_info #reg_num span h4 {
+	width:50%;
+}
+
+#recruit_info #registration_info #func_btn {
+	width:50%;
+	display: inline-block;
+}
+
+#recruit_info #registration_info #func_btn #scrap_btn {
+	background-color: white;
+	border-color: white;
+}
+
+
+
+
+
+#company_info {
+	padding-left:40px;
+	padding-right: 40px;
+	width:90%;
+	border:1px solid red;
+}
+
+#company_info #recruit_info {
+	width:100%;
+	border:1px solid blue;
+}
+
+#company_info #recruit_info #company {
+	padding-top:37px;
+	padding-bottom: 2px;
+}
+
+#company_info #recruit_info #company h1 {
+	padding-right:30px;
+	padding-bottom: 37px;
+}
+
+#company_info #recruit_info #thumnail {
+	padding-top:30px;
+	padding-bottom: 30px;
+}
+
+#company_info #recruit_info #thumnail #workview_info {
+	background-color: lightgreen;
+}
+

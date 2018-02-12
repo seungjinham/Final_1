@@ -35,6 +35,14 @@
 		});
 	});
 </script>
+<<<<<<< HEAD
+=======
+</head>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+
+<body>
+>>>>>>> lsh_temp_20180212
 <header>
 	<!--  header 시작 -->
 	<div id="header" class="">
@@ -69,7 +77,7 @@
  					<ul class="navigation">
  						<li><a href="javascript:void(0);" class="">채용정보</a>
 							<ul class="navi-sublist subnav01">
-								<%-- <li><a href="<%=request.getContextPath()%>/recruit/recruitList">공고 검색</a></li> --%>
+								<%-- <li><a href="<%=request.getContextPath()%>/recruit/Search">공고 검색</a></li> --%>
 								<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고 검색</a></li>
 								<li><a href="<%=request.getContextPath()%>/recruit/recruitSearch">상세 검색</a></li>
 							</ul>
