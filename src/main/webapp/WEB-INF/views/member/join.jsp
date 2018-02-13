@@ -6,9 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Join Select Page</title>
 <link href="<%=request.getContextPath()%>/resources/css/member/join.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+
 </head>
 <body>
 	<!-- Header 시작 -->
