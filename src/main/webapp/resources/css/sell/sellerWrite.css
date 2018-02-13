@@ -1,7 +1,10 @@
 @CHARSET "UTF-8";
 
+#contents{
+	width: 200px;
+	height: 30px;
+}
 
-textarea{
-	width: 100%;
-	height: 10px;
+#smart_editor2{
+	width: 1000px;
 }

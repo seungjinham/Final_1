@@ -28,6 +28,9 @@
 				</c:otherwise>
 				</c:choose>
 			</h1>
+			<div class="inbox">
+			
+			</div>
 		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp"%>

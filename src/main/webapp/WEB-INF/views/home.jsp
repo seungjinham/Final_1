@@ -20,33 +20,8 @@
 	<%@ include file="./temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
-			<p>aa</p>
+			
+		
 			
 		</div>
 		<div class="top">

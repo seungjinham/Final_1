@@ -76,7 +76,7 @@
 				<p class="menu">제목 <p>
 				<input type="text" name="title">
 				<p class="menu"> 서비스 설명 <p>
-				<textarea rows="50px" cols="100%" name="contents" id="contents"></textarea>
+				<textarea name="contents" id="contents"></textarea>
 				<p class="menu"> A/S 및 환불 <p>
 				<textarea name="refund"></textarea>
 				<p><button id="save">등록하기</button></p>

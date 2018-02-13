@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".del").click(function() {
@@ -36,36 +39,53 @@
 </script>
 </head>
 <body>
-	<table>
-		<tr>
-			<td>NUM</td>
-		</tr>
-		<c:forEach items="${list}" var="list2">
-			<tr>
-				<td>${list2.num}</td>
-				<td>${list2.id}</td>
-				<td>${list2.title}</td>
-				<td>${list2.deadline}</td>
-				<td>${list2.people}</td>
-				<td>${list2.gender}</td>
-				<td>${list2.age}</td>
-				<td>${list2.school}</td>
-				<td>${list2.special}</td>
-				<td>${list2.salary}</td>
-				<td>${list2.w_date}</td>
-				<td>${list2.w_day}</td>
-				<td>${list2.w_time}</td>
-				<td>${list2.job}</td>
-				<td>${list2.work}</td>
-				<td>${list2.benefit}</td>
-				<td>${list2.contents}</td>
-				<td><img src="<%=request.getContextPath()%>/resources/images/company/${list2.fname}"></td>
-				<td>${list2.oname}</td>
-				<td>${list2.addr}</td>
-				<td><button class="del" value="${list2.num}" title="${list2.fname}">delete</button></td>
-			</tr>
-		</c:forEach>
-	</table>
+	<%@ include file="../temp/header1.jsp" %>	
+	<section id="main">
+		<div class="container">
+			<table>
+				<tr>
+					<td>NUM</td>
+				</tr>
+				<c:forEach items="${list}" var="list2">
+					<tr>
+						<td>${list2.num}</td>
+						<td>${list2.id}</td>
+						<td>${list2.title}</td>
+						<td>${list2.deadline}</td>
+						<td>${list2.people}</td>
+						<td>${list2.gender}</td>
+						<td>${list2.age}</td>
+						<td>${list2.school}</td>
+						<td>${list2.special}</td>
+						<td>${list2.salary}</td>
+						<td>${list2.w_date}</td>
+						<td>${list2.w_day}</td>
+						<td>${list2.w_time}</td>
+						<td>${list2.job}</td>
+						<td>${list2.work}</td>
+						<td>${list2.benefit}</td>
+						<td>${list2.contents}</td>
+						<td><img
+							src="<%=request.getContextPath()%>/resources/images/company/${list2.fname}"></td>
+						<td>${list2.oname}</td>
+						<td>${list2.addr}</td>
+						<td><button class="del" value="${list2.num}"
+								title="${list2.fname}">delete</button></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+		
+		
+		<div class="top">
+				<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
+					<img class="width-10px position-relative" style="top: -1px"
+					src="/f1/resources/images/common/top.png" width="15px"
+					height="15px;">
+				</a>
+			</div>
+	</section>
+	<%@ include file="../temp/footer.jsp" %>	
 	
 
 </body>

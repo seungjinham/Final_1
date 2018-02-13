@@ -5,8 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Person Join</title>
 <script type="text/javascript">
 

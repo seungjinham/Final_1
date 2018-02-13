@@ -6,13 +6,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객 문의</title>
 <link rel="stylesheet" type="text/css" href="../resources/css/talk/talkForm.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 	
-	<h1 id="talkH1">문의하기</h1>
+	<h1 class="h1">문의하기</h1>
 
 	<form action="talkForm" method="post">
 	<input type="hidden" name="id" >
