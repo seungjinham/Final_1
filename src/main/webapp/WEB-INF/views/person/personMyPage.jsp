@@ -138,7 +138,7 @@
 			<button>UPDATE</button>
 		</form>
 	</section>
-
+	<%@ include file="../temp/footer.jsp"%>
 	<%-- <hr>
 	<h3>판매자</h3>
 	<p><a href="../sell/sellerWrite">판매자 등록하기</a></p>

@@ -60,7 +60,7 @@
 			<form id="frm" name="frm" action="sellerWrite" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="${member.id}">
 				<p class="menu">프로필 사진</p>
-				<span id="del" title="photo">삭제</span>
+				<!-- <span id="del" title="photo">삭제</span> -->
 				<p class="menu">이름 </p>
 				<input type="text" name="name" value="${member.name}">
 				<p class="menu">이메일</p>
