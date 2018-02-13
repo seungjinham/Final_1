@@ -89,11 +89,12 @@ public class SellController {
 	//판매자 정보 보기
 	//========== View ==========
 	@RequestMapping(value="sellerView")
-	public String view(String id, Model model) throws Exception{
+	public void view(HttpSession session, Model model) throws Exception{
+		String id = ((MemberDTO) session.getAttribute("member")).getId();
+		System.out.println("아이디 : " + id);
 		SellerDTO sellerDTO = (SellerDTO) sellerService.sellerOne(id);
+		System.out.println("카테고리"+sellerDTO.getCategory());
 		model.addAttribute("seller", sellerDTO);
-		
-		return "../person/personMyPage";
 	}
 	
 	//판매자 목록 보기
