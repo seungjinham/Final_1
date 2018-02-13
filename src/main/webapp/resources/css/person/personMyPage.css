@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+#main2{
+	width: 1080px;
+	height: 550px;
+}
+#tit_border{
+	width: 700px;
+	height: 80px;
+	float:left;
+}
+#tit{
+	width: 600px;
+	height: 80px;
+	color: #23A41A;
+    font-size: 37px;
+    font-weight: bolder;
+    letter-spacing: -1px;
+    font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
+    margin-left: 5px;
+ 				
+}
+table {
+	width: 500px;
+	height: 150px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+}
+
+th {
+	width: 70px;
+	height: 60px;
+	text-align: left;
+}
+
+.font {
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+td {
+	width: 280px;
+	height: 60px;
+}
+
+.tline {
+	width: 500px;
+	height: 5px;
+	border-top: 1px dotted #23A41A;
+}
+
+#pw{
+	width: 240px;
+	height: 30px;
+	border: 2px solid #23A41A;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: "맑은 고딕", dotum, 돋움, sans-serif;
+}
+

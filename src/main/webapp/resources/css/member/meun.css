@@ -5,9 +5,8 @@
 }
 
 #meun_border {
-	width: 260px;
+	width: 300px;
 	float: left;
-	background-color: lime;
 }
 
 #title {
@@ -20,6 +19,12 @@
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
 	background-color: white;
 	border-bottom: 1px dotted gray;
+}
+
+#m1 {
+	color: white;
+	font-weight: normal;
+	background-color: #23A41A;
 }
 
 .m_meun {
@@ -48,5 +53,5 @@
 	cursor: pointer;
 	border-bottom: 1px dotted gray;
 	display: none;
-	color: #23A41A;
+	color: gray;
 }
