@@ -5,33 +5,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <title>Person MyPage</title>
 <script type="text/javascript">
 
+
 	$(function() {
 		$(".m_meun").click(function() {
-			//$(this).css("color", "white");
-			//$(this).css("font-weight", "normal");
-			//$(this).css("background-color", "#23A41A");
-			//var t = $(".s_meun1").attr("title");
-			//alert(t);
-			//$("").slideDown("slow");
+			$(this).css("color", "white");
+			$(this).css("font-weight", "normal");
+			$(this).css("background-color", "#23A41A");
 			var id = $(this).attr("id");
-			if (id == 'm1') {
-				$("." + id).slideDown("slow");
-			}
-			;
-			if (id == 'm2') {
-				$("." + id).slideDown("slow");
-			}
-			;
+			$("."+id).slideToggle("slow");
+			
+			$(".m_meun").each(function() {
+				var i = $(this).attr("id");
+				if(id != i){
+					$("."+i).hide();
+					$(this).css("color", "black");
+					$(this).css("font-weight", "bold");
+					$(this).css("background-color", "white");
+				};
+				
+			});
 
 		});
-
 	});
 </script>
 <style type="text/css">
@@ -41,8 +44,7 @@
 }
 
 #meun_border {
-	width: 260px;
-	height: 500px;
+	width: 250px;
 	float: left;
 	background-color: lime;
 }
@@ -94,8 +96,10 @@
 	cursor: pointer;
 	border-bottom: 1px dotted gray;
 	display: none;
+	color: #23A41A;
 }
 </style>
+
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -109,12 +113,12 @@
 			<div class="m_meun" id="m2">이력서</div>
 			<div class="s_meun m2">이력서 등록</div>
 			<div class="s_meun m2">이력서 수정·삭제</div>
-			<div class="m_meun">지원 공고</div>
-			<div class="m_meun">스크랩</div>
-			<div class="m_meun">판매자</div>
-			<div class="s_meun" title="s3">판매자 등록</div>
-			<div class="s_meun" title="s3">판매자 정보보기</div>
-			<div class="s_meun" title="s3">거래 목록</div>
+			<div class="m_meun" id="m3">지원 공고</div>
+			<div class="m_meun" id="m4">스크랩</div>
+			<div class="m_meun" id="m5">판매자</div>
+			<div class="s_meun m5" >판매자 등록</div>
+			<div class="s_meun m5" >판매자 정보보기</div>
+			<div class="s_meun m5" >거래 목록</div>
 		</article>
 		<form action="pseronMyPage" method="post">
 			<p>ID : <input type="text" name="id" value="${member.id}" readonly="readonly"></p>
