@@ -13,16 +13,6 @@
 	width:100%;
 }
 
-#rightWing {
-	left:1400px;
-	top:100px;
-	right:1800px;
-	bottom:400px;
-	position: fixed;
-	border:1px solid lightgray;
-	width:15%;
-	height:120px;
-}
 
 #searchsite #form {
 	border:1px solid black;

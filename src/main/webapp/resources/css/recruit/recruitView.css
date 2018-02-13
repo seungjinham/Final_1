@@ -22,6 +22,12 @@
 	display: inline-block;
 }
 
+#recruit_info #registration_info #func_btn #scrap_wrap {
+	width:12%;
+	float:right;
+	display: inline-block;
+}
+
 #recruit_info #registration_info #func_btn img {
 	display:inline-block;
 }
@@ -64,9 +70,58 @@
 }
 
 #company_info #recruit_info #thumnail #workview_info {
-	background-color: lightgreen;
+	border: 1px solid red;
+	height:122px;
 }
 
+#company_info #recruit_info #thumnail #workview_info .thumitem {
+	width:18%;
+	height:100px;
+	border:1px solid blue;
+	display: inline-block;
+	margin-left:12px;
+}
+
+#company_info #recruit_info #thumnail #workview_info .thumitem .circle{
+	border-radius:50%;
+	width:60px;
+	height:60px;
+	border:1px solid lightgray;
+	margin:0 auto;
+	color:blue;
+	font-size: 18px;
+	text-align: center;
+	display: table;
+}
+
+#company_info #recruit_info #thumnail #workview_info .thumitem .circle span{
+	vertical-align: middle;
+	display: table-cell;
+}
+
+#company_info #recruit_info #thumnail #workview_info .thumitem .calendar{
+	width:60px;
+	height:60px;
+	border:1px solid violet;
+	margin:0 auto;
+	display: table;
+}
+
+#company_info #recruit_info #thumnail #workview_info .thumitem .clock{
+	width:60px;
+	height:60px;
+	border:1px solid violet;
+	margin:0 auto;
+	display: table;
+}
+
+#company_info #recruit_info #thumnail #workview_info .thumitem .char{
+	margin-top:18px;
+	width:100%;
+	height:20px;
+	border: 1px solid black;
+	margin-top:18px;
+}
 
 
 
@@ -74,22 +129,48 @@
 
 #condition_info {
 	width:100%;
+	height:400px;
+	border: 1px solid black;
 }
 
-#condition_info #condition_wrap {
-	border-right:1px solid black;
-	padding:40px 40px;
+#condition_info #leftbox {
+	width:69%;
+	height:100px;
+	display: inline-block;
+	float:left;
+	padding: 40px 40px;
+}
+
+#condition_info #leftbox #recruit_condition {
+	margin-bottom: 40px;
+	border-bottom: 1px solid rightgray;
+	padding-bottom: 40px;
+}
+
+#condition_info #leftbox #recruit_condition .recruit_data {
 	display: inline-block;
 }
 
-#condition_info #condition_wrap #recruit_condition {
-	padding-bottom: 40px;
-	border-bottom: 1px;
-	margin-bottom: 40px;
+#condition_info #leftbox #recruit_condition .rdh3 {
+	margin-left:50px;
 }
 
-#condition_info #condition_wrap #work_condition {
-	
+#condition_info #leftbox #work_condition .recruit_data {
+	display: inline-block;
 }
 
-#condition_info #
+#condition_info #leftbox #work_condition .rdh3 {
+	margin-left:50px;
+}
+
+#condition_info #rightbox {
+	width:29%;
+	height:100px;
+	display: inline-block;
+	border: 1px solid gray;
+	folat:right;
+	padding:40px 40px;
+}
+
+
+
