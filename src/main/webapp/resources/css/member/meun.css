@@ -12,13 +12,21 @@
 #title {
 	width: 230px;
 	height: 60px;
-	padding-left: 20px;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
 	background-color: white;
 	border-bottom: 1px dotted gray;
+	color: #23A41A;
+	margin-top: 20px;
+}
+
+.menu_h1 {
+	font-size: 35px; 
+	font-weight: bolder;
+	padding-top: 20px;
+	padding-bottom: 50px;
 }
 
 #m1 {
