@@ -39,6 +39,9 @@
 <style type="text/css">
 </style>
 <link href="<%=request.getContextPath()%>/resources/css/member/login.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 </head>
 <body>
 
