@@ -9,12 +9,15 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<%@include file="../temp/header1.jsp"%>
 	<section id="main">
 		<div class="middle">
+		<h1 class="h1">채용공고검색</h1>
 			<div>
 				<h2>빠른채용검색</h2>
 			</div>
@@ -82,7 +85,7 @@
 				<div>
 					<h2>채용공고리스트</h2>
 				</div>
-				<table id="list_table">
+				<table id="list_table" class="table table-hover">
 					<tr>
 						<th>지역</th>
 						<th>모집제목</th>

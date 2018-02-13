@@ -22,9 +22,14 @@
 	display: inline-block;
 }
 
+#recruit_info #registration_info #func_btn img {
+	display:inline-block;
+}
+
 #recruit_info #registration_info #func_btn #scrap_btn {
 	background-color: white;
 	border-color: white;
+	margin-bottom: 10px;
 }
 
 
@@ -62,3 +67,29 @@
 	background-color: lightgreen;
 }
 
+
+
+
+
+
+#condition_info {
+	width:100%;
+}
+
+#condition_info #condition_wrap {
+	border-right:1px solid black;
+	padding:40px 40px;
+	display: inline-block;
+}
+
+#condition_info #condition_wrap #recruit_condition {
+	padding-bottom: 40px;
+	border-bottom: 1px;
+	margin-bottom: 40px;
+}
+
+#condition_info #condition_wrap #work_condition {
+	
+}
+
+#condition_info #
