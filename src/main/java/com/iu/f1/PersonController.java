@@ -68,7 +68,6 @@ public class PersonController {
 
 	@RequestMapping(value="personLogin", method=RequestMethod.POST)
 	public ModelAndView personLogin(PersonDTO personDTO, HttpSession session) throws Exception{
-		System.out.println("=-=-=-3=12-=1-23=1-12=3-");
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO = personService.login(personDTO);
 		

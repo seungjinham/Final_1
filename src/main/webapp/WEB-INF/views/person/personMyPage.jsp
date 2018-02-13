@@ -13,38 +13,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Person MyPage</title>
 <style type="text/css">
-#btn_border{
-	width: 500px;
-	height: 80px;
-	float:left;
-	padding-top: 20px;
-}
-#btn_border_2{
-	width: 260px;
-	height: 50px;
-	margin: 0 auto;
-}
-.btn {
-	width: 100px;
-	height: 35px;
-	border: none;
-	border-radius: 5px;
-	background-color: #23A41A;
-	float: left;
-	margin-left: 20px;
-	padding-top: 10px;
-	text-align: center;
-}
-.btn a{
-	color: white;
-	font-size: 15px;
-	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
-}
-.btn a:hover{
-	font-weight: bold;
-	font-size: 17px;
-	cursor: pointer;
-}
 </style>
 </head>
 <body>
