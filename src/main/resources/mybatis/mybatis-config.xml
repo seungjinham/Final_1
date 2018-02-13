@@ -18,6 +18,7 @@
   		<typeAlias type="com.iu.talk.TalkDTO" alias="TalkDTO"/>
   		<typeAlias type="com.iu.supporter.SupporterDTO" alias="SupporterDTO"/>
   		<typeAlias type="com.iu.review.ReviewDTO" alias="ReviewDTO"/>
+  		<typeAlias type="com.iu.power.PowerDTO" alias="PowerDTO"/>
   	</typeAliases>
   
   </configuration>
