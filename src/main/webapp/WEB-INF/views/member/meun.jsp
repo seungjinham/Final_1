@@ -5,7 +5,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#m1").on
+		$("#m1").ready(function(){
+			$(".m1").show("slow");
+		});
+		
 		$(".m_meun").click(function() {
 			$(this).css("color", "white");
 			$(this).css("font-weight", "normal");

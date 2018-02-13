@@ -92,7 +92,10 @@ public class PersonController {
 	public void personMyPage(HttpSession session) throws Exception{}
 	
 	//회원수정
-	@RequestMapping(value="pseronMyPage", method=RequestMethod.POST)
+	@RequestMapping(value="personUpdate", method=RequestMethod.GET)
+	public void personUpdate(HttpSession session) throws Exception{}
+	
+	@RequestMapping(value="personUpdate", method=RequestMethod.POST)
 	public ModelAndView personUpdate(PersonDTO personDTO, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = personService.update(personDTO);
