@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#meun_border {
+	width: 260px;
+	float: left;
+	background-color: lime;
+}
+
+#title {
+	width: 230px;
+	height: 60px;
+	padding-left: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	background-color: white;
+	border-bottom: 1px dotted gray;
+}
+
+.m_meun {
+	width: 230px;
+	height: 43px;
+	padding-top: 17px;
+	padding-left: 20px;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	background-color: white;
+	cursor: pointer;
+	border-bottom: 1px dotted gray;
+}
+
+.s_meun {
+	width: 230px;
+	height: 43px;
+	padding-top: 17px;
+	padding-left: 20px;
+	font-size: 15px;
+	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	background-color: white;
+	cursor: pointer;
+	border-bottom: 1px dotted gray;
+	display: none;
+	color: #23A41A;
+}
