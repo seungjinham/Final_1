@@ -9,9 +9,9 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 <body>
 	<%@include file="../temp/header1.jsp"%>
@@ -80,29 +80,56 @@
 
 				</form>
 			</div>
+			
+			<div id="powerlink"><h2>파워링크</h2></div>
+			
+			<div id="powerlinklist">
+				<table id="powerlink_table" class="table">
+					<tr id="firstrow">
+						<th class="f_th">지역</th>
+						<th class="f_th">모집제목</th>
+						<th class="f_th">급여</th>
+						<th class="f_th">근무시간</th>
+						<th class="f_th">마감기한</th>
+					</tr>
+					<c:forEach var="item" items="${totallist}" end="4">
+						<tr id="extrarow">
+							<td class="e_td">${item.addr}</td>
+							<td class="e_td e_td2">
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
+							</td>
+							<td class="e_td e_td2">${item.salary}</td>
+							<td class="e_td">${item.w_time}</td>
+							<td class="e_td">${item.deadline}</td>
+						</tr>
+					</c:forEach>
+				</table>
+			
+			</div>
 
 			<div id="list_area">
 				<div>
 					<h2>채용공고리스트</h2>
 				</div>
-				<table id="list_table" class="table table-hover">
-					<tr>
-						<th>지역</th>
-						<th>모집제목</th>
-						<th>급여</th>
-						<th>근무시간</th>
-						<th>마감기한</th>
+				<table id="list_table" class="table">
+					<tr id="firstrow">
+						<th class="f_th">지역</th>
+						<th class="f_th">모집제목</th>
+						<th class="f_th">급여</th>
+						<th class="f_th">근무시간</th>
+						<th class="f_th">마감기한</th>
 					</tr>
 					<c:forEach var="item" items="${totallist}">
-						<tr>
-							<td>${item.addr}</td>
-							<td>
+						<tr id="extrarow">
+							<td class="e_td">${item.addr}</td>
+							<td class="e_td e_td2">
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
 							</td>
-							<td>${item.salary}</td>
-							<td>${item.w_time}</td>
-							<td>${item.deadline}</td>
+							<td class="e_td e_td2">${item.salary}</td>
+							<td class="e_td">${item.w_time}</td>
+							<td class="e_td">${item.deadline}</td>
 						</tr>
 					</c:forEach>
 				</table>

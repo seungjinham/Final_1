@@ -6,16 +6,6 @@
 	
 }
 
-#rightWing {
-	left:1400px;
-	top:100px;
-	right:1800px;
-	bottom:400px;
-	position: fixed;
-	border:1px solid lightgray;
-	width:15%;
-	height:120px;
-}
 
 .middle #search_area {
 	width:100%;
@@ -34,6 +24,7 @@
 .middle #search_area #form .common h3{
 	width:10%;
 	display: inline-block;
+	margin-left:10px;
 }
 
 .middle #search_area #form .common .boxcommon{
@@ -42,12 +33,13 @@
 
 .middle #search_area #form .genderage {
 	display: inline-block;
-	width:394px;
+	width:50%;
 }
 
 .middle #search_area #form .genderage h3 {
 	width:20%;
 	display: inline-block;
+	margin-left:10px;
 }
 
 .middle #search_area #form #btngroup{
@@ -65,7 +57,50 @@
 }
 
 .middle #list_area #list_table {
+	width:100%;
 	border:1px solid gray;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.middle #list_area #list_table #firstrow {
+	border-top:2px solid gray;
+	border-bottom:1px solid lightgray;
+}
+
+.middle #list_area #list_table #extrarow {
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+}
+
+.middle #list_area #list_table #extrarow:hover {
+	background-color: lightgreen;
+}
+
+.middle #list_area #list_table #firstrow .f_th{
+	height:40px;
+	text-align: center;
+}
+
+.middle #list_area #list_table #extrarow .e_td{
+	height:60px;
+	text-align: center;
+}
+
+.middle #list_area #list_table #extrarow .e_td2{
+	height:60px;
+	text-align: left;
+}
+
+
+
+
+
+
+#powerlinklist {
+	width:100%;
+	
+	border: 1px solid black;
+	margin-bottom: 50px;
+}
+
