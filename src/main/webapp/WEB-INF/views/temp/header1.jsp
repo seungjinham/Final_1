@@ -100,7 +100,7 @@
 								<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인공고</a></li>
 								<li><a href="#">지원자 관리</a></li>
 								<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고등록하기</a></li>
-								<li><a href="#">파워링크 구매</a></li>
+								<li><a href="<%=request.getContextPath()%>/use/powerBuy">파워링크 구매</a></li>
 								<li><a href="#">구매내역 관리</a></li>
 								<li><a href="<%=request.getContextPath()%>/company/companyMyPage">회원정보수정</a></li>
 							</ul>

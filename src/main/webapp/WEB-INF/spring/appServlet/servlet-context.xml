@@ -34,6 +34,8 @@
 	<context:component-scan base-package="com.iu.scrap" />
 	<context:component-scan base-package="com.iu.apply" />
 	<context:component-scan base-package="com.iu.supporter" />
+	<context:component-scan base-package="com.iu.review" />
+	<context:component-scan base-package="com.iu.power" />
 
 	
 </beans:beans>
