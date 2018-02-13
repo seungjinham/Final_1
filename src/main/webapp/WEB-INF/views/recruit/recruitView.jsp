@@ -16,7 +16,7 @@
 	<section id="main">
 	<div id="recruit_info">
 	<div id="registration_info">
-	<div id="reg_num"><span><h4>${recruit.num}</h4></span></div><div id="func_btn"><div id="scrap_wrap"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png"><input type="button" value="스크랩" id="scrap_btn"></div></div>
+	<div id="reg_num"><span><h3>${recruit.num}</h3></span></div><div id="func_btn"><div id="scrap_wrap"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png"><input type="button" value="스크랩" id="scrap_btn"></div></div>
 	</div>
 	</div>
 
@@ -68,6 +68,7 @@
 		<p><h3 class="recruit_data">학력</h3><h3 class="recruit_data rdh3">무관</h3></p>
 		<p><h3 class="recruit_data">우대</h3><h3 class="recruit_data rdh3">군필자</h3></p>
 		</div>
+		
 		<div id="work_condition">
 		<p><h1>근무조건</h1></p>
 		<p><h3 class="recruit_data">급여</h3><h3 class="recruit_data rdh3">월급 3,400,000</h3></p>
@@ -78,9 +79,27 @@
 		<p><h3 class="recruit_data">고용형태</h3><h3 class="recruit_data rdh3">정규직</h3></p>
 		</div>
 		</div>
-		<div id="rightbox"></div>
+		
+		<div id="rightbox">
+		<input type="button" value="지원하기" id="applybtn">
+		<div id="recruit_manager">
+		<p><h1>채용담당자 정보</h1></p>
+		<p><h3 class="recruit_data">담당자</h3><h3 class="recruit_data rdh3">김아무개</h3></p>
+		<p><h3 class="recruit_data">이메일</h3><h3 class="recruit_data rdh3">test@naver.com</h3></p>
+		<p><h3 class="recruit_data">전화</h3><h3 class="recruit_data rdh3">010-5348-9716</h3></p>
+		</div>
+		</div>
 		</div>
 		
+		<div id="viewtab">
+		<div id="tablist">
+		<ul><li>근무지역</li><li>상세모집요강</li><li>채용기업정보</li></ul>
+		</div>
+		
+		<div id="area"><h2>지역</h2></div>
+		<div id="notice"><h2>상세모집요강</h2></div>
+		<div id="business_info"><h2>기업정보</h2></div>
+		</div>
 		
 		
 		

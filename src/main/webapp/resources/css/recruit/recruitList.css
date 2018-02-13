@@ -99,8 +99,45 @@
 
 #powerlinklist {
 	width:100%;
-	
 	border: 1px solid black;
 	margin-bottom: 50px;
 }
+
+#powerlinklist #powerlink_table {
+	width:100%;
+	border:1px solid gray;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#powerlinklist #powerlink_table #firstrow {
+	border-top:2px solid gray;
+	border-bottom:1px solid lightgray;
+}
+
+#powerlinklist #powerlink_table #extrarow {
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+}
+
+#powerlinklist #powerlink_table #extrarow:hover {
+	background-color: lightgray;
+}
+
+#powerlinklist #powerlink_table #firstrow .f_th{
+	height:40px;
+	text-align: center;
+}
+
+#powerlinklist #powerlink_table #extrarow .e_td{
+	height:60px;
+	text-align: center;
+}
+
+#powerlinklist #powerlink_table #extrarow .e_td2{
+	height:60px;
+	text-align: left;
+}
+
+
 

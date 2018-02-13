@@ -129,12 +129,12 @@
 
 #condition_info {
 	width:100%;
-	height:400px;
+	height:450px;
 	border: 1px solid black;
 }
 
 #condition_info #leftbox {
-	width:69%;
+	width:60%;
 	height:100px;
 	display: inline-block;
 	float:left;
@@ -164,13 +164,63 @@
 }
 
 #condition_info #rightbox {
-	width:29%;
-	height:100px;
+	width:25%;
+	height:300px;
 	display: inline-block;
 	border: 1px solid gray;
-	folat:right;
+	float:right;
 	padding:40px 40px;
 }
 
+#condition_info #rightbox #applybtn{
+	display: inline-block;
+	width:100%;
+	height:40px;
+	background-color: lightgreen;
+	color:white;
+	font-size: 20px;
+	text-align: center;
+	border: 1px solid lightgreen;
+}
+
+#condition_info #rightbox #recruit_manager {
+	width:100%;
+	height:100px;
+	border: 1px solid violet;
+	margin-top:17px;
+}
+
+#condition_info #rightbox #recruit_manager .recruit_data {
+	display: inline-block;
+}
+
+#condition_info #rightbox #recruit_manager .rdh3{
+	margin-left:50px;
+}
+
+
+
+
+
+#viewtab {
+	width:100%;
+	height:2500px;
+	border: 1px solid black;
+	margin-top:10px;
+}
+
+#viewtab #tablist {
+	width:100%;
+	border: 1px solid black;
+}
+
+#viewtab #tablist ul li {
+	width:33%;
+	border: 1px solid red;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
 
 
