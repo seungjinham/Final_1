@@ -38,18 +38,10 @@
 	<div class="s_meun m1">
 		<a href="../person/personDelete" id="s_m2">회원 탈퇴<span class="arrow">＞</span></a></div>
 	<div class="m_meun" id="m2">이력서</div>
-<<<<<<< HEAD
-	<div class="s_meun m2">이력서 등록</div>
-	<div class="s_meun m2">이력서 수정·삭제</div>
-	<div class="m_meun" id="m3">
-	<a href="../apply/applySelectList?id=${member.id}">지원 현황</a>
-	</div>
-=======
 	<div class="s_meun m2"><a href="../paper/paperWrite">이력서 등록<span class="arrow">＞</span></a></div>
 	<div class="s_meun m2"><a href="../paper/paperUpdate">이력서 수정·삭제<span class="arrow">＞</span></a></div>
 	<div class="m_meun" id="m3">
 		<a href="#">지원 공고 보기</a></div>
->>>>>>> jjh0214
 	<div class="m_meun" id="m4">
 		<a href="../scrap/scrapSelectList?id=${member.id}">스크랩 보기</a>
 	</div>
