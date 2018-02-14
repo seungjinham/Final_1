@@ -103,11 +103,13 @@
 				<div class="title">전화번호</div>
 				<input class="seller" type="text" name="phone" value="${member.phone}">
 				
+				<hr>
+				
 				<div class="title">카테고리</div>
-				<select>
-					<option class="category seller" value="design">디자인</option>
-					<option class="category seller" value="it">IT & 프로그래밍</option>
-					<option class="category seller" value="translate">번역 & 통역</option>
+				<select class="seller">
+					<option class="category" value="design">디자인</option>
+					<option class="category" value="it">IT & 프로그래밍</option>
+					<option class="category" value="translate">번역 & 통역</option>
 				</select>
 				
 				<div class="title">제목 </div>
