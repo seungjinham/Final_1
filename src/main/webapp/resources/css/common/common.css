@@ -119,10 +119,6 @@ textarea {
 	box-sizing: border-box;
 }
 
-hr {
-	display: none;
-}
-
 /* 기본 링크 스타일 */
 a:link {
 	color: #000;

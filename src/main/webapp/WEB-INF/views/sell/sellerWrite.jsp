@@ -16,69 +16,56 @@
 	$(function() {
 		//================== 파일 삭제 ==================
 		//위임이 필요하기때문에 on을 사용하여 위임해줌
-		$("#result").on("click",".remove",function() {
+		$("#result").on("click", ".remove", function() {
 			$(this).prev().remove();
 			$(this).remove();
-		});			
+		});
+		/* 	$("#remove").click(function() {
+				$(this).remove();
+				$("#result").append('<p><input type="file" name="file"></p>');
+			});		 */
+
+		$("#out").click(function() {
+			var id = $(this).attr("title");
+			$("#" + id).html('Photo : <input type="file" name="file" id="f">');
+		});
+
+		$("#btn").click(function() {
+			var f = $("#f").val();
+			if (f != '') {
+				alert("ok");
+				$("#frm").submit();
+			}
+			;
+		});
 	});
-	
-	
+
 	//================== smart_editor ==================
-	$(function(){
-	    //전역변수
-	    var obj = [];              
-	    //스마트에디터 프레임생성
-	    nhn.husky.EZCreator.createInIFrame({
-	        oAppRef: obj,
-	        elPlaceHolder: "contents",
-	        sSkinURI: "../resources/SE2/SmartEditor2Skin.html",
-	        htParams : {
-	            // 툴바 사용 여부
-	            bUseToolbar : true,            
-	            // 입력창 크기 조절바 사용 여부
-	            bUseVerticalResizer : true,    
-	            // 모드 탭(Editor | HTML | TEXT) 사용 여부
-	            bUseModeChanger : true,
-	        }
-	    });
-	    //전송버튼
-	    $("#save").click(function(){
-	        //id가 smarteditor인 textarea에 에디터에서 대입
-	        obj.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
-	        //폼 submit
-	        $("#frm").submit();
-	    });
+	$(function() {
+		//전역변수
+		var obj = [];
+		//스마트에디터 프레임생성
+		nhn.husky.EZCreator.createInIFrame({
+			oAppRef : obj,
+			elPlaceHolder : "contents",
+			sSkinURI : "../resources/SE2/SmartEditor2Skin.html",
+			htParams : {
+				// 툴바 사용 여부
+				bUseToolbar : true,
+				// 입력창 크기 조절바 사용 여부
+				bUseVerticalResizer : true,
+				// 모드 탭(Editor | HTML | TEXT) 사용 여부
+				bUseModeChanger : true,
+			}
+		});
+		//전송버튼
+		$("#save").click(function() {
+			//id가 smarteditor인 textarea에 에디터에서 대입
+			obj.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
+			//폼 submit
+			$("#frm").submit();
+		});
 	});
-	
-	$(function(){
-	    //전역변수
-	    var obj = [];              
-	    //스마트에디터 프레임생성
-	    nhn.husky.EZCreator.createInIFrame({
-	        oAppRef: obj,
-	        elPlaceHolder: "refund",
-	        sSkinURI: "../resources/SE2/SmartEditor2Skin.html",
-	        htParams : {
-	            // 툴바 사용 여부
-	            bUseToolbar : true,            
-	            // 입력창 크기 조절바 사용 여부
-	            bUseVerticalResizer : true,    
-	            // 모드 탭(Editor | HTML | TEXT) 사용 여부
-	            bUseModeChanger : true,
-	        }
-	    });
-	    //전송버튼
-	    $("#save").click(function(){
-	        //id가 smarteditor인 textarea에 에디터에서 대입
-	        obj.getById["refund"].exec("UPDATE_CONTENTS_FIELD", []);
-	        //폼 submit
-	        $("#frm").submit();
-	    });
-	});
-	
-	//================== smart_editor ==================
-	
-	
 </script>
 </head>
 <body>
@@ -91,17 +78,23 @@
 				<input type="hidden" name="id" value="${member.id}">
 				
 				<div class="title">프로필 사진</div>
-				<img alt="" src="<%=request.getContextPath()%>/resources/images/common/profile.png" width="100px" height="100px">
-				<!-- <span id="del" title="photo">삭제</span> -->
+				<div id="photo">
+					<span id="in" title="in">등록</span>
+					<span id="out" title="out">삭제</span>
+				</div>
 				
-				<div class="title">이름 </div>
-				<input class="seller" type="text" name="name" value="${member.name}">
+				<div class="title">
+					<span>이   름</span> 
+					<input class="seller" type="text" name="name" value="${member.name}">
+				</div>
 				
-				<div class="title">이메일</div>
+				<div class="title">이메일
 				<input class="seller" type="email" name="email" value="${member.email}">
+				</div>
 				
-				<div class="title">전화번호</div>
+				<div class="title">전화번호
 				<input class="seller" type="text" name="phone" value="${member.phone}">
+				</div>
 				
 				<hr>
 				
