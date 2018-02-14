@@ -26,21 +26,11 @@ public class PersonController {
 	public void personJoin(){}
 
 	@RequestMapping(value="personJoin", method=RequestMethod.POST)
-	public ModelAndView personJoin(PersonDTO personDTO)throws Exception{
-		ModelAndView mv = new ModelAndView();
+	public String personJoin(PersonDTO personDTO)throws Exception{
 		int result = personService.join(personDTO);
-
-		String message = "Join Fail";
-		String path = "./personJoin";
-
 		if(result>0){
-			message = "Join Success";
-			path = "../";
 		}
-		mv.addObject("message", message);
-		mv.addObject("path", path);
-		mv.setViewName("common/result");
-		return mv;
+		return "redirect:../";
 	}
 	
 	//회원가입 시 IDCheck
@@ -58,7 +48,7 @@ public class PersonController {
 	}
 
 	//회원탈퇴
-	@RequestMapping(value="personDelete")
+	@RequestMapping(value="personDelete", method=RequestMethod.GET)
 	public void personDelete(){}
 
 	
@@ -71,17 +61,17 @@ public class PersonController {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO = personService.login(personDTO);
 		
-		String message = "Login Fail";
 		String path = "../member/login";
 
 		if(memberDTO != null){
 			session.setAttribute("member", memberDTO);
-			message = "Login Success";
 			path = "../";
+			mv.addObject("path", path);
+			mv.setViewName("common/loginResult");
+		}else{
+			mv.addObject("result", "p_login");
+			mv.setViewName("member/login");
 		}
-		mv.addObject("message", message);
-		mv.addObject("path", path);
-		mv.setViewName("common/loginResult");
 		return mv;
 	}
 

@@ -1,24 +1,48 @@
 @CHARSET "UTF-8";
-#main2{
+
+#main2 {
 	width: 1080px;
 	height: 550px;
 }
-#tit_border{
+
+#tit_border {
 	width: 700px;
 	height: 80px;
-	float:left;
+	float: left;
 }
-#tit{
+
+#tit {
 	width: 600px;
 	height: 80px;
 	color: #23A41A;
-    font-size: 37px;
-    font-weight: bolder;
-    letter-spacing: -1px;
-    font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
-    margin-left: 5px;
- 				
+	font-size: 37px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	margin-left: 5px;
 }
+
+#word_border {
+	width: 700px;
+	height: 60px;
+	float: left;
+	font-size: 12px;
+}
+
+b {
+	font-size: 15px;
+}
+
+.word {
+	width: 600px;
+	height: 25px;
+}
+
+#word_2 {
+	color: red;
+}
+
 table {
 	width: 500px;
 	height: 150px;
@@ -48,7 +72,12 @@ td {
 	border-top: 1px dotted #23A41A;
 }
 
-#pw{
+#p_id {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#pw {
 	width: 240px;
 	height: 30px;
 	border: 2px solid #23A41A;
@@ -57,17 +86,19 @@ td {
 	font-family: "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
-#btn_border{
+#btn_border {
 	width: 500px;
 	height: 80px;
-	float:left;
+	float: left;
 	padding-top: 20px;
 }
-#btn_border_2{
+
+#btn_border_2 {
 	width: 260px;
 	height: 50px;
 	margin: 0 auto;
 }
+
 .btn {
 	width: 100px;
 	height: 35px;
@@ -80,12 +111,15 @@ td {
 	text-align: center;
 	cursor: pointer;
 }
-.btn a{
+
+.btn a {
 	color: white;
 	font-size: 15px;
-	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
-.btn a:hover{
+
+.btn a:hover {
 	font-weight: bold;
 	font-size: 17px;
 	cursor: pointer;

@@ -68,17 +68,16 @@
 				$(".box").prop("checked", false);
 			}
 		});
-		$(".box").click(
-				function() {
-					if ($("#c1").prop("checked") && $("#c2").prop("checked")
-							&& $("#c3").prop("checked")) {
-						$("#all_check").prop("checked", true);
-					} else {
-						$("#all_check").prop("checked", false);
-					}
-
-				});
-
+		$(".box").click(function() {
+				if ($("#c1").prop("checked") && $("#c2").prop("checked")
+						&& $("#c3").prop("checked")) {
+					$("#all_check").prop("checked", true);
+				} else {
+					$("#all_check").prop("checked", false);
+				}
+		});
+		
+		//약관 동의서 보기
 		var check = true;
 		$("#ser_1").click(function() {
 			if (check) {
@@ -104,6 +103,8 @@
 			}
 			$(".see2").slideToggle("slow");
 		});
+		
+		var joinCheck = false;
 
 		//ID 중복 확인
 		$("#id").keyup(
@@ -128,6 +129,7 @@
 								if ($.trim(data) == "사용 가능한 ID 입니다.") {
 									$("#idCheck").css('color', 'blue');
 									$("#idCheck").css('font-size', '15px');
+									joinCheck = true;
 								} else {
 									$("#idCheck").css('color', 'red');
 									$("#idCheck").css('font-size', '15px');
@@ -173,6 +175,7 @@
 						$("#pwCheck").css('color', 'blue');
 						$("#pwCheck").css('font-size', '15px');
 						$("#pw2").attr('readonly', false);
+						joinCheck = true;
 					} else {
 						if (pw == '') {
 							$("#pwCheck").html("비밀번호를 입력해주세요.");
@@ -197,6 +200,7 @@
 				$("#pwCheck2").html("비밀번호가 일치합니다.");
 				$("#pwCheck2").css('color', 'blue');
 				$("#pwCheck2").css('font-size', '15px');
+				joinCheck = true;
 			} else {
 				if (pw2 == '') {
 					$("#pwCheck2").html("비밀번호를 입력해주세요.");
@@ -220,6 +224,7 @@
 				$("#nameCheck").html("사용 가능합니다.");
 				$("#nameCheck").css('color', 'blue');
 				$("#nameCheck").css('font-size', '15px');
+				joinCheck = true;
 			} else {
 				if (name == '') {
 					$("#nameCheck").html("이름을 입력해주세요.");
@@ -237,9 +242,26 @@
 		$("#e_select").change(function() {
 			$("#domain").val($(this).val());
 		});
-		
+		 
 		$("#j_btn").click(function() {
-			$("#frm").submit;
+			if($("#id").val() && 
+			  ($("#pw").val()==$("#pw2").val()) &&
+			  $("#name").val() &&
+			  $(".phones").val() &&
+			  $(".addrs").val() &&
+			  $(".birth").val() &&
+			  $(".birth").val() &&
+			  $(".gender").val() &&
+			  $(".email").val() != null && joinCheck == true){
+					if($("#c1").prop("checked") && $("#c2").prop("checked")){
+						frm.submit();
+						alert("가입을 환영합니다.");
+				}else{
+					alert("약관 동의에 체크 해주세요.");
+				}
+			}else{
+				alert("필수 사항을 확인 해주세요.");
+			}
 		});
 
 	});
@@ -268,7 +290,7 @@
 				</div>
 				<div class="tline"></div>
 				<div class="agree">
-					<input type="checkbox" class="box" id="c1"> <span
+					<input type="checkbox" class="box feel" id="c1"> <span
 						class="point">[필수]</span> 서비스 이용약관 동의
 					<button class="see" id="ser_1">보기▼</button>
 					<div class="see1">
@@ -276,7 +298,7 @@
 					</div>
 				</div>
 				<div class="agree">
-					<input type="checkbox" class="box" id="c2"> <span
+					<input type="checkbox" class="box feel" id="c2"> <span
 						class="point">[필수]</span> 개인정보 수집 및 이용 동의
 					<button class="see" id="ser_2">보기▼</button>
 					<div class="see2">
@@ -310,7 +332,7 @@
 					</tr>
 					<tr>
 						<th class="font">비밀번호 확인</th>
-						<td class="font"><input type="password" readonly="readonly"
+						<td class="font"><input type="password" 
 							name="pw2" id="pw2" class="inupt_f"><br> <span
 							id="pwCheck2"></span></td>
 					</tr>
@@ -324,25 +346,25 @@
 					</tr>
 					<tr>
 						<th class="font">휴대폰</th>
-						<td class="font"><select name="phone" id="p_select">
+						<td class="font"><select name="phone" id="p_select" class="phones">
 								<option value="010">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-						</select> ─ <input type="text" name="phone" class="phone"> ─ <input
-							type="text" name="phone" class="phone"></td>
+						</select> ─ <input type="text" name="phone" class="phone phones"> ─ <input
+							type="text" name="phone" class="phone phones"></td>
 					</tr>
 					<tr>
 						<th class="font">주소</th>
 						<td class="font"><input type="text" id="sample6_postcode"
-							placeholder="우편번호" name="addr" class="addr"> <input
+							placeholder="우편번호" name="addr" class="addr addrs"> <input
 							type="button" onclick="sample6_execDaumPostcode()"
 							value="우편번호 찾기" id="addr_btn"><br> <input
 							type="text" id="sample6_address" placeholder="주소" name="addr"
-							class="addr2"> <input type="text" id="sample6_address2"
-							placeholder="상세주소" name="addr" class="addr2"></td>
+							class="addr2 addrs"> <input type="text" id="sample6_address2"
+							placeholder="상세주소" name="addr" class="addr2 addrs"></td>
 					</tr>
 					<tr>
 						<th class="font">생년월일</th>
@@ -354,8 +376,8 @@
 					<tr>
 						<th class="font">성별</th>
 						<td class="font">남자 <input type="radio" value="M"
-							name="gender"> 여자 <input type="radio" value="W"
-							name="gender">
+							name="gender" class="gender"> 여자 <input type="radio" value="W"
+							name="gender" class="gender">
 						</td>
 					</tr>
 					<tr>

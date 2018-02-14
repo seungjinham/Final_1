@@ -7,16 +7,26 @@
 .title_border {
 	width: 800px;
 	height: 100px;
+	margin: 0 auto;
 }
 
 .title_border2 {
-	width: 250px;
+	width: 150px;
 	height: 60px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 35px;
 	font-family: sans-serif;
 	padding-top: 15px;
+}
+
+#tit_join{
+	width: 150px;
+	height: 50px;
+	float: left;
+	font-weight: bold;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
 
 .join_border {
@@ -38,8 +48,9 @@
 }
 
 .photo {
-	width: 200px;
-	height: 200px;
+	width: 170px;
+	height: 170px;
+	padding-top: 20px;
 	padding-left: 50px;
 	padding-right: 50px;
 }

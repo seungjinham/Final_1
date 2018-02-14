@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 	$(function() {
 		$("#company").click(function() {
 			$("#frm").attr("action", "../company/companyLogin");
-			$(".logo").attr("src", "../resources/images/common/c_logo.PNG");
+			$(".logo").attr("src", "../resources/images/member/c_icon.png");
 			$("#login_btn").css("background-color", "#33adff");
 			$("#j_btn").css("color", "#33adff");
 			$("#title_border_2").css("border-bottom", "2px solid #33adff");
@@ -21,15 +22,24 @@
 		});
 		$("#person").click(function() {
 			$("#frm").attr("action", "../person/personLogin");
-			$(".logo").attr("src", "../resources/images/common/footer_logo.png");
+			$(".logo").attr("src", "../resources/images/member/p_icon.png");
 			$("#login_btn").css("background-color", "#23A41A");
 			$("#j_btn").css("color", "#23A41A");
 			$("#title_border_2").css("border-bottom", "2px solid #23A41A");
 			$(".in").css("border", "2px solid #23A41A");
 		});
-			
+		
+		
 		$("#login_btn").click(function() {
-			$("#frm").submit();
+			var id_1 = '${member.id}';
+			var id_2 = $("#id").val();
+			var pw_1 = '${member.pw}';
+			var pw_2 = $("#pw").val();
+			if(id_2 && pw_2 != null){
+				$("#frm").submit();
+			}else{
+				$("#info_border").show();
+			}
 		});
 		
 		$("#j_btn").click(function() {
@@ -48,11 +58,11 @@
 	<section class="title_border">
 		<article id="title_border_2">
 			<div class="logo_border">
-				<img src="../resources/images/common/footer_logo.png" class="logo">
+				<img src="../resources/images/member/p_icon.png" class="logo">
 			</div>
 			<div id="title">P!CK ME</div>
 			<div class="logo_border">
-				<img src="../resources/images/common/footer_logo.png" class="logo">
+				<img src="../resources/images/member/p_icon.png" class="logo">
 			</div>
 		</article>
 	</section>
@@ -79,6 +89,30 @@
 			</article>
 		</article>
 	</section>
+	
+	<c:if test="${result ne 'login'}">
+		<div id="info_border" style="display: none;">
+			<div id="info">
+				ID 또는 비밀번호를 입력 해주세요.
+			</div>
+		</div>
+	</c:if>
+	
+	<c:if test="${result eq 'p_login'}">
+		<div id="info_border">
+			<div id="info">
+				ID 또는 비밀번호를 확인 해주세요.
+			</div>
+		</div>
+	</c:if>
+	
+	<c:if test="${result eq 'c_login'}">
+		<div id="info_border">
+			<div id="info">
+				ID 또는 비밀번호를 확인 해주세요.
+			</div>
+		</div>
+	</c:if>
 	
 	<div class="j_border">
 		<div class="j_border_2">

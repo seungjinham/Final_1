@@ -81,19 +81,19 @@ public class CompanyController {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO = companyService.login(companyDTO);
 		
-		String message = "Login Fail";
 		String path = "../member/login";
 
 		if(memberDTO != null){
 			session.setAttribute("member", memberDTO);
-			message = "Login Success";
 			path = "../";
+			mv.addObject("path", path);
+			mv.setViewName("common/loginResult");
+		}else{
+			mv.addObject("result", "c_login");
+			mv.setViewName("member/login");
 		}
-		mv.addObject("message", message);
-		mv.addObject("path", path);
-		mv.setViewName("common/loginResult");
 		return mv;
-		}
+	}
 	
 	//reqruit
 	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
