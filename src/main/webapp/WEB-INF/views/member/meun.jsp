@@ -9,7 +9,7 @@
 			$(".m1").show("slow");
 		});
 		
-		$(".m_meun").click(function() {
+		$(".m_meun").mouseenter(function() {
 			$(this).css("color", "white");
 			$(this).css("font-weight", "normal");
 			$(this).css("background-color", "#23A41A");
