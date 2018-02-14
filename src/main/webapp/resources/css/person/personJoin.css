@@ -116,7 +116,7 @@
 }
 
 table {
-	width: 650px;
+	width: 600px;
 	height: 700px;
 	border-top: 2px solid #23A41A;
 	border-bottom: 2px solid #23A41A;
@@ -140,6 +140,11 @@ td {
 	width: 600px;
 	height: 5px;
 	border-top: 1px dotted #23A41A;
+}
+
+input{
+	border-radius: 5px;
+	border: 1px solid gray;
 }
 
 .inupt_f {
@@ -183,7 +188,7 @@ td {
 	margin-top: 10px;
 	border-radius: 5px;
 	border: 1px solid gray;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	cursor: pointer;
 	background-color: white;
 }

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +10,28 @@
 <link href="<%=request.getContextPath()%>/resources/css/member/meun.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/person/personMyPage.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<title>Person MyPage</title>
+<title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
-		$("#s_m1").css("color", "#23A41A");
-		$("#s_m1").css("font-weight", "bold");
+		$("#s_m2").css("color", "#23A41A");
+		$("#s_m2").css("font-weight", "bold");
+		
+		$("#s_m1").css("color", "black");
+		$("#s_m1").css("font-weight", "normal");
+		
+		$("#s_m1").mouseenter(function() {
+			$("#s_m1").css("font-weight", "bold");
+		});
+		$("#s_m1").mouseleave(function() {
+			$("#s_m1").css("font-weight", "normal");
+		});
 		
 		$("#pw").blur(function() {
 			var pw = $("#pw").val();
 			var pw2 = '${member.pw}';
 			if(pw == pw2){
 				$("#ok").click(function() {
-					$(this).attr("href", "./personUpdate");
+					$(this).attr("href", "./personDelete");
 				});
 			}else{
 				$("#ok").click(function() {
@@ -33,8 +42,6 @@
 		});
 	});
 </script>
-<style type="text/css">
-</style>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -74,7 +81,5 @@
 	</section>
 
 	<%@ include file="../temp/footer.jsp"%>
-	
-
 </body>
 </html>

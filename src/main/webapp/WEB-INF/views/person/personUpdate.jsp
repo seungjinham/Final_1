@@ -14,26 +14,33 @@
 <title>Person Update</title>
 <script type="text/javascript">
 	$(function() {
+		$("#s_m1").css("color", "#23A41A");
+		$("#s_m1").css("font-weight", "bold");
+		
 		var phone = '${member.phone}';
 		var phoneArr = phone.split(',');
 		$("#p2").attr("value", phoneArr[1]);
 		$("#p3").attr("value", phoneArr[2]);
-		
 		
 		$(".o").each(function() {
 			var p1 = phoneArr[0];
 			var i = $(this).val();
 			if(i == p1){
 				$(".o").attr("selected", "selected");
-			}
+			};
 		});
 		
 		var birth = '${member.birth}';
-		var birthArr= birth.split(',');
+		var birthArr = birth.split(',');
 		$("#b1").attr("value", birthArr[0]);
 		$("#b2").attr("value", birthArr[1]);
 		$("#b3").attr("value", birthArr[2]);
 		
+		var addr = '${member.addr}';
+		var addrArr = addr.split(',');
+		$("#sample6_postcode").attr("value", addrArr[0]);
+		$("#sample6_address").attr("value", addrArr[1]+addrArr[2]);
+		$("#sample6_address2").attr("value", addrArr[3]);
 		
 	});
 </script>
@@ -86,9 +93,21 @@ td {
 	border-top: 1px dotted #23A41A;
 }
 
+input{
+	border-radius: 5px;
+	border: 1px solid gray;
+	padding-left: 5px;
+}
+
 .inupt_f {
 	width: 300px;
 	height: 30px;
+}
+
+#p_id{
+	float: none;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 #p_select {
@@ -106,8 +125,10 @@ td {
 }
 
 .birth {
-	width: 80px;
+	width: 45px;
 	height: 25px;
+	text-align: right;
+	padding-right: 10px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
@@ -127,7 +148,7 @@ td {
 	margin-top: 10px;
 	border-radius: 5px;
 	border: 1px solid gray;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	cursor: pointer;
 	background-color: white;
 }
@@ -227,9 +248,7 @@ td {
 				<table>
 					<tr>
 						<th class="font">아이디</th>
-						<td class="font"><input type="text" name="id" id="id"
-							class="inupt_f" value="${member.id}" readonly="readonly"><br> <span
-							id="idCheck"></span></td>
+						<td class="font"><span id="p_id">${member.id}</span></td>
 					</tr>
 					<tr>
 						<th class="font">이름</th>
@@ -245,8 +264,8 @@ td {
 								<option value="017" class="o">017</option>
 								<option value="018" class="o">018</option>
 								<option value="019" class="o">019</option>
-						</select> ─ <input type="text" name="phone" class="phone" id="p2" value=""> ─ <input
-							type="text" name="phone" class="phone" id="p3" value=""></td>
+						</select> ─ <input type="text" name="phone" class="phone" id="p2"> ─ <input
+							type="text" name="phone" class="phone" id="p3"></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="tline"><div></div></td>
@@ -256,7 +275,7 @@ td {
 						<td class="font"><input type="text" id="sample6_postcode"
 							placeholder="우편번호" name="addr" class="addr"> <input
 							type="button" onclick="sample6_execDaumPostcode()"
-							value="우편번호 찾기" id="addr_btn"><br> <input
+							value="새 주소 설정" id="addr_btn"><br> <input
 							type="text" id="sample6_address" placeholder="주소" name="addr"
 							class="addr2"> <input type="text" id="sample6_address2"
 							placeholder="상세주소" name="addr" class="addr2"></td>
@@ -264,9 +283,9 @@ td {
 					<tr>
 						<th class="font">생년월일</th>
 						<td class="font">
-						<input type="text" class="birth" name="birth" id="b1">년 
-						<input type="text" class="birth" name="birth" id="b2">월 
-						<input type="text" class="birth" name="birth" id="b3">일
+						<input type="text" class="birth" name="birth" id="b1"> 년 
+						<input type="text" class="birth" name="birth" id="b2"> 월 
+						<input type="text" class="birth" name="birth" id="b3"> 일
 						</td>
 					</tr>
 					<tr>

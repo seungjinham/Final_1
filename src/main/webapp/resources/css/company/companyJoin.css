@@ -12,6 +12,7 @@
 .title_border {
 	width: 800px;
 	height: 100px;
+	margin: 0 auto;
 }
 
 .title_border2 {
@@ -31,6 +32,7 @@
 
 .terms_border {
 	width: 800px;
+	margin: 0 auto;
 }
 
 .terms_border2 {
@@ -125,7 +127,7 @@
 }
 
 table {
-	width: 650px;
+	width: 600px;
 	height: 700px;
 	border-top: 2px solid #33adff;
 	border-bottom: 2px solid #33adff;
@@ -260,6 +262,7 @@ td {
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 	color: white;
 	background-color: #33adff;
+	border: none;
 }
 
 #j_btn:hover {

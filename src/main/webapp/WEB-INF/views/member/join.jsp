@@ -22,15 +22,14 @@
 	<section id="main">
 		<article class="title_border">
 			<div class="title_border2">
-				<img src="../resources/images/common/footer_logo.png" width="55px" height="50px"> <b>회원가입</b>
+				<div id="tit_join">회원가입</div>
 			</div>
 		</article>
 
 		<article class="join_border">
-
 			<div class="p_border" id="p_border2">
 				<div class="poto_b">
-					<img src="../resources/images/member/person.PNG" class="photo">
+					<img src="../resources/images/member/person.png" class="photo">
 					<div class="j_write">
 						<b>구직활동 & 재능 판매/구매</b>
 					</div>
@@ -49,7 +48,7 @@
 
 			<div class="p_border">
 				<div class="poto_b">
-					<img src="../resources/images/member/company.PNG" class="photo">
+					<img src="../resources/images/member/company.png" class="photo">
 					<div class="j_write">
 						<b>인재 찾기 & 재능 구매</b>
 					</div>

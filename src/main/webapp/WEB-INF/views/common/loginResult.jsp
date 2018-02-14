@@ -10,7 +10,6 @@
 <script type="text/javascript">
 	opener.parent.location.href = "../";
 	window.close();
-	alert('${message}');
 	location.href='${path}';
 </script>
 </head>
