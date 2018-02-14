@@ -38,7 +38,9 @@
 	<div class="m_meun" id="m2">이력서</div>
 	<div class="s_meun m2">이력서 등록</div>
 	<div class="s_meun m2">이력서 수정·삭제</div>
-	<div class="m_meun" id="m3">지원 공고</div>
+	<div class="m_meun" id="m3">
+	<a href="../apply/applySelectList?id=${member.id}">지원 현황</a>
+	</div>
 	<div class="m_meun" id="m4">
 		<a href="../scrap/scrapSelectList?id=${member.id}">스크랩보기</a>
 	</div>

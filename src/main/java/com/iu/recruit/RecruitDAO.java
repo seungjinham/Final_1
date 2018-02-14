@@ -65,4 +65,8 @@ public class RecruitDAO {
 	public RecruitDTO selectOne(int num) {
 		return sqlSession.selectOne(NAMESPACE+"user_Recruit_select_One", num);
 	}
+	
+	public Integer totalCount() {
+		return sqlSession.selectOne(NAMESPACE+"Recruit_Total_Count");
+	}
 }
