@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+#powerlinklist {
+	width:100%;
+	border: 1px solid black;
+	margin-bottom: 50px;
+}
+
+#powerlinklist #powerlink_table {
+	width:100%;
+	border:1px solid gray;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#powerlinklist #powerlink_table #firstrow {
+	border-top:2px solid gray;
+	border-bottom:1px solid lightgray;
+}
+
+#powerlinklist #powerlink_table #extrarow {
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+}
+
+#powerlinklist #powerlink_table #extrarow:hover {
+	background-color: lightgray;
+}
+
+#powerlinklist #powerlink_table #firstrow .f_th{
+	height:40px;
+	text-align: center;
+}
+
+#powerlinklist #powerlink_table #extrarow .e_td{
+	height:60px;
+	text-align: center;
+}
+
+#powerlinklist #powerlink_table #extrarow .e_td2{
+	height:60px;
+	text-align: left;
+}
+
+
+
+
+
+
+
+
+.container #list_area {
+	widht:100%;
+	height:1200px;
+}
+
+.container #list_area #list_table {
+	width:100%;
+	border:1px solid gray;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container #list_area #list_table #firstrow {
+	border-top:2px solid gray;
+	border-bottom:1px solid lightgray;
+}
+
+.container #list_area #list_table #extrarow {
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+}
+
+.container #list_area #list_table #extrarow:hover {
+	background-color: lightgreen;
+}
+
+.container #list_area #list_table #firstrow .f_th{
+	height:40px;
+	text-align: center;
+}
+
+.container #list_area #list_table #extrarow .e_td{
+	height:60px;
+	text-align: center;
+}
+
+.container #list_area #list_table #extrarow .e_td2{
+	height:60px;
+	text-align: left;
+}
+
+
+
+
+
+
+
+
+
+#page {
+	border:1px solid red;
+	margin-top:20px;
+}
+
+#page input {
+	display: inline-block;
+	margin:0 auto;
+}
+
+
+
+
+
+
+
+
+
+

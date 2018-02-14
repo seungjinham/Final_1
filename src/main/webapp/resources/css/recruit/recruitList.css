@@ -141,3 +141,16 @@
 
 
 
+
+#page {
+	border:1px solid red;
+	margin-top:20px;
+}
+
+#page input {
+	display: inline-block;
+	margin:0 auto;
+}
+
+
+

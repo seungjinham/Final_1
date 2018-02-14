@@ -14,6 +14,7 @@
 <body>
 	<%@include file="../temp/header1.jsp"%>
 	<section id="main">
+	<a href="<%=request.getContextPath()%>/recruit/recruitSearchList">SearchList</a>
 		<div id="first">
 			<div id="searchsite">
 				<div>

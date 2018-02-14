@@ -26,6 +26,10 @@ public class ScrapDAO {
 	public List<ScrapDTO> SelectList(ScrapDTO scrapDTO) {
 		return sqlSession.selectList(NAMESPACE+"selectList", scrapDTO);
 	}
+	
+	public int TotalCount() {
+		return sqlSession.selectOne(NAMESPACE+"totalCount");
+	}
 		
 //	public ScrapDTO SelectOne(ScrapDTO scrapDTO) {
 //		return sqlSession.selectOne(NAMESPACE+"", scrapDTO);

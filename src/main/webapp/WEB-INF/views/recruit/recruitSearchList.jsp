@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="<%=request.getContextPath()%>/resources/css/recruit/recruitSearchList.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
@@ -15,8 +16,77 @@
 	<section id="main">
 		<div class="container">
 
-			<h1>Person Update</h1>
+			<!-- <h1>Person Update</h1> -->
+			
+			<input type="button" value="다른 조건으로 검색하기" id="dcbtn">
 
+			<div id="powerlink">
+				<h2>파워링크</h2>
+			</div>
+
+			<div id="powerlinklist">
+				<table id="powerlink_table" class="table">
+					<tr id="firstrow">
+						<th class="f_th">지역</th>
+						<th class="f_th">모집제목</th>
+						<th class="f_th">급여</th>
+						<th class="f_th">근무시간</th>
+						<th class="f_th">마감기한</th>
+					</tr>
+					<c:forEach var="item" items="${totallist}" end="4">
+						<tr id="extrarow">
+							<td class="e_td">${item.addr}</td>
+							<td class="e_td e_td2">
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
+							</td>
+							<td class="e_td e_td2">${item.salary}</td>
+							<td class="e_td">${item.w_time}</td>
+							<td class="e_td">${item.deadline}</td>
+						</tr>
+					</c:forEach>
+				</table>
+
+			</div>
+
+			<div id="list_area">
+				<div>
+					<h2>채용공고리스트</h2>
+				</div>
+				<table id="list_table" class="table">
+					<tr id="firstrow">
+						<th class="f_th">지역</th>
+						<th class="f_th">모집제목</th>
+						<th class="f_th">급여</th>
+						<th class="f_th">근무시간</th>
+						<th class="f_th">마감기한</th>
+					</tr>
+					<c:forEach var="item" items="${totallist}">
+						<tr id="extrarow">
+							<td class="e_td">${item.addr}</td>
+							<td class="e_td e_td2">
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
+								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
+							</td>
+							<td class="e_td e_td2">${item.salary}</td>
+							<td class="e_td">${item.w_time}</td>
+							<td class="e_td">${item.deadline}</td>
+						</tr>
+					</c:forEach>
+				</table>
+				<div id="page">
+					<c:if test="${pagelist.curBlock>1}">
+						<span><input type="button" value="이전"></span>
+					</c:if>
+					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
+						var="i">
+						<span><input type="button" value="${i}"></span>
+					</c:forEach>
+					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
+						<span><input type="button" value="다음"></span>
+					</c:if>
+				</div>
+			</div>
 
 
 		</div>

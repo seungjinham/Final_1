@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.iu.company.CompanyDAO;
 import com.iu.company.CompanyDTO;
+import com.iu.util.ListData;
 import com.iu.util.ListSort;
+import com.iu.util.PageMaker;
 
 @Service
 public class RecruitService {
@@ -31,7 +33,9 @@ public class RecruitService {
 		return 0;
 	}
 	
-	public List<RecruitDTO> selectList() {
+	public List<Object> selectList(ListData listData) {
+		//List<List<Object>> collect_ar = new ArrayList<>();
+		List<Object> obj_ar = new ArrayList<>();
 		List<RecruitDTO> recruit_ar = recruitDAO.selectList();
 		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
 		for(int i=0; i<recruit_ar.size(); i++) {
@@ -40,8 +44,26 @@ public class RecruitService {
 		}
 		ListSort listSort = new ListSort();
 		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-		return recruit_ar;
+		Integer totalCount = recruitDAO.totalCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.pageMaker(totalCount, listData);
+		
+		obj_ar.add(recruit_ar);
+		obj_ar.add(listData);
+		return obj_ar;
 	}
+	
+//	public List<RecruitDTO> selectList(ListData listData) {
+//		List<RecruitDTO> recruit_ar = recruitDAO.selectList();
+//		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
+//		for(int i=0; i<recruit_ar.size(); i++) {
+//			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
+//			company_ar.add(companyDTO);
+//		}
+//		ListSort listSort = new ListSort();
+//		recruit_ar = listSort.listSort(recruit_ar, company_ar);
+//		return recruit_ar;
+//	}
 	
 /*	public List<RecruitDTO> selectList(RecruitSearchDTO recruitSearchDTO) {
 		List<String> checkVar = new ArrayList<String>();

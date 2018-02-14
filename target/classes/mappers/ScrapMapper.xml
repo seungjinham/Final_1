@@ -13,4 +13,8 @@
 <select id="selectList" parameterType="ScrapDTO" resultType="ScrapDTO">
 	select * from scrap where id=#{id}
 </select>
+
+<select id="totalCount" resultType="int">
+	select count(num) from scrap
+</select>
 </mapper>

@@ -137,6 +137,18 @@
 						</tr>
 					</c:forEach>
 				</table>
+				<div id="page">
+					<c:if test="${pagelist.curBlock>1}">
+						<span><input type="button" value="이전"></span>
+					</c:if>
+					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
+						var="i">
+						<span><input type="button" value="${i}"></span>
+					</c:forEach>
+					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
+						<span><input type="button" value="다음"></span>
+					</c:if>
+				</div>
 			</div>
 		</div>
 	</section>

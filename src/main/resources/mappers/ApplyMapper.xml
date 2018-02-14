@@ -13,4 +13,8 @@
 <delete id="delete" parameterType="applyDTO">
     delete apply where id=#{id} and recruit_num=#{recruit_num}
 </delete>
+
+<select id="totalCount" resultType="int">
+	select count(num) from apply
+</select>
 </mapper>

@@ -14,6 +14,7 @@ import com.iu.company.CompanyService;
 import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
+import com.iu.util.ListData;
 import com.iu.util.ListSort;
 
 @Controller
@@ -25,9 +26,11 @@ public class RecruitController {
 	private CompanyService companyService;
 	
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
-	public String recruitList(Model model) {
-		List<RecruitDTO> recruit_ar = recruitService.selectList();
-		model.addAttribute("totallist", recruit_ar);
+	public String recruitList(Model model, ListData listData) {
+		//List<RecruitDTO> recruit_ar = recruitService.selectList();
+		List<Object> collect_ar = recruitService.selectList(listData);
+		model.addAttribute("totallist", collect_ar.get(0));
+		model.addAttribute("pagelist", collect_ar.get(1));
 		return "recruit/recruitList";
 	}
 	
@@ -71,8 +74,8 @@ public class RecruitController {
 		return "recruit/recruitSearch";
 	}*/
 	
-	@RequestMapping(value="Search", method=RequestMethod.GET)
+	@RequestMapping(value="recruitSearchList", method=RequestMethod.GET)
 	public String Search() {
-		return "recruit/Search";
+		return "recruit/recruitSearchList";
 	}
 }
