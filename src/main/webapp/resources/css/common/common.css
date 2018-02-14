@@ -50,7 +50,6 @@ html {
 }
 
 body {
-	height: 100%;
 	font-size: 75%;
 	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
@@ -70,26 +69,17 @@ ul, ol, li {
 	list-style: none;
 }
 
-legend, caption, .hidden {
-	width: 0;
-	height: 0;
-	font-size: 0;
-	line-height: 0;
-	overflow: hidden;
-	visibility: hidden;
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
+
 
 ul, ol, li, a, table, td, th, p, dl, dd, dt, strong, span, div {
 	font-size: 1em;
 	line-height: 1.5;
 	word-spacing: -1px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	/* font-size: 1em; */
-	letter-spacing: -1px;
-	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
-		sans-serif, "돋움", Dotum, "굴림", Gulim;
 }
 
 .h1 {
@@ -98,6 +88,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bolder;
 	margin-top: 40px;
 	margin-bottom: 40px;
+}
+
+legend, caption, .hidden {
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	visibility: hidden;
 }
 
 input, select {

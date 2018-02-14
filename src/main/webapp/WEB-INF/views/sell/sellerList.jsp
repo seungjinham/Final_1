@@ -29,7 +29,14 @@
 				</c:choose>
 			</h1>
 			<div class="inbox">
-			
+				<table>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</section>

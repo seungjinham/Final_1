@@ -15,8 +15,8 @@
 <body>	
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
+		<%@ include file="../member/meun.jsp"%>
 		<div class="container">
-			<%@ include file="../member/meun.jsp"%>
 				<div>
 				
 					<h1 class="menu_h1">판매자 정보</h1>
