@@ -24,4 +24,8 @@ public class ApplyDAO {
 	public List<ApplyDTO> selectList(ApplyDTO applyDTO) {
 		return sqlSession.selectList(NAMESPACE+"selectList", applyDTO);
 	}
+	
+	public int totalCount() {
+		return sqlSession.selectOne(NAMESPACE+"totalCount");
+	}
 }

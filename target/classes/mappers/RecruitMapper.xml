@@ -69,6 +69,10 @@
  	<select id="user_Recruit_select_One" parameterType="int" resultType="RecruitDTO">
 		select * from (select * from recruit order by id) where num=#{num}
 	</select>
+	
+	<select id="Recruit_Total_Count" resultType="Integer">
+		select count(num) from recruit
+	</select>
 <!--
 	<select id="userRecruitselectList" resultType="RecruitDTO">
 		select * from (select * from recruit order by id) R

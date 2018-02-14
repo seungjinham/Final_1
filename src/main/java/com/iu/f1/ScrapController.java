@@ -1,5 +1,6 @@
 package com.iu.f1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -11,13 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
-import com.iu.member.MemberDTO;
 import com.iu.person.PersonService;
 import com.iu.recruit.RecruitDTO;
-import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
 import com.iu.scrap.ScrapDTO;
 import com.iu.scrap.ScrapService;
+import com.iu.util.ListData;
 import com.iu.util.ListSort;
 
 @Controller
@@ -40,6 +40,7 @@ public class ScrapController {
 		String path = "redirect:../";
 		List<RecruitDTO> recruit_ar = null;
 		List<CompanyDTO> company_ar = null;
+		List<Object> obj_ar = null; 
 		RecruitDTO recruitDTO = null;
 		CompanyDTO companyDTO = null;
 		
@@ -64,22 +65,27 @@ public class ScrapController {
 			}
 		} else if(page.equals("list")) {
 			if(scrapDTO.getId() != "") {
+				ListData listData = new ListData();
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
 					ListSort listSort = new ListSort();
-					recruit_ar = recruitService.selectList();
+					//recruit_ar = recruitService.selectList(listData);
+					obj_ar = recruitService.selectList(listData);
 					company_ar = companyService.selectList();
-					recruit_ar = listSort.listSort(recruit_ar, company_ar);
+					recruit_ar = listSort.listSort((List<RecruitDTO>)obj_ar.get(0), company_ar);
 					model.addAttribute("list", recruit_ar);
+					model.addAttribute("pagelist", obj_ar.get(1));
 					path="recruit/recruitList";
 				} else {
 					message = "스크랩 실패 ";
 					ListSort listSort = new ListSort();
-					recruit_ar = recruitService.selectList();
+					//recruit_ar = recruitService.selectList();
+					obj_ar = recruitService.selectList(listData);
 					company_ar = companyService.selectList();
-					recruit_ar = listSort.listSort(recruit_ar, company_ar);
+					recruit_ar = listSort.listSort((List<RecruitDTO>)obj_ar.get(0), company_ar);
 					model.addAttribute("list", recruit_ar);
+					model.addAttribute("pagelist", obj_ar.get(1));
 					path="recruit/recruitList";
 				}
 			}
@@ -126,17 +132,19 @@ public class ScrapController {
 	}
 	
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)
-	public String SelectList(ScrapDTO scrapDTO, Model model) {
-		List<RecruitDTO> result_ar = null;
+	public String SelectList(ScrapDTO scrapDTO, ListData listData, Model model) {
+		List<Object> obj_ar = null; 
 		String message = "로그인이 필요한 서비스 입니다.";
 		String path = "redirect:../";
 		
 		if(scrapDTO.getId()!="") {
-			result_ar = scrapService.SelectList(scrapDTO);
+			obj_ar = scrapService.SelectList(scrapDTO, listData);
+			model.addAttribute("scrap_result", obj_ar.get(0));
+			model.addAttribute("pagelist", obj_ar.get(1));
 			path="scrap/scrapList";
 		}
 		
-		model.addAttribute("scrap_result", result_ar);
+		
 		model.addAttribute("message", message);
 		return path;
 	}

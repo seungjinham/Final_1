@@ -17,6 +17,7 @@ import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitService;
 import com.iu.supporter.SupporterDTO;
 import com.iu.supporter.SupporterService;
+import com.iu.util.ListData;
 
 @Controller
 @RequestMapping(value="apply/**")
@@ -82,13 +83,14 @@ public class ApplyController {
 	}
 	
 	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
-	public String selectList(ApplyDTO applyDTO, Model model) {
-		List<RecruitDTO> recruit_ar = null;
+	public String selectList(ApplyDTO applyDTO, ListData listData, Model model) {
+		List<Object> obj_ar = null;
 		String message = "로그인이 필요한 서비스입니다.";
 		String path = "redirect:../";
 		if(applyDTO.getId() != "") {
-			recruit_ar = applyService.selectList(applyDTO);
-			model.addAttribute("applylist", recruit_ar);
+			obj_ar = applyService.selectList(applyDTO, listData);
+			model.addAttribute("applylist", obj_ar.get(0));
+			model.addAttribute("pagelist", obj_ar.get(1));
 			path = "apply/applyList";
 		} else {
 			model.addAttribute("applymessage", message);

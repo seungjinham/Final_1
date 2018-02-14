@@ -9,6 +9,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -133,6 +134,18 @@
 						</tr>
 					</c:forEach>
 				</table>
+				<div id="page">
+					<c:if test="${pagelist.curBlock>1}">
+						<span><input type="button" value="이전"></span>
+					</c:if>
+					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
+						var="i">
+						<span><input type="button" value="${i}"></span>
+					</c:forEach>
+					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
+						<span><input type="button" value="다음"></span>
+					</c:if>
+				</div>
 			</div>
 		</div>
 	</section>
