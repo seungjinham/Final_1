@@ -22,8 +22,8 @@ public class CompanyDAO implements MemberDAO {
 
 	@Override
 	public int join(MemberDTO memberDTO) throws Exception {
-		sqlSession.insert(NAMESPACE+"memberInsert", memberDTO);
-		return sqlSession.insert(NAMESPACE+"companyInsert", memberDTO);
+		sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
+		return sqlSession.insert(NAMESPACE+"companyJoin", memberDTO);
 	}
 
 	@Override
@@ -33,6 +33,7 @@ public class CompanyDAO implements MemberDAO {
 
 	@Override
 	public int update(MemberDTO memberDTO) throws Exception {
+		sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);
 		return sqlSession.update(NAMESPACE+"companyUpdate", memberDTO);
 	}
 

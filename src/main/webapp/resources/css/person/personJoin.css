@@ -69,6 +69,8 @@
 	font-size: 12px;
 	float: right;
 	color: #23A41A;
+	border: none;
+	background-color: white;
 	cursor: pointer;
 }
 

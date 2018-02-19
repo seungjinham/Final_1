@@ -8,12 +8,18 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/member/meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/person/personMyPage.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Person MyPage</title>
 <script type="text/javascript">
 	$(function() {
+		$("#m1").ready(function(){
+			$(".m1").show("slow");
+		});
+		$("#m1").css("color", "white");
+		$("#m1").css("background-color", "#23A41A");
+		$("#m1").css("font-weight", "normal");
 		$("#s_m1").css("color", "#23A41A");
 		$("#s_m1").css("font-weight", "bold");
 		
@@ -41,7 +47,7 @@
 
 	<section id="main">
 		<div id="main2">
-		<%@ include file="../member/meun.jsp"%>
+		<%@ include file="../member/p_meun.jsp"%>
 		
 		<div id="tit_border">
 			<div id="tit">회원정보</div>

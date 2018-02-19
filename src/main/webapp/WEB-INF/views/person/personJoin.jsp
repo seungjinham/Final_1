@@ -250,7 +250,6 @@
 			  $(".phones").val() &&
 			  $(".addrs").val() &&
 			  $(".birth").val() &&
-			  $(".birth").val() &&
 			  $(".gender").val() &&
 			  $(".email").val() != null && joinCheck == true){
 					if($("#c1").prop("checked") && $("#c2").prop("checked")){

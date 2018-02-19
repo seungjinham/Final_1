@@ -12,24 +12,13 @@
 <title>Login</title>
 <script type="text/javascript">
 	$(function() {
-		$("#company").click(function() {
-			$("#frm").attr("action", "../company/companyLogin");
-			$(".logo").attr("src", "../resources/images/member/c_icon.png");
-			$("#login_btn").css("background-color", "#33adff");
-			$("#j_btn").css("color", "#33adff");
-			$("#title_border_2").css("border-bottom", "2px solid #33adff");
-			$(".in").css("border", "2px solid #33adff");
+		$(".check").click(function(){
+			if($(this).val()=='C'){
+				$("#frm").attr("action", "../company/companyLogin");
+			}else{
+				$("#frm").attr("action", "../person/personLogin");
+			}
 		});
-		$("#person").click(function() {
-			$("#frm").attr("action", "../person/personLogin");
-			$(".logo").attr("src", "../resources/images/member/p_icon.png");
-			$("#login_btn").css("background-color", "#23A41A");
-			$("#j_btn").css("color", "#23A41A");
-			$("#title_border_2").css("border-bottom", "2px solid #23A41A");
-			$(".in").css("border", "2px solid #23A41A");
-		});
-		
-		
 		$("#login_btn").click(function() {
 			var id_1 = '${member.id}';
 			var id_2 = $("#id").val();
@@ -70,8 +59,8 @@
 	<div class="s_border">
 		<div class="s_border_2">
 			<span class="s_text">개인회원</span> <input type="radio"
-				checked="checked" class="check" name="member" id="person" value="p"> <span class="s_text">기업회원</span>
-			<input type="radio" class="check" name="member" id="company" value="c">
+				checked="checked" class="check" name="member" id="person" value="P"> <span class="s_text">기업회원</span>
+			<input type="radio" class="check" name="member" id="company" value="C">
 		</div>
 	</div>
 
@@ -120,7 +109,5 @@
 		</div>
 	</div>
 	
-	<!-- <form action="../company/companyLogin" method="post"> -->
-
 </body>
 </html>

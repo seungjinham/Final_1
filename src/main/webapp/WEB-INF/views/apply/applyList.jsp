@@ -9,7 +9,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/member/meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
@@ -17,7 +17,7 @@
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-		<%@ include file="../member/meun.jsp"%>
+		<%@ include file="../member/p_meun.jsp"%>
 		<input type="button" value="지원취소">
 			<table id="apply_table">
 				<tr id="firstrow">

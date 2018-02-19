@@ -8,12 +8,65 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/member/meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/person/personUpdate.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <title>Person Update</title>
 <script type="text/javascript">
+//주소
+function sample6_execDaumPostcode() {
+	new daum.Postcode(
+			{
+				oncomplete : function(data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+					// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+					var fullAddr = ''; // 최종 주소 변수
+					var extraAddr = ''; // 조합형 주소 변수
+
+					// 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+					if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+						fullAddr = data.roadAddress;
+
+					} else { // 사용자가 지번 주소를 선택했을 경우(J)
+						fullAddr = data.jibunAddress;
+					}
+
+					// 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+					if (data.userSelectedType === 'R') {
+						//법정동명이 있을 경우 추가한다.
+						if (data.bname !== '') {
+							extraAddr += data.bname;
+						}
+						// 건물명이 있을 경우 추가한다.
+						if (data.buildingName !== '') {
+							extraAddr += (extraAddr !== '' ? ', '
+									+ data.buildingName : data.buildingName);
+						}
+						// 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+						fullAddr += (extraAddr !== '' ? ' (' + extraAddr
+								+ ')' : '');
+					}
+
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+					document.getElementById('sample6_address').value = fullAddr;
+
+					// 커서를 상세주소 필드로 이동한다.
+					document.getElementById('sample6_address2').focus();
+				}
+		}).open();
+};
+
 	$(function() {
+		$("#m1").ready(function(){
+			$(".m1").show("slow");
+		});
+		$("#m1").css("color", "white");
+		$("#m1").css("background-color", "#23A41A");
+		$("#m1").css("font-weight", "normal");
 		$("#s_m1").css("color", "#23A41A");
 		$("#s_m1").css("font-weight", "bold");
 		
@@ -21,14 +74,6 @@
 		var phoneArr = phone.split(',');
 		$("#p2").attr("value", phoneArr[1]);
 		$("#p3").attr("value", phoneArr[2]);
-		
-		$(".o").each(function() {
-			var p1 = phoneArr[0];
-			var i = $(this).val();
-			if(i == p1){
-				$(".o").attr("selected", "selected");
-			};
-		});
 		
 		var birth = '${member.birth}';
 		var birthArr = birth.split(',');
@@ -42,213 +87,37 @@
 		$("#sample6_address").attr("value", addrArr[1]+addrArr[2]);
 		$("#sample6_address2").attr("value", addrArr[3]);
 		
+		var email = '${member.email}';
+		var emailArr = email.split(',');
+		$("#doma").attr("value", emailArr[0]);
+		$("#domain").attr("value", emailArr[1]);
+		
+		$("#btn").click(function() {
+			frm.submit();
+		});
 	});
 </script>
 <style type="text/css">
-#main2{
-	width: 1080px;
-	height: 970px;
-}
-#tit_border{
-	width: 700px;
-	height: 80px;
-	float:left;
-}
-#tit{
-	width: 600px;
-	height: 80px;
-	color: #23A41A;
-    font-size: 37px;
-    font-weight: bolder;
-    letter-spacing: -1px;
-    font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
-    margin-left: 5px;
- 				
-}
 
-table {
-	width: 650px;
-	height: 800px;
-	border-top: 2px solid #23A41A;
-	border-bottom: 2px solid #23A41A;
-}
-
-th {
-	width: 70px;
-	text-align: left;
-}
-
-.font {
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-td {
-	width: 280px;
-}
-
-.tline {
-	width: 600px;
-	height: 5px;
-	border-top: 1px dotted #23A41A;
-}
-
-input{
-	border-radius: 5px;
-	border: 1px solid gray;
-	padding-left: 5px;
-}
-
-.inupt_f {
-	width: 300px;
-	height: 30px;
-}
-
-#p_id{
-	float: none;
-	font-size: 17px;
-	font-weight: bold;
-}
-
-#p_select {
-	width: 80px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.phone {
-	width: 80px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.birth {
-	width: 45px;
-	height: 25px;
-	text-align: right;
-	padding-right: 10px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.addr {
-	width: 150px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#addr_btn {
-	width: 120px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	margin-top: 10px;
-	border-radius: 5px;
-	border: 1px solid gray;
-	margin-bottom: 10px;
-	cursor: pointer;
-	background-color: white;
-}
-
-#addr_btn:hover {
-	font-weight: bold;
-	font-size: 15px;
-	color: #23A41A;
-	border: 2px solid #23A41A;
-}
-
-.addr2 {
-	width: 200px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-.email {
-	width: 150px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#e_select {
-	width: 100px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#code_btn {
-	width: 130px;
-	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	margin-top: 10px;
-	border-radius: 5px;
-	border: 1px solid gray;
-	background-color: white;
-}
-
-#code_btn:hover {
-	font-weight: bold;
-	font-size: 15px;
-	color: #23A41A;
-	border: 2px solid #23A41A;
-	cursor: pointer;
-}
-
-#btn_border{
-	width: 500px;
-	height: 100px;
-	float:left;
-	padding-top: 40px;
-	margin-left: 370px;
-}
-#btn_border_2{
-	width: 260px;
-	height: 80px;
-	margin: 0 auto;
-	text-align: center;
-}
-#btn{
-	width: 130px;
-	height: 60px;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	background-color: #23A41A;
-	font-size: 17px;
-	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic', sans-serif, "돋움", Dotum, "굴림", Gulim;
-	padding-bottom: 3px;
-	cursor: pointer;
-}
-#btn:HOVER {
-	background-color: white;
-	border: 2px solid #23A41A;
-	color: #23A41A;
-	font-size: 19px;
-	font-weight: bold;
-}
 </style>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
 	<section id="main">
 		<div id="main2">
-			<%@ include file="../member/meun.jsp"%>
+			<%@ include file="../member/p_meun.jsp"%>
 
 			<div id="tit_border">
 				<div id="tit">회원정보 수정</div>
 			</div>
-			<form action="./personUpdate" method="post">
+			<form action="./personUpdate" method="post" id="frm">
 			<input type="hidden" name="job" value="P">
 				<table>
 					<tr>
 						<th class="font">아이디</th>
-						<td class="font"><span id="p_id">${member.id}</span></td>
+						<td class="font"><span id="p_id">${member.id}</span>
+						<input type="hidden" name="id" value="${member.id}">
+						<input type="hidden" name="pw" value="${member.pw}"></td>
 					</tr>
 					<tr>
 						<th class="font">이름</th>
@@ -307,7 +176,7 @@ input{
 					<tr>
 						<th class="font">이메일</th>
 						<td class="font"><input type="text" name="email"
-							class="email"> @ <input type="text" name="email"
+							class="email" id="doma"> @ <input type="text" name="email"
 							class="email" id="domain"> <select id="e_select">
 								<option value="">직접입력</option>
 								<option value="naver.com">naver.com</option>
@@ -321,19 +190,12 @@ input{
 				</table>
 				<div id="btn_border">
 					<div id="btn_border_2">
-						<button id="btn">회원수정</button>
+						<input type="button" value="회원수정" id="btn">
 					</div>
 				</div>
 			</form>
 		</div>
 
-		<!-- <div class="top">
-			<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
-				<img class="width-10px position-relative" style="top: -1px"
-				src="/f1/resources/images/common/top.png" width="15px"
-				height="15px;">
-			</a>
-		</div> -->
 	</section>
 	<%@ include file="../temp/footer.jsp"%>
 

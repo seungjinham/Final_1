@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
+import com.iu.person.PersonDTO;
 import com.iu.recruit.RecruitDTO;
 
 @Controller
@@ -30,22 +31,11 @@ public class CompanyController {
 	public void companyJoin(){}
 
 	@RequestMapping(value="companyJoin", method=RequestMethod.POST)
-	public ModelAndView companyJoin(CompanyDTO companyDTO) throws Exception {
-		ModelAndView mv = new ModelAndView();
-		int result = 0;
-		result = companyService.join(companyDTO);
-
-		String message = "Join Fail";
-		String path = "./companyJoin";
-
-		if(result > 0){
-			message = "Join Success";
-			path = "../";
+	public String companyJoin(CompanyDTO companyDTO) throws Exception {
+		int result = companyService.join(companyDTO);
+		if(result>0){
 		}
-		mv.addObject("message", message);
-		mv.addObject("path", path);
-		mv.setViewName("common/result");
-		return mv;
+		return "redirect:../";
 	}
 	
 	//회원가입 시 IDCheck
@@ -67,6 +57,25 @@ public class CompanyController {
 	@RequestMapping(value="companyUpdate", method=RequestMethod.GET)
 	public void companyUpdate(){}
 
+	@RequestMapping(value="companyUpdate", method=RequestMethod.POST)
+	public ModelAndView companyUpdate(CompanyDTO companyDTO, HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = companyService.update(companyDTO);
+		
+		String message = "Update Fail";
+		String path = "./companyMyPage";
+
+		if(result>0){
+			session.setAttribute("member", companyDTO);
+			message = "Updae Success";
+			path = "./companyMyPage";
+		}
+		mv.addObject("message", message);
+		mv.addObject("path", path);
+		mv.setViewName("common/result");
+		return mv;
+	}
+	
 	//회원탈퇴
 	@RequestMapping(value="companyDelete")
 	public void companyDelete(){}
@@ -138,7 +147,7 @@ public class CompanyController {
 		int result = companyService.companyRecruitDelete(num, fname, session);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);
-		mv.setViewName("company/companyDelete");
+		mv.setViewName("company/companyRecruitDelete");
 		return mv;
 	}
 }

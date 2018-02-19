@@ -11,21 +11,14 @@
 }
 
 #title {
-	width: 230px;
+	width: 250px;
 	height: 60px;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: 'Noto Sans KR', '맑은고딕', 'Malgun Gothic', 'MGothic',
 		sans-serif, "돋움", Dotum, "굴림", Gulim;
 	background-color: white;
-	padding-left: 5px;
-	margin-top: 20px;
-}
-
-#m1 {
-	color: white;
-	font-weight: normal;
-	background-color: #23A41A;
+	border-bottom: 1px dotted gray;
 }
 
 .m_meun {

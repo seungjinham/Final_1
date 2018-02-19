@@ -71,7 +71,7 @@
 		$(".box").click(
 				function() {
 					if ($("#c1").prop("checked") && $("#c2").prop("checked")
-							&& $("#c3").prop("checked")) {
+							&& $("#c3").prop("checked") && $("#c4").prop("checked")) {
 						$("#all_check").prop("checked", true);
 					} else {
 						$("#all_check").prop("checked", false);
@@ -300,8 +300,25 @@
 		});
 		
 		$("#j_btn").click(function() {
-			$("#frm").submit;
+			if($("#id").val() && 
+			  ($("#pw").val()==$("#pw2").val()) &&
+			  $("#name").val() &&
+			  $(".phones").val() &&
+			  $(".addrs").val() &&
+			  $("#c_num").val() &&
+			  $("#c_name").val() &&
+			  $(".email").val() != null){
+					if($("#c1").prop("checked") && $("#c2").prop("checked")){
+						frm.submit();
+						alert("가입을 환영합니다.");
+				}else{
+					alert("약관 동의에 체크 해주세요.");
+				}
+			}else{
+				alert("필수 사항을 확인 해주세요.");
+			}
 		});
+
 	});
 </script>
 <link href="<%=request.getContextPath()%>/resources/css/company/companyJoin.css" rel="stylesheet">
@@ -347,7 +364,7 @@
 					</div>
 				</div>
 				<div class="agree">
-					<input type="checkbox" class="box" id="c3"> <span
+					<input type="checkbox" class="box" id="c4"> <span
 						class="choice">[선택]</span> 개인정보 수집 및 이용 동의 <br> <span
 						id="sub">(공고 소식 및 광고메일, 휴대폰 알림)</span>
 				</div>
@@ -356,7 +373,7 @@
 
 
 		<div id="table_border">
-			<form action="./personJoin" method="post" id="frm">
+			<form action="./companyJoin" method="post" id="frm">
 				<input type="hidden" name="job" value="C">
 				<table>
 					<tr>
@@ -387,15 +404,15 @@
 					</tr>
 					<tr>
 						<th class="font">휴대폰</th>
-						<td class="font"><select name="phone" id="p_select">
+						<td class="font"><select name="phone" id="p_select" class="phones">
 								<option value="010">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-						</select> ─ <input type="text" name="phone" class="phone"> ─ <input
-							type="text" name="phone" class="phone"></td>
+						</select> ─ <input type="text" name="phone" class="phone phones"> ─ <input
+							type="text" name="phone" class="phone phones"></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="tline"><div></div></td>
@@ -414,12 +431,12 @@
 					<tr>
 						<th class="font">회사 주소</th>
 						<td class="font"><input type="text" id="sample6_postcode"
-							placeholder="우편번호" name="addr" class="addr"> <input
+							placeholder="우편번호" name="addr" class="addr addrs"> <input
 							type="button" onclick="sample6_execDaumPostcode()"
 							value="우편번호 찾기" id="addr_btn"><br> <input
 							type="text" id="sample6_address" placeholder="주소" name="addr"
-							class="addr2"> <input type="text" id="sample6_address2"
-							placeholder="상세주소" name="addr" class="addr2"></td>
+							class="addr2 addrs"> <input type="text" id="sample6_address2"
+							placeholder="상세주소" name="addr" class="addr2 addrs"></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="tline"><div></div></td>

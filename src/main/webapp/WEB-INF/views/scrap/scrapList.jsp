@@ -9,15 +9,32 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/member/meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function() {
+		$("#m4").ready(function(){
+			
+			$("#m1").css("color", "black");
+			$("#m1").css("background-color", "white");
+			$("#m1").css("font-weight", "bold");
+			
+			$("#m4").css("color", "white");
+			$("#m4").css("background-color", "#23A41A");
+			$("#m4").css("font-weight", "normal");
+			$("#m_m4").css("color", "white");
+		});
+		
+	});
+	
+</script>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-		<%@ include file="../member/meun.jsp"%>
+		<%@ include file="../member/p_meun.jsp"%>
 
 			<a href="../scrap/scrapDelete">ScrapDelete</a>
 			<input type="button" value="스크랩 삭제">
