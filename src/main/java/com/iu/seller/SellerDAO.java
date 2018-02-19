@@ -1,3 +1,4 @@
+
 package com.iu.seller;
 
 import javax.inject.Inject;
@@ -5,7 +6,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.iu.member.MemberDTO;
 @Repository
 public class SellerDAO {
 	
@@ -13,24 +13,24 @@ public class SellerDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="SellMapper.";
 	
-	public int sellerWrite(MemberDTO memberDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"write", memberDTO);
+	public int sellerWrite(SellerDTO sellerDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"write", sellerDTO);
 	}
 	
-	public int sellerUpdate(MemberDTO memberDTO) throws Exception {
-		return sqlSession.update(NAMESPACE+"update", memberDTO);
+	public int sellerUpdate(SellerDTO sellerDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"update", sellerDTO);
 	}
 	
-	public int sellerDelete(String id) throws Exception {
-		return sqlSession.delete(NAMESPACE+"delete",id);
+	public int sellerDelete(SellerDTO sellerDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"delete",sellerDTO);
 	}
 	
-	public MemberDTO sellerOne(String id) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
+	public SellerDTO sellerOne(SellerDTO sellerDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"selectOne", sellerDTO);
 	}
 	
-	public MemberDTO sellerList(String category) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"selectList", category);
+	public SellerDTO sellerList(SellerDTO sellerDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"selectList", sellerDTO);
 	}
 
 }
