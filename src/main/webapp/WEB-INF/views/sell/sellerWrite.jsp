@@ -93,10 +93,9 @@
 				<input type="hidden" name="id" value="${member.id}">
 				
 				<div class="title">프로필 사진</div>
-				<div id="photo">
-					<span id="in" title="in">등록</span>
-					<span id="out" title="out">삭제</span>
-				</div>
+				<div id="photo"></div>
+				<button id="in" type="button" class="btn btn-default">등록</button>
+				<button id="out" type="button" class="btn btn-default">삭제</button>
 				
 				<div class="title">
 					<span>이   름</span> 
@@ -127,7 +126,7 @@
 				<textarea name="contents" id="contents"></textarea>
 				
 				<div class="title"> A/S 및 환불 </div>
-				<textarea name="refund" id="refund"></textarea>
+				<textarea name="refund" id="refund" cols="95" rows="20" ></textarea>
 				
 				<div><button id="save">등록하기</button></div>
 			</form>

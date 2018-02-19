@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.iu.member.MemberDTO;
 import com.iu.seller.SellerDTO;
 import com.iu.seller.SellerService;
 @Controller
@@ -27,10 +27,10 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
-	public ModelAndView sellerWrite(SellerDTO sellerDTO) throws Exception{
+	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, MultipartFile file) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		int result = sellerService.sellerWrite(sellerDTO);
+		int result = sellerService.sellerWrite(sellerDTO,session, file);
 		
 		String message = "판매자가 등록에 실패하였습니다";
 		String path = "../person/personMypage";
@@ -48,16 +48,16 @@ public class SellController {
 	//판매자 정보 수정
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
 	public Model sellerUpdate(HttpSession session, Model model) throws Exception{
-		String id = ((MemberDTO) session.getAttribute("member")).getId();
-		SellerDTO sellerDTO = (SellerDTO) sellerService.sellerOne(id);		
+		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
+		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);		
 		model.addAttribute("seller", sellerDTO);
 		return model;
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
-	public ModelAndView sellerUpdate(SellerDTO sellerDTO) throws Exception{
+	public ModelAndView sellerUpdate(SellerDTO sellerDTO, HttpSession session, MultipartFile file) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result=sellerService.sellerUpdate(sellerDTO);
+		int result=sellerService.sellerUpdate(sellerDTO,session, file);
 		
 		String message = "정보 수정에 실패하였습니다";
 		String path = "../person/personMyPage";
@@ -74,8 +74,8 @@ public class SellController {
 	
 	//판매자 정보 삭제
 	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
-	public String sellerDelete(String id, RedirectAttributes rd) throws Exception{
-		int result = sellerService.sellerDelete(id);
+	public String sellerDelete(SellerDTO sellerDTO, HttpSession session, MultipartFile file, RedirectAttributes rd) throws Exception{
+		int result = sellerService.sellerDelete(sellerDTO,session);
 		String message="삭제에 실패하였습니다";
 		
 		if(result>0){
@@ -87,13 +87,10 @@ public class SellController {
 	}
 	
 	//판매자 정보 보기
-	//========== View ==========
 	@RequestMapping(value="sellerView")
-	public void view(HttpSession session, Model model) throws Exception{
-		String id = ((MemberDTO) session.getAttribute("member")).getId();
-		System.out.println("아이디 : " + id);
-		SellerDTO sellerDTO = (SellerDTO) sellerService.sellerOne(id);
-		System.out.println("카테고리"+sellerDTO.getCategory());
+	public void view(HttpSession session, MultipartFile file, Model model) throws Exception{
+		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
+		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
 		model.addAttribute("seller", sellerDTO);
 	}
 	

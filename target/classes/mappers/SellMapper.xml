@@ -9,7 +9,7 @@
 		update seller set id=#{id},title=#{title},category=#{category},add_option=#{add_option},price=#{price},work_date=#{work_date},contents=#{contents},fname=#{fname},oname=#{oname},refund=#{refund})
 	</update>
 	
-	<delete id="delete" parameterType="String">
+	<delete id="delete" parameterType="SellerDTO">
 		delete seller where id=#{id}
 	</delete>
 	
@@ -17,7 +17,7 @@
 		select * from seller where category=#{category};	
 	</select>
 	
-	<select id="selectOne" parameterType="String" resultType="SellerDTO">
+	<select id="selectOne" parameterType="SellerDTO" resultType="SellerDTO">
 		select * from seller where id=#{id}
 	</select>
 	
