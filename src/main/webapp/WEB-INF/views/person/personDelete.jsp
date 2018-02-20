@@ -4,23 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link
-	href="<%=request.getContextPath()%>/resources/css/common/header.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/common/common.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/common/footer.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/member/p_meun.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/person/personMyPage.css"
-	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/person/personMyPage.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/person/personDelete.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
@@ -47,6 +37,7 @@
 				$("#ok").click(function() {
 					$("#login_border").css("display", "none");
 					$("#tit").text("회원탈퇴");
+					$("#del_border").show();
 				});
 			} else {
 				$("#ok").click(function() {
@@ -59,24 +50,7 @@
 	});
 </script>
 <style type="text/css">
-#login_border {
-	width: 600px;
-	height: 500px;
-	float: left;
-}
-#del_border{
-	width: 600px;
-	height: 500px;
-	background-color: aqua;
-	float: left;
-}
-#del_border{
-	width: 600px;
-	height: 400px;
-	background-color: yellow;
-	border-top: 2px solid #23A41A;
-	border-bottom: 2px solid #23A41A;
-}
+
 </style>
 </head>
 <body>
@@ -123,10 +97,37 @@
 				</div>
 			</article>
 			
-			<article id="del_border">
+			<!-- 탈퇴 하는 곳 -->
+			<article id="del_border" style="display: none;">
+				<form action="./personDelete" method="post" id="frm">
 				<div id="del_border_2">
-					
+					<div id="guide_border">
+						<div id="guide">탈퇴 안내및 유의사항</div>
+					</div>
+					<ul>
+						<li>1. 탈퇴 후 삭제된 회원의 데이터는 <span class="red">복구가 불가능</span> 합니다.</li>
+						<li>2. 회원의 경우 이력서 정보, 구직 활동내역, 재능 마켓 <span class="red">데이터가 모두 삭제</span> 됩니다.</li>
+						<li>3. 기업의 경우 기업 정보, 파워 링크, 재능 마켓 <span class="red">데이터가 모두 삭제</span> 됩니다.</li>
+					</ul>
+					<div id="guide_border">
+						<div id="guide">탈퇴 사유</div>
+					</div>
+					<div id="choice">
+						<p><input type="radio" name="del" class="c"> 개인정보 유출 우려</p>
+						<p><input type="radio" name="del" class="c"> 타 사이트 이용</p>
+						<p><input type="radio" name="del" class="c"> 자주 이용하지 않음</p>
+						<p><input type="radio" name="del" class="c"> 사이트의 불안정</p>
+						<p><input type="radio" name="del" class="c"> 찾고자 하는 정보가 없음</p>
+						<p><input type="radio" name="del" class="c"> 기타 사항</p> 
+						<p><input type="text" placeholder="50자 이내" readonly="readonly" id="other_text"></p>
+					</div>
 				</div>
+				<div id="d_btn_border">
+					<div id="d_btn_border_2">
+						<input type="button" value="회원탈퇴" id="d_btn">
+					</div>
+				</div>
+				</form>
 			</article>
 			
 		</div>
