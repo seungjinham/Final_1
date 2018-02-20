@@ -87,23 +87,6 @@ public class CompanyService implements MemberService {
 		return result;
 	}
 	
-	
-	
-	
-	
-	////////////////////////////////////////////////////////////////////////////
-	/*	public List<CompanyDTO> selectList(List<RecruitDTO> recruit_ar) {
-	List<CompanyDTO> company_ar = new ArrayList<>();
-	for(int i=0; i<recruit_ar.size(); i++) {
-		String id = recruit_ar.get(i).getId();
-		CompanyDTO companyDTO = companyDAO.selectList(id);
-		if(companyDTO!=null) {
-			company_ar.add(companyDTO);
-		}
-	}
-	return company_ar;
-}*/
-	
 	public CompanyDTO selectOne(String id) {
 		CompanyDTO companyDTO = companyDAO.selectOne(id);
 		return companyDTO;
@@ -113,4 +96,11 @@ public class CompanyService implements MemberService {
 		return companyDAO.selectList();
 	}
 
+	public RecruitDTO companySelectOne(int num) {
+		return recruitDAO.companySelectOne(num);
+	}
+
+	public int companyRecruitUpdate(RecruitDTO recruitDTO) {
+		return recruitDAO.companyRecruitUpdate(recruitDTO);
+	}
 }

@@ -26,6 +26,9 @@
 		#{oname}
 		)
 	</insert>
+	<select id="companySelectOne" parameterType="int" resultType="RecruitDTO">
+		select * from recruit where num=#{num}
+	</select>
 	<select id="companyRecruitList" resultType="RecruitDTO">
 		select * from recruit
 	</select>
@@ -38,30 +41,6 @@
 		fname=#{fname}, oname=#{oname} where num=#{num}
 	</update>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<select id="User_Recruit_Total_List" resultType="RecruitDTO">
 		select * from (select * from recruit order by id) R
 	</select>
@@ -73,12 +52,27 @@
 	<select id="Recruit_Total_Count" resultType="Integer">
 		select count(num) from recruit
 	</select>
-<!--
-	<select id="userRecruitselectList" resultType="RecruitDTO">
-		select * from (select * from recruit order by id) R
-	</select>
-
-	<select id="userRecruitsearchList" parameterType="RecruitSearchDTO"
-		resultType="RecruitDTO">
-	</select> -->
+	
+	<update id="companyRecruitUpdate" parameterType="RecruitDTO">
+		update recruit set
+		num=#{num},
+		id=#{id},
+		title=#{title},
+		deadline=#{deadline},
+		people=#{people},
+		gender=#{gender},
+		age=#{age},
+		school=#{school},
+		special=#{special},
+		salary=#{salary},
+		w_date=#{w_date},
+		w_day=#{w_day},
+		w_time=#{w_time},
+		job=#{job},
+		work=#{work},
+		benefit=#{benefit},
+		contents=#{contents}
+		where num=#{num}
+	</update>
+	
 </mapper>
