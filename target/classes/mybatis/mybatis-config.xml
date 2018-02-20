@@ -19,6 +19,7 @@
   		<typeAlias type="com.iu.supporter.SupporterDTO" alias="SupporterDTO"/>
   		<typeAlias type="com.iu.review.ReviewDTO" alias="ReviewDTO"/>
   		<typeAlias type="com.iu.power.PowerDTO" alias="PowerDTO"/>
+  		<typeAlias type="com.iu.file.FileDTO" alias="FileDTO"/>
   	</typeAliases>
   
   </configuration>

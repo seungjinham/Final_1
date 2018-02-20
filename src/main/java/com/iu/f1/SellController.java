@@ -27,7 +27,7 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
-	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, MultipartFile file) throws Exception{
+	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
 		int result = sellerService.sellerWrite(sellerDTO,session, file);
@@ -55,7 +55,7 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
-	public ModelAndView sellerUpdate(SellerDTO sellerDTO, HttpSession session, MultipartFile file) throws Exception{
+	public ModelAndView sellerUpdate(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result=sellerService.sellerUpdate(sellerDTO,session, file);
 		
@@ -74,7 +74,7 @@ public class SellController {
 	
 	//판매자 정보 삭제
 	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
-	public String sellerDelete(SellerDTO sellerDTO, HttpSession session, MultipartFile file, RedirectAttributes rd) throws Exception{
+	public String sellerDelete(SellerDTO sellerDTO, HttpSession session, MultipartFile file[], RedirectAttributes rd) throws Exception{
 		int result = sellerService.sellerDelete(sellerDTO,session);
 		String message="삭제에 실패하였습니다";
 		
@@ -88,7 +88,7 @@ public class SellController {
 	
 	//판매자 정보 보기
 	@RequestMapping(value="sellerView")
-	public void view(HttpSession session, MultipartFile file, Model model) throws Exception{
+	public void view(HttpSession session, MultipartFile file[], Model model) throws Exception{
 		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
 		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
 		model.addAttribute("seller", sellerDTO);

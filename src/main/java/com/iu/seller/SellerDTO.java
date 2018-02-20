@@ -11,7 +11,7 @@ public class SellerDTO extends PersonDTO{
 	private String contents; //판매 내용, 서비스 설명
 	private String fname;
 	private String oname;
-	private String refund;
+	private String refund;//환불
 	
 	public String getTitle() {
 		return title;
