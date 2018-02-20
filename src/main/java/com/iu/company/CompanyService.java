@@ -30,7 +30,7 @@ public class CompanyService implements MemberService {
 	}
 
 	@Override
-	public int delete(MemberDTO memberDTO) throws Exception {
+	public int delete(MemberDTO memberDTO, HttpSession session) throws Exception {
 		return companyDAO.delete(memberDTO);
 	}
 
