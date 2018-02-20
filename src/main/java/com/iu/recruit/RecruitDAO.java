@@ -15,8 +15,12 @@ public class RecruitDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "RecruitMapper.";
 	
-	public int update(RecruitDTO recruitDTO) {
-		return sqlSession.update(NAMESPACE+"RecruitUpdate", recruitDTO);
+	public int update(int num) {
+		return sqlSession.update(NAMESPACE+"RecruitUpdate", num);
+	}
+	
+	public RecruitDTO companySelectOne(int num) {
+		return sqlSession.selectOne(NAMESPACE+"companySelectOne", num);
 	}
 	
 	public int delete(int num) {
@@ -43,5 +47,12 @@ public class RecruitDAO {
 	public int companyRecruit(RecruitDTO recruitDTO) {
 		System.out.println(recruitDTO.getId());
 		return sqlSession.insert(NAMESPACE+"companyRecruit", recruitDTO);
+	}
+
+	public int companyRecruitUpdate(RecruitDTO recruitDTO) {
+		System.out.println(recruitDTO.getTitle());
+		System.out.println(recruitDTO.getDeadline());
+		System.out.println(recruitDTO.getAddr());
+		return sqlSession.update(NAMESPACE+"companyRecruitUpdate", recruitDTO);
 	}
 }

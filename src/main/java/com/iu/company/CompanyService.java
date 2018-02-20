@@ -103,4 +103,12 @@ public class CompanyService implements MemberService {
 		}
 		return result;
 	}
+
+	public RecruitDTO companySelectOne(int num) {
+		return recruitDAO.companySelectOne(num);
+	}
+
+	public int companyRecruitUpdate(RecruitDTO recruitDTO) {
+		return recruitDAO.companyRecruitUpdate(recruitDTO);
+	}
 }

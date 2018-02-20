@@ -31,6 +31,39 @@
 				});
 			}
 		});
+		$(".update").click(function() {
+			var num = $(this).val();
+			location.href="companySelectOne?num="+num;
+			
+			/* 
+			var num = $(this).val();
+			var list = $(this).attr("title");
+			alert(list);
+			var check=confirm(num+" 수정 하시겠습니까");
+			if(check) {
+				$.ajax({
+					url:"../company/companyRecruitUpdate",
+					type:"GET",
+					data:{
+						num:num,
+						list:list
+					},
+					success:function(data){
+						if(data.trim()==1){
+							alert('수정 성공');
+						} else {
+							alert('수정 안성공');
+						}
+					}
+				});
+			} */
+		});
+		
+		
+		
+		
+		
+		
 	});
 
 </script>
@@ -62,6 +95,7 @@
 				<td><img src="<%=request.getContextPath()%>/resources/images/company/${list2.fname}"></td>
 				<td>${list2.oname}</td>
 				<td>${list2.addr}</td>
+				<td><button class="update" value="${list2.num}" title="${list2}">update</button></td>
 				<td><button class="del" value="${list2.num}" title="${list2.fname}">delete</button></td>
 			</tr>
 		</c:forEach>

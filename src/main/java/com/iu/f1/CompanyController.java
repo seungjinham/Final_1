@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
 import com.iu.recruit.RecruitDTO;
+import com.iu.recruit.RecruitService;
 
 @Controller
 @RequestMapping(value="/company/**")
@@ -57,6 +60,25 @@ public class CompanyController {
 	@RequestMapping(value="companyDelete")
 	public void companyDelete(){}
 
+	//recruit 수정폼
+	@RequestMapping(value="companySelectOne")
+	public ModelAndView companySelectOne(int num){
+		RecruitDTO recruitDTO = companyService.companySelectOne(num);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("recruitDTO", recruitDTO);
+		mv.setViewName("company/companySelectOne");
+		return mv;
+	}
+	
+	//recruit 수정 
+	@RequestMapping(value="companyRecruitUpdate")
+	public String companyRecruitUpdate(RecruitDTO recruitDTO) {
+		int result = 0;
+		System.out.println("in");
+		result = companyService.companyRecruitUpdate(recruitDTO);
+		
+		return "redirect:company/companyRecruitList";
+	}
 	
 	//로그인
 	@RequestMapping(value="companyLogin", method=RequestMethod.GET)
@@ -108,7 +130,6 @@ public class CompanyController {
 	//게재 리스트
 	@RequestMapping(value="companyRecruitList", method=RequestMethod.GET)
 	public ModelAndView companyRecruitList() throws Exception {
-		System.out.println("companyRecruitList in");
 		List<RecruitDTO> ar = companyService.companyRecruitList();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
