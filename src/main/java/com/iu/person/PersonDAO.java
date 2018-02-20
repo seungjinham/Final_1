@@ -25,6 +25,7 @@ public class PersonDAO implements MemberDAO {
 
 	@Override
 	public int delete(MemberDTO memberDTO) throws Exception {
+		sqlSession.update(NAMESPACE+"memberDelete", memberDTO);
 		return sqlSession.delete(NAMESPACE+"personDelete", memberDTO);
 	}
 

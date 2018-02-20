@@ -43,7 +43,12 @@
 	</update>
 	
 	<!-- 회원탈퇴 -->
-	
+	<delete id="memberDelete" parameterType="MemberDTO">
+		delete member where id=#{id}
+	</delete>
+	<delete id="personDelete" parameterType="MemberDTO">
+		delete person where id=#{id}
+	</delete>
 
 </mapper>
   

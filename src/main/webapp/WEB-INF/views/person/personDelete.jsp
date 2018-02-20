@@ -47,6 +47,30 @@
 			}
 			;
 		});
+		
+		
+		$(".c").click(function() {
+			var id = $(this).attr('id');
+			if(id == 'other'){
+				$("#other_text").attr("readonly", false);
+			}else{
+				$("#other_text").attr("readonly", true);
+			}
+		});
+		
+		$("#d_btn").click(function(){
+			var text = $("#other_text").val();
+			if($("#spill").prop("checked") || 
+					$("#o_use").prop("checked") || 
+					$("#Unusualness").prop("checked") || 
+					$("#Insecurity").prop("checked") || 
+					$("#no_find").prop("checked") ||
+					$("#other").prop("checked")){
+				frm.submit();
+			}else{
+				alert("탈퇴 사유를 선택 해주세요.");
+			}
+		});
 	});
 </script>
 <style type="text/css">
@@ -113,12 +137,12 @@
 						<div id="guide">탈퇴 사유</div>
 					</div>
 					<div id="choice">
-						<p><input type="radio" name="del" class="c"> 개인정보 유출 우려</p>
-						<p><input type="radio" name="del" class="c"> 타 사이트 이용</p>
-						<p><input type="radio" name="del" class="c"> 자주 이용하지 않음</p>
-						<p><input type="radio" name="del" class="c"> 사이트의 불안정</p>
-						<p><input type="radio" name="del" class="c"> 찾고자 하는 정보가 없음</p>
-						<p><input type="radio" name="del" class="c"> 기타 사항</p> 
+						<p><input type="radio" name="del" class="c" id="spill"> 개인정보 유출 우려</p>
+						<p><input type="radio" name="del" class="c" id="o_use"> 타 사이트 이용</p>
+						<p><input type="radio" name="del" class="c" id="Unusualness"> 자주 이용하지 않음</p>
+						<p><input type="radio" name="del" class="c" id="Insecurity"> 사이트의 불안정</p>
+						<p><input type="radio" name="del" class="c" id="no_find"> 찾고자 하는 정보가 없음</p>
+						<p><input type="radio" name="del" class="c" id="other"> 기타 사항</p> 
 						<p><input type="text" placeholder="50자 이내" readonly="readonly" id="other_text"></p>
 					</div>
 				</div>
