@@ -34,6 +34,16 @@
 	margin-left:10px;
 }
 
+#searchsite #form #searchbox .selbox #districtcode {
+	display:block;
+	boarder:1px solid black;
+	width:100%;
+}
+
+#searchsite #form #searchbox .selbox #districtcode #si .is {
+	display: inline-block;
+}
+
 #searchsite #form #searchbtn #btngroup {
 	width:15%;
 	margin:0 auto;

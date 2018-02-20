@@ -47,13 +47,15 @@ public class ScrapController {
 		if(page.equals("view")) {
 			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
+				System.out.println(integer);
 				if(integer>0) {
+					System.out.println("success");
 					message = "스크랩 성공";
-					path = "recruit/recruitView";
-					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
+					path = "common/message";
+/*					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
 					companyDTO = companyService.selectOne(recruitDTO.getId());
 					model.addAttribute("recruit", recruitDTO);
-					model.addAttribute("company", companyDTO);
+					model.addAttribute("company", companyDTO);*/
 				} else {
 					message = "스크랩 실패 ";
 					path = "recruit/recruitView";
@@ -127,8 +129,11 @@ public class ScrapController {
 	@RequestMapping(value="scrapDelete", method=RequestMethod.GET)
 	public String Delete(ScrapDTO scrapDTO, Model model) {
 		Integer integer = scrapService.Delete(scrapDTO);
-		model.addAttribute("result", integer);
-		return "recruit/recruitList";
+		if(integer>0) {
+			model.addAttribute("message", "스크랩삭제");
+		}
+		//model.addAttribute("result", integer);
+		return "common/message";//"recruit/recruitList";
 	}
 	
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)

@@ -18,7 +18,7 @@ public class PersonService implements MemberService {
 		return personDAO.join(memberDTO);
 	}
 	
-	@Override
+	@Override //회원탈퇴
 	public int delete(MemberDTO memberDTO) throws Exception {
 		return personDAO.delete(memberDTO);
 	}

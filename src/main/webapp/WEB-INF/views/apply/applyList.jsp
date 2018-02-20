@@ -12,13 +12,50 @@
 <link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript">
+$(function(){
+	var list = new Array();
+	
+	function total(list){
+		var truecount=0;
+		var falsecount=0;
+		 for(var i=0; i<list.length; i++) {
+			 if(list[i].checked) {
+				 list[i].checked=false;
+				 falsecount++;
+			 } else {
+				 list[i].checked=true;
+				 truecount++;
+			 }
+		 }
+		 if(truecount == list.length) {
+			 $("#total_btn").attr("value", "전체해제");
+		 } else if(falsecount == list.length) {
+			 $("#total_btn").attr("value", "전체선택");
+		 } else {
+			 
+		 }
+	};
+	
+	$("#total_btn").click(function(){
+		total(document.frm.sel_ch);
+	});
+	
+	$("#apply_del").click(function(){
+		location.href="../scrap/scrapDelete";
+	});
+
+});
+</script>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
 		<%@ include file="../member/p_meun.jsp"%>
-		<input type="button" value="지원취소">
+		<form id="form" name="frm">
+		<input type="button" value="지원취소" id="apply_del">
+		<input type="button" value="전체선택" id="total_btn">
 			<table id="apply_table">
 				<tr id="firstrow">
 					<th>선택</th>
@@ -29,7 +66,7 @@
 				</tr>
 				<c:forEach var="result" items="${applylist}" begin="0" step="1">
 					<tr id="extrarow">
-						<td><input type="checkbox"></td>
+						<td><input type="checkbox" value="${result.num}" name="sel_ch"></td>
 						<td>${result.addr}</td>
 						<td>${result.c_name}&nbsp;/&nbsp;${result.title}</td>
 						<td>${result.salary}</td>
@@ -50,6 +87,7 @@
 						<span><input type="button" value="다음"></span>
 					</c:if>
 				</div>
+				</form>
 		</div>
 		<div class="top">
 				<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> 
