@@ -1,17 +1,18 @@
 package com.iu.seller;
 
+import java.util.List;
+
 import com.iu.person.PersonDTO;
 
 public class SellerDTO extends PersonDTO{
 	private String title; //제목
 	private String category; //카테고리
-	private String add_option; //옵션
-	private int price; //가격 정보
-	private String work_date; //작업 기간
 	private String contents; //판매 내용, 서비스 설명
 	private String fname;
 	private String oname;
 	private String refund;//환불
+	private List<SellOptionDTO> sellOptionDTO;
+	
 	
 	public String getTitle() {
 		return title;
@@ -30,24 +31,6 @@ public class SellerDTO extends PersonDTO{
 	}
 	public void setCategory(String category) {
 		this.category = category;
-	}
-	public String getAdd_option() {
-		return add_option;
-	}
-	public void setAdd_option(String add_option) {
-		this.add_option = add_option;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public String getWork_date() {
-		return work_date;
-	}
-	public void setWork_date(String work_date) {
-		this.work_date = work_date;
 	}
 	public String getContents() {
 		return contents;

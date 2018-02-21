@@ -6,8 +6,9 @@
 	</insert>
 	
 	<update id="update" parameterType="SellerDTO">
-		update seller set id=#{id},title=#{title},category=#{category},add_option=#{add_option},price=#{price},work_date=#{work_date},contents=#{contents},fname=#{fname},oname=#{oname},refund=#{refund})
+		update seller set id=#{id},title=#{title},category=#{category},contents=#{contents},fname=#{fname},oname=#{oname},refund=#{refund})
 	</update>
+
 	
 	<delete id="delete" parameterType="SellerDTO">
 		delete seller where id=#{id}
