@@ -23,12 +23,12 @@ public class RecruitService {
 	public int insert(RecruitDTO recruitDTO) {
 		return 0;
 	}
-	
+	/*
 	public int update(RecruitDTO recruitDTO) {
 		recruitDAO.update(recruitDTO);
 		return 0;
 	}
-	
+	*/
 	public int delete(int num) {
 		return 0;
 	}
