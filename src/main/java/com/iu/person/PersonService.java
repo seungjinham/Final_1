@@ -20,14 +20,10 @@ public class PersonService implements MemberService {
 		return personDAO.join(memberDTO);
 	}
 	
-<<<<<<< HEAD
+
 	//회원탈퇴
 	@Override
 	public int delete(MemberDTO memberDTO, HttpSession session) throws Exception {
-=======
-	@Override //회원탈퇴
-	public int delete(MemberDTO memberDTO) throws Exception {
->>>>>>> lsh_temp_20180220
 		return personDAO.delete(memberDTO);
 	}
 	
