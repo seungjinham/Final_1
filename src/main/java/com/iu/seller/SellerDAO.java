@@ -1,6 +1,8 @@
 
 package com.iu.seller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,8 +31,8 @@ public class SellerDAO {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", sellerDTO);
 	}
 	
-	public SellerDTO sellerList(SellerDTO sellerDTO) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"selectList", sellerDTO);
+	public List<SellerDTO> sellerList(String category) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"selectList", category);
 	}
 
 }

@@ -103,7 +103,7 @@ public class SellerService {
 	
 	//============== selectList ==============
 	public List<SellerDTO> sellerList(String category) throws Exception{
-		
+		return sellerDAO.sellerList(category);
 	}
 	
 }
