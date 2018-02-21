@@ -101,4 +101,9 @@ public class SellerService {
 		return result;
 	}
 	
+	//============== selectList ==============
+	public List<SellerDTO> sellerList(String category) throws Exception{
+		
+	}
+	
 }

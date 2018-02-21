@@ -1,5 +1,7 @@
 package com.iu.f1;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -95,8 +97,9 @@ public class SellController {
 	}
 	
 	//판매자 목록 보기
-	@RequestMapping(value="sellerList")
+	@RequestMapping(value="sellerList", method=RequestMethod.GET)
 	public void selectList(String category, Model model) throws Exception{
+		List<SellerDTO> ar = sellerService.sellerList(category);
 		model.addAttribute("category", category);
 	}
 	
