@@ -50,6 +50,23 @@ public class PersonController {
 	//회원탈퇴
 	@RequestMapping(value="personDelete", method=RequestMethod.GET)
 	public void personDelete(){}
+	
+	@RequestMapping(value="personDelete", method=RequestMethod.POST)
+	public ModelAndView personDelete(HttpSession session) throws Exception{
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		int result = personService.delete(memberDTO, session);
+		ModelAndView mv  = new ModelAndView();
+		if(result > 0){
+			mv.addObject("message", "삭제 되었습니다.");
+			session.invalidate();
+		}else{
+			mv.addObject("message", "Delete Fail");
+		}
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
+		return mv;
+	}
+	
 
 	
 	//로그인
@@ -89,12 +106,12 @@ public class PersonController {
 		ModelAndView mv = new ModelAndView();
 		int result = personService.update(personDTO);
 		
-		String message = "Update Fail";
+		String message = "Updae Fail";
 		String path = "./personMyPage";
 
 		if(result>0){
 			session.setAttribute("member", personDTO);
-			message = "Updae Success";
+			message = "정보가 수정 되었습니다.";
 			path = "./personMyPage";
 		}
 		mv.addObject("message", message);

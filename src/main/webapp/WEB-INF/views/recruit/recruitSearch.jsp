@@ -10,6 +10,11 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+});
+</script>
 </head>
 <body>
 	<%@include file="../temp/header1.jsp"%>
@@ -20,11 +25,20 @@
 				<div>
 					<h1 class="h1">상세검색</h1>
 				</div>
-				<form id="form">
+				<form id="form" name="frm">
 					<div id="searchbox">
 						<fieldset class="common">
 							<h3>지역</h3>
 							<div id="area" class="selbox">지역을 선택하세요 (최대 2개 가능)</div>
+							<div id="districtcode">
+							<ul id="si">
+							<c:forEach var="city" items="${sinum}" begin="0" step="1">
+							<li class="is">${si[city]}</li>
+							</c:forEach>
+							</ul>
+							<ul id="gu"></ul>
+							<ul id="dong"></ul>
+							</div>
 						</fieldset>
 
 						<fieldset class="common">

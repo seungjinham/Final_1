@@ -2,15 +2,8 @@
 
 .seller_menu{
 	width: 1100px;
-	height: 1500px;
+	height: 1200px;
 }
-
-#frm{
-	width: 700px;
-	float: left;
-	margin-left: 20px;
-}
-
 
 #contents{
 	width: 200px;
@@ -19,31 +12,6 @@
 
 #smart_editor2{
 	width: 800px;
-}
-
-.seller_menu .title{
-	font-size: 17px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	font-weight: bold;
-	margin-top: 30px;
-	margin-bottom: 15px;
-	color: #23A41A;
-}
-
-.seller_input{
-	width: 565px;
-}
-
-.seller{
-	width: 200px;
-}
-
-#photo {
-	width: 100px;
-	height: 100px;
-	background-image: url("/f1/resources/images/common/profile.png");
-	background-size: 100px;
-	margin-bottom: 30px;
 }
 
 .btn>.caret,.dropup>.btn>.caret{border-top-color:#000!important}
@@ -148,4 +116,89 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-default .badge {
 	color: #fff;
 	background-color: #333
+}
+
+#tit_border {
+	width: 700px;
+	height: 80px;
+	float: left;
+}
+
+#tit {
+	width: 600px;
+	height: 80px;
+	color: #23A41A;
+	font-size: 37px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	margin-left: 5px;
+}
+
+.seller_table {
+	width: 650px;
+	height: 1100px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+}
+
+th {
+	width: 300px;
+	text-align: left;
+}
+
+.font {
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+td {
+	width: 200px;
+}
+
+.tline {
+	width: 600px;
+	height: 5px;
+	border-top: 1px dotted #23A41A;
+}
+
+input, select {
+	border: 1px solid gray;
+	padding-left: 5px;
+}
+
+
+#p_id {
+	float: none;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#p_select {
+	width: 80px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.info {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+.title{
+	width: 565px;
+	height: 25px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+}
+
+#e_select {
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }

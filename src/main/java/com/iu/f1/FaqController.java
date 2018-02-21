@@ -42,9 +42,9 @@ public class FaqController {
 	@RequestMapping(value="faqWrite", method=RequestMethod.POST)
 	public String insert(FaqDTO faqDTO) throws Exception{
 		int result=faqService.insert(faqDTO);
-		String message="µî·Ï ¿À·ù";
+		String message="ë“±ë¡ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤";
 		if(result>0){
-			message="µî·Ï ¼º°ø";
+			message="ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤";
 		}
 		return "redirect:./faqList";
 	}
@@ -66,9 +66,9 @@ public class FaqController {
 	@RequestMapping(value="faqUpdate", method=RequestMethod.POST)
 	public ModelAndView update(FaqDTO faqDTO) throws Exception{
 		int result=faqService.update(faqDTO);
-		String message="¾÷µ¥ÀÌÆ® ½ÇÆĞ";
+		String message="ìˆ˜ì •ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤";
 		if(result>0){
-			message="¾÷µ¥ÀÌÆ® ¼º°ø";
+			message="ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤";
 		}
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("message", message);

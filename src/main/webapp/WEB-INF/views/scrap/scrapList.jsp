@@ -26,6 +26,37 @@
 			$("#m_m4").css("color", "white");
 		});
 		
+		var list = new Array();
+		
+		function total(list){
+			var truecount=0;
+			var falsecount=0;
+			 for(var i=0; i<list.length; i++) {
+				 if(list[i].checked) {
+					 list[i].checked=false;
+					 falsecount++;
+				 } else {
+					 list[i].checked=true;
+					 truecount++;
+				 }
+			 }
+			 if(truecount == list.length) {
+				 $("#total_btn").attr("value", "전체해제");
+			 } else if(falsecount == list.length) {
+				 $("#total_btn").attr("value", "전체선택");
+			 } else {
+				 
+			 }
+		};
+		
+		$("#total_btn").click(function(){
+			total(document.frm.sel_ch);
+		});
+		
+		$("#scrap_del").click(function(){
+			location.href="../scrap/scrapDelete";
+		});
+		
 	});
 	
 </script>
@@ -36,8 +67,10 @@
 		<div class="container">
 		<%@ include file="../member/p_meun.jsp"%>
 
+<form id="form" name="frm">
 			<a href="../scrap/scrapDelete">ScrapDelete</a>
-			<input type="button" value="스크랩 삭제">
+			<input type="button" value="스크랩 삭제" id="scrap_del">
+			<input type="button" value="전체선택" id="total_btn">
 			<table id="scrap_table">
 				<tr id="firstrow">
 					<th>선택</th>
@@ -48,7 +81,7 @@
 				</tr>
 				<c:forEach var="result" items="${scrap_result}" begin="0" step="1">
 					<tr id="extrarow">
-						<td><input type="checkbox"></td>
+						<td><input type="checkbox" value="${result.num}" name="sel_ch"></td>
 						<td>${result.addr}</td>
 						<td>${result.c_name}&nbsp;/&nbsp;${result.title}</td>
 						<td>${result.salary}</td>
@@ -70,7 +103,7 @@
 					</c:if>
 				</div>
 			
-
+</form>
 
 		</div>
 		<div class="top">

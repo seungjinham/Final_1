@@ -1,6 +1,7 @@
 package com.iu.seller;
 
 import java.io.File;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.iu.file.FileDAO;
+import com.iu.file.FileDTO;
 import com.iu.member.MemberDTO;
 import com.iu.util.FileSaver;
 
@@ -16,9 +19,15 @@ public class SellerService {
 	
 	@Inject
 	private SellerDAO sellerDAO;
+	@Inject
+	private FileDAO fileDAO;
 	
 	//============== Write ==============
-	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file) throws Exception {
+	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception {
+
+		sellerDAO.sellerWrite(sellerDTO);
+		
+		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");
 		
 		File f = new File(filePath);
@@ -26,12 +35,17 @@ public class SellerService {
 			f.mkdirs();
 		}
 		
-		FileSaver fileSaver = new FileSaver();
-		String name=fileSaver.saver(file, filePath);
+		List<String> names=fileSaver.saver(file, filePath);
+		int result=0;
 		
-		sellerDTO.setFname(name);
-		sellerDTO.setOname(file.getOriginalFilename());
-		int result = sellerDAO.sellerWrite(sellerDTO);
+		for(int i=0; i<names.size(); i++){
+			FileDTO fileDTO = new FileDTO();
+			fileDTO.setFname(names.get(i));
+			fileDTO.setOname(file[i].getOriginalFilename());
+			fileDTO.setId(sellerDTO.getId());
+			
+			result=fileDAO.insert(fileDTO);			
+		}
 
 		return result;
 	}
@@ -42,36 +56,49 @@ public class SellerService {
 	}
 	
 	//============== Update ==============
-	public int sellerUpdate(SellerDTO sellerDTO,HttpSession session, MultipartFile file) throws Exception {
-		if(file != null){
-			String filePath = session.getServletContext().getRealPath("resources/upload");
-
-			File f = new File(filePath);
-			if(!f.exists()){
-				f.mkdirs();
-			}
-
-			FileSaver fileSaver = new FileSaver();
-			String fileName=fileSaver.saver(file, filePath);
-
-			sellerDTO.setFname(fileName);
-			sellerDTO.setOname(file.getOriginalFilename());
-		}else{
-			SellerDTO sellerDTO2 = (SellerDTO)session.getAttribute("member");
-			sellerDTO.setFname(sellerDTO2.getFname());
-			sellerDTO.setOname(sellerDTO2.getOname());
-		}
+	public int sellerUpdate(SellerDTO sellerDTO,HttpSession session, MultipartFile[] file) throws Exception {
+		sellerDAO.sellerUpdate(sellerDTO);
 		
-		return sellerDAO.sellerUpdate(sellerDTO);
+		FileSaver fileSaver = new FileSaver();
+		String filePath = session.getServletContext().getRealPath("resources/upload");
+
+		File f = new File(filePath);
+		if(!f.exists()){
+			f.mkdirs();
+		}
+
+		List<String> names=fileSaver.saver(file, filePath);
+		int result=0;
+
+		for(int i=0; i<names.size(); i++){
+			FileDTO fileDTO = new FileDTO();
+			fileDTO.setFname(names.get(i));
+			fileDTO.setOname(file[i].getOriginalFilename());
+			fileDTO.setId(sellerDTO.getId());
+
+			result=fileDAO.insert(fileDTO);			
+		}	
+		return result;
+		
 	}
 	
 	//============== Delete ==============
 	public int sellerDelete(SellerDTO sellerDTO, HttpSession session) throws Exception {
 		String filePath = session.getServletContext().getRealPath("resources/upload");
-		File f = new File(filePath, sellerDTO.getFname());
-		f.delete();
+		List<FileDTO> ar = fileDAO.selectList(sellerDTO.getId());
 		
-		return sellerDAO.sellerDelete(sellerDTO);
+		int result = sellerDAO.sellerDelete(sellerDTO); 
+		result = fileDAO.delete(sellerDTO.getId());
+		
+		for(FileDTO fileDTO : ar){
+			try {
+				File file = new File(filePath, fileDTO.getFname());
+				file.delete();				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 }

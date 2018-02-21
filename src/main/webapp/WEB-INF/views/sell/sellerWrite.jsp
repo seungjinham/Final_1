@@ -29,18 +29,15 @@
 		$("#s_m5").css("color", "#23A41A");
 		$("#s_m5").css("font-weight", "bold");
 		
-		//================== 파일 삭제 ==================
-		//위임이 필요하기때문에 on을 사용하여 위임해줌
-		$("#result").on("click", ".remove", function() {
-			$(this).prev().remove();
-			$(this).remove();
-		});
-		/* 	$("#remove").click(function() {
-				$(this).remove();
-				$("#result").append('<p><input type="file" name="file"></p>');
-			});		 */
-
+		//================== 프로필 사진 등록/삭제 ==================
+		$("#in").click(function() {
+			$("#profile").append('<input type="file" name="profile">');
+		});	
 		$("#out").click(function() {
+			$("#profile").remove();
+		});
+
+		/* $("#out").click(function() {
 			var id = $(this).attr("title");
 			$("#" + id).html('Photo : <input type="file" name="file" id="f">');
 		});
@@ -52,7 +49,8 @@
 				$("#frm").submit();
 			}
 			;
-		});
+		}); */
+	
 	});
 
 	//================== smart_editor ==================
@@ -81,6 +79,9 @@
 			$("#frm").submit();
 		});
 	});
+	
+	
+	
 </script>
 </head>
 <body>
@@ -88,47 +89,70 @@
 	<section id="main">
 		<div class="seller_menu">
 			<%@ include file="../member/p_meun.jsp"%>
-			<h1 class="h1">판매자 등록</h1>
+			<div id="tit_border">
+				<div id="tit">판매자 등록</div>
+			</div>
 			<form id="frm" name="frm" action="sellerWrite" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="id" value="${member.id}">
-				
-				<div class="title">프로필 사진</div>
-				<div id="photo"></div>
-				<button id="in" type="button" class="btn btn-default">등록</button>
-				<button id="out" type="button" class="btn btn-default">삭제</button>
-				
-				<div class="title">
-					<span>이   름</span> 
-					<input class="seller" type="text" name="name" value="${member.name}">
-				</div>
-				
-				<div class="title">이메일
-				<input class="seller" type="email" name="email" value="${member.email}">
-				</div>
-				
-				<div class="title">전화번호
-				<input class="seller" type="text" name="phone" value="${member.phone}">
-				</div>
-				
-				<hr>
-				
-				<div class="title">카테고리</div>
-				<select class="seller">
-					<option class="category" value="design">디자인</option>
-					<option class="category" value="it">IT & 프로그래밍</option>
-					<option class="category" value="translate">번역 & 통역</option>
-				</select>
-				
-				<div class="title">제목 </div>
-				<input class="seller_input" type="text" name="title">
-				
-				<div class="title"> 서비스 설명 </div>
-				<textarea name="contents" id="contents"></textarea>
-				
-				<div class="title"> A/S 및 환불 </div>
-				<textarea name="refund" id="refund" cols="95" rows="20" ></textarea>
-				
-				<div><button id="save">등록하기</button></div>
+				<input type="hidden" name="id" value="${member.id}">				
+				<table class="seller_table">
+					<tr>
+						<th class="font">프로필</th>
+						<td>
+							<div id="photo">
+								<div id="profile"></div>
+							</div>
+							<button id="in" type="button" class="btn btn-default">등록</button>
+							<button id="out" type="button" class="btn btn-default">삭제</button>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="tline"><div></div></td></tr>
+					
+					<tr>
+						<th class="font">이름</th>
+						<td class="font">
+							<input type="text" class="info" name="name" id="name" value="${member.name}">
+						</td>
+					</tr>
+					<tr>
+						<th class="font">전화번호</th>
+						<td class="font"><input class="info" type="text" name="phone" value="${member.phone}"></td>
+					</tr>
+					<tr>
+						<th class="font">이메일</th>
+						<td class="font"><input class="info" type="email" name="email" value="${member.email}"></td>
+					</tr>
+					<tr><td colspan="2" class="tline"><div></div></td></tr>
+					
+					<tr>
+						<th class="font">카테고리</th>
+						<td class="font">
+							<select class="info">
+								<option class="info" value="design">디자인</option>
+								<option class="info" value="it">IT & 프로그래밍</option>
+								<option class="info" value="translate">번역 & 통역</option>
+							</select>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="tline"><div></div></td></tr>
+					<tr>
+						<th class="font">제목</th>
+						<td class="font"><input class="title" type="text" name="title"></td>
+					</tr>
+					<tr>
+						<th class="font">서비스 설명</th>
+						<td class="font"><textarea name="contents" id="contents"></textarea></td>
+					</tr>
+					<tr>
+						<th class="font">가격정보</th>
+						<td class="font"><textarea name="contents" id="contents"></textarea></td>
+					</tr>
+					
+					<tr>
+						<th class="font">A/S 및 환불</th>
+						<td class="font"><textarea name="refund" id="refund" cols="95" rows="20" ></textarea></td>
+					</tr>				
+				</table>
+				<div><button id="save" type="button" class="btn btn-default">등록하기</button></div>
 			</form>
 		</div>
 	</section>
