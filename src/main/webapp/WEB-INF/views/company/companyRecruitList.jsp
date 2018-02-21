@@ -72,7 +72,6 @@
 </script>
 </head>
 <body>
-<<<<<<< HEAD
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
@@ -99,7 +98,7 @@
 						<td>${list2.work}</td>
 						<td>${list2.benefit}</td>
 						<td>${list2.contents}</td>
-						<td><img
+						<td><img style="width:300px; height:300px;"
 							src="<%=request.getContextPath()%>/resources/images/company/${list2.fname}"></td>
 						<td>${list2.oname}</td>
 						<td>${list2.addr}</td>
