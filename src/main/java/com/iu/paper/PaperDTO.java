@@ -12,12 +12,14 @@ public class PaperDTO extends PersonDTO{ //이력서
 	private String army; //병역 여부
 	private String marry; //결혼 여부
 	private String hobby; //취미
-	private String school; //학력
-	private String major; //전공
+	private String working; //구직상태
+	private String title; //이력서 제목
+	private String paper_date; //이력서 등록 날짜
 	private List<CareerDTO> careerDTO; //경력
 	private List<LicenseDTO> licenseDTO; //자격증
 	private PortDTO portDTO; //포트폴리오
 	private HopeDTO hopeDTO; //희망 근무조건
+	private SchoolDTO schoolDTO; //학력사항
 	
 	public String getId() {
 		return id;
@@ -55,17 +57,23 @@ public class PaperDTO extends PersonDTO{ //이력서
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
-	public String getSchool() {
-		return school;
+	public String getWorking() {
+		return working;
 	}
-	public void setSchool(String school) {
-		this.school = school;
+	public void setWorking(String working) {
+		this.working = working;
 	}
-	public String getMajor() {
-		return major;
+	public String getTitle() {
+		return title;
 	}
-	public void setMajor(String major) {
-		this.major = major;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getPaper_date() {
+		return paper_date;
+	}
+	public void setPaper_date(String paper_date) {
+		this.paper_date = paper_date;
 	}
 	public List<CareerDTO> getCareerDTO() {
 		return careerDTO;
@@ -90,6 +98,12 @@ public class PaperDTO extends PersonDTO{ //이력서
 	}
 	public void setHopeDTO(HopeDTO hopeDTO) {
 		this.hopeDTO = hopeDTO;
+	}
+	public SchoolDTO getSchoolDTO() {
+		return schoolDTO;
+	}
+	public void setSchoolDTO(SchoolDTO schoolDTO) {
+		this.schoolDTO = schoolDTO;
 	}
 	
 }
