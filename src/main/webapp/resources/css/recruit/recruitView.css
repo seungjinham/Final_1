@@ -45,7 +45,9 @@
 #company_info {
 	padding-left:40px;
 	padding-right: 40px;
-	width:90%;
+	/* width:90%; */
+	border:1px solid lightgray;
+	margin-bottom:10px;
 }
 
 #company_info #recruit_info {
@@ -125,7 +127,7 @@
 #condition_info {
 	width:100%;
 	height:450px;
-	border: 1px solid black;
+	border: 1px solid lightgray;
 }
 
 #condition_info #leftbox {
@@ -148,21 +150,38 @@
 
 #condition_info #leftbox #recruit_condition .rdh3 {
 	margin-left:50px;
+	padding-left:30px;
+}
+
+#condition_info #leftbox #recruit_condition #h3_deadline {
+	margin-left:50px;
+	padding-left:20px;
 }
 
 #condition_info #leftbox #work_condition .recruit_data {
 	display: inline-block;
 }
 
+#condition_info #leftbox #work_condition #sala {
+	margin-left:50px;
+	padding-left:30px;
+}
+
 #condition_info #leftbox #work_condition .rdh3 {
 	margin-left:50px;
+	padding-left:10px;
+}
+
+#condition_info #leftbox #work_condition #job {
+	margin-left:50px;
+	padding-left:20px;
 }
 
 #condition_info #rightbox {
 	width:25%;
-	height:300px;
+	height:370px;
 	display: inline-block;
-	border: 1px solid gray;
+	border-left: 3px solid lightgray;
 	float:right;
 	padding:40px 40px;
 }
@@ -181,7 +200,6 @@
 #condition_info #rightbox #recruit_manager {
 	width:100%;
 	height:100px;
-	border: 1px solid violet;
 	margin-top:17px;
 }
 
@@ -193,29 +211,62 @@
 	margin-left:50px;
 }
 
+#condition_info #rightbox #recruit_manager #pho{
+	margin-left:50px;
+	padding-left:10px;
+}
+
 
 
 
 
 #viewtab {
 	width:100%;
-	height:2500px;
-	border: 1px solid black;
+	border: 1px solid lightgray;
 	margin-top:10px;
 }
 
 #viewtab #tablist {
 	width:100%;
-	border: 1px solid black;
+	border-bottom: 2px solid lightgray;
 }
 
 #viewtab #tablist ul li {
 	width:33%;
-	border: 1px solid red;
 	display: inline-block;
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+#viewtab #area {
+	border:1px solid lightgray;	
+}
+
+#viewtab #area #kakaoMap {
+	width:100%;
+	height:400px;
+}
+
+#viewtab #notice {
+	border:1px solid lightgray;
+}
+
+#viewtab #notice img{
+	width:100%;
+}
+
+#viewtab #business_info {
+	border:1px solid lightgray;
+}
+
+#viewtab #business_info #cominfo .cominfo_h3{
+	display: inline-block;
+	width:80%;
+}
+
+#viewtab #business_info #cominfo .pre_h3 {
+	width:5%;
 }
 
 

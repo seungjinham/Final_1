@@ -19,7 +19,7 @@
 }
 
 #searchsite #form #searchbox .common {
-	height:35px;
+	/* height:35px; */
 	border-style: none;
 }
 
@@ -34,14 +34,30 @@
 	margin-left:10px;
 }
 
-#searchsite #form #searchbox .selbox #districtcode {
-	display:block;
-	boarder:1px solid black;
+#searchsite #form #searchbox #districtcode {
+	display:none;
 	width:100%;
 }
 
-#searchsite #form #searchbox .selbox #districtcode #si .is {
+#searchsite #form #searchbox #districtcode #si {
+	display:block;
+	width:100%;
+}
+
+#searchsite #form #searchbox #districtcode #gu {
+	display:block;
+	width:100%;
+}
+
+#searchsite #form #searchbox #districtcode #dong {
+	display:block;
+	width:100%;
+}
+
+#searchsite #form #searchbox #districtcode ul li {
+	width:15%;
 	display: inline-block;
+	float:left;
 }
 
 #searchsite #form #searchbtn #btngroup {

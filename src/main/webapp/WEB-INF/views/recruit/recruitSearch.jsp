@@ -12,7 +12,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
+ 	$("#area_a").click(function(){
+		$("#districtcode").css('display', 'block');
+		$("#si").css('display', 'block');
+	});
 	
+	$(".si_a").click(function(){
+		var i=0;
+		/* $("#gu").css('display', 'block'); */
+		var title=$(this).attr("title");
+		$(".gu_a").each(function(){
+			var tt=$(this).attr("title");
+			var tt=tt.substring(0,2);
+			if(tt == title){
+				if($(this).attr("title")==tt){
+					
+				}
+			}
+		});
+	});
+	
+ 	$(".gu_a").click(function(){
+		$("#dong").css('display', 'block');
+	});
 });
 </script>
 </head>
@@ -29,15 +51,24 @@ $(function(){
 					<div id="searchbox">
 						<fieldset class="common">
 							<h3>지역</h3>
-							<div id="area" class="selbox">지역을 선택하세요 (최대 2개 가능)</div>
-							<div id="districtcode">
+							<div id="area" class="selbox"><a href="#" id="area_a">지역을 선택하세요 (최대 2개 가능)</a>						
+							</div>
+						<div id="districtcode">
 							<ul id="si">
-							<c:forEach var="city" items="${sinum}" begin="0" step="1">
-							<li class="is">${si[city]}</li>
+							<c:forEach var="city" items="${sinum}">
+							<li class="is"><a href="#" class="si_a" title="${city}">${si[city]}</a></li>
 							</c:forEach>
 							</ul>
-							<ul id="gu"></ul>
-							<ul id="dong"></ul>
+							<ul id="gu">
+							<c:forEach var="town" items="${gunum}">
+							<li class="is"><a href="#" class="gu_a" title="${town}">${gu[town]}</a></li>
+							</c:forEach>
+							</ul>
+							<ul id="dong">
+							<c:forEach var="village" items="${dongnum}">
+							<li class="is"><a href="#" class="dong_a">${dong[village]}</a></li>
+							</c:forEach>
+							</ul>
 							</div>
 						</fieldset>
 

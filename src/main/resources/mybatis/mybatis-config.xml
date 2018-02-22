@@ -20,6 +20,7 @@
   		<typeAlias type="com.iu.review.ReviewDTO" alias="ReviewDTO"/>
   		<typeAlias type="com.iu.power.PowerDTO" alias="PowerDTO"/>
   		<typeAlias type="com.iu.file.FileDTO" alias="FileDTO"/>
+  		<typeAlias type="com.iu.scrap.TempDTO" alias="TempDTO"/>
   	</typeAliases>
   
   </configuration>

@@ -26,31 +26,26 @@
 			$("#m_m4").css("color", "white");
 		});
 		
-		var list = new Array();
+		$("#select").click(function(){
+			if($(this).prop("checked")) {
+				$(".sel_chb").attr("checked", true);
+				$("#total_btn").attr("value", "전체해제");
+			}else {
+				$(".sel_chb").attr("checked", false);
+				$("#total_btn").attr("value", "전체선택");
+			}
+		});
 		
-		function total(list){
-			var truecount=0;
-			var falsecount=0;
-			 for(var i=0; i<list.length; i++) {
-				 if(list[i].checked) {
-					 list[i].checked=false;
-					 falsecount++;
-				 } else {
-					 list[i].checked=true;
-					 truecount++;
-				 }
-			 }
-			 if(truecount == list.length) {
-				 $("#total_btn").attr("value", "전체해제");
-			 } else if(falsecount == list.length) {
-				 $("#total_btn").attr("value", "전체선택");
-			 } else {
-				 
-			 }
-		};
-		
-		$("#total_btn").click(function(){
-			total(document.frm.sel_ch);
+ 		$(".sel_chb").click(function(){
+			if($(this).prop("checked")) {
+				
+			}
+			alert(checklist.length);
+/* 			if($(".sel").attr("checked")) {
+				$(this).attr("checked", false);
+			} else {
+				$(this).attr("checked", true);
+			} */
 		});
 		
 		$("#scrap_del").click(function(){
@@ -70,10 +65,9 @@
 <form id="form" name="frm">
 			<a href="../scrap/scrapDelete">ScrapDelete</a>
 			<input type="button" value="스크랩 삭제" id="scrap_del">
-			<input type="button" value="전체선택" id="total_btn">
 			<table id="scrap_table">
 				<tr id="firstrow">
-					<th>선택</th>
+					<th><input type="checkbox" id="select"></th>
 					<th>지역</th>
 					<th>채용공고</th>
 					<th>급여</th>
@@ -81,7 +75,7 @@
 				</tr>
 				<c:forEach var="result" items="${scrap_result}" begin="0" step="1">
 					<tr id="extrarow">
-						<td><input type="checkbox" value="${result.num}" name="sel_ch"></td>
+						<td><input type="checkbox" value="${result.num}" name="sel_ch" class="sel_chb"></td>
 						<td>${result.addr}</td>
 						<td>${result.c_name}&nbsp;/&nbsp;${result.title}</td>
 						<td>${result.salary}</td>

@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
+
 public class Districtcode {
 	private Map<String, String> si = null;
 	private Map<String, String> gu = null;
@@ -49,6 +51,7 @@ public class Districtcode {
 				
 			}
 		}
+		bufReader.close();
 		
 		districtCode = new ArrayList<Object>();
 		
@@ -59,9 +62,7 @@ public class Districtcode {
 		districtCode.add(gunum);
 		districtCode.add(dongnum);
 		
-		
-		bufReader.close();
-		
 		return districtCode;
+
 	}
 }
