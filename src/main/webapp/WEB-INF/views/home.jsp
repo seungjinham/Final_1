@@ -22,6 +22,7 @@
 	<%@ include file="./temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
+		<p>상세검색 에러 날 수 있음 그냥 무시하고 자기꺼 진행하세요. 빠른 시일내에 파일경로 수정해서 돌아가게 할께요</p>
 			<p>a</p>
 			<p>a</p>
 			<p>a</p>
