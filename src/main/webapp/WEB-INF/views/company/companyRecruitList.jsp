@@ -9,6 +9,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/c_meun.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -76,6 +77,7 @@
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
+		<%@ include file="../member/c_meun.jsp"%>
 			<table>
 				<tr>
 					<td>NUM</td>
