@@ -7,6 +7,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/member/c_meun.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
@@ -14,6 +15,7 @@
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
+		<%@ include file="../member/c_meun.jsp"%>
 			<h1>Recruit</h1>
 			<form action="companyRecruit" method="post" enctype="multipart/form-data">
 				<p>id<input type="text" name="id"></p>
