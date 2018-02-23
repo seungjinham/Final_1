@@ -6,7 +6,7 @@ public class RecruitSearchDTO {
 	private String c_name;
 	private String title;
 	private String gender;
-	private String school;
+	private String[] school;
 	private String salary;
 	private String sal_input;
 	private String[] job;
@@ -34,10 +34,10 @@ public class RecruitSearchDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getSchool() {
+	public String[] getSchool() {
 		return school;
 	}
-	public void setSchool(String school) {
+	public void setSchool(String[] school) {
 		this.school = school;
 	}
 	public String getSalary() {

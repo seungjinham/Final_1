@@ -14,31 +14,34 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 $(function(){
-	var list = new Array();
+	function select_All(obj, val) {
+		alert("enter");
+		if(obj!=undefined) {
+			var count = obj.length;
+			alert(count);
+			if(obj.length>0) {
+				for(i=0; i<=obj.length-1; i++) {
+					var test = obj[i].checked;
+					alert(test);
+					alert(val);
+					obj[i].checked=val;
+				}
+			}else {
+				var test0 = obj[i].checked;
+				alert(test0);
+				alert(val);
+				obj.checked=val;
+			}
+		}
+		return true;
+	}
 	
-	function total(list){
-		var truecount=0;
-		var falsecount=0;
-		 for(var i=0; i<list.length; i++) {
-			 if(list[i].checked) {
-				 list[i].checked=false;
-				 falsecount++;
-			 } else {
-				 list[i].checked=true;
-				 truecount++;
-			 }
-		 }
-		 if(truecount == list.length) {
-			 $("#total_btn").attr("value", "전체해제");
-		 } else if(falsecount == list.length) {
-			 $("#total_btn").attr("value", "전체선택");
-		 } else {
-			 
-		 }
-	};
-	
-	$("#total_btn").click(function(){
-		total(document.frm.sel_ch);
+	$("#select_all").on("click", function(){
+		var obj = $("input:checkbox[name='select_ch']");
+		var val = $("#select_all").prop("checked");
+		alert(obj);
+		alert(val);
+		select_All(obj, val);
 	});
 	
 	$("#apply_del").click(function(){
@@ -55,10 +58,9 @@ $(function(){
 		<%@ include file="../member/p_meun.jsp"%>
 		<form id="form" name="frm">
 		<input type="button" value="지원취소" id="apply_del">
-		<input type="button" value="전체선택" id="total_btn">
 			<table id="apply_table">
 				<tr id="firstrow">
-					<th>선택</th>
+					<th><input type="checkbox" id="select_all"></th>
 					<th>지역</th>
 					<th>채용공고</th>
 					<th>급여</th>
@@ -66,9 +68,9 @@ $(function(){
 				</tr>
 				<c:forEach var="result" items="${applylist}" begin="0" step="1">
 					<tr id="extrarow">
-						<td><input type="checkbox" value="${result.num}" name="sel_ch"></td>
+						<td><input type="checkbox" value="${result.num}" name="select_ch" class="sel"></td>
 						<td>${result.addr}</td>
-						<td>${result.c_name}&nbsp;/&nbsp;${result.title}</td>
+						<td>${result.c_name}<br>${result.title}</td>
 						<td>${result.salary}</td>
 						<td>${result.deadline}</td>
 					</tr>

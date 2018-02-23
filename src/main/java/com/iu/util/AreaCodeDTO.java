@@ -10,8 +10,52 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-public class Districtcode {
-	private Map<String, String> si = null;
+public class AreaCodeDTO {
+	private String si_code;
+	private String gu_code;
+	private String dong_code;
+	private String si_value;
+	private String gu_value;
+	private String dong_value;
+	
+	public String getSi_code() {
+		return si_code;
+	}
+	public void setSi_code(String si_code) {
+		this.si_code = si_code;
+	}
+	public String getGu_code() {
+		return gu_code;
+	}
+	public void setGu_code(String gu_code) {
+		this.gu_code = gu_code;
+	}
+	public String getDong_code() {
+		return dong_code;
+	}
+	public void setDong_code(String dong_code) {
+		this.dong_code = dong_code;
+	}
+	public String getSi_value() {
+		return si_value;
+	}
+	public void setSi_value(String si_value) {
+		this.si_value = si_value;
+	}
+	public String getGu_value() {
+		return gu_value;
+	}
+	public void setGu_value(String gu_value) {
+		this.gu_value = gu_value;
+	}
+	public String getDong_value() {
+		return dong_value;
+	}
+	public void setDong_value(String dong_value) {
+		this.dong_value = dong_value;
+	}
+	
+/*	private Map<String, String> si = null;
 	private Map<String, String> gu = null;
 	private Map<String, String> dong = null;
 	private List<Object> districtCode= null;
@@ -64,5 +108,5 @@ public class Districtcode {
 		
 		return districtCode;
 
-	}
+	}*/
 }

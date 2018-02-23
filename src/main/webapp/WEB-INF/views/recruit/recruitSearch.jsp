@@ -18,18 +18,7 @@ $(function(){
 	});
 	
 	$(".si_a").click(function(){
-		var i=0;
 		/* $("#gu").css('display', 'block'); */
-		var title=$(this).attr("title");
-		$(".gu_a").each(function(){
-			var tt=$(this).attr("title");
-			var tt=tt.substring(0,2);
-			if(tt == title){
-				if($(this).attr("title")==tt){
-					
-				}
-			}
-		});
 	});
 	
  	$(".gu_a").click(function(){
@@ -58,8 +47,8 @@ $(function(){
 							<c:forEach var="city" items="${sinum}">
 							<li class="is"><a href="#" class="si_a" title="${city}">${si[city]}</a></li>
 							</c:forEach>
-							</ul>
-							<ul id="gu">
+ 							</ul>
+<%-- 							<ul id="gu">
 							<c:forEach var="town" items="${gunum}">
 							<li class="is"><a href="#" class="gu_a" title="${town}">${gu[town]}</a></li>
 							</c:forEach>
@@ -68,7 +57,7 @@ $(function(){
 							<c:forEach var="village" items="${dongnum}">
 							<li class="is"><a href="#" class="dong_a">${dong[village]}</a></li>
 							</c:forEach>
-							</ul>
+							</ul> --%>
 							</div>
 						</fieldset>
 
