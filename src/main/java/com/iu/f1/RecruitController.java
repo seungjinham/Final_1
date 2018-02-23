@@ -15,7 +15,7 @@ import com.iu.company.CompanyService;
 import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
-import com.iu.util.Districtcode;
+import com.iu.util.AreaCodeDTO;
 import com.iu.util.ListData;
 
 @Controller
@@ -32,21 +32,22 @@ public class RecruitController {
 		List<Object> collect_ar = recruitService.selectList(listData);
 		model.addAttribute("totallist", collect_ar.get(0));
 		model.addAttribute("pagelist", collect_ar.get(1));
-		List<Object> districtCode = null;
-		Districtcode districtcode = new Districtcode();
+/*		List<Object> districtCode = null;
+		AreaCodeDTO districtcode = new AreaCodeDTO();
 		try {
 			districtCode = districtcode.discrictCode();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		model.addAttribute("districtcode", districtCode);
+		}*/
+		//model.addAttribute("districtcode", districtCode);
 		return "recruit/recruitList";
 	}
 	
 	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
 	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
-		List<Object> districtCode = null;
+		
+/*		List<Object> districtCode = null;
 		Districtcode districtcode = new Districtcode();
 		try {
 			districtCode = districtcode.discrictCode();
@@ -60,7 +61,7 @@ public class RecruitController {
 		model.addAttribute("dong", (Map<String, String>)districtCode.get(2));
 		model.addAttribute("sinum", (List<String>)districtCode.get(3));
 		model.addAttribute("gunum", (List<String>)districtCode.get(4));
-		model.addAttribute("dongnum", (List<String>)districtCode.get(5));
+		model.addAttribute("dongnum", (List<String>)districtCode.get(5));*/
 		String path = "recruit/recruitSearch";
 		return path;
 	}

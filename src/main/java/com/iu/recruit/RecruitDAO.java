@@ -80,4 +80,8 @@ public class RecruitDAO {
 		System.out.println(recruitDTO.getAddr());
 		return sqlSession.update(NAMESPACE+"companyRecruitUpdate", recruitDTO);
 	}
+	
+	public void selectArea() {
+		//return sqlSession.selectList(NAMESPACE+"", parameter);
+	}
 }

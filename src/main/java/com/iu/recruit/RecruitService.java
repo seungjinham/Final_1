@@ -120,4 +120,8 @@ public class RecruitService {
 	public RecruitDTO selectOne(int num) {
 		return recruitDAO.selectOne(num);
 	}
+	
+	public void selectArea() {
+		
+	}
 }

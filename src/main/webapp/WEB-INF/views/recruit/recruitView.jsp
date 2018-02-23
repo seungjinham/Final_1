@@ -98,7 +98,7 @@ $(function(){
 		<div id="condition_info">
 		<div id="leftbox">
 		<div id="recruit_condition">
-		<p><h1>모집조건</h1></p>
+		<p><h1 class="viewtitle">모집조건</h1></p>
 		<p><h3 class="recruit_data">마감일</h3><h3 class="recruit_data rdh3" id="h3_deadline"></h3></p>
 		<p><h3 class="recruit_data">인원&nbsp;</h3><h3 class="recruit_data rdh3">${recruit.people}</h3></p>
 		<p><h3 class="recruit_data">성별&nbsp;</h3><h3 class="recruit_data rdh3">${recruit.gender}</h3></p>
@@ -108,7 +108,7 @@ $(function(){
 		</div>
 		
 		<div id="work_condition">
-		<p><h1>근무조건</h1></p>
+		<p><h1 class="viewtitle">근무조건</h1></p>
 		<p><h3 class="recruit_data">급여&nbsp;&nbsp;</h3><h3 class="recruit_data" id="sala">${recruit.salary}</h3></p>
 		<p><h3 class="recruit_data">근무기간</h3><h3 class="recruit_data rdh3">${recruit.w_date}</h3></p>
 		<p><h3 class="recruit_data">근무요일</h3><h3 class="recruit_data rdh3">${recruit.w_day}</h3></p>
@@ -121,7 +121,7 @@ $(function(){
 		<div id="rightbox">
 		<input type="button" value="지원하기" id="applybtn">
 		<div id="recruit_manager">
-		<p><h1>채용담당자 정보</h1></p>
+		<p><h1 class="viewtitle">채용담당자 정보</h1></p>
 		<p><h3 class="recruit_data">담당자</h3><h3 class="recruit_data rdh3">${company.name}</h3></p>
 		<p><h3 class="recruit_data">이메일</h3><h3 class="recruit_data rdh3">${company.email}</h3></p>
 		<p><h3 class="recruit_data">전화&nbsp;</h3><h3 class="recruit_data rdh3" id="pho">${company.phone}</h3></p>

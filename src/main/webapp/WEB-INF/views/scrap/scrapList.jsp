@@ -26,26 +26,34 @@
 			$("#m_m4").css("color", "white");
 		});
 		
-		$("#select").click(function(){
-			if($(this).prop("checked")) {
-				$(".sel_chb").attr("checked", true);
-				$("#total_btn").attr("value", "전체해제");
-			}else {
-				$(".sel_chb").attr("checked", false);
-				$("#total_btn").attr("value", "전체선택");
+		function select_All(obj, val) {
+			alert("enter");
+			if(obj!=undefined) {
+				var count = obj.length;
+				alert(count);
+				if(obj.length>0) {
+					for(i=0; i<=obj.length-1; i++) {
+						var test = obj[i].checked;
+						alert(test);
+						alert(val);
+						obj[i].checked=val;
+					}
+				}else {
+					var test0 = obj[i].checked;
+					alert(test0);
+					alert(val);
+					obj.checked=val;
+				}
 			}
-		});
+			return true;
+		}
 		
- 		$(".sel_chb").click(function(){
-			if($(this).prop("checked")) {
-				
-			}
-			alert(checklist.length);
-/* 			if($(".sel").attr("checked")) {
-				$(this).attr("checked", false);
-			} else {
-				$(this).attr("checked", true);
-			} */
+		$("#select_all").on("click", function(){
+			var obj = $("input:checkbox[name='select_ch']");
+			var val = $("#select_all").prop("checked");
+			alert(obj);
+			alert(val);
+			select_All(obj, val);
 		});
 		
 		$("#scrap_del").click(function(){
@@ -67,7 +75,7 @@
 			<input type="button" value="스크랩 삭제" id="scrap_del">
 			<table id="scrap_table">
 				<tr id="firstrow">
-					<th><input type="checkbox" id="select"></th>
+					<th><input type="checkbox" id="select_all"></th>
 					<th>지역</th>
 					<th>채용공고</th>
 					<th>급여</th>
@@ -75,9 +83,9 @@
 				</tr>
 				<c:forEach var="result" items="${scrap_result}" begin="0" step="1">
 					<tr id="extrarow">
-						<td><input type="checkbox" value="${result.num}" name="sel_ch" class="sel_chb"></td>
+						<td><input type="checkbox" value="${result.num}" name="select_ch" class="sel"></td>
 						<td>${result.addr}</td>
-						<td>${result.c_name}&nbsp;/&nbsp;${result.title}</td>
+						<td>${result.c_name}<br>${result.title}</td>
 						<td>${result.salary}</td>
 						<td>${result.deadline}</td>
 					</tr>

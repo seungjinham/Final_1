@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.iu.company.CompanyService;
 import com.iu.recruit.RecruitService;
 import com.iu.scrap.ScrapDAO;
-import com.iu.util.Districtcode;
+import com.iu.util.AreaCodeDTO;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/*-context.xml"})
 public class SqlTest {

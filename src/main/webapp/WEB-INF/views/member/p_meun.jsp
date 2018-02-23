@@ -38,7 +38,7 @@
 	<div class="s_meun m2"><a href="../paper/paperWrite" id="s_m3">이력서 등록<span class="arrow">＞</span></a></div>
 	<div class="s_meun m2"><a href="../paper/paperUpdate" id="s_m4">이력서 수정·삭제<span class="arrow">＞</span></a></div>
 	<div class="m_meun" id="m3">
-		<a href="#" id="m_m3">지원 현황</a></div>
+		<a href="../apply/applySelectList?id=${member.id}" id="m_m3">지원 현황</a></div>
 	<div class="m_meun" id="m4">
 		<a href="../scrap/scrapSelectList?id=${member.id}" id="m_m4">스크랩 보기</a>
 	</div>
