@@ -17,9 +17,6 @@
 <link
 	href="<%=request.getContextPath()%>/resources/css/member/p_meun.css"
 	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/paper/paperWrite.css"
-	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Paper Write</title>
@@ -39,25 +36,244 @@
 			$("#s_m3").css("color", "#23A41A");
 			$("#s_m3").css("font-weight", "bold");
 		});
-
-		//경력사항
-		$("#careers").click(function() {
-			$("#carrer_border").slideToggle("slow");
-		}); 
-		
-		$("#plus_photo").mouseenter(function() {
-			$(this).attr("src", "../resources/images/paper/plus_2.png");
-		});
-		$("#plus_photo").click(function() {
-			$(this).attr("src", "../resources/images/paper/x_1.png");
-			$("#plus_photo").mouseenter(function() {
-				$(this).attr("src", "../resources/images/paper/x_2.png");
-			});
-			$("#licences_boxs").slideToggle("slow");
-		});
 	});
 </script>
 <style type="text/css">
+#main2 {
+	width: 1080px;
+	height: 1500px;
+}
+
+#tit_border {
+	width: 770px;
+	height: 80px;
+	float: left;
+}
+
+#tit {
+	width: 700px;
+	height: 80px;
+	color: #23A41A;
+	font-size: 37px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	margin-left: 5px;
+}
+
+#paper_border {
+	width: 770px;
+	height: 1200px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+	float: left;
+}
+
+#p_tit_border {
+	width: 100%;
+	height: 150px;
+	background-color: aqua;
+	border-bottom: 2px solid #23A41A;
+}
+
+#p_tit_border_2 {
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-left: 10px;
+	background-color: yellow;
+	font-size: 21px;
+	font-family: 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', AppleGothic,
+		sans-serif;
+	font-weight: bold;
+	letter-spacing: -1px;
+	border-bottom: 1px dotted gray; 
+	padding-top: 10px;
+}
+
+#p_tit_border_3 {
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-left: 10px;
+	background-color: lime;
+}
+
+#p_tit {
+	width: 550px;
+	height: 50px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
+	
+}
+
+#info_borders {
+	width: 96%;
+	height: 630px;
+	padding: 40px;
+	box-sizing: border-box;
+	border: 1px solid #23A41A;
+	margin: 0 auto;
+}
+
+#info_tit_border {
+	width: 100%;
+	height: 80px;
+}
+
+#info_tit_border_2 {
+	width: 200px;
+	height: 50px;
+	box-sizing: border-box;
+	font-size: 21px;
+	font-family: 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', AppleGothic,
+		sans-serif;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#p_photo {
+	width: 130px;
+	height: 160px;
+	border: 1px solid #A9A9A9;
+	float: left;
+	margin-right: 30px;
+}
+
+.p_tit {
+	display: block;
+	left: 11px;
+	font-size: 12px;
+	padding-left: 15px;
+	font-family: '맑은 고딕';
+	color: #A9A9A9;
+}
+
+.name, .radio, .birth {
+	width: 240px;
+	height: 90px;
+	float: left;
+}
+
+#p_name, #p_birth, #p_gender {
+	margin-top: 10px;
+	width: 200px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
+}
+
+.working {
+	float: left;
+	width: 75px;
+	height: 40px;
+	text-align: center;
+	font-size: 13px;
+	font-family: "돋움";
+	box-sizing: border-box;
+	margin-top: 22px;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	background-color: white;
+	border-radius: 5px;
+	margin-right: 3px;
+}
+
+.gender, .army {
+	width: 100px;
+	height: 90px;
+	float: left;
+}
+
+#p_gender {
+	margin-top: 10px;
+	width: 70px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
+}
+
+.p_army, .p_marry {
+	float: left;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	font-size: 13px;
+	font-family: "돋움";
+	box-sizing: border-box;
+	margin-top: 15px;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	background-color: white;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.working:HOVER, .p_army:HOVER, .p_marry:HOVER {
+	border: 2px solid gray;
+	color: gray;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#border_1 {
+	width: 100%;
+	height: 200px;
+}
+
+.phone, .email, .addr, .addr_2, .marry, .hobby {
+	width: 300px;
+	height: 90px;
+	float: left;
+	padding-left: 24px;
+}
+
+#p_phone, #p_email, #p_addr, #p_addr_2, #p_hobby {
+	margin-top: 10px;
+	width: 260px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
+}
+
+.p_marry {
+	float: left;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	font-size: 13px;
+	font-family: "돋움";
+	box-sizing: border-box;
+	margin-top: 15px;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	background-color: white;
+	border-radius: 5px;
+	margin-left: 10px;
+}
 </style>
 </head>
 <body>
@@ -74,29 +290,28 @@
 			<form action="./paperInsert" method="post"
 				enctype="multipart/form-data">
 				<section id="paper_border">
-
-					<!-- 제목 -->
+					
 					<div id="p_tit_border">
-						<div id="p_tit_border_2">이력서 제목</div>
+						<div id="p_tit_border_2">
+							이력서 제목
+						</div>
 						<div id="p_tit_border_3">
-							<input type="text" name="title" id="p_tit"
-								placeholder="이력서 제목을 입력하세요. (50자 이내)">
+							<input type="text" name="title" id="p_tit" placeholder="이력서 제목을 입력하세요. (50자 이내)">
 						</div>
 					</div>
 
-					<!-- 기본정보 -->
-					<div class="p_meun_border">
-						<div class="p_meun_border_2">기본 정보</div>
-					</div>
-
 					<article id="info_borders">
+						<div id="info_tit_border">
+							<div id="info_tit_border_2">기본 정보</div>
+						</div>
+
 						<div id="border_1">
 							<div id="p_photo">
 								<button>file</button>
 							</div>
 							<div class="name">
 								<label for="p_name" class="p_tit">이름</label> <input type="text"
-									id="p_name" value="${member.name}" name="name">
+									id="p_name" value="스프링" name="name">
 							</div>
 							<div class="radio">
 								<input type="button" class="working" value="구직준비중"> <input
@@ -106,7 +321,7 @@
 							</div>
 							<div class="birth">
 								<label for="p_birth" class="p_tit">생년월일</label> <input
-									type="text" id="p_birth" value="세션생일" name="birth">
+									type="text" id="p_birth" value="1992.12.07" name="birth">
 							</div>
 							<c:if test="${member.gender eq 'M'}">
 								<div class="gender">
@@ -128,195 +343,39 @@
 								</div>
 							</c:if>
 						</div>
-						<div class="Decision_border">
+						<div class="marry">
 							<label for="p_marry" class="p_tit">결혼 여부</label> <input
 								type="button" class="p_marry" value="미혼"> <input
 								type="button" class="p_marry" value="기혼"> <input
 								type="hidden" name="marry" value="">
 						</div>
-						<div class="Decision_border">
-							<label for="hobby" class="p_tit">취미</label> <input type="text"
-								id="hobby" name="hobby" class="Decision">
+						<div class="hobby">
+							<label for="p_hobby" class="p_tit">취미</label> <input type="text"
+								id="p_hobby" name="hobby">
 						</div>
-						<div class="Decision_border">
+						<div class="phone">
 							<label for="p_phone" class="p_tit">휴대폰</label> <input type="text"
-								id="p_phone" value="세션번호" name="phone" class="Decision">
+								id="p_phone" value="스프링" name="phone">
 						</div>
-						<div class="Decision_border">
+						<div class="email">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
-								id="p_email" value="세션메일" name="email" class="Decision">
+								id="p_email" value="zico@naver.com" name="email">
 						</div>
-						<div class="Decision_border">
+						<div class="addr">
 							<label for="p_addr" class="p_tit">주소</label> <input type="text"
-								id="p_addr" value="세선주소1" class="Decision">
+								id="p_addr" value="서울시 강남구">
 						</div>
-						<div class="Decision_border">
+						<div class="addr_2">
 							<label for="p_addr_2" class="p_tit">상세주소</label> <input
-								type="text" id="p_addr_2" value="세션주소2" class="Decision">
+								type="text" id="p_addr_2" value="정보교육원 4층">
 						</div>
 					</article>
-
-
-					<!-- 학력사항 -->
-					<div class="p_meun_border f_left">
-						<div class="p_meun_border_2">학력 사항</div>
-					</div>
-
-					<div class="select_border_2">
-						<select name="s_kind" class="options">
-							<option>최종학력 선택</option>
-							<option value="대학교이상">대학교이상</option>
-							<option value="고등학교">고등학교</option>
-							<option value="중학교">중학교</option>
-							<option value="초등학교">초등학교</option>
-						</select>
-					</div>
-
-					<article class="box_border">
-						<div class="Decision_border">
-							<label for="s_name" class="p_tit">학교명</label> <input type="text"
-								id="s_name" name="s_name" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="major" class="p_tit">전공 계열</label> <input type="text"
-								id="major" name="major" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="entrance" class="p_tit">입학년월</label> <input
-								type="text" id="entrance" name="entrance"
-								placeholder="ex) 200802" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="graduation" class="p_tit">졸업년월</label> <input
-								type="text" id="graduation" name="graduation"
-								placeholder="ex) 201103" class="Decision">
-						</div>
-					</article>
-
-					<!-- 자격증 -->
-					<div class="p_meun_border f_left" id="license_tit">
-						<div class="p_meun_border_2">자격증</div>
-					</div>
 					
-					<div class="sub_box">
-						<input type="button" id="plus_btn" value="." >
-						<img src="../resources/images/paper/plus_1.png" id="plus_photo">
-					</div>
-
-
-					<article class="box_border" id="licences_boxs" style="display: none;">
-						<div class="Decision_border">
-							<label for="l_name" class="p_tit">자격증명</label> <select
-								name="l_kind" class="Decision">
-								<option>항목선택</option>
-								<option value="자격증/면허증">자격증/면허증</option>
-								<option value="어학시험">어학시험</option>
-								<option value="수상내역/공모전">수상내역/공모전</option>
-							</select>
-						</div>
-						<div class="Decision_border">
-							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
-								id="l_name" name="l_name" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="l_date" class="p_tit">취득일</label> <input type="text"
-								id="l_date" name="l_date" placeholder="ex) 200802"
-								class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="issue" class="p_tit">발행처</label> <input type="text"
-								id="issue" name="issue" class="Decision">
+					<article id="school_border">
+						<div id="school_border_2">
+							
 						</div>
 					</article>
-
-					<!-- 희망 근무조건 -->
-					<div class="p_meun_border f_left">
-						<div class="p_meun_border_2">희망 근무조건</div>
-					</div>
-
-					<div class="select_border_2">
-						<select name="h_kind" class="options">
-							<option>근무형태</option>
-							<option value="정규직">정규직</option>
-							<option value="교육생">교육생</option>
-							<option value="파트">파트</option>
-							<option value="계약직">계약직</option>
-							<option value="인턴직">인턴직</option>
-							<option value="아르바이트">아르바이트</option>
-							<option value="프리랜서">프리랜서</option>
-						</select>
-					</div>
-
-					<article class="box_border">
-						<div class="Decision_border">
-							<label for="h_job" class="p_tit">직종</label> <input type="text"
-								id="h_job" name="h_job" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="h_work" class="p_tit">업종</label> <input type="text"
-								id="h_work" name="h_work" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="location" class="p_tit">근무지역</label> <input
-								type="text" id="location" name="location" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="salary" class="p_tit">연봉</label> <input type="text"
-								id="salary" name="salary" class="Decision"
-								placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
-						</div>
-					</article>
-
-					<!-- 경력 사항 -->
-					<div class="p_meun_border f_left" id="carrer_tit">
-						<div class="p_meun_border_2">경력 사항</div>
-					</div>
-
-					<div class="sub_box">
-						<input type="button" class="cr_kind" value="신입"> <input
-							type="button" class="cr_kind" value="경력" id="careers"> <input
-							type="hidden" name="cr_kind" value="">
-					</div>
-
-					<article id="carrer_border" style="display: none;">
-						<div class="Decision_border">
-							<label for="company_n" class="p_tit">회사명</label> <input
-								type="text" id="company_n" value="" name="company_n"
-								class="Decision">
-						</div>
-						<div class="period">
-							<label for="joined" class="p_tit">입사년월</label> <input type="text"
-								id="joined" placeholder="ex) 200802" name="joined">
-						</div>
-						<div class="period">
-							<label for="resign" class="p_tit">퇴사년월</label> <input type="text"
-								id="resign" placeholder="ex) 201206" name="resign">
-						</div>
-						<div id="w_kind_border">
-							<select name="w_kind" id="w_kind">
-								<option value="퇴사">퇴사</option>
-								<option value="재직">재직</option>
-							</select>
-						</div>
-						<div class="Decision_border">
-							<label for="rank" class="p_tit">직책</label> <input type="text"
-								id="rank" name="rank" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="fess" class="p_tit">직종</label> <input type="text"
-								id="fess" name="fess" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="cr_work" class="p_tit">담당업무</label> <input
-								type="text" id="cr_work" name="cr_work" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="cr_sal" class="p_tit">연봉</label> <input type="text"
-								id="cr_sal" name="cr_sal" placeholder="ex) 2100만"
-								class="Decision">
-						</div>
-					</article>
-
 
 				</section>
 			</form>
