@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="TalkMapper">
-	<insert id="insert" parameterType="TalkDTO">
+<mapper namespace="QnaMapper">
+	<insert id="insert" parameterType="QnaDTO">
 		insert into talk values(#{id}, #{type}, #{contents}, #{email}, #{fname}, #{oname})
 	</insert>
 
-	<select id="selectList" parameterType="ListData" resultType="TalkDTO">
+	<select id="selectList" parameterType="ListData" resultType="QnaDTO">
 			select * from
   			(select rownum R, F.* from
   			(select * from talk
@@ -20,7 +20,7 @@
   			where R between #{startRow} and #{lastRow}
 	</select>
 
-	<select id="selectOne" parameterType="int" resultType="TalkDTO">
+	<select id="selectOne" parameterType="int" resultType="QnaDTO">
 		select * from talk where num=#{num}
 	</select>
 

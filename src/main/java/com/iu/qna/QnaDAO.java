@@ -1,4 +1,4 @@
-package com.iu.talk;
+package com.iu.qna;
 
 import java.util.List;
 
@@ -10,22 +10,22 @@ import org.springframework.stereotype.Repository;
 import com.iu.util.ListData;
 
 @Repository
-public class TalkDAO {
+public class QnaDAO {
 	
 	@Inject
 	private SqlSession sqlSession;
-	private final String NAMESPACE="TalkMapper.";
+	private final String NAMESPACE="QnaMapper.";
 	
 	
-	public int insert(TalkDTO talkDTO) throws Exception{
+	public int insert(QnaDTO talkDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"insert", talkDTO);
 	}
 	
-	public List<TalkDTO> selectList(ListData listData) throws Exception{
+	public List<QnaDTO> selectList(ListData listData) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList", listData);
 	}
 	
-	public TalkDTO selectOne(int num) throws Exception{
+	public QnaDTO selectOne(int num) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
 	}
 	

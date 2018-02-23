@@ -7,26 +7,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.iu.talk.TalkDTO;
-import com.iu.talk.TalkService;
+import com.iu.qna.QnaDTO;
+import com.iu.qna.QnaService;
 
 @Controller
 @RequestMapping(value="/talk/**")
 public class TalkController {
 
 	@Inject
-	private TalkService talkService;
+	private QnaService talkService;
 	
 	@RequestMapping(value="talkForm", method=RequestMethod.GET)
 	public void insert(Model model) throws Exception{
 	}
 	
 	@RequestMapping(value="talkForm", method=RequestMethod.POST)
-	public String insert(TalkDTO talkDTO)throws Exception{
+	public String insert(QnaDTO talkDTO)throws Exception{
 		int result=talkService.insert(talkDTO);
-		String message="Àü¼Û ¿À·ù";
+		String message="ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 		if(result>0){
-			message="Àü¼Û ¼º°ø";
+			message="ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 		}
 		return "redirect:../home";
 

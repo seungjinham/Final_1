@@ -1,4 +1,4 @@
-package com.iu.talk;
+package com.iu.qna;
 
 import java.util.List;
 
@@ -9,21 +9,21 @@ import org.springframework.stereotype.Service;
 import com.iu.util.ListData;
 
 @Service
-public class TalkService {
+public class QnaService {
 	
 	@Inject
-	private TalkDAO talkDAO;
+	private QnaDAO talkDAO;
 	
 	
-	public int insert(TalkDTO talkDTO) throws Exception{
+	public int insert(QnaDTO talkDTO) throws Exception{
 		return talkDAO.insert(talkDTO);
 	}
 	
-	public List<TalkDTO> selectList(ListData listData) throws Exception{
+	public List<QnaDTO> selectList(ListData listData) throws Exception{
 		return talkDAO.selectList(listData);
 	}
 
-	public TalkDTO selectOne(int num) throws Exception{
+	public QnaDTO selectOne(int num) throws Exception{
 		return talkDAO.selectOne(num);
 	}
 	

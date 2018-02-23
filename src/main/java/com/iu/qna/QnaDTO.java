@@ -1,6 +1,6 @@
-package com.iu.talk;
+package com.iu.qna;
 
-public class TalkDTO {
+public class QnaDTO {
 	
 	private String id;
 	private String type;

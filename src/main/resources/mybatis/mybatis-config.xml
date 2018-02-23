@@ -15,7 +15,7 @@
   		<typeAlias type="com.iu.scrap.ScrapDTO" alias="ScrapDTO"/>
   		<typeAlias type="com.iu.apply.ApplyDTO" alias="ApplyDTO"/>
   		<typeAlias type="com.iu.seller.SellerDTO" alias="SellerDTO"/>
-  		<typeAlias type="com.iu.talk.TalkDTO" alias="TalkDTO"/>
+  		<typeAlias type="com.iu.qna.QnaDTO" alias="QnaDTO"/>
   		<typeAlias type="com.iu.supporter.SupporterDTO" alias="SupporterDTO"/>
   		<typeAlias type="com.iu.review.ReviewDTO" alias="ReviewDTO"/>
   		<typeAlias type="com.iu.power.PowerDTO" alias="PowerDTO"/>
