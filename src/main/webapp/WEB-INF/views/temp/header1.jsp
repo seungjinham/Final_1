@@ -87,19 +87,19 @@
 							<ul class="navi-sublist subnav03">
 								<li><a href="">이력서 관리</a></li>
 								<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">지원현황</a></li>
-								<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">스크랩 공고정보</a></li>
+								<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">공고 즐겨찾기</a></li>
 								<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보수정</a></li>
-								<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자등록</a></li>
 								<li><a href="#">판매자 즐겨찾기</a></li>
+								<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 관리</a></li>
 								<li><a href="#">거래 내역 관리</a></li>
 							</ul>
 						</li>
 
 						<li><a href="javascript:void(0);" class="">기업서비스</a>
 							<ul class="navi-sublist subnav03">
-								<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인공고</a></li>
+								<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인 공고</a></li>
 								<li><a href="#">지원자 관리</a></li>
-								<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고등록하기</a></li>
+								<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
 								<li><a href="<%=request.getContextPath()%>/use/powerBuy">파워링크 구매</a></li>
 								<li><a href="#">구매내역 관리</a></li>
 								<li><a href="<%=request.getContextPath()%>/company/companyMyPage">회원정보수정</a></li>
