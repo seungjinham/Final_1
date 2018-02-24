@@ -21,6 +21,7 @@
   		<typeAlias type="com.iu.power.PowerDTO" alias="PowerDTO"/>
   		<typeAlias type="com.iu.file.FileDTO" alias="FileDTO"/>
   		<typeAlias type="com.iu.scrap.TempDTO" alias="TempDTO"/>
+  		<typeAlias type="com.iu.util.AreaCodeDTO" alias="AreaCodeDTO"/>
   	</typeAliases>
   
   </configuration>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.iu.company.CompanyDAO;
 import com.iu.company.CompanyDTO;
+import com.iu.util.AreaCodeDTO;
 import com.iu.util.ListData;
 import com.iu.util.ListSort;
 import com.iu.util.PageMaker;
@@ -121,7 +122,8 @@ public class RecruitService {
 		return recruitDAO.selectOne(num);
 	}
 	
-	public void selectArea() {
-		
+	public List<Object> selectArea(AreaCodeDTO areacodeDTO) {
+		recruitDAO.selectArea(areacodeDTO);
+		return null;
 	}
 }

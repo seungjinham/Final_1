@@ -27,21 +27,13 @@
 		});
 		
 		function select_All(obj, val) {
-			alert("enter");
 			if(obj!=undefined) {
 				var count = obj.length;
-				alert(count);
 				if(obj.length>0) {
 					for(i=0; i<=obj.length-1; i++) {
-						var test = obj[i].checked;
-						alert(test);
-						alert(val);
 						obj[i].checked=val;
 					}
 				}else {
-					var test0 = obj[i].checked;
-					alert(test0);
-					alert(val);
 					obj.checked=val;
 				}
 			}
@@ -51,8 +43,6 @@
 		$("#select_all").on("click", function(){
 			var obj = $("input:checkbox[name='select_ch']");
 			var val = $("#select_all").prop("checked");
-			alert(obj);
-			alert(val);
 			select_All(obj, val);
 		});
 		

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.iu.scrap.ScrapDTO;
+import com.iu.util.AreaCodeDTO;
 
 @Repository
 public class RecruitDAO {
@@ -81,7 +82,7 @@ public class RecruitDAO {
 		return sqlSession.update(NAMESPACE+"companyRecruitUpdate", recruitDTO);
 	}
 	
-	public void selectArea() {
-		//return sqlSession.selectList(NAMESPACE+"", parameter);
+	public AreaCodeDTO selectArea(AreaCodeDTO areacodeDTO) {
+		return sqlSession.selectOne(NAMESPACE+"Area_Select", areacodeDTO);
 	}
 }
