@@ -83,6 +83,6 @@ public class RecruitDAO {
 	}
 	
 	public AreaCodeDTO selectArea(AreaCodeDTO areacodeDTO) {
-		return sqlSession.selectOne(NAMESPACE+"Area_Select", areacodeDTO);
+		return null; //sqlSession.selectOne(NAMESPACE+"Area_Select", areacodeDTO);
 	}
 }

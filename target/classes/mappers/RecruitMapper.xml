@@ -75,4 +75,7 @@
 		where num=#{num}
 	</update>
 	
+	<select id="Area_Select" parameterType="AreaCodeDTO">
+		select * from area_code
+	</select>
 </mapper>
