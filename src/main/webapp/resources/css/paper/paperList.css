@@ -1,0 +1,152 @@
+@CHARSET "UTF-8";
+
+#main2 {
+	width: 1080px;
+	height: 800px;
+}
+
+#tit_border {
+	width: 740px;
+	height: 80px;
+	float: left;
+}
+
+#tit {
+	width: 700px;
+	height: 80px;
+	color: #23A41A;
+	font-size: 37px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	margin-left: 5px;
+}
+
+.all_List_border {
+	width: 685px;
+	height: 700px;
+	float: left;
+	letter-spacing: -1px;
+	border-top: 2px solid #23A41A;
+}
+
+.list_border {
+	width: 600px;
+	height: 210px;
+	box-sizing: border-box;
+	margin-top: 40px;
+	margin-left: 40px;
+	padding-top: 20px;
+	padding-left: 20px;
+	border: 1px solid #23A41A;
+}
+
+.tit_border {
+	width: 570px;
+	height: 40px;
+	font-size: 20px;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+}
+
+.date_border {
+	width: 570px;
+	height: 30px;
+	font-size: 13px;
+	font-family: "맑은 고딕";
+	color: gray;
+}
+
+.info_border {
+	width: 570px;
+	height: 40px;
+	font-size: 14px;
+	font-family: "맑은 고딕";
+	box-sizing: border-box;
+}
+
+.kind_border {
+	width: 40px;
+	height: 20px;
+	float: left;
+	border-right: 1px solid gray;
+}
+
+.sal_border {
+	width: 120px;
+	height: 20px;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 15px;
+	border-right: 1px solid gray;
+}
+
+.job_border {
+	width: 100px;
+	height: 20px;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 15px;
+}
+
+.btns_broder {
+	width: 570px;
+	height: 60px;
+	box-sizing: border-box;
+	padding-left: 5px;
+}
+
+.btns {
+	width: 182px;
+	height: 50px;
+	border: 1px solid gray;
+	font-size: 19px;
+	font-family: "굴림";
+	font-weight: bold;
+	background-color: white;
+	cursor: pointer;
+	display: block;
+	float: left;
+	color: gray;
+}
+
+.btns:hover {
+	border: 2px solid #23A41A;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 35px;
+}
+
+#view:hover {
+	background-image: url('/f1/resources/images/paper/view.png');
+}
+
+#up:hover {
+	background-image: url('/f1/resources/images/paper/pen.png');
+}
+
+#del:hover {
+	background-image: url('/f1/resources/images/paper/del.png');
+}
+
+#plus_border {
+	width: 600px;
+	height: 80px;
+	padding-top: 20px;
+	margin-left: 40px;
+}
+
+#plus {
+	width: 600px;
+	height: 60px;
+	font-size: 19px;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	background-color: #23A41A;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	padding-bottom: 5px;
+}

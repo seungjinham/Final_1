@@ -36,24 +36,50 @@
 			$("#m2").css("background-color", "#23A41A");
 			$("#m2").css("font-weight", "normal");
 
-			$("#s_m3").css("color", "#23A41A");
-			$("#s_m3").css("font-weight", "bold");
+			$("#s_m4").css("color", "#23A41A");
+			$("#s_m4").css("font-weight", "bold");
 		});
+
+		var birth = '${member.birth}';
+		var birthArr = birth.split(',');
+		$("#p_birth").attr("value",
+				birthArr[0] + " / " + birthArr[1] + " / " + birthArr[2]);
+
+		var phone = '${member.phone}';
+		var phoneArr = phone.split(',');
+		$("#p_phone").attr("value", phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
+
+		var email = '${member.email}';
+		var emailArr = email.split(',');
+		$("#p_email").attr("value", emailArr[0] + " @ " + emailArr[1]);
+
+		var addr = '${member.addr}';
+		var addrArr = addr.split(',');
+		$("#p_addr").attr("value", addrArr[1]+addrArr[2]);
+		$("#p_addr_2").attr("value", addrArr[3]);
 
 		//경력사항
 		$("#careers").click(function() {
-			$("#carrer_border").slideToggle("slow");
-		}); 
-		
-		$("#plus_photo").mouseenter(function() {
-			$(this).attr("src", "../resources/images/paper/plus_2.png");
+			$("#carrer_border").slideDown("slow");
 		});
-		$("#plus_photo").click(function() {
-			$(this).attr("src", "../resources/images/paper/x_1.png");
-			$("#plus_photo").mouseenter(function() {
-				$(this).attr("src", "../resources/images/paper/x_2.png");
-			});
-			$("#licences_boxs").slideToggle("slow");
+		$("#newcomer").click(function() {
+			$("#carrer_border").slideUp("slow");
+		});
+
+		var i = 0;
+		$("#add_box").click(function() {
+			if (i < 5) {
+				var ex = $("#licences_boxs").html();
+				$("#licences_boxs").append(ex);
+				i++;
+			} else {
+				alert("그만해! 5개까지야")
+			}
+		});
+
+		$("#x_box").click(function() {
+			$("#licences_boxs").remove();
+			i--;
 		});
 	});
 </script>
@@ -106,7 +132,7 @@
 							</div>
 							<div class="birth">
 								<label for="p_birth" class="p_tit">생년월일</label> <input
-									type="text" id="p_birth" value="세션생일" name="birth">
+									type="text" id="p_birth" value="" name="birth">
 							</div>
 							<c:if test="${member.gender eq 'M'}">
 								<div class="gender">
@@ -122,7 +148,7 @@
 							</c:if>
 
 							<c:if test="${member.gender eq 'W'}">
-								<div class="gender" style="width: 270px;">
+								<div class="gender" style="width: 240px;">
 									<label for="p_gender" class="p_tit">성별</label> <input
 										type="text" id="p_gender" value="여" style="width: 230px;">
 								</div>
@@ -140,19 +166,19 @@
 						</div>
 						<div class="Decision_border">
 							<label for="p_phone" class="p_tit">휴대폰</label> <input type="text"
-								id="p_phone" value="세션번호" name="phone" class="Decision">
+								id="p_phone" value="" name="phone" class="Decision">
 						</div>
 						<div class="Decision_border">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
-								id="p_email" value="세션메일" name="email" class="Decision">
+								id="p_email" value="" name="email" class="Decision">
 						</div>
-						<div class="Decision_border">
+						<div class="Decision_border_2">
 							<label for="p_addr" class="p_tit">주소</label> <input type="text"
-								id="p_addr" value="세선주소1" class="Decision">
+								id="p_addr" value="" class="Decision_2">
 						</div>
-						<div class="Decision_border">
+						<div class="Decision_border_3">
 							<label for="p_addr_2" class="p_tit">상세주소</label> <input
-								type="text" id="p_addr_2" value="세션주소2" class="Decision">
+								type="text" id="p_addr_2" value="" class="Decision_3">
 						</div>
 					</article>
 
@@ -194,17 +220,18 @@
 					</article>
 
 					<!-- 자격증 -->
-					<div class="p_meun_border f_left" id="license_tit">
-						<div class="p_meun_border_2">자격증</div>
-					</div>
-					
-					<div class="sub_box">
-						<input type="button" id="plus_btn" value="." >
-						<img src="../resources/images/paper/plus_1.png" id="plus_photo">
+					<div id="bborder">
+						<div class="p_meun_border f_left" id="license_tit">
+							<div class="p_meun_border_2">자격증</div>
+						</div>
+
+						<div id="append_border">
+							<div id="x_box"></div>
+							<div id="add_box"></div>
+						</div>
 					</div>
 
-
-					<article class="box_border" id="licences_boxs" style="display: none;">
+					<article class="box_border" id="licences_boxs">
 						<div class="Decision_border">
 							<label for="l_name" class="p_tit">자격증명</label> <select
 								name="l_kind" class="Decision">
@@ -247,25 +274,27 @@
 						</select>
 					</div>
 
-					<article class="box_border">
-						<div class="Decision_border">
-							<label for="h_job" class="p_tit">직종</label> <input type="text"
-								id="h_job" name="h_job" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="h_work" class="p_tit">업종</label> <input type="text"
-								id="h_work" name="h_work" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="location" class="p_tit">근무지역</label> <input
-								type="text" id="location" name="location" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="salary" class="p_tit">연봉</label> <input type="text"
-								id="salary" name="salary" class="Decision"
-								placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
-						</div>
-					</article>
+					<div id="ex">
+						<article class="box_border">
+							<div class="Decision_border">
+								<label for="h_job" class="p_tit">직종</label> <input type="text"
+									id="h_job" name="h_job" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="h_work" class="p_tit">업종</label> <input type="text"
+									id="h_work" name="h_work" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="location" class="p_tit">근무지역</label> <input
+									type="text" id="location" name="location" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="salary" class="p_tit">연봉</label> <input type="text"
+									id="salary" name="salary" class="Decision"
+									placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
+							</div>
+						</article>
+					</div>
 
 					<!-- 경력 사항 -->
 					<div class="p_meun_border f_left" id="carrer_tit">
@@ -273,9 +302,9 @@
 					</div>
 
 					<div class="sub_box">
-						<input type="button" class="cr_kind" value="신입"> <input
-							type="button" class="cr_kind" value="경력" id="careers"> <input
-							type="hidden" name="cr_kind" value="">
+						<input type="button" class="cr_kind" value="신입" id="newcomer">
+						<input type="button" class="cr_kind" value="경력" id="careers">
+						<input type="hidden" name="cr_kind" value="">
 					</div>
 
 					<article id="carrer_border" style="display: none;">

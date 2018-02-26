@@ -27,4 +27,10 @@ public class MemberContorller {
 		mv.setViewName("common/result");
 		return mv;
 	}
+	
+	@RequestMapping(value="findId", method=RequestMethod.GET)
+	public void findId(){}
+	
+	@RequestMapping(value="findPw", method=RequestMethod.GET)
+	public void findPw(){}
 }
