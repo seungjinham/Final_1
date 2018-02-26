@@ -27,7 +27,16 @@ public class ScrapService {
 	private CompanyDAO companyDAO;
 	
 	public int Insert(ScrapDTO scrapDTO) {
-		return scrapDAO.Insert(scrapDTO);
+		int result=0;
+		ListData listData = new ListData();
+		List<Object> ar = SelectList(scrapDTO, listData);
+		List<ScrapDTO> scrap_ar = (List<ScrapDTO>)ar.get(2);
+		for(int i=0; i<scrap_ar.size(); i++) {
+			if(scrapDTO.getRecruit_num() != scrap_ar.get(i).getRecruit_num()) {
+				result = scrapDAO.Insert(scrapDTO);
+			}
+		}
+		return result;
 	}
 	
 	public int Delete(ScrapDTO scrapDTO) {
@@ -54,6 +63,7 @@ public class ScrapService {
 		pageMaker.pageMaker(st_count, listData);
 		obj_ar.add(recruit_ar);
 		obj_ar.add(listData);
+		obj_ar.add(scrap_ar);
 		return obj_ar;
 	}
 	

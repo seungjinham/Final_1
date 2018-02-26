@@ -30,7 +30,7 @@ public class RecruitController {
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
 	public String recruitList(Model model, ListData listData, AreaCodeDTO areacodeDTO) {
 		//List<RecruitDTO> recruit_ar = recruitService.selectList();
-		if(areacodeDTO.getSi_value()==null&&areacodeDTO.getGu_value()==null&&areacodeDTO.getDong_value()==null) {
+/*		if(areacodeDTO.getSi_value()==null&&areacodeDTO.getGu_value()==null&&areacodeDTO.getDong_value()==null) {
 			
 		} else if(areacodeDTO.getSi_value()!=null&&areacodeDTO.getGu_value()==null) {
 			
@@ -38,8 +38,8 @@ public class RecruitController {
 			
 		} else {
 			
-		}
-		List<Object> area_ar = recruitService.selectArea(areacodeDTO);
+		}*/
+		//List<Object> area_ar = recruitService.selectArea(areacodeDTO);
 		List<Object> collect_ar = recruitService.selectList(listData);
 		model.addAttribute("totallist", collect_ar.get(0));
 		model.addAttribute("pagelist", collect_ar.get(1));
@@ -47,16 +47,32 @@ public class RecruitController {
 	}
 	
 	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
-	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO) {
+	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO) {		
+		String path = "recruit/recruitSearch";
+		List<Object> info = null;
 		ListSort listSort = new ListSort();
 		boolean check = listSort.check(recruitSearchDTO);
-		if(check != true) {
-			List<Object> area_ar = recruitService.selectArea(areacodeDTO);
-		} else {
+		if(check == true) {
 			
+		} else {
+			if(areacodeDTO.getSi_value()!=null) {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("gucode", (List<String>)info.get(0));
+				model.addAttribute("guname", (Map<String, String>)info.get(1));
+				path = "common/recruit_result";
+			} else if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()!=null) {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("dongcode", (List<String>)info.get(0));
+				model.addAttribute("dongname", (Map<String, String>)info.get(1));
+				path = "common/recruit_result";
+			} else {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("sicode", (List<String>)info.get(0));
+				model.addAttribute("siname", (Map<String, String>)info.get(1));
+				model.addAttribute("jobkind", (List<String>)info.get(2));
+				model.addAttribute("speckind", (List<String>)info.get(3));
+			}
 		}
-
-		String path = "recruit/recruitSearch";
 		return path;
 	}
 	

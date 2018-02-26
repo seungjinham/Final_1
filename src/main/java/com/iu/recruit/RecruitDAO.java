@@ -82,7 +82,15 @@ public class RecruitDAO {
 		return sqlSession.update(NAMESPACE+"companyRecruitUpdate", recruitDTO);
 	}
 	
-	public AreaCodeDTO selectArea(AreaCodeDTO areacodeDTO) {
-		return null; //sqlSession.selectOne(NAMESPACE+"Area_Select", areacodeDTO);
+	public List<AreaCodeDTO> selectArea(AreaCodeDTO areacodeDTO) {
+		return sqlSession.selectList(NAMESPACE+"Area_Select");
+	}
+	
+	public List<String> selectJob() {
+		return sqlSession.selectList(NAMESPACE+"Job_Select");
+	}
+	
+	public List<String> selectSpec() {
+		return sqlSession.selectList(NAMESPACE+"Spec_Select");
 	}
 }

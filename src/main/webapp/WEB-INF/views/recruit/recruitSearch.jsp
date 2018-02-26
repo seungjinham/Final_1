@@ -12,12 +12,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	var spec = new Array("어학가능", "컴퓨터활용", "운전가능", "군필자", "인근거주", "유사업무 경험자", "장애인", "업무 관련 자격증 소지자");
-	var category = new Array("요식업", "IT", "미디어", "유통 판매", "서비스", "사무직", "디자인", "교육 강사", "문화생활", "건설 운송"); 
+	var area;
+	var parameter;
 	
-	$("#woodae").click(function(){
-		$("#woo").html("<div><ul></ul></div>");
-	});
+ 	$("#woodae").click(function(){
+ 		$("#speckind").css('display', 'block');
+ 	});
 	
  	$("#area_a").click(function(){
 		$("#districtcode").css('display', 'block');
@@ -25,6 +25,9 @@ $(function(){
 	});
 	
 	$(".si_a").click(function(){
+		$.get("../recruit/recruitSearch?si_value=대구광역시&si_code=22", function(data){
+										
+		});
 		$("#gu").css('display', 'block');
 	});
 	
@@ -35,6 +38,10 @@ $(function(){
  	$("#default").click(function(){
  		location.reload();
  	}); 
+ 	
+ 	$("#jk").click(function(){
+ 		$("#jobkind").css('display', 'block');
+ 	});
  	
  	$("#search").click(function(){
  		var addr = new Array();
@@ -50,6 +57,14 @@ $(function(){
  		var title;
  		var c_name;
  		var etc = new Array();
+ 		
+ 		//업종
+ 		var ch = $(".jobk");
+ 		for(var i=0; i<ch.length; i++) {
+ 			if(ch[i].checked) {
+ 				job[i] = ch[i].value;
+ 			}
+ 		}
  		
  		//근무기간
  		var ch = $(".term");
@@ -123,6 +138,14 @@ $(function(){
  			console.log(c_name);
  			console.log(title);
  		}
+ 		
+ 		//우대사항
+ 		var ch = $(".spk");
+ 		for(var i=0; i<ch.length; i++) {
+ 			if(ch[i].checked) {
+ 				special[i] = ch[i].value;
+ 			}
+ 		}
  	});
 });
 </script>
@@ -144,18 +167,18 @@ $(function(){
 							</div>
 						<div id="districtcode">
 							<ul id="si">
-							<c:forEach var="city" items="${sinum}">
-							<li class="is"><a href="javascript:void(0)" class="si_a" title="${city}">${si[city]}</a></li>
+							<c:forEach var="city" items="${sicode}">
+							<li class="is"><input type="hidden" value="${city}" class="sikey"><a href="javascript:void(0)" class="si_a" title="${siname[city]}">${siname[city]}</a></li>
 							</c:forEach>
  							</ul>
 							<ul id="gu">
 							<c:forEach var="town" items="${gunum}">
-							<li class="is"><a href="javascript:void(0)" class="gu_a" title="${town}">${gu[town]}</a></li>
+							<li class="is"><input type="hidden" value="${town}" class="gukey"><a href="javascript:void(0)" class="gu_a" title="${gu[town]}">${gu[town]}</a></li>
 							</c:forEach>
 							</ul>
 							<ul id="dong">
 							<c:forEach var="village" items="${dongnum}">
-							<li class="is"><a href="javascript:void(0)" class="dong_a">${dong[village]}</a></li>
+							<li class="is"><input type="hidden" value="${village}" class="dongkey"><a href="javascript:void(0)" class="dong_a">${dong[village]}</a></li>
 							</c:forEach>
 							</ul>
 							</div>
@@ -163,7 +186,14 @@ $(function(){
 
 						<fieldset class="common">
 							<h3>직종-업종</h3>
-							<div id="jobwork" class="selbox">직종-업종을 선택하세요 (최대 2개)</div>
+							<div id="jobwork" class="selbox"><a href="javascript:void(0)" id="jk">직종-업종을 선택하세요 (최대 2개)</a></div>
+							<div id="jobkind">
+							<ul>
+							<c:forEach var="kind" items="${jobkind}">
+							<li><input type="checkbox" value="${kind}" class="jobk">${kind}</li>
+							</c:forEach>
+							</ul>
+							</div>
 						</fieldset>
 
 						<fieldset class="common">
@@ -242,9 +272,16 @@ $(function(){
 							</div>
 						</fieldset>
 
-						<fieldset class="common" id="woo">
+						<fieldset class="common">
 							<h3>우대조건</h3>
 							<div id="special" class="selbox"><a href="javascript:void(0)" id="woodae">우대사항을 선택하세요 (최대 2개 가능)</a></div>
+							<div id="speckind">
+							<ul>
+							<c:forEach var="kinds" items="${speckind}">
+							<li><input type="checkbox" value="${kinds}" class="spk">${kinds}</li>
+							</c:forEach>
+							</ul>
+							</div>
 						</fieldset>
 
 						<fieldset class="common">
@@ -258,7 +295,7 @@ $(function(){
 
 						<fieldset id="searchbtn">
 							<div id="btngroup">
-								<input type="button" value="검색" id="search">&nbsp;&nbsp;&nbsp;
+								<input type="submit" value="검색" id="search">&nbsp;&nbsp;&nbsp;
 								<input type="button" value="초기화" id="default">
 							</div>
 						</fieldset>

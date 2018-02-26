@@ -17,6 +17,8 @@ public class AreaCodeDTO {
 	private String si_value;
 	private String gu_value;
 	private String dong_value;
+	private String code_num;
+	private String area;
 	
 	public String getSi_code() {
 		return si_code;
@@ -54,6 +56,19 @@ public class AreaCodeDTO {
 	public void setDong_value(String dong_value) {
 		this.dong_value = dong_value;
 	}
+	public String getCode_num() {
+		return code_num;
+	}
+	public void setCode_num(String code_num) {
+		this.code_num = code_num;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	
 	
 /*	private Map<String, String> si = null;
 	private Map<String, String> gu = null;

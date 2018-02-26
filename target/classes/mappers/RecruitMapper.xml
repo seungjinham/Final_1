@@ -75,7 +75,15 @@
 		where num=#{num}
 	</update>
 	
-	<select id="Area_Select" parameterType="AreaCodeDTO">
+	<select id="Area_Select" resultType="AreaCodeDTO">
 		select * from area_code
+	</select>
+	
+	<select id="Job_Select" resultType="String">
+		select * from jobkind
+	</select>
+	
+	<select id="Spec_Select" resultType="String">
+		select * from spec
 	</select>
 </mapper>

@@ -47,15 +47,16 @@ public class ScrapController {
 		if(page.equals("view")) {
 			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
-				System.out.println(integer);
 				if(integer>0) {
-					System.out.println("success");
 					message = "스크랩 성공";
 					path = "common/message";
 /*					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
 					companyDTO = companyService.selectOne(recruitDTO.getId());
 					model.addAttribute("recruit", recruitDTO);
 					model.addAttribute("company", companyDTO);*/
+				} else if(integer == 0) {
+					message = "중복된 스크랩 입니다.";
+					path = "common/message";
 				} else {
 					message = "스크랩 실패 ";
 					path = "recruit/recruitView";

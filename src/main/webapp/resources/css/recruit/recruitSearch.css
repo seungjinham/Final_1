@@ -40,17 +40,17 @@
 }
 
 #searchsite #form #searchbox #districtcode #si {
-	display:block;
+	display:none;
 	width:100%;
 }
 
 #searchsite #form #searchbox #districtcode #gu {
-	display:block;
+	display:none;
 	width:100%;
 }
 
 #searchsite #form #searchbox #districtcode #dong {
-	display:block;
+	display:none;
 	width:100%;
 }
 
@@ -59,6 +59,25 @@
 	display: inline-block;
 	float:left;
 }
+
+#searchsite #form #searchbox #jobkind {
+	display:none;
+	width:100%;
+}
+
+#searchsite #form #searchbox #jobkind ul li {
+	display:inline-block;
+}
+
+#searchsite #form #searchbox #speckind {
+	display:none;
+	width:100%;
+}
+
+#searchsite #form #searchbox #speckind ul li {
+	display:inline-block;
+}
+
 
 #searchsite #form #searchbtn #btngroup {
 	width:15%;
