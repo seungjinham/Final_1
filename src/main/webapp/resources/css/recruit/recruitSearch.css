@@ -39,25 +39,37 @@
 	width:100%;
 }
 
-#searchsite #form #searchbox #districtcode #si {
+#searchsite #form #searchbox #districtcode #si_box {
 	display:none;
 	width:100%;
+	background-color: orange;
 }
 
-#searchsite #form #searchbox #districtcode #gu {
+#searchsite #form #searchbox #districtcode #gu_box {
 	display:none;
 	width:100%;
+	background-color: yellow;
 }
 
-#searchsite #form #searchbox #districtcode #dong {
+#searchsite #form #searchbox #districtcode #dong_box {
 	display:none;
 	width:100%;
+	background-color: lime;
 }
 
-#searchsite #form #searchbox #districtcode ul li {
-	width:15%;
-	display: inline-block;
-	float:left;
+#searchsite #form #searchbox #districtcode #si_box li {
+	display:inline-block;
+	margin-left:10px;
+}
+
+#searchsite #form #searchbox #districtcode #gu_box li {
+	display:inline-block;
+	margin-left:10px;
+}
+
+#searchsite #form #searchbox #districtcode #dong_box li {
+	display:inline-block;
+	margin-left:10px;
 }
 
 #searchsite #form #searchbox #jobkind {

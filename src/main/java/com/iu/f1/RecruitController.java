@@ -55,16 +55,16 @@ public class RecruitController {
 		if(check == true) {
 			
 		} else {
-			if(areacodeDTO.getSi_value()!=null) {
+			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 				info = recruitService.searchInfo(areacodeDTO);
 				model.addAttribute("gucode", (List<String>)info.get(0));
 				model.addAttribute("guname", (Map<String, String>)info.get(1));
-				path = "common/recruit_result";
+				path = "common/gu_result";
 			} else if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()!=null) {
 				info = recruitService.searchInfo(areacodeDTO);
 				model.addAttribute("dongcode", (List<String>)info.get(0));
 				model.addAttribute("dongname", (Map<String, String>)info.get(1));
-				path = "common/recruit_result";
+				path = "common/dong_result";
 			} else {
 				info = recruitService.searchInfo(areacodeDTO);
 				model.addAttribute("sicode", (List<String>)info.get(0));
