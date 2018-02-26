@@ -33,9 +33,54 @@
 			$("#m2").css("background-color", "#23A41A");
 			$("#m2").css("font-weight", "normal");
 
-			$("#s_m3").css("color", "#23A41A");
-			$("#s_m3").css("font-weight", "bold");
+			$("#s_m4").css("color", "#23A41A");
+			$("#s_m4").css("font-weight", "bold");
 		});
+<<<<<<< HEAD
+=======
+
+		var birth = '${member.birth}';
+		var birthArr = birth.split(',');
+		$("#p_birth").attr("value",
+				birthArr[0] + " / " + birthArr[1] + " / " + birthArr[2]);
+
+		var phone = '${member.phone}';
+		var phoneArr = phone.split(',');
+		$("#p_phone").attr("value", phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
+
+		var email = '${member.email}';
+		var emailArr = email.split(',');
+		$("#p_email").attr("value", emailArr[0] + " @ " + emailArr[1]);
+
+		var addr = '${member.addr}';
+		var addrArr = addr.split(',');
+		$("#p_addr").attr("value", addrArr[1]+addrArr[2]);
+		$("#p_addr_2").attr("value", addrArr[3]);
+
+		//경력사항
+		$("#careers").click(function() {
+			$("#carrer_border").slideDown("slow");
+		});
+		$("#newcomer").click(function() {
+			$("#carrer_border").slideUp("slow");
+		});
+
+		var i = 0;
+		$("#add_box").click(function() {
+			if (i < 5) {
+				var ex = $("#licences_boxs").html();
+				$("#licences_boxs").append(ex);
+				i++;
+			} else {
+				alert("그만해! 5개까지야")
+			}
+		});
+
+		$("#x_box").click(function() {
+			$("#licences_boxs").remove();
+			i--;
+		});
+>>>>>>> jjh
 	});
 </script>
 <style type="text/css">
@@ -321,7 +366,11 @@
 							</div>
 							<div class="birth">
 								<label for="p_birth" class="p_tit">생년월일</label> <input
+<<<<<<< HEAD
 									type="text" id="p_birth" value="1992.12.07" name="birth">
+=======
+									type="text" id="p_birth" value="" name="birth">
+>>>>>>> jjh
 							</div>
 							<c:if test="${member.gender eq 'M'}">
 								<div class="gender">
@@ -337,7 +386,7 @@
 							</c:if>
 
 							<c:if test="${member.gender eq 'W'}">
-								<div class="gender" style="width: 270px;">
+								<div class="gender" style="width: 240px;">
 									<label for="p_gender" class="p_tit">성별</label> <input
 										type="text" id="p_gender" value="여" style="width: 230px;">
 								</div>
@@ -355,10 +404,15 @@
 						</div>
 						<div class="phone">
 							<label for="p_phone" class="p_tit">휴대폰</label> <input type="text"
+<<<<<<< HEAD
 								id="p_phone" value="스프링" name="phone">
+=======
+								id="p_phone" value="" name="phone" class="Decision">
+>>>>>>> jjh
 						</div>
 						<div class="email">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
+<<<<<<< HEAD
 								id="p_email" value="zico@naver.com" name="email">
 						</div>
 						<div class="addr">
@@ -377,6 +431,185 @@
 						</div>
 					</article>
 
+=======
+								id="p_email" value="" name="email" class="Decision">
+						</div>
+						<div class="Decision_border_2">
+							<label for="p_addr" class="p_tit">주소</label> <input type="text"
+								id="p_addr" value="" class="Decision_2">
+						</div>
+						<div class="Decision_border_3">
+							<label for="p_addr_2" class="p_tit">상세주소</label> <input
+								type="text" id="p_addr_2" value="" class="Decision_3">
+						</div>
+					</article>
+
+
+					<!-- 학력사항 -->
+					<div class="p_meun_border f_left">
+						<div class="p_meun_border_2">학력 사항</div>
+					</div>
+
+					<div class="select_border_2">
+						<select name="s_kind" class="options">
+							<option>최종학력 선택</option>
+							<option value="대학교이상">대학교이상</option>
+							<option value="고등학교">고등학교</option>
+							<option value="중학교">중학교</option>
+							<option value="초등학교">초등학교</option>
+						</select>
+					</div>
+
+					<article class="box_border">
+						<div class="Decision_border">
+							<label for="s_name" class="p_tit">학교명</label> <input type="text"
+								id="s_name" name="s_name" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="major" class="p_tit">전공 계열</label> <input type="text"
+								id="major" name="major" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="entrance" class="p_tit">입학년월</label> <input
+								type="text" id="entrance" name="entrance"
+								placeholder="ex) 200802" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="graduation" class="p_tit">졸업년월</label> <input
+								type="text" id="graduation" name="graduation"
+								placeholder="ex) 201103" class="Decision">
+						</div>
+					</article>
+
+					<!-- 자격증 -->
+					<div id="bborder">
+						<div class="p_meun_border f_left" id="license_tit">
+							<div class="p_meun_border_2">자격증</div>
+						</div>
+
+						<div id="append_border">
+							<div id="x_box"></div>
+							<div id="add_box"></div>
+						</div>
+					</div>
+
+					<article class="box_border" id="licences_boxs">
+						<div class="Decision_border">
+							<label for="l_name" class="p_tit">자격증명</label> <select
+								name="l_kind" class="Decision">
+								<option>항목선택</option>
+								<option value="자격증/면허증">자격증/면허증</option>
+								<option value="어학시험">어학시험</option>
+								<option value="수상내역/공모전">수상내역/공모전</option>
+							</select>
+						</div>
+						<div class="Decision_border">
+							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
+								id="l_name" name="l_name" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="l_date" class="p_tit">취득일</label> <input type="text"
+								id="l_date" name="l_date" placeholder="ex) 200802"
+								class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="issue" class="p_tit">발행처</label> <input type="text"
+								id="issue" name="issue" class="Decision">
+						</div>
+					</article>
+
+					<!-- 희망 근무조건 -->
+					<div class="p_meun_border f_left">
+						<div class="p_meun_border_2">희망 근무조건</div>
+					</div>
+
+					<div class="select_border_2">
+						<select name="h_kind" class="options">
+							<option>근무형태</option>
+							<option value="정규직">정규직</option>
+							<option value="교육생">교육생</option>
+							<option value="파트">파트</option>
+							<option value="계약직">계약직</option>
+							<option value="인턴직">인턴직</option>
+							<option value="아르바이트">아르바이트</option>
+							<option value="프리랜서">프리랜서</option>
+						</select>
+					</div>
+
+					<div id="ex">
+						<article class="box_border">
+							<div class="Decision_border">
+								<label for="h_job" class="p_tit">직종</label> <input type="text"
+									id="h_job" name="h_job" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="h_work" class="p_tit">업종</label> <input type="text"
+									id="h_work" name="h_work" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="location" class="p_tit">근무지역</label> <input
+									type="text" id="location" name="location" class="Decision">
+							</div>
+							<div class="Decision_border">
+								<label for="salary" class="p_tit">연봉</label> <input type="text"
+									id="salary" name="salary" class="Decision"
+									placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
+							</div>
+						</article>
+					</div>
+
+					<!-- 경력 사항 -->
+					<div class="p_meun_border f_left" id="carrer_tit">
+						<div class="p_meun_border_2">경력 사항</div>
+					</div>
+
+					<div class="sub_box">
+						<input type="button" class="cr_kind" value="신입" id="newcomer">
+						<input type="button" class="cr_kind" value="경력" id="careers">
+						<input type="hidden" name="cr_kind" value="">
+					</div>
+
+					<article id="carrer_border" style="display: none;">
+						<div class="Decision_border">
+							<label for="company_n" class="p_tit">회사명</label> <input
+								type="text" id="company_n" value="" name="company_n"
+								class="Decision">
+						</div>
+						<div class="period">
+							<label for="joined" class="p_tit">입사년월</label> <input type="text"
+								id="joined" placeholder="ex) 200802" name="joined">
+						</div>
+						<div class="period">
+							<label for="resign" class="p_tit">퇴사년월</label> <input type="text"
+								id="resign" placeholder="ex) 201206" name="resign">
+						</div>
+						<div id="w_kind_border">
+							<select name="w_kind" id="w_kind">
+								<option value="퇴사">퇴사</option>
+								<option value="재직">재직</option>
+							</select>
+						</div>
+						<div class="Decision_border">
+							<label for="rank" class="p_tit">직책</label> <input type="text"
+								id="rank" name="rank" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="fess" class="p_tit">직종</label> <input type="text"
+								id="fess" name="fess" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="cr_work" class="p_tit">담당업무</label> <input
+								type="text" id="cr_work" name="cr_work" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="cr_sal" class="p_tit">연봉</label> <input type="text"
+								id="cr_sal" name="cr_sal" placeholder="ex) 2100만"
+								class="Decision">
+						</div>
+					</article>
+
+
+>>>>>>> jjh
 				</section>
 			</form>
 

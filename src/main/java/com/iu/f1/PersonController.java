@@ -119,6 +119,18 @@ public class PersonController {
 		mv.setViewName("common/result");
 		return mv;
 	}
+	
+	//비밀번호 변경
+	@RequestMapping(value="personChangePw", method=RequestMethod.GET)
+	public void personChangePw(HttpSession session) throws Exception{}
+	
+	//ID 찾기
+	@RequestMapping(value="personFindId", method=RequestMethod.GET)
+	public void personFindId(HttpSession session) throws Exception{}
+	
+	//PW 찾기
+	@RequestMapping(value="personFindPw", method=RequestMethod.GET)
+	public void personFindPw(HttpSession session) throws Exception{}
 }
 
 

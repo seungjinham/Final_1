@@ -1,0 +1,230 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#select_border {
+	width: 1270px;
+	height: 60px;
+	background-color: #23A41A;
+	margin-top: 80px;
+	padding-left: 650px;
+	
+}
+
+#id_border {
+	width: 300px;
+	height: 60px;
+	float: left;
+}
+
+#pw_border {
+	width: 300px;
+	height: 60px;
+	float: left;
+}
+
+#find_id_btn {
+	width: 300px;
+	height: 60px;
+	background-color: green;
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: bold;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+#find_pw_btn {
+	width: 300px;
+	height: 60px;
+	background-color: #23A41A;
+	font-size: 19px;
+	font-family: sans-serif;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+#find_pw_btn:hover {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#main {
+	width: 1100px;
+    display: block;
+    background-color: white;
+    border: 0;
+    margin: auto;
+    margin-top: 45px;
+}
+
+#find_border {
+	width: 600px;
+	height: 495px;
+	margin: 0 auto;
+}
+
+#kind_border {
+	width: 100%;
+	height: 60px;
+}
+
+.kind_btn {
+	float: left;
+	width: 298px;
+	height: 60px;
+}
+
+.kind_btn input {
+	width: 298px;
+	height: 60px;
+	text-align: center;
+	font-size: 19px;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	background-color: white;
+	border: none;
+	cursor: pointer;
+	outline: 0px;
+}
+
+#p_btn {
+	border: 2px solid #23A41A;
+	border-bottom: none;
+}
+
+#c_btn {
+	border-bottom: 2px solid #23A41A;
+}
+
+#sentence_border {
+	width: 100%;
+	height: 80px;
+	text-align: left;
+	font-size: 14px;
+	border-bottom: 2px solid #23A41A;
+	box-sizing: border-box;
+	padding-top: 30px;
+	padding-left: 40px;
+}
+
+#emph {
+	color: red;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#p_input_border {
+	width: 100%;
+	height: 420px;
+}
+
+#c_input_border {
+	width: 100%;
+	height: 540px;
+}
+
+.input_border_2 {
+	width: 100%;
+	height: 240px;
+	border-bottom: 2px solid #23A41A;
+}
+
+.info_border {
+	width: 600px;
+	height: 60px;
+	padding-top: 30px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+}
+
+.info_b {
+	width: 130px;
+	height: 50px;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 15px;
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+.info_border input {
+	width: 420px;
+	height: 45px;
+	border-radius: 5px;
+	border: 1px solid #23A41A;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕"
+}
+
+#email_border {
+	width: 600px;
+	height: 120px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+	padding-top: 20px;
+}
+
+#email_b {
+	width: 130px;
+	float: left;
+	padding-top: px;
+	font-weight: bold;
+	height: 100px;
+	box-sizing: border-box;
+	padding-top: 40px;
+	padding-left: 30px;
+}
+
+#email_border input {
+	width: 192px;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #23A41A;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+#domain {
+	width: 430px;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #23A41A;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+}
+
+#btn_border {
+	width: 400px;
+	height: 140px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#btn_border input {
+	width: 200px;
+	height: 80px;
+	font-size: 20px;
+	background-color: #23A41A;
+	border: none;
+	border-radius: 5px;
+	margin-top: 40px;
+	color: white;
+	font-weight: bold;
+}
+
+#btn_border input:hover {
+	color: #23A41A; azimuth;
+	background-color: white;
+	border: 1px solid #23A41A;
+	cursor: pointer;
+}

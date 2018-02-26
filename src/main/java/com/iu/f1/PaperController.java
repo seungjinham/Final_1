@@ -12,6 +12,14 @@ public class PaperController {
 	@RequestMapping(value="paperWrite", method=RequestMethod.GET)
 	public void paperWrite() throws Exception{}
 	
+	//이력서 List
+	@RequestMapping(value="paperList", method=RequestMethod.GET)
+	public void paperList() throws Exception{}
+	
+	//이력서 보기
+	@RequestMapping(value="paperView", method=RequestMethod.GET)
+	public void paperView() throws Exception{}
+	
 	//이력서 수정
 	@RequestMapping(value="paperUpdate", method=RequestMethod.GET)
 	public void paperUpdate() throws Exception{}

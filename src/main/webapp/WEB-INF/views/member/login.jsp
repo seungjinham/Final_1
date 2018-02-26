@@ -31,6 +31,16 @@
 			}
 		});
 		
+		$("#findId").click(function() {
+			window.opener.top.location.href="<%=request.getContextPath()%>/member/findId";
+			window.close();
+		});
+		
+		$("#findPw").click(function() {
+			window.opener.top.location.href="<%=request.getContextPath()%>/member/findPw";
+			window.close();
+		});
+		
 		$("#j_btn").click(function() {
 			window.opener.top.location.href="<%=request.getContextPath()%>/member/join";
 			window.close();
@@ -73,7 +83,7 @@
 			</form>
 			<article class="find_border">
 				<div class="find_border_2">
-					<a href="#">아이디 찾기</a>┃<a href="#">비밀번호 찾기</a>
+					<a href="#" id="findId">아이디 찾기</a>┃<a href="#" id="findPw">비밀번호 찾기</a>
 				</div>
 			</article>
 		</article>
