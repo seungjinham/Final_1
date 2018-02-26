@@ -17,8 +17,8 @@ public class QnaDAO {
 	private final String NAMESPACE="QnaMapper.";
 	
 	
-	public int insert(QnaDTO talkDTO) throws Exception{
-		return sqlSession.insert(NAMESPACE+"insert", talkDTO);
+	public int insert(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.insert(NAMESPACE+"insert", qnaDTO);
 	}
 	
 	public List<QnaDTO> selectList(ListData listData) throws Exception{
@@ -27,9 +27,6 @@ public class QnaDAO {
 	
 	public QnaDTO selectOne(int num) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
-	}
-	
-	
-	
+	}	
 	
 }

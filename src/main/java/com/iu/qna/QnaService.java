@@ -12,19 +12,19 @@ import com.iu.util.ListData;
 public class QnaService {
 	
 	@Inject
-	private QnaDAO talkDAO;
+	private QnaDAO qnaDAO;
 	
 	
 	public int insert(QnaDTO talkDTO) throws Exception{
-		return talkDAO.insert(talkDTO);
+		return qnaDAO.insert(talkDTO);
 	}
 	
 	public List<QnaDTO> selectList(ListData listData) throws Exception{
-		return talkDAO.selectList(listData);
+		return qnaDAO.selectList(listData);
 	}
 
 	public QnaDTO selectOne(int num) throws Exception{
-		return talkDAO.selectOne(num);
+		return qnaDAO.selectOne(num);
 	}
 	
 	
