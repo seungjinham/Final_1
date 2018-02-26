@@ -135,7 +135,7 @@ public class RecruitService {
 		Map<String, String> dongcode_map = null;
 		List<Object> info = null;
 		
-		if(areacodeDTO.getSi_value()!=null) {
+		if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 			gucode_ar = new ArrayList<>();
 			gucode_map = new HashMap<>();
 			info = new ArrayList<>();
@@ -164,7 +164,7 @@ public class RecruitService {
 			for(int i=0; i<ar.size(); i++) {
 				if(ar.get(i).getCode_num().length()==7) {
 					String tmp = ar.get(i).getCode_num().substring(0, 5);
-					if(tmp == areacodeDTO.getGu_code()) {
+					if(tmp.equals(areacodeDTO.getGu_code())) {
 						areacodeDTO.setDong_code(ar.get(i).getCode_num());
 						areacodeDTO.setDong_value(ar.get(i).getArea());
 						dongcode_map.put(areacodeDTO.getDong_code(), areacodeDTO.getDong_value());
@@ -172,7 +172,6 @@ public class RecruitService {
 					}
 				}
 			}
-			
 			info.add(dongcode_ar);
 			info.add(dongcode_map);
 			
