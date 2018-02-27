@@ -2,7 +2,6 @@
 
 #main2 {
 	width: 1080px;
-	height: 2500px;
 }
 
 #tit_border {
@@ -25,11 +24,10 @@
 
 #paper_border {
 	width: 740px;
-	height: 2200px;
 	border-top: 2px solid #23A41A;
 	border-bottom: 2px solid #23A41A;
 	float: left;
-	border-top: 2px solid #23A41A;
+	padding-bottom: 20px;
 }
 
 #p_tit_border {
@@ -75,7 +73,7 @@
 
 .p_meun_border {
 	width: 300px;
-	height: 95px;
+	height: 90px;
 }
 
 .p_meun_border_2 {
@@ -94,23 +92,14 @@
 /*====== 기본정보 ======*/
 #info_borders {
 	width: 100%;
-	height: 490px;
+	height: 560px;
 	box-sizing: border-box;
 	border-bottom: 1px dotted gray;
 }
 
 #border_1 {
 	width: 100%;
-	height: 200px;
-}
-
-#p_photo {
-	width: 130px;
-	height: 160px;
-	border: 1px solid #A9A9A9;
-	float: left;
-	margin-left: 20px;
-	margin-right: 10px;
+	height: 270px;
 }
 
 .p_tit {
@@ -122,11 +111,71 @@
 	color: #A9A9A9;
 }
 
+/* == 이력서  사진 ==*/
+#photo_border {
+	width: 150px;
+	height: 210px;
+	cursor: pointer;
+	float: left;
+}
+
+#img_border {
+	width: 135px;
+	height: 170px;
+	background-image: url('/f1/resources/images/paper/photo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid gray;
+	cursor: pointer;
+	float: left;
+}
+
+#file_label {
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	margin-left: 25px;
+	display: inline-block;
+	font-size: 14px;
+	font-family: "맑은 고딕";
+	box-sizing: border-box;
+	padding-top: 8px;
+	padding-left: 13px;
+	border: 1px solid #A9A9A9;
+	border-radius: 5px;
+	background-color: white;
+	color: #A9A9A9;
+}
+
+#file_label:hover {
+	border: 2px solid #23A41A;
+	color: #23A41A;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#file {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+#blah {
+	width: 135px;
+	height: 170px;
+}
+
 .name, .radio, .birth {
 	width: 260px;
-	height: 90px;
+	height: 100px;
 	float: left;
 	margin-left: 20px;
+	margin-top: 20px;
 }
 
 #p_name, #p_birth, #p_gender {
@@ -156,13 +205,15 @@
 	background-color: white;
 	border-radius: 5px;
 	margin-right: 3px;
+	outline: 0;
 }
 
 .gender, .army, .period {
 	width: 105px;
-	height: 90px;
+	height: 100px;
 	float: left;
 	padding-left: 30px;
+	margin-top: 20px;
 }
 
 #p_gender, #joined, #resign {
@@ -192,6 +243,7 @@
 	background-color: white;
 	border-radius: 5px;
 	margin-left: 10px;
+	outline: 0;
 }
 
 .p_marry {
@@ -199,7 +251,7 @@
 	height: 35px;
 }
 
-.working:HOVER, .p_army:HOVER, .p_marry:HOVER, .cr_kind:HOVER {
+.working:HOVER, .p_army:HOVER, .p_marry:HOVER {
 	border: 2px solid gray;
 	color: gray;
 	font-weight: bold;
@@ -269,7 +321,7 @@
 /*====== select 폼 ======*/
 .select_border_2 {
 	width: 350px;
-	height: 95px;
+	height: 90px;
 	float: right;
 }
 
@@ -296,25 +348,25 @@
 }
 
 /*====== 자격증 ======*/
-#bborder {
+#box_tit_border {
 	width: 740px;
-	height: 95px;
+	height: 90px;
 	float: left;
-	border-bottom: 1px solid black;
+	border-bottom: 1px dotted gray;
 }
 
-#append_border {
+.append_border {
 	width: 438px;
 	height: 95px;
 	float: left;
 }
 
-#add_box {
+#add_box, #port_add {
 	width: 40px;
 	height: 40px;
 	float: right;
 	margin-right: 10px;
-	margin-top: 30px;
+	margin-top: 25px;
 	cursor: pointer;
 	background-image: url('/f1/resources/images/paper/add.png');
 	background-repeat: no-repeat;
@@ -322,16 +374,16 @@
 	background-size: 40px;
 }
 
-#add_box:HOVER {
+#add_box:HOVER, #port_add:HOVER {
 	background-image: url('/f1/resources/images/paper/add2.png');
 }
 
-#x_box {
+#x_box, #port_x {
 	width: 40px;
 	height: 40px;
 	float: right;
 	margin-right: 40px;
-	margin-top: 30px;
+	margin-top: 25px;
 	cursor: pointer;
 	background-image: url('/f1/resources/images/paper/x.png');
 	background-repeat: no-repeat;
@@ -339,19 +391,27 @@
 	background-size: 40px;
 }
 
-#x_box:HOVER {
+#x_box:HOVER, #port_x:HOVER {
 	background-image: url('/f1/resources/images/paper/x2.png');
 }
 
 /*====== 경력 사항 ======*/
-.sub_box {
-	width: 440px;
-	height: 95px;
-	float: right;
-	text-align: center;
+#box_tit_border_2 {
+	width: 740px;
+	height: 90px;
+	float: left;
+	border-bottom: 1px dotted gray;
 }
 
-.cr_kind {
+.sub_box {
+	width: 440px;
+	height: 90px;
+	float: right;
+	box-sizing: border-box;
+	padding-left: 230px;
+}
+
+#newcomer {
 	width: 80px;
 	height: 40px;
 	font-size: 14px;
@@ -360,13 +420,42 @@
 	border-radius: 5px;
 	border: 1px solid #A9A9A9;
 	color: #A9A9A9;
-	margin-top: 20px;
-	margin-left: 20px;
+	margin-top: 25px;
+	margin-right: 10px;
+	outline: 0;
+}
+
+#newcomer:HOVER {
+	border: 2px solid gray;
+	color: gray;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#careers {
+	width: 80px;
+	height: 40px;
+	font-size: 14px;
+	font-family: "맑은 고딕";
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	margin-top: 25px;
+	margin-right: 10px;
+	outline: 0;
+}
+
+#careers:HOVER {
+	border: 2px solid gray;
+	color: gray;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 #carrer_border {
 	width: 100%;
-	height: 290px;
+	height: 320px;
 	border-bottom: 1px dotted gray;
 	float: left;
 }
@@ -387,4 +476,55 @@
 	border: none;
 	border-bottom: 1px solid gray;
 	padding-left: 5px;
+}
+
+.period {
+	margin-top: 0;
+}
+/* === 포트폴리오 === */
+#box_tit_border_3 {
+	width: 740px;
+	height: 90px;
+	float: left;
+	border-bottom: 1px dotted gray;
+}
+
+.port_box_2 {
+	width: 150px;
+	height: 90px;
+	float: left;
+	padding-left: 30px;
+}
+
+#port_date, #people {
+	margin-top: 10px;
+	width: 110px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
+}
+
+.port_box_3 {
+	width: 700px;
+	height: 90px;
+	float: left;
+	padding-left: 20px;
+}
+
+#contents {
+	margin-top: 10px;
+	width: 670px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: "맑은 고딕";
+	letter-spacing: -1px;
 }

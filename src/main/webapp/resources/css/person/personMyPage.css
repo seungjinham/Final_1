@@ -84,6 +84,7 @@ td {
 	border-radius: 5px;
 	font-size: 15px;
 	font-family: "맑은 고딕", dotum, 돋움, sans-serif;
+	padding-left: 10px;
 }
 
 #btn_border {

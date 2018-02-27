@@ -21,6 +21,25 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Paper Write</title>
 <script type="text/javascript">
+	//이력서 사진
+	$(function() {
+		$("#file").on('change', function() {
+			readURL(this);
+			$("#blah").show();
+			$("#file_label").text("사진 변경");
+		});
+	});
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#blah').attr('src', e.target.result);
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
+		;
+	};
+
 	$(function() {
 		$("#m2").ready(function() {
 			$(".m2").show("slow");
@@ -37,6 +56,7 @@
 			$("#s_m4").css("font-weight", "bold");
 		});
 
+		//기본 정보
 		var birth = '${member.birth}';
 		var birthArr = birth.split(',');
 		$("#p_birth").attr("value",
@@ -44,7 +64,8 @@
 
 		var phone = '${member.phone}';
 		var phoneArr = phone.split(',');
-		$("#p_phone").attr("value", phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
+		$("#p_phone").attr("value",
+				phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
 
 		var email = '${member.email}';
 		var emailArr = email.split(',');
@@ -52,36 +73,147 @@
 
 		var addr = '${member.addr}';
 		var addrArr = addr.split(',');
-		$("#p_addr").attr("value", addrArr[1]+addrArr[2]);
+		$("#p_addr").attr("value", addrArr[1] + addrArr[2]);
 		$("#p_addr_2").attr("value", addrArr[3]);
 
+		//기본정보 버튼
+		// ==== radio =====
+		$(".working").click(function() {
+			var working = $(this).val();
+			$("#work_hidden").val(working);
+			$("#work_hidden").val();
+		});
+		$("#work_1").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#work_2").css("color", "#A9A9A9");
+			$("#work_2").css("border", "1px solid #A9A9A9");
+			$("#work_2").css("font-weight", "normal");
+			$("#work_3").css("color", "#A9A9A9");
+			$("#work_3").css("border", "1px solid #A9A9A9");
+			$("#work_3").css("font-weight", "normal");
+		});
+		$("#work_2").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#work_1").css("color", "#A9A9A9");
+			$("#work_1").css("border", "1px solid #A9A9A9");
+			$("#work_1").css("font-weight", "normal");
+			$("#work_3").css("color", "#A9A9A9");
+			$("#work_3").css("border", "1px solid #A9A9A9");
+			$("#work_3").css("font-weight", "normal");
+		});
+		$("#work_3").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#work_1").css("color", "#A9A9A9");
+			$("#work_1").css("border", "1px solid #A9A9A9");
+			$("#work_1").css("font-weight", "normal");
+			$("#work_2").css("color", "#A9A9A9");
+			$("#work_2").css("border", "1px solid #A9A9A9");
+			$("#work_2").css("font-weight", "normal");
+		});
+
+		// ==== 병역사항 =====
+		$(".p_army").click(function() {
+			var p_army = $(this).val();
+			$("#army_hidden").val(p_army);
+			$("#army_hidden").val();
+		});
+		$("#army_1").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#army_2").css("color", "#A9A9A9");
+			$("#army_2").css("border", "1px solid #A9A9A9");
+			$("#army_2").css("font-weight", "normal");
+		});
+		$("#army_2").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#army_1").css("color", "#A9A9A9");
+			$("#army_1").css("border", "1px solid #A9A9A9");
+			$("#army_1").css("font-weight", "normal");
+		});
+
+		// ==== 결혼 여부 =====
+		$(".p_marry").click(function() {
+			var p_marry = $(this).val();
+			$("#marry_hidden").val(p_marry);
+			$("#marry_hidden").val();
+		});
+		$("#marry_1").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#marry_2").css("color", "#A9A9A9");
+			$("#marry_2").css("border", "1px solid #A9A9A9");
+			$("#marry_2").css("font-weight", "normal");
+		});
+		$("#marry_2").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#marry_1").css("color", "#A9A9A9");
+			$("#marry_1").css("border", "1px solid #A9A9A9");
+			$("#marry_1").css("font-weight", "normal");
+		});
+
+		
+		var m = $("#main").height();
+		
+		
 		//경력사항
 		$("#careers").click(function() {
 			$("#carrer_border").slideDown("slow");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("color", "#23A41A");
+			$(this).css("font-weight", "bold");
+			$("#newcomer").css("color", "#A9A9A9");
+			$("#newcomer").css("border", "1px solid #A9A9A9");
+			$("#newcomer").css("font-weight", "normal");
+			$("#box_tit_border_2").css("border-bottom", "none");
 		});
+
 		$("#newcomer").click(function() {
-			$("#carrer_border").slideUp("slow");
+			$("#carrer_border").hide();
+			$("#box_tit_border_2").css("border-bottom", "1px dotted gray");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("color", "#23A41A");
+			$(this).css("font-weight", "bold");
+			$("#careers").css("color", "#A9A9A9");
+			$("#careers").css("border", "1px solid #A9A9A9");
+			$("#careers").css("font-weight", "normal");
 		});
 
-		var i = 0;
+		//자격증
 		$("#add_box").click(function() {
-			if (i < 5) {
-				var ex = $("#licences_boxs").html();
-				$("#licences_boxs").append(ex);
-				i++;
-			} else {
-				alert("그만해! 5개까지야")
-			}
 		});
-
-		$("#x_box").click(function() {
-			$("#licences_boxs").remove();
-			i--;
+		
+		//포트폴리오
+		$("#port_add").click(function() {
+			$("#port_info").slideDown("slow");
+			$("#box_tit_border_3").css("border-bottom", "none");
+		});
+		
+		$("#port_x").click(function() {
+			$("#port_info").hide();
+			$("#box_tit_border_3").css("border-bottom", "1px dotted gray");
 		});
 
 	});
 </script>
+<<<<<<< HEAD
 
+=======
+<style type="text/css">
+
+</style>
+>>>>>>> jjh
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -112,18 +244,24 @@
 						</div>
 
 						<div id="border_1">
-							<div id="p_photo">
-								<button>file</button>
+						
+							<div id="photo_border">
+							<div id="img_border">
+								<img id="blah" src="#" alt="your image" style="display: none;">
+								</div>
+								<label for="file" id="file_label">사진 등록</label> <input
+									type='file' id="file" name="file">
 							</div>
+
 							<div class="name">
 								<label for="p_name" class="p_tit">이름</label> <input type="text"
 									id="p_name" value="스프링" name="name">
 							</div>
 							<div class="radio">
-								<input type="button" class="working" value="구직준비중"> <input
-									type="button" class="working" value="구직중"> <input
-									type="button" class="working" value="재직중"> <input
-									type="hidden" name="working" value="">
+								<input type="button" class="working" value="구직준비중" id="work_1">
+								<input type="button" class="working" value="구직중" id="work_2">
+								<input type="button" class="working" value="재직중" id="work_3">
+								<input type="hidden" name="working" value="" id="work_hidden">
 							</div>
 							<div class="birth">
 								<label for="p_birth" class="p_tit">생년월일</label> <input
@@ -137,9 +275,9 @@
 								</div>
 								<div class="army">
 									<label for="p_army" class="p_tit">병역</label> <input
-										type="button" class="p_army" value="미"> <input
-										type="button" class="p_army" value="필"> <input
-										type="hidden" name="army" value="">
+										type="button" class="p_army" value="미" id="army_1"> <input
+										type="button" class="p_army" value="필" id="army_2"> <input
+										type="hidden" name="army" value="" id="army_hidden">
 								</div>
 							</c:if>
 
@@ -152,9 +290,9 @@
 						</div>
 						<div class="marry">
 							<label for="p_marry" class="p_tit">결혼 여부</label> <input
-								type="button" class="p_marry" value="미혼"> <input
-								type="button" class="p_marry" value="기혼"> <input
-								type="hidden" name="marry" value="">
+								type="button" class="p_marry" value="미혼" id="marry_1"> <input
+								type="button" class="p_marry" value="기혼" id="marry_2"> <input
+								type="hidden" name="marry" value="" id="marry_hidden">
 						</div>
 						<div class="hobby">
 							<label for="p_hobby" class="p_tit">취미</label> <input type="text"
@@ -216,43 +354,6 @@
 						</div>
 					</article>
 
-					<!-- 자격증 -->
-					<div id="bborder">
-						<div class="p_meun_border f_left" id="license_tit">
-							<div class="p_meun_border_2">자격증</div>
-						</div>
-
-						<div id="append_border">
-							<div id="x_box"></div>
-							<div id="add_box"></div>
-						</div>
-					</div>
-
-					<article class="box_border" id="licences_boxs">
-						<div class="Decision_border">
-							<label for="l_name" class="p_tit">자격증명</label> <select
-								name="l_kind" class="Decision">
-								<option>항목선택</option>
-								<option value="자격증/면허증">자격증/면허증</option>
-								<option value="어학시험">어학시험</option>
-								<option value="수상내역/공모전">수상내역/공모전</option>
-							</select>
-						</div>
-						<div class="Decision_border">
-							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
-								id="l_name" name="l_name" class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="l_date" class="p_tit">취득일</label> <input type="text"
-								id="l_date" name="l_date" placeholder="ex) 200802"
-								class="Decision">
-						</div>
-						<div class="Decision_border">
-							<label for="issue" class="p_tit">발행처</label> <input type="text"
-								id="issue" name="issue" class="Decision">
-						</div>
-					</article>
-
 					<!-- 희망 근무조건 -->
 					<div class="p_meun_border f_left">
 						<div class="p_meun_border_2">희망 근무조건</div>
@@ -271,37 +372,37 @@
 						</select>
 					</div>
 
-					<div id="ex">
-						<article class="box_border">
-							<div class="Decision_border">
-								<label for="h_job" class="p_tit">직종</label> <input type="text"
-									id="h_job" name="h_job" class="Decision">
-							</div>
-							<div class="Decision_border">
-								<label for="h_work" class="p_tit">업종</label> <input type="text"
-									id="h_work" name="h_work" class="Decision">
-							</div>
-							<div class="Decision_border">
-								<label for="location" class="p_tit">근무지역</label> <input
-									type="text" id="location" name="location" class="Decision">
-							</div>
-							<div class="Decision_border">
-								<label for="salary" class="p_tit">연봉</label> <input type="text"
-									id="salary" name="salary" class="Decision"
-									placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
-							</div>
-						</article>
-					</div>
+					<article class="box_border">
+						<div class="Decision_border">
+							<label for="h_job" class="p_tit">직종</label> <input type="text"
+								id="h_job" name="h_job" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="h_work" class="p_tit">업종</label> <input type="text"
+								id="h_work" name="h_work" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="location" class="p_tit">근무지역</label> <input
+								type="text" id="location" name="location" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="salary" class="p_tit">연봉</label> <input type="text"
+								id="salary" name="salary" class="Decision"
+								placeholder="ex) 1400만 ~ 1600만  or  회사내에규따름">
+						</div>
+					</article>
 
 					<!-- 경력 사항 -->
-					<div class="p_meun_border f_left" id="carrer_tit">
-						<div class="p_meun_border_2">경력 사항</div>
-					</div>
+					<div id="box_tit_border_2">
+						<div class="p_meun_border f_left">
+							<div class="p_meun_border_2">경력 사항</div>
+						</div>
 
-					<div class="sub_box">
-						<input type="button" class="cr_kind" value="신입" id="newcomer">
-						<input type="button" class="cr_kind" value="경력" id="careers">
-						<input type="hidden" name="cr_kind" value="">
+						<div class="sub_box">
+							<input type="button" class="cr_kind" value="신입" id="newcomer">
+							<input type="button" class="cr_kind" value="경력" id="careers">
+							<input type="hidden" name="cr_kind" value="">
+						</div>
 					</div>
 
 					<article id="carrer_border" style="display: none;">
@@ -343,6 +444,78 @@
 						</div>
 					</article>
 
+<<<<<<< HEAD
+=======
+					<!-- 자격증 -->
+					<div id="box_tit_border">
+						<div class="p_meun_border f_left" id="license_tit">
+							<div class="p_meun_border_2">자격증</div>
+						</div>
+
+						<div class="append_border">
+							<div id="x_box"></div>
+							<div id="add_box"></div>
+						</div>
+					</div>
+
+					<article class="box_border" id="licences_boxs" style="display: none;">
+						<div class="Decision_border">
+							<label for="l_name" class="p_tit">자격증명</label> <select
+								name="l_kind" class="Decision">
+								<option>항목선택</option>
+								<option value="자격증/면허증">자격증/면허증</option>
+								<option value="어학시험">어학시험</option>
+								<option value="수상내역/공모전">수상내역/공모전</option>
+							</select>
+						</div>
+						<div class="Decision_border">
+							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
+								id="l_name" name="l_name" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="l_date" class="p_tit">취득일</label> <input type="text"
+								id="l_date" name="l_date" placeholder="ex) 200802"
+								class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="issue" class="p_tit">발행처</label> <input type="text"
+								id="issue" name="issue" class="Decision">
+						</div>
+					</article>
+
+					<!-- 포트폴리오 -->
+					<div id="box_tit_border_3">
+						<div class="p_meun_border f_left">
+							<div class="p_meun_border_2">포트폴리오</div>
+						</div>
+
+						<div class="append_border">
+							<div id="port_x"></div>
+							<div id="port_add"></div>
+						</div>
+					</div>
+
+					<article class="box_border" id="port_info" style="display: none;">
+						<div class="Decision_border">
+							<label for="prot_name" class="p_tit">파일</label> <input
+								type="file" name="port_file" class="Decision">
+						</div>
+						<div class="port_box_2">
+							<label for="port_date" class="p_tit">작업 기간</label> <input
+								type="text" id="port_date" name="p_date" placeholder="ex) 3일">
+						</div>
+						<div class="port_box_2">
+							<label for="people" class="p_tit">작업 인원</label> <input
+								type="text" id="people" name="people" placeholder="ex) 3명">
+						</div>
+						<div class="port_box_3">
+							<label for="contents" class="p_tit">작품 소개</label> <input
+								type="text" id="contents" name="contents" placeholder="20자 이내">
+						</div>
+					</article>
+
+
+>>>>>>> jjh
 				</section>
 			</form>
 
