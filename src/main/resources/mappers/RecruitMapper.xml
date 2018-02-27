@@ -76,7 +76,7 @@
 	</update>
 	
 	<select id="Area_Select" resultType="AreaCodeDTO">
-		select * from area_code
+		select * from area_code order by code_num asc
 	</select>
 	
 	<select id="Job_Select" resultType="String">
