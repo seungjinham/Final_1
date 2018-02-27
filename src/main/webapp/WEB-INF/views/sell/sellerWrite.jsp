@@ -26,8 +26,8 @@
 		$("#m5").css("background-color", "#23A41A");
 		$("#m5").css("font-weight", "normal");
 		
-		$("#s_m5").css("color", "#23A41A");
-		$("#s_m5").css("font-weight", "bold");
+		$("#s_m8").css("color", "#23A41A");
+		$("#s_m8").css("font-weight", "bold");
 		
 		//================== 프로필 사진 등록/삭제 ==================
 		$("#in").click(function() {

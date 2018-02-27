@@ -147,6 +147,7 @@ td {
 input{
 	border-radius: 5px;
 	border: 1px solid gray;
+	padding-left: 10px;
 }
 
 .inupt_f {
@@ -193,6 +194,7 @@ input{
 	margin-bottom: 10px;
 	cursor: pointer;
 	background-color: white;
+	padding: 0;
 }
 
 #addr_btn:hover {

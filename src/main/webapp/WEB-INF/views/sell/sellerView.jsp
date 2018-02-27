@@ -26,8 +26,8 @@
 	$("#m5").css("background-color", "#23A41A");
 	$("#m5").css("font-weight", "normal");
 		
-	$("#s_m6").css("color", "#23A41A");
-	$("#s_m6").css("font-weight", "bold");
+	$("#s_m9").css("color", "#23A41A");
+	$("#s_m9").css("font-weight", "bold");
 });
 </script>
 <body>	
