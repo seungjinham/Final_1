@@ -15,19 +15,20 @@
 <script type="text/javascript">
 	$(function() {
 		//메뉴설정
-		$("#m5").ready(function(){
+		$("#m5").ready(function() {
 			$(".m5").show("slow");
+
+			$("#m1").css("color", "black");
+			$("#m1").css("background-color", "white");
+			$("#m1").css("font-weight", "bold");
+
+			$("#m5").css("color", "white");
+			$("#m5").css("background-color", "#23A41A");
+			$("#m5").css("font-weight", "normal");
+
+			$("#s_m8").css("color", "#23A41A");
+			$("#s_m8").css("font-weight", "bold");
 		});
-		$("#m1").css("color", "black");
-		$("#m1").css("background-color", "white");
-		$("#m1").css("font-weight", "bold");
-		
-		$("#m5").css("color", "white");
-		$("#m5").css("background-color", "#23A41A");
-		$("#m5").css("font-weight", "normal");
-		
-		$("#s_m8").css("color", "#23A41A");
-		$("#s_m8").css("font-weight", "bold");
 		
 		//================== 프로필 사진 등록/삭제 ==================
 		$("#in").click(function() {

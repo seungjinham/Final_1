@@ -24,7 +24,7 @@
 				;
 			});
 		});
-		
+
 	});
 </script>
 
@@ -54,39 +54,27 @@
 	</div>
 
 	<div class="m_meun" id="m3">
-<<<<<<< HEAD
-		<a href="../apply/applySelectList?id=${member.id}" id="m_m3">지원 현황</a></div>
-	<div class="m_meun" id="m4">
-		<a href="../scrap/scrapSelectList?id=${member.id}" id="m_m4">스크랩 보기</a>
-	</div>
-	<div class="m_meun" id="m5">판매자 관리</div>
-	<div class="s_meun m5">
-		<a href="../sell/sellerWrite" id="s_m5">판매자 등록</a><span class="arrow">＞</span>
-	</div>
-	<div class="s_meun m5">
-		<a href="../sell/sellerView" id="s_m6">판매자 정보</a><span class="arrow">＞</span>
-=======
-		<a href="#" id="m_m3">지원 현황</a>
+		<a href="../apply/applySelectList?id=${member.id}" id="m_m3">지원 현황</a>
 	</div>
 
 	<div class="m_meun" id="m4">즐겨 찾기</div>
 	<div class="s_meun m4">
-		<a href="#" id="s_m6">공고 즐겨찾기</a><span class="arrow">＞</span>
+		<a href="../scrap/scrapSelectList?id=${member.id}" id="s_m6">공고
+			즐겨찾기<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m4">
-		<a href="#" id="s_m7">판매자 즐겨찾기</a><span class="arrow">＞</span>
+		<a href="#" id="s_m7">판매자 즐겨찾기<span class="arrow">＞</span></a>
 	</div>
 
 	<div class="m_meun" id="m5">판매자</div>
 	<div class="s_meun m5">
-		<a href="../sell/sellerWrite" id="s_m8">판매자 등록하기</a><span
-			class="arrow">＞</span>
+		<a href="../sell/sellerWrite" id="s_m8">판매자 등록하기<span
+			class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
-		<a href="../sell/sellerView" id="s_m9">판매자 정보보기</a><span class="arrow">＞</span>
->>>>>>> jjh
+		<a href="../sell/sellerView" id="s_m9">판매자 정보보기<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
-		<a href="./PersonUse" id="s_m10">거래내역</a><span class="arrow">＞</span>
+		<a href="./PersonUse" id="s_m10">거래내역<span class="arrow">＞</span></a>
 	</div>
 </article>

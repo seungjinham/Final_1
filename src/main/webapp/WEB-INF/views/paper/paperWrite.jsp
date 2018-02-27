@@ -17,6 +17,9 @@
 <link
 	href="<%=request.getContextPath()%>/resources/css/member/p_meun.css"
 	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/resources/css/paper/paperWrite.css"
+	rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Paper Write</title>
@@ -39,8 +42,9 @@
 		}
 		;
 	};
-
+	
 	$(function() {
+		//메뉴 설정
 		$("#m2").ready(function() {
 			$(".m2").show("slow");
 
@@ -207,13 +211,11 @@
 
 	});
 </script>
-<<<<<<< HEAD
 
-=======
 <style type="text/css">
 
 </style>
->>>>>>> jjh
+
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>
@@ -444,8 +446,6 @@
 						</div>
 					</article>
 
-<<<<<<< HEAD
-=======
 					<!-- 자격증 -->
 					<div id="box_tit_border">
 						<div class="p_meun_border f_left" id="license_tit">
@@ -515,7 +515,6 @@
 					</article>
 
 
->>>>>>> jjh
 				</section>
 			</form>
 

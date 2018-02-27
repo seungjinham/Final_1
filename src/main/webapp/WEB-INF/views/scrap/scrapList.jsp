@@ -14,16 +14,19 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
-		$("#m4").ready(function(){
-			
+		$("#m4").ready(function() {
+			$(".m4").show("slow");
+
 			$("#m1").css("color", "black");
 			$("#m1").css("background-color", "white");
 			$("#m1").css("font-weight", "bold");
-			
+
 			$("#m4").css("color", "white");
 			$("#m4").css("background-color", "#23A41A");
 			$("#m4").css("font-weight", "normal");
-			$("#m_m4").css("color", "white");
+
+			$("#s_m6").css("color", "#23A41A");
+			$("#s_m6").css("font-weight", "bold");
 		});
 		
 		function select_All(obj, val) {
