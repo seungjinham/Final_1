@@ -11,7 +11,30 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(function() {
+	$("#btn").click(function() {
+		if ($("#type option:selected").val() == "0") {
+			alert('문의 유형을 선택하세요.');
+			if ($("#type option:selected").val() == "0") {
+				$("#type").focus();
+			} else {
+				$("#type").focus();
+			}
+			return false;
+		}
+		if ($.trim($("#Contents").val()) == ""|| $.trim($("#Contents").val()) == $.trim(default_inqry)) {
+			alert('문의 내용을 입력하세요.');
+			$("#Contents").focus();
+			return false;
+		}
 
+		if (!$("#check").is(":checked")) {
+			alert('개인정보 수집내용에 동의해 주세요.');
+			return false;
+		}
+		return true;
+	});
+});
 </script>
 </head>
 <body>
@@ -21,37 +44,23 @@
 
 		<div id="qnaWrap">
 			<form id="frm" name="frm" action="qnaWrite" method="post" enctype="multipart/form-data" >
-				<input id="hid_upload_src" name="hid_upload_src" type="hidden" value="https://file.albamon.com/albamon/Services/QnA/FileUpload_QNA">
-				<input id="submit_src" name="submit_src" type="hidden" value="/Services/QnA/RegistProc">
-				<input id="AttachFile" name="AttachFile" type="hidden" value="">
-				<input id="AttachFile2" name="AttachFile2" type="hidden" value="">
-				<input id="AttachFile3" name="AttachFile3" type="hidden" value="">
-				<input id="AttachFileJobCheat" name="AttachFileJobCheat" type="hidden" value="">
-				<input id="AttachFileJobCheat2" name="AttachFileJobCheat2" type="hidden" value="">
-				<input id="AttachFileJobCheat3" name="AttachFileJobCheat3" type="hidden" value="">
-				<input id="AccessURL" name="AccessURL" type="hidden" value="http://www.albamon.com/">
-
+				<input type="hidden" name="id" value="${member.id}">
 				<!--// 컨텐츠 영역 -->
 				<div class="qnaCon">
-					<fieldset>
-						<table summary="이표는 이름, 아이디, e-메일 주소, 전화번호, 카테고리, 제목, 페이지주소, 전달내용을 포함하고 있습니다." class="qnatable">
-							<colgroup>
-								<col width="140px">
-								<col width="*">
-							</colgroup>
+						<table class="qnatable">
 							<tbody>
 								<tr>
 									<th><span class="sq">필수</span>문의유형</th>
 									<td>
 										<select name="type" id="type" class="slt sltL" title="분류 선택" style="width: 180px;">
 											<option value="0">분류 선택</option>
-											<option value="1">회원정보</option>
-											<option value="2">이력서관리</option>
-											<option value="3">구직활동관리</option>
-											<option value="4">공고등록관리</option>
-											<option value="5">유료서비스</option>
-											<option value="6">오류/의견</option>
-											<option value="7">기타</option>
+											<option value="회원정보">회원정보</option>
+											<option value="이력서관리">이력서관리</option>
+											<option value="구직활동관리">구직활동관리</option>
+											<option value="공고등록관리">공고등록관리</option>
+											<option value="유료서비스">유료서비스</option>
+											<option value="오류/의견">오류/의견</option>
+											<option value="기타">기타</option>
 										</select>
 									</td>
 								</tr>
@@ -59,21 +68,21 @@
 									<th class="loc"><label for="Contents"><span class="sq">필수</span>문의내용</label></th>
 									<td>
 										<div class="txWp">
-											<textarea name="Contents" id="Contents" maxlength="3000"></textarea>
+											<textarea name="Contents" id="Contents"></textarea>
 										</div>
 									</td>
 								</tr>
 								<tr>
 									<th><label for="Email"><span class="sq">필수</span>이메일</label></th>
-									<td><input type="text" name="Email" id="Email" class="ipt" value="${member.email}" style="width: 94%" maxlength="50"></td>
+									<td><input type="text" name="Email" id="Email" class="ipt" value="${member.email}" style="width: 94%"></td>
 								</tr>
 								<tr>
-									<th class="loc_1 file"><label for="SelectFile">첨부파일</label></th>
+									<th class="loc_1 file"><label for="file">첨부파일</label></th>
 									<td>
 										<div class="fileList">
 											<div class="fileWp">
 												<label for="lbl_file1">첨부파일</label>
-												<input type="file" name="SelectFile" id="lbl_file1" class="skip">
+												<input type="file" name="file" id="lbl_file1" class="skip">
 												<div class="filename"></div>
 											</div>
 										</div>
@@ -83,8 +92,6 @@
 								</tr>
 							</tbody>
 						</table>
-					</fieldset>
-
 					<!--// 개인정보 정책 -->
 					<div class="privacyWp">
 						<div class="privacy">
@@ -95,13 +102,13 @@
 							</p>
 						</div>
 						<p class="agree">
-							<input type="checkbox" name="PimsAgree" id="PimsAgree" class="chk" value="on"><label for="PimsAgree">개인정보수집 및 이용안내에 동의합니다.</label>
+							<input type="checkbox" name="check" id="check" class="chk" value="on"><label for="check">개인정보수집 및 이용안내에 동의합니다.</label>
 						</p>
 					</div>
 
 					<!--// 버튼 -->
 					<p class="btn">
-						<button type="submit" id="btn_submit" class="bBtn">보내기</button>
+						<button type="submit" id="btn" class="bBtn">보내기</button>
 					</p>					
 				</div>
 			</form>

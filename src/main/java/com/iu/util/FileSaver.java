@@ -25,9 +25,7 @@ public class FileSaver {
 		//1. 저장할 파일명 생성
 		//iu.jpg
 		String fileName= file.getOriginalFilename();
-		System.out.println(fileName);
 		fileName=fileName.substring(fileName.lastIndexOf("."));
-		System.out.println(fileName);
 		fileName=UUID.randomUUID().toString()+fileName;
 		//fileName=UUID.randomUUID().toString()+"_"+fileName;
 		File f = new File(filepath, fileName);
