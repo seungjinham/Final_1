@@ -56,70 +56,6 @@ public class RecruitService {
 		return obj_ar;
 	}
 	
-//	public List<RecruitDTO> selectList(ListData listData) {
-//		List<RecruitDTO> recruit_ar = recruitDAO.selectList();
-//		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
-//		for(int i=0; i<recruit_ar.size(); i++) {
-//			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
-//			company_ar.add(companyDTO);
-//		}
-//		ListSort listSort = new ListSort();
-//		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-//		return recruit_ar;
-//	}
-	
-/*	public List<RecruitDTO> selectList(RecruitSearchDTO recruitSearchDTO) {
-		List<String> checkVar = new ArrayList<String>();
-		List<String[]> checkArray = new ArrayList<String[]>();
-		List<RecruitDTO> selectList_result;
-		
-		boolean check_var=false;
-		boolean check_array=false;
-		
-		for(int i=0; i<6; i++) {
-			switch(i) {
-			case 0: checkVar.add(recruitSearchDTO.getC_name());
-					checkArray.add(recruitSearchDTO.getJob());
-					break;
-			
-			case 1: checkVar.add(recruitSearchDTO.getTitle());
-					checkArray.add(recruitSearchDTO.getWork());
-					break;
-			
-			case 2: checkVar.add(recruitSearchDTO.getGender());
-					checkArray.add(recruitSearchDTO.getW_date());
-					break;
-			
-			case 3: checkVar.add(recruitSearchDTO.getSchool());
-					checkArray.add(recruitSearchDTO.getW_day());
-					break;
-			
-			case 4: checkVar.add(recruitSearchDTO.getSalary());
-					checkArray.add(recruitSearchDTO.getW_time());
-					break;
-			
-			case 5: checkVar.add(recruitSearchDTO.getSal_input());
-					checkArray.add(recruitSearchDTO.getAddr());
-					break;
-			}
-		}
-		
-		//검색조건 있으면 true, 없으면 false
-		for(int i=0; i<6; i++) {
-			if(checkVar.get(i)!=null) check_var=true;
-			if(checkArray.get(i)!=null) check_array=true;
-		}
-		
-		if(check_var==false&&check_array==false) {
-			recruitSearchDTO=null;
-			selectList_result = recruitDAO.selectList(recruitSearchDTO);
-		} else {
-			selectList_result = recruitDAO.selectList(recruitSearchDTO);
-		}
-
-		return selectList_result;
-	}*/
-	
 	public RecruitDTO selectOne(int num) {
 		return recruitDAO.selectOne(num);
 	}
@@ -134,6 +70,9 @@ public class RecruitService {
 		Map<String, String> gucode_map = null;
 		Map<String, String> dongcode_map = null;
 		List<Object> info = null;
+		String city = null;
+		String city_code = null;
+		String cut_num = null;
 		
 		if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 			gucode_ar = new ArrayList<>();
@@ -145,10 +84,30 @@ public class RecruitService {
 				if(ar.get(i).getCode_num().length()==5) {
 					String tmp = ar.get(i).getCode_num().substring(0, 2);
 					if(tmp.equals(areacodeDTO.getSi_code())) {
-						areacodeDTO.setGu_code(ar.get(i).getCode_num());
-						areacodeDTO.setGu_value(ar.get(i).getArea());
-						gucode_map.put(areacodeDTO.getGu_code(), areacodeDTO.getGu_value());
-						gucode_ar.add(areacodeDTO.getGu_code());
+						cut_num = ar.get(i).getCode_num().substring(4);
+						if(cut_num.equals("0")) {
+							city = ar.get(i).getArea();
+							city_code = ar.get(i).getCode_num();
+							gucode_map.put(city_code, city);
+							gucode_ar.add(city_code);
+						} else {
+							cut_num = city_code.substring(0, 4);
+							tmp = ar.get(i).getCode_num().substring(0, 4);
+							if(cut_num.equals(tmp)) {
+								tmp = city;
+								cut_num = city_code;
+								city = city + " " + ar.get(i).getArea();
+								city_code = city_code + " " + ar.get(i).getCode_num();
+								gucode_map.put(city_code, city);
+								gucode_ar.add(city_code);
+								city = tmp;
+								city_code = cut_num;
+							}
+						}
+/*						areacodeDTO.setGu_code(ar.get(i).getCode_num());
+						areacodeDTO.setGu_value(ar.get(i).getArea());*/
+/*						gucode_map.put(areacodeDTO.getGu_code(), areacodeDTO.getGu_value());
+						gucode_ar.add(areacodeDTO.getGu_code());*/
 					}
 				}
 			}

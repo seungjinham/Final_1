@@ -22,7 +22,11 @@
 <script type="text/javascript">
 	$(function() {
 		var area;
-		var parameter;
+		var presivalue = "";
+		var sivalue = "";
+		var sicode = "";
+		var guvalue = "";
+		var gucode = "";
 
 		$("#woodae").click(function() {
 			$("#speckind").css('display', 'block');
@@ -34,24 +38,47 @@
 		});
 
 		$(".si_a").click(function() {
-/* 			var test = $(".si_a").attr("title");
-			alert(test); */
- 			var sivalue = "";
-			var sicode = "";
-			$(".si_a").on("click", function(){
 				sivalue = $(this).attr("title");
 				sicode = $(this).attr("media");
-			}); 
-			$.get("../recruit/recruitSearch?si_value=서울특별시&si_code=11", function(data) {
+				presivalue = sivalue;
+				
+				console.log(sivalue);
+				console.log(sicode);
+				console.log(presivalue);
+				
+				if(presivalue!=""||presivalue!=sivalue) {
+					$("#dong_box").css('display', 'none');
+				}
+			$.get("../recruit/recruitSearch?si_value="+sivalue+"&si_code="+sicode, function(data) {
 				$("#gu").html(data);
 			});
 				$("#gu_box").css('display', 'block');
 		});
 
 		$("#gu").on("click", ".gu_a", function() {
-			$.get("../recruit/recruitSearch?si_value=서울특별시&si_code=11&gu_value=중구&gu_code=11020", function(data) {
+				guvalue = "";
+				gucode = "";
+				guvalue = $(this).attr("title");
+				gucode = $(this).attr("media");
+				guvalue = guvalue.split(" ");
+				if(guvalue.length==1) {
+					guvalue=guvalue[0];
+				} else {
+					guvalue = guvalue[1];
+				}
+ 				gucode = gucode.split(" ");
+				if(gucode.length==1) {
+					gucode=gucode[0];
+				} else {
+					gucode = gucode[1];
+				}
+				
+				console.log(guvalue);
+				console.log(gucode);
+	
+ 			$.get("../recruit/recruitSearch?si_value="+sivalue+"&si_code="+sicode+"&gu_value="+guvalue+"&gu_code="+gucode, function(data) {
 				$("#dong").html(data);
-			});
+			}); 
 			 	$("#dong_box").css('display', 'block');
 		});
 

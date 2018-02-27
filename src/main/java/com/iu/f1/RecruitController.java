@@ -47,7 +47,7 @@ public class RecruitController {
 	}
 	
 	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
-	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO) {		
+	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO) {	
 		String path = "recruit/recruitSearch";
 		List<Object> info = null;
 		ListSort listSort = new ListSort();
