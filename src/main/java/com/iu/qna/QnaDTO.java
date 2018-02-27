@@ -2,6 +2,7 @@ package com.iu.qna;
 
 public class QnaDTO {
 	
+	private int num;
 	private String id;
 	private String type;
 	private String contents;
@@ -9,7 +10,12 @@ public class QnaDTO {
 	private String fname;
 	private String oname;
 	
-	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public String getId() {
 		return id;
 	}

@@ -21,6 +21,10 @@ public class QnaDAO {
 		return sqlSession.insert(NAMESPACE+"insert", qnaDTO);
 	}
 	
+	public int delete(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.insert(NAMESPACE+"delete", qnaDTO);
+	}
+	
 	public List<QnaDTO> selectList(ListData listData) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList", listData);
 	}
@@ -28,5 +32,9 @@ public class QnaDAO {
 	public QnaDTO selectOne(int num) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"selectOne", num);
 	}	
+	
+	public int totalCount(ListData listData) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"totalCount", listData);
+	}
 	
 }

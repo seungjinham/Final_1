@@ -5,16 +5,24 @@
 	<insert id="insert" parameterType="QnaDTO">
 		insert into qna values(#{id}, #{type}, #{contents}, #{email}, #{fname}, #{oname}, faq_seq.nextval)
 	</insert>
+	
+	<delete id="delete" parameterType="int">
+  		delete qna where num=#{num}
+  	</delete>
 
 	<select id="selectList" parameterType="ListData" resultType="QnaDTO">
 			select * from
-  			(select rownum R, F.* from
-  			(select * from qna order by num desc) F)
+  			(select rownum R, Q.* from
+  			(select * from qna order by num desc) Q)
   			where R between #{startRow} and #{lastRow}
 	</select>
 
 	<select id="selectOne" parameterType="int" resultType="QnaDTO">
 		select * from qna where num=#{num}
+	</select>
+
+	<select id="totalCount" resultType="int" parameterType="listData">
+		select nvl(count(num),0) from qna
 	</select>
 
 </mapper>
