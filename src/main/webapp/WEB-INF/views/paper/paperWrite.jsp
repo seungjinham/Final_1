@@ -194,18 +194,19 @@
 		var i = 0;
 		$("#add_box").click(function() {
 			$("#box_tit_border").css("border-bottom", "inline");
-			if (i < 2) {
-				var t = $("#licences_boxs").html();
+			if (i < 4) {
+				var t = $("#licences_boxs").clone();
+				$("#licences_boxs").show();
 				$("#licences_boxs").append(t);
 				i++;
 			} else {
-				alert("자격증 등록은 5개까지만 가능합니다.")
+				alert("자격증 등록은 5개까지만 가능합니다.");
 			}
 			;
 		});
 
 		$("#x_box").click(function() {
-			$("#licences_boxs").remove();
+			$("#licences_boxs").hide();
 			i--;
 		});
 

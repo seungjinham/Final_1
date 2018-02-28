@@ -1,6 +1,12 @@
 package com.iu.f1;
 
+import java.util.Date;
+import java.util.Properties;
+
 import javax.inject.Inject;
+import javax.mail.Session;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -9,8 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.member.MemberDTO;
+import com.iu.person.MyAuthentication;
 import com.iu.person.PersonDTO;
 import com.iu.person.PersonService;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 @Controller
 @RequestMapping(value="/person/**")
@@ -120,17 +133,220 @@ public class PersonController {
 		return mv;
 	}
 	
+	//이메일 인증
+	@RequestMapping(value = "p_sendMail", method = RequestMethod.GET)
+	   public ModelAndView p_sendMail(MemberDTO memberDTO, HttpServletRequest request, HttpServletResponse response)
+	         throws Exception {
+	      ModelAndView mv = new ModelAndView();
+	      String checkmsg = "";
+	      String result = "";
+	      try {
+	         mv.addObject("email", memberDTO.getEmail());
+
+	      } catch (Exception e) {
+	         // TODO: handle exception
+	      }
+
+	      String mailserver = "mw-002.cafe24.com";
+	      Properties props = new Properties();
+	      props.put("mail.smtp.host", mailserver);
+	      props.put("mail.smtp.auth", "true");
+
+	      // 메일 인증 계정 및 비번
+	      Authenticator myauth = new MyAuthentication();// 다형성
+
+	      // 메일서버에서 계정 인증 검사
+	      Session sess = Session.getInstance(props, myauth);
+
+	      // 인증번호
+	      int number = (int) (Math.random() * 10000);
+	      mv.addObject("number", number);
+
+	      // 사용자 입력 요청한 정보 가져오기
+
+	      String to = memberDTO.getEmail();
+	      String from = "wognstm17@naver.com";
+	      String subject = "PICK ME 인증번호입니다";
+	      String msgText = "안녕하세요. PICK ME 입니다 인증번호는" + number + "입니다."; // 내용
+	      msgText = msgText.replace("\n", "<br/>");
+
+	      // 메일 보내기
+	      try {
+	         Message msg = new MimeMessage(sess);
+	         msg.setFrom(new InternetAddress(from)); // 보낸사람
+
+	         // 받는사람(한명)
+	         InternetAddress[] address = { new InternetAddress(to) };
+
+	         // 여러명 수신인
+	         /*
+	          * InternetAddress[] address={new InternetAddress(to), new
+	          * InternetAddress(to2), new InternetAddress(to3) };
+	          */
+
+	         msg.setRecipients(Message.RecipientType.TO, address); // 받는사람
+
+	         msg.setSubject(subject); // 메일 제목
+
+	         msg.setContent(msgText, "text/html;charset=UTF-8"); // 메일 내용
+
+	         msg.setSentDate(new Date()); // 보낸날짜
+
+	         Transport.send(msg); // 전송
+
+	         checkmsg = to;
+	         result = "ok";
+	         mv.addObject("checkmsg", checkmsg);
+	         mv.addObject("result", result);
+
+	      } catch (Exception e) {
+	         checkmsg = "인증번호";
+	         result = "no";
+	         mv.addObject("checkmsg", checkmsg);
+	         mv.addObject("result", result);
+	      }
+	      mv.setViewName("person/p_sendMail");
+	      return mv;
+	}
+	
+	
 	//비밀번호 변경
 	@RequestMapping(value="personChangePw", method=RequestMethod.GET)
 	public void personChangePw(HttpSession session) throws Exception{}
 	
 	//ID 찾기
-	@RequestMapping(value="personFindId", method=RequestMethod.GET)
-	public void personFindId(HttpSession session) throws Exception{}
+	@RequestMapping(value = "p_sendMailId", method = RequestMethod.GET)
+	   public ModelAndView p_sendMailId(MemberDTO memberDTO, HttpServletRequest request, HttpServletResponse response)
+	         throws Exception {
+	      ModelAndView mv = new ModelAndView();
+	      String checkmsg = "";
+	      try {
+	    	 memberDTO = personService.findId(memberDTO);
+	         mv.addObject("name", memberDTO.getName());
+
+	      } catch (Exception e) {
+	         // TODO: handle exception
+	      }
+	      String mailserver = "mw-002.cafe24.com";
+	      Properties props = new Properties();
+	      props.put("mail.smtp.host", mailserver);
+	      props.put("mail.smtp.auth", "true");
+
+	      // 메일 인증 계정 및 비번
+	      Authenticator myauth = new MyAuthentication();// 다형성
+
+	      // 메일서버에서 계정 인증 검사
+	      Session sess = Session.getInstance(props, myauth);
+
+	      // 사용자 입력 요청한 정보 가져오기
+
+	      String to = memberDTO.getEmail();
+	      String from = "wognstm17@naver.com";
+	      String subject = "PICK ME 회원님의 아이디 입니다";
+	      String msgText = "안녕하세요. PICK ME 입니다 아이디는" +memberDTO.getId()+ " 입니다."; // 내용
+	      msgText = msgText.replace("\n", "<br/>");
+
+	      // 메일 보내기
+	      try {
+	         Message msg = new MimeMessage(sess);
+	         msg.setFrom(new InternetAddress(from)); // 보낸사람
+
+	         // 받는사람(한명)
+	         InternetAddress[] address = { new InternetAddress(to) };
+
+	         // 여러명 수신인
+	         /*
+	          * InternetAddress[] address={new InternetAddress(to), new
+	          * InternetAddress(to2), new InternetAddress(to3) };
+	          */
+
+	         msg.setRecipients(Message.RecipientType.TO, address); // 받는사람
+
+	         msg.setSubject(subject); // 메일 제목
+
+	         msg.setContent(msgText, "text/html;charset=UTF-8"); // 메일 내용
+
+	         msg.setSentDate(new Date()); // 보낸날짜
+
+	         Transport.send(msg); // 전송
+
+	         checkmsg = memberDTO.getId();
+	         mv.addObject("checkmsg", checkmsg);
+
+	      } catch (Exception e) {
+	         checkmsg = "메일전송 실패";
+	         mv.addObject("checkmsg", checkmsg);
+	      }
+	      mv.setViewName("person/p_sendMailId");
+	      return mv;
+	}
 	
 	//PW 찾기
-	@RequestMapping(value="personFindPw", method=RequestMethod.GET)
-	public void personFindPw(HttpSession session) throws Exception{}
+	@RequestMapping(value = "p_sendMailPw", method = RequestMethod.GET)
+	   public ModelAndView p_sendMailPw(MemberDTO memberDTO, HttpServletRequest request, HttpServletResponse response)
+	         throws Exception {
+	      ModelAndView mv = new ModelAndView();
+	      String checkmsg = "";
+	      try {
+	    	 memberDTO = personService.findPw(memberDTO);
+	         mv.addObject("id", memberDTO.getId());
+
+	      } catch (Exception e) {
+	         // TODO: handle exception
+	      }
+	      String mailserver = "mw-002.cafe24.com";
+	      Properties props = new Properties();
+	      props.put("mail.smtp.host", mailserver);
+	      props.put("mail.smtp.auth", "true");
+
+	      // 메일 인증 계정 및 비번
+	      Authenticator myauth = new MyAuthentication();// 다형성
+
+	      // 메일서버에서 계정 인증 검사
+	      Session sess = Session.getInstance(props, myauth);
+
+	      // 사용자 입력 요청한 정보 가져오기
+
+	      String to = memberDTO.getEmail();
+	      String from = "wognstm17@naver.com";
+	      String subject = "PICK ME 회원님의 비밀번호 입니다";
+	      String msgText = "안녕하세요. PICK ME 입니다 비밀번호는" +memberDTO.getPw()+ " 입니다."; // 내용
+	      msgText = msgText.replace("\n", "<br/>");
+
+	      // 메일 보내기
+	      try {
+	         Message msg = new MimeMessage(sess);
+	         msg.setFrom(new InternetAddress(from)); // 보낸사람
+
+	         // 받는사람(한명)
+	         InternetAddress[] address = { new InternetAddress(to) };
+
+	         // 여러명 수신인
+	         /*
+	          * InternetAddress[] address={new InternetAddress(to), new
+	          * InternetAddress(to2), new InternetAddress(to3) };
+	          */
+
+	         msg.setRecipients(Message.RecipientType.TO, address); // 받는사람
+
+	         msg.setSubject(subject); // 메일 제목
+
+	         msg.setContent(msgText, "text/html;charset=UTF-8"); // 메일 내용
+
+	         msg.setSentDate(new Date()); // 보낸날짜
+
+	         Transport.send(msg); // 전송
+
+	         checkmsg = memberDTO.getId();
+	         mv.addObject("checkmsg", checkmsg);
+
+	      } catch (Exception e) {
+	         checkmsg = "메일전송 실패";
+	         mv.addObject("checkmsg", checkmsg);
+	      }
+	      mv.setViewName("person/p_sendMailPw");
+	      return mv;
+	}
 }
 
 

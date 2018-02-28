@@ -42,6 +42,21 @@
 			$("#c_btn").css("border-bottom", "2px solid #23A41A");
 			$("#frm").attr("action", "person/personFindId");
 		});
+
+		$("#p_findId_btn").click(
+				function() {
+					var email = $("#p_email").val();
+					var name = $("#name").val();
+					if (email == "" || name == "") {
+						alert("정보를 입력해주세요.");
+					} else {
+						window.open("../person/p_sendMailId?name="
+								+ $("#name").val() + "&email="
+								+ $("#p_email").val(), "",
+								"top=300, left=750, width=300, height=260");
+					}
+				});
+
 	});
 </script>
 </head>
@@ -62,7 +77,7 @@
 	</div>
 	<section id="main">
 		<article id="find_border">
-			
+
 			<div id="kind_border">
 				<div class="kind_btn" id="p_btn">
 					<input type="button" value="개인회원">
@@ -76,58 +91,42 @@
 				<span id="emph">회원 가입시</span> 등록한 정보를 입력해주세요.
 			</div>
 
-			<form action="../person/personFindId" id="frm">
-				<article id="p_input_border">
-					<div class="input_border_2">
-						<div class="info_border">
-							<div class="info_b">이름</div>
-							<input type="text" placeholder="이름 입력">
-						</div>
-						<div id="email_border">
-							<div id="email_b">이메일</div>
-							<input type="text"> @ <input type="text"><br>
-							<select id="domain">
-								<option value="">직접입력</option>
-								<option value="naver.com">naver.com</option>
-								<option value="hanmail.net">hanmail.net</option>
-								<option value="gmail.com">gmail.com</option>
-								<option value="nate.com">nate.com</option>
-							</select>
-						</div>
+			<!-- 개인 -->
+			<article id="p_input_border">
+				<div class="input_border_2">
+					<div class="info_border">
+						<div class="info_b">이름</div>
+						<input type="text" placeholder="이름 입력" id="name" name="name">
 					</div>
+					<div class="info_border">
+						<div class="info_b">이메일</div>
+						<input type="text" placeholder="이메일 입력" id="p_email" name="email">
+					</div>
+				</div>
 
-					<div id="btn_border">
-						<input type="button" value="확인">
-					</div>
-				</article>
-			</form>
+				<div class="btn_border">
+					<input type="button" value="확인" id="p_findId_btn">
+				</div>
+			</article>
 
-			<form action="../company/companyFindId" id="frm2">
-				<article id="c_input_border" style="display: none;">
-					<div class="input_border_2">
-						<div class="info_border">
-							<div class="info_b">담당자</div>
-							<input type="text" placeholder="담당자 이름 입력">
-						</div>
-						<div id="email_border">
-							<div id="email_b">이메일</div>
-							<input type="text"> @ <input type="text"><br>
-							<select id="domain">
-								<option value="">직접입력</option>
-								<option value="naver.com">naver.com</option>
-								<option value="hanmail.net">hanmail.net</option>
-								<option value="gmail.com">gmail.com</option>
-								<option value="nate.com">nate.com</option>
-							</select>
-						</div>
+			<!-- 기업 -->
+			<article id="c_input_border" style="display: none;">
+				<div class="input_border_2">
+					<div class="info_border">
+						<div class="info_b">담당자</div>
+						<input type="text" placeholder="담당자 이름 입력">
 					</div>
+					<div class="info_border">
+						<div class="info_b">이메일</div>
+						<input type="text" placeholder="이메일 입력" id="c_email" name="email">
+					</div>
+				</div>
 
-					<div id="btn_border">
-						<input type="button" value="확인">
-					</div>
-				</article>
-			</form>
-			
+				<div class="btn_border">
+					<input type="button" value="확인" id="c_findId_btn">
+				</div>
+			</article>
+
 		</article>
 	</section>
 	<!-- main 끝 -->
