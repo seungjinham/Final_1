@@ -45,5 +45,13 @@ public class PersonDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"personIdCheck", id);
 	}
 	
+	public MemberDTO findId(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"personFindId", memberDTO);
+	}
+	
+	public MemberDTO findPw(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"personFindPw", memberDTO);
+	}
+	
 
 }

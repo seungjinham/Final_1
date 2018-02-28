@@ -148,6 +148,7 @@ input{
 	border-radius: 5px;
 	border: 1px solid gray;
 	padding-left: 10px;
+	font-size: 15px;
 }
 
 .inupt_f {
@@ -164,21 +165,21 @@ input{
 
 .phone {
 	width: 80px;
-	height: 25px;
+	height: 30px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
 .birth {
 	width: 80px;
-	height: 25px;
+	height: 30px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
 .addr {
 	width: 150px;
-	height: 25px;
+	height: 30px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
@@ -206,34 +207,25 @@ input{
 
 .addr2 {
 	width: 200px;
-	height: 25px;
+	height: 30px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
 .email {
-	width: 150px;
-	height: 25px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-}
-
-#e_select {
-	width: 100px;
+	width: 300px;
 	height: 30px;
-	font-size: 15px;
-	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
 }
 
 #code_btn {
-	width: 130px;
-	height: 30px;
+	width: 60px;
+	height: 32px;
 	font-size: 15px;
 	font-family: "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
-	margin-top: 10px;
 	border-radius: 5px;
 	border: 1px solid gray;
 	background-color: white;
+	padding: 0;
 }
 
 #code_btn:hover {

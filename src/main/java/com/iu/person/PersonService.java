@@ -44,5 +44,15 @@ public class PersonService implements MemberService {
 	public MemberDTO idCheck(String id) throws Exception {
 		return personDAO.idCheck(id);
 	}
+	
+	//아이디 찾기
+	public MemberDTO findId(MemberDTO memberDTO) throws Exception{
+		return personDAO.findId(memberDTO);
+	}
+	
+	//비밀번호 찾기
+	public MemberDTO findPw(MemberDTO memberDTO) throws Exception{
+		return personDAO.findPw(memberDTO);
+	}
 
 }

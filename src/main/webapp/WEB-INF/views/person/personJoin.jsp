@@ -5,13 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link
+	href="<%=request.getContextPath()%>/resources/css/common/header.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/resources/css/common/common.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/resources/css/common/footer.css"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Person Join</title>
 <script type="text/javascript">
-
 	//주소
 	function sample6_execDaumPostcode() {
 		new daum.Postcode(
@@ -55,9 +61,9 @@
 						// 커서를 상세주소 필드로 이동한다.
 						document.getElementById('sample6_address2').focus();
 					}
-			}).open();
+				}).open();
 	};
-	
+
 	$(function() {
 
 		//약관 동의
@@ -68,15 +74,16 @@
 				$(".box").prop("checked", false);
 			}
 		});
-		$(".box").click(function() {
-				if ($("#c1").prop("checked") && $("#c2").prop("checked")
-						&& $("#c3").prop("checked")) {
-					$("#all_check").prop("checked", true);
-				} else {
-					$("#all_check").prop("checked", false);
-				}
-		});
-		
+		$(".box").click(
+				function() {
+					if ($("#c1").prop("checked") && $("#c2").prop("checked")
+							&& $("#c3").prop("checked")) {
+						$("#all_check").prop("checked", true);
+					} else {
+						$("#all_check").prop("checked", false);
+					}
+				});
+
 		//약관 동의서 보기
 		var check = true;
 		$("#ser_1").click(function() {
@@ -103,7 +110,7 @@
 			}
 			$(".see2").slideToggle("slow");
 		});
-		
+
 		var joinCheck = false;
 
 		//ID 중복 확인
@@ -239,29 +246,37 @@
 		});
 
 		//이메일
-		$("#e_select").change(function() {
-			$("#domain").val($(this).val());
+		var email = "";
+		$("#code_btn").click(function() {
+				email = $("#email").val();
+				window.open("./p_sendMail?email=" + $("#email").val(),
+							"", "top=300, left=750, width=370, height=370");
 		});
-		 
-		$("#j_btn").click(function() {
-			if($("#id").val() && 
-			  ($("#pw").val()==$("#pw2").val()) &&
-			  $("#name").val() &&
-			  $(".phones").val() &&
-			  $(".addrs").val() &&
-			  $(".birth").val() &&
-			  $(".gender").val() &&
-			  $(".email").val() != null && joinCheck == true){
-					if($("#c1").prop("checked") && $("#c2").prop("checked")){
-						frm.submit();
-						alert("가입을 환영합니다.");
-				}else{
-					alert("약관 동의에 체크 해주세요.");
-				}
-			}else{
-				alert("필수 사항을 확인 해주세요.");
-			}
-		});
+
+		$("#j_btn").click(
+				function() {
+					if (email == $("#email").val()
+							&& $("#check").val() == "t") {
+						if ($("#id").val()
+								&& ($("#pw").val() == $("#pw2").val())
+								&& $("#name").val() && $(".phones").val()
+								&& $(".addrs").val() && $(".birth").val()
+								&& $(".gender").val() != null
+								&& joinCheck == true) {
+							if ($("#c1").prop("checked")
+									&& $("#c2").prop("checked")) {
+								frm.submit();
+								alert("가입을 환영합니다.");
+							} else {
+								alert("약관 동의에 체크 해주세요.");
+							}
+						} else {
+							alert("필수 사항을 확인 해주세요.");
+						}
+					} else {
+						alert("이메일 인증 해주세요.")
+					}
+				});
 
 	});
 </script>
@@ -314,7 +329,7 @@
 
 
 		<div id="table_border">
-			<form action="./personJoin" method="post" id="frm">
+			<form action="./personJoin" method="post" id="frm" name="frm">
 				<input type="hidden" name="job" value="P">
 				<table>
 					<tr>
@@ -331,9 +346,8 @@
 					</tr>
 					<tr>
 						<th class="font">비밀번호 확인</th>
-						<td class="font"><input type="password" 
-							name="pw2" id="pw2" class="inupt_f"><br> <span
-							id="pwCheck2"></span></td>
+						<td class="font"><input type="password" name="pw2" id="pw2"
+							class="inupt_f"><br> <span id="pwCheck2"></span></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="tline"><div></div></td>
@@ -341,19 +355,20 @@
 					<tr>
 						<th class="font">이름</th>
 						<td class="font"><input type="text" name="name" id="name"
-							class="inupt_f"><br> <span id="nameCheck"></span></td>
+							class="inupt_f" placeholder="한글 입력"><br> <span id="nameCheck"></span></td>
 					</tr>
 					<tr>
 						<th class="font">휴대폰</th>
-						<td class="font"><select name="phone" id="p_select" class="phones">
+						<td class="font"><select name="phone" id="p_select"
+							class="phones">
 								<option value="010">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-						</select> ─ <input type="text" name="phone" class="phone phones"> ─ <input
-							type="text" name="phone" class="phone phones"></td>
+						</select> ─ <input type="text" name="phone" class="phone phones"> ─
+							<input type="text" name="phone" class="phone phones"></td>
 					</tr>
 					<tr>
 						<th class="font">주소</th>
@@ -362,8 +377,9 @@
 							type="button" onclick="sample6_execDaumPostcode()"
 							value="우편번호 찾기" id="addr_btn"><br> <input
 							type="text" id="sample6_address" placeholder="주소" name="addr"
-							class="addr2 addrs"> <input type="text" id="sample6_address2"
-							placeholder="상세주소" name="addr" class="addr2 addrs"></td>
+							class="addr2 addrs"> <input type="text"
+							id="sample6_address2" placeholder="상세주소" name="addr"
+							class="addr2 addrs"></td>
 					</tr>
 					<tr>
 						<th class="font">생년월일</th>
@@ -375,8 +391,8 @@
 					<tr>
 						<th class="font">성별</th>
 						<td class="font">남자 <input type="radio" value="M"
-							name="gender" class="gender"> 여자 <input type="radio" value="W"
-							name="gender" class="gender">
+							name="gender" class="gender"> 여자 <input type="radio"
+							value="W" name="gender" class="gender">
 						</td>
 					</tr>
 					<tr>
@@ -384,17 +400,14 @@
 					</tr>
 					<tr>
 						<th class="font">이메일</th>
-						<td class="font"><input type="text" name="email"
-							class="email"> @ <input type="text" name="email"
-							class="email" id="domain"> <select id="e_select">
-								<option value="">직접입력</option>
-								<option value="naver.com">naver.com</option>
-								<option value="hanmail.com">hanmail.com</option>
-								<option value="gmail.com">gmail.com</option>
-								<option value="zum.com">zum.com</option>
-								<option value="yahoo.com">yahoo.com</option>
-						</select><br>
-							<button id="code_btn">인증번호 받기</button></td>
+						<td class="font">
+							<input type="text" name="email" class="email" id="email"
+							placeholder="'@' 포함 입력">
+							 
+							<input type="button" id="code_btn" value="인증">
+						
+							<input type="hidden" name="check" id="check" value="f">
+						</td>
 					</tr>
 				</table>
 				<div class="j_btn_b">

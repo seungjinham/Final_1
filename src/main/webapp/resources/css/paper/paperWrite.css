@@ -27,7 +27,8 @@
 	border-top: 2px solid #23A41A;
 	border-bottom: 2px solid #23A41A;
 	float: left;
-	padding-bottom: 20px;
+	margin-bottom: 50px;
+	padding-bottom: 50px;
 }
 
 #p_tit_border {
@@ -89,10 +90,14 @@
 	padding-top: 30px;
 }
 
+.f_left {
+	float: left;
+}
+
 /*====== 기본정보 ======*/
 #info_borders {
 	width: 100%;
-	height: 560px;
+	height: 620px;
 	box-sizing: border-box;
 	border-bottom: 1px dotted gray;
 }
@@ -169,6 +174,8 @@
 	width: 135px;
 	height: 170px;
 }
+
+/* ===== 여기까지가 사진 ====== */
 
 .name, .radio, .birth {
 	width: 260px;
@@ -318,6 +325,15 @@
 	letter-spacing: -1px;
 }
 
+.box_border {
+	width: 100%;
+	box-sizing: border-box;
+	border-bottom: 1px dotted gray;
+	padding-top: 10px;
+	float: left;
+	padding-bottom: 10px;
+}
+
 /*====== select 폼 ======*/
 .select_border_2 {
 	width: 350px;
@@ -332,19 +348,6 @@
 	border-bottom: 1px solid gray;
 	font-size: 16px;
 	font-family: "맑은 고딕";
-}
-
-.box_border {
-	width: 100%;
-	height: 210px;
-	box-sizing: border-box;
-	border-bottom: 1px dotted gray;
-	padding-top: 10px;
-	float: left;
-}
-
-.f_left {
-	float: left;
 }
 
 /*====== 자격증 ======*/
@@ -365,7 +368,7 @@
 	width: 40px;
 	height: 40px;
 	float: right;
-	margin-right: 10px;
+	margin-right: 40px;
 	margin-top: 25px;
 	cursor: pointer;
 	background-image: url('/f1/resources/images/paper/add.png');
@@ -510,7 +513,7 @@
 }
 
 .port_box_3 {
-	width: 700px;
+	width: 600px;
 	height: 90px;
 	float: left;
 	padding-left: 20px;
@@ -518,7 +521,7 @@
 
 #contents {
 	margin-top: 10px;
-	width: 670px;
+	width: 590px;
 	height: 35px;
 	border: none;
 	border-bottom: 1px solid gray;

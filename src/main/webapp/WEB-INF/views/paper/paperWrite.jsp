@@ -42,7 +42,7 @@
 		}
 		;
 	};
-	
+
 	$(function() {
 		//메뉴 설정
 		$("#m2").ready(function() {
@@ -167,10 +167,6 @@
 			$("#marry_1").css("font-weight", "normal");
 		});
 
-		
-		var m = $("#main").height();
-		
-		
 		//경력사항
 		$("#careers").click(function() {
 			$("#carrer_border").slideDown("slow");
@@ -195,15 +191,31 @@
 		});
 
 		//자격증
+		var i = 0;
 		$("#add_box").click(function() {
+			$("#box_tit_border").css("border-bottom", "inline");
+			if (i < 4) {
+				var t = $("#licences_boxs").clone();
+				$("#licences_boxs").show();
+				$("#licences_boxs").append(t);
+				i++;
+			} else {
+				alert("자격증 등록은 5개까지만 가능합니다.");
+			}
+			;
 		});
-		
+
+		$("#x_box").click(function() {
+			$("#licences_boxs").hide();
+			i--;
+		});
+
 		//포트폴리오
 		$("#port_add").click(function() {
 			$("#port_info").slideDown("slow");
 			$("#box_tit_border_3").css("border-bottom", "none");
 		});
-		
+
 		$("#port_x").click(function() {
 			$("#port_info").hide();
 			$("#box_tit_border_3").css("border-bottom", "1px dotted gray");
@@ -213,7 +225,6 @@
 </script>
 
 <style type="text/css">
-
 </style>
 
 </head>
@@ -241,15 +252,15 @@
 					</div>
 
 					<article id="info_borders">
-						<div id="info_tit_border">
-							<div id="info_tit_border_2">기본 정보</div>
+						<div class="p_meun_border">
+							<div class="p_meun_border_2">기본 정보</div>
 						</div>
 
 						<div id="border_1">
-						
+
 							<div id="photo_border">
-							<div id="img_border">
-								<img id="blah" src="#" alt="your image" style="display: none;">
+								<div id="img_border">
+									<img id="blah" src="#" alt="your image" style="display: none;">
 								</div>
 								<label for="file" id="file_label">사진 등록</label> <input
 									type='file' id="file" name="file">
@@ -290,22 +301,22 @@
 								</div>
 							</c:if>
 						</div>
-						<div class="marry">
+						<div class="Decision_border">
 							<label for="p_marry" class="p_tit">결혼 여부</label> <input
 								type="button" class="p_marry" value="미혼" id="marry_1"> <input
 								type="button" class="p_marry" value="기혼" id="marry_2"> <input
 								type="hidden" name="marry" value="" id="marry_hidden">
 						</div>
-						<div class="hobby">
+						<div class="Decision_border">
 							<label for="p_hobby" class="p_tit">취미</label> <input type="text"
-								id="p_hobby" name="hobby">
+								id="p_hobby" name="hobby" class="Decision">
 						</div>
-						<div class="phone">
+						<div class="Decision_border">
 							<label for="p_phone" class="p_tit">휴대폰</label> <input type="text"
 								id="p_phone" value="" name="phone" class="Decision">
 
 						</div>
-						<div class="email">
+						<div class="Decision_border">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
 								id="p_email" value="" name="email" class="Decision">
 						</div>
@@ -453,12 +464,11 @@
 						</div>
 
 						<div class="append_border">
-							<div id="x_box"></div>
 							<div id="add_box"></div>
 						</div>
 					</div>
 
-					<article class="box_border" id="licences_boxs" style="display: none;">
+					<article class="box_border" id="licences_boxs">
 						<div class="Decision_border">
 							<label for="l_name" class="p_tit">자격증명</label> <select
 								name="l_kind" class="Decision">
@@ -473,14 +483,15 @@
 								id="l_name" name="l_name" class="Decision">
 						</div>
 						<div class="Decision_border">
-							<label for="l_date" class="p_tit">취득일</label> <input type="text"
-								id="l_date" name="l_date" placeholder="ex) 200802"
-								class="Decision">
-						</div>
-						<div class="Decision_border">
 							<label for="issue" class="p_tit">발행처</label> <input type="text"
 								id="issue" name="issue" class="Decision">
 						</div>
+						<div class="Decision_border_3">
+							<label for="l_date" class="p_tit">취득일</label> <input type="text"
+								id="l_date" name="l_date" placeholder="ex) 200802"
+								class="Decision_3">
+						</div>
+						<div id="x_box"></div>
 					</article>
 
 					<!-- 포트폴리오 -->
@@ -490,7 +501,6 @@
 						</div>
 
 						<div class="append_border">
-							<div id="port_x"></div>
 							<div id="port_add"></div>
 						</div>
 					</div>
@@ -512,6 +522,7 @@
 							<label for="contents" class="p_tit">작품 소개</label> <input
 								type="text" id="contents" name="contents" placeholder="20자 이내">
 						</div>
+						<div id="port_x"></div>
 					</article>
 
 

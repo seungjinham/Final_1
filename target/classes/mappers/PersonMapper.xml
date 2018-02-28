@@ -49,6 +49,16 @@
 	<delete id="personDelete" parameterType="MemberDTO">
 		delete person where id=#{id}
 	</delete>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="personFindId" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from member where name=#{name} and email=#{email}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="personFindPw" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from member where id=#{id} and name=#{name}
+	</select>
 
 </mapper>
   

@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+
+#main_border {
+	width: 280px;
+	height: 240px;
+}
+
+#tit_border {
+	width: 210px;
+	height: 70px;
+	box-sizing: border-box;
+	padding-top: 20px;
+	margin: 0 auto;
+	border-bottom: 2px solid #23A41A;
+}
+
+#logo {
+	width: 40px;
+	height: 40px;
+	float: left;
+	background-image: url("/f1/resources/images/member/p_icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+
+#tit {
+	width: 125px;
+	height: 40px;
+	font-size: 30px;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	float: left;
+}
+
+#word_border {
+	width: 280px;
+	height: 80px;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+
+.word {
+	width: 240px;
+	height: 25px;
+	margin: 0 auto;
+	font-size: 13px;
+	font-family: "맑은 고딕";
+}
+
+#red {
+	color: red;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#btn_border {
+	width: 280px;
+	height: 80px;
+	box-sizing: border-box;
+	padding-left: 38px;
+	padding-top: 10px;
+}
+
+#ok {
+	width: 210px;
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	font-size: 19px;
+	font-family: "맑은 고딕";
+	background-color: #23A41A;
+	color: white;
+	outline: 0;
+}
+
+#ok:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
