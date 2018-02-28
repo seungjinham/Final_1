@@ -21,12 +21,16 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		var area;
+		var area = new Array(2);
 		var presivalue = "";
 		var sivalue = "";
 		var sicode = "";
+		var subsivalue = "";
 		var guvalue = "";
 		var gucode = "";
+		var subguvalue = "";
+		var dongvalue = new Array(2);
+		var dongcount = 0;
 
 		$("#woodae").click(function() {
 			$("#speckind").css('display', 'block');
@@ -40,11 +44,8 @@
 		$(".si_a").click(function() {
 				sivalue = $(this).attr("title");
 				sicode = $(this).attr("media");
+				subsivalue=sivalue;
 				presivalue = sivalue;
-				
-				console.log(sivalue);
-				console.log(sicode);
-				console.log(presivalue);
 				
 				if(presivalue!=""||presivalue!=sivalue) {
 					$("#dong_box").css('display', 'none');
@@ -60,6 +61,8 @@
 				gucode = "";
 				guvalue = $(this).attr("title");
 				gucode = $(this).attr("media");
+				console.log(gucode);
+				subguvalue=guvalue;
 				guvalue = guvalue.split(" ");
 				if(guvalue.length==1) {
 					guvalue=guvalue[0];
@@ -72,15 +75,62 @@
 				} else {
 					gucode = gucode[1];
 				}
-				
-				console.log(guvalue);
-				console.log(gucode);
 	
  			$.get("../recruit/recruitSearch?si_value="+sivalue+"&si_code="+sicode+"&gu_value="+guvalue+"&gu_code="+gucode, function(data) {
 				$("#dong").html(data);
 			}); 
 			 	$("#dong_box").css('display', 'block');
 		});
+		
+		$("#dong").on("click", ".dongkey", function(){
+			var ch = $(this);
+			for(var i=0; i<ch.length; i++) {
+				if(ch[i].checked) {
+					if(dongcount<2) {
+						if(ch[i].value=='전체') {
+							alert("test");
+							area[dongcount] = subsivalue+" "+subguvalue;
+							dongcount++;
+						} else {
+							area[dongcount] = ch[i].value;
+							//console.log(area[dongcount]);
+							dongcount++;
+						}
+					} else {
+						ch[i].checked = false;
+						alert("최대 2개까지만 선택할 수 있습니다.");
+					}
+				} else if(ch[i].checked == true) {
+					ch[i].checked = false;
+					dongcount--;
+				} else {
+					
+				}
+				console.log(dongcount);
+				console.log(area[0]);
+				console.log(area[1]);
+				console.log(ch[i].checked);
+			}
+		});
+		
+		$("#gu").on("click", ".gu_b", function(){
+			if($(this).attr("title")=='전체') {
+				area[dongcount] = subsivalue;
+				console.log(area[dongcount]);
+				dongcount++;
+			}
+		});
+		
+/* 		$(".dongkey").click(function(){
+			var temparea = new Array();
+			var ch = $(".dongkey");
+			for (var i = 0; i < ch.length; i++) {
+				if (ch[i].checked) {
+					temparea[i] = ch[i].value;
+					console.log(temparea[i]);
+				}
+			}
+		}); */
 
 		$("#default").click(function() {
 			location.reload();

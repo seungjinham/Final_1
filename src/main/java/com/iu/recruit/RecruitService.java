@@ -111,6 +111,17 @@ public class RecruitService {
 					}
 				}
 			}
+			String[] remove_code = {"31010", "31020", "31040", "31050", "31090", "31100", "31190", "33010", "34010", "35010", "37010", "38110"};
+			for(int a=0; a<remove_code.length; a++) {
+				gucode_map.remove(remove_code[a]);
+			}
+			for(int a=0; a<gucode_ar.size(); a++) {
+				for(int b=0; b<remove_code.length; b++) {
+					if(gucode_ar.get(a).equals(remove_code[b])) {
+						gucode_ar.remove(a);
+					}
+				}
+			}
 			
 			info.add(gucode_ar);
 			info.add(gucode_map);
