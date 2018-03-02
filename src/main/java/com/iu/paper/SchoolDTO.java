@@ -3,7 +3,7 @@ package com.iu.paper;
 public class SchoolDTO {
 	
 	private String id;
-	private String kind; //학력 구분
+	private String s_kind; //학력 구분
 	private String s_name; //학교명
 	private String major; //전공
 	private String entrance; //입학 년도
@@ -15,11 +15,11 @@ public class SchoolDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getKind() {
-		return kind;
+	public String getS_kind() {
+		return s_kind;
 	}
-	public void setKind(String kind) {
-		this.kind = kind;
+	public void setS_kind(String s_kind) {
+		this.s_kind = s_kind;
 	}
 	public String getS_name() {
 		return s_name;
