@@ -97,7 +97,7 @@
 /*====== 기본정보 ======*/
 #info_borders {
 	width: 100%;
-	height: 620px;
+	height: 640px;
 	box-sizing: border-box;
 	border-bottom: 1px dotted gray;
 }
@@ -355,6 +355,14 @@
 	width: 740px;
 	height: 90px;
 	float: left;
+}
+#add_border{
+	width: 740px;
+	float: left;
+}
+
+
+#licences_boxs{
 	border-bottom: 1px dotted gray;
 }
 
@@ -458,7 +466,7 @@
 
 #carrer_border {
 	width: 100%;
-	height: 320px;
+	height: 290px;
 	border-bottom: 1px dotted gray;
 	float: left;
 }
@@ -531,3 +539,38 @@
 	font-family: "맑은 고딕";
 	letter-spacing: -1px;
 }
+
+/* == 버튼 == */
+#insert_btn_border{
+	width: 740px;
+	height: 150px;
+	float: left;
+}
+
+#insert_btn {
+	width: 300px;
+	height: 150px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 60px;
+	text-align: center;
+}
+
+#insert_btn input {
+	width: 130px;
+	height: 70px;
+	background-color: #23A41A;
+	color: white;
+	font-family: "맑은 고딕";
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+}
+#insert_btn input:HOVER {
+	background-color: white;
+	color: #23A41A;
+	border: 2px solid #23A41A;
+	font-size: 21px;
+} 

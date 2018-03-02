@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PaperMapper">
+
+<!-- 이력서 등록 -->
+	<!--기본정보 -->
+	<insert id="paperInsert" parameterType="PaperDTO">
+		insert into paper values
+		(#{id},#{fname},#{oname},#{army},#{marry},#{hobby},#{working},#{title},sysdate)
+	</insert>
+	<!--학력사항 -->
+	<insert id="schoolInsert" parameterType="SchoolDTO">
+		insert into school values
+		(#{id},#{s_kind},#{s_name},#{major},#{entrance},#{graduation})
+	</insert>
+	<!--희망근무조건 -->
+	<insert id="hopeInsert" parameterType="HopeDTO">
+		insert into hope values
+		(#{id},#{h_kind},#{h_job},#{h_work},#{location},#{salary})
+	</insert>
+	<!--경력사항 -->
+	<insert id="careerInsert" parameterType="CareerDTO">
+		insert into career values
+		(#{id},#{cr_kind},#{company_n},#{joined},#{resign},#{w_kind},#{rank},#{fess},#{cr_work},#{cr_sal})
+	</insert>
+
+
+</mapper>

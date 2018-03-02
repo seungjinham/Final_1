@@ -3,29 +3,35 @@ package com.iu.paper;
 public class HopeDTO { //희망 근무조건
 	
 	private String id;
-	private String kind; //근무형태
-	private String salary; //연봉
+	private String h_kind; //근무형태
+	private String h_job; //직종
+	private String h_work; //업종
 	private String location; //근무지역 
-	private String job; //직종
-	private String work; //업종
-	
+	private String salary; //연봉
+
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getKind() {
-		return kind;
+	public String getH_kind() {
+		return h_kind;
 	}
-	public void setKind(String kind) {
-		this.kind = kind;
+	public void setH_kind(String h_kind) {
+		this.h_kind = h_kind;
 	}
-	public String getSalary() {
-		return salary;
+	public String getH_job() {
+		return h_job;
 	}
-	public void setSalary(String salary) {
-		this.salary = salary;
+	public void setH_job(String h_job) {
+		this.h_job = h_job;
+	}
+	public String getH_work() {
+		return h_work;
+	}
+	public void setH_work(String h_work) {
+		this.h_work = h_work;
 	}
 	public String getLocation() {
 		return location;
@@ -33,17 +39,11 @@ public class HopeDTO { //희망 근무조건
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getJob() {
-		return job;
+	public String getSalary() {
+		return salary;
 	}
-	public void setJob(String job) {
-		this.job = job;
-	}
-	public String getWork() {
-		return work;
-	}
-	public void setWork(String work) {
-		this.work = work;
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 	
 }
