@@ -60,6 +60,11 @@ public class RecruitService {
 		return recruitDAO.selectOne(num);
 	}
 	
+	public void searchSelectList(RecruitSearchDTO recruitSearchDTO) {
+		ListSort listSort = new ListSort();
+		listSort.condition(recruitSearchDTO);
+	}
+	
 	public List<Object> searchInfo(AreaCodeDTO areacodeDTO) {
 		List<String> sicode_ar = null;
 		List<String> gucode_ar = null;
@@ -104,10 +109,6 @@ public class RecruitService {
 								city_code = cut_num;
 							}
 						}
-/*						areacodeDTO.setGu_code(ar.get(i).getCode_num());
-						areacodeDTO.setGu_value(ar.get(i).getArea());*/
-/*						gucode_map.put(areacodeDTO.getGu_code(), areacodeDTO.getGu_value());
-						gucode_ar.add(areacodeDTO.getGu_code());*/
 					}
 				}
 			}

@@ -53,7 +53,7 @@ public class RecruitController {
 		ListSort listSort = new ListSort();
 		boolean check = listSort.check(recruitSearchDTO);
 		if(check == true) {
-			
+			recruitService.searchSelectList(recruitSearchDTO);
 		} else {
 			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 				info = recruitService.searchInfo(areacodeDTO);
@@ -84,30 +84,6 @@ public class RecruitController {
 		model.addAttribute("company", companyDTO);
 		return "recruit/recruitView";
 	}
-	
-/*	@RequestMapping(value="recruitList", method=RequestMethod.GET)
-	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model) {
-		ListSort listSort = new ListSort();
-		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
-		List<CompanyDTO> company_ar = companyService.selectList(recruit_ar);
-		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-		model.addAttribute("list", recruit_ar);
-		return "recruit/recruitList";
-	}
-	
-	@RequestMapping(value="recruitView", method=RequestMethod.GET)
-	public String recruitView(int num, Model model) {
-		RecruitDTO recruitDTO = recruitService.selectOne(num);
-		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
-		model.addAttribute("recruit", recruitDTO);
-		model.addAttribute("company", companyDTO);
-		return "recruit/recruitView";
-	}
-	
-	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
-	public String recruitSearch() {
-		return "recruit/recruitSearch";
-	}*/
 	
 	@RequestMapping(value="recruitSearchList", method=RequestMethod.GET)
 	public String Search() {

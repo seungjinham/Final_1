@@ -76,4 +76,9 @@ public class ListSort {
 		}
 		return result;
 	}
+	
+	public void condition(RecruitSearchDTO recruitSearchDTO) {
+		int count=0;
+		
+	}
 }
