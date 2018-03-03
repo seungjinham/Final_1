@@ -12,7 +12,7 @@ public class RecruitSearchDTO {
 	private String w_day;
 	private String salary;
 	private String gender;
-	private String age_input;
+	private String age;
 	private String c_name;
 	private String title;
 	
@@ -70,11 +70,11 @@ public class RecruitSearchDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getAge_input() {
-		return age_input;
+	public String getAge() {
+		return age;
 	}
-	public void setAge_input(String age_input) {
-		this.age_input = age_input;
+	public void setAge(String age) {
+		this.age = age;
 	}
 	public String getC_name() {
 		return c_name;

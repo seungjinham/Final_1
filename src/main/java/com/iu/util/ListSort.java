@@ -55,7 +55,7 @@ public class ListSort {
 					checkArray.add(recruitSearchDTO.getW_time());
 					break;
 			
-			case 5: checkVar.add(recruitSearchDTO.getAge_input());
+			case 5: checkVar.add(recruitSearchDTO.getAge());
 					checkArray.add(recruitSearchDTO.getSpecial());
 					break;
 			}
