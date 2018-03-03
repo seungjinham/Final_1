@@ -31,6 +31,7 @@
 		var subguvalue = "";
 		var dongvalue = new Array(2);
 		var dongcount = 0;
+		var gucount = 0;
 
 		$("#woodae").click(function() {
 			$("#speckind").css('display', 'block');
@@ -61,25 +62,39 @@
 				gucode = "";
 				guvalue = $(this).attr("title");
 				gucode = $(this).attr("media");
-				console.log(gucode);
 				subguvalue=guvalue;
-				guvalue = guvalue.split(" ");
-				if(guvalue.length==1) {
-					guvalue=guvalue[0];
-				} else {
-					guvalue = guvalue[1];
+				if(guvalue!=""&&guvalue!='전체') {
+					guvalue = guvalue.split(" ");
+					if(guvalue.length==1) {
+						guvalue = guvalue[0];
+					} else {
+						guvalue = guvalue[1];
+					}
 				}
- 				gucode = gucode.split(" ");
-				if(gucode.length==1) {
-					gucode=gucode[0];
-				} else {
-					gucode = gucode[1];
+
+				if(gucode!=""&&gucode!='00000') {
+	 				gucode = gucode.split(" ");
+					if(gucode.length==1) {
+						gucode=gucode[0];
+					} else {
+						gucode = gucode[1];
+					}
 				}
-	
- 			$.get("../recruit/recruitSearch?si_value="+sivalue+"&si_code="+sicode+"&gu_value="+guvalue+"&gu_code="+gucode, function(data) {
-				$("#dong").html(data);
-			}); 
-			 	$("#dong_box").css('display', 'block');
+
+				if(guvalue!='전체'&&gucode!='00000') {
+		 			$.get("../recruit/recruitSearch?si_value="+sivalue+"&si_code="+sicode+"&gu_value="+guvalue+"&gu_code="+gucode, function(data) {
+						$("#dong").html(data);
+					}); 
+					 	$("#dong_box").css('display', 'block');
+				} else {
+					if(gucount<2) {
+						area[gucount] = sivalue;
+						console.log(area[gucount]);
+						gucount++;
+					} else {
+						alert("최대 2개까지 선택가능합니다.");
+					}
+				}
 		});
 		
 		$("#dong").on("click", ".dongkey", function(){
@@ -88,12 +103,10 @@
 				if(ch[i].checked) {
 					if(dongcount<2) {
 						if(ch[i].value=='전체') {
-							alert("test");
 							area[dongcount] = subsivalue+" "+subguvalue;
 							dongcount++;
 						} else {
 							area[dongcount] = ch[i].value;
-							//console.log(area[dongcount]);
 							dongcount++;
 						}
 					} else {
@@ -106,18 +119,6 @@
 				} else {
 					
 				}
-				console.log(dongcount);
-				console.log(area[0]);
-				console.log(area[1]);
-				console.log(ch[i].checked);
-			}
-		});
-		
-		$("#gu").on("click", ".gu_b", function(){
-			if($(this).attr("title")=='전체') {
-				area[dongcount] = subsivalue;
-				console.log(area[dongcount]);
-				dongcount++;
 			}
 		});
 		
@@ -141,7 +142,7 @@
 		});
 
 		$("#search").click(function() {
-			var addr = new Array();
+			//var addr = new Array();
 			var job = new Array();
 			var w_date = new Array();
 			var w_day;
@@ -154,6 +155,10 @@
 			var title;
 			var c_name;
 			var etc = new Array();
+			
+			//지역
+			//addr[0] = area[0];
+			//addr[1] = area[1];
 
 			//업종
 			var ch = $(".jobk");
