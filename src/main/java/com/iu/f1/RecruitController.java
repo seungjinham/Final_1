@@ -51,9 +51,10 @@ public class RecruitController {
 		String path = "recruit/recruitSearch";
 		List<Object> info = null;
 		ListSort listSort = new ListSort();
-		boolean check = listSort.check(recruitSearchDTO);
-		if(check == true) {
-			recruitService.searchSelectList(recruitSearchDTO);
+		//boolean check = listSort.check(recruitSearchDTO);
+		int count = listSort.check(recruitSearchDTO);
+		if(count==0) {
+			recruitService.searchSelectList(recruitSearchDTO, count);
 		} else {
 			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 				info = recruitService.searchInfo(areacodeDTO);
