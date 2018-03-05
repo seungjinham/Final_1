@@ -124,7 +124,7 @@
 					</tr>
 					<c:forEach var="item" items="${totallist}">
 						<tr id="extrarow">
-							<td class="e_td">${item.addr}</td>
+							<td class="e_td"><a href="#"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png"></a>${item.addr}</td>
 							<td class="e_td e_td2">
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>

@@ -131,11 +131,11 @@ $(function(){
 		
 		<div id="viewtab">
 		<div id="tablist">
-		<ul><li>근무지역</li><li>상세모집요강</li><li>채용기업정보</li></ul>
+		<ul><li><a href="#area_h2">근무지역</a></li><li><a href="#notice">상세모집요강</a></li><li><a href="#business_info">채용기업정보</a></li></ul>
 		</div>
 		
 		<div id="area">
-		<h2>근무지역</h2>
+		<h2 id="area_h2">근무지역</h2>
 		<hr/>
 		<h3>주소 : ${company.addr}</h3>
 		<div id="kakaoMap">

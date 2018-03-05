@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.apply.ApplyDTO;
 import com.iu.apply.ApplyService;
@@ -83,7 +84,7 @@ public class ApplyController {
 	}
 	
 	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
-	public String selectList(ApplyDTO applyDTO, ListData listData, Model model) {
+	public String selectList(ApplyDTO applyDTO, ListData listData, Model model, RedirectAttributes ra) {
 		List<Object> obj_ar = null;
 		String message = "로그인이 필요한 서비스입니다.";
 		String path = "redirect:../";
@@ -93,7 +94,8 @@ public class ApplyController {
 			model.addAttribute("pagelist", obj_ar.get(1));
 			path = "apply/applyList";
 		} else {
-			model.addAttribute("applymessage", message);
+			ra.addFlashAttribute("message", message);
+			//model.addAttribute("applymessage", message);
 		}
 		return path;
 	}

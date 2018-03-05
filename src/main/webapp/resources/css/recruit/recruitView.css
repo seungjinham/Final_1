@@ -241,6 +241,11 @@
 
 #viewtab #area {
 	border:1px solid lightgray;	
+	margin-bottom:10px;
+}
+
+#viewtab #area h2 {
+	color:#23A41A;
 }
 
 #viewtab #area #kakaoMap {
@@ -250,6 +255,11 @@
 
 #viewtab #notice {
 	border:1px solid lightgray;
+	margin-bottom:10px;
+}
+
+#viewtab #notice h2 {
+	color:#23A41A;
 }
 
 #viewtab #notice img{
@@ -258,6 +268,10 @@
 
 #viewtab #business_info {
 	border:1px solid lightgray;
+}
+
+#viewtab #business_info h1 {
+	color:#23A41A;
 }
 
 #viewtab #business_info #cominfo .cominfo_h3{

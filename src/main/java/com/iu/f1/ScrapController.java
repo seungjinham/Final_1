@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
@@ -138,7 +139,7 @@ public class ScrapController {
 	}
 	
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)
-	public String SelectList(ScrapDTO scrapDTO, ListData listData, Model model) {
+	public String SelectList(ScrapDTO scrapDTO, ListData listData, Model model, RedirectAttributes ra) {
 		List<Object> obj_ar = null; 
 		String message = "로그인이 필요한 서비스 입니다.";
 		String path = "redirect:../";
@@ -150,8 +151,8 @@ public class ScrapController {
 			path="scrap/scrapList";
 		}
 		
-		
-		model.addAttribute("message", message);
+		ra.addFlashAttribute("message", message);
+		//model.addAttribute("message", message);
 		return path;
 	}
 	

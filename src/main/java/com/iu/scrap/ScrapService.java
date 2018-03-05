@@ -31,9 +31,13 @@ public class ScrapService {
 		ListData listData = new ListData();
 		List<Object> ar = SelectList(scrapDTO, listData);
 		List<ScrapDTO> scrap_ar = (List<ScrapDTO>)ar.get(2);
-		for(int i=0; i<scrap_ar.size(); i++) {
-			if(scrapDTO.getRecruit_num() != scrap_ar.get(i).getRecruit_num()) {
-				result = scrapDAO.Insert(scrapDTO);
+		if(scrap_ar.size()==0) {
+			result = scrapDAO.Insert(scrapDTO);
+		} else {
+			for(int i=0; i<scrap_ar.size(); i++) {
+				if(scrapDTO.getRecruit_num() != scrap_ar.get(i).getRecruit_num()) {
+					result = scrapDAO.Insert(scrapDTO);
+				}
 			}
 		}
 		return result;

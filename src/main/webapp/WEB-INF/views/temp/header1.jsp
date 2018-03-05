@@ -33,6 +33,11 @@
 		$("#login").click(function() {
 				window.open("<%=request.getContextPath()%>/member/login", "", "top=250,left=750,width=350,height=450");
 		});
+		
+		var message = '${message}';
+		if(message!="") {
+			alert(message);
+		}
 	});
 </script>
 <header>
