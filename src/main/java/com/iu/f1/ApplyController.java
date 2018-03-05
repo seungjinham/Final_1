@@ -44,8 +44,18 @@ public class ApplyController {
 		supporterDTO.setId(applyDTO.getId());
 		supporterDTO.setCid(companyDTO.getId());
 		
-		int num = supporterService.applyConut(supporterDTO);
+		int num = supporterService.applyCount(supporterDTO);
+		
+		branch:
 		if(num < 3) {
+			int result = 0;
+			if(true) {
+				result = applyService.duplicationCheck(applyDTO);
+				if(result>0) {
+					message = "이미 지원한 공고입니다.";
+					break branch;
+				}
+			}
 			Integer integer1 = applyService.insert(applyDTO);
 			Integer integer2 = supporterService.insert(supporterDTO);
 			
@@ -53,7 +63,7 @@ public class ApplyController {
 				integer = integer1+integer2;
 				message = "성공적으로 지원 되었습니다.";
 			}
-		}
+		} 
 //		recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
 //		companyDTO = companyService.selectOne(recruitDTO.getId());
 		
