@@ -3,6 +3,7 @@ package com.iu.f1;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.core.annotation.SynthesizedAnnotation;
@@ -152,8 +153,12 @@ public class CompanyController {
 	
 	//게재 리스트
 	@RequestMapping(value="companyRecruitList", method=RequestMethod.GET)
-	public ModelAndView companyRecruitList() throws Exception {
-		List<RecruitDTO> ar = companyService.companyRecruitList();
+	public ModelAndView companyRecruitList(HttpSession session) throws Exception {
+		CompanyDTO companyDTO= (CompanyDTO) session.getAttribute("member");
+		System.out.println(1);
+		String c_name = companyDTO.getC_name();
+		System.out.println(c_name);
+		List<RecruitDTO> ar = companyService.companyRecruitList(c_name);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
 		mv.setViewName("./company/companyRecruitList");
