@@ -10,6 +10,33 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var num;
+	var id;
+	var page='list';
+	$(".ip1").click(function(){
+		num = $(this).attr("title");
+		alert(num);
+		id = '${member.id}';
+		alert(id);
+		$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+			$("head").append(data);
+		});
+		$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+	});
+	
+	$(".ip2").click(function(){
+		num = $(this).attr("title");
+		id = '${member.id}';
+		page = 'list';
+		$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+			$("head").append(data);
+		});
+		$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+	});
+});
+</script>
 </head>
 <body>
 	<%@include file="../temp/header1.jsp"%>
@@ -96,7 +123,7 @@
 					</tr>
 					<c:forEach var="item" items="${totallist}" end="4">
 						<tr id="extrarow">
-							<td class="e_td">${item.addr}</td>
+							<td class="e_td"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png" title="${item.num}" class="ip1">${item.addr}</td>
 							<td class="e_td e_td2">
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
@@ -124,7 +151,7 @@
 					</tr>
 					<c:forEach var="item" items="${totallist}">
 						<tr id="extrarow">
-							<td class="e_td"><a href="#"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png"></a>${item.addr}</td>
+							<td class="e_td"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png" title="${item.num}" class="ip2">${item.addr}</td>
 							<td class="e_td e_td2">
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>

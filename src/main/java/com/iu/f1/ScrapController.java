@@ -73,15 +73,19 @@ public class ScrapController {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
-					ListSort listSort = new ListSort();
+/*					ListSort listSort = new ListSort();
 					//recruit_ar = recruitService.selectList(listData);
 					obj_ar = recruitService.selectList(listData);
 					company_ar = companyService.selectList();
 					recruit_ar = listSort.listSort((List<RecruitDTO>)obj_ar.get(0), company_ar);
 					model.addAttribute("list", recruit_ar);
-					model.addAttribute("pagelist", obj_ar.get(1));
-					path="recruit/recruitList";
-				} else {
+					model.addAttribute("pagelist", obj_ar.get(1));*/
+					path="common/message";
+				} else if(integer<0) {
+					message = "중복된 스크랩 공고입니다.";
+					path = "common/message";
+				}
+				else {
 					message = "스크랩 실패 ";
 					ListSort listSort = new ListSort();
 					//recruit_ar = recruitService.selectList();
@@ -94,7 +98,7 @@ public class ScrapController {
 				}
 			}
 		} else {
-			if(scrapDTO.getId() != "") {
+/*			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
 					message = "스크랩 성공";
@@ -103,30 +107,11 @@ public class ScrapController {
 					message = "스크랩 실패 ";
 					path="recruit/recruitList";
 				}
-			}
+			}*/
 		}
 		model.addAttribute("message", message);
 		return path;
 	}
-	
-/*	@RequestMapping(value="scrapInsert", method=RequestMethod.GET)
-	public String Insert(ScrapDTO scrapDTO, Model model) throws Exception{
-		RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
-		String message = "로그인이 필요합니다.";
-		Integer integer = 0;
-		if(scrapDTO.getId() != "") {
-			integer = scrapService.Insert(scrapDTO);
-			message = "스크랩 성공";
-		} 
-		ListSort listSort = new ListSort();
-		List<RecruitDTO> recruit_ar = recruitService.selectList(recruitSearchDTO);
-		List<CompanyDTO> company_ar = companyService.selectList(recruit_ar);
-		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-		model.addAttribute("result", integer);
-		model.addAttribute("message", message);
-		model.addAttribute("list", recruit_ar);
-		return "recruit/recruitList";
-	}*/
 	
 	@RequestMapping(value="scrapDelete", method=RequestMethod.GET)
 	public String Delete(ScrapDTO scrapDTO, Model model) {

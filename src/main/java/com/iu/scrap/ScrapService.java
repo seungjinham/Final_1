@@ -28,6 +28,7 @@ public class ScrapService {
 	
 	public int Insert(ScrapDTO scrapDTO) {
 		int result=0;
+		int count=0;
 		ListData listData = new ListData();
 		List<Object> ar = SelectList(scrapDTO, listData);
 		List<ScrapDTO> scrap_ar = (List<ScrapDTO>)ar.get(2);
@@ -36,8 +37,13 @@ public class ScrapService {
 		} else {
 			for(int i=0; i<scrap_ar.size(); i++) {
 				if(scrapDTO.getRecruit_num() != scrap_ar.get(i).getRecruit_num()) {
-					result = scrapDAO.Insert(scrapDTO);
+					count++;
 				}
+			}
+			if(count == scrap_ar.size()) {
+				result = scrapDAO.Insert(scrapDTO);
+			} else {
+				result = -1;
 			}
 		}
 		return result;
