@@ -32,4 +32,9 @@ public class PaperDAO {
 		return sqlSession.selectOne(NAMESPACE+"paperView", id);
 	}
 	
+	//이력서 리스트
+	public PaperDTO list(String id) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"paperList", id);
+	}
+	
 }

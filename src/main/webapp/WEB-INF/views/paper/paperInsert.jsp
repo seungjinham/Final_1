@@ -198,24 +198,15 @@
 		});
 
 		//자격증
-		var i = 0;
 		$("#add_box").click(function() {
-			if (i < 4) {
-				var t = $("#licences_boxs").clone();
-				$("#add_border").append(t);
-				$("#licences_boxs").show();
-				i++;
-			} else {
-				alert("자격증 등록은 5개까지만 가능합니다.");
-			}
-			;
+			$("#licences_boxs").slideDown("slow");
+			$("#box_tit_border").css("border-bottom", "none");
+		});
+		$("#x_box").click(function() {
+			$("#licences_boxs").hide();
+			$("#box_tit_border").css("border-bottom", "1px dotted gray");
+		});
 
-		});
-		
-		$("#add_border").on("click","#x_box", function() {
-			$("#licences_boxs").remove();
-			i--;
-		});
 
 		//포트폴리오
 		$("#port_add").click(function() {
@@ -228,7 +219,7 @@
 			$(".port_input").val("");
 			$("#box_tit_border_3").css("border-bottom", "1px dotted gray");
 		});
-		
+
 		$("#insert").click(function() {
 			paper_frm.submit();
 		});
@@ -253,8 +244,8 @@
 
 			<form action="./paperInsert" method="post"
 				enctype="multipart/form-data" id="paper_frm">
+				<input type="hidden" name="id" value="${member.id}">
 				<section id="paper_border">
-					<input type="hidden" name="id" value="${member.id}">
 					<div id="p_tit_border">
 						<div id="p_tit_border_2">이력서 제목</div>
 						<div id="p_tit_border_3">
@@ -280,7 +271,7 @@
 
 							<div class="name">
 								<label for="p_name" class="p_tit">이름</label> <input type="text"
-									id="p_name" value="스프링" name="name">
+									id="p_name" value="${member.name}" name="name">
 							</div>
 							<div class="radio">
 								<input type="button" class="working" value="구직준비중" id="work_1">
@@ -426,7 +417,8 @@
 						<div class="sub_box">
 							<input type="button" class="cr_kind" value="신입" id="newcomer">
 							<input type="button" class="cr_kind" value="경력" id="careers">
-							<input type="hidden" name="cr_kind" value="" id="cr_kind_hidden">
+							<input type="hidden" name="career_kind" value=""
+								id="cr_kind_hidden">
 						</div>
 					</div>
 
@@ -463,11 +455,11 @@
 						</div>
 						<div class="Decision_border">
 							<label for="cr_work" class="p_tit">담당업무</label> <input
-								type="text" id="cr_work" name="cr_work" class="Decision">
+								type="text" id="cr_work" name="career_work" class="Decision">
 						</div>
 						<div class="Decision_border">
 							<label for="cr_sal" class="p_tit">연봉</label> <input type="text"
-								id="cr_sal" name="cr_sal" placeholder="ex) 2100만"
+								id="cr_sal" name="career_sal" placeholder="ex) 2100만"
 								class="Decision carr_input">
 						</div>
 					</article>
@@ -483,33 +475,32 @@
 						</div>
 					</div>
 
-					<div id="add_border">
-						<article class="box_border" id="licences_boxs">
-							<div class="Decision_border">
-								<label for="l_name" class="p_tit">자격증명</label> <select
-									name="l_kind" class="Decision">
-									<option>항목선택</option>
-									<option value="자격증/면허증">자격증/면허증</option>
-									<option value="어학시험">어학시험</option>
-									<option value="수상내역/공모전">수상내역/공모전</option>
-								</select>
-							</div>
-							<div class="Decision_border">
-								<label for="l_name" class="p_tit">자격증명</label> <input
-									type="text" id="l_name" name="l_name" class="Decision">
-							</div>
-							<div class="Decision_border">
-								<label for="issue" class="p_tit">발행처</label> <input type="text"
-									id="issue" name="issue" class="Decision">
-							</div>
-							<div class="Decision_border_3">
-								<label for="l_date" class="p_tit">취득일</label> <input type="text"
-									id="l_date" name="l_date" placeholder="ex) 200802"
-									class="Decision_3">
-							</div>
-							<div id="x_box"></div>
-						</article>
-					</div>
+					<article class="box_border" id="licences_boxs"
+						style="display: none;">
+						<div class="Decision_border">
+							<label for="l_kind" class="p_tit">항목</label> <select
+								name="l_kinds" class="Decision" id="l_kind">
+								<option>항목선택</option>
+								<option value="자격증/면허증">자격증/면허증</option>
+								<option value="어학시험">어학시험</option>
+								<option value="수상내역/공모전">수상내역/공모전</option>
+							</select>
+						</div>
+						<div class="Decision_border">
+							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
+								id="l_name" name="l_names" class="Decision">
+						</div>
+						<div class="Decision_border">
+							<label for="issue" class="p_tit">발행처</label> <input type="text"
+								id="issue" name="l_issue" class="Decision">
+						</div>
+						<div class="Decision_border_3">
+							<label for="l_date" class="p_tit">취득일</label> <input type="text"
+								id="l_date" name="l_date" placeholder="ex) 200802"
+								class="Decision_3">
+						</div>
+						<div id="x_box"></div>
+					</article>
 
 					<!-- 포트폴리오 -->
 					<div id="box_tit_border_3">
@@ -544,15 +535,13 @@
 						</div>
 						<div id="port_x"></div>
 					</article>
-					
-					<article id="insert_btn_border">
-						<div id="insert_btn">
-							<input type="button" value="등록" id="insert">
-						</div>
-					</article>
-
-
 				</section>
+
+				<article id="insert_btn_border">
+					<div id="insert_btn">
+						<input type="button" value="확인" id="insert">
+					</div>
+				</article>
 			</form>
 
 		</div>

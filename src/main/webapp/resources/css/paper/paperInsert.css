@@ -353,16 +353,7 @@
 /*====== 자격증 ======*/
 #box_tit_border {
 	width: 740px;
-	height: 90px;
 	float: left;
-}
-#add_border{
-	width: 740px;
-	float: left;
-}
-
-
-#licences_boxs{
 	border-bottom: 1px dotted gray;
 }
 
@@ -543,16 +534,16 @@
 /* == 버튼 == */
 #insert_btn_border{
 	width: 740px;
-	height: 150px;
+	height: 140px;
 	float: left;
+	margin-left: 300px;
 }
 
 #insert_btn {
 	width: 300px;
-	height: 150px;
+	height: 70px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	padding: 60px;
 	text-align: center;
 }
 
@@ -562,15 +553,14 @@
 	background-color: #23A41A;
 	color: white;
 	font-family: "맑은 고딕";
-	font-size: 20px;
+	font-size: 22px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	font-weight: bold;
 }
 #insert_btn input:HOVER {
 	background-color: white;
 	color: #23A41A;
 	border: 2px solid #23A41A;
-	font-size: 21px;
+	font-weight: bold;
 } 

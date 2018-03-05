@@ -15,18 +15,11 @@ public class PaperService {
 
 	@Inject
 	private PaperDAO paperDAO;
-	
 	@Inject
-	private SchoolDAO schoolDAO;
+	private LicenseDAO licenseDAO;
 	
-	@Inject
-	private HopeDAO hopeDAO;
-	
-	@Inject
-	private CareerDAO careerDAO;
-
 	//이력서 등록
-	public int insert(PaperDTO paperDTO,SchoolDTO schoolDTO,HopeDTO hopeDTO,CareerDTO careerDTO, MultipartFile file, HttpSession session) throws Exception{
+	public int insert(PaperDTO paperDTO,LicenseDTO licenseDTO, MultipartFile file, HttpSession session) throws Exception{
 		String filePath = session.getServletContext().getRealPath("resources/upload");
 		File f = new File(filePath);
 		if(!f.exists()){
@@ -37,12 +30,8 @@ public class PaperService {
 		paperDTO.setFname(name);
 		paperDTO.setOname(file.getOriginalFilename());
 		
+		licenseDAO.insert(licenseDTO);
 		int result = paperDAO.insert(paperDTO);
-		if(result>0){
-			result = schoolDAO.insert(schoolDTO);
-			result = hopeDAO.insert(hopeDTO);
-			result = careerDAO.insert(careerDTO);
-		}
 		return result;
 	}
 
@@ -59,6 +48,11 @@ public class PaperService {
 	//이력서 보기
 	public PaperDTO view(String id) throws Exception{
 		return paperDAO.view(id);
+	}
+	
+	//이력서 리스트
+	public PaperDTO list(String id) throws Exception{
+		return paperDAO.list(id);
 	}
 
 }
