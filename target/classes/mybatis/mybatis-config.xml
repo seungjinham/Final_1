@@ -9,9 +9,8 @@
   		<typeAlias type="com.iu.person.PersonDTO" alias="PersonDTO"/>
   		<typeAlias type="com.iu.company.CompanyDTO" alias="CompanyDTO"/>
   		<typeAlias type="com.iu.paper.PaperDTO" alias="PaperDTO"/>
-  		<typeAlias type="com.iu.paper.SchoolDTO" alias="SchoolDTO"/>
-  		<typeAlias type="com.iu.paper.CareerDTO" alias="CareerDTO"/>
-  		<typeAlias type="com.iu.paper.HopeDTO" alias="HopeDTO"/>
+  		<typeAlias type="com.iu.paper.LicenseDTO" alias="LicenseDTO"/>
+  		<typeAlias type="com.iu.paper.PortDTO" alias="PortDTO"/>
   		<typeAlias type="com.iu.faq.FaqDTO" alias="FaqDTO"/>
   		<typeAlias type="com.iu.util.ListData" alias="ListData"/>
   		<typeAlias type="com.iu.recruit.RecruitDTO" alias="RecruitDTO"/>

@@ -44,17 +44,13 @@
 		var birthArr = birth.split(',');
 		$(".birth").text(birthArr[0]+"."+birthArr[1]+"."+birthArr[2]);
 		
-		var email = '${member.email}';
-		var emailArr = email.split(',');
-		$("#email_text").text(emailArr[0]+" @ "+emailArr[1]);
-		
 		var phone = '${member.phone}';
 		var phoneArr = phone.split(',');
 		$("#phone_text").text(phoneArr[0]+" - "+phoneArr[1]+" - "+phoneArr[2]);
 		
 		var addr = '${member.addr}';
 		var addrArr = addr.split(',');
-		$("#addr_text").text(addrArr[1]+" "+addrArr[2]);
+		$("#addr_text").text(addrArr[1]+" "+addrArr[2]+" "+addrArr[3]);
 	});
 </script>
 <style type="text/css">
@@ -97,7 +93,7 @@
 								src="<%=request.getContextPath()%>/resources/images/paper/email.png"
 								class="imgs">
 						</div>
-						<div id="email_text" class="text_box"></div>
+						<div id="email_text" class="text_box">${member.email}</div>
 					</nav>
 					<nav id="phone">
 						<div class="img_b">
@@ -158,22 +154,78 @@
 					<nav id="last">최종학력</nav>
 					<div class="line"></div>
 					<nav class="stage">
-						<span class="reds">고등학교</span> 졸업
+						<span class="reds">고등학교</span> ${paper.s_kind}
 					</nav>
 					<nav class="box">
-						<span class="emph">학교명</span> 광남고등학교
+						<span class="emph">학교명</span> ${paper.s_name}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">전공 계열</span> 실용음악학과
+						<span class="emph">전공 계열</span> ${paper.major}
 					</nav>
 					<nav class="box">
-						<span class="emph">재학 기간</span> 2008.03 ~ 2011.02
+						<span class="emph">재학 기간</span> ${paper.entrance} ~ ${paper.graduation}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">구분</span> 졸업
+						<span class="emph">구분</span> ${paper.s_kind} 졸업
 					</nav>
 				</div>
 
+				<div class="box_border">
+					<nav id="hope">희망 근무조건</nav>
+					<nav id="area">근무 지역</nav>
+					<div class="line"></div>
+					<nav class="stage">
+						<span class="reds">${paper.location}</span>
+					</nav>
+					<nav class="box">
+						<span class="emph">직종</span> ${paper.h_job}
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">업종 </span> ${paper.h_work}
+					</nav>
+					<nav class="box">
+						<span class="emph">근무 형태</span> ${paper.h_kind}
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">연봉 </span> ${paper.salary}
+					</nav>
+				</div>
+				
+				<c:if test="${paper.career_kind eq '신입'}">
+				<div class="box_border" id="newspace">
+					<nav id="license">경력</nav>
+					<nav id="category">구분</nav>
+					<div class="line"></div>
+					<nav class="stage">
+						<span class="reds">${paper.career_kind}</span>
+					</nav>
+				</div>
+				</c:if>
+				
+				<c:if test="${paper.career_kind eq '경력'}">
+				<div class="box_border">
+					<nav id="license">경력</nav>
+					<nav id="category">구분</nav>
+					<div class="line"></div>
+					<nav class="stage">
+						<span class="reds">${paper.career_kind}</span>
+					</nav>
+					<nav class="box">
+						<span class="emph">회사명 </span> 1종보통 운전면허증
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">직책 </span> 서울지방경찰법원
+					</nav>
+					<nav class="box">
+						<span class="emph">직종 </span> 2008.03
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">담당업무</span> 합격
+					</nav>
+				</div>
+				</c:if>
+				
+				<c:if test="${paper.career_kind eq '경력'}">
 				<div class="box_border">
 					<nav id="license">자격증</nav>
 					<nav id="category">항목</nav>
@@ -194,28 +246,7 @@
 						<span class="emph">합격 여부</span> 합격
 					</nav>
 				</div>
-
-				<div class="box_border">
-					<nav id="hope">희망 근무조건</nav>
-					<nav id="area">근무 지역</nav>
-					<div class="line"></div>
-					<nav class="stage">
-						<span class="reds">서울</span>
-					</nav>
-					<nav class="box">
-						<span class="emph">직종</span> IT.인터넷 웹개발
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">직업 </span> IT.웹.통신
-					</nav>
-					<nav class="box">
-						<span class="emph">근무 형태</span> 정규직
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">연봉 </span> 회사내규에따름
-					</nav>
-				</div>
-
+				</c:if>
 
 
 			</article>

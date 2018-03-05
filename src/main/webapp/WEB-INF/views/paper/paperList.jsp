@@ -60,12 +60,12 @@ $(function() {
 		
 		<article class="all_List_border">
 			<div class="list_border">
-				<div class="tit_border">적극적인 신입!!</div>
-				<div class="date_border">2019.12.02 수정</div>
+				<div class="tit_border">${paper.title}</div>
+				<div class="date_border">${paper.paper_date} 수정</div>
 				<div class="info_border">
-					<nav class="kind_border">신입</nav>
-					<nav class="sal_border">회사내규에따름</nav>
-					<nav class="job_border">정규직</nav>
+					<nav class="kind_border">${paper.career_kind}</nav>
+					<nav class="sal_border">${paper.salary}</nav>
+					<nav class="job_border">${paper.h_kind}</nav>
 				</div>
 				<div class="btns_broder">
 					<a href="./paperView"><button class="btns" id="view">보기</button></a> <a
