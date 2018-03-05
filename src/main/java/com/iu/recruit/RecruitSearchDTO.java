@@ -20,6 +20,9 @@ public class RecruitSearchDTO {
 		return area;
 	}
 	public void setArea(String[] area) {
+		if(area[0].equals("")&&area[1].equals("")) {
+			area = null;
+		}
 		this.area = area;
 	}
 	public String[] getJob() {
@@ -74,6 +77,9 @@ public class RecruitSearchDTO {
 		return age;
 	}
 	public void setAge(String age) {
+		if(age.equals("")) {
+			age = null;
+		}
 		this.age = age;
 	}
 	public String getC_name() {
@@ -86,6 +92,9 @@ public class RecruitSearchDTO {
 		return title;
 	}
 	public void setTitle(String title) {
+		if(title.equals("")) {
+			title = null;
+		}
 		this.title = title;
 	}
 }

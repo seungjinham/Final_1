@@ -60,9 +60,9 @@ public class RecruitService {
 		return recruitDAO.selectOne(num);
 	}
 	
-	public void searchSelectList(RecruitSearchDTO recruitSearchDTO, int count) {
+	public void searchSelectList(RecruitSearchDTO recruitSearchDTO) {
 		ListSort listSort = new ListSort();
-		listSort.condition(recruitSearchDTO, count);
+		
 	}
 	
 	public List<Object> searchInfo(AreaCodeDTO areacodeDTO) {

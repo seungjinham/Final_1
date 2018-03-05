@@ -25,13 +25,14 @@ public class ListSort {
 		return recruit_ar;
 	}
 	
-	public int check(RecruitSearchDTO recruitSearchDTO) {
+	public ConditionDTO check(RecruitSearchDTO recruitSearchDTO) {
+		ConditionDTO conditionDTO = new ConditionDTO();
 		List<String> checkVar = new ArrayList<String>();
 		List<String[]> checkArray = new ArrayList<String[]>();
 		
-/*		boolean check_var=false;
+		boolean check_var=false;
 		boolean check_array=false;
-		boolean result = false;*/
+		boolean result = false;
 		
 		int varcount=0;
 		int arraycount=0;
@@ -67,71 +68,132 @@ public class ListSort {
 		
 		//검색조건 있으면 true, 없으면 false
 		for(int i=0; i<6; i++) {
-			if(checkVar.get(i)!=null) varcount++;//check_var=true;
-			if(checkArray.get(i)!=null) arraycount++;//check_array=true;
-		}
-		
-		if(varcount==0&&arraycount==0) {//(check_var==false&&check_array==false) {
-			//검색조건이 하나도 없는 경우
-			//result = false;
-			totalcount=0;
-		} else {
-			//검색조건이 하나라도 있는 경우
-			//result = true;
-			totalcount=varcount+arraycount;
-		}
-		return totalcount;//result;
-	}
-	
-	public void condition(RecruitSearchDTO recruitSearchDTO, int count) {
-		ConditionDTO conditionDTO = new ConditionDTO();
-		List<String> checkVar = new ArrayList<String>();
-		List<String[]> checkArray = new ArrayList<String[]>();
-		
-		for(int i=0; i<6; i++) {
-			switch(i) {
-			case 0: checkVar.add(recruitSearchDTO.getC_name());
-					checkArray.add(recruitSearchDTO.getJob());
-					break;
-			
-			case 1: checkVar.add(recruitSearchDTO.getTitle());
-					checkArray.add(recruitSearchDTO.getArea());
-					break;
-			
-			case 2: checkVar.add(recruitSearchDTO.getGender());
-					checkArray.add(recruitSearchDTO.getW_date());
-					break;
-			
-			case 3: checkVar.add(recruitSearchDTO.getW_day());
-					checkArray.add(recruitSearchDTO.getSchool());
-					break;
-			
-			case 4: checkVar.add(recruitSearchDTO.getSalary());
-					checkArray.add(recruitSearchDTO.getW_time());
-					break;
-			
-			case 5: checkVar.add(recruitSearchDTO.getAge());
-					checkArray.add(recruitSearchDTO.getSpecial());
-					break;
+			if(checkVar.get(i)!=null) {
+				varcount++;
+				check_var=true;
+			}
+			if(checkArray.get(i)!=null) {
+				arraycount++;
+				check_array=true;
 			}
 		}
 		
-		switch(count) {
-		case 0: 
-			break;
-		case 1:
-			break;
-		case 2:break;
-		case 3:break;
-		case 4:break;
-		case 5:break;
-		case 6:break;
-		case 7:break;
-		case 8:break;
-		case 9:break;
-		case 10:break;
-		case 11:break;
-		default:break;
+		totalcount = varcount + arraycount;
+		
+		if(check_var==false&&check_array==false) {
+			//검색조건이 하나도 없는 경우
+			conditionDTO.setCheck(false);
+			conditionDTO.setCount(totalcount);
+			//result = false;
+			//totalcount=0;
+		} else {
+			//검색조건이 하나라도 있는 경우
+			conditionDTO.setCheck(true);
+			conditionDTO.setCount(totalcount);
+			
+			conditionDTO = matching(conditionDTO, recruitSearchDTO, checkVar, checkArray);
+/*			switch(totalcount) {
+			case 1:
+				for(int i=0; i<checkVar.size(); i++) {
+					if(checkVar.get(i)!=null) {
+						conditionDTO.setCon1(checkVar.get(i));
+					}
+				}
+				for(int i=0; i<checkArray.size(); i++) {
+					if(checkArray.get(i)!=null) {
+						for(int j=0; j<checkArray.get(i).length; j++) {
+							switch(i) {
+							case 0: 
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							case 1: 
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							case 2:
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							case 3: 
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							case 4: 
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							case 5: 
+								if(checkArray.get(i)[j]!=null&&j==0) {
+									conditionDTO.setCon1(checkArray.get(i)[j]);
+								}
+								if(checkArray.get(i).length==2) {
+									if(checkArray.get(i)[j]!=null&&j==1) {
+										conditionDTO.setCon2(checkArray.get(i)[j]);
+									}
+								}
+								break;
+							}
+						}
+					}
+				}
+				break;
+			case 2:break;
+			case 3:break;
+			case 4:break;
+			case 5:break;
+			case 6:break;
+			case 7:break;
+			case 8:break;
+			case 9:break;
+			case 10:break;
+			case 11:break;
+			}*/
+			//result = true;
+			//totalcount=varcount+arraycount;
 		}
+		return conditionDTO;
+	}
+	
+	public ConditionDTO matching(ConditionDTO conditionDTO, RecruitSearchDTO recruitSearchDTO, List<String> checkVar, List<String[]> checkArray) {
+		for(int i=0; i<6; i++) {
+			if(checkVar.get(i)!=null) {
+				conditionDTO.setCon1(checkVar.get(i));
+			}
+			if(checkArray.get(i)!=null) {
+				
+			}
+		}
+		return null;
 	}
 }

@@ -16,6 +16,7 @@ import com.iu.recruit.RecruitDTO;
 import com.iu.recruit.RecruitSearchDTO;
 import com.iu.recruit.RecruitService;
 import com.iu.util.AreaCodeDTO;
+import com.iu.util.ConditionDTO;
 import com.iu.util.ListData;
 import com.iu.util.ListSort;
 
@@ -51,10 +52,9 @@ public class RecruitController {
 		String path = "recruit/recruitSearch";
 		List<Object> info = null;
 		ListSort listSort = new ListSort();
-		//boolean check = listSort.check(recruitSearchDTO);
-		int count = listSort.check(recruitSearchDTO);
-		if(count==0) {
-			recruitService.searchSelectList(recruitSearchDTO, count);
+		ConditionDTO conditionDTO= listSort.check(recruitSearchDTO);
+		if(conditionDTO.isCheck()) {
+			//recruitService.searchSelectList(recruitSearchDTO, count);
 		} else {
 			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 				info = recruitService.searchInfo(areacodeDTO);
