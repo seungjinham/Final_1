@@ -49,34 +49,13 @@
 		where m.id=#{id} and m.id=c.id(+)
 	</select>
 	
-
-	
 	<select id="companyRecruitList" resultType="RecruitDTO">
-		select * from recruit
+		select * from recruit where c_name=#{c_name} 
 	</select>
 
 	<delete id="companyRecruitDelete" parameterType="int">
 		delete recruit where num=#{num}
 	</delete>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	<select id="companySelectOne" parameterType="String" resultType="CompanyDTO">
 		select m.id, m.addr, m.name, m.phone, m.email, c.c_name from (select * from member order by id) m, (select * from company order by id) c where m.id=#{id} and c.id=#{id}

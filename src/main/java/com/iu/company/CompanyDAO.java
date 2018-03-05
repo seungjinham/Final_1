@@ -47,8 +47,8 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
 
-	public List<RecruitDTO> companyRecruitList() {
-		return sqlSession.selectList(NAMESPACE+"companyRecruitList");
+	public List<RecruitDTO> companyRecruitList(String c_name) {
+		return sqlSession.selectList(NAMESPACE+"companyRecruitList", c_name);
 	}
 
 	public int companyRecruitDelete(int num) {

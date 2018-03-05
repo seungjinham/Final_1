@@ -67,8 +67,8 @@ public class CompanyService implements MemberService {
 		return 0;
 	}
 
-	public List<RecruitDTO> companyRecruitList() {
-		return companyDAO.companyRecruitList();
+	public List<RecruitDTO> companyRecruitList(String c_name) {
+		return companyDAO.companyRecruitList(c_name);
 	}
 	//공고삭제
 	public int companyRecruitDelete(int num,String fname, HttpSession session) {
