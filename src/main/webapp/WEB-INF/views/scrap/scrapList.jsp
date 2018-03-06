@@ -67,10 +67,11 @@
 		<%@ include file="../member/p_meun.jsp"%>
 
 <form id="form" name="frm" action="../scrap/scrapDelete">
-			<a href="../scrap/scrapDelete">ScrapDelete</a>
+			<div id="btnarea">
 			<input type="submit" value="스크랩 삭제" id="scrap_del">
 			<input type="hidden" name="page">
 			<input type="hidden" name="id" value="${member.id}">
+			</div>
 			<table id="scrap_table">
 				<tr id="firstrow">
 					<th><input type="checkbox" id="select_all"></th>
@@ -83,7 +84,7 @@
 					<tr id="extrarow">
 						<td><input type="checkbox" value="${result.num}" name="select_ch" class="sel"></td>
 						<td>${result.addr}</td>
-						<td>${result.c_name}<br>${result.title}</td>
+						<td><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.c_name}</a><br><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.title}</a></td>
 						<td>${result.salary}</td>
 						<td>${result.deadline}</td>
 					</tr>

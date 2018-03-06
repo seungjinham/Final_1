@@ -27,7 +27,7 @@ $(function(){
 			
 		} else {
 			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
- 			$.get("../scrap/scrapDelete?recruit_num="+num+"&id="+id, function(data){
+ 			$.get("../scrap/scrapDelete?recruit_num="+num+"&id="+id+"&page="+page, function(data){
 				$("head").append(data);
 			});
 			

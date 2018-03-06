@@ -15,25 +15,40 @@ $(function(){
 	var num;
 	var id;
 	var page='list';
+	var defpath='<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png';
 	$(".ip1").click(function(){
 		num = $(this).attr("title");
-		alert(num);
 		id = '${member.id}';
-		alert(id);
-		$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
-			$("head").append(data);
-		});
-		$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+		var srcpath1=$(".ip1").attr("src");
+		if(defpath==srcpath1) {
+			$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+				$("head").append(data);
+			});
+			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+		} else {
+			$.get("../scrap/scrapDelete?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+				$("head").append(data);
+			});
+			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
+		}
+
 	});
 	
 	$(".ip2").click(function(){
 		num = $(this).attr("title");
 		id = '${member.id}';
-		page = 'list';
-		$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
-			$("head").append(data);
-		});
-		$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+		var srcpath2=$(".ip2").attr("src"); 
+		if(defpath==srcpath2) {
+			$.get("../scrap/scrapInsert?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+				$("head").append(data);
+			});
+			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
+		} else {
+			$.get("../scrap/scrapDelete?recruit_num="+encodeURI(num)+"&id="+encodeURI(id)+"&page="+encodeURI(page), function(data){
+				$("head").append(data);
+			});
+			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
+		}
 	});
 });
 </script>

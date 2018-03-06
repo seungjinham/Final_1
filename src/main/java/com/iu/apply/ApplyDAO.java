@@ -33,10 +33,13 @@ public class ApplyDAO {
 		int result = 0; //중복없음
 		ApplyDTO applyDTO2 = null;
 		List<ApplyDTO> ar = sqlSession.selectList(NAMESPACE+"duplicationCheck", applyDTO);
-		applyDTO2 = ar.get(0);
+		if(ar.size()!=0) {
+			result = 1;
+		}
+/*		applyDTO2 = ar.get(0);
 		if(applyDTO2!=null) {
 			result = 1; //중복
-		}
+		}*/
 		return result;
 	}
 }

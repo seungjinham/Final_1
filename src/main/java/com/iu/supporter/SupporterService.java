@@ -23,7 +23,6 @@ public class SupporterService {
 	
 	public int applyCount(SupporterDTO supporterDTO) {
 		supporterDTO.setStatus("지원취소");
-		supporterDAO.applyCount(supporterDTO);
-		return 0;
+		return supporterDAO.applyCount(supporterDTO);
 	}
 }

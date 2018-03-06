@@ -14,6 +14,11 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 $(function(){
+	var message = '${applyDelete}';
+	if(message!="") {
+		alert(message);
+	}
+	
 	function select_All(obj, val) {
 		if(obj!=undefined) {
 			var count = obj.length;
@@ -35,7 +40,8 @@ $(function(){
 	});
 	
 	$("#apply_del").click(function(){
-		location.href="../scrap/scrapDelete";
+		alert("선택한 공고를 지원 취소하시겠습니까?");
+		//location.href="../scrap/scrapDelete";
 	});
 
 });
@@ -46,8 +52,10 @@ $(function(){
 	<section id="main">
 		<div class="container">
 		<%@ include file="../member/p_meun.jsp"%>
-		<form id="form" name="frm">
-		<input type="button" value="지원취소" id="apply_del">
+		<form id="form" name="frm" action="../apply/applyDelete">
+		<input type="submit" value="지원취소" id="apply_del">
+		<input type="hidden" name="page">
+		<input type="hidden" name="id" value="${member.id}">
 			<table id="apply_table">
 				<tr id="firstrow">
 					<th><input type="checkbox" id="select_all"></th>
@@ -60,7 +68,7 @@ $(function(){
 					<tr id="extrarow">
 						<td><input type="checkbox" value="${result.num}" name="select_ch" class="sel"></td>
 						<td>${result.addr}</td>
-						<td>${result.c_name}<br>${result.title}</td>
+						<td><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.c_name}</a><br><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.title}</a></td>
 						<td>${result.salary}</td>
 						<td>${result.deadline}</td>
 					</tr>

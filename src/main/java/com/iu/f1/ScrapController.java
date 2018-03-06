@@ -122,13 +122,13 @@ public class ScrapController {
 			integer = scrapService.Delete(scrapDTO, page);
 			if(integer>0) {
 				path = "common/message";
-				model.addAttribute("message", "스크랩삭제");
+				model.addAttribute("message", "스크랩취소");
 			}
 		} else if(page.equals("list")) {
 			integer = scrapService.Delete(scrapDTO, page);
 			if(integer>0) {
 				path = "common/message";
-				model.addAttribute("message", "스크랩삭제");
+				model.addAttribute("message", "스크랩취소");
 			}
 		} else {
 			integer = scrapService.Delete(scrapDTO, page);
