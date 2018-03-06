@@ -28,4 +28,18 @@ public class ApplyDAO {
 	public int totalCount() {
 		return sqlSession.selectOne(NAMESPACE+"totalCount");
 	}
+	
+	public int duplicationCheck(ApplyDTO applyDTO) {
+		int result = 0; //중복없음
+		ApplyDTO applyDTO2 = null;
+		List<ApplyDTO> ar = sqlSession.selectList(NAMESPACE+"duplicationCheck", applyDTO);
+		if(ar.size()!=0) {
+			result = 1;
+		}
+/*		applyDTO2 = ar.get(0);
+		if(applyDTO2!=null) {
+			result = 1; //중복
+		}*/
+		return result;
+	}
 }

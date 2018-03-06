@@ -17,4 +17,8 @@
 <select id="totalCount" resultType="int">
 	select count(num) from apply
 </select>
+
+<select id="duplicationCheck" parameterType="applyDTO" resultType="applyDTO">
+	select * from apply where id=#{id} and recruit_num=#{recruit_num}
+</select>
 </mapper>

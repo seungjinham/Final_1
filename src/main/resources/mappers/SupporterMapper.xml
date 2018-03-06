@@ -7,7 +7,7 @@
 </insert>
 
 <update id="update" parameterType="SupporterDTO">
-	update supporter status=#{status} set where recruit_num=#{recruit_num} and id=#{id} 
+	update supporter set status=#{status} where recruit_num=#{recruit_num} and id=#{id} 
 </update>
 
 <select id="applyCount" parameterType="SupporterDTO" resultType="int">

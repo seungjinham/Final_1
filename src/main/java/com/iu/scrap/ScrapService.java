@@ -49,8 +49,8 @@ public class ScrapService {
 		return result;
 	}
 	
-	public int Delete(ScrapDTO scrapDTO) {
-		return scrapDAO.Delete(scrapDTO);
+	public int Delete(ScrapDTO scrapDTO, String page) {
+		return scrapDAO.Delete(scrapDTO, page);
 	}
 	
 	public List<Object> SelectList(ScrapDTO scrapDTO, ListData listData) {

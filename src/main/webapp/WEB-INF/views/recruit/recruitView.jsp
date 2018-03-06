@@ -27,7 +27,7 @@ $(function(){
 			
 		} else {
 			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
- 			$.get("../scrap/scrapDelete?recruit_num="+num+"&id="+id, function(data){
+ 			$.get("../scrap/scrapDelete?recruit_num="+num+"&id="+id+"&page="+page, function(data){
 				$("head").append(data);
 			});
 			
@@ -35,7 +35,13 @@ $(function(){
 	});
 	
 	$("#applybtn").click(function(){
-		alert("test");
+		var num = $("#regnum").attr("value");
+		var id = '${member.id}';
+		var cid = '${recruit.id}';
+		//<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}&cid=${recruit.id}">Apply</a>
+		$.get("../apply/applyInsert?recruit_num="+num+"&id="+id+"&cid="+cid, function(data){
+			$("head").append(data);
+		});
 	});
 	
  	var salary = '${recruit.salary}';
@@ -54,7 +60,7 @@ $(function(){
 	<section id="main">
 	<div id="recruit_info">
 	<div id="registration_info">
-	<div id="reg_num"><span><h3>${recruit.num}</h3></span></div><div id="func_btn"><div id="scrap_wrap"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png" id="sc"><input type="button" value="스크랩" id="scrap_btn"></div></div>
+	<div id="reg_num"><span><h3><input type="hidden" value="${recruit.num}" id="regnum">공고등록번호 ${recruit.num}</h3></span></div><div id="func_btn"><div id="scrap_wrap"><img src="<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png" id="sc"><input type="button" value="스크랩" id="scrap_btn"></div></div>
 	</div>
 	</div>
 
@@ -206,7 +212,6 @@ $(function(){
 		
 		</div>
 	<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}&cid=${recruit.id}">Apply</a>
-	<a href="../scrap/scrapInsert?recruit_num=${recruit.num}&id=${member.id}&page=view">Scrap</a>
 	</section>
 	<%@ include file="../temp/footer.jsp"%>
 </body>

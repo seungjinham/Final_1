@@ -69,4 +69,9 @@ public class ApplyService {
 		obj_ar.add(listData);
 		return obj_ar;
 	}//method end
+	
+	public int duplicationCheck(ApplyDTO applyDTO) {
+		int result = applyDAO.duplicationCheck(applyDTO);
+		return result;
+	}
 }//class end

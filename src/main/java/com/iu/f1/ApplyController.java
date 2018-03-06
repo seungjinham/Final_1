@@ -1,5 +1,6 @@
 package com.iu.f1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,7 +37,7 @@ public class ApplyController {
 	@RequestMapping(value="applyInsert", method=RequestMethod.GET)
 	public String insert(ApplyDTO applyDTO, Model model) {
 		Integer integer = 0;
-		String message = "더 이상 지원 하실 수 없습니다.";
+		String message = "해당 채용공고에 더 이상 지원 하실 수 없습니다.";
 		RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
 		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
 		SupporterDTO supporterDTO = new SupporterDTO();
@@ -44,8 +45,18 @@ public class ApplyController {
 		supporterDTO.setId(applyDTO.getId());
 		supporterDTO.setCid(companyDTO.getId());
 		
-		int num = supporterService.applyConut(supporterDTO);
+		int num = supporterService.applyCount(supporterDTO);
+		
+		branch:
 		if(num < 3) {
+			int result = 0;
+			if(true) {
+				result = applyService.duplicationCheck(applyDTO);
+				if(result>0) {
+					message = "이미 지원한 공고입니다.";
+					break branch;
+				}
+			}
 			Integer integer1 = applyService.insert(applyDTO);
 			Integer integer2 = supporterService.insert(supporterDTO);
 			
@@ -53,9 +64,7 @@ public class ApplyController {
 				integer = integer1+integer2;
 				message = "성공적으로 지원 되었습니다.";
 			}
-		}
-//		recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
-//		companyDTO = companyService.selectOne(recruitDTO.getId());
+		} 
 		
 		model.addAttribute("apply_result", integer);
 		model.addAttribute("message", message);
@@ -66,21 +75,38 @@ public class ApplyController {
 	
 	@RequestMapping(value="applyDelete", method=RequestMethod.GET)
 	public String delete(ApplyDTO applyDTO, Model model) {
+		List<RecruitDTO> recruitDTO_ar=new ArrayList<RecruitDTO>();
+		List<SupporterDTO> supporterDTO_ar=new ArrayList<>();
+		Integer integer1 = null;
+		Integer integer2 = null;
 		String message = "다시 시도해주십시오";
-		RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
-		SupporterDTO supporterDTO = new SupporterDTO();
-		supporterDTO.setId(applyDTO.getId());
-		supporterDTO.setRecruit_num(applyDTO.getRecruit_num());
-		supporterDTO.setCid(recruitDTO.getId());
 		
-		Integer integer1 = applyService.delete(applyDTO);
-		Integer integer2 = supporterService.update(supporterDTO);
+		for(int i=0; i<applyDTO.getSelect_ch().size(); i++) {
+			RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getSelect_ch().get(i));
+			recruitDTO_ar.add(recruitDTO);
+		}
+		
+		for(int i=0; i<recruitDTO_ar.size(); i++) {
+			SupporterDTO supporterDTO = new SupporterDTO();
+			supporterDTO.setId(applyDTO.getId());
+			supporterDTO.setRecruit_num(applyDTO.getSelect_ch().get(i));
+			supporterDTO.setCid(recruitDTO_ar.get(i).getId());
+			supporterDTO_ar.add(supporterDTO);
+		}
+		
+		for(int i=0; i<supporterDTO_ar.size(); i++) {
+			Integer[] tempnum = new Integer[applyDTO.getSelect_ch().size()];
+			tempnum[i] = applyDTO.getSelect_ch().get(i);
+			applyDTO.setRecruit_num(tempnum[i]);
+			integer1 = applyService.delete(applyDTO);
+			integer2 = supporterService.update(supporterDTO_ar.get(i));
+		}
 		
 		if(integer1>0 && integer2>0) message = "성공적으로 지원을 취소하였습니다.";
 		
 		model.addAttribute("applyDelete", message);
 		
-		return null;
+		return "apply/applyList";
 	}
 	
 	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
@@ -95,7 +121,6 @@ public class ApplyController {
 			path = "apply/applyList";
 		} else {
 			ra.addFlashAttribute("message", message);
-			//model.addAttribute("applymessage", message);
 		}
 		return path;
 	}

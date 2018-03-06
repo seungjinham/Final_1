@@ -20,8 +20,26 @@ public class ScrapDAO {
 		return sqlSession.insert(NAMESPACE+"insert", scrapDTO);
 	}
 	
-	public int Delete(ScrapDTO scrapDTO) {
-		return sqlSession.delete(NAMESPACE+"delete", scrapDTO);
+	public int Delete(ScrapDTO scrapDTO, String page) {
+		int result = 0;
+		
+		if(page.equals("view")) {
+			result = sqlSession.delete(NAMESPACE+"delete", scrapDTO);
+		} else if(page.equals("list")) {
+			result = sqlSession.delete(NAMESPACE+"delete", scrapDTO);
+		} else {
+			String tempid = scrapDTO.getId();
+			int[] tempnum = new int[scrapDTO.getSelect_ch().size()];
+			for(int i=0; i<tempnum.length; i++) {
+				tempnum[i] = scrapDTO.getSelect_ch().get(i);
+			}
+			for(int i=0; i<tempnum.length; i++) {
+				scrapDTO.setId(tempid);
+				scrapDTO.setRecruit_num(tempnum[i]);
+				result = sqlSession.delete(NAMESPACE+"delete", scrapDTO);
+			}
+		}
+		return result;
 	}
 	
 	public List<ScrapDTO> SelectList(ScrapDTO scrapDTO) {

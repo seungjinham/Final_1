@@ -29,15 +29,17 @@
 			$("#s_m6").css("font-weight", "bold");
 		});
 		
-		function select_All(obj, val) {
+		var check_ar = new Array();
+		
+		function select_All(obj, ch) {
 			if(obj!=undefined) {
 				var count = obj.length;
 				if(obj.length>0) {
 					for(i=0; i<=obj.length-1; i++) {
-						obj[i].checked=val;
+						obj[i].checked=ch;
 					}
 				}else {
-					obj.checked=val;
+					obj.checked=ch;
 				}
 			}
 			return true;
@@ -45,12 +47,13 @@
 		
 		$("#select_all").on("click", function(){
 			var obj = $("input:checkbox[name='select_ch']");
-			var val = $("#select_all").prop("checked");
-			select_All(obj, val);
+			var ch = $("#select_all").prop("checked");
+			select_All(obj, ch);
 		});
 		
 		$("#scrap_del").click(function(){
-			location.href="../scrap/scrapDelete";
+			alert("스크랩 된 공고를 삭제하시겠습니까?");
+			//location.href="../scrap/scrapDelete?";
 		});
 		
 	});
@@ -63,9 +66,12 @@
 		<div class="container">
 		<%@ include file="../member/p_meun.jsp"%>
 
-<form id="form" name="frm">
-			<a href="../scrap/scrapDelete">ScrapDelete</a>
-			<input type="button" value="스크랩 삭제" id="scrap_del">
+<form id="form" name="frm" action="../scrap/scrapDelete">
+			<div id="btnarea">
+			<input type="submit" value="스크랩 삭제" id="scrap_del">
+			<input type="hidden" name="page">
+			<input type="hidden" name="id" value="${member.id}">
+			</div>
 			<table id="scrap_table">
 				<tr id="firstrow">
 					<th><input type="checkbox" id="select_all"></th>
@@ -78,7 +84,7 @@
 					<tr id="extrarow">
 						<td><input type="checkbox" value="${result.num}" name="select_ch" class="sel"></td>
 						<td>${result.addr}</td>
-						<td>${result.c_name}<br>${result.title}</td>
+						<td><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.c_name}</a><br><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${result.num}&id=<%=request.getSession().getId()%>">${result.title}</a></td>
 						<td>${result.salary}</td>
 						<td>${result.deadline}</td>
 					</tr>
