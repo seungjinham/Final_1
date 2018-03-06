@@ -55,16 +55,16 @@ public class ScrapController {
 					companyDTO = companyService.selectOne(recruitDTO.getId());
 					model.addAttribute("recruit", recruitDTO);
 					model.addAttribute("company", companyDTO);*/
-				} else if(integer == 0) {
+				} else if(integer < 0) {
 					message = "중복된 스크랩 입니다.";
 					path = "common/message";
 				} else {
 					message = "스크랩 실패 ";
-					path = "recruit/recruitView";
-					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
+					path = "common/message";
+/*					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
 					companyDTO = companyService.selectOne(recruitDTO.getId());
 					model.addAttribute("recruit", recruitDTO);
-					model.addAttribute("company", companyDTO);
+					model.addAttribute("company", companyDTO);*/
 				}
 			}
 		} else if(page.equals("list")) {
@@ -87,14 +87,14 @@ public class ScrapController {
 				}
 				else {
 					message = "스크랩 실패 ";
-					ListSort listSort = new ListSort();
+/*					ListSort listSort = new ListSort();
 					//recruit_ar = recruitService.selectList();
 					obj_ar = recruitService.selectList(listData);
 					company_ar = companyService.selectList();
 					recruit_ar = listSort.listSort((List<RecruitDTO>)obj_ar.get(0), company_ar);
 					model.addAttribute("list", recruit_ar);
-					model.addAttribute("pagelist", obj_ar.get(1));
-					path="recruit/recruitList";
+					model.addAttribute("pagelist", obj_ar.get(1));*/
+					path="common/message";
 				}
 			}
 		} else {
@@ -114,13 +114,30 @@ public class ScrapController {
 	}
 	
 	@RequestMapping(value="scrapDelete", method=RequestMethod.GET)
-	public String Delete(ScrapDTO scrapDTO, Model model) {
-		Integer integer = scrapService.Delete(scrapDTO);
-		if(integer>0) {
-			model.addAttribute("message", "스크랩삭제");
+	public String Delete(ScrapDTO scrapDTO, Model model, String page) {
+		Integer integer = null;
+		String path = null;
+		
+		if(page.equals("view")) {
+			integer = scrapService.Delete(scrapDTO, page);
+			if(integer>0) {
+				path = "common/message";
+				model.addAttribute("message", "스크랩삭제");
+			}
+		} else if(page.equals("list")) {
+			integer = scrapService.Delete(scrapDTO, page);
+			if(integer>0) {
+				path = "common/message";
+				model.addAttribute("message", "스크랩삭제");
+			}
+		} else {
+			integer = scrapService.Delete(scrapDTO, page);
+			if(integer>0) {
+				path = "scrap/scrapList";
+				model.addAttribute("message", "스크랩삭제");
+			}
 		}
-		//model.addAttribute("result", integer);
-		return "common/message";//"recruit/recruitList";
+		return path;
 	}
 	
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)
