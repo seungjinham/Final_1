@@ -20,17 +20,15 @@ $(function(){
 		var id = '${member.id}';
 		var page = 'view';
 		if(defpath==srcpath) {
-			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
  			$.get("../scrap/scrapInsert?recruit_num="+num+"&id="+id+"&page="+page, function(data){
 				$("head").append(data);
 			});
-			
+ 			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_on.png");
 		} else {
-			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
  			$.get("../scrap/scrapDelete?recruit_num="+num+"&id="+id+"&page="+page, function(data){
 				$("head").append(data);
 			});
-			
+ 			$("#sc").attr("src","<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
 		}
 	});
 	
@@ -211,7 +209,6 @@ $(function(){
 		</div>
 		
 		</div>
-	<a href="../apply/applyInsert?recruit_num=${recruit.num}&id=${member.id}&cid=${recruit.id}">Apply</a>
 	</section>
 	<%@ include file="../temp/footer.jsp"%>
 </body>
