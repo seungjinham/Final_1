@@ -27,14 +27,8 @@ public class PaperDAO {
 		return sqlSession.delete(NAMESPACE+"paperDelete", id);
 	}
 	
-	//이력서 보기
-	public PaperDTO view(String id) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"paperView", id);
+	//이력서 갯수 제한
+	public int count(String id) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"paperCount", id);
 	}
-	
-	//이력서 리스트
-	public PaperDTO list(String id) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"paperList", id);
-	}
-	
 }

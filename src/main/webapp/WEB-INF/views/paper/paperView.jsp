@@ -39,28 +39,29 @@
 			$("#s_m5").css("color", "#23A41A");
 			$("#s_m5").css("font-weight", "bold");
 		});
-		
+
 		var birth = '${member.birth}';
 		var birthArr = birth.split(',');
-		$(".birth").text(birthArr[0]+"."+birthArr[1]+"."+birthArr[2]);
-		
+		$(".birth").text(birthArr[0] + "." + birthArr[1] + "." + birthArr[2]);
+
 		var phone = '${member.phone}';
 		var phoneArr = phone.split(',');
-		$("#phone_text").text(phoneArr[0]+" - "+phoneArr[1]+" - "+phoneArr[2]);
-		
+		$("#phone_text").text(
+				phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
+
 		var addr = '${member.addr}';
 		var addrArr = addr.split(',');
-		$("#addr_text").text(addrArr[1]+" "+addrArr[2]+" "+addrArr[3]);
+		$("#addr_text").text(addrArr[1] + " " + addrArr[2] + " " + addrArr[3]);
 	});
 </script>
 <style type="text/css">
-
 .text_box {
 	width: 230px;
 	height: 60px;
 	float: left;
 }
-#addr_box{
+
+#addr_box {
 	width: 400px;
 	height: 60px;
 	float: left;
@@ -77,9 +78,10 @@
 			<div id="tit_border">
 				<div id="tit">이력서 보기</div>
 			</div>
+			<input type="hidden" name="paper_num">
 
 			<article class="view_border">
-				<div id="paper_tit_border">적극적이고 활발합니다.</div>
+				<div id="paper_tit_border">${paper.title}</div>
 				<div class="info_border">
 					<nav class="name">${member.name}</nav>
 					<nav class="birth"></nav>
@@ -163,7 +165,8 @@
 						<span class="emph">전공 계열</span> ${paper.major}
 					</nav>
 					<nav class="box">
-						<span class="emph">재학 기간</span> ${paper.entrance} ~ ${paper.graduation}
+						<span class="emph">재학 기간</span> ${paper.entrance} ~
+						${paper.graduation}
 					</nav>
 					<nav class="box box_2">
 						<span class="emph">구분</span> ${paper.s_kind} 졸업
@@ -190,42 +193,41 @@
 						<span class="emph">연봉 </span> ${paper.salary}
 					</nav>
 				</div>
-				
+
 				<c:if test="${paper.career_kind eq '신입'}">
-				<div class="box_border" id="newspace">
-					<nav id="license">경력</nav>
-					<nav id="category">구분</nav>
-					<div class="line"></div>
-					<nav class="stage">
-						<span class="reds">${paper.career_kind}</span>
-					</nav>
-				</div>
+					<div class="box_border" id="newspace">
+						<nav id="license">경력</nav>
+						<nav id="category">구분</nav>
+						<div class="line"></div>
+						<nav class="stage">
+							<span class="reds">${paper.career_kind}</span>
+						</nav>
+					</div>
 				</c:if>
-				
+
 				<c:if test="${paper.career_kind eq '경력'}">
-				<div class="box_border">
-					<nav id="license">경력</nav>
-					<nav id="category">구분</nav>
-					<div class="line"></div>
-					<nav class="stage">
-						<span class="reds">${paper.career_kind}</span>
-					</nav>
-					<nav class="box">
-						<span class="emph">회사명 </span> 1종보통 운전면허증
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">직책 </span> 서울지방경찰법원
-					</nav>
-					<nav class="box">
-						<span class="emph">직종 </span> 2008.03
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">담당업무</span> 합격
-					</nav>
-				</div>
+					<div class="box_border">
+						<nav id="license">경력</nav>
+						<nav id="category">구분</nav>
+						<div class="line"></div>
+						<nav class="stage">
+							<span class="reds">${paper.career_kind}</span>
+						</nav>
+						<nav class="box">
+							<span class="emph">회사명 </span> ${paper.company_n}
+						</nav>
+						<nav class="box box_2">
+							<span class="emph">직책 </span> ${paper.rank}
+						</nav>
+						<nav class="box">
+							<span class="emph">직종 </span> ${paper.fess}
+						</nav>
+						<nav class="box box_2">
+							<span class="emph">연봉 </span> ${paper.career_sal}
+						</nav>
+					</div>
 				</c:if>
-				
-				<c:if test="${paper.career_kind eq '경력'}">
+
 				<div class="box_border">
 					<nav id="license">자격증</nav>
 					<nav id="category">항목</nav>
@@ -246,7 +248,27 @@
 						<span class="emph">합격 여부</span> 합격
 					</nav>
 				</div>
-				</c:if>
+				
+				<div class="box_border">
+					<nav id="license">포트폴리오</nav>
+					<nav id="category">소개</nav>
+					<div class="line"></div>
+					<nav class="stage">
+						<span class="reds">포트폴리오다</span>
+					</nav>
+					<nav class="box">
+						<span class="emph">파일 </span> 1종보통 운전면허증
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">작업 기간 </span> 서울지방경찰법원
+					</nav>
+					<nav class="box">
+						<span class="emph">작업 인원 </span> 2008.03
+					</nav>
+					<nav class="box box_2">
+						<span class="emph">작품 소개 </span> 합격
+					</nav>
+				</div>
 
 
 			</article>

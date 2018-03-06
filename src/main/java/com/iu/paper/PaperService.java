@@ -1,6 +1,7 @@
 package com.iu.paper;
 
 import java.io.File;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -17,9 +18,11 @@ public class PaperService {
 	private PaperDAO paperDAO;
 	@Inject
 	private LicenseDAO licenseDAO;
+	@Inject
+	private PortDAO portDAO;
 	
 	//이력서 등록
-	public int insert(PaperDTO paperDTO,LicenseDTO licenseDTO, MultipartFile file, HttpSession session) throws Exception{
+	public int insert(PaperDTO paperDTO,LicenseDTO licenseDTO,PortDTO portDTO, MultipartFile file,MultipartFile port_file, HttpSession session) throws Exception{
 		String filePath = session.getServletContext().getRealPath("resources/upload");
 		File f = new File(filePath);
 		if(!f.exists()){
@@ -30,6 +33,13 @@ public class PaperService {
 		paperDTO.setFname(name);
 		paperDTO.setOname(file.getOriginalFilename());
 		
+		if(portDTO.getFname() == null && portDTO.getOname() == null){
+			portDTO.setFname("no");
+			portDTO.setOname("no");
+		}
+		if(portDTO.getFname() != null && portDTO.getOname() != null){
+			portDAO.insert(portDTO, port_file, session);
+		}
 		licenseDAO.insert(licenseDTO);
 		int result = paperDAO.insert(paperDTO);
 		return result;
@@ -44,15 +54,10 @@ public class PaperService {
 	public int delete(String id) throws Exception{
 		return paperDAO.delete(id);
 	}
-
-	//이력서 보기
-	public PaperDTO view(String id) throws Exception{
-		return paperDAO.view(id);
-	}
 	
-	//이력서 리스트
-	public PaperDTO list(String id) throws Exception{
-		return paperDAO.list(id);
+	//이력서 갯수 제한
+	public int count(String id) throws Exception{
+		return paperDAO.count(id);
 	}
 
 }

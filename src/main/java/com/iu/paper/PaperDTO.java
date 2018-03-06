@@ -32,6 +32,7 @@ public class PaperDTO extends PersonDTO{ //이력서
 	private String fess; //직종
 	private String career_work; //담당업무
 	private String career_sal; //연봉
+	private int paper_num;//이력서 번호
 
 	public String getId() {
 		return id;
@@ -200,6 +201,12 @@ public class PaperDTO extends PersonDTO{ //이력서
 	}
 	public void setCareer_sal(String career_sal) {
 		this.career_sal = career_sal;
+	}
+	public int getPaper_num() {
+		return paper_num;
+	}
+	public void setPaper_num(int paper_num) {
+		this.paper_num = paper_num;
 	}
 	
 }

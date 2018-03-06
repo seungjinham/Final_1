@@ -1,6 +1,5 @@
 package com.iu.paper;
 
-
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;

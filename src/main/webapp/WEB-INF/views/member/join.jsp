@@ -35,11 +35,6 @@
 				</div>
 				<a href="../person/personJoin" class="btn" id="p_btn">개인 회원가입</a>
 				<div class="j_write3">SNS계정으로 쉽고 빠르게 회원가입</div>
-				<div class="kakao">
-					<button>
-						<img src="../resources/images/member/kaka.PNG" id="kakao_p">
-					</button>
-				</div>
 			</div>
 
 			<div class="line"></div>

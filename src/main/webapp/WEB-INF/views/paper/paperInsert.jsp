@@ -71,10 +71,6 @@
 		$("#p_phone").attr("value",
 				phoneArr[0] + " - " + phoneArr[1] + " - " + phoneArr[2]);
 
-		var email = '${member.email}';
-		var emailArr = email.split(',');
-		$("#p_email").attr("value", emailArr[0] + " @ " + emailArr[1]);
-
 		var addr = '${member.addr}';
 		var addrArr = addr.split(',');
 		$("#p_addr").attr("value", addrArr[1] + addrArr[2]);
@@ -204,6 +200,7 @@
 		});
 		$("#x_box").click(function() {
 			$("#licences_boxs").hide();
+			$(".licences_input").val("");
 			$("#box_tit_border").css("border-bottom", "1px dotted gray");
 		});
 
@@ -321,7 +318,7 @@
 						</div>
 						<div class="Decision_border">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
-								id="p_email" value="" name="email" class="Decision">
+								id="p_email" value="${member.email}" name="email" class="Decision">
 						</div>
 						<div class="Decision_border_2">
 							<label for="p_addr" class="p_tit">주소</label> <input type="text"
@@ -455,7 +452,7 @@
 						</div>
 						<div class="Decision_border">
 							<label for="cr_work" class="p_tit">담당업무</label> <input
-								type="text" id="cr_work" name="career_work" class="Decision">
+								type="text" id="cr_work" name="career_work" class="Decision carr_input">
 						</div>
 						<div class="Decision_border">
 							<label for="cr_sal" class="p_tit">연봉</label> <input type="text"
@@ -475,12 +472,11 @@
 						</div>
 					</div>
 
-					<article class="box_border" id="licences_boxs"
-						style="display: none;">
+					<article class="box_border" id="licences_boxs" style="display: none;">
 						<div class="Decision_border">
 							<label for="l_kind" class="p_tit">항목</label> <select
-								name="l_kinds" class="Decision" id="l_kind">
-								<option>항목선택</option>
+								name="l_kinds" class="Decision license_input" id="l_kind">
+								<option value="">항목선택</option>
 								<option value="자격증/면허증">자격증/면허증</option>
 								<option value="어학시험">어학시험</option>
 								<option value="수상내역/공모전">수상내역/공모전</option>
@@ -488,16 +484,16 @@
 						</div>
 						<div class="Decision_border">
 							<label for="l_name" class="p_tit">자격증명</label> <input type="text"
-								id="l_name" name="l_names" class="Decision">
+								id="l_name" name="l_names" class="Decision license_input">
 						</div>
 						<div class="Decision_border">
 							<label for="issue" class="p_tit">발행처</label> <input type="text"
-								id="issue" name="l_issue" class="Decision">
+								id="issue" name="l_issue" class="Decision license_input">
 						</div>
 						<div class="Decision_border_3">
 							<label for="l_date" class="p_tit">취득일</label> <input type="text"
 								id="l_date" name="l_date" placeholder="ex) 200802"
-								class="Decision_3">
+								class="Decision_3 license_input">
 						</div>
 						<div id="x_box"></div>
 					</article>
