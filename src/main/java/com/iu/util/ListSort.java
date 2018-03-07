@@ -187,6 +187,7 @@ public class ListSort {
 	
 	public ConditionDTO matching(ConditionDTO conditionDTO, RecruitSearchDTO recruitSearchDTO, List<String> checkVar, List<String[]> checkArray) {
 		String[] tempstr = new String[25];
+		int num = 0;
 		
 		for(int i=0; i<checkVar.size(); i++) {
 			if(checkVar.get(i)==null) {
@@ -201,7 +202,12 @@ public class ListSort {
 		}
 		
 		for(int i=0; i<checkArray.size(); i++) {
-			int num = 0;
+			if(checkArray.get(i)==null) {
+				checkArray.remove(i);
+			}
+		}
+		
+		for(int i=0; i<checkArray.size(); i++) {
 			if(checkArray.get(i)!=null) {
 				for(int j=0; j<checkArray.get(i).length; j++) {
 					if(checkArray.get(i)[j]!=null) {
