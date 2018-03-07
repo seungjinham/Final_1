@@ -62,7 +62,6 @@ public class RecruitService {
 	
 	public void searchSelectList(RecruitSearchDTO recruitSearchDTO) {
 		ListSort listSort = new ListSort();
-		
 	}
 	
 	public List<Object> searchInfo(AreaCodeDTO areacodeDTO) {
