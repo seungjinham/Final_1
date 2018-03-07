@@ -186,12 +186,29 @@ public class ListSort {
 	}
 	
 	public ConditionDTO matching(ConditionDTO conditionDTO, RecruitSearchDTO recruitSearchDTO, List<String> checkVar, List<String[]> checkArray) {
-		for(int i=0; i<6; i++) {
-			if(checkVar.get(i)!=null) {
-				conditionDTO.setCon1(checkVar.get(i));
+		String[] tempstr = new String[25];
+		
+		for(int i=0; i<checkVar.size(); i++) {
+			if(checkVar.get(i)==null) {
+				checkVar.remove(i);
 			}
+		}
+		
+		for(int i=0; i<checkVar.size(); i++) {
+			if(checkVar.get(i)!=null) {
+				tempstr[i] = checkVar.get(i);
+			}
+		}
+		
+		for(int i=0; i<checkArray.size(); i++) {
+			int num = 0;
 			if(checkArray.get(i)!=null) {
-				
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						tempstr[num] = checkArray.get(i)[j];
+						num++;
+					}
+				}
 			}
 		}
 		return null;

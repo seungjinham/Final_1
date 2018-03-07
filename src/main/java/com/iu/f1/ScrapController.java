@@ -117,6 +117,7 @@ public class ScrapController {
 	public String Delete(ScrapDTO scrapDTO, Model model, String page) {
 		Integer integer = null;
 		String path = null;
+		List<Object> scrap_result = null;
 		
 		if(page.equals("view")) {
 			integer = scrapService.Delete(scrapDTO, page);
@@ -133,8 +134,12 @@ public class ScrapController {
 		} else {
 			integer = scrapService.Delete(scrapDTO, page);
 			if(integer>0) {
+				ListData listData = new ListData();
+				scrap_result = scrapService.SelectList(scrapDTO, listData);
 				path = "scrap/scrapList";
 				model.addAttribute("message", "스크랩삭제");
+				model.addAttribute("scrap_result", scrap_result.get(0));
+				model.addAttribute("pagelist", scrap_result.get(1));
 			}
 		}
 		return path;

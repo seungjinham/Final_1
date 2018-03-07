@@ -1,6 +1,7 @@
 package com.iu.util;
 
 public class ConditionDTO {
+	private String con0;
 	private String con1;
 	private String con2;
 	private String con3;
@@ -30,21 +31,14 @@ public class ConditionDTO {
 	private String con27;
 	private String con28;
 	private String con29;
-	private String con30;
 	private int count;
 	private boolean check;
 	
-	public boolean isCheck() {
-		return check;
+	public String getCon0() {
+		return con0;
 	}
-	public void setCheck(boolean check) {
-		this.check = check;
-	}
-	public int getCount() {
-		return count;
-	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setCon0(String con0) {
+		this.con0 = con0;
 	}
 	public String getCon1() {
 		return con1;
@@ -220,10 +214,16 @@ public class ConditionDTO {
 	public void setCon29(String con29) {
 		this.con29 = con29;
 	}
-	public String getCon30() {
-		return con30;
+	public int getCount() {
+		return count;
 	}
-	public void setCon30(String con30) {
-		this.con30 = con30;
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public boolean isCheck() {
+		return check;
+	}
+	public void setCheck(boolean check) {
+		this.check = check;
 	}
 }
