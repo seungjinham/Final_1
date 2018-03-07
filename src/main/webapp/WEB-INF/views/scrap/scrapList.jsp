@@ -53,7 +53,6 @@
 		
 		$("#scrap_del").click(function(){
 			alert("스크랩 된 공고를 삭제하시겠습니까?");
-			//location.href="../scrap/scrapDelete?";
 		});
 		
 	});
