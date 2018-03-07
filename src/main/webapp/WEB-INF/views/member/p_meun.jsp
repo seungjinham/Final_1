@@ -50,7 +50,7 @@
 		<a href="../paper/paperInsert" id="s_m4">이력서 등록<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m2">
-		<a href="../paper/paperList" id="s_m5">이력서 관리<span class="arrow">＞</span></a>
+		<a href="../paper/paperList?id=${member.id}" id="s_m5">이력서 관리<span class="arrow">＞</span></a>
 	</div>
 
 	<div class="m_meun" id="m3">

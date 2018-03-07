@@ -55,17 +55,6 @@
 	});
 </script>
 <style type="text/css">
-.text_box {
-	width: 230px;
-	height: 60px;
-	float: left;
-}
-
-#addr_box {
-	width: 400px;
-	height: 60px;
-	float: left;
-}
 </style>
 </head>
 <body>
@@ -81,7 +70,7 @@
 			<input type="hidden" name="paper_num">
 
 			<article class="view_border">
-				<div id="paper_tit_border">${paper.title}</div>
+				<div id="paper_tit_border">${view.title}</div>
 				<div class="info_border">
 					<nav class="name">${member.name}</nav>
 					<nav class="birth"></nav>
@@ -156,20 +145,20 @@
 					<nav id="last">최종학력</nav>
 					<div class="line"></div>
 					<nav class="stage">
-						<span class="reds">고등학교</span> ${paper.s_kind}
+						<span class="reds">고등학교</span> ${view.s_kind}
 					</nav>
 					<nav class="box">
-						<span class="emph">학교명</span> ${paper.s_name}
+						<span class="emph">학교명</span> ${view.s_name}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">전공 계열</span> ${paper.major}
+						<span class="emph">전공 계열</span> ${view.major}
 					</nav>
 					<nav class="box">
-						<span class="emph">재학 기간</span> ${paper.entrance} ~
+						<span class="emph">재학 기간</span> ${view.entrance} ~
 						${paper.graduation}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">구분</span> ${paper.s_kind} 졸업
+						<span class="emph">구분</span> ${view.s_kind} 졸업
 					</nav>
 				</div>
 
@@ -178,52 +167,52 @@
 					<nav id="area">근무 지역</nav>
 					<div class="line"></div>
 					<nav class="stage">
-						<span class="reds">${paper.location}</span>
+						<span class="reds">${view.location}</span>
 					</nav>
 					<nav class="box">
-						<span class="emph">직종</span> ${paper.h_job}
+						<span class="emph">직종</span> ${view.h_job}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">업종 </span> ${paper.h_work}
+						<span class="emph">업종 </span> ${view.h_work}
 					</nav>
 					<nav class="box">
-						<span class="emph">근무 형태</span> ${paper.h_kind}
+						<span class="emph">근무 형태</span> ${view.h_kind}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">연봉 </span> ${paper.salary}
+						<span class="emph">연봉 </span> ${view.salary}
 					</nav>
 				</div>
 
 				<c:if test="${paper.career_kind eq '신입'}">
 					<div class="box_border" id="newspace">
-						<nav id="license">경력</nav>
+						<nav id="career">경력 사항</nav>
 						<nav id="category">구분</nav>
 						<div class="line"></div>
 						<nav class="stage">
-							<span class="reds">${paper.career_kind}</span>
+							<span class="reds">${view.career_kind}</span>
 						</nav>
 					</div>
 				</c:if>
 
-				<c:if test="${paper.career_kind eq '경력'}">
+				<c:if test="${view.career_kind eq '경력'}">
 					<div class="box_border">
-						<nav id="license">경력</nav>
+						<nav id="career">경력 사항</nav>
 						<nav id="category">구분</nav>
 						<div class="line"></div>
 						<nav class="stage">
-							<span class="reds">${paper.career_kind}</span>
+							<span class="reds">${view.career_kind}</span>
 						</nav>
 						<nav class="box">
-							<span class="emph">회사명 </span> ${paper.company_n}
+							<span class="emph">회사명 </span> ${view.company_n}
 						</nav>
 						<nav class="box box_2">
-							<span class="emph">직책 </span> ${paper.rank}
+							<span class="emph">직책 </span> ${view.rank}
 						</nav>
 						<nav class="box">
-							<span class="emph">직종 </span> ${paper.fess}
+							<span class="emph">직종 </span> ${view.fess}
 						</nav>
 						<nav class="box box_2">
-							<span class="emph">연봉 </span> ${paper.career_sal}
+							<span class="emph">연봉 </span> ${view.career_sal}
 						</nav>
 					</div>
 				</c:if>
@@ -250,7 +239,7 @@
 				</div>
 				
 				<div class="box_border">
-					<nav id="license">포트폴리오</nav>
+					<nav id="port">포트폴리오</nav>
 					<nav id="category">소개</nav>
 					<div class="line"></div>
 					<nav class="stage">
@@ -269,9 +258,17 @@
 						<span class="emph">작품 소개 </span> 합격
 					</nav>
 				</div>
-
-
 			</article>
+			
+			<div id="btn_border">
+			<div id="list_btn_border">
+				<a href="./paperList"><button id="list_btn" class="btns">목록</button></a>
+				</div>
+				<div id="other_btn_border">
+				<a href="./paperUpdate"><button class="btns" id="up_btn">수정</button></a>
+				<a href="./paperDelete"><button class="btns" id="del_btn">삭제</button></a>
+				</div>
+			</div>
 
 		</div>
 

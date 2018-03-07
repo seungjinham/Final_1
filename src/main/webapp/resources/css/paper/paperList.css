@@ -2,7 +2,6 @@
 
 #main2 {
 	width: 1080px;
-	height: 800px;
 }
 
 #tit_border {
@@ -25,7 +24,6 @@
 
 .all_List_border {
 	width: 685px;
-	height: 700px;
 	float: left;
 	letter-spacing: -1px;
 	border-top: 2px solid #23A41A;
@@ -118,22 +116,22 @@
 	background-size: 35px;
 }
 
-#view:hover {
+.view:hover {
 	background-image: url('/f1/resources/images/paper/view.png');
 }
 
-#up:hover {
+.up:hover {
 	background-image: url('/f1/resources/images/paper/pen.png');
 }
 
-#del:hover {
+.del:hover {
 	background-image: url('/f1/resources/images/paper/del.png');
 }
 
 #plus_border {
 	width: 600px;
 	height: 80px;
-	padding-top: 20px;
+	padding-top: 40px;
 	margin-left: 40px;
 }
 

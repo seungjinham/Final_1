@@ -23,11 +23,10 @@
 }
 
 .view_border {
-	width: 610px;
+	width: 605px;
 	float: left;
 	border-top: 2px solid #23A41A;
 	border-bottom: 2px solid #23A41A;
-	margin-bottom: 70px;
 	padding-bottom: 50px;
 }
 
@@ -133,6 +132,18 @@
 	font-size: 15px;
 }
 
+.text_box {
+	width: 230px;
+	height: 60px;
+	float: left;
+}
+
+#addr_box {
+	width: 400px;
+	height: 60px;
+	float: left;
+}
+
 /* 학력, 자격증, 희망근무 공통적인것*/
 .box_border {
 	width: 600px;
@@ -144,7 +155,7 @@
 	border-bottom: 1px dotted gray;
 }
 
-#newspace{
+#newspace {
 	height: 95px;
 }
 
@@ -183,7 +194,6 @@
 	padding-right: 5px;
 }
 
-
 /* 학력 */
 #school {
 	width: 60px;
@@ -204,6 +214,36 @@
 	padding-top: 25px;
 }
 
+/* 희망 근무 */
+#hope {
+	width: 145px;
+	height: 70px;
+	float: left;
+	font-size: 19px;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+
+#area {
+	width: 85px;
+	height: 70px;
+	float: left;
+	font-size: 15px;
+	box-sizing: border-box;
+	padding-top: 25px;
+}
+
+/* 경력 사항 */
+#career {
+	width: 100px;
+	height: 70px;
+	float: left;
+	font-size: 19px;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
 
 /* 자격증 */
 #license {
@@ -225,10 +265,9 @@
 	padding-top: 25px;
 }
 
-
-/* 희망 근무 */
-#hope {
-	width: 145px;
+/* 포트폴리오 */
+#port {
+	width: 120px;
 	height: 70px;
 	float: left;
 	font-size: 19px;
@@ -237,11 +276,48 @@
 	padding-top: 20px;
 }
 
-#area {
-	width: 85px;
-	height: 70px;
+/* 버튼 */
+#btn_border {
+	width: 605px;
+	height: 100px;
 	float: left;
-	font-size: 15px;
+	margin-left: 300px;
+	padding-top: 40px;
+}
+
+#list_btn_border {
+	width: 200px;
+	height: 50px;
+	float: left;
+}
+
+.btns {
+	width: 100px;
+	height: 50px;
+	background-color: #23A41A;
+	font-size: 17px;
+	font-family: "맑은 고딕";
+	color: white;
+	border: none;
+	border-radius: 5px;
 	box-sizing: border-box;
-	padding-top: 25px;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+
+.btns:HOVER {
+	font-weight: bold;
+	background-color: white;
+	border: 2px solid #23A41A;
+	color: #23A41A;
+}
+
+#other_btn_border {
+	width: 220px;
+	height: 50px;
+	float: right;
+}
+
+#del_btn {
+	float: right;
 }

@@ -21,14 +21,19 @@ public class PortDAO {
 	//이력서 등록
 	public int insert(PortDTO portDTO, MultipartFile port_file, HttpSession session) throws Exception{
 		String filePath = session.getServletContext().getRealPath("resources/upload");
-		File f = new File(filePath);
-		if(!f.exists()){
-			f.mkdirs();
+		if(port_file.getOriginalFilename() == ""){
+			portDTO.setFname("");
+			portDTO.setOname("");
+		}else{
+			File f = new File(filePath);
+			if(!f.exists()){
+				f.mkdirs();
+			}
+			FileSaver fs = new FileSaver();
+			String name2 = fs.saver(port_file, filePath);
+			portDTO.setFname(name2);
+			portDTO.setOname(port_file.getOriginalFilename());
 		}
-		FileSaver fs = new FileSaver();
-		String name2 = fs.saver(port_file, filePath);
-		portDTO.setFname(name2);
-		portDTO.setOname(port_file.getOriginalFilename());
 		
 		return sqlSession.insert(NAMESPACE+"portInsert", portDTO);
 	}

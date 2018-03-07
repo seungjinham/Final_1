@@ -14,6 +14,7 @@ public class LicenseDAO {
 	
 	//이력서 등록
 	public int insert(LicenseDTO licenseDTO) throws Exception{
+		System.out.println("===========license");
 		return sqlSession.insert(NAMESPACE+"licenseInsert", licenseDTO);
 	}
 	
