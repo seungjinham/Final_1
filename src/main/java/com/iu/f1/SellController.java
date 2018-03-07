@@ -22,7 +22,7 @@ public class SellController {
 	@Inject
 	private SellerService sellerService;
 	
-	// 판매자 정보 등록
+	//=========================== Write 판매자 등록  ===========================
 	@RequestMapping(value="sellerWrite", method=RequestMethod.GET)
 	public void sellerWrite() throws Exception{
 		
@@ -47,7 +47,7 @@ public class SellController {
 		return mv;
 	}
 	
-	//판매자 정보 수정
+	//=========================== Update 판매자 정보 수정 ===========================
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
 	public Model sellerUpdate(HttpSession session, Model model) throws Exception{
 		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
@@ -74,7 +74,7 @@ public class SellController {
 		return mv;
 	}
 	
-	//판매자 정보 삭제
+	//=========================== Delete 판매자 정보 삭제 ===========================
 	@RequestMapping(value="sellerDelete", method=RequestMethod.GET)
 	public String sellerDelete(SellerDTO sellerDTO, HttpSession session, MultipartFile file[], RedirectAttributes rd) throws Exception{
 		int result = sellerService.sellerDelete(sellerDTO,session);
@@ -88,19 +88,41 @@ public class SellController {
 		return "redirect:./personMyPage";
 	}
 	
-	//판매자 정보 보기
-	@RequestMapping(value="sellerView")
-	public void view(HttpSession session, MultipartFile file[], Model model) throws Exception{
+	//=========================== Info 판매자 정보 보기 ===========================
+	@RequestMapping(value="sellerInfo")
+	public ModelAndView info(HttpSession session, MultipartFile file[]) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
 		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
 		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
-		model.addAttribute("seller", sellerDTO);
+		
+		mv.addObject("seller", sellerDTO);
+		mv.setViewName("sell/sellerInfo");
+		return mv;
 	}
 	
-	//판매자 목록 보기
+	//=========================== List 판매자 목록 ===========================
 	@RequestMapping(value="sellerList", method=RequestMethod.GET)
-	public void selectList(String category, Model model) throws Exception{
+	public ModelAndView selectList(String category) throws Exception{
+		ModelAndView mv = new ModelAndView();
 		List<SellerDTO> ar = sellerService.sellerList(category);
-		model.addAttribute("category", category);
+		
+		mv.addObject("list", ar);
+		mv.addObject("category", category);
+		mv.setViewName("sell/sellerList");
+		return mv;
 	}
 	
+	//=========================== View 판매자 페이지 ===========================
+	@RequestMapping(value="sellerView")
+	public ModelAndView view(HttpSession session, MultipartFile file[]) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
+		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
+		
+		mv.addObject("seller", sellerDTO);
+		mv.setViewName("sell/sellView");
+		return mv;
+	}
 }

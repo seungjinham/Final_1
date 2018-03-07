@@ -13,7 +13,6 @@ import com.iu.file.FileDAO;
 import com.iu.file.FileDTO;
 import com.iu.member.MemberDTO;
 import com.iu.util.FileSaver;
-
 @Service
 public class SellerService {
 	
@@ -105,5 +104,4 @@ public class SellerService {
 	public List<SellerDTO> sellerList(String category) throws Exception{
 		return sellerDAO.sellerList(category);
 	}
-	
 }

@@ -7,7 +7,7 @@
 </insert>
 
 <delete id="delete" parameterType="ScrapDTO">
-	delete scrap where recruit_num=#{recruit_num} and id=#{id}
+	delete from scrap where num=${num}
 </delete>
 
 <select id="selectList" parameterType="ScrapDTO" resultType="ScrapDTO">

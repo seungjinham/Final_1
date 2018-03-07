@@ -32,7 +32,7 @@ public class SellerDAO {
 	}
 	
 	public List<SellerDTO> sellerList(String category) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"selectList", category);
+		return sqlSession.selectList(NAMESPACE+"selectList", category);
 	}
 
 }
