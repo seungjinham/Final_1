@@ -20,6 +20,7 @@ public class PortDAO {
 	
 	//이력서 등록
 	public int insert(PortDTO portDTO, MultipartFile port_file, HttpSession session) throws Exception{
+		System.out.println("port_file:" + port_file.getOriginalFilename());
 		String filePath = session.getServletContext().getRealPath("resources/upload");
 		File f = new File(filePath);
 		if(!f.exists()){

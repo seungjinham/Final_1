@@ -21,12 +21,11 @@ public class QnaService {
 	
 	public int insert(QnaDTO qnaDTO, HttpSession session, MultipartFile file) throws Exception{
 		String filePath = session.getServletContext().getRealPath("resources/upload");
-				
+		
 		if(file.equals(file)){
 			qnaDTO.setFname("");
-			System.out.println("fname:"+qnaDTO.getFname());
 			qnaDTO.setOname("");	
-			System.out.println("oname:"+qnaDTO.getOname());
+
 		}else{
 			File f = new File(filePath);
 			if(!f.exists()){
@@ -37,9 +36,7 @@ public class QnaService {
 			String fileName=fileSaver.saver(file, filePath);
 			
 			qnaDTO.setFname(fileName);
-			System.out.println("fname:"+qnaDTO.getFname());
 			qnaDTO.setOname(file.getOriginalFilename());	
-			System.out.println("oname:"+qnaDTO.getOname());
 		}
 		
 		return qnaDAO.insert(qnaDTO);

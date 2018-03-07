@@ -14,8 +14,8 @@
 		delete seller where id=#{id}
 	</delete>
 	
-	<select id="selectList" parameterType="ListData" resultType="ListData">
-		select * from seller where category=#{category};	
+	<select id="selectList" parameterType="String" resultType="SellerDTO">
+		select * from seller where category=#{category}	
 	</select>
 	
 	<select id="selectOne" parameterType="SellerDTO" resultType="SellerDTO">

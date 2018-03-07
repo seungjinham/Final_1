@@ -72,7 +72,7 @@
 			class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
-		<a href="../sell/sellerView" id="s_m9">판매자 정보보기<span class="arrow">＞</span></a>
+		<a href="../sell/sellerInfo" id="s_m9">판매자 정보보기<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
 		<a href="./PersonUse" id="s_m10">거래내역<span class="arrow">＞</span></a>

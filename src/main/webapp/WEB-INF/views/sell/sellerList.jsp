@@ -10,6 +10,11 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style type="text/css">
+td {
+	padding-right : 60px;
+}
+</style>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp" %>
@@ -29,17 +34,44 @@
 				</c:choose>
 			</h1>
 			<div class="inbox">
-				<table>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
+<%-- 				<table>
+					<c:forEach begin="0" end="${list.length}" var="i">
+						<c:if test="i%3=0">
+							<br>
+						</c:if>
+						<tr>
+							<c:forEach items="${list}" var="s">
+								<td>
+									<a href="./sellerView"><img src="../resources/upload/${s.oname}" width="320px" height="220px"></a><br>
+									<a href="./sellerView">${s.title}</a><br>
+								</td>
+							</c:forEach>
+						</tr>
+					</c:forEach>
+				</table> --%>
 			</div>
-		</div>
-	</section>
+			
+			
+			
+			<!-- Container (Portfolio Section) -->
+			<div id="portfolio" class="container-fluid text-center bg-grey">
+				<br>
+				<div class="row text-center slideanim">
+					<div class="col-sm-4">
+						<div class="thumbnail">
+							<c:forEach items="${list}" var="s">
+							<a><img src="../resources/upload/${s.oname}" alt="" width="300" height="220"></a>
+							<p>
+								<strong><a href="./sellerView">${s.title}</a></strong>
+							</p>
+							</c:forEach>
+						</div>
+					</div>
+				</div>
+				<br>
+
+
+			</div></section>
 	<%@ include file="../temp/footer.jsp"%>
 </body>
 </html>
