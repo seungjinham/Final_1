@@ -2,7 +2,6 @@
 
 #main2 {
 	width: 1080px;
-	height: 800px;
 }
 
 #tit_border {
@@ -25,10 +24,12 @@
 
 .all_List_border {
 	width: 685px;
-	height: 700px;
 	float: left;
 	letter-spacing: -1px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
 	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
 }
 
 .list_border {
@@ -68,14 +69,14 @@
 
 .kind_border {
 	width: 40px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	border-right: 1px solid gray;
 }
 
 .sal_border {
 	width: 120px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	box-sizing: border-box;
 	padding-left: 15px;
@@ -84,7 +85,7 @@
 
 .job_border {
 	width: 100px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	box-sizing: border-box;
 	padding-left: 15px;
@@ -112,28 +113,29 @@
 }
 
 .btns:hover {
-	border: 2px solid #23A41A;
+	border: 3px solid #23A41A;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 35px;
+	border-radius: 5px;
 }
 
-#view:hover {
+.view:hover {
 	background-image: url('/f1/resources/images/paper/view.png');
 }
 
-#up:hover {
+.up:hover {
 	background-image: url('/f1/resources/images/paper/pen.png');
 }
 
-#del:hover {
+.del:hover {
 	background-image: url('/f1/resources/images/paper/del.png');
 }
 
 #plus_border {
 	width: 600px;
 	height: 80px;
-	padding-top: 20px;
+	padding-top: 40px;
 	margin-left: 40px;
 }
 

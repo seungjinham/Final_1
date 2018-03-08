@@ -8,6 +8,7 @@ public class PortDTO { //포트폴리오
 	private String p_date; //작업기간
 	private String people; //작업인원
 	private String contents; //작품소개
+	private int paper_num; //이력서번호
 
 	public String getId() {
 		return id;
@@ -45,5 +46,10 @@ public class PortDTO { //포트폴리오
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	
+	public int getPaper_num() {
+		return paper_num;
+	}
+	public void setPaper_num(int paper_num) {
+		this.paper_num = paper_num;
+	}
 }

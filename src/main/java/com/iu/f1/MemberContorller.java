@@ -21,7 +21,7 @@ public class MemberContorller {
 	@RequestMapping(value="memberLogOut")
 	public ModelAndView memberLogOut(HttpSession session){
 		ModelAndView mv  = new ModelAndView();
-		mv.addObject("message", "LogOut Success");
+		mv.addObject("message", "로그아웃 되었습니다.");
 		session.invalidate();
 		mv.addObject("path", "../");
 		mv.setViewName("common/result");

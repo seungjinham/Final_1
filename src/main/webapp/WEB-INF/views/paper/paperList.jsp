@@ -43,13 +43,13 @@
 		$(".btns").mouseenter(function() {
 			$(this).text("");
 		});
-		$("#view").mouseleave(function() {
+		$(".view").mouseleave(function() {
 			$(this).text("보기");
 		});
-		$("#up").mouseleave(function() {
+		$(".up").mouseleave(function() {
 			$(this).text("수정");
 		});
-		$("#del").mouseleave(function() {
+		$(".del").mouseleave(function() {
 			$(this).text("삭제");
 		});
 	});
@@ -68,28 +68,30 @@
 				<div id="tit">이력서 관리</div>
 			</div>
 
-			<c:forEach items="${list}" var="dto">
-				<article class="all_List_border">
+			<article class="all_List_border">
+				<c:forEach items="${list}" var="list">
 					<div class="list_border">
-						<div class="tit_border">${dto.title}</div>
-						<div class="date_border">${dto.paper_date}수정</div>
+						<div class="tit_border">${list.title}</div>
+						<div class="date_border">${list.paper_date}수정</div>
 						<div class="info_border">
-							<nav class="kind_border">${dto.career_kind}</nav>
-							<nav class="sal_border">${dto.salary}</nav>
-							<nav class="job_border">${dto.h_kind}</nav>
+							<nav class="kind_border">${list.career_kind}</nav>
+							<nav class="sal_border">${list.salary}</nav>
+							<nav class="job_border">${list.h_kind}</nav>
 						</div>
 						<div class="btns_broder">
-							<a href="./paperView"><button class="btns" id="view">보기</button></a>
-							<a href="#"><button class="btns" id="up">
-									<span>수정</span>
-								</button></a> <a href="#"><button class="btns" id="del">삭제</button></a>
+							<a href="./paperView?paper_num=${list.paper_num}"><button class="btns view" id="view">보기</button></a>
+							<a href="./paperUpdate?paper_num=${list.paper_num}"><button class="btns up" id="up">수정</button></a> 
+							<a href="./paperDelete?paper_num=${list.paper_num}"><button class="btns del" id="del">삭제</button></a>
 						</div>
 					</div>
-					<div id="plus_border">
-						<a href="#"><button id="plus">새 이력서 등록</button></a>
-					</div>
-				</article>
-			</c:forEach>
+				</c:forEach>
+				<c:if test="${p_count < 3}">
+				<div id="plus_border">
+					<a href="./paperInsert"><button id="plus">새 이력서 등록</button></a>
+				</div>
+				</c:if>
+			</article>
+			
 		</div>
 
 	</section>
