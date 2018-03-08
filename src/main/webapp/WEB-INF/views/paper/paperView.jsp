@@ -55,17 +55,6 @@
 	});
 </script>
 <style type="text/css">
-.text_box {
-	width: 230px;
-	height: 60px;
-	float: left;
-}
-
-#addr_box {
-	width: 400px;
-	height: 60px;
-	float: left;
-}
 </style>
 </head>
 <body>
@@ -81,14 +70,15 @@
 			<input type="hidden" name="paper_num">
 
 			<article class="view_border">
-				<div id="paper_tit_border">${paper.title}</div>
+				<div id="paper_tit_border">${view.title}</div>
 				<div class="info_border">
 					<nav class="name">${member.name}</nav>
-					<nav class="birth"></nav>
+					<nav class="birth">${member.birth}</nav>
 					<div class="line"></div>
 					<nav class="info_kind">
-						<span class="reds">구직중</span>
+						<span class="reds">${view.working}</span>
 					</nav>
+					<div id="photo_border"><img src="../resources/upload/${view.fname}" id="paper_photo"></div>
 					<nav id="email">
 						<div class="img_b">
 							<img
@@ -156,20 +146,20 @@
 					<nav id="last">최종학력</nav>
 					<div class="line"></div>
 					<nav class="stage">
-						<span class="reds">고등학교</span> ${paper.s_kind}
+						<span class="reds">고등학교</span> ${view.s_kind}
 					</nav>
 					<nav class="box">
-						<span class="emph">학교명</span> ${paper.s_name}
+						<span class="emph">학교명</span> ${view.s_name}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">전공 계열</span> ${paper.major}
+						<span class="emph">전공 계열</span> ${view.major}
 					</nav>
 					<nav class="box">
-						<span class="emph">재학 기간</span> ${paper.entrance} ~
-						${paper.graduation}
+						<span class="emph">재학 기간</span> ${view.entrance} ~
+						${view.graduation}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">구분</span> ${paper.s_kind} 졸업
+						<span class="emph">구분</span> ${view.s_kind} 졸업
 					</nav>
 				</div>
 
@@ -178,100 +168,112 @@
 					<nav id="area">근무 지역</nav>
 					<div class="line"></div>
 					<nav class="stage">
-						<span class="reds">${paper.location}</span>
+						<span class="reds">${view.location}</span>
 					</nav>
 					<nav class="box">
-						<span class="emph">직종</span> ${paper.h_job}
+						<span class="emph">직종</span> ${view.h_job}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">업종 </span> ${paper.h_work}
+						<span class="emph">업종 </span> ${view.h_work}
 					</nav>
 					<nav class="box">
-						<span class="emph">근무 형태</span> ${paper.h_kind}
+						<span class="emph">근무 형태</span> ${view.h_kind}
 					</nav>
 					<nav class="box box_2">
-						<span class="emph">연봉 </span> ${paper.salary}
+						<span class="emph">연봉 </span> ${view.salary}
 					</nav>
 				</div>
 
-				<c:if test="${paper.career_kind eq '신입'}">
+				<c:if test="${view.career_kind eq '신입'}">
 					<div class="box_border" id="newspace">
-						<nav id="license">경력</nav>
+						<nav id="career">경력 사항</nav>
 						<nav id="category">구분</nav>
 						<div class="line"></div>
 						<nav class="stage">
-							<span class="reds">${paper.career_kind}</span>
+							<span class="reds">${view.career_kind}</span>
 						</nav>
 					</div>
 				</c:if>
 
-				<c:if test="${paper.career_kind eq '경력'}">
+				<c:if test="${view.career_kind eq '경력'}">
 					<div class="box_border">
-						<nav id="license">경력</nav>
+						<nav id="career">경력 사항</nav>
 						<nav id="category">구분</nav>
 						<div class="line"></div>
 						<nav class="stage">
-							<span class="reds">${paper.career_kind}</span>
+							<span class="reds">${view.career_kind}</span>
 						</nav>
 						<nav class="box">
-							<span class="emph">회사명 </span> ${paper.company_n}
+							<span class="emph">회사명 </span> ${view.company_n}
 						</nav>
 						<nav class="box box_2">
-							<span class="emph">직책 </span> ${paper.rank}
+							<span class="emph">직책 </span> ${view.rank}
 						</nav>
 						<nav class="box">
-							<span class="emph">직종 </span> ${paper.fess}
+							<span class="emph">직종 </span> ${view.fess}
 						</nav>
 						<nav class="box box_2">
-							<span class="emph">연봉 </span> ${paper.career_sal}
+							<span class="emph">연봉 </span> ${view.career_sal}
 						</nav>
 					</div>
 				</c:if>
 
-				<div class="box_border">
-					<nav id="license">자격증</nav>
-					<nav id="category">항목</nav>
-					<div class="line"></div>
-					<nav class="stage">
-						<span class="reds">자격/면허증</span>
-					</nav>
-					<nav class="box">
-						<span class="emph">자격/면허증</span> 1종보통 운전면허증
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">발행처 </span> 서울지방경찰법원
-					</nav>
-					<nav class="box">
-						<span class="emph">취득일</span> 2008.03
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">합격 여부</span> 합격
-					</nav>
-				</div>
+				<c:if test="${not empty license.l_names}">
+					<div class="box_border">
+						<nav id="license">자격증</nav>
+						<nav id="category">항목</nav>
+						<div class="line"></div>
+						<nav class="stage">
+							<span class="reds">${license.l_kinds}</span>
+						</nav>
+						<nav class="box">
+							<span class="emph">자격증명</span> ${license.l_names}
+						</nav>
+						<nav class="box box_2">
+							<span class="emph">발행처 </span> ${license.l_issue}
+						</nav>
+						<nav class="box">
+							<span class="emph">취득일</span> ${license.l_date}
+						</nav>
+					</div>
+				</c:if>
 				
-				<div class="box_border">
-					<nav id="license">포트폴리오</nav>
-					<nav id="category">소개</nav>
-					<div class="line"></div>
-					<nav class="stage">
-						<span class="reds">포트폴리오다</span>
-					</nav>
-					<nav class="box">
-						<span class="emph">파일 </span> 1종보통 운전면허증
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">작업 기간 </span> 서울지방경찰법원
-					</nav>
-					<nav class="box">
-						<span class="emph">작업 인원 </span> 2008.03
-					</nav>
-					<nav class="box box_2">
-						<span class="emph">작품 소개 </span> 합격
-					</nav>
-				</div>
 
-
+				<c:if test="${not empty port.contents}">
+					<div class="box_border" id="port_border">
+						<nav id="port">포트폴리오</nav>
+						<nav id="category"></nav>
+						<nav class="stage">
+							<span class="reds"></span>
+						</nav>
+						<nav class="box">
+							<span class="emph">파일 </span> ${port.oname}
+						</nav>
+						<nav class="box">
+							<span class="emph"></span>
+						</nav>
+						<nav class="box">
+							<span class="emph">작업 기간 </span> ${port.p_date}
+						</nav>
+						<nav class="box box_2">
+							<span class="emph">작업 인원 </span> ${port.people}
+						</nav>
+						<nav class="box box_3">
+							<span class="emph">작품 소개 </span> <div id="port_info">${port.contents}</div>
+						</nav>
+					</div>
+				</c:if>
 			</article>
+
+			<div id="btn_border">
+				<div id="list_btn_border">
+					<a href="./paperList"><button id="list_btn" class="btns">목록</button></a>
+				</div>
+				<div id="other_btn_border">
+					<a href="./paperUpdate?paper_num=${view.paper_num}"><button class="btns" id="up_btn">수정</button></a>
+					<a href="./paperDelete?paper_num=${view.paper_num}"><button class="btns" id="del_btn">삭제</button></a>
+				</div>
+			</div>
 
 		</div>
 
