@@ -31,6 +31,7 @@ public class ConditionDTO {
 	private String con27;
 	private String con28;
 	private String con29;
+	private String con30;
 	private int count;
 	private boolean check;
 	
@@ -213,6 +214,12 @@ public class ConditionDTO {
 	}
 	public void setCon29(String con29) {
 		this.con29 = con29;
+	}
+	public String getCon30() {
+		return con30;
+	}
+	public void setCon30(String con30) {
+		this.con30 = con30;
 	}
 	public int getCount() {
 		return count;

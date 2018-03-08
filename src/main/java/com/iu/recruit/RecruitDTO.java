@@ -24,7 +24,17 @@ public class RecruitDTO extends CompanyDTO{
 	private String oname;
 	private String addr;
 	private String c_name;
+	private String job_1;
 	
+	
+	public String getJob_1() {
+		return job_1;
+	}
+
+	public void setJob_1(String job_1) {
+		this.job_1 = job_1;
+	}
+
 	public int getNum() {
 		return num;
 	}

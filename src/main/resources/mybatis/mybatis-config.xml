@@ -26,6 +26,7 @@
   		<typeAlias type="com.iu.scrap.TempDTO" alias="TempDTO"/>
   		<typeAlias type="com.iu.util.AreaCodeDTO" alias="AreaCodeDTO"/>
   		<typeAlias type="java.lang.String" alias="String"/>
+  		<typeAlias type="com.iu.util.ConditionDTO" alias="ConditionDTO"/>
   		
   	</typeAliases>
   

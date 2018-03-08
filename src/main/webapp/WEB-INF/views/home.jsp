@@ -10,8 +10,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 	<script type="text/javascript">
 	</script>
-	<style type="text/cs
-	+s">
+	<style type="text/css">
 	.top {
 	position: absolute;
 	right: 20px;

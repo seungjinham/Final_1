@@ -119,7 +119,14 @@
 		$("#jk").click(function() {
 			$("#jobkind").css('display', 'block');
 		});
-
+		//나이
+		$("#mu").click(function(){
+			if($(this).prop("checked")){
+				$("#age").val($(this).val());
+			}else{
+				$("#age").val("");
+			}
+		});
 		$("#search").click(function() {
 			var job = new Array();
 			var w_date = new Array();
@@ -172,12 +179,6 @@
 				salary = $(':radio[name="salary"]:checked').val();
 			}
 
-			//나이
-			if ($("#age").val() != "") {
-				age = $("#age").val();
-			} else {
-				age = $('input:checkbox[name="age"]').val();
-			}
 
 			//성별
 			if ($(':radio[name="gender"]:checked').val() == '남자') {
@@ -229,7 +230,6 @@
 <body>
 	<%@include file="../temp/header1.jsp"%>
 	<section id="main">
-		<a href="<%=request.getContextPath()%>/recruit/recruitSearchList">SearchList</a>
 		<div id="first">
 			<div id="searchsite">
 				<div>
@@ -341,7 +341,7 @@
 							<h3>연령</h3>
 							<div class="selbox">
 								<input type="text" size="5" value="" id="age" name="age">세&nbsp; 
-								<input type="checkbox" name="age" value="무관">무관
+								<input type="checkbox" id="mu" value="무관">무관
 							</div>
 						</fieldset>
 
