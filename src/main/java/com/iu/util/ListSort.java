@@ -99,6 +99,7 @@ public class ListSort {
 	public ConditionDTO matching(ConditionDTO conditionDTO, RecruitSearchDTO recruitSearchDTO, List<String> checkVar, List<String[]> checkArray) {
 		String[] tempstr = new String[31];
 		int num = 5;
+		char ch = 95;
 		
 /*		for(int i=0; i<checkVar.size(); i++) {
 			if(checkVar.get(i)==null) {
@@ -112,40 +113,44 @@ public class ListSort {
 			}
 		}
 		
+		loop:
 		for(int i=0; i<tempstr.length; i++) {
+			if(i==6) {
+				break loop;
+			}
 			switch(i) {
 			case 0: if(tempstr[i]==null) {
-				conditionDTO.setCon0(""); 
+				conditionDTO.setCon0(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon0(tempstr[i]);
 			}
 			break;
 			case 1: if(tempstr[i]==null) {
-				conditionDTO.setCon1(""); 
+				conditionDTO.setCon1(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon1(tempstr[i]);
 			}
 			break;
 			case 2: if(tempstr[i]==null) {
-				conditionDTO.setCon2(""); 
+				conditionDTO.setCon2(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon2(tempstr[i]);
 			}
 			break;
 			case 3: if(tempstr[i]==null) {
-				conditionDTO.setCon3(""); 
+				conditionDTO.setCon3(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon3(tempstr[i]);
 			}
 			break;
 			case 4: if(tempstr[i]==null) {
-				conditionDTO.setCon4(""); 
+				conditionDTO.setCon4(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon4(tempstr[i]);
 			}
 			break;
 			case 5: if(tempstr[i]==null) {
-				conditionDTO.setCon5(""); 
+				conditionDTO.setCon5(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon5(tempstr[i]);
 			}
@@ -160,7 +165,70 @@ public class ListSort {
 		}*/
 		
 		for(int i=0; i<checkArray.size(); i++) {
-			num++;
+			int k=0;
+			switch(i) {
+			case 0: if(checkArray.get(i)!=null) {
+				k=5;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			case 1: if(checkArray.get(i)!=null) {
+				k=7;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			case 2: if(checkArray.get(i)!=null) {
+				k=9;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			case 3: if(checkArray.get(i)!=null) {
+				k=15;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			case 4: if(checkArray.get(i)!=null) {
+				k=20;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			case 5: if(checkArray.get(i)!=null) {
+				k=28;
+				for(int j=0; j<checkArray.get(i).length; j++) {
+					if(checkArray.get(i)[j]!=null) {
+						k++;
+						tempstr[k] = checkArray.get(i)[j];
+					}
+				}
+			}
+			break;
+			}
+/*			num++;
 			if(checkArray.get(i)!=null) {
 				for(int j=0; j<checkArray.get(i).length; j++) {
 					if(checkArray.get(i)[j]!=null) {
@@ -168,36 +236,161 @@ public class ListSort {
 						num++;
 					}
 				}
-			}
+				num--;
+			}*/
 		}
 		
 		for(int i=0; i<tempstr.length; i++) {
 			switch(6+i) {
-			case 6: conditionDTO.setCon6(tempstr[i]); break;
-			case 7: conditionDTO.setCon7(tempstr[i]); break;
-			case 8: conditionDTO.setCon8(tempstr[i]); break;
-			case 9: conditionDTO.setCon9(tempstr[i]); break;
-			case 10: conditionDTO.setCon10(tempstr[i]); break;
-			case 11: conditionDTO.setCon11(tempstr[i]); break;
-			case 12: conditionDTO.setCon12(tempstr[i]); break;
-			case 13: conditionDTO.setCon13(tempstr[i]); break;
-			case 14: conditionDTO.setCon14(tempstr[i]); break;
-			case 15: conditionDTO.setCon15(tempstr[i]); break;
-			case 16: conditionDTO.setCon16(tempstr[i]); break;
-			case 17: conditionDTO.setCon17(tempstr[i]); break;
-			case 18: conditionDTO.setCon18(tempstr[i]); break;
-			case 19: conditionDTO.setCon19(tempstr[i]); break;
-			case 20: conditionDTO.setCon20(tempstr[i]); break;
-			case 21: conditionDTO.setCon21(tempstr[i]); break;
-			case 22: conditionDTO.setCon22(tempstr[i]); break;
-			case 23: conditionDTO.setCon23(tempstr[i]); break;
-			case 24: conditionDTO.setCon24(tempstr[i]); break;
-			case 25: conditionDTO.setCon25(tempstr[i]); break;
-			case 26: conditionDTO.setCon26(tempstr[i]); break;
-			case 27: conditionDTO.setCon27(tempstr[i]); break;
-			case 28: conditionDTO.setCon28(tempstr[i]); break;
-			case 29: conditionDTO.setCon29(tempstr[i]); break;
-			case 30: conditionDTO.setCon30(tempstr[i]); break;
+			case 6: if(tempstr[6+i]==null) {
+				conditionDTO.setCon6("_"); 
+			} else {
+				conditionDTO.setCon6(tempstr[6+i]);
+			}
+			break;
+			case 7: if(tempstr[6+i]==null) {
+				conditionDTO.setCon7("_"); 
+			} else {
+				conditionDTO.setCon7(tempstr[6+i]);
+			}
+			break;
+			case 8: if(tempstr[6+i]==null) {
+				conditionDTO.setCon8("_"); 
+			} else {
+				conditionDTO.setCon8(tempstr[6+i]);
+			}
+			case 9: if(tempstr[6+i]==null) {
+				conditionDTO.setCon9("_"); 
+			} else {
+				conditionDTO.setCon9(tempstr[6+i]); 
+			}
+			break;
+			case 10: if(tempstr[6+i]==null) {
+				conditionDTO.setCon10("_"); 
+			} else {
+				conditionDTO.setCon10(tempstr[6+i]); 
+			}
+			break;
+			case 11: if(tempstr[6+i]==null) {
+				conditionDTO.setCon11("_"); 
+			} else {
+				conditionDTO.setCon11(tempstr[6+i]);
+			}
+			break;
+			case 12: if(tempstr[6+i]==null) {
+				conditionDTO.setCon12("_"); 
+			} else {
+				conditionDTO.setCon12(tempstr[6+i]); 
+			}
+			break;
+			case 13: if(tempstr[6+i]==null) {
+				conditionDTO.setCon13("_"); 
+			} else {
+				conditionDTO.setCon13(tempstr[6+i]); 
+			}
+			break;
+			case 14: if(tempstr[6+i]==null) {
+				conditionDTO.setCon14("_"); 
+			} else {
+				conditionDTO.setCon14(tempstr[6+i]); 
+			}
+			break;
+			case 15: if(tempstr[6+i]==null) {
+				conditionDTO.setCon15("_"); 
+			} else {
+				conditionDTO.setCon15(tempstr[6+i]);
+			}
+			break;
+			case 16: if(tempstr[6+i]==null) {
+				conditionDTO.setCon16("_"); 
+			} else {
+				conditionDTO.setCon16(tempstr[6+i]);
+			}
+			break;
+			case 17: if(tempstr[6+i]==null) {
+				conditionDTO.setCon17(""); 
+			} else {
+				conditionDTO.setCon17(tempstr[6+i]);
+			}
+			break;
+			case 18: if(tempstr[6+i]==null) {
+				conditionDTO.setCon18("_"); 
+			} else {
+				conditionDTO.setCon18(tempstr[6+i]);
+			}
+			break;
+			case 19: if(tempstr[6+i]==null) {
+				conditionDTO.setCon19("_");
+			} else {
+				conditionDTO.setCon19(tempstr[6+i]);
+			}
+			break;
+			case 20: if(tempstr[6+i]==null) {
+				conditionDTO.setCon20("_"); 
+			} else {
+				conditionDTO.setCon20(tempstr[6+i]);
+			}
+			break;
+			case 21: if(tempstr[6+i]==null) {
+				conditionDTO.setCon21("_"); 
+			} else {
+				conditionDTO.setCon21(tempstr[6+i]);
+			}
+			break;
+			case 22: if(tempstr[6+i]==null) {
+				conditionDTO.setCon22("_"); 
+			} else {
+				conditionDTO.setCon22(tempstr[6+i]);
+			}
+			break;
+			case 23: if(tempstr[6+i]==null) {
+				conditionDTO.setCon23("_"); 
+			} else {
+				conditionDTO.setCon23(tempstr[6+i]);
+			}
+			break;
+			case 24: if(tempstr[6+i]==null) {
+				conditionDTO.setCon24("_"); 
+			} else {
+				conditionDTO.setCon24(tempstr[6+i]);
+			}
+			break;
+			case 25: if(tempstr[6+i]==null) {
+				conditionDTO.setCon25("_"); 
+			} else {
+				conditionDTO.setCon25(tempstr[6+i]);
+			}
+			break;
+			case 26: if(tempstr[6+i]==null) {
+				conditionDTO.setCon26("_"); 
+			} else {
+				conditionDTO.setCon26(tempstr[6+i]);
+			}
+			break;
+			case 27: if(tempstr[6+i]==null) {
+				conditionDTO.setCon27("_"); 
+			} else {
+				conditionDTO.setCon27(tempstr[6+i]);
+			}
+			break;
+			case 28: if(tempstr[6+i]==null) {
+				conditionDTO.setCon28("_");
+			} else {
+				conditionDTO.setCon28(tempstr[6+i]);
+			}
+			break;
+			case 29: if(tempstr[6+i]==null) {
+				conditionDTO.setCon29("_"); 
+			} else {
+				conditionDTO.setCon29(tempstr[6+i]); 
+			}
+			break;
+			case 30: if(tempstr[6+i]==null) {
+				conditionDTO.setCon30("_"); 
+			} else {
+				conditionDTO.setCon30(tempstr[6+i]);
+			}
+			break;
 			}
 		}
 		return conditionDTO;

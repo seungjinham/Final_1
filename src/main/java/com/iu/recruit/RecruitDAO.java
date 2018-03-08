@@ -56,6 +56,7 @@ public class RecruitDAO {
 	}
 	
 	public List<RecruitDTO> searchSelectList(ConditionDTO conditionDTO) {
+		System.out.println(conditionDTO.getCon0());
 		return sqlSession.selectList(NAMESPACE+"SearchSelect", conditionDTO);
 	}
 	

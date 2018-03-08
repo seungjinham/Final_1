@@ -9,16 +9,23 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#dcbtn").click(function(){
+		location.href = "../recruit/recruitSearch"
+	});
+});
+</script>
 <title>Insert title here</title>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-
-			<!-- <h1>Person Update</h1> -->
 			
+			<div id="btnwrap">
 			<input type="button" value="다른 조건으로 검색하기" id="dcbtn">
+			</div>
 
 			<div id="powerlink">
 				<h2>파워링크</h2>
