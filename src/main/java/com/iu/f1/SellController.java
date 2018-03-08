@@ -114,13 +114,12 @@ public class SellController {
 	}
 	
 	//=========================== View 판매자 페이지 ===========================
-	@RequestMapping(value="sellerView")
-	public ModelAndView view(HttpSession session, String id) throws Exception{
+	@RequestMapping(value="sellerView", method=RequestMethod.GET)
+	public ModelAndView view(String id) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		SellerDTO sellerDTO = new SellerDTO();
 		sellerDTO.setId(id);
 		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
-		
 		mv.addObject("seller", sellerDTO);
 		mv.setViewName("sell/sellerView");
 		return mv;

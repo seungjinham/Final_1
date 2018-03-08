@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -16,15 +15,10 @@
 	<section id="main">
 		<div class="container">
 			<div class="inbox">
-				<h1>sellerView</h1>
 				<table>
-					<c:forEach items="${list}" var="s">
-						<tr>
-							<td><a href=""><img src="" width="50px" height="50px"></a></td>
-							<td><a href="./sellerView">${s.title}</a></td>
-							<td>${s.category}</td>
-						</tr>
-					</c:forEach>
+						<tr><td>category > ${seller.category}</td></tr>
+						<tr><td><img src="../resources/upload/${seller.oname}" width="500px" height="400px"></td></tr>
+						<tr><td>${seller.title}</td></tr>
 				</table>
 			</div>
 		</div>
