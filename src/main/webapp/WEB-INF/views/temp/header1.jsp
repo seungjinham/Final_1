@@ -46,7 +46,7 @@
 		<div class="hgroup">
 				<div class="inbox">
 					<h1 class="logo">
-						<a href="<%=request.getContextPath()%>">
+						<a href="<%=request.getContextPath()%>" id="logo_img">
 							<img src="/f1/resources/images/common/footer_logo.png" width="40px" height="40px">
 							<span id="logo_letter">P!CK ME</span>
 						</a>
@@ -116,6 +116,9 @@
 							<ul class="navi-sublist subnav04">
 								<li><a href="<%=request.getContextPath()%>/faq/faqList">자주묻는 질문</a></li>
 								<li><a href="<%=request.getContextPath()%>/qna/qnaWrite">문의하기</a></li>
+								<c:if test="${member.id == 'admin'}">
+									<li><a href="<%=request.getContextPath()%>/qna/qnaList">문의리스트</a></li>
+								</c:if>
 							</ul>
 						</li>
 					</ul>

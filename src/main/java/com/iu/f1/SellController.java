@@ -115,14 +115,14 @@ public class SellController {
 	
 	//=========================== View 판매자 페이지 ===========================
 	@RequestMapping(value="sellerView")
-	public ModelAndView view(HttpSession session, MultipartFile file[]) throws Exception{
+	public ModelAndView view(HttpSession session, String id) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		
-		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
+		SellerDTO sellerDTO = new SellerDTO();
+		sellerDTO.setId(id);
 		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
 		
 		mv.addObject("seller", sellerDTO);
-		mv.setViewName("sell/sellView");
+		mv.setViewName("sell/sellerView");
 		return mv;
 	}
 }
