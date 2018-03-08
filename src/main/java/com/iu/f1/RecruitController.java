@@ -48,13 +48,17 @@ public class RecruitController {
 	}
 	
 	@RequestMapping(value="recruitSearch", method=RequestMethod.GET)
-	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO) {	
+	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, AreaCodeDTO areacodeDTO, ListData listData) {	
 		String path = "recruit/recruitSearch";
 		List<Object> info = null;
+		List<Object> collect_ar = null;
 		ListSort listSort = new ListSort();
 		ConditionDTO conditionDTO= listSort.check(recruitSearchDTO);
 		if(conditionDTO.isCheck()) {
-			//recruitService.searchSelectList(recruitSearchDTO, count);
+			collect_ar = recruitService.searchSelectList(conditionDTO, listData);
+			model.addAttribute("totallist", collect_ar.get(0));
+			model.addAttribute("pagelist", collect_ar.get(1));
+			path = "recruit/recruitSearchList";
 		} else {
 			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
 				info = recruitService.searchInfo(areacodeDTO);

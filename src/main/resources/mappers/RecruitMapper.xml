@@ -86,4 +86,38 @@
 	<select id="Spec_Select" resultType="String">
 		select * from spec
 	</select>
+	
+	<select id="SearchSelect" parameterType="ConditionDTO" resultType="RecruitDTO">
+		select * from (select * from member M inner join recruit R on M.id=R.id) J where 
+		title like %#{con0}% and 
+		gender like %#{con1}% and
+		w_day like %#{con2}% and
+		salary like %#{con3}% and
+		age like %#{con4}% and
+		job_1 like %#{con5}% and
+		job_1 like %#{con6}% and
+		addr like %#{con7}% and
+		addr like %#{con8}% and
+		w_date like %#{con9}% and
+		w_date like %#{con10}% and
+		w_date like %#{con11}% and
+		w_date like %#{con12}% and
+		w_date like %#{con13}% and
+		w_date like %#{con14}% and
+		school like %#{con15}% and
+		school like %#{con16}% and
+		school like %#{con17}% and
+		school like %#{con18}% and
+		school like %#{con19}% and
+		school like %#{con20}% and
+		school like %#{con21}% and
+		school like %#{con22}% and
+		w_time like %#{con23}% and
+		w_time like %#{con24}% and
+		w_time like %#{con25}% and
+		w_time like %#{con26}% and
+		w_time like %#{con27}% and
+		special like %#{con28}% and
+		special like %#{con29}% 
+	</select>
 </mapper>
