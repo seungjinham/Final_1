@@ -7,6 +7,7 @@ public class LicenseDTO { //자격증
 	private String l_names; //자격증명
 	private String l_date; //취득일
 	private String l_issue; //발행처
+	private int paper_num; //이력서번호
 
 	public String getId() {
 		return id;
@@ -37,6 +38,12 @@ public class LicenseDTO { //자격증
 	}
 	public void setL_issue(String l_issue) {
 		this.l_issue = l_issue;
+	}
+	public int getPaper_num() {
+		return paper_num;
+	}
+	public void setPaper_num(int paper_num) {
+		this.paper_num = paper_num;
 	}
 	
 }

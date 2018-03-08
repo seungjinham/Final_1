@@ -55,14 +55,6 @@
 	});
 </script>
 <style type="text/css">
-#bottom_line{
-	width: 710px;
-	height: 50px;
-	float: left;
-	margin-left: 290px;
-	border-top: 2px solid #23A41A;
-	margin-top: 20px;
-}
 </style>
 </head>
 <body>
@@ -88,19 +80,17 @@
 						</div>
 						<div class="btns_broder">
 							<a href="./paperView?paper_num=${list.paper_num}"><button class="btns view" id="view">보기</button></a>
-							<a href="#"><button class="btns up" id="up">
-									<span>수정</span>
-								</button></a> <a href="#"><button class="btns del" id="del">삭제</button></a>
+							<a href="./paperUpdate?paper_num=${list.paper_num}"><button class="btns up" id="up">수정</button></a> 
+							<a href="./paperDelete?paper_num=${list.paper_num}"><button class="btns del" id="del">삭제</button></a>
 						</div>
 					</div>
 				</c:forEach>
 				<c:if test="${p_count < 3}">
 				<div id="plus_border">
-					<a href="#"><button id="plus">새 이력서 등록</button></a>
+					<a href="./paperInsert"><button id="plus">새 이력서 등록</button></a>
 				</div>
 				</c:if>
 			</article>
-					<div id="bottom_line"></div>
 			
 		</div>
 

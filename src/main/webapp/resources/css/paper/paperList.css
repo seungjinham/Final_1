@@ -26,7 +26,10 @@
 	width: 685px;
 	float: left;
 	letter-spacing: -1px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
 	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
 }
 
 .list_border {
@@ -66,14 +69,14 @@
 
 .kind_border {
 	width: 40px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	border-right: 1px solid gray;
 }
 
 .sal_border {
 	width: 120px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	box-sizing: border-box;
 	padding-left: 15px;
@@ -82,7 +85,7 @@
 
 .job_border {
 	width: 100px;
-	height: 20px;
+	height: 25px;
 	float: left;
 	box-sizing: border-box;
 	padding-left: 15px;
@@ -110,10 +113,11 @@
 }
 
 .btns:hover {
-	border: 2px solid #23A41A;
+	border: 3px solid #23A41A;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 35px;
+	border-radius: 5px;
 }
 
 .view:hover {

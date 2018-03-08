@@ -23,7 +23,7 @@
 }
 
 .view_border {
-	width: 605px;
+	width: 555px;
 	float: left;
 	border-top: 2px solid #23A41A;
 	border-bottom: 2px solid #23A41A;
@@ -31,11 +31,11 @@
 }
 
 #paper_tit_border {
-	width: 600px;
+	width: 550px;
 	height: 100px;
 	box-sizing: border-box;
 	padding-top: 35px;
-	padding-left: 40px;
+	padding-left: 50px;
 	font-size: 20px;
 	font-family: "맑은 고딕";
 	font-weight: bold;
@@ -43,13 +43,26 @@
 }
 
 .info_border {
-	width: 600px;
-	height: 270px;
+	width: 550px;
+	height: 330px;
 	font-family: "맑은 고딕";
 	box-sizing: border-box;
-	padding-left: 40px;
+	padding-left: 50px;
 	padding-top: 10px;
 	border-bottom: 1px dotted gray;
+}
+
+#photo_border {
+	width: 130px;
+	height: 170px;
+	float: left;
+	padding-right: 30px;
+	padding-bottom: 15px;
+}
+
+#paper_photo {
+	width: 130px;
+	height: 170px;
 }
 
 .img_b {
@@ -87,7 +100,7 @@
 }
 
 .info_kind {
-	width: 300px;
+	width: 200px;
 	height: 70px;
 	float: left;
 	font-size: 15px;
@@ -97,7 +110,7 @@
 }
 
 #email, #phone {
-	width: 270px;
+	width: 320px;
 	height: 60px;
 	float: left;
 	box-sizing: border-box;
@@ -146,11 +159,11 @@
 
 /* 학력, 자격증, 희망근무 공통적인것*/
 .box_border {
-	width: 600px;
-	height: 220px;
+	width: 550px;
+	height: 215px;
 	font-family: "맑은 고딕";
 	box-sizing: border-box;
-	padding-left: 40px;
+	padding-left: 50px;
 	padding-top: 10px;
 	border-bottom: 1px dotted gray;
 }
@@ -160,7 +173,7 @@
 }
 
 .stage {
-	width: 300px;
+	width: 200px;
 	height: 70px;
 	float: left;
 	font-size: 15px;
@@ -175,7 +188,7 @@
 }
 
 .box {
-	width: 260px;
+	width: 230px;
 	height: 60px;
 	float: left;
 	box-sizing: border-box;
@@ -191,7 +204,7 @@
 .emph {
 	font-size: 17px;
 	font-weight: bold;
-	padding-right: 5px;
+	padding-right: 10px;
 }
 
 /* 학력 */
@@ -266,6 +279,10 @@
 }
 
 /* 포트폴리오 */
+#port_border {
+	height: 315px;
+}
+
 #port {
 	width: 120px;
 	height: 70px;
@@ -276,9 +293,19 @@
 	padding-top: 20px;
 }
 
+.box_3 {
+	width: 450px;
+	height: 80px;
+}
+
+#port_info {
+	width: 450px;
+	padding-top: 15px;
+}
+
 /* 버튼 */
 #btn_border {
-	width: 605px;
+	width: 550px;
 	height: 100px;
 	float: left;
 	margin-left: 300px;
