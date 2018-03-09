@@ -49,8 +49,12 @@
 		where m.id=#{id} and m.id=c.id(+)
 	</select>
 	
-	<select id="companyRecruitList" resultType="RecruitDTO">
-		select * from recruit where c_name=#{c_name} 
+	<select id="companyRecruitList" parameterType="String" resultType="RecruitDTO">
+		select * from recruit where id=#{id} 
+	</select>
+	
+	<select id="companyRecruitView" parameterType="int" resultType="RecruitDTO">
+		select * from recruit where num=#{num}
 	</select>
 
 	<delete id="companyRecruitDelete" parameterType="int">

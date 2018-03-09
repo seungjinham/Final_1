@@ -1,7 +1,6 @@
 package com.iu.company;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -52,8 +51,7 @@ public class CompanyService implements MemberService {
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
 		String filepath = session.getServletContext().getRealPath("resources/images/company");
-		System.out.println(filepath);
-		System.out.println(recruitDTO.getDeadline());
+
 		File f = new File(filepath);
 		if(!f.exists()) {
 			f.mkdirs();
@@ -67,9 +65,14 @@ public class CompanyService implements MemberService {
 		return 0;
 	}
 
-	public List<RecruitDTO> companyRecruitList(String c_name) {
-		return companyDAO.companyRecruitList(c_name);
+	public List<RecruitDTO> companyRecruitList(String id) {
+		return companyDAO.companyRecruitList(id);
 	}
+	
+	public CompanyDTO companyRecruitView(int num){
+		return companyDAO.companyRecruitView(num);
+	}
+	
 	//공고삭제
 	public int companyRecruitDelete(int num,String fname, HttpSession session) {
 		String filePath = session.getServletContext().getRealPath("resources/images/company");
@@ -86,6 +89,8 @@ public class CompanyService implements MemberService {
 		}
 		return result;
 	}
+	
+	
 	
 	public CompanyDTO selectOne(String id) {
 		CompanyDTO companyDTO = companyDAO.selectOne(id);

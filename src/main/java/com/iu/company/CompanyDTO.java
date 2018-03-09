@@ -4,8 +4,8 @@ import com.iu.member.MemberDTO;
 
 public class CompanyDTO extends MemberDTO{
 	
-	private String c_name;
-	private String c_num;
+	private String c_name; //회사명
+	private String c_num; //사업자번호
 	
 	public String getC_name() {
 		return c_name;

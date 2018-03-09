@@ -1,7 +1,6 @@
 package com.iu.company;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.iu.member.MemberDAO;
 import com.iu.member.MemberDTO;
 import com.iu.recruit.RecruitDTO;
-import com.iu.scrap.ScrapDTO;
 
 @Repository
 public class CompanyDAO implements MemberDAO {
@@ -47,8 +45,12 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
 
-	public List<RecruitDTO> companyRecruitList(String c_name) {
-		return sqlSession.selectList(NAMESPACE+"companyRecruitList", c_name);
+	public List<RecruitDTO> companyRecruitList(String id) {
+		return sqlSession.selectList(NAMESPACE+"companyRecruitList", id);
+	}
+	
+	public CompanyDTO companyRecruitView(int num){
+		return sqlSession.selectOne(NAMESPACE+"companyRecruitView", num);
 	}
 
 	public int companyRecruitDelete(int num) {

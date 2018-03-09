@@ -3,24 +3,18 @@ package com.iu.f1;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.core.annotation.SynthesizedAnnotation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.company.CompanyDTO;
 import com.iu.company.CompanyService;
 import com.iu.member.MemberDTO;
-import com.iu.person.PersonDTO;
 import com.iu.recruit.RecruitDTO;
-import com.iu.recruit.RecruitService;
 
 @Controller
 @RequestMapping(value="/company/**")
@@ -83,6 +77,11 @@ public class CompanyController {
 	//회원탈퇴
 	@RequestMapping(value="companyDelete")
 	public void companyDelete(){}
+	
+	
+	//=========================== MyPage 기업정보보기  ===========================
+	@RequestMapping(value="companyMyPage")
+	public void companyMypage(HttpSession session) throws Exception {}
 
 	//recruit 수정폼
 	@RequestMapping(value="companySelectOne")
@@ -104,7 +103,7 @@ public class CompanyController {
 		return "redirect:company/companyRecruitList";
 	}
 	
-	//로그인
+	//=========================== Login 로그인  ===========================
 	@RequestMapping(value="companyLogin", method=RequestMethod.GET)
 	public void companyLogin(){}
 
@@ -127,7 +126,8 @@ public class CompanyController {
 		return mv;
 	}
 	
-	//reqruit
+	
+	//=========================== Write 공고 등록하기  ===========================
 	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
 	public void companyRecruit() {}
 	
@@ -147,25 +147,35 @@ public class CompanyController {
 		return mv;
 	}
 
-	//MyPage
-	@RequestMapping(value="companyMyPage")
-	public void companyMypage(HttpSession session) throws Exception {}
 	
-	//게재 리스트
+	//=========================== List 게재중인 공고  ===========================
 	@RequestMapping(value="companyRecruitList", method=RequestMethod.GET)
 	public ModelAndView companyRecruitList(HttpSession session) throws Exception {
-		CompanyDTO companyDTO= (CompanyDTO) session.getAttribute("member");
-		System.out.println(1);
-		String c_name = companyDTO.getC_name();
-		System.out.println(c_name);
-		List<RecruitDTO> ar = companyService.companyRecruitList(c_name);
 		ModelAndView mv = new ModelAndView();
+		
+		CompanyDTO companyDTO= (CompanyDTO) session.getAttribute("member");
+		System.out.println(companyDTO.getId());
+		
+		List<RecruitDTO> ar = companyService.companyRecruitList(companyDTO.getId());
+		
 		mv.addObject("list", ar);
-		mv.setViewName("./company/companyRecruitList");
+		mv.setViewName("company/companyRecruitList");
+		
 		return mv;
 	}
 	
-	//등록취소
+	//=========================== View 게재중인 공고보기  ===========================
+	@RequestMapping(value="companyRecruitView", method=RequestMethod.GET)
+	public ModelAndView companyRecruitView(int num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		System.out.println(num);
+		CompanyDTO companyDTO = companyService.companyRecruitView(num);
+		mv.addObject("view", companyDTO);
+		mv.setViewName("company/companyRecruitView");
+		return mv;
+	}
+	
+	//=========================== Delete 공고 삭제  ===========================
 	@RequestMapping(value="companyRecruitDelete", method=RequestMethod.GET)
 	public ModelAndView companyRecruitDelete(int num, String fname, HttpSession session) throws Exception {
 		System.out.println(num);

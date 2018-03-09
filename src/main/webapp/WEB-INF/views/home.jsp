@@ -22,43 +22,7 @@
 	<%@ include file="./temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-		<p>상세검색 에러 날 수 있음 그냥 무시하고 자기꺼 진행하세요. 빠른 시일내에 파일경로 수정해서 돌아가게 할께요</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>유</p>
-			<p>진</p>
-			<p>이</p>
-			<p>가</p>
-			<p>범</p>
-			<p>인</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>		
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-			<p>a</p>
-		
-		
-			
+			<img alt="" src="./resources/upload/zw2.jpg" width="1080px" height="720px">			
 		</div>
 		<div class="top">
 			<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
