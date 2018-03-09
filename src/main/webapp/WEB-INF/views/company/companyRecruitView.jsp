@@ -16,18 +16,9 @@
 	<%@ include file="../temp/header1.jsp" %>	
 	<section id="main">
 		<div class="container">
-		<%@ include file="../member/c_meun.jsp"%>
-		<h1 class="h1">게재중인 공고</h1>
-			<table>
-				<c:forEach items="${list}" var="r">
-					<tr>
-						<td><a href="companyRecruitView?num=${r.num}">${r.title}</a></td>
-					</tr>
-				</c:forEach>
-				<c:if test="${empty list}">
-					현재 게재중인 공고가 없습니다
-				</c:if>
-			</table>
+			<%@ include file="../member/c_meun.jsp"%>
+			<h1 class="h1">게재중인 공고</h1>
+			공고보기
 		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>	

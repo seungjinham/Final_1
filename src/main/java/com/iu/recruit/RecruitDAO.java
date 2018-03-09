@@ -33,21 +33,7 @@ public class RecruitDAO {
 	public int companyRecruit(RecruitDTO recruitDTO) {
 		return sqlSession.insert(NAMESPACE+"companyRecruit", recruitDTO);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	
 	/////////////////////////////////////////////////////
