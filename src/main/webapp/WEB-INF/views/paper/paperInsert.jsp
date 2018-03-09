@@ -200,7 +200,7 @@
 		});
 		$("#x_box").click(function() {
 			$("#licences_boxs").hide();
-			$(".licences_input").val("");
+			$(".license_input").val("");
 			$("#box_tit_border").css("border-bottom", "1px dotted gray");
 		});
 
@@ -216,9 +216,31 @@
 			$(".port_input").val("");
 			$("#box_tit_border_3").css("border-bottom", "1px dotted gray");
 		});
-
+	
+		
+		//등록 버튼
 		$("#insert").click(function() {
-			paper_frm.submit();
+			if($("#p_tit").val()&&
+					$("#work_hidden").val() &&
+					$("#army_hidden").val()&&
+					$("#marry_hidden").val()&&
+					$("#p_hobby").val()&&
+					$("#s_kind").val()&&
+					$("#s_name").val()&&
+					$("#major").val()&&
+					$("#entrance").val()&&
+					$("#graduation").val()&&
+					$("#h_kind").val()&&
+					$("#h_job").val()&&
+					$("#h_work").val()&&
+					$("#location").val()&&
+					$("#salary").val()&&
+					$("#cr_kind_hidden").val() != null){
+				paper_frm.submit();
+			}else{
+				alert("필수 정보를 입력해주세요.")
+			}
+			
 		});
 
 	});
@@ -318,7 +340,8 @@
 						</div>
 						<div class="Decision_border">
 							<label for="p_email" class="p_tit">이메일</label> <input type="text"
-								id="p_email" value="${member.email}" name="email" class="Decision">
+								id="p_email" value="${member.email}" name="email"
+								class="Decision">
 						</div>
 						<div class="Decision_border_2">
 							<label for="p_addr" class="p_tit">주소</label> <input type="text"
@@ -337,7 +360,7 @@
 					</div>
 
 					<div class="select_border_2">
-						<select name="s_kind" class="options">
+						<select name="s_kind" class="options" id="s_kind">
 							<option>최종학력 선택</option>
 							<option value="대학교이상">대학교이상</option>
 							<option value="고등학교">고등학교</option>
@@ -373,7 +396,7 @@
 					</div>
 
 					<div class="select_border_2">
-						<select name="h_kind" class="options">
+						<select name="h_kind" class="options" id="h_kind">
 							<option>근무형태</option>
 							<option value="정규직">정규직</option>
 							<option value="교육생">교육생</option>
@@ -452,7 +475,8 @@
 						</div>
 						<div class="Decision_border">
 							<label for="cr_work" class="p_tit">담당업무</label> <input
-								type="text" id="cr_work" name="career_work" class="Decision carr_input">
+								type="text" id="cr_work" name="career_work"
+								class="Decision carr_input">
 						</div>
 						<div class="Decision_border">
 							<label for="cr_sal" class="p_tit">연봉</label> <input type="text"
@@ -472,7 +496,8 @@
 						</div>
 					</div>
 
-					<article class="box_border" id="licences_boxs" style="display: none;">
+					<article class="box_border" id="licences_boxs"
+						style="display: none;">
 						<div class="Decision_border">
 							<label for="l_kind" class="p_tit">항목</label> <select
 								name="l_kinds" class="Decision license_input" id="l_kind">

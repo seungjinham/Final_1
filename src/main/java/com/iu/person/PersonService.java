@@ -54,5 +54,10 @@ public class PersonService implements MemberService {
 	public MemberDTO findPw(MemberDTO memberDTO) throws Exception{
 		return personDAO.findPw(memberDTO);
 	}
+	
+	//비밀번호 변경
+	public int changePw(MemberDTO memberDTO) throws Exception{
+		return personDAO.changePw(memberDTO);
+	}
 
 }

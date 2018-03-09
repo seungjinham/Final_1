@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,12 +133,12 @@ function sample6_execDaumPostcode() {
 					<tr>
 						<th class="font">이름</th>
 						<td class="font"><input type="text" name="c_num" id="c_num"
-							class="inupt_f" value="${member.c_num}"></td>
+							class="inupt_f" value=""></td>
 					</tr>
 					<tr>
 						<th class="font">이름</th>
 						<td class="font"><input type="text" name="c_name" id="c_name"
-							class="inupt_f" value="${member.c_name}"></td>
+							class="inupt_f" value=""></td>
 					</tr>
 					<tr>
 						<th class="font">주소</th>
@@ -154,17 +155,15 @@ function sample6_execDaumPostcode() {
 					</tr>
 					<tr>
 						<th class="font">이메일</th>
-						<td class="font"><input type="text" name="email"
-							class="email" id="doma"> @ <input type="text" name="email"
-							class="email" id="domain"> <select id="e_select">
-								<option value="">직접입력</option>
-								<option value="naver.com">naver.com</option>
-								<option value="hanmail.com">hanmail.com</option>
-								<option value="gmail.com">gmail.com</option>
-								<option value="zum.com">zum.com</option>
-								<option value="yahoo.com">yahoo.com</option>
-						</select><br>
-							<button id="code_btn">인증번호 받기</button></td>
+						<td class="font">
+							<input type="text" name="email" class="email" id="email"
+							value="${member.email}">
+							 
+							<input type="button" id="code_btn" value="인증"><br>
+						
+							<input type="hidden" name="check" id="check" value="f">
+							※ 이메일 수정시 <span id="red">새로 인증</span> 받으셔야 합니다.
+						</td>
 					</tr>
 				</table>
 				<div id="btn_border">

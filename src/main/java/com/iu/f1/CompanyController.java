@@ -59,7 +59,7 @@ public class CompanyController {
 
 	//회원수정
 	@RequestMapping(value="companyUpdate", method=RequestMethod.GET)
-	public void companyUpdate(){}
+	public void companyUpdate(HttpSession session){}
 
 	@RequestMapping(value="companyUpdate", method=RequestMethod.POST)
 	public ModelAndView companyUpdate(CompanyDTO companyDTO, HttpSession session) throws Exception{

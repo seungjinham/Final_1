@@ -117,10 +117,9 @@
 }
 
 /* == 이력서  사진 ==*/
-#photo_border {
+#photo_border, #photo_border_2 {
 	width: 150px;
 	height: 210px;
-	cursor: pointer;
 	float: left;
 }
 
@@ -133,6 +132,31 @@
 	border: 1px solid gray;
 	cursor: pointer;
 	float: left;
+}
+
+#img_photo {
+	width: 135px;
+	height: 170px;
+}
+
+#img_border_2 {
+	width: 135px;
+	height: 170px;
+}
+
+#change_photo {
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	margin-left: 25px;
+	display: inline-block;
+	font-size: 14px;
+	font-family: "맑은 고딕";
+	box-sizing: border-box;
+	border: 1px solid #A9A9A9;
+	border-radius: 5px;
+	background-color: white;
+	color: #A9A9A9;
 }
 
 #file_label {
@@ -152,7 +176,7 @@
 	color: #A9A9A9;
 }
 
-#file_label:hover {
+#file_label:hover, #change_photo:HOVER {
 	border: 2px solid #23A41A;
 	color: #23A41A;
 	font-weight: bold;
@@ -176,7 +200,6 @@
 }
 
 /* ===== 여기까지가 사진 ====== */
-
 .name, .radio, .birth {
 	width: 260px;
 	height: 100px;
@@ -258,7 +281,7 @@
 	height: 35px;
 }
 
-.working:HOVER, .p_army:HOVER, .p_marry:HOVER {
+.working:HOVER, .p_army:HOVER, .p_marry:HOVER, #change_btn input:HOVER {
 	border: 2px solid gray;
 	color: gray;
 	font-weight: bold;
@@ -363,7 +386,7 @@
 	float: left;
 }
 
-#add_box, #port_add {
+.add_box, .port_add {
 	width: 40px;
 	height: 40px;
 	float: right;
@@ -376,11 +399,11 @@
 	background-size: 40px;
 }
 
-#add_box:HOVER, #port_add:HOVER {
+.add_box:HOVER, .port_add:HOVER {
 	background-image: url('/f1/resources/images/paper/add2.png');
 }
 
-#x_box, #port_x {
+.x_box, .port_x {
 	width: 40px;
 	height: 40px;
 	float: right;
@@ -393,7 +416,7 @@
 	background-size: 40px;
 }
 
-#x_box:HOVER, #port_x:HOVER {
+.x_box:HOVER, .port_x:HOVER {
 	background-image: url('/f1/resources/images/paper/x2.png');
 }
 
@@ -491,6 +514,36 @@
 	border-bottom: 1px dotted gray;
 }
 
+#onames {
+	width: 270px;
+}
+
+#oname {
+	width: 240px;
+}
+
+#change_btn {
+	width: 80px;
+	height: 90px;
+	float: left;
+}
+
+#change_btn input{
+	width: 70px;
+	height: 40px;
+	font-size: 14px;
+	font-family: "맑은 고딕";
+	box-sizing: border-box;
+	border: 1px solid #A9A9A9;
+	border-radius: 5px;
+	background-color: white;
+	color: #A9A9A9;
+	padding-left: 20px;
+	padding-bottom: 3px;
+	margin-top: 25px;
+	outline: none;
+}
+
 .port_box_2 {
 	width: 150px;
 	height: 90px;
@@ -532,14 +585,14 @@
 }
 
 /* == 버튼 == */
-#insert_btn_border{
+#up_btn_border {
 	width: 740px;
 	height: 140px;
 	float: left;
 	margin-left: 300px;
 }
 
-#insert_btn {
+#up_btn {
 	width: 300px;
 	height: 70px;
 	margin: 0 auto;
@@ -547,7 +600,7 @@
 	text-align: center;
 }
 
-#insert_btn input {
+#up_btn input {
 	width: 130px;
 	height: 70px;
 	background-color: #23A41A;
@@ -558,9 +611,10 @@
 	border-radius: 5px;
 	cursor: pointer;
 }
-#insert_btn input:HOVER {
+
+#up_btn input:HOVER {
 	background-color: white;
 	color: #23A41A;
 	border: 2px solid #23A41A;
 	font-weight: bold;
-} 
+}

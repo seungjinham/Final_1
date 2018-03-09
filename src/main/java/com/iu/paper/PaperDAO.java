@@ -36,6 +36,7 @@ public class PaperDAO {
 	
 	//이력서 수정
 	public int update(PaperDTO paperDTO) throws Exception{
+		System.out.println("=-=-=-=-=");
 		return sqlSession.update(NAMESPACE+"paperUpdate", paperDTO);
 	}
 	

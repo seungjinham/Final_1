@@ -119,7 +119,7 @@ public class PersonController {
 		ModelAndView mv = new ModelAndView();
 		int result = personService.update(personDTO);
 		
-		String message = "Updae Fail";
+		String message = "Update Fail";
 		String path = "./personMyPage";
 
 		if(result>0){
@@ -209,10 +209,6 @@ public class PersonController {
 	      return mv;
 	}
 	
-	
-	//비밀번호 변경
-	@RequestMapping(value="personChangePw", method=RequestMethod.GET)
-	public void personChangePw(HttpSession session) throws Exception{}
 	
 	//ID 찾기
 	@RequestMapping(value = "p_sendMailId", method = RequestMethod.GET)
@@ -347,6 +343,26 @@ public class PersonController {
 	      mv.setViewName("person/p_sendMailPw");
 	      return mv;
 	}
+	
+	//비밀번호 변경
+		@RequestMapping(value="personChangePw", method=RequestMethod.GET)
+		public void personChangePw(HttpSession session) throws Exception{}
+		@RequestMapping(value="personChangePw", method=RequestMethod.POST)
+		public ModelAndView personChangePw(MemberDTO memberDTO ,HttpSession session) throws Exception{
+			ModelAndView mv = new ModelAndView();
+			int result = personService.changePw(memberDTO);
+			String message = "PW Fail";
+			String path = "./personMyPage";
+
+			if(result>0){
+				message = "비밀번호가 변경 되었습니다.";
+				path = "./personMyPage";
+			}
+			mv.addObject("message", message);
+			mv.addObject("path", path);
+			mv.setViewName("common/result");
+			return mv;
+		}
 }
 
 
