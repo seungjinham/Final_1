@@ -299,9 +299,9 @@
 						<fieldset class="common">
 							<h3>근무요일</h3>
 							<div class="selbox">
-								<input type="radio" name="w_day" value="주7일 ">주7일 월~일
-								<input type="radio" name="w_day" value="주6일 ">주6일 월~토 
-								<input type="radio" name="w_day" value="주5일 ">주5일 월~금 
+								<input type="radio" name="w_day" value="7">주7일 월~일
+								<input type="radio" name="w_day" value="6">주6일 월~토 
+								<input type="radio" name="w_day" value="5">주5일 월~금 
 								<input type="radio" name="w_day" value="주말 ">주말 토~일
 							</div>
 						</fieldset>
