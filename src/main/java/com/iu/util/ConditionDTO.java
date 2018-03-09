@@ -33,6 +33,8 @@ public class ConditionDTO {
 	private String con29;
 	private String con30;
 	private int count;
+	private int varcount;
+	private int arraycount;
 	private boolean check;
 	
 	public String getCon0() {
@@ -226,6 +228,18 @@ public class ConditionDTO {
 	}
 	public void setCount(int count) {
 		this.count = count;
+	}
+	public int getVarcount() {
+		return varcount;
+	}
+	public void setVarcount(int varcount) {
+		this.varcount = varcount;
+	}
+	public int getArraycount() {
+		return arraycount;
+	}
+	public void setArraycount(int arraycount) {
+		this.arraycount = arraycount;
 	}
 	public boolean isCheck() {
 		return check;

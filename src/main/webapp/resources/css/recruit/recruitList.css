@@ -9,7 +9,7 @@
 
 .middle #search_area {
 	width:100%;
-	height:500px;
+	margin-bottom: 20px;
 }
 
 .middle #search_area #form {
@@ -18,7 +18,7 @@
 
 .middle #search_area #form .common {
 	border:none;
-	height:35px;
+	/* height:35px; */
 }
 
 .middle #search_area #form .common h3{
@@ -92,8 +92,57 @@
 	text-align: left;
 }
 
+#search_area #form #searchbox .boxcommon {
+	display: inline-block;
+	margin-left:10px;
+}
 
+#search_area #form #searchbox #districtcode {
+	display:none;
+	width:100%;
+}
 
+#search_area #form #searchbox #districtcode #si_box {
+	display:none;
+	width:100%;
+	background-color: orange;
+}
+
+#search_area #form #searchbox #districtcode #gu_box {
+	display:none;
+	width:100%;
+	background-color: yellow;
+}
+
+#search_area #form #searchbox #districtcode #dong_box {
+	display:none;
+	width:100%;
+	background-color: lime;
+}
+
+#search_area #form #searchbox #districtcode #si_box li {
+	display:inline-block;
+	margin-left:10px;
+}
+
+#search_area #form #searchbox #districtcode #gu_box li {
+	display:inline-block;
+	margin-left:10px;
+}
+
+#search_area #form #searchbox #districtcode #dong_box li {
+	display:inline-block;
+	margin-left:10px;
+}
+
+#search_area #form #searchbox #jobkind {
+	display:none;
+	width:100%;
+}
+
+#search_area #form #searchbox #jobkind ul li {
+	display:inline-block;
+}
 
 
 

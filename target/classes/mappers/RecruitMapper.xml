@@ -87,13 +87,52 @@
 		select * from spec
 	</select>
 	
-	<select id="SearchSelect" parameterType="ConditionDTO" resultType="RecruitDTO">
+	<select id="SearchSelect_United" parameterType="ConditionDTO" resultType="RecruitDTO">
+		select O.* from (select J.* from (select M.addr, R.* from member M inner join recruit R on M.id=R.id) J where 
+		job like '%' || #{con6, jdbcType=VARCHAR} || '%' or
+		job like '%' || #{con7, jdbcType=VARCHAR} || '%' or
+		addr like '%' || #{con8, jdbcType=VARCHAR} || '%' or
+		addr like '%' || #{con9, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con10, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con11, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con12, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con13, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con14, jdbcType=VARCHAR} || '%' or
+		w_date like '%' || #{con15, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con16, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con17, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con18, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con19, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con20, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con21, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con22, jdbcType=VARCHAR} || '%' or
+		school like '%' || #{con23, jdbcType=VARCHAR} || '%' or
+		w_time like '%' || #{con24, jdbcType=VARCHAR} || '%' or
+		w_time like '%' || #{con25, jdbcType=VARCHAR} || '%' or
+		w_time like '%' || #{con26, jdbcType=VARCHAR} || '%' or
+		w_time like '%' || #{con27, jdbcType=VARCHAR} || '%' or
+		w_time like '%' || #{con28, jdbcType=VARCHAR} || '%' or
+		special like '%' || #{con29, jdbcType=VARCHAR} || '%' or
+		special like '%' || #{con30, jdbcType=VARCHAR} || '%') O where
+		title like '%' || #{con1, jdbcType=VARCHAR} || '%' and
+		gender like '%' || #{con2, jdbcType=VARCHAR} || '%' and
+		w_day like '%' || #{con3, jdbcType=VARCHAR} || '%' and
+		salary like '%' || #{con4, jdbcType=VARCHAR} || '%' and
+		age like '%' || #{con5, jdbcType=VARCHAR} || '%'
+
+	</select>
+	
+	<select id="SearchSelect_Var" parameterType="ConditionDTO" resultType="RecruitDTO">
 		select * from (select M.addr, R.* from member M inner join recruit R on M.id=R.id) J where 
 		title like '%' || #{con1, jdbcType=VARCHAR} || '%' and
 		gender like '%' || #{con2, jdbcType=VARCHAR} || '%' and
 		w_day like '%' || #{con3, jdbcType=VARCHAR} || '%' and
 		salary like '%' || #{con4, jdbcType=VARCHAR} || '%' and
-		age like '%' || #{con5, jdbcType=VARCHAR} || '%' and
+		age like '%' || #{con5, jdbcType=VARCHAR} || '%'
+	</select>
+	
+	<select id="SearchSelect_Array" parameterType="ConditionDTO" resultType="RecruitDTO">
+		select * from (select M.addr, R.* from member M inner join recruit R on M.id=R.id) J where 
 		job like '%' || #{con6, jdbcType=VARCHAR} || '%' and
 		job like '%' || #{con7, jdbcType=VARCHAR} || '%' and
 		addr like '%' || #{con8, jdbcType=VARCHAR} || '%' and

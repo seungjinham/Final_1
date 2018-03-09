@@ -56,8 +56,19 @@ public class RecruitDAO {
 	}
 	
 	public List<RecruitDTO> searchSelectList(ConditionDTO conditionDTO) {
-		System.out.println(conditionDTO.getCon0());
-		return sqlSession.selectList(NAMESPACE+"SearchSelect", conditionDTO);
+		List<RecruitDTO> Search_result = null;
+		
+		if(conditionDTO.getCount()>0 && conditionDTO.getArraycount()>0 && conditionDTO.getVarcount()>0) {
+			Search_result = sqlSession.selectList(NAMESPACE+"SearchSelect_United", conditionDTO);
+		} else if(conditionDTO.getCount()>0 && conditionDTO.getArraycount()==0) {
+			//var
+			Search_result = sqlSession.selectList(NAMESPACE+"SearchSelect_Var", conditionDTO);
+		} else if(conditionDTO.getCount()>0 && conditionDTO.getVarcount()==0) {
+			//array
+			Search_result = sqlSession.selectList(NAMESPACE+"SearchSelect_Array", conditionDTO);
+		} else {}
+		
+		return Search_result;
 	}
 	
 	public RecruitDTO selectOne(int num) {

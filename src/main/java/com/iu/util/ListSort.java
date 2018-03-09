@@ -90,6 +90,8 @@ public class ListSort {
 			//검색조건이 하나라도 있는 경우
 			conditionDTO.setCheck(true);
 			conditionDTO.setCount(totalcount);
+			conditionDTO.setArraycount(arraycount);
+			conditionDTO.setVarcount(varcount);
 			
 			conditionDTO = matching(conditionDTO, recruitSearchDTO, checkVar, checkArray);
 		}
