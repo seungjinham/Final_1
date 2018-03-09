@@ -24,7 +24,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#m1").ready(function(){
+		$("#m1").ready(function() {
 			$(".m1").show("slow");
 		});
 		$("#m1").css("color", "white");
@@ -32,15 +32,18 @@
 		$("#m1").css("font-weight", "normal");
 		$("#s_m3").css("color", "#23A41A");
 		$("#s_m3").css("font-weight", "bold");
-		
+
 		$("#new_btn").click(function() {
 			var pw = $("#pw").val();
 			var new_pw = $("#new_pw").val();
 			var new_pw2 = $("#new_pw2").val();
+			var member_pw = '${member.pw}';
+			if (member_pw != pw) {
+				alert("현재 비밀번호가 일치하지 않습니다.");
+			}
 
 			if (pw != "") {
 				if (new_pw == new_pw2 && (new_pw && new_pw2) != "") {
-					alert("ok");
 					frm.submit();
 				}
 				if (new_pw != new_pw2) {
@@ -83,7 +86,8 @@
 					</ul>
 				</div>
 
-				<form action="person/changePw" id="frm">
+				<form action="./personChangePw" id="frm" method="post">
+					<input type="hidden" name="id" value="${member.id}">
 					<div class="change_b">
 						<div class="change_b_2">
 							<div class="pass">현재 비밀번호</div>
@@ -92,7 +96,7 @@
 						<div class="change_b_2">
 							<div class="pass">새 비밀번호</div>
 							<input type="password" placeholder="6 ~ 16자 영문, 숫자, 특수문자"
-								id="new_pw">
+								id="new_pw" name="pw">
 						</div>
 						<div class="change_b_2">
 							<div class="pass">새 비밀번호 확인</div>

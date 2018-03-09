@@ -25,6 +25,7 @@ public class LicenseDAO {
 
 	//이력서 수정
 	public int update(LicenseDTO licenseDTO) throws Exception{
+		System.out.println("=-=-=-sdgsdgsdgsdgsdg=-=");
 		return sqlSession.update(NAMESPACE+"licenseUpdate", licenseDTO);
 	}
 

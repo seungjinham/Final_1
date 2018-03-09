@@ -96,13 +96,14 @@ public class PaperController {
 		return "paper/paperUpdate";
 	}
 	@RequestMapping(value="paperUpdate", method=RequestMethod.POST)
-	public ModelAndView paperUpdate(PaperDTO paperDTO,LicenseDTO licenseDTO,PortDTO portDTO, MultipartFile file,MultipartFile port_file, HttpSession session) throws Exception{
+	public ModelAndView paperUpdate(PaperDTO paperDTO,LicenseDTO licenseDTO, PortDTO portDTO, MultipartFile file,MultipartFile port_file,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = paperService.update(paperDTO, licenseDTO, portDTO, file, port_file, session);
+		System.out.println(paperDTO.getTitle());
 		if(result>0){
-			
+			mv.addObject("message", "이력서가 수정 되었습니다.");
 		}else{
-			mv.addObject("message", "수정실패");
+			mv.addObject("message", "이력서 수정 실패");
 		}
 		mv.addObject("path", "paperList");
 		mv.setViewName("common/result");
@@ -117,7 +118,7 @@ public class PaperController {
 		if(result > 0){
 			mv.addObject("message", "이력서가 삭제 되었습니다.");
 		}else{
-			mv.addObject("message", "이력서가 삭제 실패");
+			mv.addObject("message", "이력서 삭제 실패");
 		}
 		mv.addObject("path", "paperList");
 		mv.setViewName("common/result");

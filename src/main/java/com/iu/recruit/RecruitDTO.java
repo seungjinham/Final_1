@@ -5,24 +5,24 @@ import com.iu.company.CompanyDTO;
 public class RecruitDTO extends CompanyDTO{
 	private int num;
 	private String id;
-	private String title;
-	private String deadline;
-	private String people;
-	private String gender;
-	private String age;
-	private String school;
-	private String special;
-	private String salary;
-	private String w_date;
-	private String w_day;
-	private String w_time;
-	private String job;
-	private String work;
-	private String benefit;
-	private String contents;
-	private String fname;
+	private String title; //제목
+	private String deadline; //마감기간
+	private String people; //채용 인원
+	private String gender; //성병
+	private String age; //나이
+	private String school; //학력
+	private String special; // 우대사항
+	private String salary; // 급여
+	private String w_date; // 근무기간
+	private String w_day; // 근무요일
+	private String w_time; // 근무시간
+	private String job; // 업직종
+	private String work; // 고용형태
+	private String benefit; // 복리후생
+	private String contents; //내용 
+	private String fname; 
 	private String oname;
-	private String addr;
+	private String addr; //주소
 	private String c_name;
 	
 	public int getNum() {

@@ -295,9 +295,13 @@
 		});
 
 		//이메일
-		$("#e_select").change(function() {
-			$("#domain").val($(this).val());
+		var email = "";
+		$("#code_btn").click(function() {
+				email = $("#email").val();
+				window.open("./c_sendMail?email=" + $("#email").val(),
+							"", "top=300, left=750, width=370, height=370");
 		});
+		
 		
 		$("#j_btn").click(function() {
 			if($("#id").val() && 
@@ -443,17 +447,14 @@
 					</tr>
 					<tr>
 						<th class="font">이메일</th>
-						<td class="font"><input type="text" name="email"
-							class="email"> @ <input type="text" name="email"
-							class="email" id="domain"> <select id="e_select">
-								<option value="">직접입력</option>
-								<option value="naver.com">naver.com</option>
-								<option value="hanmail.com">hanmail.com</option>
-								<option value="gmail.com">gmail.com</option>
-								<option value="zum.com">zum.com</option>
-								<option value="yahoo.com">yahoo.com</option>
-						</select><br>
-							<button id="code_btn">인증번호 받기</button></td>
+						<td class="font">
+							<input type="text" name="email" class="email" id="email"
+							placeholder="'@' 포함 입력">
+							 
+							<input type="button" id="code_btn" value="인증">
+						
+							<input type="hidden" name="check" id="check" value="f">
+						</td>
 					</tr>
 				</table>
 				<div class="j_btn_b">

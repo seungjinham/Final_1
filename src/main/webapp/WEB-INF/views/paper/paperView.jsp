@@ -55,6 +55,14 @@
 	});
 </script>
 <style type="text/css">
+#fileDown{
+	color: gray;
+	text-decoration: underline;
+}
+#fileDown:HOVER {
+	color: #23A41A;
+	font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -247,7 +255,7 @@
 							<span class="reds"></span>
 						</nav>
 						<nav class="box">
-							<span class="emph">파일 </span> ${port.oname}
+							<span class="emph">파일 </span><a href="../file/fileDown?fname=${port.fname}&oname=${port.oname}" id="fileDown">${port.oname}</a>
 						</nav>
 						<nav class="box">
 							<span class="emph"></span>

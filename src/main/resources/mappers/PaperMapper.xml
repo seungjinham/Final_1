@@ -4,7 +4,7 @@
 <mapper namespace="PaperMapper">
 
 	<!-- 이력서 등록 -->
-	
+
 	<!--기본정보/학력/희망근무/경력 -->
 	<insert id="paperInsert" parameterType="PaperDTO">
 		<selectKey resultType="int" order="BEFORE" keyProperty="paper_num">
@@ -16,18 +16,18 @@
 		#{h_kind},#{h_job},#{h_work},#{location},#{salary},
 		#{career_kind},#{company_n},#{joined},#{resign},#{w_kind},#{rank},#{fess},#{career_work},#{career_sal},#{paper_num})
 	</insert>
-	
+
 	<insert id="licenseInsert" parameterType="LicenseDTO">
 		insert into license
 		values (#{id},#{l_kinds},#{l_names},#{l_date},#{l_issue},#{paper_num})
 	</insert>
-	
+
 	<insert id="portInsert" parameterType="PortDTO">
 		insert into port values
 		(#{id},#{fname},#{oname},#{p_date},#{people},#{contents},#{paper_num})
 	</insert>
-	
-	
+
+
 
 	<!-- 이력서 갯수 제한 -->
 	<select id="paperCount" parameterType="String" resultType="int">
@@ -46,25 +46,27 @@
 		from paper where paper_num=#{paper_num}
 	</select>
 	<select id="licenseView" parameterType="int" resultType="LicenseDTO">
-		select * from license where paper_num=#{paper_num}
+		select *
+		from license where paper_num=#{paper_num}
 	</select>
 	<select id="portView" parameterType="int" resultType="PortDTO">
-		select * from port where paper_num=#{paper_num}
+		select *
+		from port where paper_num=#{paper_num}
 	</select>
 
 	<!-- 이력서 수정 -->
-	<update id="paperUdate" parameterType="PaperDTO">
+	<update id="paperUpdate" parameterType="PaperDTO">
 		update paper
 		<set>
-			id=#{id},
-			fname=#{fname},
-			oname=#{oname},
+			<if test="fname != null">
+				fname=#{fname},
+				oname=#{oname},
+			</if>
 			army=#{army},
 			marry=#{marry},
 			hobby=#{hobby},
 			working=#{working},
 			title=#{title},
-			paper_date=sysdate,
 			s_kind=#{s_kind},
 			s_name=#{s_name},
 			major=#{major},
@@ -87,27 +89,35 @@
 		</set>
 		where paper_num=#{paper_num}
 	</update>
-	
+
 	<update id="licenseUpdate" parameterType="LicenseDTO">
-		update license set id=#{id},l_kinds=#{l_kinds},l_names=#{l_names},l_date=#{l_date},l_issue=#{l_issue} where paper_num=#{paper_num}
+		update license set
+		l_kinds=#{l_kinds},l_names=#{l_names},l_date=#{l_date},l_issue=#{l_issue}
+		where paper_num=#{paper_num}
 	</update>
-	
+
 	<update id="portUpdate" parameterType="PortDTO">
-		update port set id=#{id},fname=#{fname},oname=#{oname},p_date=#{p_date},people=#{people},contents=#{contents} where paper_num=#{paper_num}
+		update port set
+		<if test="fname != null">fname=#{fname},oname=#{oname},</if>
+		p_date=#{p_date},people=#{people},contents=#{contents} where
+		paper_num=#{paper_num}
 	</update>
 
 
 	<!-- 이력서 삭제 -->
 	<delete id="paperDelete" parameterType="int">
-		delete paper where paper_num=#{paper_num}
+		delete paper where
+		paper_num=#{paper_num}
 	</delete>
-	
+
 	<delete id="licenseDelete" parameterType="int">
-		delete license where paper_num=#{paper_num}
+		delete license where
+		paper_num=#{paper_num}
 	</delete>
-	
+
 	<delete id="portDelete" parameterType="int">
-		delete port where paper_num=#{paper_num}
+		delete port where
+		paper_num=#{paper_num}
 	</delete>
 
 

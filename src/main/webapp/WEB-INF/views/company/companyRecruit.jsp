@@ -16,7 +16,10 @@
 	<section id="main">
 		<div class="container">
 		<%@ include file="../member/c_meun.jsp"%>
-			<h1>Recruit</h1>
+			
+			<article id="tit_border">
+				<div id="tit">회원정보</div>
+			</article>
 			<form action="companyRecruit" method="post" enctype="multipart/form-data">
 				<p>id<input type="text" name="id"></p>
 				<p>title<input type="text" name="title"></p>

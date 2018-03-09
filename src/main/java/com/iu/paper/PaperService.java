@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
@@ -67,12 +68,10 @@ public class PaperService {
 	}
 
 	//이력서 수정
-	public int update(PaperDTO paperDTO, LicenseDTO licenseDTO, PortDTO portDTO, MultipartFile file,MultipartFile port_file, HttpSession session) throws Exception{
+	public int update(PaperDTO paperDTO,LicenseDTO licenseDTO, PortDTO portDTO, MultipartFile file,MultipartFile port_file, HttpSession session) throws Exception{
 		String filePath = session.getServletContext().getRealPath("resources/upload");
-		if(file.getOriginalFilename() == ""){
-			paperDTO.setFname("");
-			paperDTO.setOname("");
-		}else{
+
+		if(file.getOriginalFilename() != ""){
 			File f = new File(filePath);
 			if(!f.exists()){
 				f.mkdirs();
@@ -82,8 +81,19 @@ public class PaperService {
 			paperDTO.setFname(name);
 			paperDTO.setOname(file.getOriginalFilename());
 		}
+		if(port_file.getOriginalFilename() != ""){
+			File f2 = new File(filePath);
+			if(!f2.exists()){
+				f2.mkdirs();
+			}
+			FileSaver fs = new FileSaver();
+			String name2 = fs.saver(port_file, filePath);
+			portDTO.setFname(name2);
+			portDTO.setOname(port_file.getOriginalFilename());
+		}
 		licenseDAO.update(licenseDTO);
-		portDAO.update(portDTO, port_file, session);
+		portDAO.update(portDTO);
+		
 		int result = paperDAO.update(paperDTO);
 
 		return result;
@@ -96,5 +106,6 @@ public class PaperService {
 		portDAO.delete(paper_num);
 		return paperDAO.delete(paper_num);
 	}
+
 
 }
