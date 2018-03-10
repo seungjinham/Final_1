@@ -219,6 +219,10 @@ $(function(){
 			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
 		}
 	});
+	
+	$(".pagebtn").click(function(){
+		alert("test");
+	});
 });
 </script>
 </head>
@@ -386,14 +390,13 @@ $(function(){
 				</table>
 				<div id="page">
 					<c:if test="${pagelist.curBlock>1}">
-						<span><input type="button" value="이전"></span>
+						<span><input type="button" value="이전" class="pagebtn"></span>
 					</c:if>
-					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
-						var="i">
-						<span><input type="button" value="${i}"></span>
+					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}" var="i">
+						<span><input type="button" value="${i}" class="pagebtn"></span>
 					</c:forEach>
 					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
-						<span><input type="button" value="다음"></span>
+						<span><input type="button" value="다음" class="pagebtn"></span>
 					</c:if>
 				</div>
 			</div>
