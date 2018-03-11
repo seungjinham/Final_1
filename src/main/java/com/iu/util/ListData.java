@@ -1,6 +1,7 @@
 package com.iu.util;
 
 public class ListData {
+	private String job;
 	private String search;
 	private String kind;
 	private Integer curPage;
@@ -12,6 +13,12 @@ public class ListData {
 	private Integer startRow;
 	private Integer lastRow;
 	
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
 	public String getSearch() {
 		return search;
 	}

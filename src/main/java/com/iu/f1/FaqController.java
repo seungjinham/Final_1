@@ -40,13 +40,18 @@ public class FaqController {
 	}
 	
 	@RequestMapping(value="faqWrite", method=RequestMethod.POST)
-	public String insert(FaqDTO faqDTO) throws Exception{
+	public String insert(FaqDTO faqDTO, Model model, ListData listData) throws Exception{
 		int result=faqService.insert(faqDTO);
-		String message="등록에 실패하였습니다";
+		String message="입력실패";
+		String path="\"redirect:./faqList\"";
 		if(result>0){
-			message="등록되었습니다";
+			message="입력성공";
+			path = "faq/faqList";
+			List<FaqDTO> ar= faqService.selectList(listData);
+			model.addAttribute("list", ar);
+			model.addAttribute("page", listData);
 		}
-		return "redirect:./faqList";
+		return path;
 	}
 	
 	
@@ -64,23 +69,24 @@ public class FaqController {
 	}
 	
 	@RequestMapping(value="faqUpdate", method=RequestMethod.POST)
-	public ModelAndView update(FaqDTO faqDTO) throws Exception{
+	public String update(FaqDTO faqDTO, ListData listData, Model model) throws Exception{
+		List<FaqDTO> ar=null;
 		int result=faqService.update(faqDTO);
-		String message="수정에 실패하였습니다";
+		String message="수정실패";
+		String path="\"redirect:./faqList\"";
 		if(result>0){
-			message="수정되었습니다";
+			message="수정성공";
+			ar= faqService.selectList(listData);
+			path = "faq/faqList";
 		}
-		ModelAndView mv = new ModelAndView();
+		model.addAttribute("list", ar);
+		model.addAttribute("message", message);
+/*		ModelAndView mv = new ModelAndView();
 		mv.addObject("message", message);
 		mv.addObject("path", "../faq/faqList");
-		mv.setViewName("common/result");
+		mv.addObject("list", ar);
+		mv.setViewName("common/result");*/
 
-		return mv;
+		return path;
 	}
-	
-	
-	
-	
-	
-
 }

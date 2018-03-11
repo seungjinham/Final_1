@@ -4,29 +4,30 @@
 <mapper namespace="FaqMapper">
 	
 	<insert id="insert" parameterType="FaqDTO" >
-		insert into faq values(faq_seq.nextval, #{title}, #{contents})
+		insert into faq values(faq_seq.nextval, #{title}, #{contents}, #{job})
 	</insert>
 
 	<select id="selectList" parameterType="ListData" resultType="FaqDTO" >
-			select * from
-  			(select rownum R, F.* from
-  			(select * from faq
-  			<if test="kind == 'title'">
+		(select * from 
+		(select rownum R, J.* from 
+		(select * from 
+		(select O.* from 
+		(select * from faq 
+		  	<if test="kind == 'title'">
 				where title LIKE '%'|| #{search}||'%'
 			</if>
 			<if test="kind == 'contents'">
 				where contents LIKE '%'|| #{search}||'%'
-			</if>			
-  			order by num desc) F)
-  			where R between #{startRow} and #{lastRow}
-		</select>
+			</if>
+		order by num desc) O) where job=#{job}) J) where R between #{startRow} and #{lastRow})
+		</select> 
 
 	<delete id="delete" parameterType="int">
 		delete faq where num=#{num}
 	</delete>
 
 	<update id="update" parameterType="FaqDTO">
-		update faq set title=#{title}, contents=#{contents} where num=#{num}
+		update faq set title=#{title}, contents=#{contents}, job=#{job} where num=#{num}
 	</update>
 
 	<select id="selectOne" parameterType="int" resultType="FaqDTO">
