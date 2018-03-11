@@ -348,12 +348,12 @@
 						<fieldset class="common" id="school">
 							<h3>학력</h3>
 							<div class="selbox">
-								&nbsp;<input type="checkbox" name="school" value="초등학교졸업" class="spec">초등학교졸업 &nbsp;
-								      <input type="checkbox"name="school" value="중학교졸업" class="spec">중학교졸업 &nbsp;
-								      <input type="checkbox" name="school" value="고등학교졸업" class="spec">고등학교졸업 &nbsp;
-								      <input type="checkbox" name="school" value="전문대졸업" class="spec">전문대졸업 &nbsp;
-								      <input type="checkbox" name="school" value="4년제졸업" class="spec">4년제졸업 &nbsp;
-								      <input type="checkbox" name="school" value="대학원졸업" class="spec">대학원졸업 &nbsp;
+								&nbsp;<input type="checkbox" name="school" value="초등학교" class="spec">초등학교졸업 &nbsp;
+								      <input type="checkbox"name="school" value="중학교" class="spec">중학교졸업 &nbsp;
+								      <input type="checkbox" name="school" value="고등학교" class="spec">고등학교졸업 &nbsp;
+								      <input type="checkbox" name="school" value="전문대" class="spec">전문대졸업 &nbsp;
+								      <input type="checkbox" name="school" value="4년제" class="spec">4년제졸업 &nbsp;
+								      <input type="checkbox" name="school" value="대학원" class="spec">대학원졸업 &nbsp;
 								      <input type="checkbox" name="school" value="대학교재학" class="spec">대학교재학 &nbsp;
 								      <input type="checkbox" name="school" value="대학교휴학" class="spec">대학교휴학
 							</div>

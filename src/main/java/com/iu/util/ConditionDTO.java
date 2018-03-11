@@ -1,5 +1,8 @@
 package com.iu.util;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ConditionDTO {
 	private String con0;
 	private String con1;
@@ -36,7 +39,16 @@ public class ConditionDTO {
 	private int varcount;
 	private int arraycount;
 	private boolean check;
+	private Map<String, Object> map;
 	
+	
+	
+	public Map<String, Object> getMap() {
+		return map;
+	}
+	public void setMap(Map<String, Object> map) {
+		this.map = map;
+	}
 	public String getCon0() {
 		return con0;
 	}
