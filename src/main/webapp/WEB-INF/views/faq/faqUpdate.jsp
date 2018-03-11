@@ -11,7 +11,10 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+	var message = '${message}';
+	if(message != '') {
+		alert('${message}');
+	}
 
 </script>
 </head>
@@ -20,10 +23,11 @@
 	<section id="main">
 		<div class="container">
 
-			<h1 id="h1">FAQ UPDATE</h1>
+			<h1 id="updateH1">FAQ UPDATE</h1>
 
 			<form id="frm" action="faqUpdate" method="post">
 				<input type="hidden" name="num" value="${view.num}">
+				<input type="hidden" name="job" value="${view.job}">
 				<div>
 					<label for="title">Title: </label> <input id="updateTitle"
 						type="text" name="title" value="${view.title}">
@@ -34,7 +38,7 @@
 					<textarea id="updateContents" name="contents">${view.contents}</textarea>
 				</div>
 
-				<input id="save" type="submit" value="update">
+				<input id="save" type="submit" value="수정">
 			</form>
 
 

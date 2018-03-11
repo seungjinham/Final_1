@@ -25,6 +25,10 @@
 		<div class="container">
 			<form id="frm" action="./faqWrite" method="post">
 				<div>
+					<label for="job">job: </label><br>
+					<input type="text" id="writeJob" name="job" placeholder="회원구분을 입력해 주세요!">
+				</div>
+				<div>
 					<label for="title">Title: </label>
 					<input type="text" id="writeTitle" name="title" placeholder="타이틀을 입력해 주세요!">
 				</div>

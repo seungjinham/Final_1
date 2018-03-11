@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../resources/css/faq/faq.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/faq/faqList.css">
 <link href="<%=request.getContextPath()%>/resources/css/common/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
@@ -21,8 +21,13 @@
 			});
 		});
 		
+		$("#person").click(function(){
+			location.href="<%=request.getContextPath()%>/faq/faqList?job=p"
+		});
 		
-		
+		$("#company").click(function(){
+			location.href="<%=request.getContextPath()%>/faq/faqList?job=c"
+		});
 	});
 </script>
 </head>
@@ -32,8 +37,14 @@
 		<div class="container">
 		<h1 class="h1">FAQ</h1>
 		
+		<div id="extra">
+		<div id="faqzone">
+		<ul><li><input type="button" value="개인회원" id="person"></li><li><input type="button" value="기업회원" id="company"></li></ul>
+		<div id="faqcontents">
 		<table class="faqTable">
 			<c:forEach items="${list}" var="i" varStatus="j">
+			<c:set var="job" value="${i.job}"></c:set>
+			<c:if test="${job eq 'p'}">
 				<tr>
 					<td id="title${j.index}" class="faqTitle" title="${j.index}">
 					<c:catch>
@@ -52,16 +63,41 @@
 							</div>
 					</td>
 				</tr>
+				</c:if>
+				
+				<c:if test="${job eq 'c'}">
+				<tr>
+					<td id="title${j.index}" class="faqTitle" title="${j.index}">
+					<c:catch>
+					<c:forEach begin="1" end="${i.depth}">--</c:forEach>
+					</c:catch>
+					<div class="tableTitle">${i.title}</div>
+					<div id="contents_view${j.index}" class="div_view">
+								<div class="toggle_contents">${i.contents}
+								<div class="div_deletebutton">
+								<c:if test="${member.id eq 'admin'}">
+									<a class="toggleBtn" href="faqDelete?num=${i.num}">DELETE</a>
+									<a class="toggleBtn" href="faqUpdate?num=${i.num}">UPDATE</a>
+								</c:if>
+								</div>
+								</div>
+							</div>
+					</td>
+				</tr>
+				</c:if>
 			</c:forEach>
 		</table>
+		</div>
+		</div>
+		</div>
 		
 		
 		
 		
 		
-		
-	<%-- 	<c:if test="${not empty page}">
-				<input type="button" class="list_button" title="${page.startNum}"
+		<div id="pagezone">
+		<c:if test="${not empty page}">
+				<input type="button" class="list_button listbtn" title="${page.startNum}"
 					value="<<">
 			</c:if>
 
@@ -94,10 +130,12 @@
 				<input type="button" class="list_button" title="${page.lastNum}"
 					value=">>">
 			</c:if>
+		</div>
+		
 		
 		<c:if test="${member.id eq 'admin'}">
-		<a href="./faqWrite" id="btnWrite">WRITE</a>
-		</c:if> --%>
+		<a href="./faqWrite" id="btnWrite">글쓰기</a>
+		</c:if> 
 		
 		
 		

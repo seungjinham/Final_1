@@ -12,6 +12,46 @@
 	margin-bottom: 40px;
 }
 
+#extra {
+	width:100%;
+	height:500px;
+}
+
+#faqzone {
+	width:100%;
+	height:100px;
+	background-color: aqua;
+}
+
+#faqzone ul li {
+	display: inline-block;
+	width:50%;
+}
+
+#faqzone #person {
+	width:100%;
+	height:100px;
+	text-align: center;
+	font-size: 50px;
+	color:white;
+	background-color: #23A41A;
+	border: 1px solid #23A41A;
+}
+
+#faqzone #company {
+	width:100%;
+	height:100px;
+	text-align: center;
+	font-size: 50px;
+	color:white;
+	background-color: #33adff;
+	border: 1px solid #33adff;
+}
+
+#faqzone #faqcontents {
+	width:100%;
+}
+
 td{
 	border-top: 1px solid lightGray;
 	border-bottom: 1px solid lightGray;
@@ -56,8 +96,9 @@ td{
 	padding: 10px 20px;
 	background-color: #23A41A;
 	color: white;
-	float: left;
-	margin-top: 30px;
+	float: right;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .toggleBtn{
@@ -72,6 +113,13 @@ td{
     margin-top: 1em;
 }
 
+.list_button {
+	display: inline-block;
+}
+
+.listbtn {
+	margin-left:500px;
+}
 
 
 

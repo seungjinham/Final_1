@@ -5,6 +5,7 @@ public class FaqDTO {
 	private int num;
 	private String title;
 	private String contents;
+	private String job;
 	
 	
 	public int getNum() {
@@ -24,6 +25,12 @@ public class FaqDTO {
 	}
 	public void setContents(String contents) {
 		this.contents = contents;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
 	}
 	
 	

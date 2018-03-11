@@ -36,7 +36,7 @@ public class ScrapController {
 	@RequestMapping(value="scrapInsert", method=RequestMethod.GET)
 	public String Insert(ScrapDTO scrapDTO, String page, Model model) throws Exception{
 		//RecruitSearchDTO recruitSearchDTO = new RecruitSearchDTO();
-		String message = "ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤.";
+		String message = "·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù.";
 		Integer integer = 0;
 		String path = "redirect:../";
 		List<RecruitDTO> recruit_ar = null;
@@ -49,17 +49,17 @@ public class ScrapController {
 			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
-					message = "ìŠ¤í¬ë© ì„±ê³µ";
+					message = "½ºÅ©·¦ ¼º°ø";
 					path = "common/message";
 /*					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
 					companyDTO = companyService.selectOne(recruitDTO.getId());
 					model.addAttribute("recruit", recruitDTO);
 					model.addAttribute("company", companyDTO);*/
 				} else if(integer < 0) {
-					message = "ì¤‘ë³µëœ ìŠ¤í¬ë© ì…ë‹ˆë‹¤.";
+					message = "Áßº¹µÈ ½ºÅ©·¦ ÀÔ´Ï´Ù.";
 					path = "common/message";
 				} else {
-					message = "ìŠ¤í¬ë© ì‹¤íŒ¨ ";
+					message = "½ºÅ©·¦ ½ÇÆĞ";
 					path = "common/message";
 /*					recruitDTO = recruitService.selectOne(scrapDTO.getRecruit_num());
 					companyDTO = companyService.selectOne(recruitDTO.getId());
@@ -72,7 +72,7 @@ public class ScrapController {
 				ListData listData = new ListData();
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
-					message = "ìŠ¤í¬ë© ì„±ê³µ";
+					message = "½ºÅ©·¦ ¼º°ø";
 /*					ListSort listSort = new ListSort();
 					//recruit_ar = recruitService.selectList(listData);
 					obj_ar = recruitService.selectList(listData);
@@ -82,11 +82,11 @@ public class ScrapController {
 					model.addAttribute("pagelist", obj_ar.get(1));*/
 					path="common/message";
 				} else if(integer<0) {
-					message = "ì¤‘ë³µëœ ìŠ¤í¬ë© ê³µê³ ì…ë‹ˆë‹¤.";
+					message = "Áßº¹µÈ ½ºÅ©·¦ °ø°íÀÔ´Ï´Ù.";
 					path = "common/message";
 				}
 				else {
-					message = "ìŠ¤í¬ë© ì‹¤íŒ¨ ";
+					message = "½ºÅ©·¦ ½ÇÆĞ ";
 /*					ListSort listSort = new ListSort();
 					//recruit_ar = recruitService.selectList();
 					obj_ar = recruitService.selectList(listData);
@@ -101,10 +101,10 @@ public class ScrapController {
 /*			if(scrapDTO.getId() != "") {
 				integer = scrapService.Insert(scrapDTO);
 				if(integer>0) {
-					message = "ìŠ¤í¬ë© ì„±ê³µ";
+					message = "½ºÅ©·¦ ¼º°ø";
 					path="recruit/recruitList";
 				} else {
-					message = "ìŠ¤í¬ë© ì‹¤íŒ¨ ";
+					message = "½ºÅ©·¦ ½ÇÆĞ ";
 					path="recruit/recruitList";
 				}
 			}*/
@@ -123,13 +123,13 @@ public class ScrapController {
 			integer = scrapService.Delete(scrapDTO, page);
 			if(integer>0) {
 				path = "common/message";
-				model.addAttribute("message", "ìŠ¤í¬ë©ì·¨ì†Œ");
+				model.addAttribute("message", "½ºÅ©·¦Ãë¼Ò");
 			}
 		} else if(page.equals("list")) {
 			integer = scrapService.Delete(scrapDTO, page);
 			if(integer>0) {
 				path = "common/message";
-				model.addAttribute("message", "ìŠ¤í¬ë©ì·¨ì†Œ");
+				model.addAttribute("message", "½ºÅ©·¦Ãë¼Ò");
 			}
 		} else {
 			integer = scrapService.Delete(scrapDTO, page);
@@ -137,7 +137,7 @@ public class ScrapController {
 				ListData listData = new ListData();
 				scrap_result = scrapService.SelectList(scrapDTO, listData);
 				path = "scrap/scrapList";
-				model.addAttribute("message", "ìŠ¤í¬ë©ì‚­ì œ");
+				model.addAttribute("message", "½ºÅ©·¦»èÁ¦");
 				model.addAttribute("scrap_result", scrap_result.get(0));
 				model.addAttribute("pagelist", scrap_result.get(1));
 			}
@@ -148,7 +148,7 @@ public class ScrapController {
 	@RequestMapping(value="scrapSelectList", method=RequestMethod.GET)
 	public String SelectList(ScrapDTO scrapDTO, ListData listData, Model model, RedirectAttributes ra) {
 		List<Object> obj_ar = null; 
-		String message = "ë¡œê·¸ì¸ì´ í•„ìš”í•œ ì„œë¹„ìŠ¤ ì…ë‹ˆë‹¤.";
+		String message = "·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½º ÀÔ´Ï´Ù.";
 		String path = "redirect:../";
 		
 		if(scrapDTO.getId()!="") {

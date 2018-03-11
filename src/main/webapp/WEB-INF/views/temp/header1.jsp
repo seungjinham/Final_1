@@ -113,7 +113,7 @@
 
 						<li><a href="javascript:void(0);" class="">고객센터</a>
 							<ul class="navi-sublist subnav04">
-								<li><a href="<%=request.getContextPath()%>/faq/faqList">자주묻는 질문</a></li>
+								<li><a href="<%=request.getContextPath()%>/faq/faqList?job=p">자주묻는 질문</a></li>
 								<li><a href="<%=request.getContextPath()%>/qna/qnaWrite">문의하기</a></li>
 								<c:if test="${member.id == 'admin'}">
 									<li><a href="<%=request.getContextPath()%>/qna/qnaList">문의리스트</a></li>
