@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -129,7 +130,10 @@ public class CompanyController {
 	
 	//=========================== Write 공고 등록하기  ===========================
 	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
-	public void companyRecruit() {}
+	public void companyRecruit(HttpSession session, Model model) {
+		CompanyDTO companyDTO = (CompanyDTO) session.getAttribute("member");
+		model.addAttribute("company", companyDTO);
+	}
 	
 	@RequestMapping(value="companyRecruit", method=RequestMethod.POST)
 	public ModelAndView companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {

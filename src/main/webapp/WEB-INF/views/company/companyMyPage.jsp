@@ -11,7 +11,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/member/c_meun.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/company/companyMyPage.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<title>Person MyPage</title>
+<title>Company MyPage</title>
 <script type="text/javascript">
 	$(function() {
 		$("#m1").ready(function(){

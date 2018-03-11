@@ -21,9 +21,9 @@
 			<div id="sell">
 				<h1 class="text-center">
 					<c:choose>
-						<c:when test="${category == 'design'}">디 자 인</c:when>
-						<c:when test="${category == 'it'}">I T & 프 로 그 래 밍</c:when>
-						<c:otherwise>번 역 & 통 역</c:otherwise>
+						<c:when test="${category == 'design'}"><img class="title-img" src="../resources/upload/design.png"><br>디 자 인</c:when>
+						<c:when test="${category == 'it'}"><img class="title-img" src="../resources/upload/it.png"><br>I T & 프 로 그 래 밍</c:when>
+						<c:otherwise><img class="title-img" src="../resources/upload/translate2.png"><br>번 역  & 통 역</c:otherwise>
 					</c:choose>
 				</h1>
 
@@ -31,7 +31,7 @@
 					<c:forEach items="${list}" var="s">
 						<div class="col-sm-4">
 							<div class="thumbnail">
-								<a href="./sellerView?id=${s.id}"><img src="../resources/upload/${s.oname}" class="seller_img"></a>
+								<a href="./sellerView?id=${s.id}"><img src="../resources/upload/${s.oname}" class="seller_img w3-hover-opacity"></a>
 								<p><strong>${s.id}</strong></p>
 								<p><a href="./sellerView?id=${s.id}">${s.title}</a></p>
 								

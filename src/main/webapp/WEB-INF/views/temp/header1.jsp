@@ -74,7 +74,6 @@
  					<ul class="navigation">
  						<li><a href="javascript:void(0);" class="">채용정보</a>
 							<ul class="navi-sublist subnav01">
-								<%-- <li><a href="<%=request.getContextPath()%>/recruit/Search">공고 검색</a></li> --%>
 								<li><a href="<%=request.getContextPath()%>/recruit/recruitList">채용 공고 검색</a></li>
 								<li><a href="<%=request.getContextPath()%>/recruit/recruitSearch">상세 검색</a></li>
 							</ul>
@@ -91,12 +90,12 @@
 						<li><a href="javascript:void(0);" class="">개인서비스</a>
 							<ul class="navi-sublist subnav03">
 								<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보수정</a></li>
-								<li><a href="">이력서 관리</a></li>
+								<li><a href="<%=request.getContextPath()%>/papaer/paperList?id=${member.id}">이력서 관리</a></li>
 								<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">지원현황</a></li>
 								<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">공고 즐겨찾기</a></li>
 								<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
-								<li><a href="#">거래 내역 관리</a></li>
-								<li><a href="#">판매자 즐겨찾기</a></li>
+								<li><a href="<%=request.getContextPath()%>/sell/favorList?id=${member.id}">판매자 즐겨찾기</a></li>
+								<li><a href="<%=request.getContextPath()%>/sell/List?id=${member.id}">거래 내역 관리</a></li>
 							</ul>
 						</li>
 

@@ -2,7 +2,11 @@
 
 .container{
 	margin: 0 auto;
-	
+}
+
+.title-img{
+	width: 40px;
+	height: 40px
 }
 
 #sell{
@@ -12,8 +16,16 @@
 	
 }
 
+.w3-hover-opacity {
+    cursor: pointer;
+}
+
+.w3-hover-opacity:hover {
+    opacity: 0.60;
+}
+
 .thumbnail {
-	padding: 30px 10px 30px 40px;
+	padding: 0 10px 30px 40px;
 	border: none;
 	border-radius: 0;
 	float: left;
@@ -25,28 +37,15 @@
 	color: #555;
 }
 
-.btn {
-	border: 1px solid #23A41A;
-	padding: 10px 20px;
-	background-color: #23A41A;
-	color: #f1f1f1;
-	border-radius: 5px;
-	transition: .2s;
-}
-
-.btn:hover, .btn:focus {
-	border: 1px solid #23A41A;
-	background-color: #fff;
-	color: #23A41A;
-}
-
 .text-center {
+	padding-top:20px;
+	margin-bottom: 50px;
 	resize: none;
 	color:#4C4C4C;
 	text-align: center;
-	border-bottom: 1px solid #EAEAEA;
-	padding-bottom: 20px;
-	font-size: 30px;
+ 	border-bottom: 1px solid #23A41A;
+	padding-bottom: 40px;
+	font-size: 35px;
 }
 
 .seller_img {

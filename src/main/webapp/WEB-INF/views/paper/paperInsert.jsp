@@ -220,7 +220,7 @@
 		
 		//등록 버튼
 		$("#insert").click(function() {
-			if($("#p_tit").val()&&
+	 		if($("#p_tit").val()&&
 					$("#work_hidden").val() &&
 					$("#army_hidden").val()&&
 					$("#marry_hidden").val()&&
@@ -235,11 +235,11 @@
 					$("#h_work").val()&&
 					$("#location").val()&&
 					$("#salary").val()&&
-					$("#cr_kind_hidden").val() != null){
-				paper_frm.submit();
-			}else{
+					$("#cr_kind_hidden").val() != null){ */
+					paper_frm.submit();
+		 	}else{
 				alert("필수 정보를 입력해주세요.")
-			}
+			} 
 			
 		});
 

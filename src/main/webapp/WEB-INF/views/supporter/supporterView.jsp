@@ -11,20 +11,6 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		
-		$(".faqTitle").each(function(){
-			var num=$(this).attr("title");
-			$("#title"+num).click(function(){
-				$("#contents_view"+num).slideToggle("slow");
-			});
-		});
-		
-		
-		
-	});
-</script>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>

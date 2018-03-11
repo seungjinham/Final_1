@@ -18,10 +18,10 @@
 		<%@ include file="../member/c_meun.jsp"%>
 			
 			<article id="tit_border">
-				<div id="tit">회원정보</div>
+				<div id="tit">공고 등록하기</div>
 			</article>
 			<form action="companyRecruit" method="post" enctype="multipart/form-data">
-				<p>id<input type="text" name="id"></p>
+				<input type="hidden" name="id" value="${company.id}">
 				<p>title<input type="text" name="title"></p>
 				<p>deadLine<input type="date" name="deadline"></p>
 				<p>people<input type="text" name="people"></p>
@@ -36,23 +36,12 @@
 				<p>job<input type="text" name="job"></p>
 				<p>work<input type="text" name="work"></p>
 				<p>benefit<input type="text" name="benefit"></p>
-				<p>contents<textarea rows="" cols="" name="contents"></textarea></p>
+				<p>contents<textarea name="contents"></textarea></p>
 				<p><input type="file" name="file"></p>
 				<button>등록</button>
 			</form>
 		</div>
-		
-		<div class="top">
-				<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
-					<img class="width-10px position-relative" style="top: -1px"
-					src="/f1/resources/images/common/top.png" width="15px"
-					height="15px;">
-				</a>
-			</div>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>	
-
-	
-
 </body>
 </html>

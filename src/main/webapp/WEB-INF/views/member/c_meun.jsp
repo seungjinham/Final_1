@@ -42,13 +42,13 @@
 	</div>
 	<div class="m_meun" id="m2">채용 공고</div>
 	<div class="s_meun m2">
-		<a href="#" id="s_m3">채용공고 등록<span class="arrow">＞</span></a>
+		<a href="../company/companyRecruit" id="s_m3">채용공고 등록<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m2">
-		<a href="#" id="s_m4">게재중인 공고<span class="arrow">＞</span></a>
+		<a href="../company/companyRecruitList" id="s_m4">게재중인 공고<span class="arrow">＞</span></a>
 	</div>
 	<div class="m_meun" id="m3">
-		<a href="#" id="m_m3">지원자 관리</a>
+		<a href="../supporter/supporterList" id="m_m3">지원자 관리</a>
 	</div>
 	<!-- <div class="m_meun" id="m5">파워링크</div>
 	<div class="s_meun m5">
