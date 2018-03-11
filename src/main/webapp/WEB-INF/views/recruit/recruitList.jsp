@@ -235,7 +235,7 @@ $(function(){
 				<h2>빠른채용검색</h2>
 			</div>
 			<div id="search_area">
-				<form id="form" action="<%=request.getContextPath()%>/recruit/recruitSearch">
+				<form id="form" action="<%=request.getContextPath()%>/recruit/recruitList">
 					<div id="searchbox">
 						<fieldset class="common">
 							<h3>지역</h3>

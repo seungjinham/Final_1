@@ -312,49 +312,49 @@ public class ListSort {
 			}
 			break;
 			case 16: if(tempstr[6+i]==null) {
-				conditionDTO.setCon16("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon16(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon16(tempstr[6+i]);
 			}
 			break;
 			case 17: if(tempstr[6+i]==null) {
-				conditionDTO.setCon17("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon17(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon17(tempstr[6+i]);
 			}
 			break;
 			case 18: if(tempstr[6+i]==null) {
-				conditionDTO.setCon18("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon18(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon18(tempstr[6+i]);
 			}
 			break;
 			case 19: if(tempstr[6+i]==null) {
-				conditionDTO.setCon19("무관");//Character.toString(ch));
+				//conditionDTO.setCon19(Character.toString(ch));
 			} else {
 				conditionDTO.setCon19(tempstr[6+i]);
 			}
 			break;
 			case 20: if(tempstr[6+i]==null) {
-				conditionDTO.setCon20("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon20(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon20(tempstr[6+i]);
 			}
 			break;
 			case 21: if(tempstr[6+i]==null) {
-				conditionDTO.setCon21("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon21(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon21(tempstr[6+i]);
 			}
 			break;
 			case 22: if(tempstr[6+i]==null) {
-				conditionDTO.setCon22("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon22(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon22(tempstr[6+i]);
 			}
 			break;
 			case 23: if(tempstr[6+i]==null) {
-				conditionDTO.setCon23("무관");//Character.toString(ch)); 
+				//conditionDTO.setCon23(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon23(tempstr[6+i]);
 			}
