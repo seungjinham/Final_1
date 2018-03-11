@@ -22,4 +22,16 @@
 		select * from seller where id=#{id}
 	</select>
 	
+	<insert id="favorInsert" parameterType="FavorDTO">
+		insert into favor values(paper_seq.nextval,#{id},#{seller})
+	</insert>
+	
+	<delete id="favorDelete" parameterType="FavorDTO">
+		delete favor where id=#{id} and seller=#{seller}	
+	</delete>
+	
+	<select id="favorList" parameterType="String" resultType="FavorDTO">
+		select * from favor where id=#{id}
+	</select>
+	
 </mapper>

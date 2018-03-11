@@ -112,7 +112,7 @@ function sample6_execDaumPostcode() {
 			<%@ include file="../member/p_meun.jsp"%>
 
 			<div id="tit_border">
-				<div id="tit">회원정보 수정</div>
+				<div id="tit">내 정보 수정</div>
 			</div>
 			<form action="./personUpdate" method="post" id="frm">
 			<input type="hidden" name="job" value="P">

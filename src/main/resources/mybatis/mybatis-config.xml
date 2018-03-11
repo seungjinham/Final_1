@@ -27,6 +27,7 @@
   		<typeAlias type="com.iu.util.AreaCodeDTO" alias="AreaCodeDTO"/>
   		<typeAlias type="java.lang.String" alias="String"/>
   		<typeAlias type="com.iu.util.ConditionDTO" alias="ConditionDTO"/>
+  		<typeAlias type="com.iu.seller.FavorDTO" alias="FavorDTO"/>
   		
   	</typeAliases>
   

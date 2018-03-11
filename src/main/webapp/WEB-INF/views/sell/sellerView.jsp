@@ -12,6 +12,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
+	//=============즐겨찾기=============
+	if(${favorDTO} != null){
+		$.get("favorInsert?id=${favorDTO.id}&seller=${favorDTO.seller}", function(data) {
+			$(".favor").html(data);
+		});
+	}
+	
+	if(${favorDTO} == null) {
+		$.get("favorDelete?id=${favorDTO.id}&seller=${favorDTO.seller}", function(data) {
+			$(".favor").html(data);
+		});
+	}
+	
+	$(".favor").on("click", "#favor-btn", function() {
+		var favor = $(this).attr("class");
+		document.frm.submit();
+		if (favor == "off") {
+			$("#favor-btn").attr("class", "on");
+		}else {
+			$("#favor-btn").attr("class", "off");
+		}
+	});
+	
+	//=============옵션 hover=============
 	$(".option-data").hover(function(e) {
 		var classList = $(this)[0].classList;
 		
@@ -25,7 +49,6 @@ $(function() {
 	}, function(e){
         $('.option-data').removeClass('package-hover');
     });
-	
 });
 </script>
 </head>
@@ -34,18 +57,24 @@ $(function() {
 	<section id="main">
 	<div class="contain">
 		<div class="title-color">
-			[ 카테고리 >  
+			<b>[ 카테고리 >  
 			<c:if test="${seller.category == 'design'}"> 디자인 </c:if> 
 			<c:if test="${seller.category == 'it'}"> IT & 프로그래밍 </c:if> 
 			<c:if test="${seller.category == 'translate'}"> 번역 & 통역 </c:if>
-			]
+			]</b>
 		</div>
 		<div class="panel">
 			<div class="panel-body">
 				<div class="row">
 					<img id="main-img" src="../resources/upload/${seller.oname}" title="${seller.title}">
-					<h1>${seller.title}</h1>
-					<h1><b>₩ 35,000</b><span>부터</span></h1>
+					<span id="main-title">${seller.title}</span><br> 
+					<span id="main-price">
+						<b>₩ 35,000</b><span>~</span>
+						<c:if test="${not empty member}">
+							<div class="favor"></div>
+						</c:if>
+					</span>
+					
 				</div>
 			</div>
 		</div>

@@ -10,6 +10,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/common.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/member/p_meun.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/sell/scrapList.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -64,8 +65,9 @@
 	<section id="main">
 		<div class="container">
 		<%@ include file="../member/p_meun.jsp"%>
-
-<form id="form" name="frm" action="../scrap/scrapDelete">
+		<h1 class="h1">스크랩 공고</h1>
+		<c:if test="${not empty scrap_result}">
+			<form id="form" name="frm" action="../scrap/scrapDelete">
 			<div id="btnarea">
 			<input type="submit" value="스크랩 삭제" id="scrap_del">
 			<input type="hidden" name="page">
@@ -103,16 +105,17 @@
 					</c:if>
 				</div>
 			
-</form>
-
-		</div>
-		<div class="top">
-				<a href="javascript:void(0);" data-name="퀵 메뉴 - TOP"> <span>TOP</span>
-					<img class="width-10px position-relative" style="top: -1px"
-					src="/f1/resources/images/common/top.png" width="15px"
-					height="15px;">
-				</a>
+			</form>
+			
+		</c:if>
+		<c:if test="${empty scrap_result}">
+			<div class="not">
+				<img id="not-img" src="../resources/upload/not.png" width="100px" height="100px"><br>
+				<span id="not-str">스크랩한 공고가 없습니다</span>
 			</div>
+		</c:if>
+		
+		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>	
 	

@@ -50,7 +50,7 @@
 		<%@ include file="../member/p_meun.jsp"%>
 		
 		<div id="tit_border">
-			<div id="tit">회원정보</div>
+			<div id="tit">내 정보</div>
 		</div>
 		<div id="word_border">
 			<div class="word" id="word_1">회원님의 정보를 안전하게 보호하기 위해 <b>비밀번호를 다시 한번</b> 입력해 주시기 바랍니다.</div>

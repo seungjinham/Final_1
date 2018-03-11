@@ -30,14 +30,12 @@
 
 table {
 	border-spacing: 0;
-	border-radius: 5px;
 }
 
 .table {
 	width: 100%;
 	max-width: 100%;
 	margin-bottom: 20px
-	
 }
 
 .table .table {
@@ -54,7 +52,6 @@ table {
 	.table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th,
 	.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
 	border: 1px solid #E2E2E2;
-	border-radius: 5px;
 }
 
 .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
@@ -126,6 +123,15 @@ table {
 	margin-bottom: 20px;
 }
 
+#main-title{
+	font-size: 20px;
+}
+
+#main-price{
+	font-size: 25px;
+	color: #23A41A;
+}
+
 .panel-title, .panel>.list-group, .panel>.panel-collapse>.list-group,
 	.panel>.panel-collapse>.table, .panel>.table, .panel>.table-responsive>.table
 	{
@@ -193,10 +199,25 @@ table {
 }
 
 .package-hover {
-	background-color: #F6F6F6 !important
+	background-color: #F6F6F6
 }
 
 #con-img{
 	width: 700px;
 }
 
+#favor-btn {
+	border: 1px solid #C90000;
+	padding: 10px 30px;
+	background-color: #fff;
+	color: #C90000;
+	transition: .2s;
+	float: right;
+	margin-right: 7px;
+}
+
+#favor-btn:hover, .favor-btn:focus {
+	border: 1px solid #fff;
+	background-color: #C90000;
+	color: #fff;
+}

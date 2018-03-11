@@ -104,4 +104,19 @@ public class SellerService {
 	public List<SellerDTO> sellerList(String category) throws Exception{
 		return sellerDAO.sellerList(category);
 	}
+	
+	
+	//============== Favor ==============
+	public int favorInsert(FavorDTO favorDTO) throws Exception{
+		return sellerDAO.favorInsert(favorDTO);
+	}
+	
+	public int favorDelete(FavorDTO favorDTO) throws Exception{
+		return sellerDAO.favorDelete(favorDTO);
+	}
+	
+	public List<FavorDTO> favorList(String id) throws Exception{
+		return sellerDAO.favorList(id);
+	}
+	
 }

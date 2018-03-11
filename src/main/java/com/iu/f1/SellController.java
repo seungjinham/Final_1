@@ -13,6 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.iu.member.MemberDTO;
+import com.iu.seller.FavorDTO;
 import com.iu.seller.SellerDTO;
 import com.iu.seller.SellerService;
 @Controller
@@ -115,13 +117,62 @@ public class SellController {
 	
 	//=========================== View 판매자 페이지 ===========================
 	@RequestMapping(value="sellerView", method=RequestMethod.GET)
-	public ModelAndView view(String id) throws Exception{
+	public ModelAndView view(String id, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		SellerDTO sellerDTO = new SellerDTO();
 		sellerDTO.setId(id);
 		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
+		
+		String pid= ((MemberDTO) (session.getAttribute("member"))).getId();
+		if(pid != null) {
+			FavorDTO favorDTO = new FavorDTO();
+			favorDTO.setId(pid);
+			favorDTO.setSeller(id);
+			mv.addObject("favor", favorDTO);
+			
+		}
 		mv.addObject("seller", sellerDTO);
 		mv.setViewName("sell/sellerView");
+		return mv;
+	}
+	
+	//=========================== FavorInsert 즐겨찾기 추가 ===========================
+	@RequestMapping(value="favorInsert", method=RequestMethod.POST)
+	public void favorInsert(FavorDTO favorDTO, RedirectAttributes rd) throws Exception{
+		int result = sellerService.favorInsert(favorDTO);
+		String message="추가에 실패했습니다";
+		
+		if(result>0){
+			message="즐겨찾기에 추가되었습니다";
+		}
+		
+		rd.addFlashAttribute("message", message);
+	}
+	
+	//=========================== FavorInsert 즐겨찾기 삭제 ===========================	
+	@RequestMapping(value="favorDelete", method=RequestMethod.POST)
+	public void favorDelete(FavorDTO favorDTO, RedirectAttributes rd) throws Exception{
+		int result = sellerService.favorInsert(favorDTO);
+		String message="삭제에 실패했습니다";
+		
+		if(result>0){
+			message="즐겨찾기가 삭제되었습니다";
+		}
+		
+		rd.addFlashAttribute("message", message);
+
+	}
+	
+	//=========================== FavorList 즐겨찾기 리스트 ===========================
+	@RequestMapping(value="favorList")
+	public ModelAndView favorList(HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		String id = ((MemberDTO) session.getAttribute("member")).getId();
+		List<FavorDTO> ar = sellerService.favorList(id);
+		
+		mv.addObject("list", ar);
+		mv.setViewName("sell/favorList");
 		return mv;
 	}
 }

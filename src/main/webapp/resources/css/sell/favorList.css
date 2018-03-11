@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.container{
+	margin: 0 auto;
+}
+
+#not-str{
+	font-size: 25px;
+	color: #B8B8B8;
+}
+
+#not-img{
+	padding-left: 110px;
+	padding-bottom: 30px;
+}
+
+.not{
+	padding-top: 50px;
+	padding-left: 450px;
+}
+
+
+.h3{
+	font-size: 15px;
+	text-align: center;
+	border: 1px solid #E2E2E2;
+}
+
+.table{
+	border-spacing: 0;
+	border-collapse: collapse
+}

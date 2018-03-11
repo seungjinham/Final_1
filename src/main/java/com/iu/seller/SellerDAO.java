@@ -34,5 +34,17 @@ public class SellerDAO {
 	public List<SellerDTO> sellerList(String category) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"selectList", category);
 	}
+	
+	public int favorInsert(FavorDTO favorDTO) throws Exception{
+		return sqlSession.insert(NAMESPACE+"favorInsert", favorDTO);
+	}
+	
+	public int favorDelete(FavorDTO favorDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE+"favorDelete", favorDTO);
+	}
+	
+	public List<FavorDTO> favorList(String id) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"favorList", id);
+	}
 
 }

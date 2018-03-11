@@ -38,13 +38,13 @@
 }
 
 .text-center {
-	padding-top:20px;
+	padding-top: 10px;
 	margin-bottom: 50px;
 	resize: none;
 	color:#4C4C4C;
 	text-align: center;
  	border-bottom: 1px solid #23A41A;
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 	font-size: 35px;
 }
 

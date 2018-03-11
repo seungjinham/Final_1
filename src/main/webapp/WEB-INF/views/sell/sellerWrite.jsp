@@ -31,26 +31,23 @@
 		});
 		
 		//================== 프로필 사진 등록/삭제 ==================
-		$("#in").click(function() {
-			$("#profile").append('<input type="file" name="profile">');
-		});	
-		$("#out").click(function() {
-			$("#profile").remove();
+		//이력서 사진
+		$(function() {
+			$("#file").on('change', function() {
+				readURL(this);
+				$("#blah").show();
+				$("#file_label").text("사진 변경");
+			});
 		});
-
-		/* $("#out").click(function() {
-			var id = $(this).attr("title");
-			$("#" + id).html('Photo : <input type="file" name="file" id="f">');
-		});
-
-		$("#btn").click(function() {
-			var f = $("#f").val();
-			if (f != '') {
-				alert("ok");
-				$("#frm").submit();
-			}
-			;
-		}); */
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					$('#blah').attr('src', e.target.result);
+				};
+				reader.readAsDataURL(input.files[0]);
+			};
+		};
 	
 	});
 
@@ -110,13 +107,13 @@
 					
 					<tr>
 						<th class="font">이름</th>
-						<td class="font">
+						<td>
 							<input type="text" class="info" name="name" id="name" value="${member.name}">
 						</td>
 					</tr>
 					<tr>
 						<th class="font">전화번호</th>
-						<td class="font"><input class="info" type="text" name="phone" value="${member.phone}"></td>
+						<td><input class="info" type="text" name="phone" value="${member.phone}"></td>
 					</tr>
 					<tr>
 						<th class="font">이메일</th>

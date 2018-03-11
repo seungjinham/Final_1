@@ -65,7 +65,7 @@
 			<%@ include file="../member/p_meun.jsp"%>
 
 			<div id="tit_border">
-				<div id="tit">이력서 관리</div>
+				<div id="tit">나의 이력서 관리</div>
 			</div>
 
 			<article class="all_List_border">
