@@ -18,12 +18,15 @@ public class SellerService {
 	@Inject
 	private SellerDAO sellerDAO;
 	@Inject
+	private OptionDAO optionDAO;
+	@Inject
 	private FileDAO fileDAO;
 	
 	//============== Write ==============
-	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, OptionDTO sellOption[], MultipartFile file[]) throws Exception {
+	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, OptionDTO optionDTO[], MultipartFile file[]) throws Exception {
 
 		sellerDAO.sellerWrite(sellerDTO);
+		optionDAO.optionWrite(optionDTO);
 		
 		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");
@@ -49,8 +52,9 @@ public class SellerService {
 	}
 	
 	//============== Update ==============
-	public int sellerUpdate(SellerDTO sellerDTO,HttpSession session, MultipartFile[] file) throws Exception {
+	public int sellerUpdate(SellerDTO sellerDTO,HttpSession session, OptionDTO optionDTO[], MultipartFile[] file) throws Exception {
 		sellerDAO.sellerUpdate(sellerDTO);
+		optionDAO.optionUpdate(optionDTO);
 		
 		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");
@@ -96,6 +100,7 @@ public class SellerService {
 	
 	//============== View ==============
 	public SellerDTO sellerOne(SellerDTO sellerDTO) throws Exception{
+		optionDAO.optionList(sellerDTO.getId());
 		return sellerDAO.sellerOne(sellerDTO);
 	}
 	

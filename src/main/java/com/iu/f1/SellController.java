@@ -31,13 +31,13 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
-	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, OptionDTO option[], MultipartFile file[]) throws Exception{
+	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, OptionDTO optionDTO[], MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		int result = sellerService.sellerWrite(sellerDTO,session, option, file);
+		int result = sellerService.sellerWrite(sellerDTO,session, optionDTO, file);
 		
 		String message = "판매자가 등록에 실패하였습니다";
-		String path = "../sell/sellerWrite";
+		String path = "../person/personMyPage";
 		
 		if(result>0){
 			message="판매자 등록에 성공하였습니다";
@@ -56,16 +56,18 @@ public class SellController {
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 		SellerDTO sellerDTO = new SellerDTO();
 		sellerDTO.setId(memberDTO.getId());
-		sellerDTO=sellerService.sellerOne(sellerDTO);
 		
+		sellerDTO=sellerService.sellerOne(sellerDTO);
 		mv.addObject("seller", sellerDTO);
+		mv.setViewName("sell/sellerUpdate");
+		
 		return mv;
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
-	public ModelAndView sellerUpdate(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception{
+	public ModelAndView sellerUpdate(SellerDTO sellerDTO, HttpSession session,OptionDTO optionDTO[],MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result=sellerService.sellerUpdate(sellerDTO,session, file);
+		int result=sellerService.sellerUpdate(sellerDTO,session, optionDTO,file);
 		
 		String message = "정보 수정에 실패하였습니다";
 		String path = "../sell/sellerUpdate";
