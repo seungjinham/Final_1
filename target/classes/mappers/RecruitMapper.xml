@@ -137,31 +137,65 @@
 	</select>
 	
 	<select id="SearchSelect_Array" parameterType="ConditionDTO" resultType="RecruitDTO">
-		select * from (select M.addr, R.* from member M inner join recruit R on M.id=R.id) J where 
-		job like '%' || #{con6, jdbcType=VARCHAR} || '%' and
-		job like '%' || #{con7, jdbcType=VARCHAR} || '%' and
-		addr like '%' || #{con8, jdbcType=VARCHAR} || '%' and
-		addr like '%' || #{con9, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con10, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con11, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con12, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con13, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con14, jdbcType=VARCHAR} || '%' and
-		w_date like '%' || #{con15, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con16, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con17, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con18, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con19, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con20, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con21, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con22, jdbcType=VARCHAR} || '%' and
-		school like '%' || #{con23, jdbcType=VARCHAR} || '%' and
-		w_time like '%' || #{con24, jdbcType=VARCHAR} || '%' and
-		w_time like '%' || #{con25, jdbcType=VARCHAR} || '%' and
-		w_time like '%' || #{con26, jdbcType=VARCHAR} || '%' and
-		w_time like '%' || #{con27, jdbcType=VARCHAR} || '%' and
-		w_time like '%' || #{con28, jdbcType=VARCHAR} || '%' and
-		special like '%' || #{con29, jdbcType=VARCHAR} || '%' and
-		special like '%' || #{con30, jdbcType=VARCHAR} || '%'
+
+	<if test="con6 != null and con7!=null">
+	(select job.* from 
+	(select * from 
+	(select J.* from 
+	(select M.addr, R.* from member M inner join recruit R on M.id=R.id) J) 
+		where job like '%' || #{con6, jdbcType=VARCHAR} || '%' or 
+	job like '%' || #{con7, jdbcType=VARCHAR} || '%') job)
+	</if>
+<!-- 	<if test="con8 != null">
+	</if>
+	<if test="con10 != null">
+	</if>
+	<if test="con16 != null">
+	</if>
+	<if test="con24 != null">
+	</if>
+	<if test="con29 != null">
+	</if>
+	select * from 
+	(select special.* from 
+	(select * from 
+	(select w_time.* from 
+	(select * from 
+	(select school.* from 
+	(select * from 
+	(select w_date.* from 
+	(select * from 
+	(select addr.* from 
+	(select * from 
+	(select job.* from 
+	(select * from 
+	(select J.* from 
+	(select M.addr, R.* from member M inner join recruit R on M.id=R.id) J) where 
+	job like '%' || #{con6, jdbcType=VARCHAR} || '%' or 
+	job like '%' || #{con7, jdbcType=VARCHAR} || '%') job) where
+	addr like '%' || #{con8, jdbcType=VARCHAR} || '%' or 
+	addr like '%' || #{con9, jdbcType=VARCHAR} || '%') addr) where
+	w_date like '%' || #{con10, jdbcType=VARCHAR} || '%' or 
+	w_date like '%' || #{con11, jdbcType=VARCHAR} || '%' or 
+	w_date like '%' || #{con12, jdbcType=VARCHAR} || '%' or 
+	w_date like '%' || #{con13, jdbcType=VARCHAR} || '%' or 
+	w_date like '%' || #{con14, jdbcType=VARCHAR} || '%' or 
+	w_date like '%' || #{con15, jdbcType=VARCHAR} || '%') w_date) where
+	school like '%' || #{con16, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con17, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con18, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con19, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con20, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con21, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con22, jdbcType=VARCHAR} || '%' or 
+	school like '%' || #{con23, jdbcType=VARCHAR} || '%') school) where
+	w_time like '%' || #{con24, jdbcType=VARCHAR} || '%' or 
+	w_time like '%' || #{con25, jdbcType=VARCHAR} || '%' or 
+	w_time like '%' || #{con26, jdbcType=VARCHAR} || '%' or
+	w_time like '%' || #{con27, jdbcType=VARCHAR} || '%' or 
+	w_time like '%' || #{con28, jdbcType=VARCHAR} || '%') w_time) where
+	special like '%' || #{con29, jdbcType=VARCHAR} || '%' or 
+	special like '%' || #{con30, jdbcType=VARCHAR} || '%') special) -->
+
 	</select>
 </mapper>
