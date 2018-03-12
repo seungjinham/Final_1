@@ -23,7 +23,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-
 </style>
 </head>
 <body>
@@ -32,35 +31,7 @@
 		<div id="main_2">
 			<%@ include file="../member/c_meun.jsp"%>
 
-			<!-- 여기서부터 복사 -->
 			<article id="tit_border">
-<<<<<<< HEAD
-				<div id="tit">공고 등록하기</div>
-			</article>
-			<form action="companyRecruit" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="id" value="${company.id}">
-				<p>title<input type="text" name="title"></p>
-				<p>deadLine<input type="date" name="deadline"></p>
-				<p>people<input type="text" name="people"></p>
-				<p>gender<input type="text" name="gender"></p>
-				<p>age<input type="text" name="age"></p>
-				<p>school<input type="text" name="school"></p>
-				<p>special<input type="text" name="special"></p>
-				<p>salary<input type="text" name="salary"></p>
-				<p>w_date<input type="text" name="w_date"></p>
-				<p>w_day<input type="text" name="w_day"></p>
-				<p>w_time<input type="text" name="w_time"></p>
-				<p>job<input type="text" name="job"></p>
-				<p>work<input type="text" name="work"></p>
-				<p>benefit<input type="text" name="benefit"></p>
-				<p>contents<textarea name="contents"></textarea></p>
-				<p><input type="file" name="file"></p>
-				<button>등록</button>
-			</form>
-		</div>
-	</section>
-	<%@ include file="../temp/footer.jsp" %>	
-=======
 				<div id="tit">공고 등록</div>
 			</article>
 
@@ -165,9 +136,5 @@
 		</div>
 	</section>
 	<%@ include file="../temp/footer.jsp"%>
-
-
-
->>>>>>> jjjjjjhhhhhhh
 </body>
 </html>
