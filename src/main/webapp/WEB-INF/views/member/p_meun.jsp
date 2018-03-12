@@ -65,13 +65,13 @@
 		<a href="../sell/favorList" id="s_m7">판매자 즐겨찾기<span class="arrow">＞</span></a>
 	</div>
 
-	<div class="m_meun" id="m5">판매자 정보</div>
+	<div class="m_meun" id="m5">판매자 관리</div>
 	<div class="s_meun m5">
 		<a href="../sell/sellerWrite" id="s_m8">판매자 등록하기<span
 			class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
-		<a href="../sell/sellerInfo" id="s_m9">판매자 정보보기<span class="arrow">＞</span></a>
+		<a href="../sell/sellerInfo" id="s_m9">판매자 정보<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
 		<a href="./PersonUse" id="s_m10">나의 거래내역<span class="arrow">＞</span></a>

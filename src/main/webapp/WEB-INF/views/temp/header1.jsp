@@ -89,13 +89,12 @@
 
 						<li><a href="javascript:void(0);" class="">개인서비스</a>
 							<ul class="navi-sublist subnav03">
-								<li><a href="<%=request.getContextPath()%>/person/personMyPage">회원정보수정</a></li>
-								<li><a href="<%=request.getContextPath()%>/paper/paperList?id=${member.id}">이력서 관리</a></li>
-								<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">지원현황</a></li>
-								<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">공고 스크랩</a></li>
-								<li><a href="<%=request.getContextPath()%>/sell/sellerWrite">판매자 등록</a></li>
+								<li><a href="<%=request.getContextPath()%>/person/personMyPage">내 정보 수정</a></li>
+								<li><a href="<%=request.getContextPath()%>/paper/paperList?id=${member.id}">나의 이력서</a></li>
+								<li><a href="<%=request.getContextPath()%>/apply/applySelectList?id=${member.id}">나의 지원내역</a></li>
+								<li><a href="<%=request.getContextPath()%>/scrap/scrapSelectList?id=${member.id}">스크랩 공고</a></li>
 								<li><a href="<%=request.getContextPath()%>/sell/favorList?id=${member.id}">판매자 즐겨찾기</a></li>
-								<li><a href="<%=request.getContextPath()%>/sell/List?id=${member.id}">거래 내역 관리</a></li>
+								<li><a href="<%=request.getContextPath()%>/sell/List?id=${member.id}">나의 거래내역</a></li>
 							</ul>
 						</li>
 
@@ -105,8 +104,6 @@
 								<li><a href="<%=request.getContextPath()%>/company/companyRecruit">공고 등록하기</a></li>
 								<li><a href="<%=request.getContextPath()%>/company/companyRecruitList">게재중인 공고</a></li>
 								<li><a href="<%=request.getContextPath()%>/supporter/supporterList">지원자 관리</a></li>
-								<%-- <li><a href="<%=request.getContextPath()%>/use/powerBuy">파워링크 구매</a></li>
-								<li><a href="#">구매내역 관리</a></li> --%>
 							</ul>
 						</li>
 
