@@ -15,15 +15,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#m1").ready(function(){
-			$(".m1").show("slow");
+		//메뉴설정
+		$("#m_m3").css("color", "white");
+		$("#m3").css("background-color", "#23A41A");
+		$("#m3").css("font-weight", "normal");
+
+		$("#m3").mouseenter(function() {
+			$("#m_m3").css("color", "white");
 		});
-		$("#m1").css("color", "white");
-		$("#m1").css("background-color", "#23A41A");
-		$("#m1").css("font-weight", "normal");
-		
-		$("#s_m1").css("color", "#23A41A");
-		$("#s_m1").css("font-weight", "bold");
+		$("#m3").mouseleave(function() {
+			$("#m_m3").css("color", "black");;
+		});
 		
 		$(".btns").mouseenter(function() {
 			$(this).text("");

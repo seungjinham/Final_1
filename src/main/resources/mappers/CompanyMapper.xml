@@ -37,6 +37,27 @@
 	</update>
 	
 	<!-- 회원탈퇴 -->
+	<delete id="memberDelete" parameterType="MemberDTO">
+		delete member where id=#{id}
+	</delete>
+	<delete id="companyDelete" parameterType="MemberDTO">
+		delete company where id=#{id}
+	</delete>
+	
+	<!-- 아이디 찾기 -->
+	<select id="companyFindId" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from member where name=#{name} and email=#{email}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="companyFindPw" parameterType="MemberDTO" resultType="MemberDTO">
+		select * from member where id=#{id} and name=#{name}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="companyChangePw" parameterType="MemberDTO">
+		update member set pw=#{pw} where id=#{id}
+	</update>
 	
 
 	<!-- Login -->

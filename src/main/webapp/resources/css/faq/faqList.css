@@ -26,6 +26,7 @@
 #faqzone ul li {
 	display: inline-block;
 	width:50%;
+	cursor: pointer;
 }
 
 #faqzone #person {

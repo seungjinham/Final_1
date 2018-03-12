@@ -17,7 +17,7 @@ import com.iu.util.FileSaver;
 
 @Service
 public class CompanyService implements MemberService {
-	
+
 	@Inject
 	private CompanyDAO companyDAO;
 	@Inject
@@ -48,6 +48,22 @@ public class CompanyService implements MemberService {
 		return companyDAO.idCheck(id);
 	}
 	
+	//아이디 찾기
+	public MemberDTO findId(MemberDTO memberDTO) throws Exception{
+		return companyDAO.findId(memberDTO);
+	}
+	
+	//비밀번호 찾기
+	public MemberDTO findPw(MemberDTO memberDTO) throws Exception{
+		return companyDAO.findPw(memberDTO);
+	}
+
+	//비밀번호 변경
+	public int changePw(MemberDTO memberDTO) throws Exception{
+		return companyDAO.changePw(memberDTO);
+	}
+
+
 	//공고등록
 	public int companyRecruit(RecruitDTO recruitDTO, MultipartFile file, HttpSession session) throws Exception {
 		String filepath = session.getServletContext().getRealPath("resources/images/company");
@@ -61,18 +77,18 @@ public class CompanyService implements MemberService {
 		recruitDTO.setOname(file.getOriginalFilename());
 		recruitDTO.setFname(name);
 		System.out.println(recruitDAO.companyRecruit(recruitDTO)); 
-		
+
 		return 0;
 	}
 
 	public List<RecruitDTO> companyRecruitList(String id) {
 		return companyDAO.companyRecruitList(id);
 	}
-	
+
 	public CompanyDTO companyRecruitView(int num){
 		return companyDAO.companyRecruitView(num);
 	}
-	
+
 	//공고삭제
 	public int companyRecruitDelete(int num,String fname, HttpSession session) {
 		String filePath = session.getServletContext().getRealPath("resources/images/company");
@@ -89,14 +105,14 @@ public class CompanyService implements MemberService {
 		}
 		return result;
 	}
-	
-	
-	
+
+
+
 	public CompanyDTO selectOne(String id) {
 		CompanyDTO companyDTO = companyDAO.selectOne(id);
 		return companyDTO;
 	}
-	
+
 	public List<CompanyDTO> selectList() {
 		return companyDAO.selectList();
 	}

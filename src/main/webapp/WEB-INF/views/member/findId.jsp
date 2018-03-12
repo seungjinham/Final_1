@@ -56,6 +56,20 @@
 								"top=300, left=750, width=300, height=260");
 					}
 				});
+		
+		$("#c_findId_btn").click(
+				function() {
+					var email = $("#c_email").val();
+					var name = $("#names").val();
+					if (email == "" || name == "") {
+						alert("정보를 입력해주세요.");
+					} else {
+						window.open("../company/c_sendMailId?name="
+								+ $("#names").val() + "&email="
+								+ $("#c_email").val(), "",
+								"top=300, left=750, width=300, height=260");
+					}
+				});
 
 	});
 </script>
@@ -96,7 +110,7 @@
 				<div class="input_border_2">
 					<div class="info_border">
 						<div class="info_b">이름</div>
-						<input type="text" placeholder="이름 입력" id="name" name="name">
+						<input type="text" placeholder="이름 입력" id="names" name="name">
 					</div>
 					<div class="info_border">
 						<div class="info_b">이메일</div>
@@ -114,7 +128,7 @@
 				<div class="input_border_2">
 					<div class="info_border">
 						<div class="info_b">담당자</div>
-						<input type="text" placeholder="담당자 이름 입력">
+						<input type="text" placeholder="담당자 이름 입력" id="name" name="name">
 					</div>
 					<div class="info_border">
 						<div class="info_b">이메일</div>
