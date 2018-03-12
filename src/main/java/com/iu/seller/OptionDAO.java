@@ -15,12 +15,12 @@ public class OptionDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="SellMapper.";
 	
-	public int optionWrite(OptionDTO[] optionDTO) throws Exception {
-		return sqlSession.delete(NAMESPACE+"optionWrite", optionDTO);
+	public int optionWrite(SellerDTO sellerDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"optionWrite", sellerDTO);
 	}
 	
-	public int optionUpdate(OptionDTO[] optionDTO) throws Exception {
-		return sqlSession.update(NAMESPACE+"optionUpdate", optionDTO);
+	public int optionUpdate(SellerDTO sellerDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"optionUpdate", sellerDTO);
 	}
 	
 	public List<OptionDTO> optionList(String id) throws Exception{
