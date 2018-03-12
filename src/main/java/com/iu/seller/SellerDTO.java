@@ -1,7 +1,5 @@
 package com.iu.seller;
 
-import java.util.List;
-
 import com.iu.person.PersonDTO;
 
 public class SellerDTO extends PersonDTO{
@@ -11,12 +9,12 @@ public class SellerDTO extends PersonDTO{
 	private String fname;
 	private String oname;
 	private String refund;//환불
-	private List<OptionDTO> sellOption;	
+	private String [] sellOption;		
 	
-	public List<OptionDTO> getSellOption() {
+	public String[] getSellOption() {
 		return sellOption;
 	}
-	public void setSellOption(List<OptionDTO> sellOption) {
+	public void setSellOption(String[] sellOption) {
 		this.sellOption = sellOption;
 	}
 	public String getTitle() {

@@ -238,15 +238,15 @@
 					<article class="box_border">
 						<div class="Decision_border">
 							<label for="s_name" class="p_tit">패키지 명</label> <input
-								type="text" name="name" class="Decision">
+								type="text" name="name" class="Decision" value="${seller.sellOption[0].name}">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">패키지 내용</label> <input
-								type="text" name="contents" class="Decision">
+								type="text" name="contents" class="Decision" value="${seller.sellOption[0].contents}">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">가격</label> <input type="text"
-								name="price" class="Decision">
+								name="price" class="Decision" value="${seller.sellOption[0].price}">
 						</div>
 						<div class="Decision_border">
 							<label for="original" class="p_tit">원본파일 제공여부</label>
@@ -258,11 +258,11 @@
 						</div>
 						<div class="Decision_border">
 							<label for="work_modify" class="p_tit">수정 횟수</label> <input
-								type="text" name="work_modify" class="Decision">
+								type="text" name="work_modify" class="Decision" value="${seller.sellOption[0].work_modify}">
 						</div>
 						<div class="Decision_border">
 							<label for="work_date" class="p_tit">작업 기간</label> <input
-								type="text" name="work_date" class="Decision">
+								type="text" name="work_date" class="Decision" value="${seller.sellOption[0].work_date}">
 						</div>
 					</article>
 
@@ -275,15 +275,15 @@
 					<article class="box_border">
 						<div class="Decision_border">
 							<label for="s_name" class="p_tit">패키지 명</label> <input
-								type="text" name="name" class="Decision">
+								type="text" name="name" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">패키지 내용</label> <input
-								type="text" name="contents" class="Decision">
+								type="text" name="contents" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">가격</label> <input type="text"
-								name="price" class="Decision">
+								name="price" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="original" class="p_tit">원본파일 제공여부</label>
@@ -295,11 +295,11 @@
 						</div>
 						<div class="Decision_border">
 							<label for="work_modify" class="p_tit">수정 횟수</label> <input
-								type="text" name="work_modify" class="Decision">
+								type="text" name="work_modify" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="work_date" class="p_tit">작업 기간</label> <input
-								type="text" name="work_date" class="Decision">
+								type="text" name="work_date" class="Decision" value="">
 						</div>
 					</article>
 
@@ -311,15 +311,15 @@
 					<article class="box_border">
 						<div class="Decision_border">
 							<label for="s_name" class="p_tit">패키지 명</label> <input
-								type="text" name="name" class="Decision">
+								type="text" name="name" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">패키지 내용</label> <input
-								type="text" name="contents" class="Decision">
+								type="text" name="contents" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="contents" class="p_tit">가격</label> <input type="text"
-								name="price" class="Decision">
+								name="price" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="original" class="p_tit">원본파일 제공여부</label>
@@ -331,22 +331,22 @@
 						</div>
 						<div class="Decision_border">
 							<label for="work_modify" class="p_tit">수정 횟수</label> <input
-								type="text" name="work_modify" class="Decision">
+								type="text" name="work_modify" class="Decision" value="">
 						</div>
 						<div class="Decision_border">
 							<label for="work_date" class="p_tit">작업 기간</label> <input
-								type="text" name="work_date" class="Decision">
+								type="text" name="work_date" class="Decision" value="">
 						</div>
 					</article>
 
 					<div class="textarea_border">
 						<label for="service_contents" class="p_tit labels">서비스 설명</label>
-						<textarea name="contents" id="service_contents"></textarea>
+						<textarea name="contents" id="service_contents">${seller.contents}</textarea>
 					</div>
 					
 					<div class="textarea_border">
 						<label for="refund" class="p_tit labels">A/S 및 환불</label>
-						<textarea name="refund" id="refund_contents"></textarea>
+						<textarea name="refund" id="refund_contents">${seller.refund}</textarea>
 					</div>
 
 				</section>

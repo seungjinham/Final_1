@@ -23,10 +23,10 @@ public class SellerService {
 	private FileDAO fileDAO;
 	
 	//============== Write ==============
-	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, OptionDTO optionDTO[], MultipartFile file[]) throws Exception {
+	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception {
 
 		sellerDAO.sellerWrite(sellerDTO);
-		optionDAO.optionWrite(optionDTO);
+		optionDAO.optionWrite(sellerDTO);
 		
 		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");
@@ -54,7 +54,7 @@ public class SellerService {
 	//============== Update ==============
 	public int sellerUpdate(SellerDTO sellerDTO,HttpSession session, OptionDTO optionDTO[], MultipartFile[] file) throws Exception {
 		sellerDAO.sellerUpdate(sellerDTO);
-		optionDAO.optionUpdate(optionDTO);
+		optionDAO.optionUpdate(sellerDTO);
 		
 		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");

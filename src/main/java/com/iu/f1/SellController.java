@@ -31,10 +31,10 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
-	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, OptionDTO optionDTO[], MultipartFile file[]) throws Exception{
+	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		int result = sellerService.sellerWrite(sellerDTO,session, optionDTO, file);
+		int result = sellerService.sellerWrite(sellerDTO,session, file);
 		
 		String message = "판매자가 등록에 실패하였습니다";
 		String path = "../person/personMyPage";

@@ -301,6 +301,7 @@
 							<label for="work_date" class="p_tit">작업 기간</label> <input
 								type="text" name="work_date" class="Decision">
 						</div>
+						<input type="hidden" name="selloption" value="standard">
 					</article>
 
 
@@ -338,6 +339,7 @@
 							<label for="work_date" class="p_tit">작업 기간</label> <input
 								type="text" name="work_date" class="Decision">
 						</div>
+						<input type="hidden" name="selloption" value="deluxe">
 					</article>
 
 					<!-- PREMIUM -->
@@ -374,6 +376,7 @@
 							<label for="work_date" class="p_tit">작업 기간</label> <input
 								type="text" name="work_date" class="Decision">
 						</div>
+						<input type="hidden" name="selloption" value="premium">
 					</article>
 
 					<div class="textarea_border">
