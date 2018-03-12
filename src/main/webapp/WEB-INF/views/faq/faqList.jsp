@@ -95,7 +95,7 @@
 		
 		
 		
-		<div id="pagezone">
+<%-- 		<div id="pagezone">
 		<c:if test="${not empty page}">
 				<input type="button" class="list_button listbtn" title="${page.startNum}"
 					value="<<">
@@ -130,7 +130,7 @@
 				<input type="button" class="list_button" title="${page.lastNum}"
 					value=">>">
 			</c:if>
-		</div>
+		</div> --%>
 		
 		
 		<c:if test="${member.id eq 'admin'}">
