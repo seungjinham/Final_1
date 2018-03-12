@@ -208,29 +208,6 @@
 	
 </script>
 <style type="text/css">
-#cate_border{
-	width: 740px;
-	height: 190px;
-	border-bottom: 1px dotted gray;
-	box-sizing: border-box;
-}
-
-.cate_btn{
-	float: left;
-	width: 145px;
-	height: 60px;
-	text-align: center;
-	font-size: 16px;
-	font-family: "돋움";
-	box-sizing: border-box;
-	border: 1px solid #A9A9A9;
-	color: #A9A9A9;
-	background-color: white;
-	margin-left: 78px;
-	border-radius: 5px;
-	outline: 0;
-}
-
 
 </style>
 </head>

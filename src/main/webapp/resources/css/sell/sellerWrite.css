@@ -176,7 +176,6 @@
 }
 
 /* ===== 여기까지가 사진 ====== */
-
 .name, .radio {
 	width: 260px;
 	height: 100px;
@@ -294,6 +293,30 @@
 	padding-bottom: 10px;
 }
 
+/*======카테고리 ======*/
+#cate_border {
+	width: 740px;
+	height: 190px;
+	border-bottom: 1px dotted gray;
+	box-sizing: border-box;
+}
+
+.cate_btn {
+	float: left;
+	width: 145px;
+	height: 60px;
+	text-align: center;
+	font-size: 16px;
+	font-family: "돋움";
+	box-sizing: border-box;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	background-color: white;
+	margin-left: 80px;
+	border-radius: 5px;
+	outline: 0;
+}
+
 /*====== select 폼 ======*/
 .select_border_2 {
 	width: 350px;
@@ -321,7 +344,7 @@
 	border-bottom: 1px dotted gray;
 }
 
-.labels{
+.labels {
 	padding-bottom: 20px;
 	padding-left: 0px;
 }
@@ -331,7 +354,7 @@
 	height: 300px;
 }
 
-#refund_border{
+#refund_border {
 	float: left;
 	width: 740px;
 	box-sizing: border-box;
@@ -340,12 +363,13 @@
 	padding-bottom: 30px;
 	border-bottom: 1px dotted gray;
 }
-#refund_contents{
+
+#refund_contents {
 	width: 680px;
 	height: 150px;
 }
 /* == 버튼 == */
-#insert_btn_border{
+#insert_btn_border {
 	width: 740px;
 	height: 120px;
 	float: left;
@@ -371,9 +395,10 @@
 	border-radius: 5px;
 	cursor: pointer;
 }
+
 #insert_btn input:HOVER {
 	background-color: white;
 	color: #23A41A;
 	border: 2px solid #23A41A;
 	font-weight: bold;
-} 
+}
