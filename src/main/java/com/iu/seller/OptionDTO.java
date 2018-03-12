@@ -1,6 +1,6 @@
 package com.iu.seller;
 
-public class SellOptionDTO {
+public class OptionDTO {
 	private int num; //기본키 번호
 	private String id; //판매자 아이디
 	private String name; //패키지 제목
@@ -9,7 +9,14 @@ public class SellOptionDTO {
 	private String original; // 원본파일 제공
 	private String work_modify; //수정 횟수
 	private int work_date; //작업 기간	
+	private String selloption;
 	
+	public String getSelloption() {
+		return selloption;
+	}
+	public void setSelloption(String selloption) {
+		this.selloption = selloption;
+	}
 	public int getNum() {
 		return num;
 	}

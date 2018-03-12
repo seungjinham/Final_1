@@ -4,11 +4,17 @@
 	<insert id="write" parameterType="SellerDTO"  >
 		insert into seller values(#{id},#{title},#{category},#{add_option},#{price},#{work_date},#{contents},#{fname},#{oname},#{refund})
 	</insert>
+	<insert id="optionWrite" parameterType="OptionDTO">
+		insert into selloption value(#{num},#{id},#{name},#{contents},#{price},#{original},#{work_modify}, #{work_date}, #{selloption})
+	</insert>
 	
 	<update id="update" parameterType="SellerDTO">
 		update seller set id=#{id},title=#{title},category=#{category},contents=#{contents},fname=#{fname},oname=#{oname},refund=#{refund})
 	</update>
 
+	<update id="optionUpdate" parameterType="OptionDTO">
+		update selloption set name=#{name},contents=#{contents},price=#{price},original=#{original},work_modify=#{work_modify}, work_date=#{work_date}, selloption=#{selloption})
+	</update>
 	
 	<delete id="delete" parameterType="SellerDTO">
 		delete seller where id=#{id}

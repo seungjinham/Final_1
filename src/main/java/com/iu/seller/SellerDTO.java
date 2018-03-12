@@ -11,12 +11,12 @@ public class SellerDTO extends PersonDTO{
 	private String fname;
 	private String oname;
 	private String refund;//환불
-	private List<SellOptionDTO> sellOption;	
+	private List<OptionDTO> sellOption;	
 	
-	public List<SellOptionDTO> getSellOption() {
+	public List<OptionDTO> getSellOption() {
 		return sellOption;
 	}
-	public void setSellOption(List<SellOptionDTO> sellOption) {
+	public void setSellOption(List<OptionDTO> sellOption) {
 		this.sellOption = sellOption;
 	}
 	public String getTitle() {

@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.iu.file.FileDAO;
 import com.iu.file.FileDTO;
-import com.iu.member.MemberDTO;
 import com.iu.util.FileSaver;
 @Service
 public class SellerService {
@@ -22,7 +21,7 @@ public class SellerService {
 	private FileDAO fileDAO;
 	
 	//============== Write ==============
-	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception {
+	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, OptionDTO sellOption[], MultipartFile file[]) throws Exception {
 
 		sellerDAO.sellerWrite(sellerDTO);
 		
@@ -47,11 +46,6 @@ public class SellerService {
 		}
 
 		return result;
-	}
-	
-	//============== View ==============
-	public MemberDTO sellerOne(SellerDTO sellerDTO) throws Exception{
-		return sellerDAO.sellerOne(sellerDTO);
 	}
 	
 	//============== Update ==============
@@ -98,6 +92,11 @@ public class SellerService {
 			}
 		}
 		return result;
+	}
+	
+	//============== View ==============
+	public SellerDTO sellerOne(SellerDTO sellerDTO) throws Exception{
+		return sellerDAO.sellerOne(sellerDTO);
 	}
 	
 	//============== selectList ==============

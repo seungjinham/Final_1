@@ -28,7 +28,7 @@
   		<typeAlias type="java.lang.String" alias="String"/>
   		<typeAlias type="com.iu.util.ConditionDTO" alias="ConditionDTO"/>
   		<typeAlias type="com.iu.seller.FavorDTO" alias="FavorDTO"/>
-  		
+  		<typeAlias type="com.iu.seller.OptionDTO" alias="OptionDTO"/>
   	</typeAliases>
   
   </configuration>

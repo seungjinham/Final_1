@@ -6,7 +6,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.member.MemberDTO;
 import com.iu.seller.FavorDTO;
+import com.iu.seller.OptionDTO;
 import com.iu.seller.SellerDTO;
 import com.iu.seller.SellerService;
 @Controller
@@ -31,13 +31,13 @@ public class SellController {
 	}
 	
 	@RequestMapping(value="sellerWrite", method=RequestMethod.POST)
-	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, MultipartFile file[]) throws Exception{
+	public ModelAndView sellerWrite(SellerDTO sellerDTO,HttpSession session, OptionDTO option[], MultipartFile file[]) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		int result = sellerService.sellerWrite(sellerDTO,session, file);
+		int result = sellerService.sellerWrite(sellerDTO,session, option, file);
 		
 		String message = "판매자가 등록에 실패하였습니다";
-		String path = "../person/personMypage";
+		String path = "../sell/sellerWrite";
 		
 		if(result>0){
 			message="판매자 등록에 성공하였습니다";
@@ -51,11 +51,15 @@ public class SellController {
 	
 	//=========================== Update 판매자 정보 수정 ===========================
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.GET)
-	public Model sellerUpdate(HttpSession session, Model model) throws Exception{
-		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
-		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);		
-		model.addAttribute("seller", sellerDTO);
-		return model;
+	public ModelAndView sellerUpdate(HttpSession session, MultipartFile[] file) throws Exception{
+		ModelAndView mv = new ModelAndView();		
+		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
+		SellerDTO sellerDTO = new SellerDTO();
+		sellerDTO.setId(memberDTO.getId());
+		sellerDTO=sellerService.sellerOne(sellerDTO);
+		
+		mv.addObject("seller", sellerDTO);
+		return mv;
 	}
 	
 	@RequestMapping(value="sellerUpdate", method=RequestMethod.POST)
@@ -64,7 +68,7 @@ public class SellController {
 		int result=sellerService.sellerUpdate(sellerDTO,session, file);
 		
 		String message = "정보 수정에 실패하였습니다";
-		String path = "../person/personMyPage";
+		String path = "../sell/sellerUpdate";
 		
 		if(result>0){
 			message="정보가 수정되었습니다.";
@@ -88,19 +92,6 @@ public class SellController {
 		
 		rd.addFlashAttribute("message", message);
 		return "redirect:./personMyPage";
-	}
-	
-	//=========================== Info 판매자 정보 보기 ===========================
-	@RequestMapping(value="sellerInfo")
-	public ModelAndView info(HttpSession session, MultipartFile file[]) throws Exception{
-		ModelAndView mv = new ModelAndView();
-		
-		SellerDTO sellerDTO = (SellerDTO) session.getAttribute("member");
-		sellerDTO = (SellerDTO) sellerService.sellerOne(sellerDTO);
-		
-		mv.addObject("seller", sellerDTO);
-		mv.setViewName("sell/sellerInfo");
-		return mv;
 	}
 	
 	//=========================== List 판매자 목록 ===========================
