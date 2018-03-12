@@ -174,8 +174,9 @@
 			$("#yes2").css("border", "1px solid #A9A9A9");
 			$("#yes2").css("font-weight", "normal");
 		});
-	
 	});
+	
+	
 
 	//================== smart_editor ==================
 	$(function() {
@@ -196,7 +197,7 @@
 			}
 		});
 		//전송버튼
-		$("#save").click(function() {
+		$("#btn").click(function() {
 			//id가 smarteditor인 textarea에 에디터에서 대입
 			obj.getById["service_contents"].exec("UPDATE_CONTENTS_FIELD", []);
 			//폼 submit
@@ -389,7 +390,7 @@
 				
 				<div id="insert_btn_border">
 					<div id="insert_btn">
-					<input type="button" value="등록" id="btn">
+						<input type="button" value="등록" id="btn">
 					</div>
 				</div>
 			</form>

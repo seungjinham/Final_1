@@ -16,6 +16,10 @@
 		update selloption set name=#{name},contents=#{contents},price=#{price},original=#{original},work_modify=#{work_modify}, work_date=#{work_date}, selloption=#{selloption})
 	</update>
 	
+	<select id="optionList" parameterType="String" resultType="OptionDTO">
+		select * from selloption where id=#{id}	
+	</select>
+	
 	<delete id="delete" parameterType="SellerDTO">
 		delete seller where id=#{id}
 	</delete>

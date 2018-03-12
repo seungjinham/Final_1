@@ -67,10 +67,6 @@
 
 	<div class="m_meun" id="m5">판매자 관리</div>
 	<div class="s_meun m5">
-		<a href="../sell/sellerWrite" id="s_m8">판매자 등록하기<span
-			class="arrow">＞</span></a>
-	</div>
-	<div class="s_meun m5">
 		<a href="../sell/sellerUpdate" id="s_m9">판매자 정보<span class="arrow">＞</span></a>
 	</div>
 	<div class="s_meun m5">
