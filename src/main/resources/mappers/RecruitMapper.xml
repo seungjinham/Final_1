@@ -123,8 +123,13 @@
 	</select>
 	
 	<select id="SearchSelect_Var" parameterType="ConditionDTO" resultType="RecruitDTO">
-		select * from (select M.addr, R.* from member M inner join recruit R on M.id=R.id) J where 
-		title like '%' || #{con1, jdbcType=VARCHAR} || '%' and
+		select * from 
+		(select CT.* from 
+		(select * from 
+		(select CJ.* from 
+		(select C.c_name, J.* from 
+		(select M.addr, R.* from member M inner join recruit R on M.id=R.id) J inner join company C on J.id=C.id) CJ) where 
+		c_name like '%' || #{con0, jdbcType=VARCHAR} || '%' or title like '%' || #{con1, jdbcType=VARCHAR} || '%') CT) where
 		gender like '%' || #{con2, jdbcType=VARCHAR} || '%' and
 		w_day like '%' || #{con3, jdbcType=VARCHAR} || '%' and
 		salary like '%' || #{con4, jdbcType=VARCHAR} || '%' and

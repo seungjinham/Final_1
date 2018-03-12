@@ -66,7 +66,7 @@ public class ListSort {
 			}
 		}
 		
-		//검색조건 있으면 true, 없으면 false
+		//寃��깋議곌굔 �엳�쑝硫� true, �뾾�쑝硫� false
 		for(int i=0; i<6; i++) {
 			if(checkVar.get(i)!=null) {
 				varcount++;
@@ -81,13 +81,13 @@ public class ListSort {
 		totalcount = varcount + arraycount;
 		
 		if(check_var==false&&check_array==false) {
-			//검색조건이 하나도 없는 경우
+			//寃��깋議곌굔�씠 �븯�굹�룄 �뾾�뒗 寃쎌슦
 			conditionDTO.setCheck(false);
 			conditionDTO.setCount(totalcount);
 			//result = false;
 			//totalcount=0;
 		} else {
-			//검색조건이 하나라도 있는 경우
+			//寃��깋議곌굔�씠 �븯�굹�씪�룄 �엳�뒗 寃쎌슦
 			conditionDTO.setCheck(true);
 			conditionDTO.setCount(totalcount);
 			conditionDTO.setArraycount(arraycount);
@@ -131,6 +131,7 @@ public class ListSort {
 				//conditionDTO.setCon1(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon1(tempstr[i]);
+				conditionDTO.setCon0(tempstr[i]);
 			}
 			break;
 			case 2: if(tempstr[i]==null) {
