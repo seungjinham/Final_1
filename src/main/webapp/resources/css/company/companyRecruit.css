@@ -1,0 +1,215 @@
+@CHARSET "UTF-8";
+
+#main_2 {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+#tit_border {
+	width: 700px;
+	height: 80px;
+	float: left;
+}
+
+#tit {
+	width: 600px;
+	height: 80px;
+	color: #23A41A;
+	font-size: 37px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	margin-left: 5px;
+}
+
+#all_border {
+	width: 650px;
+	height: 1800px;
+	float: left;
+}
+
+#insert_border {
+	width: 650px;
+	height: 1630px;
+	box-sizing: border-box;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+	padding-top: 10px;
+}
+
+/* == 공통 (input / lable / sub_tit) == */
+.subject {
+	display: block;
+	left: 11px;
+	font-size: 13px;
+	padding-left: 10px;
+	font-family: '맑은 고딕';
+	color: #A9A9A9;
+}
+
+.sub_tit {
+	width: 500px;
+	height: 80px;
+	font-size: 20px;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	box-sizing: border-box;
+	padding-top: 25px;
+	padding-left: 30px;
+}
+
+.in_border1 {
+	width: 280px;
+	height: 110px;
+	box-sizing: border-box;
+	float: left;
+	margin-left: 40px;
+}
+
+.in_border1 input {
+	width: 230px;
+	height: 40px;
+	margin-top: 15px;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+	border: none;
+	border-bottom: 1px solid #696969;
+}
+
+.in_border2 {
+	width: 140px;
+	height: 110px;
+	float: left;
+}
+
+.in_border2 input {
+	width: 90px;
+	height: 40px;
+	margin-top: 15px;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+	border: none;
+	border-bottom: 1px solid #696969;
+}
+
+/* == 공고 제목== */
+#re_tit_border {
+	width: 650px;
+	height: 160px;
+	border-bottom: 1px dotted gray;
+	box-sizing: border-box;
+}
+
+#re_title {
+	width: 540px;
+	height: 50px;
+	border: none;
+	margin-left: 40px;
+	padding-left: 10px;
+	font-size: 20px;
+	font-family: "맑은 고딕";
+	border-bottom: 1px solid #696969;
+}
+
+/* == 모집 조건== */
+#adver_border {
+	width: 650px;
+	height: 420px;
+	border-bottom: 1px dotted gray;
+	box-sizing: border-box;
+}
+
+#re_gender_b {
+	margin-left: 40px;
+}
+
+/* == 근무 조건== */
+#working_border {
+	width: 650px;
+	height: 520px;
+	box-sizing: border-box;
+	border-bottom: 1px dotted gray;
+}
+
+.in_border3 {
+	width: 600px;
+	height: 100px;
+	margin-left: 40px;
+	float: left;
+	box-sizing: border-box;
+}
+
+.in_border3 input {
+	width: 550px;
+	height: 40px;
+	margin-top: 15px;
+	margin-left: 5px;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: "맑은 고딕";
+	border: none;
+	border-bottom: 1px solid #696969;
+}
+
+/* == 회사 정보== */
+#info_border {
+	width: 650px;
+	height: 520px;
+	box-sizing: border-box;
+}
+
+.in_border4 {
+	width: 600px;
+	height: 320px;
+	margin-left: 40px;
+	float: left;
+	box-sizing: border-box;
+}
+
+#re_contents {
+	width: 560px;
+	height: 250px;
+	margin-top: 15px;
+	margin-left: 5px;
+	padding-left: 10px;
+	padding-top: 10px;
+	box-sizing: border-box;
+	border: 1px solid #696969;
+}
+
+/*  == 버튼 == */
+#btn_border {
+	width: 650px;
+	height: 120px;
+	text-align: center;
+}
+
+#insert_btn {
+	width: 120px;
+	height: 60px;
+	box-sizing: border-box;
+	margin-top: 40px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 20px;
+	font-family: "맑은 고딕";
+	background-color: #23A41A;
+	font-weight: bold;
+	letter-spacing: 5px;
+	border: none;
+}
+
+#insert_btn:hover {
+	color: #23A41A;
+	border: 2px solid #23A41A;
+	background-color: white;
+	cursor: pointer;
+}
