@@ -156,6 +156,9 @@
 						title="${page.startNum}" value="<<">
 				</c:if>
 
+
+
+
 				<c:if test="${not empty page}">
 					<c:choose>
 						<c:when test="${page.curBlock gt 1}">
@@ -182,8 +185,8 @@
 				</c:if>
 
 				<c:if test="${not empty page}">
-					<input type="button" class="list_button red" title="${page.lastNum}"
-						value=">>">
+					<input type="button" class="list_button red"
+						title="${page.lastNum}" value=">>">
 				</c:if>
 			</div>
 
@@ -192,9 +195,10 @@
 				<a href="./faqWrite" id="btnWrite">글쓰기</a>
 			</c:if>
 
-
-
 		</div>
+
+
+
 	</section>
 	<%@ include file="../temp/footer.jsp"%>
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.iu.scrap.ScrapDTO;
 import com.iu.util.AreaCodeDTO;
 import com.iu.util.ConditionDTO;
+import com.iu.util.ListData;
 
 @Repository
 public class RecruitDAO {
@@ -37,8 +38,8 @@ public class RecruitDAO {
 	
 	
 	/////////////////////////////////////////////////////
-	public List<RecruitDTO> selectList() {
-		return sqlSession.selectList(NAMESPACE+"User_Recruit_Total_List");
+	public List<RecruitDTO> selectList(ListData listData) {
+		return sqlSession.selectList(NAMESPACE+"User_Recruit_Total_List", listData);
 	}
 	
 	public List<RecruitDTO> searchSelectList(ConditionDTO conditionDTO) {

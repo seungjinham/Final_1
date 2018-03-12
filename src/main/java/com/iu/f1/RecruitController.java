@@ -29,26 +29,40 @@ public class RecruitController {
 	private CompanyService companyService;
 	
 	@RequestMapping(value="recruitList", method=RequestMethod.GET)
-	public String recruitList(Model model, ListData listData, AreaCodeDTO areacodeDTO) {
+	public String recruitList(RecruitSearchDTO recruitSearchDTO, Model model, ListData listData, AreaCodeDTO areacodeDTO) {
 		List<Object> info = null;
+		List<Object> collect_ar = null;
 		String path = "recruit/recruitList";
-		
-		if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
-			info = recruitService.searchInfo(areacodeDTO);
-			model.addAttribute("gucode", (List<String>)info.get(0));
-			model.addAttribute("guname", (Map<String, String>)info.get(1));
-			path = "common/gu_result";
-		} else if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()!=null) {
-			info = recruitService.searchInfo(areacodeDTO);
-			model.addAttribute("dongcode", (List<String>)info.get(0));
-			model.addAttribute("dongname", (Map<String, String>)info.get(1));
-			path = "common/dong_result";
+		ListSort listSort = new ListSort();
+		ConditionDTO conditionDTO= listSort.check(recruitSearchDTO);
+		if(conditionDTO.isCheck()) {
+			collect_ar = recruitService.searchSelectList(conditionDTO, listData);
+			model.addAttribute("totallist", collect_ar.get(0));
+			model.addAttribute("pagelist", collect_ar.get(1));
+			model.addAttribute("condition", recruitSearchDTO);
 		} else {
-			info = recruitService.searchInfo(areacodeDTO);
-			model.addAttribute("sicode", (List<String>)info.get(0));
-			model.addAttribute("siname", (Map<String, String>)info.get(1));
-			model.addAttribute("jobkind", (List<String>)info.get(2));
+			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("gucode", (List<String>)info.get(0));
+				model.addAttribute("guname", (Map<String, String>)info.get(1));
+				path = "common/gu_result";
+			} else if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()!=null) {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("dongcode", (List<String>)info.get(0));
+				model.addAttribute("dongname", (Map<String, String>)info.get(1));
+				path = "common/dong_result";
+			} else {
+				info = recruitService.searchInfo(areacodeDTO);
+				model.addAttribute("sicode", (List<String>)info.get(0));
+				model.addAttribute("siname", (Map<String, String>)info.get(1));
+				model.addAttribute("jobkind", (List<String>)info.get(2));
+			}
+			collect_ar = recruitService.selectList(listData);
+			model.addAttribute("totallist", collect_ar.get(0));
+			model.addAttribute("pagelist", collect_ar.get(1));
 		}
+		
+
 		//List<RecruitDTO> recruit_ar = recruitService.selectList();
 /*		if(areacodeDTO.getSi_value()==null&&areacodeDTO.getGu_value()==null&&areacodeDTO.getDong_value()==null) {
 			
@@ -60,9 +74,7 @@ public class RecruitController {
 			
 		}*/
 		//List<Object> area_ar = recruitService.selectArea(areacodeDTO);
-		List<Object> collect_ar = recruitService.selectList(listData);
-		model.addAttribute("totallist", collect_ar.get(0));
-		model.addAttribute("pagelist", collect_ar.get(1));
+
 		return path;
 	}
 	

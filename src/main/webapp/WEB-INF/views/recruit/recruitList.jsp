@@ -219,6 +219,11 @@ $(function(){
 			$(this).attr("src", "<%=request.getContextPath()%>/resources/images/recruit/scrap/scrap_off.png");
 		}
 	});
+	
+	$(".pageclick").click(function(){
+		var curpage = $(this).val();
+		location.href="../recruit/recruitList?curPage="+curpage
+	});
 });
 </script>
 </head>
@@ -231,7 +236,7 @@ $(function(){
 				<h2>빠른채용검색</h2>
 			</div>
 			<div id="search_area">
-				<form id="form" action="<%=request.getContextPath()%>/recruit/recruitSearch">
+				<form id="form" action="<%=request.getContextPath()%>/recruit/recruitList">
 					<div id="searchbox">
 						<fieldset class="common">
 							<h3>지역</h3>
@@ -332,7 +337,7 @@ $(function(){
 				</form>
 			</div>
 			
-			<div id="powerlink"><h2>파워링크</h2></div>
+			<%-- <div id="powerlink"><h2>파워링크</h2></div>
 			
 			<div id="powerlinklist">
 				<table id="powerlink_table" class="table">
@@ -357,7 +362,7 @@ $(function(){
 					</c:forEach>
 				</table>
 			
-			</div>
+			</div> --%>
 
 			<div id="list_area">
 				<div>
@@ -390,7 +395,7 @@ $(function(){
 					</c:if>
 					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
 						var="i">
-						<span><input type="button" value="${i}"></span>
+						<span><input type="button" value="${i}" class="pageclick"></span>
 					</c:forEach>
 					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
 						<span><input type="button" value="다음"></span>

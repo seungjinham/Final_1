@@ -27,11 +27,11 @@ $(function(){
 			<input type="button" value="다른 조건으로 검색하기" id="dcbtn">
 			</div>
 
-			<div id="powerlink">
+<!-- 			<div id="powerlink">
 				<h2>파워링크</h2>
-			</div>
+			</div> -->
 
-			<div id="powerlinklist">
+			<%-- <div id="powerlinklist">
 				<table id="powerlink_table" class="table">
 					<tr id="firstrow">
 						<th class="f_th">지역</th>
@@ -54,7 +54,7 @@ $(function(){
 					</c:forEach>
 				</table>
 
-			</div>
+			</div> --%>
 
 			<div id="list_area">
 				<div>

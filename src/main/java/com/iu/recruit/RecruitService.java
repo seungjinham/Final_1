@@ -40,7 +40,10 @@ public class RecruitService {
 	public List<Object> selectList(ListData listData) {
 		//List<List<Object>> collect_ar = new ArrayList<>();
 		List<Object> obj_ar = new ArrayList<>();
-		List<RecruitDTO> recruit_ar = recruitDAO.selectList();
+		Integer totalCount = recruitDAO.totalCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.pageMaker(totalCount, listData);
+		List<RecruitDTO> recruit_ar = recruitDAO.selectList(listData);
 		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
 		for(int i=0; i<recruit_ar.size(); i++) {
 			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
@@ -48,9 +51,6 @@ public class RecruitService {
 		}
 		ListSort listSort = new ListSort();
 		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-		Integer totalCount = recruitDAO.totalCount();
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.pageMaker(totalCount, listData);
 		
 		obj_ar.add(recruit_ar);
 		obj_ar.add(listData);
@@ -62,6 +62,11 @@ public class RecruitService {
 	}
 	
 	public List<Object> searchSelectList(ConditionDTO conditionDTO, ListData listData) {
+		Integer totalCount = recruitDAO.totalCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.pageMaker(totalCount, listData);
+		conditionDTO.setStartRow(listData.getStartRow());
+		conditionDTO.setLastRow(listData.getLastRow());
 		List<RecruitDTO> recruit_ar = recruitDAO.searchSelectList(conditionDTO);
 		List<CompanyDTO> company_ar = new ArrayList<CompanyDTO>();
 		List<Object> obj_ar = new ArrayList<>();
@@ -71,9 +76,6 @@ public class RecruitService {
 		}
 		ListSort listSort = new ListSort();
 		recruit_ar = listSort.listSort(recruit_ar, company_ar);
-		Integer totalCount = recruitDAO.totalCount();
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.pageMaker(totalCount, listData);
 		obj_ar.add(recruit_ar);
 		obj_ar.add(listData);
 		return obj_ar;

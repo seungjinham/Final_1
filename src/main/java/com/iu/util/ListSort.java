@@ -66,7 +66,7 @@ public class ListSort {
 			}
 		}
 		
-		//검색조건 있으면 true, 없으면 false
+		//寃��깋議곌굔 �엳�쑝硫� true, �뾾�쑝硫� false
 		for(int i=0; i<6; i++) {
 			if(checkVar.get(i)!=null) {
 				varcount++;
@@ -81,13 +81,13 @@ public class ListSort {
 		totalcount = varcount + arraycount;
 		
 		if(check_var==false&&check_array==false) {
-			//검색조건이 하나도 없는 경우
+			//寃��깋議곌굔�씠 �븯�굹�룄 �뾾�뒗 寃쎌슦
 			conditionDTO.setCheck(false);
 			conditionDTO.setCount(totalcount);
 			//result = false;
 			//totalcount=0;
 		} else {
-			//검색조건이 하나라도 있는 경우
+			//寃��깋議곌굔�씠 �븯�굹�씪�룄 �엳�뒗 寃쎌슦
 			conditionDTO.setCheck(true);
 			conditionDTO.setCount(totalcount);
 			conditionDTO.setArraycount(arraycount);
@@ -131,6 +131,7 @@ public class ListSort {
 				//conditionDTO.setCon1(Character.toString(ch)); 
 			} else {
 				conditionDTO.setCon1(tempstr[i]);
+				conditionDTO.setCon0(tempstr[i]);
 			}
 			break;
 			case 2: if(tempstr[i]==null) {
@@ -210,7 +211,7 @@ public class ListSort {
 			}
 			break;
 			case 4: if(checkArray.get(i)!=null) {
-				k=20;
+				k=23;
 				for(int j=0; j<checkArray.get(i).length; j++) {
 					if(checkArray.get(i)[j]!=null) {
 						k++;
@@ -252,6 +253,7 @@ public class ListSort {
 			break;
 			case 7: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon7(Character.toString(ch)); 
+				conditionDTO.setCon7(conditionDTO.getCon6());
 			} else {
 				conditionDTO.setCon7(tempstr[6+i]);
 			}
@@ -262,7 +264,8 @@ public class ListSort {
 				conditionDTO.setCon8(tempstr[6+i]);
 			}
 			case 9: if(tempstr[6+i]==null) {
-				//conditionDTO.setCon9(Character.toString(ch)); 
+				//conditionDTO.setCon9(Character.toString(ch));
+				conditionDTO.setCon9(conditionDTO.getCon8());
 			} else {
 				conditionDTO.setCon9(tempstr[6+i]); 
 			}
@@ -275,30 +278,35 @@ public class ListSort {
 			break;
 			case 11: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon11(Character.toString(ch)); 
+				conditionDTO.setCon11(conditionDTO.getCon10());
 			} else {
 				conditionDTO.setCon11(tempstr[6+i]);
 			}
 			break;
 			case 12: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon12(Character.toString(ch)); 
+				conditionDTO.setCon12(conditionDTO.getCon10());
 			} else {
 				conditionDTO.setCon12(tempstr[6+i]); 
 			}
 			break;
 			case 13: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon13(Character.toString(ch)); 
+				conditionDTO.setCon13(conditionDTO.getCon10());
 			} else {
 				conditionDTO.setCon13(tempstr[6+i]); 
 			}
 			break;
 			case 14: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon14(Character.toString(ch)); 
+				conditionDTO.setCon14(conditionDTO.getCon10());
 			} else {
 				conditionDTO.setCon14(tempstr[6+i]); 
 			}
 			break;
 			case 15: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon15(Character.toString(ch)); 
+				conditionDTO.setCon15(conditionDTO.getCon10());
 			} else {
 				conditionDTO.setCon15(tempstr[6+i]);
 			}
@@ -311,42 +319,49 @@ public class ListSort {
 			break;
 			case 17: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon17(Character.toString(ch)); 
+				conditionDTO.setCon17(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon17(tempstr[6+i]);
 			}
 			break;
 			case 18: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon18(Character.toString(ch)); 
+				conditionDTO.setCon18(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon18(tempstr[6+i]);
 			}
 			break;
 			case 19: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon19(Character.toString(ch));
+				conditionDTO.setCon19(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon19(tempstr[6+i]);
 			}
 			break;
 			case 20: if(tempstr[6+i]==null) {
-				//conditionDTO.setCon20(Character.toString(ch)); 
+				//conditionDTO.setCon20(Character.toString(ch));
+				conditionDTO.setCon20(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon20(tempstr[6+i]);
 			}
 			break;
 			case 21: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon21(Character.toString(ch)); 
+				conditionDTO.setCon21(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon21(tempstr[6+i]);
 			}
 			break;
 			case 22: if(tempstr[6+i]==null) {
-				//conditionDTO.setCon22(Character.toString(ch)); 
+				//conditionDTO.setCon22(Character.toString(ch));
+				conditionDTO.setCon22(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon22(tempstr[6+i]);
 			}
 			break;
 			case 23: if(tempstr[6+i]==null) {
-				//conditionDTO.setCon23(Character.toString(ch)); 
+				//conditionDTO.setCon23(Character.toString(ch));
+				conditionDTO.setCon23(conditionDTO.getCon16());
 			} else {
 				conditionDTO.setCon23(tempstr[6+i]);
 			}
@@ -359,24 +374,28 @@ public class ListSort {
 			break;
 			case 25: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon25(Character.toString(ch)); 
+				conditionDTO.setCon25(conditionDTO.getCon24());
 			} else {
 				conditionDTO.setCon25(tempstr[6+i]);
 			}
 			break;
 			case 26: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon26(Character.toString(ch)); 
+				conditionDTO.setCon26(conditionDTO.getCon24());
 			} else {
 				conditionDTO.setCon26(tempstr[6+i]);
 			}
 			break;
 			case 27: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon27(Character.toString(ch)); 
+				conditionDTO.setCon27(conditionDTO.getCon24());
 			} else {
 				conditionDTO.setCon27(tempstr[6+i]);
 			}
 			break;
 			case 28: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon28(Character.toString(ch));
+				conditionDTO.setCon28(conditionDTO.getCon24());
 			} else {
 				conditionDTO.setCon28(tempstr[6+i]);
 			}
@@ -389,6 +408,7 @@ public class ListSort {
 			break;
 			case 30: if(tempstr[6+i]==null) {
 				//conditionDTO.setCon30(Character.toString(ch)); 
+				conditionDTO.setCon30(conditionDTO.getCon29());
 			} else {
 				conditionDTO.setCon30(tempstr[6+i]);
 			}
