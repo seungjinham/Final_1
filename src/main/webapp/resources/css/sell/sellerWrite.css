@@ -184,6 +184,10 @@
 	margin-left: 110px;
 }
 
+.radio {
+	margin-left: 10px;
+}
+
 #p_name, #p_phone, #p_email {
 	margin-top: 10px;
 	width: 220px;
@@ -199,7 +203,7 @@
 
 .original {
 	float: left;
-	width: 80px;
+	width: 100px;
 	height: 40px;
 	text-align: center;
 	font-size: 13px;
@@ -210,7 +214,7 @@
 	color: #A9A9A9;
 	background-color: white;
 	border-radius: 5px;
-	margin-right: 3px;
+	margin-right: 10px;
 	outline: 0;
 }
 
@@ -309,7 +313,7 @@
 /* == 버튼 == */
 #insert_btn_border{
 	width: 740px;
-	height: 140px;
+	height: 120px;
 	float: left;
 	margin-left: 300px;
 }
