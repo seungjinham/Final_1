@@ -61,6 +61,48 @@
 			};
 		};
 		
+		//카테고리
+		$(".cate_btn").click(function() {
+			var category = $(this).val();
+			$("#category_hidden").val(category);
+			var t = $("#category_hidden").val();
+		});
+		
+		$("#design").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#it").css("color", "#A9A9A9");
+			$("#it").css("border", "1px solid #A9A9A9");
+			$("#it").css("font-weight", "normal");
+			$("#translate").css("color", "#A9A9A9");
+			$("#translate").css("border", "1px solid #A9A9A9");
+			$("#translate").css("font-weight", "normal");
+		});
+		$("#it").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#design").css("color", "#A9A9A9");
+			$("#design").css("border", "1px solid #A9A9A9");
+			$("#design").css("font-weight", "normal");
+			$("#translate").css("color", "#A9A9A9");
+			$("#translate").css("border", "1px solid #A9A9A9");
+			$("#translate").css("font-weight", "normal");
+		});
+		$("#translate").click(function() {
+			$(this).css("color", "#23A41A");
+			$(this).css("border", "2px solid #23A41A");
+			$(this).css("font-weight", "bold");
+			$("#design").css("color", "#A9A9A9");
+			$("#design").css("border", "1px solid #A9A9A9");
+			$("#design").css("font-weight", "normal");
+			$("#it").css("color", "#A9A9A9");
+			$("#it").css("border", "1px solid #A9A9A9");
+			$("#it").css("font-weight", "normal");
+		});
+		
+		
 		//원본파일(STANDARD 패키지) 제공여부
 		$(".original").click(function() {
 			var original = $(this).val();
@@ -166,39 +208,30 @@
 	
 </script>
 <style type="text/css">
-.textarea_border {
-	float: left;
+#cate_border{
 	width: 740px;
-	box-sizing: border-box;
-	padding-left: 30px;
-	padding-top: 20px;
-	padding-bottom: 30px;
+	height: 190px;
 	border-bottom: 1px dotted gray;
+	box-sizing: border-box;
 }
 
-.labels{
-	padding-bottom: 20px;
-	padding-left: 0px;
-}
-
-#service_contents {
-	width: 680px;
-	height: 300px;
-}
-
-#refund_border{
+.cate_btn{
 	float: left;
-	width: 740px;
+	width: 145px;
+	height: 60px;
+	text-align: center;
+	font-size: 16px;
+	font-family: "돋움";
 	box-sizing: border-box;
-	padding-left: 30px;
-	padding-top: 20px;
-	padding-bottom: 30px;
-	border-bottom: 1px dotted gray;
+	border: 1px solid #A9A9A9;
+	color: #A9A9A9;
+	background-color: white;
+	margin-left: 78px;
+	border-radius: 5px;
+	outline: 0;
 }
-#refund_contents{
-	width: 680px;
-	height: 150px;
-}
+
+
 </style>
 </head>
 <body>
@@ -244,7 +277,17 @@
 							</div>
 						</div>
 					</article>
-
+					
+					<!-- 카테고리 -->
+					<article id="cate_border">
+						<div class="p_meun_border">
+							<div class="p_meun_border_2">CATEGORY</div>
+						</div>
+						<input type="button" class="cate_btn" value="디자인" id="design">
+						<input type="button" class="cate_btn" value="IT&프로그래밍" id="it">
+						<input type="button" class="cate_btn" value="번역&통역" id="translate">
+						<input type="hidden" name="category" value="" id="category_hidden">
+					</article>
 
 					<!-- STANDARD -->
 					<div class="p_meun_border f_left">

@@ -218,7 +218,7 @@
 	outline: 0;
 }
 
-.original:HOVER {
+.original:HOVER, .cate_btn:HOVER {
 	border: 2px solid gray;
 	color: gray;
 	font-weight: bold;
@@ -310,6 +310,40 @@
 	font-family: "맑은 고딕";
 }
 
+/*=== contents ===*/
+.textarea_border {
+	float: left;
+	width: 740px;
+	box-sizing: border-box;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-bottom: 1px dotted gray;
+}
+
+.labels{
+	padding-bottom: 20px;
+	padding-left: 0px;
+}
+
+#service_contents {
+	width: 680px;
+	height: 300px;
+}
+
+#refund_border{
+	float: left;
+	width: 740px;
+	box-sizing: border-box;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-bottom: 1px dotted gray;
+}
+#refund_contents{
+	width: 680px;
+	height: 150px;
+}
 /* == 버튼 == */
 #insert_btn_border{
 	width: 740px;

@@ -89,8 +89,19 @@ td{
 
 .list_button {
 	display: inline-block;
+	background-color: white;
+	border: none;
+	outline: 0px;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: serif;
+	cursor: pointer;
+	letter-spacing: 1px;
 }
 
+.red{
+	color: red;
+}
 .listbtn {
 	margin-left:500px;
 }
