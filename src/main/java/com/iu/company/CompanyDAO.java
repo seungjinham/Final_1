@@ -13,7 +13,7 @@ import com.iu.recruit.RecruitDTO;
 
 @Repository
 public class CompanyDAO implements MemberDAO {
-	
+
 	@Inject
 	private SqlSession sqlSession;
 	private final String NAMESPACE="CompanyMapper.";
@@ -45,10 +45,26 @@ public class CompanyDAO implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"companyIdCheck", id);
 	}
 
+	//아이디 찾기
+	public MemberDTO findId(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"companyFindId", memberDTO);
+	}
+
+	//비밀번호 찾기
+	public MemberDTO findPw(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"companyFindPw", memberDTO);
+	}
+
+	//비밀번호 변경
+	public int changePw(MemberDTO memberDTO) throws Exception{
+		return sqlSession.update(NAMESPACE+"companyChangePw", memberDTO);
+	}
+
+
 	public List<RecruitDTO> companyRecruitList(String id) {
 		return sqlSession.selectList(NAMESPACE+"companyRecruitList", id);
 	}
-	
+
 	public CompanyDTO companyRecruitView(int num){
 		return sqlSession.selectOne(NAMESPACE+"companyRecruitView", num);
 	}
@@ -56,23 +72,23 @@ public class CompanyDAO implements MemberDAO {
 	public int companyRecruitDelete(int num) {
 		return sqlSession.delete(NAMESPACE+"companyRecruitDelete", num);
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	//////////////////////////////////////////////////////
 	public CompanyDTO selectOne(String id) {
 		return sqlSession.selectOne(NAMESPACE+"companySelectOne", id);
 	}
-	
+
 	public List<CompanyDTO> selectList() {
 		return sqlSession.selectList(NAMESPACE+"companySelectList");
 	}
-/*	public CompanyDTO selectOne(String id) {
+	/*	public CompanyDTO selectOne(String id) {
 		return sqlSession.selectOne(NAMESPACE+"selectOne", id);
 	}
-	
+
 	public CompanyDTO selectList(String id) {
 		return sqlSession.selectOne(NAMESPACE+"companyList", id);
 	}*/

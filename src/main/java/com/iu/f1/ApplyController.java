@@ -37,7 +37,7 @@ public class ApplyController {
 	@RequestMapping(value="applyInsert", method=RequestMethod.GET)
 	public String insert(ApplyDTO applyDTO, Model model) {
 		Integer integer = 0;
-		String message = "ÇØ´ç Ã¤¿ë°ø°í¿¡ ´õ ÀÌ»ó Áö¿ø ÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.";
+		String message = "ë¡œê·¸ì¸ì´ í•„ìš”í•œ ì„œë¹„ìŠ¤ ìž…ë‹ˆë‹¤.";
 		RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
 		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
 		SupporterDTO supporterDTO = new SupporterDTO();
@@ -53,7 +53,7 @@ public class ApplyController {
 			if(true) {
 				result = applyService.duplicationCheck(applyDTO);
 				if(result>0) {
-					message = "ÀÌ¹Ì Áö¿øÇÑ °ø°íÀÔ´Ï´Ù.";
+					message = "ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
 					break branch;
 				}
 			}
@@ -62,7 +62,7 @@ public class ApplyController {
 			
 			if(integer1>0 && integer2>0) {
 				integer = integer1+integer2;
-				message = "¼º°øÀûÀ¸·Î Áö¿ø µÇ¾ú½À´Ï´Ù.";
+				message = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 			}
 		} 
 		
@@ -79,7 +79,7 @@ public class ApplyController {
 		List<SupporterDTO> supporterDTO_ar=new ArrayList<>();
 		Integer integer1 = null;
 		Integer integer2 = null;
-		String message = "´Ù½Ã ½ÃµµÇØÁÖ½Ê½Ã¿À";
+		String message = "ï¿½Ù½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ö½Ê½Ã¿ï¿½";
 		
 		for(int i=0; i<applyDTO.getSelect_ch().size(); i++) {
 			RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getSelect_ch().get(i));
@@ -102,7 +102,7 @@ public class ApplyController {
 			integer2 = supporterService.update(supporterDTO_ar.get(i));
 		}
 		
-		if(integer1>0 && integer2>0) message = "¼º°øÀûÀ¸·Î Áö¿øÀ» Ãë¼ÒÇÏ¿´½À´Ï´Ù.";
+		if(integer1>0 && integer2>0) message = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 		
 		model.addAttribute("applyDelete", message);
 		
@@ -112,7 +112,7 @@ public class ApplyController {
 	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
 	public String selectList(ApplyDTO applyDTO, ListData listData, Model model, RedirectAttributes ra) {
 		List<Object> obj_ar = null;
-		String message = "·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½ºÀÔ´Ï´Ù.";
+		String message = "ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
 		String path = "redirect:../";
 		if(applyDTO.getId() != "") {
 			obj_ar = applyService.selectList(applyDTO, listData);

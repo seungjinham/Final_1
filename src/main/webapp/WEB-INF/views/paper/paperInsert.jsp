@@ -235,7 +235,7 @@
 					$("#h_work").val()&&
 					$("#location").val()&&
 					$("#salary").val()&&
-					$("#cr_kind_hidden").val() != null){ */
+					$("#cr_kind_hidden").val() != null){
 					paper_frm.submit();
 		 	}else{
 				alert("필수 정보를 입력해주세요.")

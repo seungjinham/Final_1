@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+
+#login_border {
+	width: 600px;
+	height: 500px;
+	float: left;
+}
+
+#del_border {
+	width: 600px;
+	height: 500px;
+	float: left;
+}
+
+#del_border_2 {
+	width: 600px;
+	height: 415px;
+	border-top: 2px solid #23A41A;
+	border-bottom: 2px solid #23A41A;
+}
+
+#guide_border {
+	width: 600px;
+	height: 30px;
+	padding-top: 10px;
+	border-bottom: 1px dotted gray;
+}
+
+#guide {
+	width: 600px;
+	height: 25px;
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 5px;
+	font-family: "굴림", Gulim;
+}
+
+#del_border_2 ul {
+	width: 590px;
+	height: 80px;
+	padding-top: 15px;
+	padding-left: 10px;
+	border-bottom: 2px solid #23A41A;
+}
+
+li {
+	font-size: 12px;
+	font-family: "굴림", Gulim;
+}
+
+.red {
+	color: red;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#choice {
+	width: 590px;
+	height: 225px;
+	font-size: 13px;
+	font-family: "굴림", Gulim;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+p {
+	padding-top: 10px;
+}
+
+.c {
+	margin-right: 5px;
+}
+
+#other_text {
+	width: 350px;
+	height: 25px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding-left: 10px;
+	margin-left: 20px;
+}
+
+#d_btn_border {
+	width: 600px;
+	height: 80px;
+}
+
+#d_btn_border_2 {
+	width: 120px;
+	height: 60px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+#d_btn {
+	width: 120px;
+	height: 50px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	background-color: #23A41A;
+	font-size: 17px;
+	font-family: 'NanumGothic', '맑은고딕', 'Malgun Gothic', 'MGothic',
+		sans-serif, "돋움", Dotum, "굴림", Gulim;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+
+#d_btn:HOVER {
+	background-color: white;
+	border: 2px solid #23A41A;
+	color: #23A41A;
+	font-size: 19px;
+	font-weight: bold;
+}

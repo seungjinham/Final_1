@@ -49,7 +49,7 @@
 		delete person where id=#{id}
 	</delete>
 	
-	<!-- 비밀번호 찾기 -->
+	<!-- 아이디 찾기 -->
 	<select id="personFindId" parameterType="MemberDTO" resultType="MemberDTO">
 		select * from member where name=#{name} and email=#{email}
 	</select>

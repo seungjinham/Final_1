@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link
-	href="<%=request.getContextPath()%>/resources/css/person/p_sendMailok.css"
+	href="<%=request.getContextPath()%>/resources/css/person/c_sendMailok.css"
 	rel="stylesheet">
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -28,11 +28,11 @@
 		</article>
 
 		<article id="word_border">
-			<div class="word">
-				※ <label>${checkmsg}</label>님의 메일로 <span id="red">비밀번호</span>가 전송.
+			<div class="word" style="width: 220px;">
+				※ <label>${checkmsg}</label>님의 메일로 <span id="red">아이디</span>가 전송.
 			</div>
-			<div class="word">
-				※ 메일에서 <span id="red">비밀번호</span>를 확인해주세요.
+			<div class="word" style="width: 220px;">
+				※ 메일에서 <span id="red">아이디</span>를 확인해주세요.
 			</div>
 
 		</article>

@@ -40,7 +40,6 @@
 	});
 </script>
 <style type="text/css">
-
 </style>
 </head>
 <body>
@@ -53,6 +52,7 @@
 		<div id="tit_border">
 			<div id="tit">기업정보</div>
 		</div>
+		<div id="all_border">
 		<div id="word_border">
 			<div class="word" id="word_1">회원님의 정보를 안전하게 보호하기 위해 <b>비밀번호를 다시 한번</b> 입력해 주시기 바랍니다.</div>
 			<div class="word" id="word_2">※타인에게 노출되지 않도록 주의해 주세요.</div>
@@ -76,6 +76,7 @@
 					<div class="btn"><a class="btn1" id="ok">확인</a></div>
 					<div class="btn"><a href="../" class="btn1">취소</a></div>
 				</div>
+			</div>
 			</div>
 	</div>
 	</section>

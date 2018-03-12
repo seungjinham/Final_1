@@ -7,7 +7,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link
-	href="<%=request.getContextPath()%>/resources/css/person/p_sendMailok.css"
+	href="<%=request.getContextPath()%>/resources/css/company/c_sendMailok.css"
 	rel="stylesheet">
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -32,7 +32,7 @@
 				※ <label>${checkmsg}</label>님의 메일로 <span id="red">비밀번호</span>가 전송.
 			</div>
 			<div class="word">
-				※ 메일에서 <span id="red">비밀번호</span>를 확인해주세요.
+				※ 메일에서 <span id="red">비밀번호</span>를 확인해주세요..
 			</div>
 
 		</article>
@@ -41,5 +41,6 @@
 			<button id="ok">확인</button>
 		</article>
 	</section>
+
 </body>
 </html>

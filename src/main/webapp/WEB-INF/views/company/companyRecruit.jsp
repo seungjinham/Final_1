@@ -22,8 +22,21 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Insert title here</title>
-<style type="text/css">
-</style>
+<script type="text/javascript">
+$(function() {
+	//메뉴 설정
+	$("#m2").ready(function(){
+		$(".m2").show("slow");
+	});
+	$("#m2").css("color", "white");
+	$("#m2").css("background-color", "#23A41A");
+	$("#m2").css("font-weight", "normal");
+	$("#s_m4").css("color", "#23A41A");
+	$("#s_m4").css("font-weight", "bold");
+	
+});
+
+</script>
 </head>
 <body>
 	<%@ include file="../temp/header1.jsp"%>

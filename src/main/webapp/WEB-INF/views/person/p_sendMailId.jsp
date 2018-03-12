@@ -28,7 +28,7 @@
 		</article>
 
 		<article id="word_border">
-			<div class="word" style="width: 220px;">
+			<div class="word" style="width: 240px;">
 				※ <label>${checkmsg}</label>님의 메일로 <span id="red">아이디</span>가 전송.
 			</div>
 			<div class="word" style="width: 220px;">

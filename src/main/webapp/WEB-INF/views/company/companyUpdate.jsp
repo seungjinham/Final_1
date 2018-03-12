@@ -111,7 +111,7 @@ function sample6_execDaumPostcode() {
 						<input type="hidden" name="pw" value="${member.pw}"></td>
 					</tr>
 					<tr>
-						<th class="font">이름</th>
+						<th class="font">담당자</th>
 						<td class="font"><input type="text" name="name" id="name"
 							class="inupt_f" value="${member.name}"><br> <span id="nameCheck"></span></td>
 					</tr>
@@ -131,14 +131,14 @@ function sample6_execDaumPostcode() {
 						<td colspan="2" class="tline"><div></div></td>
 					</tr>
 					<tr>
-						<th class="font">이름</th>
+						<th class="font">사업자 번호</th>
 						<td class="font"><input type="text" name="c_num" id="c_num"
-							class="inupt_f" value=""></td>
+							class="inupt_f" value="${member.c_num}"></td>
 					</tr>
 					<tr>
-						<th class="font">이름</th>
+						<th class="font">회사명</th>
 						<td class="font"><input type="text" name="c_name" id="c_name"
-							class="inupt_f" value=""></td>
+							class="inupt_f" value="${member.c_name}"></td>
 					</tr>
 					<tr>
 						<th class="font">주소</th>
