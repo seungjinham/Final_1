@@ -36,27 +36,10 @@
 		$("#company").click(function(){
 			location.href="<%=request.getContextPath()%>/faq/faqList?job=c"
 		});
+
 	});
 </script>
 <style type="text/css">
-.btn_border {
-	width: 548px;
-	height: 150px;
-	float: left;
-}
-
-.btn_border input {
-	width: 548px;
-	height: 90px;
-	border: none;
-	font-size: 30px;
-	font-family: "맑은 고딕";
-	font-weight: bold;
-	letter-spacing: 5px;
-	cursor: pointer;
-	outline: 0px;
-	background-color: white;
-}
 </style>
 </head>
 <body>
@@ -67,33 +50,36 @@
 
 			<div id="extra">
 				<div id="faqzone">
-					<c:forEach items="${list}" var="i" varStatus="j">
-						<c:set var="job" value="${i.job}"></c:set>
-						<c:if test="${job eq 'p'}">
-							<div class="btn_border">
-								<input type="button" value="개인회원" id="person"
-									style="border: 2px solid #23A41A; border-bottom: none;">
-							</div>
-							<div class="btn_border">
-								<input type="button" value="기업회원" id="company"
-									style="border-bottom: 2px solid #23A41A;">
-							</div>
-						</c:if>
-					</c:forEach>
+
 
 					<c:forEach items="${list}" var="i" varStatus="j">
 						<c:set var="job" value="${i.job}"></c:set>
-						<c:if test="${job eq 'c'}">
-							<div class="btn_border">
-								<input type="button" value="개인회원" id="person"
-									style="border-bottom: 2px solid #23A41A;">
-							</div>
-							<div class="btn_border">
-								<input type="button" value="기업회원" id="company"
-									style="border: 2px solid #23A41A; border-bottom: none;">
-							</div>
-						</c:if>
 					</c:forEach>
+					<c:if test="${job eq 'p'}">
+						<div class="btn_border">
+							<input type="button" value="개인회원" id="person"
+								style="border: 2px solid #23A41A; border-bottom: none;">
+						</div>
+						<div class="btn_border">
+							<input type="button" value="기업회원" id="company"
+								style="border-bottom: 2px solid #23A41A;">
+						</div>
+					</c:if>
+					
+					<c:forEach items="${list}" var="i" varStatus="j">
+						<c:set var="job" value="${i.job}"></c:set>
+					</c:forEach>
+					<c:if test="${job eq 'c'}">
+						<div class="btn_border">
+							<input type="button" value="개인회원" id="person"
+								style="border-bottom: 2px solid #23A41A;">
+						</div>
+						<div class="btn_border">
+							<input type="button" value="기업회원" id="company"
+								style="border: 2px solid #23A41A; border-bottom: none;">
+						</div>
+					</c:if>
+
 
 					<div id="faqcontents">
 						<table class="faqTable">
