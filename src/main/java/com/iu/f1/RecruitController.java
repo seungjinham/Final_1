@@ -89,6 +89,7 @@ public class RecruitController {
 			collect_ar = recruitService.searchSelectList(conditionDTO, listData);
 			model.addAttribute("totallist", collect_ar.get(0));
 			model.addAttribute("pagelist", collect_ar.get(1));
+			model.addAttribute("condition", recruitSearchDTO);
 			path = "recruit/recruitSearchList";
 		} else {
 			if(areacodeDTO.getSi_value()!=null && areacodeDTO.getGu_value()==null) {
