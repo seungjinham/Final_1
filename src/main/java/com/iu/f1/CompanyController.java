@@ -339,7 +339,24 @@ public class CompanyController {
 
 	//=========================== MyPage 기업정보보기  ===========================
 	@RequestMapping(value="companyMyPage")
-	public void companyMypage(HttpSession session) throws Exception {}
+	public ModelAndView companyMyPage(HttpSession session) throws Exception {
+		ModelAndView mv  = new ModelAndView();
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		if(memberDTO == null){
+			mv.addObject("message", "로그인이 필요한 서비스 입니다.");
+			mv.addObject("path", "../");
+			mv.setViewName("common/result");
+		}else{
+			if(memberDTO.getJob().equals("P")){
+				mv.addObject("message", "기업 회원만 사용 가능한 서비스 입니다.");
+				mv.addObject("path", "../");
+				mv.setViewName("common/result");
+			}else{
+				mv.setViewName("company/companyMyPage");
+			}
+		}
+		return mv;
+	}
 
 	//recruit 수정폼
 	@RequestMapping(value="companySelectOne")
@@ -387,9 +404,25 @@ public class CompanyController {
 
 	//=========================== Write 공고 등록하기  ===========================
 	@RequestMapping(value="companyRecruit", method=RequestMethod.GET)
-	public void companyRecruit(HttpSession session, Model model) {
-		CompanyDTO companyDTO = (CompanyDTO) session.getAttribute("member");
-		model.addAttribute("company", companyDTO);
+	public ModelAndView companyRecruit(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		if(memberDTO == null){
+			mv.addObject("message", "로그인이 필요한 서비스 입니다.");
+			mv.addObject("path", "../");
+			mv.setViewName("common/result");
+		}else{
+			if(memberDTO.getJob().equals("P")){
+				mv.addObject("message", "개인 회원만 사용 가능한 서비스 입니다.");
+				mv.addObject("path", "../");
+				mv.setViewName("common/result");
+			}else{
+				CompanyDTO companyDTO = (CompanyDTO) session.getAttribute("member");
+				mv.addObject("company", companyDTO);
+				mv.setViewName("company/companyRecruit");
+			}
+		}
+		return mv;
 	}
 
 	@RequestMapping(value="companyRecruit", method=RequestMethod.POST)
@@ -413,15 +446,27 @@ public class CompanyController {
 	@RequestMapping(value="companyRecruitList", method=RequestMethod.GET)
 	public ModelAndView companyRecruitList(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		if(memberDTO == null){
+			mv.addObject("message", "로그인이 필요한 서비스 입니다.");
+			mv.addObject("path", "../");
+			mv.setViewName("common/result");
+		}else{
+			if(memberDTO.getJob().equals("P")){
+				mv.addObject("message", "개인 회원만 사용 가능한 서비스 입니다.");
+				mv.addObject("path", "../");
+				mv.setViewName("common/result");
+			}else{
+				CompanyDTO companyDTO= (CompanyDTO) session.getAttribute("member");
+				System.out.println(companyDTO.getId());
 
-		CompanyDTO companyDTO= (CompanyDTO) session.getAttribute("member");
-		System.out.println(companyDTO.getId());
+				List<RecruitDTO> ar = companyService.companyRecruitList(companyDTO.getId());
 
-		List<RecruitDTO> ar = companyService.companyRecruitList(companyDTO.getId());
+				mv.addObject("list", ar);
+				mv.setViewName("company/companyRecruitList");
 
-		mv.addObject("list", ar);
-		mv.setViewName("company/companyRecruitList");
-
+			}
+		}
 		return mv;
 	}
 
