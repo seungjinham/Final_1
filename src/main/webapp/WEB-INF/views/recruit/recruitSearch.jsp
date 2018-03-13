@@ -384,8 +384,8 @@
 
 						<fieldset id="searchbtn">
 							<div id="btngroup">
-								<input type="submit" value="검색" id="search">&nbsp;&nbsp;&nbsp;
-								<input type="button" value="초기화" id="default">
+								<input type="submit" value="검색" id="search" class="funcbtn">&nbsp;&nbsp;&nbsp;
+								<input type="button" value="초기화" id="default" class="funcbtn">
 							</div>
 						</fieldset>
 					</div>

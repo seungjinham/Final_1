@@ -69,9 +69,11 @@
 			<h1 class="h1">나의 지원내역</h1>
 			<c:if test="${not empty applylist}">
 				<form id="form" name="frm" action="../apply/applyDelete">
+				<div id="btnarea">
 				<input type="submit" value="지원취소" id="apply_del"> <input
 					type="hidden" name="page"> <input type="hidden" name="id"
 					value="${member.id}">
+				</div>
 				<table id="apply_table">
 					<tr id="firstrow">
 						<th><input type="checkbox" id="select_all"></th>
@@ -96,15 +98,15 @@
 				</table>
 
 				<div id="page">
-					<c:if test="${pagelist.curBlock>1}">
-						<span><input type="button" value="이전"></span>
+					<c:if test="${pagelist.curBlock>=1}">
+						<span><input type="button" value="이전" class="apbtn prebtn"></span>
 					</c:if>
 					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
 						var="i">
-						<span><input type="button" value="${i}"></span>
+						<span><input type="button" value="${i}" class="apbtn"></span>
 					</c:forEach>
-					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
-						<span><input type="button" value="다음"></span>
+					<c:if test="${pagelist.curBlock<=pagelist.totalBlock}">
+						<span><input type="button" value="다음" class="apbtn"></span>
 					</c:if>
 				</div>
 			</form>

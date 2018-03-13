@@ -73,7 +73,7 @@
 			<input type="hidden" name="page">
 			<input type="hidden" name="id" value="${member.id}">
 			</div>
-			<table id="scrap_table">
+			<table id="scrap_table"> 
 				<tr id="firstrow">
 					<th><input type="checkbox" id="select_all"></th>
 					<th>지역</th>
@@ -93,15 +93,15 @@
 			</table>
 			
 				<div id="page">
-					<c:if test="${pagelist.curBlock>1}">
-						<span><input type="button" value="이전"></span>
+					<c:if test="${pagelist.curBlock>=1}">
+						<span><input type="button" value="이전" class="scbtn prebtn"></span>
 					</c:if>
 					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
 						var="i">
-						<span><input type="button" value="${i}"></span>
+						<span><input type="button" value="${i}" class="scbtn"></span>
 					</c:forEach>
-					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
-						<span><input type="button" value="다음"></span>
+					<c:if test="${pagelist.curBlock<=pagelist.totalBlock}">
+						<span><input type="button" value="다음" class="scbtn"></span>
 					</c:if>
 				</div>
 			

@@ -328,8 +328,8 @@ $(function(){
 						</fieldset>
 						<fieldset id="searchbtn">
 							<div id="btngroup">
-								<input type="submit" value="검색" class="btn">&nbsp;&nbsp;&nbsp;
-								<input type="button" value="초기화" class="btn" id="default">
+								<input type="submit" value="검색" class="btn searchbtn">&nbsp;&nbsp;&nbsp;
+								<input type="button" value="초기화" class="btn resetbtn" id="default">
 							</div>
 						</fieldset>
 					</div>
@@ -390,15 +390,15 @@ $(function(){
 					</c:forEach>
 				</table>
 				<div id="page">
-					<c:if test="${pagelist.curBlock>1}">
-						<span><input type="button" value="이전"></span>
+					<c:if test="${pagelist.curBlock>=1}">
+						<span><input type="button" value="이전" class="btnshape prebtn prenext"></span>
 					</c:if>
 					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
 						var="i">
-						<span><input type="button" value="${i}" class="pageclick"></span>
+						<span><input type="button" value="${i}" class="pageclick btnshape"></span>
 					</c:forEach>
-					<c:if test="${pagelist.curBlock<pagelist.totalBlock}">
-						<span><input type="button" value="다음"></span>
+					<c:if test="${pagelist.curBlock<=pagelist.totalBlock}">
+						<span><input type="button" value="다음" class="btnshape prenext"></span>
 					</c:if>
 				</div>
 			</div>

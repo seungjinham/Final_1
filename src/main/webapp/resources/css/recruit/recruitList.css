@@ -13,7 +13,11 @@
 }
 
 .middle #search_area #form {
-	border: 1px solid black;
+/* 	border-top:2px solid #23A41A; 
+	border-bottom: 2px solid #23A41A;
+	border-left: 1px solid #23A41A;
+	border-right: 1px solid #23A41A; */
+	border:1px solid #e6e6e6;
 }
 
 .middle #search_area #form .common {
@@ -58,13 +62,15 @@
 
 .middle #list_area #list_table {
 	width:100%;
-	border:1px solid gray;
+	border-top:2px solid #23A41A;
+	border-bottom:2px solid #23A41A;
+	/* border:1px solid gray; */
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 .middle #list_area #list_table #firstrow {
-	border-top:2px solid gray;
+	border-top:2px solid #23A41A;
 	border-bottom:1px solid lightgray;
 }
 
@@ -105,19 +111,16 @@
 #search_area #form #searchbox #districtcode #si_box {
 	display:none;
 	width:100%;
-	background-color: orange;
 }
 
 #search_area #form #searchbox #districtcode #gu_box {
 	display:none;
 	width:100%;
-	background-color: yellow;
 }
 
 #search_area #form #searchbox #districtcode #dong_box {
 	display:none;
 	width:100%;
-	background-color: lime;
 }
 
 #search_area #form #searchbox #districtcode #si_box li {
@@ -192,14 +195,54 @@
 
 
 #page {
-	border:1px solid red;
 	margin-top:20px;
 }
 
 #page input {
 	display: inline-block;
-	margin:0 auto;
 }
 
 
 
+.btnshape {
+	width:20px;
+	height:20px;
+	display: inline-block;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+}
+
+.prebtn {
+	margin-left:480px;
+}
+
+.prenext {
+	width:30px;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+}
+
+
+.searchbtn {
+	border: 1px solid #333333;
+	background-color: #333333;
+	color:white;
+	font-weight: bold;
+}
+
+.resetbtn {
+	border: 1px solid #cccccc;
+	background-color: white;
+	color:#494949;
+	font-weight: bold;
+}
+
+.btn {
+	width:50px;
+	height:30px;
+}
+
+.jobk {
+	margin-left:10px;
+}

@@ -15,7 +15,7 @@
 
 
 #searchsite #form {
-	border:1px solid black;
+	border:1px solid #e6e6e6;
 }
 
 #searchsite #form #searchbox .common {
@@ -42,19 +42,16 @@
 #searchsite #form #searchbox #districtcode #si_box {
 	display:none;
 	width:100%;
-	background-color: orange;
 }
 
 #searchsite #form #searchbox #districtcode #gu_box {
 	display:none;
 	width:100%;
-	background-color: yellow;
 }
 
 #searchsite #form #searchbox #districtcode #dong_box {
 	display:none;
 	width:100%;
-	background-color: lime;
 }
 
 #searchsite #form #searchbox #districtcode #si_box li {
@@ -98,5 +95,32 @@
 
 #searchsite #form #searchbtn {
 	border-style: none;
+}
+
+.funcbtn {
+	width:50px;
+	height:30px;
+}
+
+#search {
+	border: 1px solid #333333;
+	background-color: #333333;
+	color:white;
+	font-weight: bold;
+}
+
+#default {
+	border: 1px solid #cccccc;
+	background-color: white;
+	color:#494949;
+	font-weight: bold;
+}
+
+.jobk {
+	margin-left:10px;
+}
+
+.spk {
+	margin-left:10px;
 }
 

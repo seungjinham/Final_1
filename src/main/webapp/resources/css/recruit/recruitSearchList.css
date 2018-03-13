@@ -56,17 +56,23 @@
 
 .container #list_area #list_table {
 	width:100%;
-	border:1px solid gray;
+	border-top:2px solid #23A41A;
+	border-bottom:2px solid #23A41A;
+	/* border:1px solid gray; */
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 .container #list_area #list_table #firstrow {
-	border-top:2px solid gray;
+/* 	border-top:2px solid gray;
+	border-bottom:1px solid lightgray; */
+	border-top:2px solid #23A41A;
 	border-bottom:1px solid lightgray;
 }
 
 .container #list_area #list_table #extrarow {
+/* 	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray; */
 	border-top:1px solid lightgray;
 	border-bottom:1px solid lightgray;
 }
@@ -99,13 +105,12 @@
 
 
 #page {
-	border:1px solid red;
 	margin-top:20px;
 }
 
 #page input {
 	display: inline-block;
-	margin:0 auto;
+	/* margin:0 auto; */
 }
 
 
@@ -117,7 +122,31 @@
 
 
 
+.btnshape {
+	width:20px;
+	height:20px;
+	display: inline-block;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+}
 
+.prebtn {
+	margin-left:480px;
+}
 
+.prenext {
+	width:30px;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+}
 
+#dcbtn {
+	border: 1px solid #cccccc;
+	background-color: white;
+	color:#494949;
+	font-weight: bold;
+	height:20px;
+	border-radius: 4px;
+}
 

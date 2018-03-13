@@ -30,18 +30,38 @@
 
 #page {
 	width:70%;
-	border:1px solid red;
 	margin-left:300px;
 	margin-top:20px;
 }
 
 #page input {
 	display: inline-block;
-	margin:0 auto;
 }
 
 #btnarea {
 	width:10%;
 	margin-left:300px;
 	margin-bottom: 10px;
+}
+
+.prebtn {
+	margin-left:340px;
+}
+
+.scbtn {
+	width:30px;
+	height:20px;
+	display: inline-block;
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+}
+
+#scrap_del {
+	border: 1px solid #cccccc;
+	background-color: white;
+	color:#494949;
+	font-weight: bold;
+	height:30px;
+	border-radius: 4px;
 }

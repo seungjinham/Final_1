@@ -37,7 +37,7 @@ public class ApplyController {
 	@RequestMapping(value="applyInsert", method=RequestMethod.GET)
 	public String insert(ApplyDTO applyDTO, Model model) {
 		Integer integer = 0;
-		String message = "로그인이 필요한 서비스 입니다.";
+		String message = "해당 채용공고에 더 이상 지원 하실 수 없습니다.";
 		RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getRecruit_num());
 		CompanyDTO companyDTO = companyService.selectOne(recruitDTO.getId());
 		SupporterDTO supporterDTO = new SupporterDTO();
@@ -53,7 +53,7 @@ public class ApplyController {
 			if(true) {
 				result = applyService.duplicationCheck(applyDTO);
 				if(result>0) {
-					message = "�̹� ������ �����Դϴ�.";
+					message = "이미 지원한 공고입니다.";
 					break branch;
 				}
 			}
@@ -62,7 +62,7 @@ public class ApplyController {
 			
 			if(integer1>0 && integer2>0) {
 				integer = integer1+integer2;
-				message = "���������� ���� �Ǿ����ϴ�.";
+				message = "성공적으로 지원 되었습니다.";
 			}
 		} 
 		
@@ -79,7 +79,7 @@ public class ApplyController {
 		List<SupporterDTO> supporterDTO_ar=new ArrayList<>();
 		Integer integer1 = null;
 		Integer integer2 = null;
-		String message = "�ٽ� �õ����ֽʽÿ�";
+		String message = "다시 시도해주십시오";
 		
 		for(int i=0; i<applyDTO.getSelect_ch().size(); i++) {
 			RecruitDTO recruitDTO = recruitService.selectOne(applyDTO.getSelect_ch().get(i));
@@ -102,7 +102,7 @@ public class ApplyController {
 			integer2 = supporterService.update(supporterDTO_ar.get(i));
 		}
 		
-		if(integer1>0 && integer2>0) message = "���������� ������ ����Ͽ����ϴ�.";
+		if(integer1>0 && integer2>0) message = "성공적으로 지원을 취소하였습니다.";
 		
 		model.addAttribute("applyDelete", message);
 		
@@ -112,7 +112,7 @@ public class ApplyController {
 	@RequestMapping(value="applySelectList", method=RequestMethod.GET)
 	public String selectList(ApplyDTO applyDTO, ListData listData, Model model, RedirectAttributes ra) {
 		List<Object> obj_ar = null;
-		String message = "�α����� �ʿ��� �����Դϴ�.";
+		String message = "로그인이 필요한 서비스입니다.";
 		String path = "redirect:../";
 		if(applyDTO.getId() != "") {
 			obj_ar = applyService.selectList(applyDTO, listData);
