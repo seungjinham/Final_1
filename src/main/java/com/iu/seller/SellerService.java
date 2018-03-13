@@ -23,11 +23,7 @@ public class SellerService {
 	private FileDAO fileDAO;
 	
 	//============== Write ==============
-	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file[]) throws Exception {
-
-		sellerDAO.sellerWrite(sellerDTO);
-		optionDAO.optionWrite(sellerDTO);
-		
+	public int sellerWrite(SellerDTO sellerDTO, HttpSession session, MultipartFile file[], MultipartFile profile) throws Exception {		
 		FileSaver fileSaver = new FileSaver();
 		String filePath = session.getServletContext().getRealPath("resources/upload");
 		
@@ -43,10 +39,24 @@ public class SellerService {
 			FileDTO fileDTO = new FileDTO();
 			fileDTO.setFname(names.get(i));
 			fileDTO.setOname(file[i].getOriginalFilename());
+			System.out.println(fileDTO.getFname());
 			fileDTO.setId(sellerDTO.getId());
 			
 			result=fileDAO.insert(fileDTO);			
 		}
+
+		if(profile.getOriginalFilename() == ""){
+			sellerDTO.setFname("");
+			sellerDTO.setOname("");
+		}else{
+			FileSaver fs = new FileSaver();
+			String name = fs.saver(profile, filePath);
+			sellerDTO.setFname(name);
+			sellerDTO.setOname(profile.getOriginalFilename());
+		}
+		
+		sellerDAO.sellerWrite(sellerDTO);
+		optionDAO.optionWrite(sellerDTO);
 
 		return result;
 	}

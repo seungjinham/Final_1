@@ -5,18 +5,12 @@ public class OptionDTO {
 	private String id; //판매자 아이디
 	private String name; //패키지 제목
 	private String contents; //패키지 내용
-	private int price; //가격정보
+	private String price; //가격정보
 	private String original; // 원본파일 제공
 	private String work_modify; //수정 횟수
-	private int work_date; //작업 기간	
+	private String work_date; //작업 기간	
 	private String selloption;
 	
-	public String getSelloption() {
-		return selloption;
-	}
-	public void setSelloption(String selloption) {
-		this.selloption = selloption;
-	}
 	public int getNum() {
 		return num;
 	}
@@ -41,10 +35,10 @@ public class OptionDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public String getOriginal() {
@@ -59,12 +53,19 @@ public class OptionDTO {
 	public void setWork_modify(String work_modify) {
 		this.work_modify = work_modify;
 	}
-	public int getWork_date() {
+	public String getWork_date() {
 		return work_date;
 	}
-	public void setWork_date(int work_date) {
+	public void setWork_date(String work_date) {
 		this.work_date = work_date;
 	}
+	public String getSelloption() {
+		return selloption;
+	}
+	public void setSelloption(String selloption) {
+		this.selloption = selloption;
+	}
+	
 	
 	
 }

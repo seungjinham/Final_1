@@ -270,6 +270,7 @@
 					<!-- STANDARD -->
 					<div class="p_meun_border f_left">
 						<div class="p_meun_border_2">STANDARD 패키지</div>
+						<input type="hidden" name="selloption" value="standard">
 					</div>
 
 					<article class="box_border">
@@ -301,13 +302,13 @@
 							<label for="work_date" class="p_tit">작업 기간</label> <input
 								type="text" name="work_date" class="Decision">
 						</div>
-						<input type="hidden" name="selloption" value="standard">
 					</article>
 
 
 					<!-- DELUXE -->
 					<div class="p_meun_border f_left">
 						<div class="p_meun_border_2">DELUXE 패키지</div>
+						<input type="hidden" name="selloption" value="deluxe">
 					</div>
 
 					<article class="box_border">
@@ -339,12 +340,12 @@
 							<label for="work_date" class="p_tit">작업 기간</label> <input
 								type="text" name="work_date" class="Decision">
 						</div>
-						<input type="hidden" name="selloption" value="deluxe">
 					</article>
 
 					<!-- PREMIUM -->
 					<div class="p_meun_border f_left">
-						<div class="p_meun_border_2">PREMIUM 패키지</div>
+						<div class="p_meun_border_2">PREMIUM 패키지</div>						
+						<input type="hidden" name="selloption" value="deluxe">
 					</div>
 
 					<article class="box_border">

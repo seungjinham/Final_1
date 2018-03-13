@@ -9,13 +9,13 @@ public class SellerDTO extends PersonDTO{
 	private String fname;
 	private String oname;
 	private String refund;//환불
-	private String [] sellOption;		
+	private String [] selloption;		
 	
 	public String[] getSellOption() {
-		return sellOption;
+		return selloption;
 	}
-	public void setSellOption(String[] sellOption) {
-		this.sellOption = sellOption;
+	public void setSellOption(String[] selloption) {
+		this.selloption = selloption;
 	}
 	public String getTitle() {
 		return title;

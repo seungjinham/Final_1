@@ -10,31 +10,10 @@
 <link href="<%=request.getContextPath()%>/resources/css/common/footer.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/sell/sellerView.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript">
-$(function() {
-	//=============즐겨찾기=============
-	if(${favorDTO} != null){
-		$.get("favorInsert?id=${favorDTO.id}&seller=${favorDTO.seller}", function(data) {
-			$(".favor").html(data);
-		});
-	}
-	
-	if(${favorDTO} == null) {
-		$.get("favorDelete?id=${favorDTO.id}&seller=${favorDTO.seller}", function(data) {
-			$(".favor").html(data);
-		});
-	}
-	
-	$(".favor").on("click", "#favor-btn", function() {
-		var favor = $(this).attr("class");
-		document.frm.submit();
-		if (favor == "off") {
-			$("#favor-btn").attr("class", "on");
-		}else {
-			$("#favor-btn").attr("class", "off");
-		}
-	});
-	
+$(function() {	
 	//=============옵션 hover=============
 	$(".option-data").hover(function(e) {
 		var classList = $(this)[0].classList;
@@ -49,6 +28,81 @@ $(function() {
 	}, function(e){
         $('.option-data').removeClass('package-hover');
     });
+	
+	
+	//===========결제===========
+	$("#option0").click(function(){
+		var IMP=window.IMP;
+		IMP.init("imp78791768");
+
+		IMP.request_pay({
+		    pg : 'uplus', // version 1.1.0부터 지원.
+		    pay_method : 'card',
+		    merchant_uid : 'merchant_' + new Date().getTime(),
+		    name : 'Standard',
+		    amount : '30000',
+		    buyer_name : '${member.name}',
+		    buyer_tel : '${member.phone}',
+		}, function(rsp) {
+		    if ( rsp.success ) {
+		        var msg = '결제가 완료되었습니다.';
+			    document.frm.submit();
+		    } else {
+		        var msg = '결제에 실패하였습니다.';
+		        msg += '에러내용 : ' + rsp.error_msg;
+		    }
+		    alert(msg);
+		});
+	});
+	
+	$("#option1").click(function(){
+		var IMP=window.IMP;
+		IMP.init("imp78791768");
+
+		IMP.request_pay({
+		    pg : 'uplus', // version 1.1.0부터 지원.
+		    pay_method : 'card',
+		    merchant_uid : 'merchant_' + new Date().getTime(),
+		    name : 'Deluxe',
+		    amount : '${price}',
+		    buyer_name : '${member.name}',
+		    buyer_tel : '${member.phone}',
+		}, function(rsp) {
+		    if ( rsp.success ) {
+		        var msg = '결제가 완료되었습니다.';
+			    document.frm.submit();
+		    } else {
+		        var msg = '결제에 실패하였습니다.';
+		        msg += '에러내용 : ' + rsp.error_msg;
+		    }
+		    alert(msg);
+		});
+	});
+	
+	$("#option2").click(function(){
+		var IMP=window.IMP;
+		IMP.init("imp78791768");
+
+		IMP.request_pay({
+		    pg : 'uplus', // version 1.1.0부터 지원.
+		    pay_method : 'card',
+		    merchant_uid : 'merchant_' + new Date().getTime(),
+		    name : 'Premium',
+		    amount : '${price}',
+		    buyer_name : '${member.name}',
+		    buyer_tel : '${member.phone}',
+		}, function(rsp) {
+		    if ( rsp.success ) {
+		        var msg = '결제가 완료되었습니다.';
+			    document.frm.submit();
+		    } else {
+		        var msg = '결제에 실패하였습니다.';
+		        msg += '에러내용 : ' + rsp.error_msg;
+		    }
+		    alert(msg);
+		});
+	});
+	
 });
 </script>
 </head>
@@ -81,6 +135,7 @@ $(function() {
 
 			<div id="packages">
 				<h1 class="title-color"><b>가격정보</b></h1>
+				<form action="payList" method="post">
 				<table class="table table-bordered package-table">
 					<colgroup>
 						<col width="25%">
@@ -145,16 +200,17 @@ $(function() {
 					<tr>
 						<td class="option-title"></td>
 						<td class="option0 option-data">
-							<button class="btn btn-block btn-brand"><b>구매</b></button>
+							<button class="btn btn-block btn-brand" id="option0"><b>구매</b></button>
 						</td>
 						<td class="option1 option-data">
-							<button class="btn btn-block btn-brand"><b>구매</b></button>
+							<button class="btn btn-block btn-brand" id="option1"><b>구매</b></button>
 						</td>
 						<td class="option2 option-data">
-							<button class="btn btn-block btn-brand"><b>구매</b></button>
+							<button class="btn btn-block btn-brand" id="option2"><b>구매</b></button>
 						</td>
 					</tr>
 				</table>
+				</form>
 			</div>
 			<h1 class="title-color"><b>서비스 설명</b></h1>
 
