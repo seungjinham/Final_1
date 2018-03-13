@@ -55,7 +55,6 @@
 
 		$("#apply_del").click(function() {
 			alert("선택한 공고를 지원 취소하시겠습니까?");
-			//location.href="../scrap/scrapDelete";
 		});
 
 	});
