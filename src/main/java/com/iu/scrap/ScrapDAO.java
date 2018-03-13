@@ -49,8 +49,4 @@ public class ScrapDAO {
 	public int TotalCount() {
 		return sqlSession.selectOne(NAMESPACE+"totalCount");
 	}
-		
-//	public ScrapDTO SelectOne(ScrapDTO scrapDTO) {
-//		return sqlSession.selectOne(NAMESPACE+"", scrapDTO);
-//	}
 }

@@ -46,20 +46,6 @@ public class ApplyService {
 		for(int i=0; i<recruit_ar.size(); i++) {
 			CompanyDTO companyDTO = companyDAO.selectOne(recruit_ar.get(i).getId());
 			company_ar.add(companyDTO);
-//			if(i==0) {
-//				company_ar.add(companyDTO);
-//			} else {
-//				company_ar.add(companyDTO);
-//				//rotate:
-//				for(int j=0; j<recruit_ar.size(); j++) {
-//					if(companyDTO.getId().equals(company_ar.get(j).getId())) {
-//						company_ar.add(companyDTO);
-//					} else {
-//						company_ar.add(companyDTO);
-//						//break rotate;
-//					}//else end
-//				}//for end
-//			}//else end
 		}//for end
 		ListSort listSort = new ListSort();
 		recruit_ar = listSort.listSort(recruit_ar, company_ar);
