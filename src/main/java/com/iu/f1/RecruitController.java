@@ -61,20 +61,6 @@ public class RecruitController {
 			model.addAttribute("totallist", collect_ar.get(0));
 			model.addAttribute("pagelist", collect_ar.get(1));
 		}
-		
-
-		//List<RecruitDTO> recruit_ar = recruitService.selectList();
-/*		if(areacodeDTO.getSi_value()==null&&areacodeDTO.getGu_value()==null&&areacodeDTO.getDong_value()==null) {
-			
-		} else if(areacodeDTO.getSi_value()!=null&&areacodeDTO.getGu_value()==null) {
-			
-		} else if(areacodeDTO.getSi_value()!=null&&areacodeDTO.getGu_value()!=null&&areacodeDTO.getDong_value()==null) {
-			
-		} else {
-			
-		}*/
-		//List<Object> area_ar = recruitService.selectArea(areacodeDTO);
-
 		return path;
 	}
 	

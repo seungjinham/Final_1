@@ -76,9 +76,4 @@ public class ScrapService {
 		obj_ar.add(scrap_ar);
 		return obj_ar;
 	}
-	
-//	public RecruitDTO SelectOne(int num) {
-//		RecruitDTO recruitDTO = recruitDAO.selectOne(num);
-//		return recruitDTO;
-//	}
 }

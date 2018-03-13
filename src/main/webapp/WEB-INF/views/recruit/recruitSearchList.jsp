@@ -27,35 +27,6 @@ $(function(){
 			<input type="button" value="다른 조건으로 검색하기" id="dcbtn">
 			</div>
 
-<!-- 			<div id="powerlink">
-				<h2>파워링크</h2>
-			</div> -->
-
-			<%-- <div id="powerlinklist">
-				<table id="powerlink_table" class="table">
-					<tr id="firstrow">
-						<th class="f_th">지역</th>
-						<th class="f_th">모집제목</th>
-						<th class="f_th">급여</th>
-						<th class="f_th">근무시간</th>
-						<th class="f_th">마감기한</th>
-					</tr>
-					<c:forEach var="item" items="${totallist}" end="4">
-						<tr id="extrarow">
-							<td class="e_td">${item.addr}</td>
-							<td class="e_td e_td2">
-								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
-								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
-							</td>
-							<td class="e_td e_td2">${item.salary}</td>
-							<td class="e_td">${item.w_time}</td>
-							<td class="e_td">${item.deadline}</td>
-						</tr>
-					</c:forEach>
-				</table>
-
-			</div> --%>
-
 			<div id="list_area">
 				<div>
 					<h2>채용공고리스트</h2>
