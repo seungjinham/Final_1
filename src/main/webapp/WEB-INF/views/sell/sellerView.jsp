@@ -40,7 +40,7 @@ $(function() {
 		    pay_method : 'card',
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : 'Standard',
-		    amount : '30000',
+		    amount : '35000',
 		    buyer_name : '${member.name}',
 		    buyer_tel : '${member.phone}',
 		}, function(rsp) {
@@ -64,7 +64,7 @@ $(function() {
 		    pay_method : 'card',
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : 'Deluxe',
-		    amount : '${price}',
+		    amount : '300000',
 		    buyer_name : '${member.name}',
 		    buyer_tel : '${member.phone}',
 		}, function(rsp) {
@@ -88,7 +88,7 @@ $(function() {
 		    pay_method : 'card',
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : 'Premium',
-		    amount : '${price}',
+		    amount : '1000000',
 		    buyer_name : '${member.name}',
 		    buyer_tel : '${member.phone}',
 		}, function(rsp) {
@@ -135,7 +135,6 @@ $(function() {
 
 			<div id="packages">
 				<h1 class="title-color"><b>가격정보</b></h1>
-				<form action="payList" method="post">
 				<table class="table table-bordered package-table">
 					<colgroup>
 						<col width="25%">
@@ -210,7 +209,6 @@ $(function() {
 						</td>
 					</tr>
 				</table>
-				</form>
 			</div>
 			<h1 class="title-color"><b>서비스 설명</b></h1>
 

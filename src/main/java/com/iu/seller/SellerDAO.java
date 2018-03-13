@@ -46,5 +46,31 @@ public class SellerDAO {
 	public List<FavorDTO> favorList(String id) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"favorList", id);
 	}
+	
+	//팔기
+	public int sell(SellDTO sellDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"sell", sellDTO);
+	}
+	
+	public List<SellDTO> sellList(String id) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"sellList", id);
+	}
+	
+	public SellDTO sellOne(SellDTO sellDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"sellone", sellDTO);
+	}
+	
+	//사기
+	public int buy(BuyDTO sellDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"buy", sellDTO);
+	}
+	
+	public List<BuyDTO> buyList(String id) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"buyList", id);
+	}
+	
+	public BuyDTO buyOne(BuyDTO sellDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"buyone", sellDTO);
+	}
 
 }

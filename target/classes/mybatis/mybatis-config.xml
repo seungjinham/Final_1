@@ -29,6 +29,8 @@
   		<typeAlias type="com.iu.util.ConditionDTO" alias="ConditionDTO"/>
   		<typeAlias type="com.iu.seller.FavorDTO" alias="FavorDTO"/>
   		<typeAlias type="com.iu.seller.OptionDTO" alias="OptionDTO"/>
+  		<typeAlias type="com.iu.seller.BuyDTO" alias="BuyDTO"/>
+  		<typeAlias type="com.iu.seller.SellDTO" alias="SellDTO"/>
   	</typeAliases>
   
   </configuration>

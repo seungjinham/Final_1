@@ -133,4 +133,31 @@ public class SellerService {
 		return sellerDAO.favorList(id);
 	}
 	
+	//팔기
+		public int sell(SellDTO sellDTO) throws Exception {
+			return sellerDAO.sell(sellDTO);
+		}
+		
+		public List<SellDTO> sellList(String id) throws Exception{
+			return sellerDAO.sellList(id);
+		}
+		
+		public SellDTO sellOne(SellDTO sellDTO) throws Exception{
+			return sellerDAO.sellOne(sellDTO);
+		}
+		
+		//사기
+		public int buy(BuyDTO sellDTO) throws Exception {
+			return sellerDAO.buy(sellDTO);
+		}
+		
+		public List<BuyDTO> buyList(String id) throws Exception{
+			return sellerDAO.buyList(id);
+		}
+		
+		public BuyDTO buylOne(BuyDTO sellDTO) throws Exception{
+			return sellerDAO.buyOne(sellDTO);
+		}
+
+	
 }

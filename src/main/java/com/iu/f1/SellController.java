@@ -13,8 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.iu.member.MemberDTO;
+import com.iu.seller.BuyDTO;
 import com.iu.seller.FavorDTO;
 import com.iu.seller.OptionDTO;
+import com.iu.seller.SellDTO;
 import com.iu.seller.SellerDTO;
 import com.iu.seller.SellerService;
 @Controller
@@ -158,6 +160,7 @@ public class SellController {
 
 	}
 	
+	
 	//=========================== FavorList 즐겨찾기 리스트 ===========================
 	@RequestMapping(value="favorList")
 	public ModelAndView favorList(HttpSession session) throws Exception{
@@ -170,4 +173,71 @@ public class SellController {
 		mv.setViewName("sell/favorList");
 		return mv;
 	}
+	
+	//=========================== buy 즐겨찾기 리스트 ===========================
+	@RequestMapping(value="buy", method=RequestMethod.POST)
+	public String buy(HttpSession session, BuyDTO buyDTO) throws Exception{		
+		String id = ((MemberDTO) session.getAttribute("member")).getId();
+		buyDTO.setId(id);		
+		System.out.println(buyDTO.getId());
+		System.out.println(buyDTO.getName());
+		System.out.println(buyDTO.getPrice());
+		System.out.println(buyDTO.getSeller());
+		sellerService.buy(buyDTO);
+		
+		SellDTO sellDTO = new SellDTO();
+		sellDTO.setBuyer(id);
+		sellDTO.setId(buyDTO.getSeller());
+		sellDTO.setName(buyDTO.getName());
+		sellDTO.setPrice(buyDTO.getPrice());
+		
+		sellerService.sell(sellDTO);
+		
+		return "redirect:../pay/payList";
+	}
+	
+	
+	//=========================== buyList 즐겨찾기 리스트 ===========================
+	@RequestMapping(value="buyList", method=RequestMethod.GET)
+	public ModelAndView buyList(HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		String id = ((MemberDTO) session.getAttribute("member")).getId();
+		List<BuyDTO> buy = sellerService.buyList(id);
+		List<SellDTO> sell = sellerService.sellList(id);
+		
+		if(buy != null){
+			mv.addObject("buy", buy);			
+		}
+		
+		if(sell != null){
+			mv.addObject("sell", sell);
+		}
+		mv.setViewName("../pay/payList");
+		
+		return mv;
+	}
+	
+	
+	/*//=========================== buyone 즐겨찾기 리스트 ===========================
+	@RequestMapping(value="buyone")
+	public ModelAndView buyone(HttpSession session, ) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		String id = ((MemberDTO) session.getAttribute("member")).getId();
+		buyDTO.setId(id);		
+		sellerService.buy(buyDTO);
+		
+		SellDTO sellDTO = new SellDTO();
+		sellDTO.setBuyer(id);
+		sellDTO.setId(buyDTO.getSeller());
+		sellDTO.setName(buyDTO.getName());
+		sellDTO.setPrice(buyDTO.getPrice());
+		
+		sellerService.sell(sellDTO);
+		
+		return mv;
+	}*/
+	
+	
 }

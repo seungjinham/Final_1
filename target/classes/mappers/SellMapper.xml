@@ -44,4 +44,25 @@
 		select * from favor where id=#{id}
 	</select>
 	
+	<insert id="sell" parameterType="SellDTO">
+		insert into sell values(paper_seq.nextval, #{id}, #{buyer}, #{name}, #{price})
+	</insert>
+	<insert id="buy" parameterType="BuyDTO">
+		insert into buy values(paper_seq.nextval, #{id}, #{seller}, #{name}, #{price})
+	</insert>
+	
+	<select id="sellList" parameterType="String" resultType="SellDTO">
+		select * from sell where id=#{id}
+	</select>
+	<select id="buyList" parameterType="String" resultType="BuyDTO">
+		select * from buy where id=#{id}
+	</select>
+	
+	<select id="sellone" parameterType="SellDTO" resultType="SellDTO">
+		select * from sell where id=#{id} and buyer=#{buyer}
+	</select>
+	<select id="buyone" parameterType="BuyDTO" resultType="BuyDTO">
+		select * from buy where id=#{id} and seller=#{seller}
+	</select>
+	
 </mapper>
