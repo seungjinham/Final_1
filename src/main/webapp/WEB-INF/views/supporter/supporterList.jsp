@@ -71,7 +71,7 @@
 				</c:forEach>
 				<c:if test="${p_count < 3}">
 				<div id="plus_border">
-					<a href="./paperInsert"><button id="plus">새 이력서 등록</button></a>
+					<a href="./paperInsert"><button id="plus"></button></a>
 				</div>
 				</c:if>
 			</article>

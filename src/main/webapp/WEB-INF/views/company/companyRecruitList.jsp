@@ -43,7 +43,6 @@ $(function() {
 			<c:if test="${not empty list}">
 				<table id="list_table" class="table">
 					<tr id="firstrow">
-						<th class="f_th">지역</th>
 						<th class="f_th">모집제목</th>
 						<th class="f_th">급여</th>
 						<th class="f_th">근무시간</th>
@@ -51,7 +50,6 @@ $(function() {
 					</tr>
 					<c:forEach var="item" items="${list}">
 						<tr id="extrarow">
-							<td class="e_td">${item.addr}</td>
 							<td class="e_td e_td2">
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.c_name}</a></p>
 								<p><a href="<%=request.getContextPath()%>/recruit/recruitView?num=${item.num}&id=<%=request.getSession().getId()%>">${item.title}</a></p>
@@ -69,7 +67,7 @@ $(function() {
 					</c:if>
 					<c:forEach begin="${pagelist.startNum}" end="${pagelist.lastNum}"
 						var="i">
-						<span><input type="button" value="${i}" class="pageclick btnshape"></span>
+						<span><input type="button" value="${i+1}" class="pageclick btnshape"></span>
 					</c:forEach>
 					<c:if test="${pagelist.curBlock<=pagelist.totalBlock}">
 						<span><input type="button" value="다음" class="btnshape prenext"></span>

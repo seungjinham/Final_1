@@ -161,7 +161,7 @@
 
 				<c:forEach begin="${page.startNum}" end="${page.lastNum}" var="i">
 					<input type="button" class="list_button button_now" title="${i}"
-						value="${i}">
+						value="${i+1}">
 				</c:forEach>
 
 
